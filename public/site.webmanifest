@@ -1,0 +1,11 @@
+{
+  "name": "Velkina — Sonrakini İnşa Et",
+  "short_name": "Velkina",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0D0D",
+  "theme_color": "#0D0D0D",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

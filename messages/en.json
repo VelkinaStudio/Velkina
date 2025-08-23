@@ -1,0 +1,74 @@
+{
+  "site": {
+    "title": "Velkina — Build Tomorrow Together",
+    "description": "Velkina is a senior creative engineering studio in Istanbul. We design, build and scale high‑performance websites, apps and systems with Next.js, edge hosting and modern tooling.",
+    "name": "Velkina"
+  },
+  "nav": {
+    "why": "Why",
+    "services": "Services",
+    "useCases": "Use Cases",
+    "blog": "Blog",
+    "tech": "Tech",
+    "startProject": "Start project"
+  },
+  "home": {
+    "heroDesc": "We fuse retro‑futuristic aesthetics with clear, maintainable code. We bring brand experiences to life across websites, apps, middleware and growth—through one fluent creative system.",
+    "ctas": {
+      "whatsapp": "Message on WhatsApp",
+      "email": "Send an email",
+      "schedule": "Schedule a call"
+    },
+    "servicesTitle": "What we do",
+    "servicesViewAll": "See all services",
+    "explore": "Explore",
+    "startProjectShort": "Start project — Quick contact"
+  },
+  "services": {
+    "metaTitle": "Velkina — Services",
+    "metaDesc": "End‑to‑end services across web, hosting, IT, middleware, growth, production and digital tours.",
+    "title": "Services",
+    "heroDesc": "From idea to growth—one team, one system. Explore how we design, build and scale.",
+    "modelsTitle": "Engagement Models",
+    "includedTitle": "Included in every engagement",
+    "deliverables": "Deliverables",
+    "outcomes": "Outcomes",
+    "examples": "Examples",
+    "faq": "FAQ",
+    "quickContact": "Quick Contact",
+    "quickContactDesc": "We reply within one business day. No pressure; just clarity.",
+    "start": "Start"
+  },
+  "blog": {
+    "metaTitle": "Velkina — Blog",
+    "metaDesc": "Insights, practical guides and engineering notes from Velkina.",
+    "title": "Insights & Signals",
+    "subtitle": "Notes from Velkina on engineering, growth and digital systems.",
+    "searchPlaceholder": "Search articles…",
+    "filters": {
+      "all": "All",
+      "engineering": "Engineering",
+      "marketing": "Marketing",
+      "product": "Product",
+      "data": "Data"
+    },
+    "quickContact": "Quick Contact",
+    "quickContactDesc": "We reply within one business day. No pressure; just clarity."
+  },
+  "useCases": {
+    "metaTitle": "Velkina — Use Cases",
+    "metaDesc": "Scenarios shipped fast: sites, systems, automations and measurable growth.",
+    "title": "Use Cases",
+    "subtitle": "A selection of systems we deliver quickly, observably and at scale. Designed to increase conversion, clarity and confidence.",
+    "filters": {
+      "all": "All",
+      "web": "Web",
+      "ai": "AI",
+      "data": "Data",
+      "growth": "Growth",
+      "integrations": "Integrations"
+    },
+    "quickContact": "Quick Contact",
+    "quickContactDesc": "We reply within one business day. No pressure; just clarity."
+  }
+}

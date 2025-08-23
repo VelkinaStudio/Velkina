@@ -1,0 +1,74 @@
+{
+  "site": {
+    "title": "Velkina — Yarını Birlikte İnşa Edelim",
+    "description": "Velkina, İstanbul merkezli kıdemli bir yaratıcı mühendislik stüdyosudur. Next.js, edge barındırma ve modern araçlarla yüksek performanslı web siteleri, uygulamalar ve sistemler tasarlar, geliştirir ve ölçeklendirir.",
+    "name": "Velkina"
+  },
+  "nav": {
+    "why": "Neden",
+    "services": "Hizmetler",
+    "useCases": "Kullanım Alanları",
+    "blog": "Blog",
+    "tech": "Teknoloji",
+    "startProject": "Projeyi başlat"
+  },
+  "home": {
+    "heroDesc": "Retro‑fütüristik estetiği temiz ve bakımı kolay kodla buluşturuyoruz. Marka deneyimini web, uygulama, orta katman ve büyüme adımlarında tek bir akıcı yaratıcı sistemle hayata geçiriyoruz.",
+    "ctas": {
+      "whatsapp": "WhatsApp’tan yazın",
+      "email": "E‑posta gönderin",
+      "schedule": "Görüşme planlayın"
+    },
+    "servicesTitle": "Ne yapıyoruz",
+    "servicesViewAll": "Tüm hizmetleri gör",
+    "explore": "İncele",
+    "startProjectShort": "Proje başlat — Hızlı iletişim"
+  },
+  "services": {
+    "metaTitle": "Velkina — Hizmetler",
+    "metaDesc": "Web, barındırma, IT, ara katman, büyüme, prodüksiyon ve dijital turlar boyunca uçtan uca hizmetler.",
+    "title": "Hizmetler",
+    "heroDesc": "Fikirden büyümeye—tek ekip, tek sistem. Nasıl tasarladığımızı, geliştirdiğimizi ve ölçeklediğimizi keşfedin.",
+    "modelsTitle": "Çalışma Modelleri",
+    "includedTitle": "Her Çalışmada Dahil",
+    "deliverables": "Teslimatlar",
+    "outcomes": "Sonuçlar",
+    "examples": "Örnekler",
+    "faq": "SSS",
+    "quickContact": "Hızlı İletişim",
+    "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.",
+    "start": "Başlat"
+  },
+  "blog": {
+    "metaTitle": "Velkina — Blog",
+    "metaDesc": "Velkina’dan içgörüler, pratik rehberler ve mühendislik notları.",
+    "title": "İçgörüler & Sinyaller",
+    "subtitle": "Mühendislik, büyüme ve dijital sistemler üzerine Velkina’dan notlar.",
+    "searchPlaceholder": "Makalelerde ara…",
+    "filters": {
+      "all": "Tümü",
+      "engineering": "Mühendislik",
+      "marketing": "Pazarlama",
+      "product": "Ürün",
+      "data": "Veri"
+    },
+    "quickContact": "Hızlı İletişim",
+    "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik."
+  },
+  "useCases": {
+    "metaTitle": "Velkina — Kullanım Alanları",
+    "metaDesc": "Hızla hayata geçen senaryolar: siteler, sistemler, otomasyonlar ve ölçülebilir büyüme.",
+    "title": "Kullanım Alanları",
+    "subtitle": "Hızlı, gözlemlenebilir ve ölçeklenebilir şekilde teslim ettiğimiz sistemlerden bir seçki. Dönüşüm, netlik ve güveni artırmak için tasarlandı.",
+    "filters": {
+      "all": "Tümü",
+      "web": "Web",
+      "ai": "Yapay Zekâ",
+      "data": "Veri",
+      "growth": "Büyüme",
+      "integrations": "Entegrasyonlar"
+    },
+    "quickContact": "Hızlı İletişim",
+    "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik."
+  }
+}
