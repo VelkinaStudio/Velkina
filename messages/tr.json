@@ -5,12 +5,25 @@
     "name": "Velkina"
   },
   "nav": {
+    "home": "Ana sayfa",
     "why": "Neden",
     "services": "Hizmetler",
     "useCases": "Kullanım Alanları",
     "blog": "Blog",
     "tech": "Teknoloji",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "privacy": "Gizlilik",
+    "terms": "Koşullar",
     "startProject": "Projeyi başlat"
+  },
+  "common": {
+    "skipToContent": "İçeriğe geç"
+  },
+  "footer": {
+    "company": "Şirket",
+    "quickLinks": "Hızlı Bağlantılar",
+    "getInTouch": "İletişime geçin"
   },
   "home": {
     "heroDesc": "Retro‑fütüristik estetiği temiz ve bakımı kolay kodla buluşturuyoruz. Marka deneyimini web, uygulama, orta katman ve büyüme adımlarında tek bir akıcı yaratıcı sistemle hayata geçiriyoruz.",
@@ -70,5 +83,40 @@
     },
     "quickContact": "Hızlı İletişim",
     "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik."
+  },
+  "about": {
+    "title": "Velkina Hakkında",
+    "desc": "İstanbul merkezli kıdemli bir yaratıcı mühendislik stüdyosuyuz. Modern araçlar, edge barındırma ve ölçülebilir büyüme ile yüksek performanslı web siteleri, uygulamalar ve sistemler tasarlar, geliştirir ve ölçekleriz.",
+    "principlesTitle": "İlkeler",
+    "principles": [
+      "Önizlemeler, geri alma ve net demolarla haftalık teslimat.",
+      "Önce tasarım sistemi: tutarlılık için token'lar, bileşenler ve hareket.",
+      "Ölçülebilir büyüme: sunucu tarafı analitik, deneyler ve CRO."
+    ],
+    "quickFactsTitle": "Hızlı bilgiler",
+    "facts": [
+      "Sadece kıdemli ekip",
+      "Next.js 14, React, Edge",
+      "Tasarım × Mühendislik",
+      "Odak: dönüşüm, netlik, hız"
+    ]
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.",
+    "email": "E‑posta",
+    "emailAddress": "hello@velkina.com",
+    "whatsapp": "WhatsApp",
+    "whatsappDesc": "Hızlı başlamak için bize yazın",
+    "schedule": "Görüşme planlayın",
+    "scheduleDesc": "Size uyan bir zaman seçin"
+  },
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "desc": "Basit tutuyoruz. Kişisel verileri satmayız. Web sitemizi ve hizmetlerimizi iyileştirmek için asgari ölçüde analitik toplarız."
+  },
+  "terms": {
+    "title": "Hizmet Koşulları",
+    "desc": "Web sitemizi ve hizmetlerimizi kullanarak makul koşulları kabul etmiş olursunuz. Proje bazlı özel koşullar MSA/SOW içinde tanımlanır."
   }
 }

@@ -18,7 +18,7 @@ export default function HomePage({messages, locale} = {}){
       <section className="vk-hero relative overflow-hidden min-h-[86vh]">
         <div id="vk-hero-fallback" className="absolute inset-0" style={{background: 'var(--vk-bg)', backgroundImage: 'var(--vk-grad-neon)', opacity:.6}} />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-28 pb-20 grid gap-10 md:grid-cols-2 items-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-28 pb-20 grid gap-10 sm:grid-cols-2 items-center">
           {/* Left column: rotating steps headline + copy + CTAs */}
           <div>
             <h1 className="font-heading text-4xl md:text-6xl leading-tight">

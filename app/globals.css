@@ -28,9 +28,10 @@
                   radial-gradient(1000px 500px at 10% 120%, rgba(0,255,255,0.18), transparent 60%);
 }
 html { background: var(--vk-bg); color: var(--vk-text); scroll-behavior: smooth; }
-.font-heading { font-family: "Orbitron","Rajdhani",system-ui,sans-serif; letter-spacing:.06em; text-transform:uppercase; }
-.font-body { font-family: "Inter","Space Grotesk",system-ui,sans-serif; }
-.font-mono { font-family: "Share Tech Mono",ui-monospace,monospace; letter-spacing:.04em; }
+/* Turkish-friendly font stacks */
+.font-heading { font-family: "Exo 2", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif; letter-spacing:.06em; }
+.font-body { font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif; }
+.font-mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; letter-spacing:.02em; }
 .vk-glass { background: var(--vk-glass); backdrop-filter: blur(10px); }
 .vk-outline { border-color: var(--vk-cyan) !important; background: rgba(255,255,255,.12); box-shadow: 0 0 0 1px rgba(0,255,255,.35) inset, 0 0 20px rgba(0,255,255,.25); }
 

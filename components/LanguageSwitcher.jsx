@@ -5,19 +5,21 @@ export default function LanguageSwitcher({locale}) {
   const pathname = usePathname();
   const router = useRouter();
 
-  const other = locale === 'tr' ? 'en' : 'tr';
+  // Derive current locale from the path if not provided
+  const segs = (pathname || '').split('/').filter(Boolean);
+  const current = locale || ((segs[0] === 'tr' || segs[0] === 'en') ? segs[0] : 'tr');
+  const other = current === 'tr' ? 'en' : 'tr';
 
   function toOtherLocalePath(path) {
     if (!path) return `/${other}`;
-    const segs = path.split('/').filter(Boolean);
-    if (segs.length === 0) return `/${other}`;
-    // Replace first segment (current locale) or prefix
-    if (segs[0] === 'tr' || segs[0] === 'en') {
-      segs[0] = other;
+    const s = path.split('/').filter(Boolean);
+    if (s.length === 0) return `/${other}`;
+    if (s[0] === 'tr' || s[0] === 'en') {
+      s[0] = other;
     } else {
-      segs.unshift(other);
+      s.unshift(other);
     }
-    return '/' + segs.join('/');
+    return '/' + s.join('/');
   }
 
   const target = toOtherLocalePath(pathname);

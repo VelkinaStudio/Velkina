@@ -2,6 +2,7 @@ import '../globals.css';
 import Link from 'next/link';
 import Script from 'next/script';
 import {NextIntlClientProvider} from 'next-intl';
+import {setRequestLocale} from 'next-intl/server';
 import GlobalClient from '../../components/GlobalClient';
 import RevealClient from '../../components/RevealClient';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
@@ -40,6 +41,11 @@ export async function generateMetadata({params}) {
   };
 }
 
+// Pre-render both locales for static export
+export function generateStaticParams() {
+  return [{locale: 'en'}, {locale: 'tr'}];
+}
+
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -49,6 +55,8 @@ export const viewport = {
 
 export default function LocaleLayout({children, params}) {
   const {locale} = params;
+  // Inform next-intl to enable static rendering for this locale
+  setRequestLocale(locale);
   const messages = locale === 'en' ? en : tr;
   const t = messages.nav;
 
@@ -57,7 +65,7 @@ export default function LocaleLayout({children, params}) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@600;700&family=Inter:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Exo+2:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap&subset=latin-ext" rel="stylesheet" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="manifest" href="/site.webmanifest" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
@@ -69,18 +77,17 @@ export default function LocaleLayout({children, params}) {
         })}} />
       </head>
       <body className="font-body bg-vkbg text-vktext">
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[10000] focus:px-3 focus:py-2 focus:bg-black/80 focus:text-white focus:rounded-lg">Skip to content</a>
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[10000] focus:px-3 focus:py-2 focus:bg-black/80 focus:text-white focus:rounded-lg">{messages.common?.skipToContent ?? 'Skip to content'}</a>
         <div id="vk-trans" className="fixed inset-0 z-[9999] pointer-events-none" style={{background: 'radial-gradient(1200px 600px at 80% -10%, rgba(162,89,255,0.35), transparent 60%), radial-gradient(1000px 500px at 10% 120%, rgba(0,255,255,0.25), transparent 60%), linear-gradient(0deg, rgba(13,13,13,1) 0%, rgba(13,13,13,0.6) 100%)', display:'none'}} />
 
         <header data-nav className="fixed top-0 inset-x-0 z-50 transition">
           <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
             <Link href={`/${locale}`} className="font-heading text-lg tracking-wider">VELKINA</Link>
             <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
-              <Link href={`/${locale}/#why`} className="text-white/80 hover:text-vkcyan">{t.why}</Link>
+              <Link href={`/${locale}`} className="text-white/80 hover:text-vkcyan">{t.home ?? 'Home'}</Link>
               <Link href={`/${locale}/services`} className="text-white/80 hover:text-vkcyan">{t.services}</Link>
               <Link href={`/${locale}/use-cases`} className="text-white/80 hover:text-vkcyan">{t.useCases}</Link>
               <Link href={`/${locale}/blog`} className="text-white/80 hover:text-vkcyan">{t.blog}</Link>
-              <Link href={`/${locale}/#stack`} className="text-white/80 hover:text-vkcyan">{t.tech}</Link>
               <Link href={`/${locale}/#cta`} className="text-white/90 font-mono px-3 py-1.5 rounded-xl bg-vkpink text-black shadow-strong">{t.startProject}</Link>
               <LanguageSwitcher locale={locale} />
             </nav>
@@ -91,11 +98,41 @@ export default function LocaleLayout({children, params}) {
           <main id="main" className="pt-20 min-h-screen">{children}</main>
         </NextIntlClientProvider>
 
-        <footer className="max-w-7xl mx-auto px-6 md:px-10 py-10 text-white/70">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+        <footer className="max-w-7xl mx-auto px-6 md:px-10 py-14 text-white/70">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <Link href={`/${locale}`} className="font-heading text-xl tracking-wider text-white">VELKINA</Link>
+              <p className="mt-2 max-w-sm">{messages.site?.description}</p>
+            </div>
+            <div>
+              <h3 className="font-heading text-white/90 mb-2">{messages.footer?.company ?? 'Company'}</h3>
+              <ul className="space-y-1">
+                <li><Link href={`/${locale}/about`} className="hover:text-vkcyan">{messages.nav?.about ?? 'About'}</Link></li>
+                <li><Link href={`/${locale}/contact`} className="hover:text-vkcyan">{messages.nav?.contact ?? 'Contact'}</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-heading text-white/90 mb-2">{messages.footer?.quickLinks ?? 'Quick Links'}</h3>
+              <ul className="space-y-1">
+                <li><Link href={`/${locale}`} className="hover:text-vkcyan">{messages.nav?.home ?? 'Home'}</Link></li>
+                <li><Link href={`/${locale}/services`} className="hover:text-vkcyan">{messages.nav?.services}</Link></li>
+                <li><Link href={`/${locale}/use-cases`} className="hover:text-vkcyan">{messages.nav?.useCases}</Link></li>
+                <li><Link href={`/${locale}/blog`} className="hover:text-vkcyan">{messages.nav?.blog}</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-heading text-white/90 mb-2">{messages.footer?.getInTouch ?? 'Get in touch'}</h3>
+              <ul className="space-y-1">
+                <li><a href="mailto:hello@velkina.com" className="hover:text-vkcyan">hello@velkina.com</a></li>
+                <li><Link href={`/${locale}/#cta`} className="hover:text-vkcyan">{messages.home?.startProjectShort ?? 'Start project — Quick contact'}</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 pt-6 border-t border-white/10 text-sm flex items-center justify-between">
             <p>© {new Date().getFullYear()} Velkina. All rights reserved.</p>
-            <div className="flex items-center gap-4">
-              <Link href={`/${locale}/#cta`} className="hover:text-vkcyan underline underline-offset-4">Contact</Link>
+            <div className="flex items-center gap-3">
+              <Link href={`/${locale}/privacy`} className="hover:text-vkcyan">{messages.nav?.privacy ?? 'Privacy'}</Link>
+              <Link href={`/${locale}/terms`} className="hover:text-vkcyan">{messages.nav?.terms ?? 'Terms'}</Link>
             </div>
           </div>
         </footer>

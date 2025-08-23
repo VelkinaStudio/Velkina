@@ -5,12 +5,25 @@
     "name": "Velkina"
   },
   "nav": {
+    "home": "Home",
     "why": "Why",
     "services": "Services",
     "useCases": "Use Cases",
     "blog": "Blog",
     "tech": "Tech",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
     "startProject": "Start project"
+  },
+  "common": {
+    "skipToContent": "Skip to content"
+  },
+  "footer": {
+    "company": "Company",
+    "quickLinks": "Quick Links",
+    "getInTouch": "Get in touch"
   },
   "home": {
     "heroDesc": "We fuse retro‑futuristic aesthetics with clear, maintainable code. We bring brand experiences to life across websites, apps, middleware and growth—through one fluent creative system.",
@@ -70,5 +83,40 @@
     },
     "quickContact": "Quick Contact",
     "quickContactDesc": "We reply within one business day. No pressure; just clarity."
+  },
+  "about": {
+    "title": "About Velkina",
+    "desc": "We are a senior creative engineering studio in Istanbul. We design, build and scale high‑performance websites, apps and systems with modern tooling, edge hosting and measurable growth.",
+    "principlesTitle": "Principles",
+    "principles": [
+      "Ship weekly with previews, rollbacks and clear demos.",
+      "Design system first: tokens, components and motion for consistency.",
+      "Measurable growth: server‑side analytics, experiments and CRO."
+    ],
+    "quickFactsTitle": "Quick facts",
+    "facts": [
+      "Senior‑only team",
+      "Next.js 14, React, Edge",
+      "Design × Engineering",
+      "Focus: conversion, clarity, speed"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We reply within one business day. No pressure; just clarity.",
+    "email": "Email",
+    "emailAddress": "hello@velkina.com",
+    "whatsapp": "WhatsApp",
+    "whatsappDesc": "Message us to start quickly",
+    "schedule": "Schedule a call",
+    "scheduleDesc": "Pick a time that works for you"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "desc": "We keep it simple. We do not sell personal data. We collect minimal analytics to improve our website and services."
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "desc": "By using our website and services, you agree to reasonable terms. Custom terms are defined per‑project in our MSA/SOW."
   }
 }

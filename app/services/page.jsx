@@ -156,7 +156,7 @@ export default function ServicesPage({messages, locale} = {}){
       {/* Hero */}
       <section className="vk-hero relative overflow-hidden">
         <div className="absolute -inset-24 blur-3xl opacity-60 pointer-events-none" style={{background: 'radial-gradient(600px 300px at 20% 10%, rgba(162,89,255,.35), transparent 60%), radial-gradient(600px 300px at 80% 80%, rgba(0,255,255,.25), transparent 60%)'}}></div>
-        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-20 pb-14 grid gap-10 md:grid-cols-2 items-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-20 pb-14 grid gap-10 sm:grid-cols-2 items-center">
           {/* Left column: title + copy */}
           <div>
             <h1 className="font-heading text-4xl md:text-5xl">{t?.title ?? 'Hizmetler'}</h1>
