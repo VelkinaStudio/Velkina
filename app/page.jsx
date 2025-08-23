@@ -46,88 +46,90 @@ export default function HomePage({messages, locale} = {}){
             <canvas id="vk-hero-shapes" className="absolute inset-0 w-full h-full" role="img" aria-label="Hero step visualization"></canvas>
           </div>
         </div>
-        {/* Featured Services (pulled into hero) */}
-        <div id="services" className="vk-section--services relative z-10 -mt-6 md:-mt-8">
-          <div className="max-w-7xl mx-auto px-6 md:px-10">
-            <div className="flex items-end justify-between mb-3">
-              <h2 className="font-heading text-2xl md:text-3xl">{t?.servicesTitle ?? 'Ne yapıyoruz'}</h2>
-              <a href={`${locale ? '/' + locale : ''}/services`} className="hidden sm:inline-flex items-center text-white/80 hover:text-vkcyan">
-                {t?.servicesViewAll ?? 'Tüm hizmetleri gör'}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1.5" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
-              </a>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" role="list" aria-label="Featured services">
-              {/* Web Development */}
-              <article role="listitem" className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-1 hover:scale-[1.01] transition reveal-on-scroll">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="vk-chip vk-chip--cyan" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0  0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0  0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0  0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>
-                  </span>
-                  <h3 className="font-heading text-xl">Web Geliştirme</h3>
-                </div>
-                <p className="text-white/80">Next.js 14 ile premium hareket ve sağlam SEO temellerine sahip web siteleri ve uygulamalar.</p>
-                <a href={`${locale ? '/' + locale : ''}/services#web`} aria-label="Web Geliştirme'yi inceleyin" className="mt-3 inline-flex items-center text-vkcyan hover:text-white/90">
-                  {t?.explore ?? 'İncele'}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
-                </a>
-              </article>
-
-              {/* Edge Hosting & DevOps */}
-              <article role="listitem" className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-1 hover:scale-[1.01] transition reveal-on-scroll">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="vk-chip vk-chip--cyan" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h12A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5H6A2.25 2.25 0 0 1 3.75 8.25V6ZM3.75 15A2.25 2.25 0 0 1 6 12.75h12A2.25 2.25 0 0 1 20.25 15v2.25A2.25 2.25 0  0 1 18 19.5H6a2.25 2.25 0  0 1-2.25-2.25V15Z"/></svg>
-                  </span>
-                  <h3 className="font-heading text-xl">Edge Hosting & DevOps</h3>
-                </div>
-                <p className="text-white/80">Önizlemeler, geri almalar ve Vercel/Cloudflare üzerinde edge hız ile sakin sürümler.</p>
-                <a href={`${locale ? '/' + locale : ''}/services#hosting`} aria-label="Edge Hosting & DevOps'u inceleyin" className="mt-3 inline-flex items-center text-vkcyan hover:text-white/90">
-                  {t?.explore ?? 'İncele'}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
-                </a>
-              </article>
-
-              {/* AI Agents & Automation */}
-              <article role="listitem" className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-1 hover:scale-[1.01] transition reveal-on-scroll">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="vk-chip vk-chip--pink" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z"/></svg>
-                  </span>
-                  <h3 className="font-heading text-xl">Yapay Zekâ Asistanları & Otomasyon</h3>
-                </div>
-                <p className="text-white/80">Operasyon, destek ve analitik için gerçekten çalışan ve sürdürülebilir asistanlar.</p>
-                <a href={`${locale ? '/' + locale : ''}/services#production`} aria-label="Yapay Zekâ Asistanları & Otomasyon'u inceleyin" className="mt-3 inline-flex items-center text-vkcyan hover:text-white/90">
-                  {t?.explore ?? 'İncele'}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
-                </a>
-              </article>
-
-              {/* CRM–CMS Middleware */}
-              <article role="listitem" className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-1 hover:scale-[1.01] transition reveal-on-scroll">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="vk-chip vk-chip--cyan" aria-hidden="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
-                  </span>
-                  <h3 className="font-heading text-xl">CRM–CMS Orta Katman</h3>
-                </div>
-                <a href={`${locale ? '/' + locale : ''}/services#middleware`} aria-label="CRM–CMS Orta Katman'ı inceleyin" className="mt-3 inline-flex items-center text-vkcyan hover:text-white/90">
-                  {t?.explore ?? 'İncele'}
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
-                </a>
-              </article>
-            </div>
-            <div className="mt-4 flex justify-center">
-              <a href={`${locale ? '/' + locale : ''}/services#cta`} className="inline-flex items-center px-4 py-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 text-white/90">
-                {t?.startProjectShort ?? 'Proje başlat — Hızlı iletişim'}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1.5" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
+        {/* Featured Services moved below hero */}
       </div>
       {/* Wire up hero interactions */}
       <HeroStepsClient />
       <HeroShapesClient />
+    </section>
+
+    {/* Featured Services (separate section below hero) */}
+    <section id="services" className="vk-section--services">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-10">
+        <div className="flex items-end justify-between mb-3">
+          <h2 className="font-heading text-2xl md:text-3xl">{t?.servicesTitle ?? 'Ne yapıyoruz'}</h2>
+          <a href={`${locale ? '/' + locale : ''}/services`} className="hidden sm:inline-flex items-center text-white/80 hover:text-vkcyan">
+            {t?.servicesViewAll ?? 'Tüm hizmetleri gör'}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1.5" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+          </a>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" role="list" aria-label="Featured services">
+          {/* Web Development */}
+          <article role="listitem" className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-1 hover:scale-[1.01] transition reveal-on-scroll">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="vk-chip vk-chip--cyan" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0  0 1 3 12c0-1.605.42-3.113 1.157-4.418"/></svg>
+              </span>
+              <h3 className="font-heading text-xl">Web Geliştirme</h3>
+            </div>
+            <p className="text-white/80">Next.js 14 ile premium hareket ve sağlam SEO temellerine sahip web siteleri ve uygulamalar.</p>
+            <a href={`${locale ? '/' + locale : ''}/services#web`} aria-label="Web Geliştirme'yi inceleyin" className="mt-3 inline-flex items-center text-vkcyan hover:text-white/90">
+              {t?.explore ?? 'İncele'}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </article>
+
+          {/* Edge Hosting & DevOps */}
+          <article role="listitem" className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-1 hover:scale-[1.01] transition reveal-on-scroll">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="vk-chip vk-chip--cyan" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h12A2.25 2.25 0  0 1 20.25 6v2.25A2.25 2.25 0  0 1 18 10.5H6A2.25 2.25 0  0 1 3.75 8.25V6ZM3.75 15A2.25 2.25 0  0 1 6 12.75h12A2.25 2.25 0  0 1 20.25 15v2.25A2.25 2.25 0  0 1 18 19.5H6a2.25 2.25 0  0 1-2.25-2.25V15Z"/></svg>
+              </span>
+              <h3 className="font-heading text-xl">Edge Hosting & DevOps</h3>
+            </div>
+            <p className="text-white/80">Önizlemeler, geri almalar ve Vercel/Cloudflare üzerinde edge hız ile sakin sürümler.</p>
+            <a href={`${locale ? '/' + locale : ''}/services#hosting`} aria-label="Edge Hosting & DevOps'u inceleyin" className="mt-3 inline-flex items-center text-vkcyan hover:text-white/90">
+              {t?.explore ?? 'İncele'}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </article>
+
+          {/* AI Agents & Automation */}
+          <article role="listitem" className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-1 hover:scale-[1.01] transition reveal-on-scroll">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="vk-chip vk-chip--pink" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0  0 0 2.25-2.25V6.75a2.25 2.25 0  0 0-2.25-2.25H6.75A2.25 2.25 0  0 0 4.5 6.75v10.5a2.25 2.25 0  0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z"/></svg>
+              </span>
+              <h3 className="font-heading text-xl">Yapay Zekâ Asistanları & Otomasyon</h3>
+            </div>
+            <p className="text-white/80">Operasyon, destek ve analitik için gerçekten çalışan ve sürdürülebilir asistanlar.</p>
+            <a href={`${locale ? '/' + locale : ''}/services#production`} aria-label="Yapay Zekâ Asistanları & Otomasyon'u inceleyin" className="mt-3 inline-flex items-center text-vkcyan hover:text-white/90">
+              {t?.explore ?? 'İncele'}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </article>
+
+          {/* CRM–CMS Middleware */}
+          <article role="listitem" className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-1 hover:scale-[1.01] transition reveal-on-scroll">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="vk-chip vk-chip--cyan" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
+              </span>
+              <h3 className="font-heading text-xl">CRM–CMS Orta Katman</h3>
+            </div>
+            <a href={`${locale ? '/' + locale : ''}/services#middleware`} aria-label="CRM–CMS Orta Katman'ı inceleyin" className="mt-3 inline-flex items-center text-vkcyan hover:text-white/90">
+              {t?.explore ?? 'İncele'}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+            </a>
+          </article>
+        </div>
+        <div className="mt-4 flex justify-center">
+          <a href={`${locale ? '/' + locale : ''}/services#cta`} className="inline-flex items-center px-4 py-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 text-white/90">
+            {t?.startProjectShort ?? 'Proje başlat — Hızlı iletişim'}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1.5" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+          </a>
+        </div>
+      </div>
     </section>
 
     {/* Non-visual clients */}

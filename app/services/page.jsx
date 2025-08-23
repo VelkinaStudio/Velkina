@@ -171,8 +171,8 @@ export default function ServicesPage({messages, locale} = {}){
         {/** Client-only visualizer lives outside grid like on home */}
         <HeroShapesClient />
       </section>
-      {/* What we do: TOC + models (moved below hero) */}
-      <section className="max-w-7xl mx-auto px-6 md:px-10 -mt-6 pb-6">
+      {/* What we do: TOC + models (separate section below hero) */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 py-8">
         <div className="relative z-10 mt-8 flex flex-wrap gap-2" role="navigation" aria-label="Services table of contents">
           {items.map(s=> (
             <a key={s.id} href={`#${s.id}`} className="px-3 py-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-white/80">{s.title}</a>
