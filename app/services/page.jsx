@@ -1,3 +1,4 @@
+import HeroShapesClient from '../../components/HeroShapesClient';
 export const metadata = {
   title: 'Velkina — Hizmetler',
   description: 'Web, barındırma, IT, ara katman, büyüme, prodüksiyon ve dijital turlar boyunca uçtan uca hizmetler.',
@@ -153,12 +154,22 @@ export default function ServicesPage({messages, locale} = {}){
   return (
     <div className="pt-4">
       {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 relative">
-          <div className="absolute -inset-24 blur-3xl opacity-60 pointer-events-none" style={{background: 'radial-gradient(600px 300px at 20% 10%, rgba(162,89,255,.35), transparent 60%), radial-gradient(600px 300px at 80% 80%, rgba(0,255,255,.25), transparent 60%)'}}></div>
-          <h1 className="relative z-10 font-heading text-4xl md:text-5xl">{t?.title ?? 'Hizmetler'}</h1>
-          <p className="relative z-10 text-white/80 max-w-2xl mt-3">{t?.heroDesc ?? 'Fikirden büyümeye—tek ekip, tek sistem. Nasıl tasarladığımızı, geliştirdiğimizi ve ölçeklediğimizi keşfedin.'}</p>
+      <section className="vk-hero relative overflow-hidden">
+        <div className="absolute -inset-24 blur-3xl opacity-60 pointer-events-none" style={{background: 'radial-gradient(600px 300px at 20% 10%, rgba(162,89,255,.35), transparent 60%), radial-gradient(600px 300px at 80% 80%, rgba(0,255,255,.25), transparent 60%)'}}></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-20 pb-14 grid gap-10 md:grid-cols-2 items-center">
+          {/* Left column: title + copy */}
+          <div>
+            <h1 className="font-heading text-4xl md:text-5xl">{t?.title ?? 'Hizmetler'}</h1>
+            <p className="text-white/80 max-w-2xl mt-3">{t?.heroDesc ?? 'Fikirden büyümeye—tek ekip, tek sistem. Nasıl tasarladığımızı, geliştirdiğimizi ve ölçeklediğimizi keşfedin.'}</p>
+          </div>
+          {/* Right column: animation canvas */}
+          <div className="relative min-h-[260px] md:min-h-[420px]">
+            <canvas id="vk-hero-shapes" className="absolute inset-0 w-full h-full" role="img" aria-label="Hizmetler görselleştirme"></canvas>
+          </div>
         </div>
+        {/* Wire shapes */}
+        {/** Client-only visualizer lives outside grid like on home */}
+        <HeroShapesClient />
       </section>
       {/* What we do: TOC + models (moved below hero) */}
       <section className="max-w-7xl mx-auto px-6 md:px-10 -mt-6 pb-6">
