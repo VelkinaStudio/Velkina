@@ -47,7 +47,6 @@ export default function HomePage({messages, locale} = {}){
           </div>
         </div>
         {/* Featured Services moved below hero */}
-      </div>
       {/* Wire up hero interactions */}
       <HeroStepsClient />
       <HeroShapesClient />
