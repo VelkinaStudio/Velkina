@@ -158,19 +158,22 @@ export default function ServicesPage({messages, locale} = {}){
           <div className="absolute -inset-24 blur-3xl opacity-60 pointer-events-none" style={{background: 'radial-gradient(600px 300px at 20% 10%, rgba(162,89,255,.35), transparent 60%), radial-gradient(600px 300px at 80% 80%, rgba(0,255,255,.25), transparent 60%)'}}></div>
           <h1 className="relative z-10 font-heading text-4xl md:text-5xl">{t?.title ?? 'Hizmetler'}</h1>
           <p className="relative z-10 text-white/80 max-w-2xl mt-3">{t?.heroDesc ?? 'Fikirden büyümeye—tek ekip, tek sistem. Nasıl tasarladığımızı, geliştirdiğimizi ve ölçeklediğimizi keşfedin.'}</p>
-          <div className="relative z-10 mt-5 flex flex-wrap gap-2" role="navigation" aria-label="Services table of contents">
-            {items.map(s=> (
-              <a key={s.id} href={`#${s.id}`} className="px-3 py-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-white/80">{s.title}</a>
-            ))}
-          </div>
-          <div className="relative z-10 mt-6 vk-glass border border-white/10 rounded-xl p-5 shadow-soft">
-            <h2 className="font-heading text-xl">{t?.modelsTitle ?? 'Çalışma Modelleri'}</h2>
-            <ul className="mt-2 grid gap-2 md:grid-cols-3 text-white/80 list-disc pl-5">
-              <li><strong className="text-white/90">Proje</strong>: Sabit kapsam, net çıktılar, hızlı teslim.</li>
-              <li><strong className="text-white/90">Sprint</strong>: Deney ve iterasyonlar için 1–2 haftalık döngüler.</li>
-              <li><strong className="text-white/90">Süreli Anlaşma</strong>: Süregelen yol haritası, optimizasyon ve destek.</li>
-            </ul>
-          </div>
+        </div>
+      </section>
+      {/* What we do: TOC + models (moved below hero) */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 -mt-6 pb-6">
+        <div className="relative z-10 mt-8 flex flex-wrap gap-2" role="navigation" aria-label="Services table of contents">
+          {items.map(s=> (
+            <a key={s.id} href={`#${s.id}`} className="px-3 py-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-white/80">{s.title}</a>
+          ))}
+        </div>
+        <div className="relative z-10 mt-6 vk-glass border border-white/10 rounded-xl p-5 shadow-soft">
+          <h2 className="font-heading text-xl">{t?.modelsTitle ?? 'Çalışma Modelleri'}</h2>
+          <ul className="mt-2 grid gap-2 md:grid-cols-3 text-white/80 list-disc pl-5">
+            <li><strong className="text-white/90">Proje</strong>: Sabit kapsam, net çıktılar, hızlı teslim.</li>
+            <li><strong className="text-white/90">Sprint</strong>: Deney ve iterasyonlar için 1–2 haftalık döngüler.</li>
+            <li><strong className="text-white/90">Süreli Anlaşma</strong>: Süregelen yol haritası, optimizasyon ve destek.</li>
+          </ul>
         </div>
       </section>
       {/* Included with every engagement */}
