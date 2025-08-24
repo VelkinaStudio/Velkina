@@ -1,4 +1,4 @@
-import PrivacyPage from '../../privacy/page.jsx';
+import PrivacyView from '../../privacy/PrivacyView';
 import en from '../../../messages/en.json';
 import tr from '../../../messages/tr.json';
 
@@ -10,12 +10,13 @@ export function generateMetadata({params}) {
   const {locale} = params || {locale: 'tr'};
   const messages = locale === 'en' ? en : tr;
   return {
-    title: locale === 'tr' ? 'Gizlilik — Velkina' : 'Privacy — Velkina'
+    title: messages.privacy?.title ? `${messages.privacy.title} — Velkina` : (locale === 'tr' ? 'Gizlilik — Velkina' : 'Privacy — Velkina'),
+    description: messages.privacy?.desc
   };
 }
 
 export default function LocalizedPrivacy({params}) {
   const {locale} = params || {locale: 'tr'};
   const messages = locale === 'en' ? en : tr;
-  return <PrivacyPage messages={messages} locale={locale} />;
+  return <PrivacyView messages={messages} locale={locale} />;
 }

@@ -1,14 +1,9 @@
 import Link from 'next/link';
 import tr from '../../messages/tr.json';
 
-export const metadata = {
-  title: 'About — Velkina',
-  description: 'Who we are, how we work, and why teams partner with Velkina.'
-};
-
-export default function AboutPage({messages, locale} = {}) {
-  const m = messages?.about ?? tr.about;
-  const nav = messages?.nav ?? tr.nav;
+export default function AboutPage(props) {
+  const m = props?.messages?.about ?? tr.about;
+  const nav = props?.messages?.nav ?? tr.nav;
   return (
     <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
       <header className="mb-8">
@@ -38,7 +33,7 @@ export default function AboutPage({messages, locale} = {}) {
       </section>
 
       <div className="mt-10 text-center">
-        <Link href={`${locale ? '/' + locale : ''}/#cta`} className="inline-flex items-center px-5 py-3 rounded-xl bg-vkpink text-black font-mono shadow-strong">
+        <Link href={`${props?.locale ? '/' + props.locale : ''}/#cta`} className="inline-flex items-center px-5 py-3 rounded-xl bg-vkpink text-black font-mono shadow-strong">
           {nav.startProject ?? 'Start project'}
         </Link>
       </div>

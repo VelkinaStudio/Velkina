@@ -7,6 +7,7 @@ export default function BlogClient(){
     const qEl = document.getElementById('q');
     const statusEl = document.getElementById('filter-status');
     const filters = Array.from(document.querySelectorAll('#filters [data-filter]'));
+    const tpl = statusEl?.getAttribute('data-template') || '{n} articles shown';
 
     let active = 'All';
     function apply(){
@@ -19,7 +20,7 @@ export default function BlogClient(){
         p.style.display = (okCat && okTerm) ? '' : 'none';
         return okCat && okTerm;
       }).length;
-      if(statusEl) statusEl.textContent = `${matches} articles shown`;
+      if(statusEl) statusEl.textContent = tpl.replace('{n}', String(matches));
     }
 
     filters.forEach(btn=>{

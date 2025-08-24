@@ -1,14 +1,9 @@
 import Link from 'next/link';
 import tr from '../../messages/tr.json';
 
-export const metadata = {
-  title: 'Contact — Velkina',
-  description: 'Quick contact options to start a project or ask a question.'
-};
-
-export default function ContactPage({messages, locale} = {}) {
-  const m = messages?.contact ?? tr.contact;
-  const nav = messages?.nav ?? tr.nav;
+export default function ContactPage(props) {
+  const m = props?.messages?.contact ?? tr.contact;
+  const nav = props?.messages?.nav ?? tr.nav;
   return (
     <div className="max-w-3xl mx-auto px-6 md:px-10 py-16">
       <h1 className="font-heading text-3xl md:text-4xl mb-2">{m.title}</h1>
@@ -30,7 +25,7 @@ export default function ContactPage({messages, locale} = {}) {
       </div>
 
       <div className="mt-8 text-center">
-        <Link href={`${locale ? '/' + locale : ''}/#cta`} className="inline-flex items-center px-5 py-3 rounded-xl bg-vkpink text-black font-mono shadow-strong">
+        <Link href={`${props?.locale ? '/' + props.locale : ''}/#cta`} className="inline-flex items-center px-5 py-3 rounded-xl bg-vkpink text-black font-mono shadow-strong">
           {nav.startProject ?? 'Start project'}
         </Link>
       </div>

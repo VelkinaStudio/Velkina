@@ -1,4 +1,4 @@
-import AboutPage from '../../about/page.jsx';
+import AboutView from '../../about/AboutView';
 import en from '../../../messages/en.json';
 import tr from '../../../messages/tr.json';
 
@@ -10,13 +10,13 @@ export function generateMetadata({params}) {
   const {locale} = params || {locale: 'tr'};
   const messages = locale === 'en' ? en : tr;
   return {
-    title: messages.nav?.about ? `Velkina — ${messages.nav.about}` : 'Velkina — About',
-    description: 'Who we are, how we work, and why teams partner with Velkina.'
+    title: messages.about?.title ? `Velkina — ${messages.about.title}` : 'Velkina — About',
+    description: messages.about?.desc || 'Who we are, how we work, and why teams partner with Velkina.'
   };
 }
 
 export default function LocalizedAbout({params}) {
   const {locale} = params || {locale: 'tr'};
   const messages = locale === 'en' ? en : tr;
-  return <AboutPage messages={messages} locale={locale} />;
+  return <AboutView messages={messages} locale={locale} />;
 }

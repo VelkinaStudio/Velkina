@@ -2,7 +2,6 @@ import '../globals.css';
 import Link from 'next/link';
 import Script from 'next/script';
 import {NextIntlClientProvider} from 'next-intl';
-import {setRequestLocale} from 'next-intl/server';
 import GlobalClient from '../../components/GlobalClient';
 import RevealClient from '../../components/RevealClient';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
@@ -18,6 +17,7 @@ export async function generateMetadata({params}) {
     title: dict.site.title,
     description: dict.site.description,
     metadataBase: new URL(baseUrl),
+    manifest: '/site.webmanifest',
     alternates: {
       canonical: `/${locale}`,
       languages: {
@@ -55,28 +55,21 @@ export const viewport = {
 
 export default function LocaleLayout({children, params}) {
   const {locale} = params;
-  // Inform next-intl to enable static rendering for this locale
-  setRequestLocale(locale);
+  // Using explicit messages & locale; no next-intl server APIs to keep static rendering
   const messages = locale === 'en' ? en : tr;
   const t = messages.nav;
 
   return (
     <html lang={locale}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Exo+2:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap&subset=latin-ext" rel="stylesheet" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Organization',
-          name: messages.site.name,
-          url: baseUrl,
-          sameAs: []
-        })}} />
-      </head>
-      <body className="font-body bg-vkbg text-vktext">
+      <head />
+      <body
+        className="font-body bg-vkbg text-vktext"
+        data-anim="light"
+        data-email-subject={messages.common?.emailSubject ?? 'Project Inquiry'}
+        data-whatsapp-prefill={messages.common?.whatsappPrefill ?? "Hi Velkina! I'd like to discuss a project."}
+        data-carousel-play={messages.common?.carouselPlay ?? 'Play carousel'}
+        data-carousel-pause={messages.common?.carouselPause ?? 'Pause carousel'}
+      >
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[10000] focus:px-3 focus:py-2 focus:bg-black/80 focus:text-white focus:rounded-lg">{messages.common?.skipToContent ?? 'Skip to content'}</a>
         <div id="vk-trans" className="fixed inset-0 z-[9999] pointer-events-none" style={{background: 'radial-gradient(1200px 600px at 80% -10%, rgba(162,89,255,0.35), transparent 60%), radial-gradient(1000px 500px at 10% 120%, rgba(0,255,255,0.25), transparent 60%), linear-gradient(0deg, rgba(13,13,13,1) 0%, rgba(13,13,13,0.6) 100%)', display:'none'}} />
 
@@ -129,7 +122,7 @@ export default function LocaleLayout({children, params}) {
             </div>
           </div>
           <div className="mt-8 pt-6 border-t border-white/10 text-sm flex items-center justify-between">
-            <p>© {new Date().getFullYear()} Velkina. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Velkina. {messages.footer?.rightsReserved ?? 'All rights reserved.'}</p>
             <div className="flex items-center gap-3">
               <Link href={`/${locale}/privacy`} className="hover:text-vkcyan">{messages.nav?.privacy ?? 'Privacy'}</Link>
               <Link href={`/${locale}/terms`} className="hover:text-vkcyan">{messages.nav?.terms ?? 'Terms'}</Link>

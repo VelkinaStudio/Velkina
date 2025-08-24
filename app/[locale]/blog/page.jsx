@@ -1,4 +1,4 @@
-import BlogPage from '../../blog/page.jsx';
+import BlogView from '../../blog/BlogView';
 import en from '../../../messages/en.json';
 import tr from '../../../messages/tr.json';
 
@@ -18,5 +18,5 @@ export function generateMetadata({params}) {
 export default function LocalizedBlog({params}) {
   const {locale} = params || {locale: 'tr'};
   const messages = locale === 'en' ? en : tr;
-  return <BlogPage messages={messages} locale={locale} />;
+  return <BlogView messages={messages} locale={locale} />;
 }

@@ -5,14 +5,18 @@ export default function GlobalClient(){
   useEffect(()=>{
     const cleanups = [];
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const body = document.body || null;
+    const isLight = prefersReduced || (body && body.dataset && body.dataset.anim === 'light');
 
     // Lenis smooth scroll (cancel on unmount)
     try {
-      let rafId = 0;
-      const lenis = new window.Lenis({ smoothWheel: true, lerp: 0.08 });
-      const loop = (t) => { lenis.raf(t); rafId = requestAnimationFrame(loop); };
-      rafId = requestAnimationFrame(loop);
-      cleanups.push(()=>{ try{ cancelAnimationFrame(rafId); }catch(_){} try{ lenis?.destroy?.(); }catch(_){} });
+      if(!isLight){
+        let rafId = 0;
+        const lenis = new window.Lenis({ smoothWheel: true, lerp: 0.08 });
+        const loop = (t) => { lenis.raf(t); rafId = requestAnimationFrame(loop); };
+        rafId = requestAnimationFrame(loop);
+        cleanups.push(()=>{ try{ cancelAnimationFrame(rafId); }catch(_){} try{ lenis?.destroy?.(); }catch(_){} });
+      }
     } catch(e){}
 
     // Navbar solid state on scroll
@@ -31,21 +35,24 @@ export default function GlobalClient(){
       }
     });
 
-    // CTA destinations
+    // CTA destinations (localized via body data-*)
     try {
       const email = 'hello@velkina.com';
-      const pre = encodeURIComponent("Hi Velkina! I'd like to discuss a project.");
+      const body = document.body || null;
+      const prefill = (body && body.dataset && body.dataset.whatsappPrefill) || "Hi Velkina! I'd like to discuss a project.";
+      const pre = encodeURIComponent(prefill);
       const wa = (window.VELK_CONTACT?.whatsapp || '').replace(/[^0-9]/g,'');
       const schedule = window.VELK_CONTACT?.schedule || 'https://calendly.com/velkina/intro-call';
       const waHref = wa ? `https://wa.me/${wa}?text=${pre}` : '/#contact';
       document.querySelectorAll('[data-cta="whatsapp"]').forEach(a=>a.setAttribute('href', waHref));
-      document.querySelectorAll('[data-cta="email"]').forEach(a=>a.setAttribute('href', `mailto:${email}?subject=Project%20Inquiry`));
+      const subj = encodeURIComponent((body && body.dataset && body.dataset.emailSubject) || 'Project Inquiry');
+      document.querySelectorAll('[data-cta="email"]').forEach(a=>a.setAttribute('href', `mailto:${email}?subject=${subj}`));
       document.querySelectorAll('[data-cta="schedule"]').forEach(a=>a.setAttribute('href', schedule));
     } catch(e){}
 
     // Page transition overlay for same-origin nav
     const transEl = document.getElementById('vk-trans');
-    if(transEl){
+    if(transEl && !isLight){
       transEl.style.display = 'none';
       const onClick = (e) => {
         const a = e.target.closest('a'); if(!a) return;
@@ -69,9 +76,9 @@ export default function GlobalClient(){
 
     // Simple reveal animations when GSAP available
     try{
-      if(!prefersReduced && window.gsap){
+      if(!isLight && window.gsap){
         document.querySelectorAll('article, section h1, section p, input, button').forEach(el=>{
-          window.gsap.from(el,{ opacity:0, y:24, duration:.6, ease:'power3.out', stagger:.04 });
+          window.gsap.from(el,{ opacity:0, y:20, duration:.5, ease:'power3.out', stagger:.03 });
         });
       }
     }catch(e){}
@@ -96,8 +103,11 @@ export default function GlobalClient(){
         const btn = getToggleFor(el);
         if(!btn) return;
         const paused = el.getAttribute('data-paused') === 'true';
+        const body = document.body || null;
+        const play = (body && body.dataset && body.dataset.carouselPlay) || 'Play carousel';
+        const pause = (body && body.dataset && body.dataset.carouselPause) || 'Pause carousel';
         btn.setAttribute('aria-pressed', paused ? 'true' : 'false');
-        btn.setAttribute('aria-label', paused ? 'Play carousel' : 'Pause carousel');
+        btn.setAttribute('aria-label', paused ? play : pause);
         renderToggleIcon(btn, paused);
       };
       const setPaused = (el, isPaused) => {

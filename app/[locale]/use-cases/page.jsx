@@ -1,4 +1,4 @@
-import UseCasesPage from '../../use-cases/page.jsx';
+import UseCasesView from '../../use-cases/UseCasesView';
 import en from '../../../messages/en.json';
 import tr from '../../../messages/tr.json';
 
@@ -18,5 +18,5 @@ export function generateMetadata({params}) {
 export default function LocalizedUseCases({params}) {
   const {locale} = params || {locale: 'tr'};
   const messages = locale === 'en' ? en : tr;
-  return <UseCasesPage messages={messages} locale={locale} />;
+  return <UseCasesView messages={messages} locale={locale} />;
 }

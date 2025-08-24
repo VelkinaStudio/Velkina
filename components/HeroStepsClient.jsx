@@ -2,18 +2,25 @@
 
 import { useEffect } from 'react';
 
-export default function HeroStepsClient() {
+export default function HeroStepsClient({steps: stepsProp} = {}) {
   useEffect(() => {
     const el = document.getElementById('vk-hero-steps-text');
     if (!el) return;
+    // Instance ownership guard to prevent multiple concurrent loops across remounts
+    const instanceId = String(Date.now()) + Math.random().toString(36).slice(2);
+    el.dataset.stepsInstance = instanceId;
 
-    const steps = ["Discover", "Design", "Build", "Launch", "Evolve"];
+    // Prefer localized steps passed from the server; fallback to EN
+    const steps = (Array.isArray(stepsProp) && stepsProp.length
+      ? stepsProp
+      : ["Discover", "Design", "Build", "Launch", "Evolve"]).slice();
     let idx = 0;
     let raf = 0;
     let running = false;
     let fadeTimer = 0;
     let initialized = false;
     const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    try { console.debug('[HeroSteps] effect start', { stepsPropLen: Array.isArray(stepsProp) ? stepsProp.length : 0, stepsLen: steps.length, reduceMotion }); } catch {}
 
     // prepare fade transition
     if (!reduceMotion) {
@@ -53,6 +60,7 @@ export default function HeroStepsClient() {
 
     // Helpers to start/stop rotation safely
     const stopLoop = () => {
+      try { console.debug('[HeroSteps] stopLoop()', { hadRAF: Boolean(raf) }); } catch {}
       if (raf) { cancelAnimationFrame(raf); raf = 0; }
       running = false;
     };
@@ -64,11 +72,17 @@ export default function HeroStepsClient() {
       const period = reduceMotion ? 6000 : 3800;
       let last = performance.now();
       const tick = (t) => {
+        // If another mounted instance took over the element, stop this loop
+        if (el.dataset.stepsInstance !== instanceId) {
+          stopLoop();
+          return;
+        }
         if (document.hidden) {
           last = t; // pause while hidden
         }
         if (t - last >= period) {
           last = t;
+          try { console.debug('[HeroSteps] advance step', { from: idx, to: (idx + 1) % steps.length }); } catch {}
           setStep(idx + 1);
         }
         raf = requestAnimationFrame(tick);
@@ -77,13 +91,17 @@ export default function HeroStepsClient() {
     };
 
     setStep(0);
-    if (!reduceMotion) startLoop();
+    if (!reduceMotion && steps.length > 1) {
+      try { console.debug('[HeroSteps] startLoop() initial'); } catch {}
+      startLoop();
+    }
 
     const onVisibility = () => {
+      try { console.debug('[HeroSteps] visibilitychange', { hidden: document.hidden }); } catch {}
       if (document.hidden) {
         stopLoop();
       } else {
-        if (!reduceMotion) startLoop();
+        if (!reduceMotion && steps.length > 1) startLoop();
       }
     };
     const onPageHide = () => { stopLoop(); };
@@ -93,13 +111,18 @@ export default function HeroStepsClient() {
     window.addEventListener('beforeunload', onBeforeUnload);
 
     return () => {
+      try { console.debug('[HeroSteps] cleanup'); } catch {}
       document.removeEventListener('visibilitychange', onVisibility);
       window.removeEventListener('pagehide', onPageHide);
       window.removeEventListener('beforeunload', onBeforeUnload);
       stopLoop();
       if (fadeTimer) clearTimeout(fadeTimer);
+      // Release ownership if still held by this instance
+      if (el && el.dataset && el.dataset.stepsInstance === instanceId) {
+        try { delete el.dataset.stepsInstance; } catch {}
+      }
     };
-  }, []);
+  }, [stepsProp]);
 
   return null;
 }

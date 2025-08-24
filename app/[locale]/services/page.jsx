@@ -1,4 +1,4 @@
-import ServicesPage from '../../services/page.jsx';
+import ServicesView from '../../services/ServicesView';
 import en from '../../../messages/en.json';
 import tr from '../../../messages/tr.json';
 
@@ -18,5 +18,5 @@ export function generateMetadata({params}) {
 export default function LocalizedServices({params}) {
   const {locale} = params || {locale: 'tr'};
   const messages = locale === 'en' ? en : tr;
-  return <ServicesPage messages={messages} locale={locale} />;
+  return <ServicesView messages={messages} locale={locale} />;
 }

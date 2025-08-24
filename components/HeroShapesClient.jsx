@@ -6,6 +6,9 @@ export default function HeroShapesClient() {
   useEffect(() => {
     const canvas = document.getElementById('vk-hero-shapes');
     if (!canvas) return;
+    // Instance ownership guard to prevent multiple concurrent WebGL loops
+    const instanceId = String(Date.now()) + Math.random().toString(36).slice(2);
+    canvas.dataset.shapesInstance = instanceId;
 
     let THREE;
     let renderer, scene, camera, group, points;
@@ -17,6 +20,7 @@ export default function HeroShapesClient() {
     let cancelled = false; // abort async init on unmount
 
     const init = async () => {
+      try { console.debug('[HeroShapes] init() start'); } catch {}
       try {
         const mod = await import('three');
         THREE = mod.default ?? mod;
@@ -24,6 +28,11 @@ export default function HeroShapesClient() {
         return; // three not available
       }
       if (cancelled) return; // component unmounted during dynamic import
+
+      // Lightweight mode detection
+      const body = document.body || null;
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)')?.matches;
+      const isLight = prefersReduced || (body && body.dataset && body.dataset.anim === 'light');
 
       scene = new THREE.Scene();
       const DPR = Math.min(window.devicePixelRatio || 1, 2);
@@ -42,6 +51,7 @@ export default function HeroShapesClient() {
       } catch {
         return;
       }
+      try { console.debug('[HeroShapes] renderer created'); } catch {}
       renderer.setPixelRatio(DPR);
 
       // Handle WebGL context lost to prevent default page behavior
@@ -59,7 +69,7 @@ export default function HeroShapesClient() {
       const material = new THREE.PointsMaterial({ color: 0xffffff, size: 0.02, transparent: true, opacity: 0.85 });
 
       // One persistent Points cloud that morphs its positions
-      const POINT_COUNT = 3500;
+      const POINT_COUNT = isLight ? 1600 : 3500;
       const geometry = new THREE.BufferGeometry();
       const positions = new Float32Array(POINT_COUNT * 3);
       geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -310,9 +320,12 @@ export default function HeroShapesClient() {
       };
 
       const generators = [genDiscoverSphere, genDesignTorus, genBuildCubeLattice, genLaunchRocket, genEvolveDNA];
-      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const reduceMotion = prefersReduced;
 
       const morphToStep = (stepIdx) => {
+        // If another instance took over, ignore morph requests
+        if (canvas.dataset.shapesInstance !== instanceId) return;
+        try { console.debug('[HeroShapes] morphToStep()', { stepIdx }); } catch {}
         const idx = ((stepIdx ?? 0) + generators.length) % generators.length;
         const target = generators[idx](POINT_COUNT);
         const attr = points.geometry.getAttribute('position');
@@ -331,6 +344,10 @@ export default function HeroShapesClient() {
         const duration = 800; // ms
         let t0 = performance.now();
         const step = (now) => {
+          if (canvas.dataset.shapesInstance !== instanceId) {
+            if (fadeId) cancelAnimationFrame(fadeId);
+            return;
+          }
           const a = Math.min(1, (now - t0) / duration);
           const e = easeInOut(a);
           const arr = attr.array;
@@ -375,30 +392,64 @@ export default function HeroShapesClient() {
       morphToStep(0);
 
       const animate = () => {
-        group.rotation.y += 0.0025;
-        group.rotation.x += 0.0015;
+        // Stop animation if ownership moved to a newer instance
+        if (canvas.dataset.shapesInstance !== instanceId) {
+          if (animId) cancelAnimationFrame(animId);
+          return;
+        }
+        // Subtle motion in light mode; fuller motion otherwise
+        const ry = isLight ? 0.0006 : 0.0025;
+        const rx = isLight ? 0.00035 : 0.0015;
+        group.rotation.y += ry;
+        group.rotation.x += rx;
         renderer.render(scene, camera);
         animId = requestAnimationFrame(animate);
       };
       if (!reduceMotion && !cancelled) animId = requestAnimationFrame(animate);
 
       const onStep = (e) => {
+        if (canvas.dataset.shapesInstance !== instanceId) return;
         const { index } = (e && e.detail) || {};
+        try { console.debug('[HeroShapes] onStep', { index }); } catch {}
         if (typeof index === 'number') morphToStep(index);
       };
       window.addEventListener('vk-hero-step', onStep);
 
+      // Defensive: pause/stop loops on visibility and page lifecycle changes
+      const stopLoops = () => {
+        try { console.debug('[HeroShapes] stopLoops()', { hadAnim: Boolean(animId), hadFade: Boolean(fadeId) }); } catch {}
+        if (animId) { cancelAnimationFrame(animId); animId = 0; }
+        if (fadeId) { cancelAnimationFrame(fadeId); fadeId = 0; }
+      };
+      const onVisibility = () => {
+        try { console.debug('[HeroShapes] visibilitychange', { hidden: document.hidden }); } catch {}
+        if (document.hidden) {
+          stopLoops();
+        } else if (!reduceMotion && canvas.dataset.shapesInstance === instanceId) {
+          if (!animId) animId = requestAnimationFrame(animate);
+        }
+      };
+      const onPageHide = () => { stopLoops(); };
+      const onBeforeUnload = () => { stopLoops(); };
+      document.addEventListener('visibilitychange', onVisibility);
+      window.addEventListener('pagehide', onPageHide);
+      window.addEventListener('beforeunload', onBeforeUnload);
+
       // Cleanup registration function
       return () => {
         window.removeEventListener('vk-hero-step', onStep);
+        document.removeEventListener('visibilitychange', onVisibility);
+        window.removeEventListener('pagehide', onPageHide);
+        window.removeEventListener('beforeunload', onBeforeUnload);
       };
     };
 
     let unregister = null;
-    init().then((fn) => { unregister = fn; });
+    init().then((fn) => { try { console.debug('[HeroShapes] init() done'); } catch {} unregister = fn; });
 
     return () => {
       cancelled = true;
+      try { console.debug('[HeroShapes] cleanup start', { hadAnim: Boolean(animId), hadFade: Boolean(fadeId) }); } catch {}
       try { if (unregister) unregister(); } catch {}
       if (handleResize) window.removeEventListener('resize', handleResize);
       if (resizeObserver) resizeObserver.disconnect();
@@ -416,6 +467,11 @@ export default function HeroShapesClient() {
         }
         if (renderer) renderer.dispose();
       } catch {}
+      // Release ownership if still held by this instance
+      if (canvas && canvas.dataset && canvas.dataset.shapesInstance === instanceId) {
+        try { delete canvas.dataset.shapesInstance; } catch {}
+      }
+      try { console.debug('[HeroShapes] cleanup done'); } catch {}
     };
   }, []);
 
