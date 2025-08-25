@@ -17,8 +17,8 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
-      <body className="font-body bg-vkbg text-vktext">
-        <main id="main" className="min-h-screen">{children}</main>
+      <body className="font-body bg-vkbg text-vktext min-h-screen flex flex-col">
+        <main id="main" className="flex-1">{children}</main>
       </body>
     </html>
   );

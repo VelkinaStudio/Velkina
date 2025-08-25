@@ -63,7 +63,7 @@ export default function LocaleLayout({children, params}) {
     <html lang={locale}>
       <head />
       <body
-        className="font-body bg-vkbg text-vktext"
+        className="font-body bg-vkbg text-vktext min-h-screen flex flex-col"
         data-anim="light"
         data-email-subject={messages.common?.emailSubject ?? 'Project Inquiry'}
         data-whatsapp-prefill={messages.common?.whatsappPrefill ?? "Hi Velkina! I'd like to discuss a project."}
@@ -88,7 +88,7 @@ export default function LocaleLayout({children, params}) {
         </header>
 
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <main id="main" className="pt-20 min-h-screen">{children}</main>
+          <main id="main" className="pt-20 flex-1">{children}</main>
         </NextIntlClientProvider>
 
         <footer className="max-w-7xl mx-auto px-6 md:px-10 py-14 text-white/70">
