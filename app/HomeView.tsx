@@ -178,32 +178,44 @@ export default function HomeView({messages, locale}: HomeViewProps) {
 
         {/* Güvenilen markalar (kompakt kayan liste) */}
         <h3 className="font-heading text-xl md:text-2xl mb-3">{h?.brandsTitle ?? 'Müşterilerimiz'}</h3>
-        <div className="relative overflow-hidden mb-6">
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24" style={{background:'linear-gradient(90deg, var(--vk-bg), transparent)'}}></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24" style={{background:'linear-gradient(270deg, var(--vk-bg), transparent)'}}></div>
-          <div className="ticker ticker--auto py-3">
-            <div className="flex items-center gap-12 pr-12">
-              <img className="brand brand--bw" data-brand="clown3d" src="/clients/clown3d.svg" alt="Clown 3D" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="raingroup" src="/clients/raingroup.svg" alt="Rain Group" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="novahealth" src="/clients/novahealth.svg" alt="Nova Health" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="skylinemedia" src="/clients/skyline-media.svg" alt="Skyline Media" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="marmarafoods" src="/clients/marmara-foods.svg" alt="Marmara Foods" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="bosporustravel" src="/clients/bosporus-travel.svg" alt="Bosporus Travel" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="anatoliahotel" src="/clients/anatolia-hotel.svg" alt="Anatolia Hotel" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="velkina" src="/clients/velkina.svg" alt="Velkina" loading="eager" decoding="async" draggable="false" />
+        {(() => {
+          const clients = [
+            { id: 'clown3d', name: 'Clown 3D', src: '/clients/clown3d.svg' },
+            { id: 'raingroup', name: 'Rain Group', src: '/clients/raingroup.svg' },
+            { id: 'novahealth', name: 'Nova Health', src: '/clients/novahealth.svg' },
+            { id: 'skyline-media', name: 'Skyline Media', src: '/clients/skyline-media.svg' },
+            { id: 'marmara-foods', name: 'Marmara Foods', src: '/clients/marmara-foods.svg' },
+            { id: 'bosporus-travel', name: 'Bosporus Travel', src: '/clients/bosporus-travel.svg' },
+            { id: 'anatolia-hotel', name: 'Anatolia Hotel', src: '/clients/anatolia-hotel.svg' },
+            { id: 'velkina', name: 'Velkina', src: '/clients/velkina.svg' }
+          ];
+          const Card = ({c}:{c:{id:string;name:string;src:string}}) => (
+            <div role="listitem" className="w-[260px] min-w-[260px] max-w-[260px] vk-glass border border-white/10 bg-white/5 rounded-xl px-4 py-3 shadow-soft flex items-center gap-3">
+              <img className="h-8 w-auto object-contain" src={c.src} alt={c.name} loading="eager" decoding="async" draggable="false" />
+              <span className="text-white/85 text-sm leading-tight font-medium whitespace-normal break-words">{c.name}</span>
             </div>
-            <div className="flex items-center gap-12 pr-12" aria-hidden="true">
-              <img className="brand brand--bw" data-brand="clown3d" src="/clients/clown3d.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="raingroup" src="/clients/raingroup.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="novahealth" src="/clients/novahealth.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="skylinemedia" src="/clients/skyline-media.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="marmarafoods" src="/clients/marmara-foods.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="bosporustravel" src="/clients/bosporus-travel.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="anatoliahotel" src="/clients/anatolia-hotel.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="velkina" src="/clients/velkina.svg" alt="" loading="lazy" decoding="async" draggable="false" />
+          );
+          const CardDupe = ({c}:{c:{id:string;name:string;src:string}}) => (
+            <div role="presentation" className="w-[260px] min-w-[260px] max-w-[260px] vk-glass border border-white/10 bg-white/5 rounded-xl px-4 py-3 shadow-soft flex items-center gap-3">
+              <img className="h-8 w-auto object-contain" src={c.src} alt="" loading="lazy" decoding="async" draggable="false" />
+              <span aria-hidden className="text-white/85 text-sm leading-tight font-medium whitespace-normal break-words">{c.name}</span>
             </div>
-          </div>
-        </div>
+          );
+          return (
+            <div className="relative overflow-hidden mb-6" aria-label="Müşterilerimizin logoları ve isimleri">
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-24" style={{background:'linear-gradient(90deg, var(--vk-bg), transparent)'}}></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-24" style={{background:'linear-gradient(270deg, var(--vk-bg), transparent)'}}></div>
+              <div className="ticker ticker--auto py-3" role="list">
+                <div className="flex items-stretch gap-4 pr-8">
+                  {clients.map((c) => (<Card key={`c1-${c.id}`} c={c} />))}
+                </div>
+                <div className="flex items-stretch gap-4 pr-8" aria-hidden="true">
+                  {clients.map((c) => (<CardDupe key={`c2-${c.id}`} c={c} />))}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Who we help removed in favor of results-focused strip */}
       </section>
