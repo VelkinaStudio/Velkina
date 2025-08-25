@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="48" viewBox="0 0 180 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nova Health logo">
+  <rect width="180" height="48" rx="8" fill="#0B0F14"/>
+  <g transform="translate(12,10)" fill="none" stroke="#34D399" stroke-width="3" stroke-linecap="round">
+    <path d="M0 14 L12 2 L24 14 L36 0 L48 14"/>
+  </g>
+  <text x="70" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#A7F3D0" font-weight="700">NOVA HEALTH</text>
+</svg>

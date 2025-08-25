@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160" height="48" viewBox="0 0 160 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Velkina logo">
+  <rect width="160" height="48" rx="8" fill="#0B0F14"/>
+  <g transform="translate(12,12)" fill="none" stroke="#22D3EE" stroke-width="3" stroke-linecap="round">
+    <path d="M0 20 L8 0 L16 20"/>
+    <path d="M24 20 L24 6 L36 20"/>
+  </g>
+  <text x="56" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#67E8F9" font-weight="700">VELKINA</text>
+</svg>

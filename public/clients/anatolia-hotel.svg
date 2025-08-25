@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="210" height="48" viewBox="0 0 210 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatolia Hotel logo">
+  <rect width="210" height="48" rx="8" fill="#0B0F14"/>
+  <g transform="translate(12,10)" stroke="#F472B6" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 20 L12 8 L24 20"/>
+    <path d="M6 20 L6 12 M18 20 L18 12"/>
+  </g>
+  <text x="60" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#FBCFE8" font-weight="700">ANATOLIA HOTEL</text>
+</svg>

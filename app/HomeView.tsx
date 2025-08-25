@@ -177,30 +177,30 @@ export default function HomeView({messages, locale}: HomeViewProps) {
         </div>
 
         {/* Güvenilen markalar (kompakt kayan liste) */}
-        <h3 className="font-heading text-xl md:text-2xl mb-3">{h?.brandsTitle ?? 'Our Clients'}</h3>
+        <h3 className="font-heading text-xl md:text-2xl mb-3">{h?.brandsTitle ?? 'Müşterilerimiz'}</h3>
         <div className="relative overflow-hidden mb-6">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-24" style={{background:'linear-gradient(90deg, var(--vk-bg), transparent)'}}></div>
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24" style={{background:'linear-gradient(270deg, var(--vk-bg), transparent)'}}></div>
           <div className="ticker ticker--auto py-3">
             <div className="flex items-center gap-12 pr-12">
-              <img className="brand brand--bw" data-brand="vercel" src="/brands/vercel.svg" alt="Vercel" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="cloudflare" src="/brands/cloudflare.svg" alt="Cloudflare" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="aws" src="/brands/aws.svg" alt="AWS" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="github" src="/brands/github.svg" alt="GitHub" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="nextjs" src="/brands/nextjs.svg" alt="Next.js" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="stripe" src="/brands/stripe.svg" alt="Stripe" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="postgresql" src="/brands/postgresql.svg" alt="PostgreSQL" loading="eager" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="react" src="/brands/react.svg" alt="React" loading="eager" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="clown3d" src="/clients/clown3d.svg" alt="Clown 3D" loading="eager" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="raingroup" src="/clients/raingroup.svg" alt="Rain Group" loading="eager" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="novahealth" src="/clients/novahealth.svg" alt="Nova Health" loading="eager" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="skylinemedia" src="/clients/skyline-media.svg" alt="Skyline Media" loading="eager" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="marmarafoods" src="/clients/marmara-foods.svg" alt="Marmara Foods" loading="eager" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="bosporustravel" src="/clients/bosporus-travel.svg" alt="Bosporus Travel" loading="eager" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="anatoliahotel" src="/clients/anatolia-hotel.svg" alt="Anatolia Hotel" loading="eager" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="velkina" src="/clients/velkina.svg" alt="Velkina" loading="eager" decoding="async" draggable="false" />
             </div>
             <div className="flex items-center gap-12 pr-12" aria-hidden="true">
-              <img className="brand brand--bw" data-brand="vercel" src="/brands/vercel.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="cloudflare" src="/brands/cloudflare.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="aws" src="/brands/aws.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="github" src="/brands/github.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="nextjs" src="/brands/nextjs.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="stripe" src="/brands/stripe.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="postgresql" src="/brands/postgresql.svg" alt="" loading="lazy" decoding="async" draggable="false" />
-              <img className="brand brand--bw" data-brand="react" src="/brands/react.svg" alt="" loading="lazy" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="clown3d" src="/clients/clown3d.svg" alt="" loading="lazy" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="raingroup" src="/clients/raingroup.svg" alt="" loading="lazy" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="novahealth" src="/clients/novahealth.svg" alt="" loading="lazy" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="skylinemedia" src="/clients/skyline-media.svg" alt="" loading="lazy" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="marmarafoods" src="/clients/marmara-foods.svg" alt="" loading="lazy" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="bosporustravel" src="/clients/bosporus-travel.svg" alt="" loading="lazy" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="anatoliahotel" src="/clients/anatolia-hotel.svg" alt="" loading="lazy" decoding="async" draggable="false" />
+              <img className="brand brand--bw" data-brand="velkina" src="/clients/velkina.svg" alt="" loading="lazy" decoding="async" draggable="false" />
             </div>
           </div>
         </div>

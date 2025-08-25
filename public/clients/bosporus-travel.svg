@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220" height="48" viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bosporus Travel logo">
+  <rect width="220" height="48" rx="8" fill="#0B0F14"/>
+  <g transform="translate(12,12)">
+    <path d="M0 12 C20 0, 40 24, 60 12" fill="none" stroke="#38BDF8" stroke-width="3"/>
+    <circle cx="62" cy="12" r="3" fill="#38BDF8"/>
+  </g>
+  <text x="80" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#BAE6FD" font-weight="700">BOSPORUS TRAVEL</text>
+</svg>

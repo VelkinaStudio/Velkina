@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="220" height="48" viewBox="0 0 220 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marmara Foods logo">
+  <rect width="220" height="48" rx="8" fill="#0B0F14"/>
+  <g transform="translate(12,10)">
+    <circle cx="18" cy="14" r="12" fill="#84CC16"/>
+    <path d="M8 18 C14 22, 22 22, 28 18" stroke="#65A30D" stroke-width="3" fill="none"/>
+  </g>
+  <text x="60" y="30" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#D9F99D" font-weight="700">MARMARA FOODS</text>
+</svg>
