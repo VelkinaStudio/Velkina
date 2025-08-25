@@ -47,7 +47,8 @@
     "resultsTitle": "Kanıtlanmış Sonuçlar",
     "resultsSubtitle": "Son projelerden öne çıkan sonuçlar",
     "brandsTitle": "Müşterilerimiz",
-    "brandsCarouselLabel": "Güvenilen markalar karuseli",
+     "brandsCarouselLabel": "Güvenilen markalar karuseli",
+     "stackTitle": "Teknolojilerimiz",
     "testimonials": {
       "title": "Müşteriler ne diyor",
       "carouselLabel": "Müşteri yorumları karuseli",
