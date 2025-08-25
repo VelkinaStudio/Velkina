@@ -344,7 +344,106 @@
       "integrations": "Integrations"
     },
     "quickContact": "Quick Contact",
-    "quickContactDesc": "We reply within one business day. No pressure; just clarity."
+    "quickContactDesc": "We reply within one business day. No pressure; just clarity.",
+    "virtualTour": "Virtual Tour",
+    "categories": {
+      "Web": "Web",
+      "AI": "AI",
+      "Data": "Data",
+      "Growth": "Growth",
+      "Integrations": "Integrations"
+    },
+    "projects": {
+      "title": "Projects & Case Studies",
+      "items": [
+        {
+          "cat": "Web | Beauty | Growth",
+          "title": "Dr. Sevim Aydın Beauty",
+          "url": "https://www.drsevimaydinbeauty.com",
+          "tourSrc": "https://www.google.com/maps/embed?pb=!4v1756115600484!6m8!1m7!1sCAoSHENJQUJJaEF1UWV0M0NyelNKNW9wNmF6UXFYSUc.!2m2!1d41.09449186254232!2d28.98261306933077!3f240!4f0!5f0.7820865974627469",
+          "desc": "We designed a modern, aesthetic and trustworthy website for a beauty and care clinic—presenting services online with clarity and appeal.",
+          "highlights": [
+            "User‑friendly interface with integrated online appointment system",
+            "SEO‑optimized content → +40% organic visibility",
+            "Increased brand trust and patient engagement",
+            "Responsive design → mobile sessions rose to 70%"
+          ]
+        },
+        {
+          "cat": "Web | Manufacturing | B2B",
+          "title": "TP Thermoplast",
+          "url": "https://tpthermoplast.com",
+          "desc": "B2B‑focused corporate website for a plastics manufacturer to establish a reliable touchpoint with international buyers.",
+          "highlights": [
+            "Multi‑language structure → speaks to export‑oriented audience",
+            "Product catalog + inquiry forms for lead capture",
+            "Performance optimization → page load time cut by 50%",
+            "Reported increase in global business connections"
+          ]
+        },
+        {
+          "cat": "Web | Home Décor | Growth",
+          "title": "Rain Group",
+          "url": "https://www.raingroupas.com",
+          "desc": "Corporate identity and e‑commerce foundation for a home textiles and décor brand, yielding a modern, trustworthy and international image.",
+          "highlights": [
+            "Minimal, trustworthy UI/UX",
+            "Brand identity and tone of voice established",
+            "SEO & social integrations → traffic grew 60%",
+            "E‑commerce foundation prepared (future phase integration)"
+          ]
+        },
+        {
+          "cat": "Web | Education | CRM",
+          "title": "EduTurkia",
+          "url": "https://www.eduturkia.com/",
+          "desc": "Education consultancy platform for international students in Turkey. Comprehensive system with application management, CRM integration and university catalog.",
+          "highlights": [
+            "Admin‑managed university/student records",
+            "CRM integration → student tracking 100% digital",
+            "Multi‑language (TR/EN) → expanded reach",
+            "SEO & ads integrations → significant increase in applications"
+          ]
+        },
+        {
+          "cat": "Web | Art | Portfolio",
+          "title": "Ali Cengiz İşcanlı",
+          "url": "https://www.alicengiziscanli.com",
+          "desc": "Online portfolio that highlights the artist’s work with a clean, gallery‑like presentation for a global audience.",
+          "highlights": [
+            "Minimal gallery design → art‑first presentation",
+            "Multi‑language content → global reach",
+            "Optimized, fast‑loading images",
+            "Distinct online brand identity for the artist"
+          ]
+        },
+        {
+          "cat": "Web | 3D | Creative",
+          "title": "Clown3D",
+          "url": "https://www.clown3d.com",
+          "desc": "Playful, modern website for a 3D design and visualization studio to showcase creative projects and inspire prospects.",
+          "highlights": [
+            "Dynamic animations and 3D visuals",
+            "Creative UI → strong first impression",
+            "SEO integration → improved organic visibility",
+            "Portfolio structure to organize and present work"
+          ]
+        },
+        {
+          "cat": "Web | Personal | Portfolio",
+          "title": "Atar Avcı Hukuk Bürosu",
+          "url": "https://www.ataravci.com.tr",
+          "tourSrc": "https://www.google.com/maps/embed?pb=!4v1756115654370!6m8!1m7!1sCAoSHENJQUJJaERtNlJVa0NCdm5aWEYxaWhkelZkcGo.!2m2!1d41.06985723145268!2d28.9891160676344!3f320!4f20!5f0.7820865974627469",
+          "desc": "Professional portfolio site for a law practice to present services and build a modern online presence.",
+          "highlights": [
+            "Minimal design → personal brand‑centric look",
+            "Responsive across devices",
+            "SEO optimization improved visibility",
+            "Contact forms → higher inquiry conversion"
+          ]
+        }
+      ]
+    }
   },
   "about": {
     "title": "About Velkina",

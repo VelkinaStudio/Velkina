@@ -21,6 +21,8 @@ export default function UseCasesView({messages}: UseCasesViewProps) {
     Integrations: uc?.categories?.Integrations ?? 'Entegrasyonlar'
   } as const;
 
+  // Prefer real projects from i18n; fall back to generic use cases
+  const projectItems = Array.isArray((uc as any)?.projects?.items) ? (uc as any).projects.items : null;
   const items = [
     {cat:'Web', title:'Pazarlama Sitesi + CMS', desc:'Hızlı açılan, SEO dostu site + blog; kolay içerik yönetimi.'},
     {cat:'Web', title:'Fiyatlandırma + Hesaplayıcı', desc:'Planları netleştirir, soruları azaltır; satış döngüsünü kısaltır.'},
@@ -39,7 +41,7 @@ export default function UseCasesView({messages}: UseCasesViewProps) {
   return (
     <div className="pt-4">
       <section className="max-w-7xl mx-auto px-6 md:px-10 py-12">
-        <h1 className="font-heading text-4xl md:text-5xl">{uc?.title ?? 'Kullanım Alanları'}</h1>
+        <h1 className="font-heading text-4xl md:text-5xl">{(uc as any)?.projects?.title ?? (uc?.title ?? 'Kullanım Alanları')}</h1>
         <p className="text-white/80 max-w-2xl mt-3">{uc?.subtitle ?? 'Hızlı, gözlemlenebilir ve ölçeklenebilir şekilde teslim ettiğimiz sistemlerden bir seçki. Dönüşüm, netlik ve güveni artırmak için tasarlandı.'}</p>
         <div className="mt-6 flex flex-wrap gap-2" id="uc-filters" role="radiogroup" aria-label="Kullanım alanı filtreleri">
           {['All','Web','AI','Data','Growth','Integrations'].map((f,i)=> (
@@ -52,13 +54,49 @@ export default function UseCasesView({messages}: UseCasesViewProps) {
 
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-16">
         <div id="uc-grid" className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((it,i)=> (
-            <article key={i} className="vk-glass border border-white/10 rounded-xl p-6 shadow-soft" data-cat={it.cat}>
-              <h3 className="font-heading text-xl">{it.title}</h3>
-              <p className="text-white/80 mt-2">{it.desc}</p>
-              <div className="text-xs text-white/60 mt-3">{(catLabel as any)[it.cat]}</div>
-            </article>
-          ))}
+          {(projectItems ?? items).map((it:any,i:number)=> {
+            const allowed = ['Web','AI','Data','Growth','Integrations'] as const;
+            const tags = String(it.cat||'').split('|').map((s:string)=>s.trim()).filter(Boolean);
+            const primary = (tags.find((t:string)=> (allowed as readonly string[]).includes(t)) || tags[0] || 'Web') as string;
+            return (
+              <article key={i} className="vk-glass border border-white/10 rounded-xl p-6 shadow-soft" data-cat={primary}>
+                <h3 className="font-heading text-xl">{it.title}</h3>
+                {it.url && (
+                  <a href={it.url} target="_blank" rel="noopener noreferrer" className="text-xs text-vkcyan/80 hover:text-vkcyan/100 underline underline-offset-2 break-all">{it.url}</a>
+                )}
+                {it.desc && (
+                  <p className="text-white/80 mt-2">{it.desc}</p>
+                )}
+                {Array.isArray(it.highlights) && it.highlights.length>0 && (
+                  <ul className="mt-3 list-disc list-inside text-white/75 text-sm space-y-1">
+                    {it.highlights.slice(0,4).map((h:string, idx:number)=> (
+                      <li key={idx}>{h}</li>
+                    ))}
+                  </ul>
+                )}
+                {it.tourSrc && (
+                  <details className="mt-4">
+                    <summary className="cursor-pointer text-sm text-vkcyan/90 hover:text-vkcyan/100">
+                      {uc?.virtualTour ?? 'Virtual Tour'}
+                    </summary>
+                    <div className="mt-2 rounded-lg overflow-hidden border border-white/10 bg-black/20">
+                      <div className="w-full h-64 md:h-72">
+                        <iframe
+                          src={it.tourSrc}
+                          title={`${it.title} – ${uc?.virtualTour ?? 'Virtual Tour'}`}
+                          loading="lazy"
+                          allowFullScreen
+                          referrerPolicy="no-referrer-when-downgrade"
+                          className="w-full h-full border-0"
+                        />
+                      </div>
+                    </div>
+                  </details>
+                )}
+                <div className="text-xs text-white/60 mt-3">{(catLabel as any)[primary] || primary}</div>
+              </article>
+            );
+          })}
         </div>
 
         <div className="mt-12 rounded-xl border border-white/10 vk-glass shadow-soft p-6 text-center">

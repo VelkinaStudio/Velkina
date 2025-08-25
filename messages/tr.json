@@ -315,7 +315,106 @@
       "integrations": "Entegrasyonlar"
     },
     "quickContact": "Hızlı İletişim",
-    "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik."
+    "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.",
+    "virtualTour": "Sanal Tur",
+    "categories": {
+      "Web": "Web",
+      "AI": "Yapay Zekâ",
+      "Data": "Veri",
+      "Growth": "Büyüme",
+      "Integrations": "Entegrasyonlar"
+    },
+    "projects": {
+      "title": "Projeler & Vaka Çalışmaları",
+      "items": [
+        {
+          "cat": "Web | Beauty | Growth",
+          "title": "Dr. Sevim Aydın Beauty",
+          "url": "https://www.drsevimaydinbeauty.com",
+          "tourSrc": "https://www.google.com/maps/embed?pb=!4v1756115600484!6m8!1m7!1sCAoSHENJQUJJaEF1UWV0M0NyelNKNW9wNmF6UXFYSUc.!2m2!1d41.09449186254232!2d28.98261306933077!3f240!4f0!5f0.7820865974627469",
+          "desc": "Güzellik ve bakım merkezi için modern, estetik ve güven veren bir web sitesi tasarladık. Hedef, klinik hizmetlerini online ortamda daha şeffaf ve çekici bir şekilde sunmaktı.",
+          "highlights": [
+            "Kullanıcı dostu arayüz ile online randevu sistemi entegrasyonu",
+            "SEO uyumlu içerik → organik görünürlük +40%",
+            "Marka güvenilirliği ve hasta etkileşiminde artış",
+            "Responsive tasarım sayesinde mobil cihazlardan erişim %70’e çıktı"
+          ]
+        },
+        {
+          "cat": "Web | Manufacturing | B2B",
+          "title": "TP Thermoplast",
+          "url": "https://tpthermoplast.com",
+          "desc": "Plastik üretim firması için B2B odaklı kurumsal web sitesi hazırlandı. Hedef, uluslararası alıcılarla güvenilir bir iletişim noktası oluşturmaktı.",
+          "highlights": [
+            "Çok dilli yapı → ihracat hedefli müşteri kitlesine hitap",
+            "Ürün kataloğu + talep formları ile lead toplama",
+            "Web hız optimizasyonu → sayfa yüklenme süresi %50 kısaldı",
+            "Global iş bağlantılarında artış raporlandı"
+          ]
+        },
+        {
+          "cat": "Web | Home Décor | Growth",
+          "title": "Rain Group",
+          "url": "https://www.raingroupas.com",
+          "desc": "Ev tekstili ve dekorasyon ürünleri için kurumsal kimlik ve e-ticaret altyapısı kuruldu. Marka modern, güvenilir ve uluslararası bir imaj kazandı.",
+          "highlights": [
+            "Minimalist, güven veren UI/UX tasarım",
+            "Kurumsal kimlik + marka dili oluşturuldu",
+            "SEO & sosyal medya entegrasyonu ile trafik %60 büyüdü",
+            "E-ticaret için altyapı hazırlandı (gelecek faz entegrasyonu)"
+          ]
+        },
+        {
+          "cat": "Web | Education | CRM",
+          "title": "EduTurkia",
+          "url": "https://www.eduturkia.com/",
+          "desc": "Yabancı öğrenciler için Türkiye’de eğitim danışmanlığı platformu. Başvuru yönetimi, CRM entegrasyonu ve üniversite kataloğu ile kapsamlı bir sistem kuruldu.",
+          "highlights": [
+            "Admin panelinden yönetilebilir üniversite/öğrenci kayıt sistemi",
+            "CRM entegrasyonu → öğrenci takibi %100 dijital",
+            "Çok dilli yapı (Türkçe/İngilizce) → erişim artırıldı",
+            "SEO & reklam entegrasyonları → öğrenci başvurularında ciddi artış"
+          ]
+        },
+        {
+          "cat": "Web | Art | Portfolio",
+          "title": "Ali Cengiz İşcanlı",
+          "url": "https://www.alicengiziscanli.com",
+          "desc": "Sanatçının eserlerini ön plana çıkaran online portfolyo web sitesi tasarlandı. Hedef, uluslararası sanat meraklılarına ulaşmak ve eserleri modern bir galeride sergiler gibi sunmaktı.",
+          "highlights": [
+            "Minimalist galeri tasarımı → sanat odaklı görünüm",
+            "Çok dilli içerik → global izleyici kitlesine erişim",
+            "Hızlı yüklenen optimize edilmiş görseller",
+            "Sanatçıya özgü marka kimliği online taşındı"
+          ]
+        },
+        {
+          "cat": "Web | 3D | Creative",
+          "title": "Clown3D",
+          "url": "https://www.clown3d.com",
+          "desc": "3D tasarım ve görselleştirme odaklı kreatif ajans için eğlenceli ve modern bir web sitesi oluşturuldu. Hedef, yaratıcı projeleri sergilemek ve potansiyel müşterilere ilham vermekti.",
+          "highlights": [
+            "Dinamik animasyonlar ve 3D görseller",
+            "Yaratıcı UI → ziyaretçide güçlü ilk izlenim",
+            "SEO entegrasyonu → organik aramalarda görünürlük",
+            "Portfolyo yapısı ile işlerin düzenli sergilenmesi"
+          ]
+        },
+        {
+          "cat": "Web | Personal | Portfolio",
+          "title": "Atar Avcı Hukuk Bürosu",
+          "url": "https://www.ataravci.com.tr",
+          "tourSrc": "https://www.google.com/maps/embed?pb=!4v1756115654370!6m8!1m7!1sCAoSHENJQUJJaERtNlJVa0NCdm5aWEYxaWhkelZkcGo.!2m2!1d41.06985723145268!2d28.9891160676344!3f320!4f20!5f0.7820865974627469",
+          "desc": "Profesyonel kişisel portfolyo sitesi hazırlandı. Hedef, müşterilere hizmetlerini tanıtmak ve modern bir online imaj oluşturmaktı.",
+          "highlights": [
+            "Minimalist tasarım → kişisel marka odaklı görünüm",
+            "Responsive yapı ile her cihazda sorunsuz deneyim",
+            "SEO optimizasyonu ile görünürlük artırıldı",
+            "İletişim formları → müşteri dönüş oranında artış"
+          ]
+        }
+      ]
+    }
   },
   "about": {
     "title": "Velkina Hakkında",
