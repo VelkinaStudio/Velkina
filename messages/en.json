@@ -43,6 +43,16 @@
     "resultsSubtitle": "Highlights from recent work",
     "brandsTitle": "Our Clients",
     "brandsCarouselLabel": "Trusted brands carousel",
+    "testimonials": {
+      "title": "What clients say",
+      "carouselLabel": "Testimonials carousel",
+      "items": [
+        {"quote":"Velkina shipped our site in weeks with a clean design system.","name":"Aylin K.","role":"CMO, SaaS"},
+        {"quote":"Clear scope, fast iterations and measurable results.","name":"Kerem D.","role":"Founder"},
+        {"quote":"A senior team end‑to‑end—no handovers, just momentum.","name":"Mert S.","role":"Product Lead"},
+        {"quote":"Edge hosting and observability gave us confidence to ship.","name":"Elif A.","role":"Engineering Manager"}
+      ]
+    },
     "metrics": {
       "published": {
         "label": "Published websites and apps",

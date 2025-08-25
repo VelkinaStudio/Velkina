@@ -178,20 +178,10 @@ export default function HomeView({messages, locale}: HomeViewProps) {
 
         {/* Güvenilen markalar (kompakt kayan liste) */}
         <h3 className="font-heading text-xl md:text-2xl mb-3">{h?.brandsTitle ?? 'Our Clients'}</h3>
-        <div className="relative overflow-hidden mb-6" aria-label={h?.brandsCarouselLabel ?? 'Güvenilen markalar karuseli'} role="group" tabIndex={0}>
+        <div className="relative overflow-hidden mb-6">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-24" style={{background:'linear-gradient(90deg, var(--vk-bg), transparent)'}}></div>
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24" style={{background:'linear-gradient(270deg, var(--vk-bg), transparent)'}}></div>
-          {/* Pause/Play control */}
-          <button
-            data-ticker-toggle
-            aria-label={common?.carouselPause ?? 'Karuseli duraklat'}
-            aria-pressed="false"
-            className="absolute right-2 top-2 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/10 border border-white/20 hover:bg-white/15 backdrop-blur-sm"
-          >
-            {/* Pause icon by default; JS updates aria-label/state */}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4.5 h-4.5" aria-hidden="true"><path strokeLinecap="round" d="M8 5h2v14H8zM14 5h2v14h-2z"/></svg>
-          </button>
-          <div data-ticker className="ticker py-3">
+          <div className="ticker ticker--auto py-3">
             <div className="flex items-center gap-12 pr-12">
               <img className="brand brand--bw" data-brand="vercel" src="/brands/vercel.svg" alt="Vercel" loading="eager" decoding="async" draggable="false" />
               <img className="brand brand--bw" data-brand="cloudflare" src="/brands/cloudflare.svg" alt="Cloudflare" loading="eager" decoding="async" draggable="false" />
@@ -218,9 +208,50 @@ export default function HomeView({messages, locale}: HomeViewProps) {
         {/* Who we help removed in favor of results-focused strip */}
       </section>
 
-      
-
- 
+      {/* Testimonials */}
+      <section id="testimonials" className="max-w-7xl mx-auto px-6 md:px-10 py-12">
+        <h2 className="font-heading text-3xl md:text-4xl mb-6">{h?.testimonials?.title ?? 'What clients say'}</h2>
+        {(() => {
+          const items = (Array.isArray(h?.testimonials?.items) && h?.testimonials?.items?.length)
+            ? h.testimonials.items
+            : [
+                { quote: 'Velkina shipped our site in weeks with a clean design system.', name: 'Aylin K.', role: 'CMO, SaaS' },
+                { quote: 'Clear scope, fast iterations and measurable results.', name: 'Kerem D.', role: 'Founder' },
+                { quote: 'A senior team end‑to‑end—no handovers, just momentum.', name: 'Mert S.', role: 'Product Lead' },
+                { quote: 'Edge hosting and observability gave us confidence to ship.', name: 'Elif A.', role: 'Engineering Manager' }
+              ];
+          return (
+            <div className="relative overflow-hidden">
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-24" style={{background:'linear-gradient(90deg, var(--vk-bg), transparent)'}}></div>
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-24" style={{background:'linear-gradient(270deg, var(--vk-bg), transparent)'}}></div>
+              <div className="ticker ticker--auto py-4">
+                <div className="flex items-stretch gap-4 pr-8">
+                  {items.map((item: any, idx: number) => (
+                    <figure key={`t1-${idx}`} className="min-w-[280px] max-w-[380px] vk-glass border border-white/10 rounded-xl p-5 shadow-soft">
+                      <blockquote className="text-white/80">“{item?.quote}”</blockquote>
+                      <figcaption className="mt-3 text-sm text-white/70">
+                        <span className="font-medium text-white/90">{item?.name}</span>
+                        {item?.role ? <span className="text-white/60"> — {item.role}</span> : null}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+                <div className="flex items-stretch gap-4 pr-8" aria-hidden="true">
+                  {items.map((item: any, idx: number) => (
+                    <figure key={`t2-${idx}`} className="min-w-[280px] max-w-[380px] vk-glass border border-white/10 rounded-xl p-5 shadow-soft">
+                      <blockquote className="text-white/80">“{item?.quote}”</blockquote>
+                      <figcaption className="mt-3 text-sm text-white/70">
+                        <span className="font-medium text-white/90">{item?.name}</span>
+                        {item?.role ? <span className="text-white/60"> — {item.role}</span> : null}
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })()}
+      </section>
 
       {/* Process removed per request */}
 
@@ -277,19 +308,10 @@ export default function HomeView({messages, locale}: HomeViewProps) {
       {/* Tech Stack Carousel */}
       <section id="stack" className="max-w-7xl mx-auto px-6 md:px-10 py-16 relative">
         <h2 className="font-heading text-3xl md:text-4xl mb-6">{h?.stackTitle ?? 'Teknoloji Yığını'}</h2>
-        <div className="relative overflow-hidden" role="group" aria-label={h?.techCarouselLabel ?? 'Teknoloji logoları karuseli'} tabIndex={0}>
+        <div className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-24" style={{background:'linear-gradient(90deg, var(--vk-bg), transparent)'}}></div>
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24" style={{background:'linear-gradient(270deg, var(--vk-bg), transparent)'}}></div>
-          {/* Pause/Play control */}
-          <button
-            data-ticker-toggle
-            aria-label={common?.carouselPause ?? 'Karuseli duraklat'}
-            aria-pressed="false"
-            className="absolute right-2 top-2 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/10 border border-white/20 hover:bg-white/15 backdrop-blur-sm"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4.5 h-4.5" aria-hidden="true"><path strokeLinecap="round" d="M8 5h2v14H8zM14 5h2v14h-2z"/></svg>
-          </button>
-          <div data-ticker className="ticker py-4">
+          <div className="ticker ticker--auto py-4">
             <div className="flex items-center gap-12 pr-12">
               <div className="flex flex-col items-center min-w-[84px]">
                 <img className="brand w-10 h-10 object-contain" data-brand="nextjs" src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" alt="Next.js" loading="eager" decoding="async" draggable="false" />

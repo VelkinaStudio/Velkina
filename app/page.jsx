@@ -174,20 +174,10 @@ export default function HomePage(){
 
         {/* Güvenilen markalar (kompakt kayan liste) */}
         <h3 className="font-heading text-xl md:text-2xl mb-3">{t?.brandsTitle ?? 'Our Clients'}</h3>
-        <div className="relative overflow-hidden mb-6" aria-label={t?.brandsCarouselLabel ?? 'Güvenilen markalar karuseli'} role="group" tabIndex={0}>
+        <div className="relative overflow-hidden mb-6">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-24" style={{background:'linear-gradient(90deg, var(--vk-bg), transparent)'}}></div>
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24" style={{background:'linear-gradient(270deg, var(--vk-bg), transparent)'}}></div>
-          {/* Pause/Play control */}
-          <button
-            data-ticker-toggle
-            aria-label={messages?.common?.carouselPause ?? 'Karuseli duraklat'}
-            aria-pressed="false"
-            className="absolute right-2 top-2 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/10 border border-white/20 hover:bg-white/15 backdrop-blur-sm"
-          >
-            {/* Pause icon by default; JS updates aria-label/state */}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4.5 h-4.5" aria-hidden="true"><path strokeLinecap="round" d="M8 5h2v14H8zM14 5h2v14h-2z"/></svg>
-          </button>
-          <div data-ticker className="ticker py-3">
+          <div className="ticker ticker--auto py-3">
             <div className="flex items-center gap-12 pr-12">
               <img className="brand brand--bw" data-brand="vercel" src="/brands/vercel.svg" alt="Vercel" loading="eager" decoding="async" draggable="false" />
               <img className="brand brand--bw" data-brand="cloudflare" src="/brands/cloudflare.svg" alt="Cloudflare" loading="eager" decoding="async" draggable="false" />
@@ -289,19 +279,10 @@ export default function HomePage(){
       {/* Tech Stack Carousel */}
       <section id="stack" className="max-w-7xl mx-auto px-6 md:px-10 py-16 relative">
         <h2 className="font-heading text-3xl md:text-4xl mb-6">{messages?.tech?.stackTitle ?? 'Teknoloji Yığını'}</h2>
-        <div className="relative overflow-hidden" role="group" aria-label={messages?.tech?.carouselLabel ?? 'Teknoloji logoları karuseli'} tabIndex={0}>
+        <div className="relative overflow-hidden">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-24" style={{background:'linear-gradient(90deg, var(--vk-bg), transparent)'}}></div>
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24" style={{background:'linear-gradient(270deg, var(--vk-bg), transparent)'}}></div>
-          {/* Pause/Play control */}
-          <button
-            data-ticker-toggle
-            aria-label={messages?.common?.carouselPause ?? 'Karuseli duraklat'}
-            aria-pressed="false"
-            className="absolute right-2 top-2 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/10 border border-white/20 hover:bg-white/15 backdrop-blur-sm"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4.5 h-4.5" aria-hidden="true"><path strokeLinecap="round" d="M8 5h2v14H8zM14 5h2v14h-2z"/></svg>
-          </button>
-          <div data-ticker className="ticker py-4">
+          <div className="ticker ticker--auto py-4">
             <div className="flex items-center gap-12 pr-12">
               <div className="flex flex-col items-center min-w-[84px]">
                 <img className="brand w-10 h-10 object-contain" data-brand="nextjs" src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" alt="Next.js" loading="eager" decoding="async" draggable="false" />

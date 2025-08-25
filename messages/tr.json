@@ -48,6 +48,16 @@
     "resultsSubtitle": "Son projelerden öne çıkan sonuçlar",
     "brandsTitle": "Müşterilerimiz",
     "brandsCarouselLabel": "Güvenilen markalar karuseli",
+    "testimonials": {
+      "title": "Müşteriler ne diyor",
+      "carouselLabel": "Müşteri yorumları karuseli",
+      "items": [
+        {"quote":"Velkina, temiz bir tasarım sistemiyle sitemizi haftalar içinde yayına aldı.","name":"Aylin K.","role":"CMO, SaaS"},
+        {"quote":"Net kapsam, hızlı iterasyonlar ve ölçülebilir sonuçlar.","name":"Kerem D.","role":"Kurucu"},
+        {"quote":"Uçtan uca kıdemli ekip—handover yok, sadece momentum.","name":"Mert S.","role":"Ürün Lideri"},
+        {"quote":"Edge barındırma ve gözlemlenebilirlik, güvenle yayınlamamızı sağladı.","name":"Elif A.","role":"Mühendislik Yöneticisi"}
+      ]
+    },
     "metrics": {
       "published": {
         "label": "Yayınlanan web sitesi/uygulama",

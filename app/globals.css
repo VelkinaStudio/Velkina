@@ -57,6 +57,7 @@ html { background: var(--vk-bg); color: var(--vk-text); scroll-behavior: smooth;
 
 /* Carousel */
 .ticker { display:flex; gap:48px; will-change: transform; }
+.ticker--auto { animation: vk-ticker 48s linear infinite; }
 .brand { height: 28px; width: auto; opacity: .9; transition: opacity .2s ease, filter .25s ease, transform .25s ease; filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)); transform: scale(var(--bscale, 1)); --glow-brand: rgba(0,255,255,.25); }
 .brand:hover { opacity: 1; filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)) drop-shadow(0 0 10px var(--glow-brand)) drop-shadow(0 0 18px rgba(162,89,255,.2)); }
 .brand[data-brand="aws"], .brand[data-brand="kubernetes"], .brand[data-brand="grafana"] { --bscale: .92; }
