@@ -131,32 +131,32 @@
     }
   },
   "services": {
-    "metaTitle": "Velkina — Yapay Zeka Ajanı Hizmetleri",
-    "metaDesc": "İşletme otomasyonu, müşteri hizmetleri ve operasyonel verimlilik için uçtan uca yapay zeka ajanı hizmetleri—zeka, güvenilirlik ve ölçülebilir etki için tasarlandı.",
-    "title": "Yapay Zeka Ajanı Hizmetleri",
-    "heroDesc": "Konseptten kuruluma—tek ekip, tek akıllı sistem. Yapay zeka ajanlarını nasıl tasarladığımızı, eğittiğimizi ve optimize ettiğimizi keşfedin.",
+    "metaTitle": "Velkina — Hizmetlerimiz",
+    "metaDesc": "Tam kapsam yazılım ajansı: web siteleri, uygulamalar, AI otomasyonu, Meta/Google reklamları, SEO, CRM/CMS entegrasyonları, analitik & CRO, barındırma & DevOps.",
+    "title": "Hizmetlerimiz",
+    "heroDesc": "Fikirden büyümeye—web, uygulama, AI otomasyonu, pazarlama, SEO ve entegrasyonlarda tek ekip.",
     "modelsTitle": "Çalışma Modelleri",
     "includedTitle": "Her Çalışmada Dahil",
     "models": [
-      "Proje: Net kapsamlı yapay zeka ajanı, belirli yetenekler, hızlı kurulum.",
-      "Sprint: 2-4 haftalık ajan eğitimi ve iyileştirme döngüleri.",
-      "Süreli Anlaşma: Sürekli optimizasyon, izleme ve destek."
+      "Proje: Net kapsam, şeffaf çıktılar, hızlı teslim.",
+      "Sprint: 1–2 haftalık iterasyon ve deney döngüleri.",
+      "Süreli Anlaşma: Yol haritası, optimizasyon ve bakım."
     ],
     "included": [
-      "Net kapsam, kilometre taşları ve haftalık ilerleme değerlendirmeleri",
-      "Konuşma tasarımı ve belgelenmiş etkileşim akışları",
-      "Performans metrikleri, doğruluk ve güvenilirlik kriterleri",
-      "Kaynak kodu ve eğitim verileri sizde; güvenli kurulum",
-      "Gözlemlenebilirlik: konuşma logları, metrikler ve çalışma süresi",
-      "Devir dokümanları, eğitim videoları ve geri alma planı"
+      "Net kapsam, kilometre taşları ve haftalık sprint değerlendirmeleri",
+      "Tasarım sistemi token’ları ve belgelenmiş bileşenler",
+      "Performans bütçesi, erişilebilirlik ve SEO temelleri",
+      "Kaynak kodu kuruluşunuzda; önizlemeli CI/CD",
+      "Gözlemlenebilirlik: loglar, metrikler ve uptime panoları",
+      "Devir dokümanları, eğitim videoları ve makul geri alma planı"
     ],
     "faqs": [
-      {"q":"Nasıl başlıyoruz?","a":"İş süreçlerinizi ve otomasyon ihtiyaçlarınızı anlamak için 30–45 dakikalık bir görüşme ile başlarız. Ardından ajan kapsamı, zaman çizelgesi ve başarı metrikleri ile ilerleriz."},
-      {"q":"Nasıl iletişim kuruyor ve teslim ediyoruz?","a":"Demolar, konuşma örnekleri ve açık proje panosu ile haftalık ilerleme değerlendirmeleri. Her iterasyon için test ortamları sağlarız."},
-      {"q":"Fikri mülkiyet kime ait?","a":"Size. Kaynak kodu ve eğitim verileri kuruluşunuzda barınır; uygulanabilir olduğunda üçüncü taraf bileşenler için açık lisanslar kullanırız."},
-      {"q":"Kurulum sonrası destek var mı?","a":"Evet — süreli anlaşmalarla sürekli optimizasyon, eğitim ve bakım desteği. Uzun sözleşmeler yok; ihtiyaca göre artar veya azalır."},
-      {"q":"Tipik zaman çizelgeleri?","a":"2-3 haftada bir kavram kanıtı. Karmaşıklığa bağlı olarak 4-8 haftada tam işlevsel bir ajan. Sürekli iyileştirme dönen sprintlerde evrilir."},
-      {"q":"Kurulum ve altyapı?","a":"İş akışı otomasyonu için n8n ve yapay zeka hizmetleri için tercih ettiğiniz bulutu kullanıyoruz. Altyapı maliyetleri ayrı ve şeffaftır."}
+      {"q":"Nasıl başlıyoruz?","a":"Hedef ve kısıtları hizalamak için 30–45 dakikalık bir görüşme yaparız. Ardından kapsam, zaman planı ve başarı metrikleri ile ilerleriz."},
+      {"q":"Nasıl iletişim kuruyor ve teslim ediyoruz?","a":"Demolar, asenkron güncellemeler ve açık proje panosu ile haftalık sprintler. Her değişiklik önizleme linkiyle gelir."},
+      {"q":"Fikri mülkiyet kime ait?","a":"Size. Kaynak kodu kuruluşunuzda barınır; üçüncü taraf bileşenlerde uygun açık lisanslar kullanırız."},
+      {"q":"Lansman sonrası destek var mı?","a":"Evet — yol haritası, optimizasyon ve bakım için süreli anlaşmalar. Uzun sözleşmeler yok; ihtiyaca göre ölçeklenir."},
+      {"q":"Tipik zaman çizelgeleri?","a":"1–2 haftada ince bir dilim. 4–6 haftada pazarlama sitesi veya özellik seti. Daha büyük entegrasyonlar dönen sprintlerde evrilir."},
+      {"q":"Barındırma ve platformlar?","a":"Web için Vercel/Cloudflare, veri/hizmetler için tercih ettiğiniz bulut. Platform maliyetleri ayrı ve şeffaftır."}
     ],
     "deliverables": "Teslimatlar",
     "outcomes": "Sonuçlar",
@@ -166,186 +166,14 @@
     "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.",
     "start": "Başlat",
     "items": [
-      {
-        "id": "customer-service",
-        "title": "Müşteri Hizmetleri Ajanları",
-        "tag": "Ses • Sohbet • E-posta",
-        "intro": "Müşteri sorularını insan benzeri anlayış ve problem çözme yetenekleriyle birden fazla kanalda ele alan akıllı yapay zeka ajanları.",
-        "deliverables": [
-          "Konuşma tasarımı ve etkileşim akışları",
-          "Doğal dil anlama modelleri",
-          "CRM ve destek sistemi entegrasyonu",
-          "Türkçe dahil çoklu dil desteği"
-        ],
-        "outcomes": [
-          "Tutarlı kalitede 7/24 müşteri desteği",
-          "Daha yüksek memnuniyetle azaltılmış destek maliyetleri"
-        ],
-        "examples": [
-          "Gelen/giden çağrılar için Türkçe müşteri hizmetleri ajanı",
-          "Bilgi tabanı entegrasyonlu çok kanallı destek ajanı"
-        ]
-      },
-      {
-        "id": "web",
-        "title": "Web Geliştirme",
-        "tag": "Tasarım • Frontend • Backend",
-        "intro": "Next.js 14 ve TypeScript ile hızlı, güvenilir ve yüksek puanlı web siteleri ve uygulamalar.",
-        "deliverables": [
-          "UX akışları, wireframe'ler ve tasarım sistemi token’ları",
-          "Bileşen kütüphanesi ve sayfa şablonları",
-          "CMS veya içerik hattı entegrasyonu",
-          "Performans, erişilebilirlik ve SEO temelleri"
-        ],
-        "outcomes": [
-          "Hızlı yükleme, premium his ve ölçülebilir etki",
-          "Yeniden kullanılabilir bileşenlerle daha kısa iterasyon döngüleri"
-        ],
-        "examples": [
-          "4–6 haftada pazarlama sitesi + fiyatlandırma hesaplayıcı",
-          "SDK playground ve arama ile doküman portalı"
-        ]
-      },
-      {
-        "id": "hosting",
-        "title": "İş Akışı Otomasyon Ajanları",
-        "tag": "Süreçler • Entegrasyonlar • Verimlilik",
-        "intro": "Manuel görevleri otomatikleştiren ve iş süreçlerini hızlandıran akıllı yapay zeka ajanları. Tekrarlayan işleri azaltır ve operasyonel verimliliği artırır.",
-        "deliverables": [
-          "Süreç analizi ve otomasyon fırsatları haritası",
-          "n8n iş akışı tasarımı ve yapılandırması",
-          "Mevcut sistemlerle entegrasyon",
-          "Performans izleme ve optimizasyon araçları"
-        ],
-        "outcomes": [
-          "Manuel iş yükünde önemli azalma",
-          "Daha hızlı süreç tamamlama ve daha az hata"
-        ],
-        "examples": [
-          "Satış süreçlerini otomatikleştiren yapay zeka ajanı",
-          "Belge işleme ve veri çıkarma otomasyonu"
-        ]
-      },
-      {
-        "id": "hosting",
-        "title": "Edge Barındırma & DevOps",
-        "tag": "Vercel • Cloudflare • AWS",
-        "intro": "Hızlı, güvenilir ve gözlemlenebilir dağıtımlar. Sürüm yönetimi sakin, geri alınabilir ve güvenlidir.",
-        "deliverables": [
-          "Önizleme ortamlarıyla CI/CD",
-          "Edge önbellekleme, görsel optimizasyonu ve SSR ayarı",
-          "İzleme, loglama ve uyarılar",
-          "Gizlilik dostu analitik ve sunucu tarafı izleme"
-        ],
-        "outcomes": [
-          "Saniyeler içinde güvenli sürümler ve geri alma",
-          "Daha yüksek hız algısı ve optimize barındırma maliyeti"
-        ],
-        "examples": [
-          "Bir haftada önbellek stratejili çok bölgeli deploy",
-          "Pazarlama yığını için hata bütçeleri + SLO panoları"
-        ]
-      },
-      {
-        "id": "it",
-        "title": "Yapay Zeka Sistem Entegrasyonu",
-        "tag": "Veri Akışı • Güvenlik • Görünürlük",
-        "intro": "Yapay zeka ajanlarınızın güvenli veri akışını ve güvenilir çalışmasını sağlayan entegrasyon çözümleri. Sistemlerinizi uçtan uca konuşturun.",
-        "deliverables": [
-          "API tasarımı ve veri dönüşüm katmanları",
-          "Güvenli veri hatları ve zamanlanmış işler",
-          "Kimlik doğrulama ve yetkilendirme sistemleri",
-          "Gözlemlenebilirlik ve performans izleme araçları"
-        ],
-        "outcomes": [
-          "Sistemler arasında sorunsuz veri akışı",
-          "Ajan performansına kapsamlı görünürlük"
-        ],
-        "examples": [
-          "CRM ve bilgi tabanı entegrasyonu",
-          "Güvenli veri erişimi ve denetim logları"
-        ]
-      },
-      {
-        "id": "middleware",
-        "title": "Konuşma Yapay Zekası",
-        "tag": "NLP • Çok Dilli • Anlama",
-        "intro": "Gelişmiş doğal dil işleme yetenekleriyle donatılmış yapay zeka ajanları. İnsan benzeri anlayış ve yanıt verme yeteneği ile kullanıcı deneyimini dönüştürün.",
-        "deliverables": [
-          "Özel dil modelleri ve konuşma tasarımı",
-          "Bağlam farkındalığı ve hafıza sistemleri",
-          "Türkçe dahil çoklu dil desteği",
-          "Sürekli öğrenme ve iyileştirme mekanizmaları"
-        ],
-        "outcomes": [
-          "Doğal ve akıcı konuşmalar",
-          "Diller arası doğru anlama ve yanıtlama"
-        ],
-        "examples": [
-          "Türkçe ve İngilizce konuşabilen sanal asistan",
-          "Sektöre özel terminoloji anlayan müşteri ajanı"
-        ]
-      },
-      {
-        "id": "growth",
-        "title": "Yapay Zeka Analitik & Optimizasyon",
-        "tag": "Performans • Öğrenme • İyileştirme",
-        "intro": "Yapay zeka ajanlarınızın sürekli gelişimini sağlayan analitik ve optimizasyon çözümleri. Etkileşimlerden öğrenen, performansı artıran ve kullanıcı deneyimini iyileştiren sistemler.",
-        "deliverables": [
-          "Konuşma analitiği ve performans panoları",
-          "Kullanıcı davranış analizi ve segmentasyon",
-          "Konuşma akışları için A/B testleri",
-          "Sürekli öğrenme ve model iyileştirme sistemleri"
-        ],
-        "outcomes": [
-          "Daha doğru ve etkili ajan yanıtları",
-          "Veri odaklı iyileştirmelerle artan kullanıcı memnuniyeti"
-        ],
-        "examples": [
-          "Müşteri hizmetleri ajanı için performans optimizasyonu",
-          "Satış süreçlerinde dönüşüm artıran konuşma akışları"
-        ]
-      },
-      {
-        "id": "production",
-        "title": "Yapay Zeka Eğitimi & İçerik",
-        "tag": "Bilgi • Eğitim • Sürekli Öğrenme",
-        "intro": "Yapay zeka ajanlarınız için kapsamlı eğitim ve bilgi tabanı geliştirme çözümleri. Doğru, güncel ve kapsamlı bilgilerle donatılmış ajanlar için özel içerik hazırlama ve sürekli öğrenme sistemleri.",
-        "deliverables": [
-          "Özel eğitim verisi hazırlama ve zenginleştirme",
-          "Sektöre özel bilgi tabanları ve dokümanlar",
-          "Sürekli öğrenme ve bilgi güncelleme sistemleri",
-          "Kalite kontrol ve doğruluk değerlendirme araçları"
-        ],
-        "outcomes": [
-          "Yüksek doğrulukta ajan yanıtları",
-          "İnsan müdahalesine daha az ihtiyaç"
-        ],
-        "examples": [
-          "Finans sektörü için özel eğitilmiş bilgi tabanı",
-          "Çok dilli müşteri hizmetleri eğitim içeriği"
-        ]
-      },
-      {
-        "id": "tours",
-        "title": "Sanal Ajan Deneyimleri",
-        "tag": "Rehberlik • Etkileşim • Destek",
-        "intro": "Kullanıcıları karmaşık süreçlerde yönlendiren ve kişiselleştirilmiş yardım sunan sanal ajan deneyimleri. Kullanıcı etkileşimini artıran ve destek taleplerini azaltan akıllı rehberlik sistemleri.",
-        "deliverables": [
-          "Etkileşimli arayüzler ve konuşma akışları",
-          "Çok adımlı süreç rehberliği ve yönlendirme",
-          "Kişiselleştirilmiş yardım ve öneriler",
-          "Kullanıcı davranışına göre uyarlanabilen deneyimler"
-        ],
-        "outcomes": [
-          "Artan kullanıcı etkileşimi ve memnuniyeti",
-          "Azalan destek talepleri ve operasyonel maliyetler"
-        ],
-        "examples": [
-          "Karmaşık ürün kurulumları için adım adım rehberlik",
-          "Müşteri onboarding süreçleri için sanal asistan"
-        ]
-      }
+      {"id":"websites","title":"Web Siteleri","tag":"Tasarım • Frontend • Backend","intro":"Hızlı, güvenilir ve net web siteleri. Tasarımdan canlıya kadar uçtan uca."},
+      {"id":"applications","title":"Uygulamalar","tag":"Web App • Mobil • Panel","intro":"İş süreçlerinize özel paneller ve kullanıcı uygulamaları."},
+      {"id":"ai-automation","title":"AI Otomasyonu","tag":"İş Akışları • Ajanlar","intro":"Tekrarlayan işleri yapay zekâ ve iş akışlarıyla otomatikleştirin."},
+      {"id":"ads","title":"Meta & Google Reklamları","tag":"Edinim • Yeniden Hedefleme","intro":"Güvenilir ölçümlemeyle performans kampanyaları."},
+      {"id":"seo","title":"SEO Hizmetleri","tag":"Teknik • İçerik • On‑page","intro":"Arama görünürlüğü için teknik temel ve kaliteli içerik."},
+      {"id":"middleware","title":"CRM/CMS Entegrasyonları","tag":"HubSpot • Salesforce • Sanity","intro":"Sistemler arası sağlam veri akışı ve ara katman."},
+      {"id":"analytics-cro","title":"Analitik & CRO","tag":"Ölçümleme • Deneyler","intro":"Doğru ölçüm ve A/B testleriyle dönüşüm optimizasyonu."},
+      {"id":"hosting-devops","title":"Barındırma & DevOps","tag":"Vercel • Cloudflare • AWS","intro":"Hızlı, güvenilir ve geri alınabilir dağıtımlar."}
     ]
   },
   "blog": {

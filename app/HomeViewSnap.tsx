@@ -199,35 +199,6 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
           </div>
         </section>
 
-        {/* 3 benefits: condensed Why */}
-        <section id="why" className="snap-start snap-always min-h-[calc(100svh-5rem)] flex items-center vk-section--values">
-          <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
-            <div className="mb-6 flex flex-col md:flex-row md:items-end md:justify-between gap-3">
-              <div>
-                <h2 className="font-heading text-3xl md:text-4xl">{h?.why?.title ?? (lang==='en' ? 'Why Velkina' : 'Neden Velkina')}</h2>
-                <p className="text-white/80 max-w-3xl mt-1">{h?.why?.subtitle ?? (lang==='en'
-                  ? 'Modern software delivered by a senior engineering + design team.'
-                  : 'Kıdemli mühendislik + tasarım ekibinden modern yazılım.')}</p>
-              </div>
-              <div className="text-white/60 text-sm">{h?.why?.techLine ?? (lang==='en' ? 'Next.js • Edge • Analytics • Automation' : 'Next.js • Edge • Analitik • Otomasyon')}</div>
-            </div>
-
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <article className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft reveal-on-scroll">
-                <h3 className="font-heading text-lg">{h?.why?.seniorOnly?.title ?? (lang==='en' ? 'Senior-only team' : 'Sadece kıdemli ekip')}</h3>
-                <p className="text-white/80 text-sm">{h?.why?.seniorOnly?.desc ?? (lang==='en' ? 'Engineering-first, end‑to‑end delivery—no handovers.' : 'Mühendislik öncelikli, uçtan uca teslim—handover yok.')}</p>
-              </article>
-              <article className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft reveal-on-scroll">
-                <h3 className="font-heading text-lg">{h?.why?.speed?.title ?? (lang==='en' ? 'Fast delivery' : 'Hızlı teslim')}</h3>
-                <p className="text-white/80 text-sm">{h?.why?.speed?.desc ?? (lang==='en' ? 'Rapid integrations, previews, rollbacks and observability.' : 'Hızlı entegrasyon, önizleme, geri alma ve izlenebilirlik.')}</p>
-              </article>
-              <article className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft reveal-on-scroll">
-                <h3 className="font-heading text-lg">{h?.why?.design?.title ?? (lang==='en' ? 'Design that converts' : 'Dönüştüren tasarım')}</h3>
-                <p className="text-white/80 text-sm">{h?.why?.design?.desc ?? (lang==='en' ? 'Clear stories, motion and systems that sell.' : 'Net hikâye, hareket ve satışa dönen sistemler.')}</p>
-              </article>
-            </div>
-          </div>
-        </section>
 
         {/* Projects: horizontally scrollable cards */}
         <section id="projects" className="snap-start snap-always min-h-[calc(100svh-5rem)] flex items-center">

@@ -9,49 +9,63 @@ export type ServicesViewProps = {
   locale?: Locale;
 };
 
-export default function ServicesView({messages}: ServicesViewProps) {
+export default function ServicesView({messages, locale}: ServicesViewProps) {
   const t = createT(messages ?? getDefaultMessages());
+  const lang = locale === 'en' ? 'en' : 'tr';
 
   const icons: Record<string, ReactNode> = {
-    web: (
+    websites: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"/></svg>
     ),
-    hosting: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 7.5h16.5M3.75 16.5h16.5M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/></svg>
-    ),
-    it: (
+    applications: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+    ),
+    'ai-automation': (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5h10.5m-10.5 4.5h10.5m-10.5 4.5h10.5"/></svg>
+    ),
+    ads: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5 9 7.5l4.5 4.5L20.25 6v12.75A2.25 2.25 0 0 1 18 21H6a2.25 2.25 0 0 1-2.25-2.25V13.5Z"/></svg>
+    ),
+    seo: (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12 12 3l9.75 9M4.5 10.5V21h15V10.5"/></svg>
     ),
     middleware: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5h10.5m-10.5 4.5h10.5m-10.5 4.5h10.5"/></svg>
     ),
-    growth: (
+    'analytics-cro': (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5 9 7.5l4.5 4.5L20.25 6v12.75A2.25 2.25 0 0 1 18 21H6a2.25 2.25 0 0 1-2.25-2.25V13.5Z"/></svg>
     ),
-    production: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5M4.5 10.5h15v9.75a1.5 1.5 0 0 1-1.5 1.5h-12a1.5 1.5 0 0 1-1.5-1.5V10.5Z"/></svg>
+    'hosting-devops': (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 7.5h16.5M3.75 16.5h16.5M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/></svg>
     ),
-    tours: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12 12 3l9.75 9M4.5 10.5V21h15V10.5"/></svg>
-    ),
+    // Legacy keys fallback (no-op)
   };
 
   const services = t('services');
-  let items = Array.isArray(services?.items) ? (services!.items as any[]) : [];
-  if (!items || items.length === 0) {
-    items = [
-      { id: 'web', title: 'Web & Uygulamalar', tag: 'Next.js, React, CMS', intro: 'Modern web siteleri ve uygulamalar. Tasarımdan canlıya kadar uçtan uca.', deliverables: ['Tasarım sistemi', 'Bileşen kütüphanesi', 'Performans bütçesi'], outcomes: ['Hızlı sayfalar', 'Kolay bakım', 'SEO temelleri'], examples: ['Kurumsal site', 'Ürün sitesi', 'Panel'] },
-      { id: 'hosting', title: 'Barındırma', tag: 'Vercel / Cloudflare', intro: 'Sıfırdan veya mevcut altyapıda hızlı, güvenilir barındırma.', deliverables: ['CI/CD', 'Önizlemeler', 'Gözlemlenebilirlik'], outcomes: ['%99.9+ uptime', 'Şeffaf maliyet', 'Kolay ölçeklenme'], examples: ['Statik/SSR dağıtım', 'Ön uç ağ geçidi'] },
-      { id: 'it', title: 'IT & Operasyon', tag: 'SLA, Destek', intro: 'Kurumsal gereksinimler için operasyonel mükemmellik.', deliverables: ['SLA ve destek', 'Olay yönetimi', 'Sürümleme'], outcomes: ['Azalan risk', 'Hızlı yanıt', 'Düzenli bakım'], examples: ['Güncellemeler', 'Yedekleme'] },
-      { id: 'middleware', title: 'Ara Katman', tag: 'APIs, Entegrasyon', intro: 'Sistemler arası entegrasyon ve güvenilir servisler.', deliverables: ['API tasarımı', 'Auth', 'Ölçümleme'], outcomes: ['Sağlam mimari', 'Genişleme alanı'], examples: ['Webhooklar', 'İç servisler'] },
-      { id: 'growth', title: 'Büyüme', tag: 'CRO, Analitik', intro: 'Dönüşüm optimizasyonu ve deneylerle büyüme.', deliverables: ['A/B deneyleri', 'Huni analizi', 'Isı haritaları'], outcomes: ['Daha çok dönüşüm', 'Net içgörü'], examples: ['Yeni varyantlar', 'İyileştirme planı'] },
-      { id: 'production', title: 'Prodüksiyon', tag: 'Video, 3D, İçerik', intro: 'Marka deneyimini güçlendiren içerik üretimi.', deliverables: ['Storyboard', 'Renderlar', 'Formatlar'], outcomes: ['Tutarlı kalite', 'Marka uyumu'], examples: ['Teaser', 'Case video'] },
-      { id: 'tours', title: 'Dijital Turlar', tag: '360°, WebGL', intro: 'Mekan ve ürünleri etkileşimli deneyimlere taşıyın.', deliverables: ['Sahneleme', 'Optimizasyon', 'Yayın'], outcomes: ['Etkileyici sunum', 'Paylaşılabilir link'], examples: ['Galeri turu', 'Ürün demo'] },
-    ];
-  }
+  const trItems = [
+    { id: 'websites', title: 'Web Siteleri', tag: 'Tasarım • Frontend • Backend', intro: 'Hızlı, güvenilir ve net web siteleri. Tasarımdan canlıya kadar uçtan uca.', deliverables: ['Tasarım sistemi ve bileşenler', 'CMS entegrasyonu', 'Performans ve erişilebilirlik'], outcomes: ['Hızlı sayfalar', 'Yüksek algılanan kalite', 'SEO temelleri'], examples: ['Kurumsal site', 'Ürün‑pazarlama', 'Doküman portalı'] },
+    { id: 'applications', title: 'Uygulamalar', tag: 'Web App • Mobil • Panel', intro: 'İş süreçlerinize özel paneller ve kullanıcı uygulamaları.', deliverables: ['Akışlar ve yetkilendirme', 'Bileşen kütüphanesi', 'API entegrasyonları'], outcomes: ['Verimli ekipler', 'Daha az hata', 'Ölçeklenebilir mimari'], examples: ['Yönetim paneli', 'Müşteri portalı'] },
+    { id: 'ai-automation', title: 'AI Otomasyonu', tag: 'İş Akışları • Ajanlar', intro: 'Tekrarlayan işleri yapay zekâ ve iş akışlarıyla otomatikleştirin.', deliverables: ['Süreç analizi', 'n8n/entegrasyonlar', 'Takip ve raporlama'], outcomes: ['Zaman tasarrufu', 'Daha düşük maliyet', 'Tutarlı kalite'], examples: ['Lead yönlendirme', 'Belge işleme'] },
+    { id: 'ads', title: 'Meta & Google Reklamları', tag: 'Edinim • Yeniden Hedefleme', intro: 'Performans odaklı kampanyalar net ölçümleme ile.', deliverables: ['Kampanya kurulumu', 'Kreatif varyantlar', 'Olay akışı'], outcomes: ['Kaliteli trafik', 'Ölçülebilir büyüme'], examples: ['Arama', 'Görüntülü', 'Sosyal'] },
+    { id: 'seo', title: 'SEO Hizmetleri', tag: 'Teknik • İçerik • On‑page', intro: 'Arama görünürlüğü için teknik temel ve kaliteli içerik.', deliverables: ['Teknik audit', 'Bilgi mimarisi', 'İçerik planı'], outcomes: ['Artan organik trafik', 'Daha iyi sıralama'], examples: ['Schema', 'İç bağlantı'] },
+    { id: 'middleware', title: 'CRM/CMS Entegrasyonları', tag: 'HubSpot • Salesforce • Sanity', intro: 'Sistemler arası sağlam veri akışı ve ara katman.', deliverables: ['API tasarımı', 'Kimlik doğrulama', 'Gözlemlenebilirlik'], outcomes: ['Temiz veri', 'Güvenilir servisler'], examples: ['Webhooklar', 'İç servisler'] },
+    { id: 'analytics-cro', title: 'Analitik & CRO', tag: 'Ölçümleme • Deneyler', intro: 'Doğru ölçüm ve deneylerle dönüşüm optimizasyonu.', deliverables: ['Sunucu tarafı izleme', 'A/B testleri', 'Funnel analizi'], outcomes: ['Daha yüksek dönüşüm', 'İçgörü'], examples: ['Yeni varyantlar', 'Raporlar'] },
+    { id: 'hosting-devops', title: 'Barındırma & DevOps', tag: 'Vercel • Cloudflare • AWS', intro: 'Hızlı, güvenilir ve geri alınabilir dağıtımlar.', deliverables: ['CI/CD & önizlemeler', 'Önbellek & optimizasyon', 'Uptime panoları'], outcomes: ['%99.9+ uptime', 'Düşük risk'], examples: ['Statik/SSR', 'Çok bölgeli dağıtım'] },
+  ];
+  const enItems = [
+    { id: 'websites', title: 'Websites', tag: 'Design • Frontend • Backend', intro: 'Fast, reliable and clear websites. End‑to‑end from design to production.', deliverables: ['Design system & components', 'CMS integration', 'Performance & accessibility'], outcomes: ['Fast pages', 'Premium feel', 'SEO foundations'], examples: ['Corporate site', 'Product marketing', 'Docs portal'] },
+    { id: 'applications', title: 'Applications', tag: 'Web App • Mobile • Admin', intro: 'Custom admin panels and user applications for your workflows.', deliverables: ['Flows & authorization', 'Component library', 'API integrations'], outcomes: ['Efficient teams', 'Fewer errors', 'Scalable architecture'], examples: ['Admin panel', 'Customer portal'] },
+    { id: 'ai-automation', title: 'AI Automation', tag: 'Workflows • Agents', intro: 'Automate repetitive tasks with AI agents and workflow tooling.', deliverables: ['Process analysis', 'n8n/integrations', 'Monitoring & reporting'], outcomes: ['Time savings', 'Lower costs', 'Consistent quality'], examples: ['Lead routing', 'Document processing'] },
+    { id: 'ads', title: 'Meta & Google Ads', tag: 'Acquisition • Retargeting', intro: 'Performance campaigns with trustworthy measurement.', deliverables: ['Campaign setup', 'Creative variants', 'Event pipeline'], outcomes: ['Quality traffic', 'Measurable growth'], examples: ['Search', 'Display', 'Social'] },
+    { id: 'seo', title: 'SEO Services', tag: 'Technical • Content • On‑page', intro: 'Technical foundations and quality content for search visibility.', deliverables: ['Technical audit', 'Information architecture', 'Content plan'], outcomes: ['More organic traffic', 'Better rankings'], examples: ['Schema', 'Internal linking'] },
+    { id: 'middleware', title: 'CRM/CMS Integrations', tag: 'HubSpot • Salesforce • Sanity', intro: 'Robust data flows and middleware between systems.', deliverables: ['API design', 'Authentication', 'Observability'], outcomes: ['Clean data', 'Reliable services'], examples: ['Webhooks', 'Internal services'] },
+    { id: 'analytics-cro', title: 'Analytics & CRO', tag: 'Measurement • Experiments', intro: 'Conversion optimization with accurate measurement and A/B testing.', deliverables: ['Server‑side tracking', 'A/B tests', 'Funnel analysis'], outcomes: ['Higher conversion', 'Insights'], examples: ['New variants', 'Reports'] },
+    { id: 'hosting-devops', title: 'Hosting & DevOps', tag: 'Vercel • Cloudflare • AWS', intro: 'Fast, reliable and reversible deployments.', deliverables: ['CI/CD & previews', 'Caching & optimization', 'Uptime dashboards'], outcomes: ['99.9%+ uptime', 'Lower risk'], examples: ['Static/SSR', 'Multi‑region deploy'] },
+  ];
+  const items = (lang === 'en') ? enItems : trItems;
 
-  const title = services?.title ?? 'Hizmetler';
-  const heroDesc = services?.heroDesc ?? 'Fikirden büyümeye—tek ekip, tek sistem. Nasıl tasarladığımızı, geliştirdiğimizi ve ölçeklediğimizi keşfedin.';
+  const title = services?.title ?? 'Hizmetlerimiz';
+  const heroDesc = services?.heroDesc ?? 'Web siteleri, uygulamalar, AI otomasyonu, reklam, SEO ve entegrasyonlar—fikrinizden büyümeye tek ekip.';
   const modelsTitle = services?.modelsTitle ?? 'Çalışma Modelleri';
   const includedTitle = services?.includedTitle ?? 'Her Çalışmada Dahil';
   const start = services?.start ?? 'Başlat';
@@ -145,45 +159,77 @@ export default function ServicesView({messages}: ServicesViewProps) {
         </div>
       </section>
 
-      {/* Sections */}
+      {/* Sections (grouped with subtle tone transitions) */}
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-16">
-        <div className="grid gap-8">
-          {items.map((s: any) => (
-            <article key={s.id} id={s.id} className="vk-glass border border-white/10 rounded-xl p-6 shadow-soft scroll-mt-24">
-              <header className="flex items-start justify-between gap-3">
-                <div className="flex items-start gap-3">
-                  <span aria-hidden className="mt-1">{icons[s.id]}</span>
-                  <div>
-                    <h2 className="font-heading text-2xl md:text-3xl">{s.title}</h2>
-                    <div className="text-xs text-white/60 mt-1">{s.tag}</div>
+        {(() => {
+          const GROUPS: { key: string; title: string; ids: string[] }[] = [
+            { key: 'design', title: 'Tasarım & Geliştirme', ids: ['websites', 'applications'] },
+            { key: 'ai', title: 'Yapay Zekâ & Otomasyon', ids: ['ai-automation'] },
+            { key: 'marketing', title: 'Pazarlama & Büyüme', ids: ['ads', 'seo', 'analytics-cro'] },
+            { key: 'systems', title: 'Sistemler & Entegrasyonlar', ids: ['middleware', 'hosting-devops'] },
+          ];
+          const grouped = GROUPS.map(g => ({...g, items: items.filter((s:any)=>g.ids.includes(s.id))})).filter(g=>g.items.length>0);
+          return (
+            <div className="grid gap-10">
+              {grouped.map((g, gi) => (
+                <div key={g.key}>
+                  <div className="mb-3">
+                    <h2 className="font-heading text-2xl md:text-3xl text-white/95">{g.title}</h2>
                   </div>
+                  <div className="rounded-2xl border border-white/10 vk-glass shadow-soft">
+                    <div className="p-6 grid gap-8">
+                      {g.items.map((s:any, idx:number) => (
+                        <div key={s.id}>
+                          <article id={s.id} className="scroll-mt-24">
+                            <header className="flex items-start justify-between gap-3">
+                              <div className="flex items-start gap-3">
+                                <span aria-hidden className="mt-1">{icons[s.id]}</span>
+                                <div>
+                                  <h3 className="font-heading text-xl md:text-2xl">{s.title}</h3>
+                                  <div className="text-xs text-white/60 mt-1">{s.tag}</div>
+                                </div>
+                              </div>
+                              <a href="#cta" className="hidden md:inline-flex items-center px-3 py-1.5 rounded-lg border border-white/15 text-white/90 bg-white/5 hover:bg-white/10">{start}</a>
+                            </header>
+                            <p className="text-white/80 mt-3">{s.intro}</p>
+                            <div className="mt-4 grid gap-6 md:grid-cols-3">
+                              <div>
+                                <h4 className="font-heading text-base text-white/90">{deliverables}</h4>
+                                <ul className="list-disc pl-5 text-white/80 mt-2">
+                                  {s.deliverables.map((d: any, i: number) => <li key={i}>{d}</li>)}
+                                </ul>
+                              </div>
+                              <div>
+                                <h4 className="font-heading text-base text-white/90">{outcomes}</h4>
+                                <ul className="list-disc pl-5 text-white/80 mt-2">
+                                  {s.outcomes.map((d: any, i: number) => <li key={i}>{d}</li>)}
+                                </ul>
+                              </div>
+                              <div>
+                                <h4 className="font-heading text-base text-white/90">{examples}</h4>
+                                <ul className="list-disc pl-5 text-white/80 mt-2">
+                                  {s.examples?.map((d: any, i: number) => <li key={i}>{d}</li>)}
+                                </ul>
+                              </div>
+                            </div>
+                          </article>
+                          {idx < g.items.length - 1 && (
+                            <div className="my-6 h-px bg-gradient-to-r from-white/0 via-white/15 to-white/0" aria-hidden="true" />
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                    {/* group tone separator */}
+                    <div className="h-8 bg-gradient-to-b from-white/5 to-transparent rounded-b-2xl" aria-hidden="true" />
+                  </div>
+                  {gi < grouped.length - 1 && (
+                    <div className="mt-4 h-2 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-full" aria-hidden="true" />
+                  )}
                 </div>
-                <a href="#cta" className="hidden md:inline-flex items-center px-3 py-1.5 rounded-lg border border-white/15 text-white/90 bg-white/5 hover:bg-white/10">{start}</a>
-              </header>
-              <p className="text-white/80 mt-3">{s.intro}</p>
-              <div className="mt-4 grid gap-6 md:grid-cols-3">
-                <div>
-                  <h3 className="font-heading text-lg">{deliverables}</h3>
-                  <ul className="list-disc pl-5 text-white/80 mt-2">
-                    {s.deliverables.map((d: any, i: number) => <li key={i}>{d}</li>)}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg">{outcomes}</h3>
-                  <ul className="list-disc pl-5 text-white/80 mt-2">
-                    {s.outcomes.map((d: any, i: number) => <li key={i}>{d}</li>)}
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-heading text-lg">{examples}</h3>
-                  <ul className="list-disc pl-5 text-white/80 mt-2">
-                    {s.examples?.map((d: any, i: number) => <li key={i}>{d}</li>)}
-                  </ul>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
+              ))}
+            </div>
+          );
+        })()}
 
         {/* FAQs */}
         <section className="max-w-7xl mx-auto px-6 md:px-10 pt-4">
