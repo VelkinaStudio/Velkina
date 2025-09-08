@@ -10,8 +10,14 @@ export type BlogViewProps = {
 
 export default function BlogView({messages, locale}: BlogViewProps) {
   const t = createT(messages ?? getDefaultMessages());
+  const slugify = (s: string) => (s || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9çğıöşü\s-]/gi, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
 
-  const title = t('blog', 'title') ?? 'İçgörüler & Sinyaller';
+  const title = 'Blog';
   const subtitle = t('blog', 'subtitle') ?? 'Mühendislik, büyüme ve dijital sistemler üzerine Velkina’dan notlar.';
   const searchPlaceholder = t('blog', 'searchPlaceholder') ?? 'Makalelerde ara…';
   const filterAll = t('blog', 'filters')?.all ?? 'Tümü';
@@ -80,13 +86,22 @@ export default function BlogView({messages, locale}: BlogViewProps) {
 
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-16">
         <div id="posts" className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {posts.map((p, i) => (
-            <article key={i} className="vk-glass border border-white/10 rounded-xl p-6 shadow-soft" data-cat={(p as any).cat} data-title={(p as any).title}>
-              <h3 className="font-heading text-xl">{(p as any).title}</h3>
-              <p className="text-white/80 mt-2">{(p as any).desc}</p>
-              <div className="text-xs text-white/60 mt-3">{(p as any).cat} • {(p as any).read}</div>
-            </article>
-          ))}
+          {posts.map((p, i) => {
+            const title = (p as any).title as string;
+            const desc = (p as any).desc as string;
+            const cat = (p as any).cat as string;
+            const read = (p as any).read as string;
+            const slug = slugify(title);
+            return (
+              <article key={i} className="vk-glass border border-white/10 rounded-xl p-6 shadow-soft" data-cat={cat} data-title={title}>
+                <a href={`/${locale}/blog/${slug}`} className="block focus:outline-none focus:ring-2 focus:ring-vkcyan/50 rounded-lg -m-2 p-2">
+                  <h3 className="font-heading text-xl text-white/90">{title}</h3>
+                  <p className="text-white/80 mt-2">{desc}</p>
+                  <div className="text-xs text-white/60 mt-3">{cat} • {read}</div>
+                </a>
+              </article>
+            );
+          })}
         </div>
 
         {/* Quick connect CTA */}

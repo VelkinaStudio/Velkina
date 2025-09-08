@@ -7,7 +7,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({params}) {
-  const {locale} = params || {locale: 'tr'};
+  const {locale} = params || {locale: 'en'};
   const messages = locale === 'en' ? en : tr;
   return {
     title: messages.services?.metaTitle || 'Velkina — Hizmetler',
@@ -16,7 +16,7 @@ export function generateMetadata({params}) {
 }
 
 export default function LocalizedServices({params}) {
-  const {locale} = params || {locale: 'tr'};
+  const {locale} = params || {locale: 'en'};
   const messages = locale === 'en' ? en : tr;
   return <ServicesView messages={messages} locale={locale} />;
 }

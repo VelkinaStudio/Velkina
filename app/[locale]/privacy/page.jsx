@@ -7,7 +7,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({params}) {
-  const {locale} = params || {locale: 'tr'};
+  const {locale} = params || {locale: 'en'};
   const messages = locale === 'en' ? en : tr;
   return {
     title: messages.privacy?.title ? `${messages.privacy.title} — Velkina` : (locale === 'tr' ? 'Gizlilik — Velkina' : 'Privacy — Velkina'),
@@ -16,7 +16,7 @@ export function generateMetadata({params}) {
 }
 
 export default function LocalizedPrivacy({params}) {
-  const {locale} = params || {locale: 'tr'};
+  const {locale} = params || {locale: 'en'};
   const messages = locale === 'en' ? en : tr;
   return <PrivacyView messages={messages} locale={locale} />;
 }

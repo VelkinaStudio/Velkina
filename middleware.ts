@@ -2,9 +2,12 @@ import createMiddleware from 'next-intl/middleware';
 
 export default createMiddleware({
   // Supported locales
-  locales: ['en', 'tr'],
+  locales: ['tr', 'en'],
   // Default locale when visiting '/'
-  defaultLocale: 'tr'
+  defaultLocale: 'en',
+  // Always prefix URLs with the locale segment and detect from Accept-Language on first visit
+  localePrefix: 'always',
+  localeDetection: true
 });
 
 export const config = {

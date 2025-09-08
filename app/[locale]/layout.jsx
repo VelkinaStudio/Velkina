@@ -7,12 +7,17 @@ import RevealClient from '../../components/RevealClient';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
 import en from '../../messages/en.json';
 import tr from '../../messages/tr.json';
+import { Inter, Sora } from 'next/font/google';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+
+const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' });
+const sora = Sora({ subsets: ['latin', 'latin-ext'], variable: '--font-sora' });
 
 export async function generateMetadata({params}) {
   const {locale} = params;
   const dict = locale === 'en' ? en : tr;
+  const ogLocale = locale === 'tr' ? 'tr_TR' : 'en_US';
   return {
     title: dict.site.title,
     description: dict.site.description,
@@ -30,7 +35,9 @@ export async function generateMetadata({params}) {
       description: dict.site.description,
       url: `/${locale}`,
       siteName: dict.site.name,
-      type: 'website'
+      type: 'website',
+      locale: ogLocale,
+      alternateLocale: [ogLocale === 'tr_TR' ? 'en_US' : 'tr_TR']
     },
     twitter: {
       card: 'summary_large_image',
@@ -60,11 +67,10 @@ export default function LocaleLayout({children, params}) {
   const t = messages.nav;
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${inter.variable} ${sora.variable}`}>
       <head />
       <body
         className="font-body bg-vkbg text-vktext min-h-screen flex flex-col"
-        data-anim="light"
         data-email-subject={messages.common?.emailSubject ?? 'Project Inquiry'}
         data-whatsapp-prefill={messages.common?.whatsappPrefill ?? "Hi Velkina! I'd like to discuss a project."}
         data-carousel-play={messages.common?.carouselPlay ?? 'Play carousel'}
@@ -80,6 +86,7 @@ export default function LocaleLayout({children, params}) {
               <Link href={`/${locale}`} className="text-white/80 hover:text-vkcyan">{t.home ?? 'Home'}</Link>
               <Link href={`/${locale}/services`} className="text-white/80 hover:text-vkcyan">{t.services}</Link>
               <Link href={`/${locale}/use-cases`} className="text-white/80 hover:text-vkcyan">{t.useCases}</Link>
+              <Link href={`/${locale}/customer-agent`} className="text-white/80 hover:text-vkcyan">{t.customerAgent}</Link>
               <Link href={`/${locale}/blog`} className="text-white/80 hover:text-vkcyan">{t.blog}</Link>
               <Link href={`/${locale}/#cta`} className="text-white/90 font-mono px-3 py-1.5 rounded-xl bg-vkpink text-black shadow-strong">{t.startProject}</Link>
               <LanguageSwitcher locale={locale} />

@@ -1,4 +1,4 @@
-import HomeView from '../HomeView';
+import HomeView from '../HomeViewSnap';
 import en from '../../messages/en.json';
 import tr from '../../messages/tr.json';
 
@@ -7,7 +7,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({params}) {
-  const {locale} = params || {locale: 'tr'};
+  const {locale} = params || {locale: 'en'};
   const messages = locale === 'en' ? en : tr;
   return {
     title: messages.site?.title || 'Velkina — Yarını Birlikte İnşa Edelim',
@@ -16,7 +16,7 @@ export function generateMetadata({params}) {
 }
 
 export default function LocalizedHome({params}) {
-  const {locale} = params || {locale: 'tr'};
+  const {locale} = params || {locale: 'en'};
   const messages = locale === 'en' ? en : tr;
   return <HomeView messages={messages} locale={locale} />;
 }

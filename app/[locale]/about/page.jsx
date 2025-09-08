@@ -7,7 +7,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({params}) {
-  const {locale} = params || {locale: 'tr'};
+  const {locale} = params || {locale: 'en'};
   const messages = locale === 'en' ? en : tr;
   return {
     title: messages.about?.title ? `Velkina — ${messages.about.title}` : 'Velkina — About',
@@ -16,7 +16,7 @@ export function generateMetadata({params}) {
 }
 
 export default function LocalizedAbout({params}) {
-  const {locale} = params || {locale: 'tr'};
+  const {locale} = params || {locale: 'en'};
   const messages = locale === 'en' ? en : tr;
   return <AboutView messages={messages} locale={locale} />;
 }

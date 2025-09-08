@@ -7,7 +7,7 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({params}) {
-  const {locale} = params || {locale: 'tr'};
+  const {locale} = params || {locale: 'en'};
   const messages = locale === 'en' ? en : tr;
   return {
     title: messages.terms?.title ? `${messages.terms.title} — Velkina` : (locale === 'tr' ? 'Koşullar — Velkina' : 'Terms — Velkina'),
@@ -16,7 +16,7 @@ export function generateMetadata({params}) {
 }
 
 export default function LocalizedTerms({params}) {
-  const {locale} = params || {locale: 'tr'};
+  const {locale} = params || {locale: 'en'};
   const messages = locale === 'en' ? en : tr;
   return <TermsView messages={messages} locale={locale} />;
 }

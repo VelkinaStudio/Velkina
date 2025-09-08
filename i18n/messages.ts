@@ -4,7 +4,7 @@ import tr from '../messages/tr.json';
 // Locales supported by the app
 export const LOCALES = ['tr', 'en'] as const;
 export type Locale = typeof LOCALES[number];
-export const DEFAULT_LOCALE: Locale = 'tr';
+export const DEFAULT_LOCALE: Locale = 'en';
 
 // Inferred message schema from the Turkish source of truth
 export type Messages = typeof tr;

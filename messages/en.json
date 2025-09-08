@@ -1,21 +1,22 @@
 {
   "site": {
-    "title": "Velkina — Build with Confidence",
-    "description": "Velkina is a senior digital agency in Istanbul. We design, ship and scale high‑performance websites, apps and systems with Next.js, edge hosting and modern tooling—measured by real results.",
+    "title": "Velkina — AI Agents for Business",
+    "description": "Velkina is a specialized AI agency focused on building intelligent agents for business automation. We design, develop and deploy custom AI agents like our Turkish customer service solution that can handle calls and communications with human-like understanding.",
     "name": "Velkina"
   },
   "nav": {
     "home": "Home",
     "why": "Why",
     "services": "Services",
-    "useCases": "Use Case",
+    "useCases": "Use Cases",
     "blog": "Blog",
     "tech": "Tech",
     "about": "About",
     "contact": "Contact",
     "privacy": "Privacy",
     "terms": "Terms",
-    "startProject": "Start project"
+    "startProject": "Start project",
+    "customerAgent": "Turkish Customer Agent"
   },
   "common": {
     "skipToContent": "Skip to content",
@@ -30,14 +31,24 @@
     "getInTouch": "Get in touch",
     "rightsReserved": "All rights reserved."
   },
+  "homeSimple": {
+    "heroTitle": "AI Agents",
+    "heroSub": "Automate work.",
+    "automateTitle": "Automate",
+    "automateSub": "Save time.",
+    "proofTitle": "Proof",
+    "clientsTitle": "Clients",
+    "ctaTitle": "Start",
+    "ctaSub": "Quick contact"
+  },
   "home": {
-    "heroDesc": "We blend bold aesthetics with clear, maintainable code. One team that brings your brand to life across web, apps, middleware and growth—through a single, fluent system.",
+    "heroDesc": "We build intelligent AI agents that transform how businesses operate. Our specialized team creates custom solutions like our Turkish customer service agent that can handle calls and communications with human-like understanding.",
     "heroSteps": [
-      "Discover",
+      "Analyze",
       "Design",
-      "Build",
-      "Launch",
-      "Grow"
+      "Train",
+      "Deploy",
+      "Optimize"
     ],
     "resultsTitle": "Proven results",
     "resultsSubtitle": "Highlights from recent work",
@@ -55,59 +66,92 @@
     },
     "metrics": {
       "published": {
-        "label": "Published websites and apps",
-        "sr": "120+ websites and apps published"
+        "label": "Deployed AI agents",
+        "sr": "50+ AI agents deployed"
       },
       "cwv": {
-        "label": "Pages in Core Web Vitals ‘Good’",
-        "sr": "86% of pages in Core Web Vitals ‘Good’"
+        "label": "Conversation accuracy rate",
+        "sr": "95% conversation accuracy rate"
       },
       "conversion": {
-        "label": "Average post‑launch conversion uplift",
-        "sr": "Average post‑launch conversion uplift of 35%"
+        "label": "Customer service cost reduction",
+        "sr": "Average customer service cost reduction of 40%"
       },
       "medianTime": {
-        "label": "Median time to launch",
-        "sr": "Median launch time: 5 weeks"
+        "label": "Median time to deployment",
+        "sr": "Median deployment time: 3 weeks"
       },
       "integrations": {
-        "label": "Automated APIs and integrations",
-        "sr": "40+ APIs and integrations automated"
+        "label": "Supported languages",
+        "sr": "8+ languages supported"
       },
       "uptime": {
-        "label": "Observed edge uptime",
-        "sr": "Observed edge uptime of 99.9%"
+        "label": "Agent availability",
+        "sr": "Agent availability of 99.9%"
+      }
+    },
+    "metrics2": {
+      "shipped": {
+        "value": 120,
+        "label": "Shipped projects",
+        "sr": "120+ shipped projects"
+      },
+      "leadsIncrease": {
+        "value": 86,
+        "label": "Qualified leads increase",
+        "sr": "Average qualified lead increase"
+      },
+      "supportReduction": {
+        "value": 40,
+        "label": "Support cost reduction",
+        "sr": "Customer service cost reduction"
+      },
+      "csat": {
+        "value": 95,
+        "label": "CSAT",
+        "sr": "Customer satisfaction"
+      },
+      "launchTime": {
+        "value": 5,
+        "label": "Median launch time",
+        "sr": "Median time to launch"
+      },
+      "uptime": {
+        "value": 99.9,
+        "decimals": 1,
+        "label": "Uptime",
+        "sr": "Observed uptime"
       }
     },
     "why": {
       "title": "Why Velkina",
-      "subtitle": "Senior product, design and engineering moving in one lane. We ship premium brand experiences and reliable systems—fast, measurable and calm.",
+      "subtitle": "AI specialists with expertise in natural language processing, voice recognition, and conversational design. We build intelligent agents that transform customer service and business operations.",
       "howWeWork": {
         "title": "How we work",
         "items": [
-          "Ship weekly with previews, rollbacks and clear demos.",
-          "Design system first: tokens, components and motion for consistency.",
-          "Measurable growth: server‑side analytics, experiments and CRO."
+          "Analyze your business needs and design custom AI agent solutions.",
+          "Train models on your specific domain with multilingual capabilities.",
+          "Deploy with continuous monitoring and performance optimization."
         ],
         "stats": {
-          "launches": "Launches",
-          "median": "Median time",
-          "uptime": "Edge uptime"
+          "launches": "Deployments",
+          "median": "Training time",
+          "uptime": "Agent uptime"
         }
       },
       "seniorOnly": {
-        "title": "Senior‑only team",
-        "desc": "No handovers, no overhead. Strategy, design and code move together—so do you."
+        "title": "AI specialists",
+        "desc": "Our team combines expertise in linguistics, machine learning, and software engineering to create agents that truly understand your customers."
       },
       "speed": {
-        "title": "Speed without stress",
-        "desc": "Edge hosting, CI/CD and type‑safe APIs. Previews make every step safe."
+        "title": "Rapid deployment",
+        "desc": "Quick integration with your existing systems. Our agents can be deployed and operational within weeks, not months."
       },
       "design": {
-        "title": "Design that converts",
-        "desc": "Premium motion and a clear story. Systems that don’t just look good—they sell."
+        "title": "Conversational intelligence",
+        "desc": "Natural dialogue flows and contextual understanding. Our agents don't just respond—they comprehend and solve."
       },
-      "techLine": "Next.js 14 • Edge • Analytics • Automation"
+      "techLine": "NLP • Voice Recognition • Machine Learning • n8n Integration"
     },
     "stackTitle": "Tech Stack",
     "techCarouselLabel": "Technology logos carousel",
@@ -122,32 +166,32 @@
     "startProjectShort": "Start project — Quick contact"
   },
   "services": {
-    "metaTitle": "Velkina — Services",
-    "metaDesc": "End‑to‑end services across web, hosting, IT, middleware, growth, production and digital tours—built for clarity, speed and measurable impact.",
-    "title": "Services",
-    "heroDesc": "From idea to growth—one team, one system. Explore how we design, ship and scale with confidence.",
+    "metaTitle": "Velkina — AI Agent Services",
+    "metaDesc": "End-to-end AI agent services for business automation, customer service, and operational efficiency—built for intelligence, reliability, and measurable impact.",
+    "title": "AI Agent Services",
+    "heroDesc": "From concept to deployment—one team, one intelligent system. Explore how we design, train, and optimize AI agents with confidence.",
     "modelsTitle": "Engagement Models",
     "includedTitle": "Included in every engagement",
     "models": [
-      "Project: Fixed scope, clear outputs, fast delivery.",
-      "Sprint: 1–2 week cycles for experiments and iterations.",
-      "Retainer: Ongoing roadmap, optimization and support."
+      "Project: Fixed scope AI agent, clear capabilities, fast deployment.",
+      "Sprint: 2-4 week cycles for agent training and refinement.",
+      "Retainer: Ongoing optimization, monitoring and support."
     ],
     "included": [
-      "Clear scope, milestones and weekly sprint reviews",
-      "Design system tokens and documented components",
-      "Performance budgets, accessibility and SEO foundations",
-      "Source code in your org; CI/CD and previews",
-      "Observability: logs, metrics and uptime dashboards",
-      "Handover docs, Loom videos and a sensible rollback plan"
+      "Clear scope, milestones and weekly progress reviews",
+      "Conversation design and documented interaction flows",
+      "Performance metrics, accuracy and reliability benchmarks",
+      "Source code and training data in your org; secure deployment",
+      "Observability: conversation logs, metrics and uptime dashboards",
+      "Handover docs, training videos and a sensible rollback plan"
     ],
     "faqs": [
-      {"q":"How do we start?","a":"We begin with a 30–45 minute call to align goals and constraints. Then we move forward with scope, timeline and success metrics."},
-      {"q":"How do we communicate and deliver?","a":"Weekly sprints with demos, async updates and a transparent project board. We provide preview links and PRs for every change."},
-      {"q":"Who owns the intellectual property?","a":"You do. Source code lives in your organization; open licenses are used for third‑party assets."},
-      {"q":"Is there post‑launch support?","a":"Yes — with retainers for roadmap, CRO and maintenance. No long contracts; scale up or down as needed."},
-      {"q":"Typical timelines?","a":"A thin slice in 1–2 weeks. A marketing site or feature set in 4–6 weeks. Larger integrations evolve over rolling sprints."},
-      {"q":"Hosting and platforms?","a":"We recommend Vercel/Cloudflare for web, and your preferred cloud for data/services. Platform costs are separate and transparent."}
+      {"q":"How do we start?","a":"We begin with a 30–45 minute call to understand your business processes and automation needs. Then we move forward with agent scope, timeline and success metrics."},
+      {"q":"How do we communicate and deliver?","a":"Weekly progress reviews with demos, conversation samples, and a transparent project board. We provide testing environments for every iteration."},
+      {"q":"Who owns the intellectual property?","a":"You do. Source code and training data live in your organization; we use open licenses for third-party components where applicable."},
+      {"q":"Is there post‑deployment support?","a":"Yes — with retainers for ongoing optimization, training, and maintenance. No long contracts; scale up or down as needed."},
+      {"q":"Typical timelines?","a":"A proof-of-concept in 2-3 weeks. A fully functional agent in 4-8 weeks depending on complexity. Ongoing refinement evolves over rolling sprints."},
+      {"q":"Deployment and infrastructure?","a":"We deploy on n8n for workflow automation and your preferred cloud for AI services. Infrastructure costs are separate and transparent."}
     ],
     "deliverables": "Deliverables",
     "outcomes": "Outcomes",
@@ -158,143 +202,143 @@
     "start": "Start",
     "items": [
       {
-        "id": "web",
-        "title": "Web Development",
-        "tag": "Design • Frontend • Backend",
-        "intro": "High‑performance websites and apps on Next.js 14 and TypeScript—delivered with a robust design system.",
+        "id": "customer-service",
+        "title": "Customer Service Agents",
+        "tag": "Voice • Chat • Email",
+        "intro": "Intelligent AI agents that handle customer inquiries across multiple channels with human-like understanding and problem-solving abilities.",
         "deliverables": [
-          "UX flows, wireframes, and design system tokens",
-          "Component library and page templates",
-          "CMS or content pipeline integration",
-          "Performance, accessibility, and SEO foundations"
+          "Conversation design and interaction flows",
+          "Natural language understanding models",
+          "CRM and ticketing system integration",
+          "Multi-language support including Turkish"
         ],
         "outcomes": [
-          "Fast loads, premium feel, measurable impact",
-          "Shorter iteration cycles with reusable components"
+          "24/7 customer support with consistent quality",
+          "Reduced support costs with higher satisfaction"
         ],
         "examples": [
-          "Marketing site + pricing calculator in 4–6 weeks",
-          "Docs portal with SDK playground and search"
+          "Turkish customer service agent for inbound/outbound calls",
+          "Multi-channel support agent with knowledge base integration"
         ]
       },
       {
-        "id": "hosting",
-        "title": "Edge Hosting & DevOps",
-        "tag": "Vercel • Cloudflare • AWS",
-        "intro": "Fast, dependable and observable deployments—so shipping is calm and reversible.",
+        "id": "workflow-automation",
+        "title": "Workflow Automation Agents",
+        "tag": "n8n • Zapier • Custom",
+        "intro": "Intelligent workflow automation agents that streamline business processes and eliminate repetitive tasks.",
         "deliverables": [
-          "CI/CD with preview environments",
-          "Edge caching, image optimization, and SSR tuning",
-          "Monitoring, logging, and alerting",
-          "Privacy‑safe analytics and server‑side tracking"
+          "Process analysis and automation roadmap",
+          "n8n workflow design and implementation",
+          "Integration with existing business systems",
+          "Monitoring, logging, and performance analytics"
         ],
         "outcomes": [
-          "Confident releases and rollbacks in seconds",
-          "Lower hosting cost with higher perceived speed"
+          "Reduced manual work and human error",
+          "Faster process completion with consistent quality"
         ],
         "examples": [
-          "Multi‑region deploy with cache strategy in a week",
-          "Error budgets + SLO dashboards for marketing stack"
+          "Sales process automation with CRM integration",
+          "Document processing and data extraction agent"
         ]
       },
       {
-        "id": "it",
-        "title": "IT Solutions & Integrations",
-        "tag": "Identity • Data • Workflows",
-        "intro": "Connect your stack with secure auth, file storage, data sync and automated workflows.",
+        "id": "ai-integration",
+        "title": "AI System Integration",
+        "tag": "APIs • Data • Security",
+        "intro": "Seamlessly integrate AI agents with your existing systems, ensuring secure data flow and reliable operation.",
         "deliverables": [
-          "SSO, roles, and permissions",
-          "Data pipelines and scheduled jobs",
-          "Asset storage, CDN, and backups",
-          "Admin consoles and internal tools"
+          "API design and implementation",
+          "Data pipelines and transformation",
+          "Secure authentication and authorization",
+          "Admin dashboards and monitoring tools"
         ],
         "outcomes": [
-          "Fewer manual steps, fewer errors",
-          "A clearer picture of systems health"
+          "Smooth data flow between systems",
+          "Comprehensive visibility into agent operations"
         ],
         "examples": [
-          "User provisioning via SCIM + audit logs",
-          "Data sync to warehouse with retries + DLQs"
+          "CRM integration with conversation history",
+          "ERP data synchronization with audit trails"
         ]
       },
       {
-        "id": "middleware",
-        "title": "CRM–CMS Middleware",
-        "tag": "HubSpot • Salesforce • Sanity",
-        "intro": "A unified API layer between marketing sites, CRMs and CMSs for clean data and faster ops.",
+        "id": "conversational-ai",
+        "title": "Conversational AI",
+        "tag": "NLP • Voice • Multilingual",
+        "intro": "Advanced natural language processing agents that understand context, intent, and can communicate naturally in multiple languages.",
         "deliverables": [
-          "Typed middleware API with rate limits and retries",
-          "Forms, leads, and webhooks normalization",
-          "Content models and editorial workflows",
-          "Attribution mapping and consent handling"
+          "Custom language models and training",
+          "Voice recognition and synthesis",
+          "Multilingual support including Turkish",
+          "Context management and conversation memory"
         ],
         "outcomes": [
-          "Reliable data you can actually act on",
-          "Content velocity without breaking analytics"
+          "Natural, human-like conversations",
+          "Accurate understanding across languages"
         ],
         "examples": [
-          "HubSpot ⇄ Sanity sync for forms and content",
-          "Lead dedupe + enrichment at the edge"
+          "Turkish voice agent for customer support",
+          "Multilingual chatbot with context awareness"
         ]
       },
       {
-        "id": "growth",
-        "title": "Ad Campaigns & Growth",
-        "tag": "Acquisition • CRO • Analytics",
-        "intro": "Campaigns that compound: strong creative, accurate measurement and fast landing iterations.",
+        "id": "ai-analytics",
+        "title": "AI Analytics & Optimization",
+        "tag": "Performance • Learning • Improvement",
+        "intro": "Continuous improvement of AI agents through analytics, learning from interactions, and performance optimization.",
         "deliverables": [
-          "Creative concepts, copy, and motion assets",
-          "Landing page variants and experiment plans",
-          "Server‑side conversion tracking and dashboards",
-          "Playbooks for scaling winners and cutting waste"
+          "Conversation analytics and insights",
+          "Performance monitoring dashboards",
+          "Continuous learning and model refinement",
+          "A/B testing for conversation flows"
         ],
         "outcomes": [
-          "Spend guided by real attribution",
-          "Higher CVR, AOV and LTV with clarity"
+          "Constantly improving agent performance",
+          "Data-driven optimization of customer experience"
         ],
         "examples": [
-          "Motion‑led ads + landing page variants",
-          "CRO on PDP/cart/checkout with weekly releases"
+          "Sentiment analysis and conversation quality metrics",
+          "Automated learning from successful interactions"
         ]
       },
       {
-        "id": "production",
-        "title": "Production & Content",
-        "tag": "Video • Motion • Docs",
-        "intro": "Make the product feel inevitable with crisp visuals, motion and docs that actually onboard.",
+        "id": "ai-training",
+        "title": "AI Training & Content",
+        "tag": "Data • Knowledge • Learning",
+        "intro": "Comprehensive training and knowledge base development for AI agents to ensure accurate, helpful, and contextually appropriate responses.",
         "deliverables": [
-          "Brand reels, product explainers, and social edits",
-          "Micro‑interactions and premium transitions",
-          "Docs and knowledge bases with code samples",
-          "Editorial calendars and distribution"
+          "Custom training data preparation",
+          "Knowledge base development and integration",
+          "Domain-specific language adaptation",
+          "Continuous learning and improvement systems"
         ],
         "outcomes": [
-          "Clearer differentiation at a glance",
-          "Self‑serve education that reduces sales load"
+          "Highly accurate and relevant agent responses",
+          "Reduced need for human escalation"
         ],
         "examples": [
-          "Product reel + doc refresh for v2 launch",
-          "Motion library for consistent micro‑interactions"
+          "Industry-specific knowledge base for specialized agents",
+          "Turkish language training for customer service agents"
         ]
       },
       {
-        "id": "tours",
-        "title": "Digital Tours",
-        "tag": "Real‑Estate • Retail • Spaces",
-        "intro": "Immersive tours that pre‑qualify interest and reduce questions—before a visit is booked.",
+        "id": "virtual-agents",
+        "title": "Virtual Agent Experiences",
+        "tag": "Interactive • Personalized • Engaging",
+        "intro": "Immersive virtual agent experiences that guide users through complex processes, answer questions, and provide personalized assistance.",
         "deliverables": [
-          "3D/360 capture and motion‑guided walkthroughs",
-          "Booking integrations and lead capture",
-          "Interactive hotspots and layered info",
-          "Mobile‑first performance and accessibility"
+          "Interactive virtual agent interfaces",
+          "Personalized user journey mapping",
+          "Multi-step process guidance",
+          "Mobile and web-optimized experiences"
         ],
         "outcomes": [
-          "Higher inquiry volume and quality",
-          "Faster leasing and fewer no‑shows"
+          "Increased user engagement and satisfaction",
+          "Reduced support tickets and inquiries"
         ],
         "examples": [
-          "Leasing tour with CRM lead routing",
-          "Retail floor guide with promos + analytics"
+          "Turkish customer onboarding virtual agent",
+          "Interactive product guide with voice assistance"
         ]
       }
     ]
