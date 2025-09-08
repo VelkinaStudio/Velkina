@@ -5,6 +5,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import GlobalClient from '../../components/GlobalClient';
 import RevealClient from '../../components/RevealClient';
 import LanguageSwitcher from '../../components/LanguageSwitcher';
+import MobileNavClient from '../../components/MobileNavClient';
 import en from '../../messages/en.json';
 import tr from '../../messages/tr.json';
 import { Inter, Sora } from 'next/font/google';
@@ -82,15 +83,20 @@ export default function LocaleLayout({children, params}) {
         <header data-nav className="fixed top-0 inset-x-0 z-50 transition">
           <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
             <Link href={`/${locale}`} className="font-heading text-lg tracking-wider">VELKINA</Link>
-            <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
-              <Link href={`/${locale}`} className="text-white/80 hover:text-vkcyan">{t.home ?? 'Home'}</Link>
-              <Link href={`/${locale}/services`} className="text-white/80 hover:text-vkcyan">{t.services}</Link>
-              <Link href={`/${locale}/use-cases`} className="text-white/80 hover:text-vkcyan">{t.useCases}</Link>
-              <Link href={`/${locale}/customer-agent`} className="text-white/80 hover:text-vkcyan">{t.customerAgent}</Link>
-              <Link href={`/${locale}/blog`} className="text-white/80 hover:text-vkcyan">{t.blog}</Link>
-              <Link href={`/${locale}/#cta`} className="text-white/90 font-mono px-3 py-1.5 rounded-xl bg-vkpink text-black shadow-strong">{t.startProject}</Link>
-              <LanguageSwitcher locale={locale} />
-            </nav>
+            <div className="flex items-center gap-3">
+              {/* Mobile: hamburger opens drawer */}
+              <MobileNavClient locale={locale} labels={t} startProjectLabel={messages.home?.startProjectShort} />
+              {/* Desktop navigation */}
+              <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
+                <Link href={`/${locale}`} className="text-white/80 hover:text-vkcyan">{t.home ?? 'Home'}</Link>
+                <Link href={`/${locale}/services`} className="text-white/80 hover:text-vkcyan">{t.services}</Link>
+                <Link href={`/${locale}/use-cases`} className="text-white/80 hover:text-vkcyan">{t.useCases}</Link>
+                <Link href={`/${locale}/customer-agent`} className="text-white/80 hover:text-vkcyan">{t.customerAgent}</Link>
+                <Link href={`/${locale}/blog`} className="text-white/80 hover:text-vkcyan">{t.blog}</Link>
+                <Link href={`/${locale}/#cta`} className="text-white/90 font-mono px-3 py-1.5 rounded-xl bg-vkpink text-black shadow-strong">{t.startProject}</Link>
+                <LanguageSwitcher locale={locale} />
+              </nav>
+            </div>
           </div>
         </header>
 

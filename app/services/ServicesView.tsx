@@ -11,7 +11,7 @@ export type ServicesViewProps = {
 
 export default function ServicesView({messages, locale}: ServicesViewProps) {
   const t = createT(messages ?? getDefaultMessages());
-  const lang = locale === 'en' ? 'en' : 'tr';
+  const lang = locale === 'tr' ? 'tr' : 'en';
 
   const icons: Record<string, ReactNode> = {
     websites: (
@@ -113,10 +113,25 @@ export default function ServicesView({messages, locale}: ServicesViewProps) {
 
       {/* What we do: TOC + models (separate section below hero) */}
       <section className="max-w-7xl mx-auto px-6 md:px-10 py-8">
-        <div className="relative z-10 mt-8 flex flex-wrap gap-2" role="navigation" aria-label="Services table of contents">
-          {items.map((s: any) => (
-            <a key={s.id} href={`#${s.id}`} className="px-3 py-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-white/80">{s.title}</a>
-          ))}
+        {/* Sticky, horizontally scrollable TOC for mobile */}
+        <div className="sticky top-20 z-30 -mx-6 md:mx-0 px-6 py-2 bg-vkbg/70 backdrop-blur border-y border-white/5">
+          {(() => {
+            const tocIds = ['websites','applications','ai-automation','ads','seo','analytics-cro','middleware','hosting-devops'];
+            const toc = tocIds.map(id => items.find((x:any)=>x.id===id)).filter(Boolean) as any[];
+            return (
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 left-0 w-6" style={{background:'linear-gradient(90deg, var(--vk-bg), transparent)'}} />
+                <div className="pointer-events-none absolute inset-y-0 right-0 w-6" style={{background:'linear-gradient(270deg, var(--vk-bg), transparent)'}} />
+                <nav className="flex gap-2 overflow-x-auto hide-scrollbar snap-x" aria-label="Services table of contents">
+                  {toc.map((s:any) => (
+                    <a key={s.id} href={`#${s.id}`} className="snap-start px-3 py-1.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-white/80 whitespace-nowrap">
+                      {s.title}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            );
+          })()}
         </div>
         <div className="relative z-10 mt-6 vk-glass border border-white/10 rounded-xl p-5 shadow-soft">
           <h2 className="font-heading text-xl">{modelsTitle}</h2>

@@ -7,7 +7,7 @@ export default function LanguageSwitcher({locale}) {
 
   // Derive current locale from the path if not provided
   const segs = (pathname || '').split('/').filter(Boolean);
-  const current = locale || ((segs[0] === 'tr' || segs[0] === 'en') ? segs[0] : 'tr');
+  const current = locale || ((segs[0] === 'tr' || segs[0] === 'en') ? segs[0] : 'en');
   const other = current === 'tr' ? 'en' : 'tr';
 
   function toOtherLocalePath(path) {

@@ -19,7 +19,7 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
   const t = createT(messages ?? getDefaultMessages());
   const h = t('home') as any;
   const common = t('common') as any;
-  const lang = locale === 'en' ? 'en' : 'tr';
+  const lang = locale === 'tr' ? 'tr' : 'en';
 
   const scrollerRef = useRef<HTMLDivElement | null>(null);
 
@@ -73,14 +73,18 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
   let serviceItems = Array.isArray(s?.items) ? s.items : [];
   if (!serviceItems || serviceItems.length === 0) {
     serviceItems = [
-      { id: 'web', title: 'Web Development', tag: 'Design • Frontend • Backend', intro: 'High‑performance websites and apps built on Next.js 14, TypeScript, and a robust design system.' },
-      { id: 'hosting', title: 'Edge Hosting & DevOps', tag: 'Vercel • Cloudflare • AWS', intro: 'Fast, dependable and observable deployments with CI/CD, caching and rollbacks.' },
-      { id: 'it', title: 'IT Solutions & Integrations', tag: 'Identity • Data • Workflows', intro: 'Connect your stack with secure auth, data sync and automated workflows.' },
-      { id: 'middleware', title: 'CRM–CMS Middleware', tag: 'HubSpot • Salesforce • Sanity', intro: 'A unified API layer between sites, CRMs and CMSs for clean data and faster ops.' },
-      { id: 'growth', title: 'Ad Campaigns & Growth', tag: 'Acquisition • CRO • Analytics', intro: 'Campaigns that compound with accurate measurement and fast landing iterations.' },
-      { id: 'production', title: 'Production & Content', tag: 'Video • Motion • Docs', intro: 'Crisp visuals, motion and docs that actually onboard and differentiate.' }
+      { id: 'websites', title: lang==='en' ? 'Websites' : 'Web Siteleri', tag: lang==='en' ? 'Design • Frontend • Backend' : 'Tasarım • Frontend • Backend', intro: lang==='en' ? 'Fast, reliable websites—end‑to‑end from design to production.' : 'Hızlı, güvenilir web siteleri—tasarımdan canlıya.' },
+      { id: 'applications', title: lang==='en' ? 'Applications' : 'Uygulamalar', tag: lang==='en' ? 'Web App • Mobile • Admin' : 'Web App • Mobil • Panel', intro: lang==='en' ? 'Custom apps and admin panels for your workflows.' : 'İş süreçlerinize özel uygulamalar ve paneller.' },
+      { id: 'ai-automation', title: lang==='en' ? 'AI Automation' : 'AI Otomasyonu', tag: lang==='en' ? 'Workflows • Agents' : 'İş Akışları • Ajanlar', intro: lang==='en' ? 'Automate repetitive tasks with agents and workflows.' : 'Tekrarlayan işleri ajanlar ve iş akışlarıyla otomatikleştirin.' },
+      { id: 'ads', title: lang==='en' ? 'Meta & Google Ads' : 'Meta & Google Reklamları', tag: lang==='en' ? 'Acquisition • Retargeting' : 'Edinim • Yeniden Hedefleme', intro: lang==='en' ? 'Performance campaigns with trustworthy measurement.' : 'Güvenilir ölçümlemeyle performans kampanyaları.' },
+      { id: 'seo', title: lang==='en' ? 'SEO Services' : 'SEO Hizmetleri', tag: lang==='en' ? 'Technical • Content • On‑page' : 'Teknik • İçerik • On‑page', intro: lang==='en' ? 'Technical foundations and quality content for search.' : 'Arama görünürlüğü için teknik temel + içerik.' },
+      { id: 'middleware', title: lang==='en' ? 'CRM/CMS Integrations' : 'CRM/CMS Entegrasyonları', tag: 'HubSpot • Salesforce • Sanity', intro: lang==='en' ? 'Robust data flows between systems.' : 'Sistemler arası sağlam veri akışı.' }
     ];
   }
+  // Curated order regardless of messages order
+  const svcOrder = ['websites','applications','ai-automation','ads','seo','analytics-cro','middleware','hosting-devops'];
+  const orderedServices = svcOrder.map(id => serviceItems.find((i:any)=>i.id===id)).filter(Boolean) as any[];
+  const gridServices = orderedServices.length ? orderedServices : serviceItems;
 
   const testimonials = (Array.isArray(h?.testimonials?.items) && h.testimonials.items?.length)
     ? h.testimonials.items
@@ -173,7 +177,7 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
               <a href={`/${locale}/services`} className="text-white/80 hover:text-vkcyan text-sm border border-white/15 rounded-lg px-3 py-1.5 bg-white/5 hover:bg-white/10">{h?.servicesViewAll ?? (lang==='en' ? 'See all services' : 'Tüm hizmetleri gör')}</a>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {serviceItems.slice(0, 6).map((item: any) => (
+              {gridServices.slice(0, 6).map((item: any) => (
                 <a key={item.id} href={`/${locale}/services#${item.id}`} className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-0.5 transition block focus:outline-none focus:ring-2 focus:ring-vkcyan/50">
                   <div className="flex items-start justify-between gap-3">
                     <div>
