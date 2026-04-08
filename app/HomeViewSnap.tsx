@@ -9,6 +9,7 @@ import RailClient from '../components/RailClient';
 import RevealClient from '../components/RevealClient';
 import type {Locale, Messages} from '../i18n/messages';
 import {createT, getDefaultMessages} from '../i18n/messages';
+import {CONTACT, mailHref, whatsappHref} from '../lib/contact';
 
 type HomeViewProps = {
   messages?: Messages;
@@ -150,13 +151,29 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
                     : 'Web, uygulamalar ve yapay zekâ — tek kıdemli ekip, uçtan uca.'}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <a data-cta="whatsapp" className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl bg-vkpink text-black shadow-strong font-mono">
+                  <a
+                    data-cta="whatsapp"
+                    href={whatsappHref(common?.whatsappPrefill)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl bg-vkpink text-black shadow-strong font-mono"
+                  >
                     {h?.ctas?.whatsapp ?? (lang==='en' ? 'Message on WhatsApp' : 'WhatsApp’tan yazın')}
                   </a>
-                  <a data-cta="email" className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl border border-white/25 text-white/90 bg-white/5 hover:bg-white/10 transition">
+                  <a
+                    data-cta="email"
+                    href={mailHref(common?.emailSubject)}
+                    className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl border border-white/25 text-white/90 bg-white/5 hover:bg-white/10 transition"
+                  >
                     {h?.ctas?.email ?? (lang==='en' ? 'Send an email' : 'E‑posta gönderin')}
                   </a>
-                  <a data-cta="schedule" className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl border border-white/15 bg-white/5 text-white/90">
+                  <a
+                    data-cta="schedule"
+                    href={CONTACT.scheduleUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl border border-white/15 bg-white/5 text-white/90"
+                  >
                     {h?.ctas?.schedule ?? (lang==='en' ? 'Schedule a call' : 'Görüşme planlayın')}
                   </a>
                 </div>
@@ -376,13 +393,29 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
             <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl">{lang==='en' ? 'Start' : 'Başlat'}</h2>
             <p className="mt-3 text-white/70">{h?.startProjectShort ?? (lang==='en' ? 'Start project — Quick contact' : 'Proje başlat — Hızlı iletişim')}</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <a data-cta="whatsapp" className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl bg-vkpink text-black shadow-strong font-mono">
+              <a
+                data-cta="whatsapp"
+                href={whatsappHref(common?.whatsappPrefill)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl bg-vkpink text-black shadow-strong font-mono"
+              >
                 {h?.ctas?.whatsapp ?? (lang==='en' ? 'Message on WhatsApp' : 'WhatsApp’tan yazın')}
               </a>
-              <a data-cta="email" className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl border border-white/25 text-white/90 bg-white/5 hover:bg-white/10 transition">
+              <a
+                data-cta="email"
+                href={mailHref(common?.emailSubject)}
+                className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl border border-white/25 text-white/90 bg-white/5 hover:bg-white/10 transition"
+              >
                 {h?.ctas?.email ?? (lang==='en' ? 'Send an email' : 'E‑posta gönderin')}
               </a>
-              <a data-cta="schedule" className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl border border-white/15 text-white/90 bg-white/5 hover:bg-white/10 transition">
+              <a
+                data-cta="schedule"
+                href={CONTACT.scheduleUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl border border-white/15 text-white/90 bg-white/5 hover:bg-white/10 transition"
+              >
                 {h?.ctas?.schedule ?? (lang==='en' ? 'Schedule a call' : 'Görüşme planlayın')}
               </a>
             </div>

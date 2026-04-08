@@ -35,21 +35,6 @@ export default function GlobalClient(){
       }
     });
 
-    // CTA destinations (localized via body data-*)
-    try {
-      const email = 'hello@velkina.com';
-      const body = document.body || null;
-      const prefill = (body && body.dataset && body.dataset.whatsappPrefill) || "Hi Velkina! I'd like to discuss a project.";
-      const pre = encodeURIComponent(prefill);
-      const wa = (window.VELK_CONTACT?.whatsapp || '').replace(/[^0-9]/g,'');
-      const schedule = window.VELK_CONTACT?.schedule || 'https://calendly.com/velkina/intro-call';
-      const waHref = wa ? `https://wa.me/${wa}?text=${pre}` : '/#contact';
-      document.querySelectorAll('[data-cta="whatsapp"]').forEach(a=>a.setAttribute('href', waHref));
-      const subj = encodeURIComponent((body && body.dataset && body.dataset.emailSubject) || 'Project Inquiry');
-      document.querySelectorAll('[data-cta="email"]').forEach(a=>a.setAttribute('href', `mailto:${email}?subject=${subj}`));
-      document.querySelectorAll('[data-cta="schedule"]').forEach(a=>a.setAttribute('href', schedule));
-    } catch(e){}
-
     // Page transition overlay for same-origin nav
     const transEl = document.getElementById('vk-trans');
     if(transEl && !isLight){

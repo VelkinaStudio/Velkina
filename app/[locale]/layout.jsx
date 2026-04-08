@@ -9,6 +9,7 @@ import MobileNavClient from '../../components/MobileNavClient';
 import en from '../../messages/en.json';
 import tr from '../../messages/tr.json';
 import { Inter, Sora } from 'next/font/google';
+import {CONTACT, telHref, mailHref, whatsappHref} from '../../lib/contact';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
@@ -72,8 +73,6 @@ export default function LocaleLayout({children, params}) {
       <head />
       <body
         className="font-body bg-vkbg text-vktext min-h-screen flex flex-col"
-        data-email-subject={messages.common?.emailSubject ?? 'Project Inquiry'}
-        data-whatsapp-prefill={messages.common?.whatsappPrefill ?? "Hi Velkina! I'd like to discuss a project."}
         data-carousel-play={messages.common?.carouselPlay ?? 'Play carousel'}
         data-carousel-pause={messages.common?.carouselPause ?? 'Pause carousel'}
       >
@@ -129,7 +128,10 @@ export default function LocaleLayout({children, params}) {
             <div>
               <h3 className="font-heading text-white/90 mb-2">{messages.footer?.getInTouch ?? 'Get in touch'}</h3>
               <ul className="space-y-1">
-                <li><a href="mailto:hello@velkina.com" className="hover:text-vkcyan">hello@velkina.com</a></li>
+                <li><a href={mailHref(messages.common?.emailSubject)} className="hover:text-vkcyan">{CONTACT.email}</a></li>
+                <li><a href={telHref} className="hover:text-vkcyan">{CONTACT.phoneDisplay}</a></li>
+                <li><a href={whatsappHref(messages.common?.whatsappPrefill)} target="_blank" rel="noopener noreferrer" className="hover:text-vkcyan">WhatsApp</a></li>
+                <li><a href={CONTACT.scheduleUrl} target="_blank" rel="noopener noreferrer" className="hover:text-vkcyan">{messages.contact?.schedule ?? 'Schedule a call'}</a></li>
                 <li><Link href={`/${locale}/#cta`} className="hover:text-vkcyan">{messages.home?.startProjectShort ?? 'Start project — Quick contact'}</Link></li>
               </ul>
             </div>

@@ -3,6 +3,7 @@ import HeroShapesClient from '../../components/HeroShapesClient';
 import type {Locale, Messages} from '../../i18n/messages';
 import {createT, getDefaultMessages} from '../../i18n/messages';
 import Link from 'next/link';
+import {mailHref, whatsappHref} from '../../lib/contact';
 
 export type CustomerAgentViewProps = {
   messages?: Messages;
@@ -11,6 +12,7 @@ export type CustomerAgentViewProps = {
 
 export default function CustomerAgentView({messages, locale}: CustomerAgentViewProps) {
   const t = createT(messages ?? getDefaultMessages());
+  const common = (t('common') as any) ?? {};
   const isEnglish = locale === 'en';
 
   // Türkçe ve İngilizce içerik
@@ -293,10 +295,10 @@ export default function CustomerAgentView({messages, locale}: CustomerAgentViewP
             <Link href={`/${locale}/contact`} className="vk-button vk-button-primary">
               {content.ctaButton}
             </Link>
-            <a href="https://wa.me/905555555555" target="_blank" rel="noopener noreferrer" className="vk-button vk-button-outline">
+            <a href={whatsappHref(common?.whatsappPrefill)} target="_blank" rel="noopener noreferrer" className="vk-button vk-button-outline">
               {content.ctaWhatsapp}
             </a>
-            <a href="mailto:info@velkina.com" className="vk-button vk-button-outline">
+            <a href={mailHref(common?.emailSubject)} className="vk-button vk-button-outline">
               {content.ctaEmail}
             </a>
           </div>
