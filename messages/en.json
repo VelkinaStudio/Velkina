@@ -6,11 +6,9 @@
   },
   "nav": {
     "home": "Home",
-    "why": "Why",
     "services": "Services",
     "useCases": "Use Cases",
     "blog": "Blog",
-    "tech": "Tech",
     "about": "About",
     "contact": "Contact",
     "privacy": "Privacy",
@@ -30,16 +28,6 @@
     "quickLinks": "Quick Links",
     "getInTouch": "Get in touch",
     "rightsReserved": "All rights reserved."
-  },
-  "homeSimple": {
-    "heroTitle": "AI Agents",
-    "heroSub": "Automate work.",
-    "automateTitle": "Automate",
-    "automateSub": "Save time.",
-    "proofTitle": "Proof",
-    "clientsTitle": "Clients",
-    "ctaTitle": "Start",
-    "ctaSub": "Quick contact"
   },
   "home": {
     "heroDesc": "We build intelligent AI agents that transform how businesses operate. Our specialized team creates custom solutions like our Turkish customer service agent that can handle calls and communications with human-like understanding.",
@@ -123,38 +111,7 @@
         "sr": "Observed uptime"
       }
     },
-    "why": {
-      "title": "Why Velkina",
-      "subtitle": "AI specialists with expertise in natural language processing, voice recognition, and conversational design. We build intelligent agents that transform customer service and business operations.",
-      "howWeWork": {
-        "title": "How we work",
-        "items": [
-          "Analyze your business needs and design custom AI agent solutions.",
-          "Train models on your specific domain with multilingual capabilities.",
-          "Deploy with continuous monitoring and performance optimization."
-        ],
-        "stats": {
-          "launches": "Deployments",
-          "median": "Training time",
-          "uptime": "Agent uptime"
-        }
-      },
-      "seniorOnly": {
-        "title": "AI specialists",
-        "desc": "Our team combines expertise in linguistics, machine learning, and software engineering to create agents that truly understand your customers."
-      },
-      "speed": {
-        "title": "Rapid deployment",
-        "desc": "Quick integration with your existing systems. Our agents can be deployed and operational within weeks, not months."
-      },
-      "design": {
-        "title": "Conversational intelligence",
-        "desc": "Natural dialogue flows and contextual understanding. Our agents don't just respond—they comprehend and solve."
-      },
-      "techLine": "NLP • Voice Recognition • Machine Learning • n8n Integration"
-    },
     "stackTitle": "Tech Stack",
-    "techCarouselLabel": "Technology logos carousel",
     "ctas": {
       "whatsapp": "Message on WhatsApp",
       "email": "Send an email",
@@ -379,7 +336,6 @@
     "subtitle": "We reply within one business day. No pressure; just clarity.",
     "email": "Email",
     "phone": "Phone",
-    "emailAddress": "hello@velkina.com",
     "whatsapp": "WhatsApp",
     "whatsappDesc": "Message us to start quickly",
     "schedule": "Schedule a call",
@@ -394,7 +350,7 @@
         "title": "Controller & Contact",
         "body": [
           "Velkina Yazılım ve Tasarım (\"Velkina\", \"we\", \"us\") acts as the data controller for personal data processed through our website and client engagements.",
-          "Contact: hello@velkina.com"
+          "Contact: info@velkina.com"
         ]
       },
       {
@@ -454,7 +410,7 @@
         "title": "Your Rights",
         "body": [
           "Subject to law, you may request access, rectification, deletion, restriction, portability or objection to processing. You may withdraw consent at any time without affecting prior processing.",
-          "Contact: hello@velkina.com. You may also lodge a complaint with your data protection authority."
+          "Contact: info@velkina.com. You may also lodge a complaint with your data protection authority."
         ]
       },
       {

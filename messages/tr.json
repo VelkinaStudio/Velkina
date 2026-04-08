@@ -6,11 +6,9 @@
   },
   "nav": {
     "home": "Ana sayfa",
-    "why": "Neden",
     "services": "Hizmetler",
     "useCases": "Projelerimiz",
     "blog": "Blog",
-    "tech": "Teknoloji",
     "about": "Hakkımızda",
     "contact": "İletişim",
     "privacy": "Gizlilik",
@@ -30,16 +28,6 @@
     "quickLinks": "Hızlı Bağlantılar",
     "getInTouch": "İletişime geçin",
     "rightsReserved": "Tüm hakları saklıdır."
-  },
-  "homeSimple": {
-    "heroTitle": "Yapay Zeka",
-    "heroSub": "İşi otomatikleştir.",
-    "automateTitle": "Otomasyon",
-    "automateSub": "Zaman kazanın.",
-    "proofTitle": "Kanıt",
-    "clientsTitle": "Müşteriler",
-    "ctaTitle": "Başlat",
-    "ctaSub": "Hızlı iletişim"
   },
   "home": {
     "heroDesc": "İşletmelerin çalışma şeklini dönüştüren akıllı yapay zeka ajanları geliştiriyoruz. Uzman ekibimiz, çağrıları ve iletişimleri insan benzeri anlayışla yönetebilen Türkçe müşteri hizmetleri ajanımız gibi özel çözümler yaratıyor.",
@@ -125,10 +113,7 @@
     "servicesTitle": "Ne yapıyoruz",
     "servicesViewAll": "Tüm hizmetleri gör",
     "explore": "İncele",
-    "startProjectShort": "Proje başlat — Hızlı iletişim",
-    "why": {
-      "techLine": "Next.js 14 • Edge • Analitik • Otomasyon"
-    }
+    "startProjectShort": "Proje başlat — Hızlı iletişim"
   },
   "services": {
     "metaTitle": "Velkina — Hizmetlerimiz",
@@ -344,7 +329,6 @@
     "subtitle": "Bir iş günü içinde döneriz. Baskı yok; sadece netlik.",
     "email": "E‑posta",
     "phone": "Telefon",
-    "emailAddress": "hello@velkina.com",
     "whatsapp": "WhatsApp",
     "whatsappDesc": "Hızlı başlamak için bize yazın",
     "schedule": "Görüşme planlayın",
@@ -359,7 +343,7 @@
         "title": "Veri Sorumlusu ve İletişim",
         "body": [
           "Velkina Yazılım ve Tasarım (\"Velkina\", \"biz\") web sitemiz ve müşteri ilişkilerimiz kapsamında işlenen kişisel veriler açısından veri sorumlusudur.",
-          "İletişim: hello@velkina.com"
+          "İletişim: info@velkina.com"
         ]
       },
       {
@@ -419,7 +403,7 @@
         "title": "Haklarınız",
         "body": [
           "Mevzuata tabi olarak; erişim, düzeltme, silme, kısıtlama, taşınabilirlik ve işleme itiraz haklarına sahipsiniz. Rızaya dayalı işlemede rızanızı dilediğiniz an geri çekebilirsiniz.",
-          "Başvuru: hello@velkina.com. Ayrıca ilgili veri koruma otoritesine şikayette bulunabilirsiniz."
+          "Başvuru: info@velkina.com. Ayrıca ilgili veri koruma otoritesine şikayette bulunabilirsiniz."
         ]
       },
       {
