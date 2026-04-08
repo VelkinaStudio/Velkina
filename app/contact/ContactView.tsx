@@ -40,7 +40,7 @@ export default function ContactView({messages, locale}: ContactViewProps) {
           className={cardClass}
         >
           <div className="font-heading">{m?.whatsapp ?? 'WhatsApp'}</div>
-          <div className="text-white/80">{CONTACT.phoneDisplay}</div>
+          <div className="text-white/80">{m?.whatsappDesc ?? 'Message us to start quickly'}</div>
         </a>
         <a
           href={CONTACT.scheduleUrl}

@@ -130,7 +130,7 @@ export default function LocaleLayout({children, params}) {
               <ul className="space-y-1">
                 <li><a href={mailHref(messages.common?.emailSubject)} className="hover:text-vkcyan">{CONTACT.email}</a></li>
                 <li><a href={telHref} className="hover:text-vkcyan">{CONTACT.phoneDisplay}</a></li>
-                <li><a href={whatsappHref(messages.common?.whatsappPrefill)} target="_blank" rel="noopener noreferrer" className="hover:text-vkcyan">WhatsApp</a></li>
+                <li><a href={whatsappHref(messages.common?.whatsappPrefill)} target="_blank" rel="noopener noreferrer" className="hover:text-vkcyan">{messages.contact?.whatsapp ?? 'WhatsApp'}</a></li>
                 <li><a href={CONTACT.scheduleUrl} target="_blank" rel="noopener noreferrer" className="hover:text-vkcyan">{messages.contact?.schedule ?? 'Schedule a call'}</a></li>
                 <li><Link href={`/${locale}/#cta`} className="hover:text-vkcyan">{messages.home?.startProjectShort ?? 'Start project — Quick contact'}</Link></li>
               </ul>
