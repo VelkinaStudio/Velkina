@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bistro — Velkina · Editorial Menu Demo</title>
+<meta name="description" content="A working restaurant menu demo built by Velkina Studio." />
+<link rel="icon" type="image/svg+xml" href="../../../public/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#f4ece0;
+  --ink:#1b1410;
+  --ink-2:#2a1f17;
+  --muted:#8a7a68;
+  --line:#d8c8b0;
+  --accent:#c8501e;     /* terracotta */
+  --gold:#d8a86c;
+  --leaf:#5b7a3a;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",system-ui,sans-serif;
+  --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* paper texture */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.07;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode:multiply;
+}
+
+/* ============ TOP NAV ============ */
+.top{
+  position:sticky;top:0;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 32px;
+  background:rgba(244,236,224,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.top a.back{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink-2)}
+.top .brand{font-family:var(--serif);font-size:18px;letter-spacing:-0.02em}
+.top .brand i{font-style:italic;color:var(--muted);font-weight:300}
+.top .meta{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;text-align:center;padding:64px 24px 48px;
+  border-bottom:1px solid var(--line);
+}
+.hero .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(56px,11vw,140px);line-height:.9;letter-spacing:-0.04em;
+}
+.hero h1 i{font-style:italic;color:var(--muted);font-weight:300}
+.hero p{margin:18px auto 0;max-width:48ch;color:var(--ink-2);font-size:15.5px}
+.hero .ornament{display:inline-flex;align-items:center;gap:14px;margin:24px 0 0;color:var(--gold)}
+.hero .ornament span{height:1px;width:48px;background:currentColor;opacity:.5}
+
+/* ============ FILTERS ============ */
+.filters{
+  position:sticky;top:60px;z-index:8;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 32px;
+  background:rgba(244,236,224,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  flex-wrap:wrap;
+}
+.filter-group{display:flex;flex-wrap:wrap;gap:8px}
+.filters button.cat{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  padding:8px 14px;border:1px solid var(--line);border-radius:999px;
+  transition:background .25s,color .25s,border-color .25s;
+}
+.filters button.cat:hover{border-color:var(--ink)}
+.filters button.cat.is-active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.diet{display:flex;gap:8px;flex-wrap:wrap}
+.diet button{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
+  padding:6px 10px;border:1px dashed var(--line);border-radius:6px;color:var(--muted);
+}
+.diet button.is-on{border-style:solid;border-color:var(--leaf);color:var(--leaf);background:rgba(91,122,58,.08)}
+
+/* ============ MENU ============ */
+.menu{max-width:1100px;margin:0 auto;padding:48px 32px 96px}
+
+.section-title{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(36px,5vw,56px);letter-spacing:-0.025em;
+  display:flex;align-items:end;gap:20px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:14px;margin:48px 0 28px;
+}
+.section-title small{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);font-weight:400;
+  margin-bottom:10px;
+}
+
+.dishes{display:grid;grid-template-columns:1fr 1fr;gap:36px 64px}
+@media (max-width:760px){.dishes{grid-template-columns:1fr}}
+
+.dish{display:grid;grid-template-columns:1fr auto;gap:18px;padding:14px 0}
+.dish__title{
+  font-family:var(--serif);font-weight:500;font-size:20px;letter-spacing:-0.01em;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.dish__title em{font-style:italic;color:var(--muted);font-weight:400;font-size:14px}
+.dish__desc{color:var(--ink-2);font-size:14px;margin:6px 0;max-width:46ch}
+.dish__pair{font-size:12.5px;color:var(--muted);font-style:italic}
+.dish__price{
+  font-family:var(--serif);font-weight:500;font-size:20px;
+  text-align:right;white-space:nowrap;
+}
+.dish__price small{display:block;font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.1em}
+.dish__add{
+  margin-top:8px;display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;
+  padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.dish__add:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.dish__add.is-added{background:var(--leaf);border-color:var(--leaf);color:var(--paper)}
+
+.dish__tags{display:inline-flex;gap:6px;flex-wrap:wrap}
+.tag{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted);
+}
+.tag--v{color:var(--leaf);border-color:var(--leaf)}
+.tag--vg{color:var(--leaf);border-color:var(--leaf);background:rgba(91,122,58,.1)}
+.tag--gf{color:var(--accent);border-color:var(--accent)}
+.tag--spicy{color:var(--accent);border-color:var(--accent)}
+
+.dish.is-hidden{display:none}
+
+/* ============ CART ============ */
+.cart-fab{
+  position:fixed;bottom:20px;right:20px;z-index:50;
+  background:var(--ink);color:var(--paper);
+  padding:14px 22px;border-radius:999px;
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;
+  box-shadow:0 14px 40px rgba(27,20,16,.25);
+  transition:transform .25s ease;
+}
+.cart-fab:hover{transform:translateY(-2px)}
+.cart-fab b{color:var(--gold);font-weight:500}
+
+.cart-drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(440px,92vw);
+  background:var(--paper);border-left:1px solid var(--line);
+  z-index:60;transform:translateX(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);
+  display:grid;grid-template-rows:auto 1fr auto;
+  box-shadow:-30px 0 60px rgba(0,0,0,.18);
+}
+.cart-drawer.is-open{transform:translateX(0)}
+.cart-drawer header{
+  padding:24px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.cart-drawer header h3{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:-0.02em}
+.cart-drawer .close{font-size:22px;line-height:1;padding:4px 10px;color:var(--muted)}
+.cart-list{overflow:auto;padding:16px 24px}
+.cart-item{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.cart-item h4{font-family:var(--serif);font-weight:500;font-size:16px}
+.cart-item small{color:var(--muted);font-size:12px}
+.qty{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:13px}
+.qty button{width:24px;height:24px;border-radius:50%;border:1px solid var(--line)}
+.qty button:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cart-item .price{font-family:var(--serif);font-weight:500;font-size:16px;min-width:60px;text-align:right}
+.cart-empty{padding:40px 24px;text-align:center;color:var(--muted)}
+.cart-foot{padding:24px;border-top:1px solid var(--line)}
+.cart-foot .row{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.cart-foot .row.total{font-family:var(--serif);font-size:22px;margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.cart-foot button.checkout{
+  width:100%;margin-top:16px;padding:16px;border-radius:8px;
+  background:var(--ink);color:var(--paper);
+  font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+}
+.cart-foot button.checkout:hover{background:var(--accent)}
+
+.scrim{position:fixed;inset:0;background:rgba(27,20,16,.5);z-index:55;opacity:0;pointer-events:none;transition:opacity .35s}
+.scrim.is-open{opacity:1;pointer-events:auto}
+
+/* ============ TOAST ============ */
+.toast{
+  position:fixed;left:50%;bottom:90px;transform:translate(-50%,40px);opacity:0;
+  background:var(--ink);color:var(--paper);padding:12px 18px;border-radius:999px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.1em;
+  transition:transform .35s,opacity .35s;z-index:60;pointer-events:none;
+}
+.toast.is-on{transform:translate(-50%,0);opacity:1}
+
+/* ============ FOOTER ============ */
+footer.foot{
+  text-align:center;padding:48px 24px 64px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:12.5px;
+}
+footer.foot a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+</style>
+</head>
+<body>
+
+<!-- ========== Top Nav ========== -->
+<nav class="top">
+  <a class="back" href="../../index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14"><path d="M9 2 L4 7 L9 12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to portfolio
+  </a>
+  <div class="brand">Bistro <i>/ menu</i></div>
+  <div class="meta">est. 2026</div>
+</nav>
+
+<!-- ========== Hero ========== -->
+<header class="hero">
+  <div class="eyebrow">— Editorial menu, demo —</div>
+  <h1>The <i>day's</i><br/>kitchen.</h1>
+  <p>Seasonal small plates, slow-fermented breads and a list of natural pours that change weekly. Order at the counter or tap a dish to add it to your tab.</p>
+  <div class="ornament"><span></span>✺<span></span></div>
+</header>
+
+<!-- ========== Filters ========== -->
+<div class="filters">
+  <div class="filter-group" id="catFilters"><!-- populated --></div>
+  <div class="diet" id="dietFilters">
+    <button data-diet="v">vegetarian</button>
+    <button data-diet="vg">vegan</button>
+    <button data-diet="gf">gluten-free</button>
+  </div>
+</div>
+
+<!-- ========== Menu ========== -->
+<main class="menu" id="menu"><!-- populated --></main>
+
+<!-- ========== Cart ========== -->
+<button class="cart-fab" id="cartFab">
+  <span>Tab</span>
+  · <b id="fabCount">0</b>
+  · <b id="fabTotal">₺0</b>
+</button>
+
+<div class="scrim" id="scrim"></div>
+<aside class="cart-drawer" id="cart" aria-hidden="true">
+  <header>
+    <h3>Your tab</h3>
+    <button class="close" id="closeCart" aria-label="Close">✕</button>
+  </header>
+  <div class="cart-list" id="cartList"></div>
+  <div class="cart-foot">
+    <div class="row"><span>Subtotal</span><span id="sub">₺0</span></div>
+    <div class="row"><span>Service (10%)</span><span id="svc">₺0</span></div>
+    <div class="row total"><span>Total</span><span id="total">₺0</span></div>
+    <button class="checkout" id="checkoutBtn">Send to kitchen →</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast">Added to your tab.</div>
+
+<footer class="foot">
+  Bistro is a fictional restaurant — built as a Velkina demo.
+  <br/>
+  <a href="../../index.html">← back to portfolio</a> · <a href="../booking/">try the reservation suite ↗</a>
+</footer>
+
+<script>
+/* ========== Data ========== */
+const MENU = [
+  { cat:"Snacks", items:[
+    { name:"Sourdough &amp; cultured butter", desc:"Slow-fermented loaf, cultured butter, sea salt flakes.", price:120, diet:["v"], pair:"Pair · still mineral water" },
+    { name:"Olives, three ways", desc:"Çelebi, kalamata, picholine — warmed with citrus peel and bay.", price:140, diet:["v","vg","gf"] },
+    { name:"Smoked almonds", desc:"House-roasted, rosemary, cracked pepper.", price:90, diet:["v","vg","gf"] },
+  ]},
+  { cat:"Starters", items:[
+    { name:"Burrata, peach &amp; basil", desc:"Hand-torn burrata, white peach, basil oil, toasted pistachio.", price:240, diet:["v","gf"], pair:"Pair · skin-contact rkatsiteli" },
+    { name:"Beef tartare", desc:"Hand-cut, capers, shallot, house mustard, aged parmesan.", price:280, diet:[], pair:"Pair · pinot noir" },
+    { name:"Charred octopus", desc:"Smoked paprika, white bean purée, lemon, parsley.", price:310, diet:["gf"], spicy:true },
+    { name:"Heirloom tomato &amp; sumac", desc:"Three-tomato salad, sumac, sourdough crumb, herb oil.", price:180, diet:["v","vg"] },
+  ]},
+  { cat:"Mains", items:[
+    { name:"Wood-fired sea bass", desc:"Whole levrek, fennel, lemon, charred green olive tapenade.", price:520, diet:["gf"], pair:"Pair · narince" },
+    { name:"Lamb shoulder &amp; freekeh", desc:"Slow-braised lamb, smoked freekeh, tahini-yoghurt.", price:480, diet:[], spicy:true, pair:"Pair · öküzgözü" },
+    { name:"Mushroom risotto", desc:"Carnaroli, porcini, parmesan, brown-butter sage.", price:360, diet:["v","gf"], pair:"Pair · chardonnay" },
+    { name:"Pappardelle, brown butter", desc:"Hand-cut pappardelle, sage, parmesan, walnut.", price:340, diet:["v"], pair:"Pair · sangiovese" },
+  ]},
+  { cat:"Sweets", items:[
+    { name:"Fig leaf panna cotta", desc:"Fig leaf cream, honey-poached fig, toasted oat crumble.", price:180, diet:["v","gf"], pair:"Pair · moscato d’asti" },
+    { name:"Olive oil cake", desc:"Lemon-olive oil cake, crème fraîche, candied citrus.", price:160, diet:["v"] },
+    { name:"Pistachio &amp; rose ice cream", desc:"Antep pistachio, rose petal jam, brown butter shortbread.", price:160, diet:["v"] },
+  ]},
+  { cat:"Drinks", items:[
+    { name:"House negroni", desc:"Gin, campari, vermouth, orange peel, big rock.", price:280, diet:["vg","gf"] },
+    { name:"Filter coffee", desc:"Single-origin, hand-poured, served black.", price:90, diet:["vg","gf"] },
+    { name:"Mint &amp; verbena infusion", desc:"Hand-picked mint, lemon verbena, hot or iced.", price:80, diet:["vg","gf"] },
+  ]},
+];
+
+const cart = new Map(); // key -> {item, qty}
+const $  = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+const fmt = n => "₺" + n.toLocaleString("tr-TR");
+
+/* ========== Render menu ========== */
+const menuEl = $("#menu");
+const catFilters = $("#catFilters");
+
+function dishKey(item){ return item.name.replace(/[^a-z0-9]/gi,"_").toLowerCase(); }
+
+function renderTags(item){
+  const t = [];
+  if (item.diet?.includes("v"))  t.push('<span class="tag tag--v">veg</span>');
+  if (item.diet?.includes("vg")) t.push('<span class="tag tag--vg">vegan</span>');
+  if (item.diet?.includes("gf")) t.push('<span class="tag tag--gf">gf</span>');
+  if (item.spicy)                t.push('<span class="tag tag--spicy">spicy</span>');
+  return t.length ? `<span class="dish__tags">${t.join("")}</span>` : "";
+}
+
+function renderMenu(){
+  menuEl.innerHTML = MENU.map(sec => `
+    <section class="section">
+      <h2 class="section-title" data-cat="${sec.cat}">
+        <small>${String(MENU.indexOf(sec)+1).padStart(2,"0")}</small>
+        ${sec.cat}
+      </h2>
+      <div class="dishes">
+        ${sec.items.map(item => `
+          <article class="dish" data-cat="${sec.cat}" data-diet="${(item.diet||[]).join(' ')}" data-key="${dishKey(item)}">
+            <div>
+              <div class="dish__title">${item.name} ${renderTags(item)}</div>
+              <p class="dish__desc">${item.desc}</p>
+              ${item.pair ? `<p class="dish__pair">${item.pair}</p>` : ""}
+              <button class="dish__add" data-add='${JSON.stringify({name:item.name.replace(/&amp;/g,"&"),price:item.price})}'>＋ add to tab</button>
+            </div>
+            <div class="dish__price">${fmt(item.price)}<small>TRY</small></div>
+          </article>`).join("")}
+      </div>
+    </section>`).join("");
+
+  // Category filter chips
+  const cats = ["All", ...MENU.map(m => m.cat)];
+  catFilters.innerHTML = cats.map((c,i) =>
+    `<button class="cat ${i===0?'is-active':''}" data-cat="${c}">${c}</button>`
+  ).join("");
+}
+renderMenu();
+
+/* ========== Filters ========== */
+let activeCat = "All";
+const activeDiets = new Set();
+
+catFilters.addEventListener("click", e => {
+  const b = e.target.closest("button.cat"); if (!b) return;
+  activeCat = b.dataset.cat;
+  $$(".cat").forEach(x => x.classList.toggle("is-active", x === b));
+  applyFilters();
+});
+
+$("#dietFilters").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const d = b.dataset.diet;
+  if (activeDiets.has(d)) activeDiets.delete(d); else activeDiets.add(d);
+  b.classList.toggle("is-on");
+  applyFilters();
+});
+
+function applyFilters(){
+  $$(".dish").forEach(el => {
+    const okCat = activeCat === "All" || el.dataset.cat === activeCat;
+    const diets = (el.dataset.diet||"").split(" ");
+    const okDiet = !activeDiets.size || [...activeDiets].every(d => diets.includes(d));
+    el.classList.toggle("is-hidden", !(okCat && okDiet));
+  });
+  // Hide whole section if empty
+  $$(".section").forEach(sec => {
+    const visible = sec.querySelectorAll(".dish:not(.is-hidden)").length;
+    sec.style.display = visible ? "" : "none";
+  });
+}
+
+/* ========== Cart ========== */
+function addToCart(item){
+  const key = item.name;
+  const cur = cart.get(key);
+  if (cur) cur.qty += 1;
+  else cart.set(key, { item, qty: 1 });
+  renderCart(); toast("Added · " + item.name);
+}
+function removeFromCart(key){ cart.delete(key); renderCart(); }
+function setQty(key, q){
+  const c = cart.get(key); if (!c) return;
+  c.qty = Math.max(1, q);
+  renderCart();
+}
+
+document.addEventListener("click", e => {
+  const add = e.target.closest("[data-add]");
+  if (add) {
+    const data = JSON.parse(add.dataset.add);
+    addToCart(data);
+    add.classList.add("is-added");
+    add.innerHTML = "✓ added";
+    setTimeout(() => { add.classList.remove("is-added"); add.innerHTML = "＋ add to tab"; }, 1400);
+  }
+});
+
+const cartEl = $("#cart"), scrim = $("#scrim");
+$("#cartFab").addEventListener("click", () => openCart(true));
+$("#closeCart").addEventListener("click", () => openCart(false));
+scrim.addEventListener("click", () => openCart(false));
+function openCart(b){ cartEl.classList.toggle("is-open", b); scrim.classList.toggle("is-open", b); cartEl.setAttribute("aria-hidden", String(!b)); }
+
+function renderCart(){
+  const list = $("#cartList");
+  let count = 0, sub = 0;
+  if (cart.size === 0) {
+    list.innerHTML = '<div class="cart-empty">Your tab is empty. Add something delicious.</div>';
+  } else {
+    list.innerHTML = [...cart.values()].map(({item,qty}) => {
+      count += qty; sub += item.price * qty;
+      return `
+      <div class="cart-item">
+        <div>
+          <h4>${item.name}</h4>
+          <small>${fmt(item.price)} each</small>
+        </div>
+        <div class="qty">
+          <button data-q="-" data-key="${item.name}">−</button>
+          <span>${qty}</span>
+          <button data-q="+" data-key="${item.name}">＋</button>
+        </div>
+        <span class="price">${fmt(item.price * qty)}</span>
+      </div>`;
+    }).join("");
+    [...cart.values()].forEach(({qty}) => count += 0); // already counted
+  }
+  const svc = Math.round(sub * 0.10);
+  $("#sub").textContent = fmt(sub);
+  $("#svc").textContent = fmt(svc);
+  $("#total").textContent = fmt(sub + svc);
+  $("#fabCount").textContent = count;
+  $("#fabTotal").textContent = fmt(sub);
+}
+renderCart();
+
+document.addEventListener("click", e => {
+  const q = e.target.closest("[data-q]"); if (!q) return;
+  const key = q.dataset.key;
+  const cur = cart.get(key); if (!cur) return;
+  if (q.dataset.q === "+") setQty(key, cur.qty + 1);
+  else if (cur.qty <= 1) removeFromCart(key);
+  else setQty(key, cur.qty - 1);
+});
+
+$("#checkoutBtn").addEventListener("click", () => {
+  if (cart.size === 0) { toast("Your tab is empty."); return; }
+  toast("Order sent — table 7 ☕");
+  setTimeout(() => { cart.clear(); renderCart(); openCart(false); }, 900);
+});
+
+/* ========== Toast ========== */
+let toastT;
+function toast(msg){
+  const t = $("#toast");
+  t.textContent = msg;
+  t.classList.add("is-on");
+  clearTimeout(toastT);
+  toastT = setTimeout(() => t.classList.remove("is-on"), 1800);
+}
+</script>
+</body>
+</html>

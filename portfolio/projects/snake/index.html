@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>Snake — The Studio Journal · Plate III</title>
+<meta name="description" content="The classic snake, made smooth. Keyboard or swipe. Local-storage high score." />
+<link rel="icon" type="image/svg+xml" href="../../../public/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0d130f;
+  --bg-2:#101a13;
+  --grid:#142019;
+  --ink:#dff5ea;
+  --muted:#6f9783;
+  --snake:#7af0c0;
+  --snake-2:#34c896;
+  --food:#ff5b9b;
+  --gold:#ffd166;
+  --serif:"Fraunces",serif;
+  --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--bg);color:var(--ink);font-family:var(--mono);
+  min-height:100%;-webkit-font-smoothing:antialiased;
+  background-image:
+    linear-gradient(180deg,#0a100c 0%, #0d130f 60%, #101a13 100%),
+    radial-gradient(ellipse at 50% 0%, rgba(122,240,192,.05), transparent 60%);
+  background-blend-mode:screen;
+}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* scanline */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.06;
+  background:repeating-linear-gradient(180deg, rgba(255,255,255,.5) 0 1px, transparent 1px 4px);
+  mix-blend-mode:overlay;
+}
+
+.top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.05);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+}
+.top a{color:var(--ink);display:inline-flex;align-items:center;gap:8px}
+.top a:hover{color:var(--snake)}
+.top .brand{font-family:var(--serif);font-style:italic;font-size:18px;letter-spacing:-0.01em;color:var(--ink);text-transform:none}
+
+.shell{
+  display:grid;place-items:center;
+  padding:36px 20px 60px;
+}
+
+.frame{
+  width:min(600px,100%);
+  background:var(--bg-2);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(122,240,192,.06) inset;
+}
+
+.hud{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+}
+.hud div{padding:10px 14px;border:1px solid rgba(255,255,255,.06);border-radius:8px;background:rgba(255,255,255,.02)}
+.hud b{display:block;font-size:24px;color:var(--ink);font-family:var(--serif);font-weight:500;letter-spacing:0;margin-top:2px}
+.hud .gold b{color:var(--gold)}
+
+.canvasWrap{
+  position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;
+  background:var(--grid);
+  background-image:
+    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+  background-size:calc(100%/24) calc(100%/24);
+  border:1px solid rgba(255,255,255,.06);
+}
+canvas{display:block;width:100%;height:100%}
+
+.overlay{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:rgba(8,12,10,.86);backdrop-filter:blur(6px);
+  text-align:center;padding:24px;
+  opacity:0;pointer-events:none;
+  transition:opacity .25s ease;
+}
+.overlay.is-on{opacity:1;pointer-events:auto}
+.overlay h2{
+  font-family:var(--serif);font-weight:400;font-size:48px;letter-spacing:-0.02em;
+  margin-bottom:6px;color:var(--ink);
+}
+.overlay h2 i{font-style:italic;color:var(--snake)}
+.overlay p{color:var(--muted);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
+.overlay .keys{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:18px;color:var(--muted);font-size:11px;letter-spacing:.1em}
+.overlay .keys kbd{background:rgba(255,255,255,.06);padding:4px 8px;border-radius:4px;border:1px solid rgba(255,255,255,.08);color:var(--ink);font-family:var(--mono)}
+.overlay button.start{
+  padding:12px 28px;border-radius:999px;background:var(--snake);color:#0a100c;
+  font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  transition:transform .2s,filter .2s;font-weight:500;
+}
+.overlay button.start:hover{transform:translateY(-1px);filter:brightness(1.06)}
+
+.controls{
+  display:flex;gap:8px;justify-content:space-between;margin-top:14px;
+  font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+}
+.controls button{
+  padding:8px 14px;border:1px solid rgba(255,255,255,.08);border-radius:6px;
+}
+.controls button:hover{background:rgba(255,255,255,.05);color:var(--ink)}
+
+.legend{margin-top:14px;font-size:11px;color:var(--muted);text-align:center;letter-spacing:.05em}
+.legend kbd{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:3px;border:1px solid rgba(255,255,255,.08);color:var(--ink);font-family:var(--mono)}
+
+footer{text-align:center;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:24px}
+footer a{color:var(--ink);border-bottom:1px solid rgba(255,255,255,.1)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a href="../../index.html"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M9 2 L4 7 L9 12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> back to journal</a>
+  <div class="brand">Snake <span style="color:var(--muted);font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase">— plate III</span></div>
+  <span>arcade · loop · v1</span>
+</header>
+
+<main class="shell">
+  <section class="frame">
+    <div class="hud">
+      <div><span>Score</span><b id="score">0</b></div>
+      <div class="gold"><span>Best</span><b id="best">0</b></div>
+      <div><span>Speed</span><b id="speed">×1</b></div>
+    </div>
+
+    <div class="canvasWrap">
+      <canvas id="game" width="480" height="480"></canvas>
+      <div class="overlay is-on" id="overlay">
+        <div>
+          <h2>Coffee <i>break.</i></h2>
+          <p>arrows or wasd · space to pause</p>
+          <div class="keys">
+            <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>
+            <span style="margin:0 6px">·</span>
+            <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
+            <span style="margin:0 6px">·</span>
+            <kbd>Space</kbd>
+          </div>
+          <button class="start" id="startBtn">play</button>
+          <p style="margin-top:18px;font-size:10.5px;color:var(--muted)">on mobile: swipe to turn</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="pauseBtn">⏸ pause</button>
+      <button id="resetBtn">↺ reset</button>
+      <button id="speedBtn">≡ speed</button>
+    </div>
+
+    <p class="legend">crashing into yourself or the wall ends the run · best score saved on this device</p>
+  </section>
+</main>
+
+<footer>made by the studio · <a href="../../index.html">return to journal</a></footer>
+
+<script>
+const cvs = document.getElementById("game");
+const ctx = cvs.getContext("2d");
+const overlay = document.getElementById("overlay");
+const $ = s => document.querySelector(s);
+
+const N = 24;            // grid cells per side
+const cell = cvs.width / N;
+let snake = [{x:12,y:12},{x:11,y:12},{x:10,y:12}];
+let dir = {x:1,y:0}, queued = null;
+let food = spawnFood();
+let score = 0, best = +(localStorage.getItem("snake.best") || 0);
+let speedTier = 1; // 1, 1.5, 2
+let alive = false, paused = false;
+let lastStep = 0, accum = 0;
+const baseStepMs = 110;
+$("#best").textContent = best;
+
+function spawnFood(){
+  while (true){
+    const f = { x: Math.floor(Math.random() * N), y: Math.floor(Math.random() * N) };
+    if (!snake.some(s => s.x === f.x && s.y === f.y)) return f;
+  }
+}
+
+function reset(){
+  snake = [{x:12,y:12},{x:11,y:12},{x:10,y:12}];
+  dir = {x:1,y:0}; queued = null;
+  food = spawnFood();
+  score = 0; updateHud();
+  alive = false; paused = false;
+  overlay.classList.add("is-on");
+  $("#startBtn").textContent = "play";
+  $("#overlay h2").innerHTML = `Coffee <i>break.</i>`;
+  draw();
+}
+
+function updateHud(){
+  $("#score").textContent = score;
+  $("#best").textContent = best;
+  $("#speed").textContent = "×" + speedTier;
+}
+
+function setDir(nx, ny){
+  // prevent reversing into self
+  if ((dir.x === -nx && dir.y === -ny)) return;
+  queued = { x: nx, y: ny };
+}
+
+function step(){
+  if (queued) { dir = queued; queued = null; }
+  const head = { x: snake[0].x + dir.x, y: snake[0].y + dir.y };
+  if (head.x < 0 || head.y < 0 || head.x >= N || head.y >= N) return die();
+  if (snake.some((s,i) => i < snake.length - 1 && s.x === head.x && s.y === head.y)) return die();
+  snake.unshift(head);
+  if (head.x === food.x && head.y === food.y){
+    score++; food = spawnFood();
+    if (score > best){ best = score; localStorage.setItem("snake.best", best); }
+    updateHud();
+  } else {
+    snake.pop();
+  }
+}
+
+function die(){
+  alive = false;
+  overlay.classList.add("is-on");
+  $("#startBtn").textContent = "play again";
+  $("#overlay h2").innerHTML = `That's a <i>wrap.</i>`;
+}
+
+function draw(){
+  ctx.clearRect(0,0,cvs.width,cvs.height);
+
+  // food (heart)
+  ctx.fillStyle = "rgba(255,91,155,.20)";
+  ctx.beginPath();
+  ctx.arc(food.x*cell + cell/2, food.y*cell + cell/2, cell*.55, 0, Math.PI*2);
+  ctx.fill();
+  ctx.fillStyle = "#ff5b9b";
+  ctx.fillRect(food.x*cell + cell*.22, food.y*cell + cell*.22, cell*.56, cell*.56);
+
+  // snake
+  for (let i = 0; i < snake.length; i++){
+    const s = snake[i];
+    const t = 1 - i / snake.length;  // head bright, tail dim
+    ctx.fillStyle = i === 0 ? "#7af0c0" : `rgba(122,240,192,${0.4 + t*0.55})`;
+    const pad = i === 0 ? 1 : 2;
+    ctx.fillRect(s.x*cell + pad, s.y*cell + pad, cell - pad*2, cell - pad*2);
+    if (i === 0){
+      // eye dots
+      ctx.fillStyle = "#0a100c";
+      const ex = s.x*cell + cell/2 + dir.x*cell*.18;
+      const ey = s.y*cell + cell/2 + dir.y*cell*.18;
+      ctx.fillRect(ex - 2, ey - 2, 2, 2);
+    }
+  }
+}
+
+function loop(t){
+  requestAnimationFrame(loop);
+  if (!alive || paused) return;
+  if (!lastStep) lastStep = t;
+  const dt = t - lastStep; lastStep = t;
+  accum += dt;
+  const stepMs = baseStepMs / speedTier;
+  while (accum >= stepMs){
+    step();
+    accum -= stepMs;
+  }
+  draw();
+}
+
+requestAnimationFrame(loop);
+draw();
+
+/* ── input ── */
+addEventListener("keydown", e => {
+  if (e.key === " ") { e.preventDefault(); togglePause(); return; }
+  if (!alive) return;
+  switch(e.key){
+    case "ArrowUp": case "w": case "W": setDir(0,-1); break;
+    case "ArrowDown": case "s": case "S": setDir(0,1); break;
+    case "ArrowLeft": case "a": case "A": setDir(-1,0); break;
+    case "ArrowRight": case "d": case "D": setDir(1,0); break;
+  }
+});
+
+let touchStart = null;
+cvs.addEventListener("touchstart", e => { touchStart = e.touches[0]; }, { passive:true });
+cvs.addEventListener("touchmove", e => {
+  if (!touchStart || !alive) return;
+  const t = e.touches[0];
+  const dx = t.clientX - touchStart.clientX;
+  const dy = t.clientY - touchStart.clientY;
+  if (Math.abs(dx) < 24 && Math.abs(dy) < 24) return;
+  if (Math.abs(dx) > Math.abs(dy)) setDir(dx > 0 ? 1 : -1, 0);
+  else setDir(0, dy > 0 ? 1 : -1);
+  touchStart = t;
+}, { passive:true });
+
+/* ── overlay buttons ── */
+$("#startBtn").addEventListener("click", () => {
+  reset();
+  alive = true; paused = false;
+  overlay.classList.remove("is-on");
+});
+
+$("#pauseBtn").addEventListener("click", togglePause);
+$("#resetBtn").addEventListener("click", reset);
+$("#speedBtn").addEventListener("click", () => {
+  speedTier = speedTier === 1 ? 1.5 : speedTier === 1.5 ? 2 : 1;
+  updateHud();
+});
+
+function togglePause(){
+  if (!alive) return;
+  paused = !paused;
+  $("#pauseBtn").textContent = paused ? "▶ resume" : "⏸ pause";
+}
+
+reset();
+updateHud();
+</script>
+</body>
+</html>

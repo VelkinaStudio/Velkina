@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Velkina — Curriculum Vitae</title>
+<meta name="description" content="Velkina Studio — printable studio CV." />
+<link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#F4EFE6; --ink:#0E0E10; --muted:#7a7468; --line:#d8d2c4;
+  --cyan:#00aabb; --magenta:#c1148e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:"Inter",system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--ink)}
+
+.toolbar{
+  position:sticky;top:0;z-index:5;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:14px 28px;background:var(--paper);
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+}
+.toolbar a{display:inline-flex;align-items:center;gap:8px}
+.toolbar button{
+  font:inherit;background:var(--ink);color:var(--paper);
+  border:0;border-radius:999px;padding:8px 16px;cursor:pointer;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.toolbar button:hover{background:#222}
+.toolbar .crumb{color:var(--muted)}
+
+.page{
+  max-width:840px;margin:32px auto 80px;
+  padding:60px 64px;
+  background:#fff;
+  box-shadow:0 30px 80px rgba(14,14,16,.08), 0 0 0 1px var(--line);
+  border-radius:6px;
+}
+
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.head h1{
+  font-family:"Fraunces",Georgia,serif;font-weight:400;
+  font-size:60px;letter-spacing:-0.035em;line-height:.95;
+}
+.head h1 i{font-style:italic;color:var(--muted);font-weight:300}
+.head .meta{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:right}
+.head .meta div+div{margin-top:4px}
+
+.tag{
+  display:inline-block;font-family:"JetBrains Mono",monospace;font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  padding:4px 10px;border:1px solid var(--line);border-radius:999px;
+}
+
+.intro{font-family:"Fraunces",serif;font-size:22px;line-height:1.4;letter-spacing:-0.01em;margin:0 0 36px;color:#222;max-width:62ch}
+.intro em{font-style:italic;color:var(--muted)}
+
+h2{
+  font-family:"Fraunces",serif;font-weight:500;
+  font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink);
+  margin:36px 0 18px;
+  padding-bottom:8px;border-bottom:1px solid var(--ink);
+}
+
+.row{display:grid;grid-template-columns:120px 1fr;gap:24px;margin-bottom:18px}
+.row .when{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;color:var(--muted);padding-top:4px}
+.row h3{font-family:"Fraunces",serif;font-weight:500;font-size:18px;letter-spacing:-0.01em;margin-bottom:4px}
+.row h3 .role{color:var(--muted);font-style:italic;font-weight:400;font-size:15px;margin-left:6px}
+.row p{font-size:14px;color:#3a3a3a;max-width:64ch}
+.row ul{margin:8px 0 0 18px;font-size:14px;color:#3a3a3a}
+.row ul li{margin-bottom:3px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:#333}
+
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:24px 0 0}
+.kpi div{padding:14px 0;border-top:1px solid var(--line)}
+.kpi b{display:block;font-family:"Fraunces",serif;font-weight:500;font-size:26px;letter-spacing:-0.02em;color:var(--cyan)}
+.kpi small{font-size:11.5px;color:var(--muted)}
+
+.contact-line{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:#333}
+
+.gradient-rule{
+  height:2px;border:0;
+  background:linear-gradient(90deg,var(--cyan),var(--magenta));
+  margin:12px 0 28px;
+}
+
+footer.note{text-align:center;font-size:12px;color:var(--muted);margin-top:24px}
+
+@media (max-width:720px){
+  .page{padding:36px 28px;margin:0 auto}
+  .head h1{font-size:42px}
+  .row{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .kpi{grid-template-columns:1fr 1fr}
+}
+
+@media print{
+  .toolbar{display:none}
+  body{background:#fff}
+  .page{box-shadow:none;border-radius:0;margin:0;max-width:none;padding:24mm 18mm}
+  a{text-decoration:none;color:#000}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="index.html">← Back to portfolio</a>
+  <span class="crumb">Velkina · Studio CV · 2026</span>
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<article class="page">
+
+  <header class="head">
+    <h1>Velkina <i>/atelier</i></h1>
+    <div class="meta">
+      <div>Istanbul · Türkiye</div>
+      <div>Updated 05 / 2026</div>
+      <div>velkina.studio</div>
+    </div>
+  </header>
+
+  <hr class="gradient-rule">
+
+  <p class="intro">
+    A senior digital studio building <em>websites, applications and AI-powered systems</em> with measurable
+    outcomes. Two pairs of hands, full-stack, opinionated about craft and shipping.
+  </p>
+
+  <div class="contact-line">
+    <span><b>Email</b> <a href="mailto:hello@velkina.studio">hello@velkina.studio</a></span>
+    <span><b>Site</b> <a href="https://velkina.studio">velkina.studio</a></span>
+    <span><b>WhatsApp</b> <a href="https://wa.me/">on request</a></span>
+    <span class="tag">Available</span>
+  </div>
+
+  <h2>Profile</h2>
+  <p style="font-size:14.5px;max-width:62ch;color:#3a3a3a">
+    Velkina is a senior-only digital studio. We design, ship and scale high-performance websites and
+    applications with modern tooling, edge hosting and a measurable, growth-led approach. Engagements
+    range from focused 1–2 week sprints to long-running retainers covering roadmap, optimization and AI
+    automation.
+  </p>
+
+  <h2>Engagements &amp; selected work</h2>
+
+  <div class="row">
+    <div class="when">2024 — present</div>
+    <div>
+      <h3>EduTurkia <span class="role">— bilingual platform &amp; CRM</span></h3>
+      <p>End-to-end education-consultancy platform for international students in Türkiye.</p>
+      <ul>
+        <li>Admin-managed university and student records; 100% digital application tracking.</li>
+        <li>TR/EN multilingual content with locale-aware routing.</li>
+        <li>SEO &amp; ad integrations producing a significant uplift in qualified applications.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2023</div>
+    <div>
+      <h3>TP Thermoplast <span class="role">— B2B manufacturing</span></h3>
+      <ul>
+        <li>Multi-language corporate platform aimed at export-oriented buyers.</li>
+        <li>Product catalog, structured inquiry forms and lead capture.</li>
+        <li>Performance optimization cut page-load time by 50%.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2023</div>
+    <div>
+      <h3>Rain Group <span class="role">— home-décor brand &amp; e-commerce</span></h3>
+      <ul>
+        <li>Identity, tone of voice and minimal trustworthy UI.</li>
+        <li>SEO + social integration, organic traffic +60%.</li>
+        <li>Foundations laid for an e-commerce phase-two integration.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2023</div>
+    <div>
+      <h3>Clown3D &amp; Ali Cengiz İşcanlı <span class="role">— creative portfolios</span></h3>
+      <ul>
+        <li>Animation-rich 3D-studio site and a gallery-first artist portfolio.</li>
+        <li>Distinct online identities, optimized media pipelines, multilingual content.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2022</div>
+    <div>
+      <h3>Dr. Sevim Aydın Beauty <span class="role">— clinic &amp; bookings</span></h3>
+      <ul>
+        <li>Modern aesthetic site with integrated online appointment system.</li>
+        <li>SEO content engine drove +40% organic visibility.</li>
+        <li>Responsive-first design — mobile sessions rose to 70%.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2022</div>
+    <div>
+      <h3>Atar Avcı Hukuk Bürosu <span class="role">— law firm</span></h3>
+      <ul>
+        <li>Authority-driven brand site with practice-area routing.</li>
+        <li>Local SEO foundation and contact funnels.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Capabilities</h2>
+  <div class="two">
+    <div>
+      <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:15px;margin-bottom:8px">Design &amp; build</h3>
+      <div class="chips">
+        <span>Marketing sites</span><span>Editorial</span><span>E-commerce</span>
+        <span>Admin panels</span><span>Dashboards</span><span>Booking flows</span>
+        <span>Brand &amp; identity</span><span>Design systems</span>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:15px;margin-bottom:8px">Growth &amp; ops</h3>
+      <div class="chips">
+        <span>SEO</span><span>Server-side analytics</span><span>CRO</span>
+        <span>Meta &amp; Google Ads</span><span>CRM integrations</span>
+        <span>AI automation</span><span>Hosting / DevOps</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Stack</h2>
+  <div class="chips">
+    <span>Next.js 14</span><span>React 18</span><span>TypeScript</span>
+    <span>Node</span><span>Tailwind</span><span>GSAP</span><span>Lenis</span>
+    <span>Postgres</span><span>Prisma</span><span>Vercel</span><span>Cloudflare</span>
+    <span>Anthropic Claude</span><span>n8n</span><span>Stripe</span>
+  </div>
+
+  <h2>Outcomes</h2>
+  <div class="kpi">
+    <div><b>+40%</b><small>organic visibility · beauty</small></div>
+    <div><b>−50%</b><small>page load · manufacturing</small></div>
+    <div><b>+60%</b><small>traffic · home décor</small></div>
+    <div><b>100%</b><small>tracking · education</small></div>
+  </div>
+
+  <h2>How we work</h2>
+  <ul style="margin-left:18px;font-size:14px;color:#3a3a3a">
+    <li>Weekly sprints with previews, demos and rollback plans.</li>
+    <li>Design-system first: tokens, components, motion language.</li>
+    <li>Source code in your org from day one. Open licenses where applicable.</li>
+    <li>Post-launch retainers for roadmap, optimization and maintenance.</li>
+  </ul>
+
+  <h2>Languages</h2>
+  <div class="chips">
+    <span>Türkçe — native</span><span>English — professional</span>
+  </div>
+
+  <hr class="gradient-rule" style="margin-top:36px">
+  <footer class="note">
+    Velkina Studio · Istanbul · 2026 — © All rights reserved.
+  </footer>
+
+</article>
+
+</body>
+</html>

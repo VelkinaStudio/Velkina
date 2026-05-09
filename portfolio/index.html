@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#F4ECDD" />
+<title>Issue No. 01 — A Studio Journal</title>
+<meta name="description" content="A handcrafted portfolio in the form of a printed journal — selected work, field notes and a curriculum, set in cream and ink." />
+<link rel="icon" type="image/svg+xml" href="../public/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="paper">
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  COVER OPENING (loader + masthead)                         -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="cover" class="cover" aria-hidden="true">
+  <div class="cover__rule"><span></span></div>
+  <div class="cover__head">
+    <span>Issue Nº 01</span>
+    <span>·</span>
+    <span>May, MMXXVI</span>
+    <span>·</span>
+    <span>One copy, hand‑bound</span>
+  </div>
+  <h1 class="cover__title">
+    <span class="cover__line"><em>A</em> studio</span>
+    <span class="cover__line">journal<i>.</i></span>
+  </h1>
+  <p class="cover__deck">
+    Forty‑eight pages on building things with care — selected work, field notes, and a short, honest record.
+  </p>
+  <p class="cover__count"><b id="loadCount">00</b> / 48 pages</p>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  CUSTOM CURSOR                                              -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="cursor" class="cursor" aria-hidden="true">
+  <span class="cursor__ink"></span>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  MASTHEAD / NAV                                             -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<header id="masthead" class="masthead">
+  <a class="masthead__brand" href="#cover-page" data-magnetic>
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path d="M3 4 L12 22 L21 4" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span>The Studio Journal <i>· Nº 01</i></span>
+  </a>
+
+  <nav class="masthead__nav">
+    <a href="#letter" data-magnetic>Letter</a>
+    <a href="#work"   data-magnetic>Work</a>
+    <a href="#demos"  data-magnetic>Plates</a>
+    <a href="#cv"     data-magnetic>Record</a>
+    <a href="#colophon" data-magnetic>Colophon</a>
+  </nav>
+
+  <a class="masthead__cta" href="#colophon" data-magnetic>
+    <span>Write to us</span>
+    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+</header>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  FOLIO SIDEBAR — interactive table of contents             -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<aside class="folio" aria-label="Folio">
+  <ol id="folioList">
+    <li><a href="#cover-page"><span>p. 01</span> Cover</a></li>
+    <li><a href="#letter"    ><span>p. 04</span> Editor's letter</a></li>
+    <li><a href="#manifesto" ><span>p. 09</span> Principles</a></li>
+    <li><a href="#work"      ><span>p. 14</span> Selected work</a></li>
+    <li><a href="#demos"     ><span>p. 28</span> Live plates</a></li>
+    <li><a href="#cv"        ><span>p. 36</span> A short record</a></li>
+    <li><a href="#capabilities"><span>p. 42</span> Capabilities</a></li>
+    <li><a href="#colophon"  ><span>p. 48</span> Colophon</a></li>
+  </ol>
+  <div class="folio__rule"></div>
+  <p class="folio__meta">
+    <span>Reading time</span><b>~6 min</b>
+  </p>
+</aside>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  COVER PAGE (after intro)                                   -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<main>
+
+<section id="cover-page" class="page page--cover">
+  <div class="page__num">01</div>
+
+  <div class="cover-grid">
+    <div class="cover-grid__hd">
+      <span class="kicker">Issue Nº 01 · May 2026 · Hand-bound</span>
+      <span class="kicker kicker--right">A studio journal</span>
+    </div>
+
+    <h1 class="big-title" data-scene>
+      <span class="line"><span class="reveal"><em>Slow</em>&nbsp;web,</span></span>
+      <span class="line"><span class="reveal">made carefully.</span></span>
+    </h1>
+
+    <div class="cover-grid__deck" data-scene>
+      <p class="reveal-fade">
+        Forty-eight pages of selected work, plates and field notes from a small,
+        senior studio that prefers <em>finished</em> things over busy ones.
+        Pull up a chair.
+      </p>
+      <a class="hand-link" href="#letter">
+        <span>Begin reading</span>
+        <svg viewBox="0 0 80 24" width="64" height="20" aria-hidden="true">
+          <path d="M2 12 C 24 4, 50 22, 78 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+          <path d="M70 6 L78 12 L70 18" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <figure class="cover-grid__plate" aria-hidden="true">
+      <svg class="plate-svg" viewBox="0 0 600 720">
+        <defs>
+          <linearGradient id="plateG" x1="0" y1="0" x2="600" y2="720">
+            <stop offset="0" stop-color="#0E0E10"/>
+            <stop offset=".55" stop-color="#1f1620"/>
+            <stop offset="1" stop-color="#1a1014"/>
+          </linearGradient>
+        </defs>
+        <rect width="600" height="720" fill="url(#plateG)"/>
+        <g class="plate-rings" stroke="#F4ECDD" fill="none" stroke-width="1" opacity=".55">
+          <circle cx="300" cy="360" r="120"/>
+          <circle cx="300" cy="360" r="190"/>
+          <circle cx="300" cy="360" r="260"/>
+        </g>
+        <path d="M120 220 L300 580 L480 220" stroke="#F4ECDD" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="40" y="56" fill="#F4ECDD" font-family="Fraunces" font-size="22" font-style="italic" opacity=".8">— plate I.</text>
+        <text x="560" y="704" fill="#F4ECDD" font-family="JetBrains Mono" font-size="11" letter-spacing="2" text-anchor="end">CRAFT · PATIENCE · CARE</text>
+      </svg>
+      <figcaption>plate I — <em>the mark</em>, in cream on ink.</figcaption>
+    </figure>
+
+    <div class="cover-grid__corner" aria-hidden="true">
+      <div class="stamp">
+        <span class="stamp__inner">
+          <b>HAND</b><br/>BOUND<br/><i>Mc·MMXXVI</i>
+        </span>
+      </div>
+    </div>
+
+    <div class="cover-grid__strip" aria-hidden="true">
+      <span>·</span><span>Editorial</span><span>·</span><span>Plates</span><span>·</span>
+      <span>Field notes</span><span>·</span><span>Curriculum</span><span>·</span>
+      <span>Editorial</span><span>·</span><span>Plates</span><span>·</span>
+      <span>Field notes</span><span>·</span><span>Curriculum</span><span>·</span>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  EDITOR'S LETTER                                            -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="letter" class="page page--letter" data-scene>
+  <div class="page__num">04</div>
+  <p class="kicker">Pages 04 — 08 · The editor's letter</p>
+
+  <h2 class="page__head" data-scene>
+    A short letter,<br/><em>before we begin.</em>
+  </h2>
+
+  <div class="letter-grid">
+    <article class="letter-prose">
+      <p class="dropcap">
+        <span class="drop">D</span>ear visitor — most portfolios are a parade of logos and screenshots,
+        bolted to a hero animation that took longer to build than the work it sells.
+        This one wants to be a quieter thing: a printed journal you can read end to end,
+        with the pages numbered, the margins lived‑in, and every project given a little air.
+      </p>
+
+      <p>
+        We make websites, applications and small AI systems for clients who care about how
+        a thing is built — not just what it ships. The studio is two pairs of hands. We work
+        in weekly cycles, push code on Fridays, keep our previews open, and write in plain
+        language so a non‑engineer can sign off.
+      </p>
+
+      <p>
+        The next pages are a tour. Skip ahead with the folio on the left, or read straight through.
+        If you find a typo, that's a feature — please write to us about it.
+      </p>
+
+      <p class="signoff">
+        <span>Yours, in cream and ink,</span>
+        <svg viewBox="0 0 220 60" width="180" height="50" aria-hidden="true" class="sig">
+          <path d="M5 38 C 25 8, 38 60, 60 30 S 100 12, 122 36 S 168 8, 188 30 L 215 30"
+                stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" />
+          <path d="M40 50 C 70 56, 130 56, 195 50" stroke="currentColor" stroke-width="1" opacity=".5" fill="none"/>
+        </svg>
+        <span class="signoff__name">— the studio</span>
+      </p>
+    </article>
+
+    <aside class="margin">
+      <div class="margin__note margin__note--tape">
+        <p>“The detail you don't notice is the detail that did its job.”</p>
+        <small>— margin, p.04</small>
+      </div>
+      <svg class="margin__arrow" viewBox="0 0 100 200" width="80" height="160" aria-hidden="true">
+        <path d="M50 10 C 30 60, 70 100, 50 180" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M40 170 L50 184 L60 170" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="margin__hand">read this twice, slowly →</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  PRINCIPLES                                                 -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="manifesto" class="page" data-scene>
+  <div class="page__num">09</div>
+  <p class="kicker">Pages 09 — 13 · Principles</p>
+
+  <h2 class="page__head">
+    Four rules,<br/>tacked above the desk.
+  </h2>
+
+  <ol class="rules">
+    <li>
+      <span class="rules__num">i.</span>
+      <h3>Ship on Fridays.</h3>
+      <p>If it isn't on the internet by the end of the week, it isn't real. Previews, rollbacks, demos — every link is shareable.</p>
+    </li>
+    <li>
+      <span class="rules__num">ii.</span>
+      <h3>Tokens before pixels.</h3>
+      <p>Color, type, motion: defined as a system before any screen is signed off. Consistency is cheap when it's decided early.</p>
+    </li>
+    <li>
+      <span class="rules__num">iii.</span>
+      <h3>Numbers, not vibes.</h3>
+      <p>Server‑side analytics, simple experiments, weekly reads. We argue with data, not opinions.</p>
+    </li>
+    <li>
+      <span class="rules__num">iv.</span>
+      <h3>Source belongs to you.</h3>
+      <p>Code lives in your organization on day one. We use open licenses where we can. Never a hostage situation.</p>
+    </li>
+  </ol>
+
+  <svg class="page__flourish" viewBox="0 0 400 30" width="240" height="20" aria-hidden="true">
+    <path d="M2 15 C 60 2, 120 28, 200 15 S 360 4, 398 15" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" />
+  </svg>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  SELECTED WORK — POLAROID GRID                              -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="work" class="page page--work" data-scene>
+  <div class="page__num">14</div>
+  <p class="kicker">Pages 14 — 27 · Selected work · seven plates</p>
+
+  <h2 class="page__head">
+    Cases shipped,<br/><em>not</em> mockups.
+  </h2>
+
+  <p class="page__lead">
+    Seven engagements across beauty, manufacturing, education, art, décor, law and 3D. Every
+    item below is in production today. Click a plate to visit the live site.
+  </p>
+
+  <div class="polaroids" id="polaroidGrid"><!-- populated by JS --></div>
+
+  <div class="page__rule"></div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  LIVE DEMOS                                                 -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="demos" class="page page--demos" data-scene>
+  <div class="page__num">28</div>
+  <p class="kicker">Pages 28 — 35 · Plates from the kitchen</p>
+
+  <h2 class="page__head">
+    Working software,<br/>in four pieces.
+  </h2>
+
+  <p class="page__lead">
+    Four small applications built for this issue. Each one is a finished thing — open in a new
+    tab, poke at it, read the source.
+  </p>
+
+  <div class="plates">
+
+    <a class="plate" href="projects/menu/" target="_blank" rel="noopener" data-magnetic>
+      <span class="plate__rib"><b>I</b> · Bistro</span>
+      <div class="plate__art plate__art--menu" aria-hidden="true">
+        <svg viewBox="0 0 600 380">
+          <rect width="600" height="380" fill="#1b1410"/>
+          <circle cx="160" cy="200" r="110" fill="#d8a86c"/>
+          <circle cx="160" cy="200" r="84"  fill="#1b1410"/>
+          <path d="M40 320 Q 300 270 560 320" stroke="#d8a86c" stroke-width="2" fill="none" opacity=".55"/>
+          <text x="40" y="56" font-family="Fraunces" font-size="28" fill="#f4ece0" font-style="italic">— bistro</text>
+          <text x="40" y="356" font-family="JetBrains Mono" font-size="11" fill="#f4ece0" letter-spacing="3" opacity=".7">EDITORIAL · MENU · CART</text>
+        </svg>
+      </div>
+      <div class="plate__body">
+        <h3>The Bistro Menu</h3>
+        <p>Editorial restaurant menu with categories, dietary filters, pairings and a live tab. Pure HTML/CSS/JS.</p>
+        <span class="plate__cta">open the menu <em>↗</em></span>
+      </div>
+    </a>
+
+    <a class="plate" href="projects/booking/" target="_blank" rel="noopener" data-magnetic>
+      <span class="plate__rib"><b>II</b> · Réservation</span>
+      <div class="plate__art plate__art--booking" aria-hidden="true">
+        <svg viewBox="0 0 600 380">
+          <rect width="600" height="380" fill="#0f1a1c"/>
+          <g stroke="#65d6c0" stroke-width="1" opacity=".55">
+            <line x1="60" y1="100" x2="540" y2="100"/>
+            <line x1="60" y1="160" x2="540" y2="160"/>
+            <line x1="60" y1="220" x2="540" y2="220"/>
+            <line x1="60" y1="280" x2="540" y2="280"/>
+            <line x1="180" y1="80" x2="180" y2="320"/>
+            <line x1="300" y1="80" x2="300" y2="320"/>
+            <line x1="420" y1="80" x2="420" y2="320"/>
+          </g>
+          <circle cx="300" cy="220" r="20" fill="#65d6c0"/>
+          <text x="40" y="56" font-family="Fraunces" font-size="28" fill="#f4ece0" font-style="italic">— réservation</text>
+          <text x="40" y="356" font-family="JetBrains Mono" font-size="11" fill="#f4ece0" letter-spacing="3" opacity=".7">CALENDAR · SLOTS · TICKET</text>
+        </svg>
+      </div>
+      <div class="plate__body">
+        <h3>The Reservation Suite</h3>
+        <p>A tiny booking flow — calendar, party size, time-slot logic, instant confirmation, printable ticket.</p>
+        <span class="plate__cta">make a reservation <em>↗</em></span>
+      </div>
+    </a>
+
+    <a class="plate plate--small" href="projects/snake/" target="_blank" rel="noopener" data-magnetic>
+      <span class="plate__rib"><b>III</b> · Coffee Break</span>
+      <div class="plate__art plate__art--snake" aria-hidden="true">
+        <svg viewBox="0 0 600 380">
+          <rect width="600" height="380" fill="#0e1410"/>
+          <g fill="#7af0c0">
+            <rect x="80"  y="180" width="24" height="24"/>
+            <rect x="106" y="180" width="24" height="24"/>
+            <rect x="132" y="180" width="24" height="24"/>
+            <rect x="132" y="154" width="24" height="24"/>
+            <rect x="132" y="128" width="24" height="24"/>
+          </g>
+          <rect x="440" y="120" width="20" height="20" fill="#ff5b9b"/>
+          <text x="40" y="48" font-family="JetBrains Mono" font-size="14" fill="#f4ece0" letter-spacing="3">SCORE · 047</text>
+        </svg>
+      </div>
+      <div class="plate__body">
+        <h3>Snake</h3>
+        <p>The classic, made smooth. Keyboard or swipe. Local-storage high score.</p>
+        <span class="plate__cta">play <em>↗</em></span>
+      </div>
+    </a>
+
+    <a class="plate plate--small" href="projects/paint/" target="_blank" rel="noopener" data-magnetic>
+      <span class="plate__rib"><b>IV</b> · Pixel Studio</span>
+      <div class="plate__art plate__art--paint" aria-hidden="true">
+        <svg viewBox="0 0 600 380">
+          <rect width="600" height="380" fill="#1a1024"/>
+          <g>
+            <rect x="120" y="120" width="36" height="36" fill="#00FFFF"/>
+            <rect x="156" y="120" width="36" height="36" fill="#FF00CC"/>
+            <rect x="192" y="120" width="36" height="36" fill="#f4ece0"/>
+            <rect x="120" y="156" width="36" height="36" fill="#FF00CC"/>
+            <rect x="156" y="156" width="36" height="36" fill="#00FFFF"/>
+            <rect x="192" y="156" width="36" height="36" fill="#FF00CC"/>
+            <rect x="156" y="192" width="36" height="36" fill="#f4ece0"/>
+          </g>
+          <text x="40" y="48" font-family="JetBrains Mono" font-size="14" fill="#f4ece0" letter-spacing="3">PIXEL · 16x16</text>
+        </svg>
+      </div>
+      <div class="plate__body">
+        <h3>Pixel Studio</h3>
+        <p>A miniature pixel-art editor. Palette, fill bucket, undo, export PNG.</p>
+        <span class="plate__cta">draw something <em>↗</em></span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  CV — A SHORT RECORD                                        -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="cv" class="page page--cv" data-scene>
+  <div class="page__num">36</div>
+  <p class="kicker">Pages 36 — 41 · A short, honest record</p>
+
+  <h2 class="page__head">
+    Curriculum,<br/><em>set in plain type.</em>
+  </h2>
+
+  <div class="cv-grid">
+    <ol class="record">
+      <li class="record__item">
+        <span class="record__year">2026 — present</span>
+        <div>
+          <h3>The studio, this year</h3>
+          <p>Senior duo. Productizing AI agents for service businesses. Issue Nº 01 of this journal goes out.</p>
+          <div class="chips"><span>AI agents</span><span>Edge</span><span>Editorial</span></div>
+        </div>
+      </li>
+      <li class="record__item">
+        <span class="record__year">2025</span>
+        <div>
+          <h3>The studio, founded</h3>
+          <p>Senior‑only model, weekly delivery cadence, design‑system first. First retainer signed three months in.</p>
+          <div class="chips"><span>Founding</span><span>Brand</span><span>System</span></div>
+        </div>
+      </li>
+      <li class="record__item">
+        <span class="record__year">2024</span>
+        <div>
+          <h3>Bilingual platform &amp; CRM</h3>
+          <p>Shipped a bilingual education platform with admin‑managed records and tracked applications.</p>
+          <div class="chips"><span>Next.js</span><span>i18n</span><span>CRM</span></div>
+        </div>
+      </li>
+      <li class="record__item">
+        <span class="record__year">2023</span>
+        <div>
+          <h3>Creative &amp; B2B work</h3>
+          <p>Three sites in one year — a 3D studio, a manufacturer with international buyers, a home‑décor brand.</p>
+          <div class="chips"><span>3D</span><span>B2B</span><span>SEO</span></div>
+        </div>
+      </li>
+      <li class="record__item">
+        <span class="record__year">2022</span>
+        <div>
+          <h3>First clients</h3>
+          <p>Beauty clinic and a law firm — sites with appointment systems, local SEO, and clear conversion paths.</p>
+          <div class="chips"><span>UX</span><span>Booking</span><span>Local SEO</span></div>
+        </div>
+      </li>
+    </ol>
+
+    <aside class="record-side">
+      <h3>Stack</h3>
+      <ul class="chiplist">
+        <li>Next.js 14</li><li>React 18</li><li>TypeScript</li><li>Node</li>
+        <li>Tailwind</li><li>GSAP</li><li>Lenis</li><li>Postgres</li>
+        <li>Prisma</li><li>Vercel</li><li>Cloudflare</li><li>Anthropic Claude</li>
+      </ul>
+
+      <h3>Sectors shipped</h3>
+      <ul class="chiplist chiplist--ghost">
+        <li>Beauty &amp; clinics</li><li>Manufacturing</li><li>Education</li>
+        <li>Home décor</li><li>Fine art</li><li>Law</li><li>3D studios</li>
+      </ul>
+
+      <h3>Numbers, after launch</h3>
+      <ul class="stats">
+        <li><b>+40%</b><span>organic visibility · beauty</span></li>
+        <li><b>−50%</b><span>page load · manufacturing</span></li>
+        <li><b>+60%</b><span>traffic · home décor</span></li>
+        <li><b>100%</b><span>tracking · education</span></li>
+      </ul>
+
+      <a class="hand-link hand-link--inline" href="cv.html" target="_blank" rel="noopener">
+        <span>Open the printable record</span>
+        <svg viewBox="0 0 80 24" width="56" height="18" aria-hidden="true">
+          <path d="M2 12 C 24 4, 50 22, 78 12" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+          <path d="M70 6 L78 12 L70 18" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </aside>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  CAPABILITIES                                               -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="capabilities" class="page" data-scene>
+  <div class="page__num">42</div>
+  <p class="kicker">Pages 42 — 47 · What we build</p>
+
+  <h2 class="page__head">
+    Capabilities,<br/>end <em>to</em> end.
+  </h2>
+
+  <ul class="caps">
+    <li><span class="caps__num">i.</span><h3>Websites</h3><p>Editorial, e‑commerce and bilingual marketing sites. Edge‑rendered, accessible, fast.</p></li>
+    <li><span class="caps__num">ii.</span><h3>Applications</h3><p>Custom admin panels, dashboards and user‑facing apps wired to your real data.</p></li>
+    <li><span class="caps__num">iii.</span><h3>AI Automation</h3><p>Agents and workflows that handle inbox, booking, content and ops — quietly, reliably.</p></li>
+    <li><span class="caps__num">iv.</span><h3>Brand &amp; Identity</h3><p>Names, logos, type systems and motion language that survive scale.</p></li>
+    <li><span class="caps__num">v.</span><h3>SEO &amp; Growth</h3><p>Server‑side analytics, content engines and CRO experiments with measured uplift.</p></li>
+    <li><span class="caps__num">vi.</span><h3>Hosting &amp; DevOps</h3><p>Vercel, Cloudflare, CI/CD with preview environments and observability you can read.</p></li>
+  </ul>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!--  COLOPHON / CONTACT                                         -->
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="colophon" class="page page--colophon" data-scene>
+  <div class="page__num">48</div>
+  <p class="kicker">Page 48 · Colophon &amp; correspondence</p>
+
+  <h2 class="big-title big-title--end">
+    <span class="line"><span class="reveal">Care to</span></span>
+    <span class="line"><span class="reveal">begin <em>something?</em></span></span>
+  </h2>
+
+  <a href="mailto:hello@velkina.studio" class="big-email" data-magnetic>
+    hello@velkina.studio
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+      <path d="M3 12 H 18 M14 7 L 21 12 L 14 17" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <div class="colophon-grid">
+    <div>
+      <small>Set in</small>
+      <p>Fraunces by CJ Dunn (display)<br/>Inter by Rasmus Andersson (body)<br/>JetBrains Mono (notes)<br/>Caveat (margins)</p>
+    </div>
+    <div>
+      <small>Studio</small>
+      <p>Istanbul · TR<br/>Working globally, async‑first.</p>
+    </div>
+    <div>
+      <small>Channels</small>
+      <p>
+        <a href="mailto:hello@velkina.studio">Email</a><br/>
+        <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a><br/>
+        <a href="../">Main site →</a>
+      </p>
+    </div>
+    <div>
+      <small>Schedule</small>
+      <p><a href="#" class="hand-link hand-link--small">Book a 30-min call <em>↗</em></a></p>
+    </div>
+    <div>
+      <small>This issue</small>
+      <p>Designed, written and coded in this repo.<br/>No frameworks, no trackers.<br/>Hand‑bound, MMXXVI.</p>
+    </div>
+    <div>
+      <small>Errata</small>
+      <p>If you find a mistake, please write — corrections improve the next issue.</p>
+    </div>
+  </div>
+
+  <div class="colophon__giant" aria-hidden="true">— FIN —</div>
+
+  <p class="colophon__fine">© <span id="yr">2026</span> · The Studio · All rights reserved.</p>
+</section>
+
+</main>
+
+<button id="topBtn" class="top-btn" aria-label="Back to cover">
+  <svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 11 V 3 M3 7 L 7 3 L 11 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="app.js" defer></script>
+</body>
+</html>

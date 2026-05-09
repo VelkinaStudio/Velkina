@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Réservation — The Studio Journal · Plate II</title>
+<meta name="description" content="A working reservation suite — calendar, party size, time-slot logic, instant confirmation and printable ticket." />
+<link rel="icon" type="image/svg+xml" href="../../../public/favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#0f1a1c;        /* deep teal-ink */
+  --paper-2:#152527;
+  --ink:#eaf3f0;
+  --muted:#7da5a0;
+  --rule:rgba(234,243,240,.15);
+  --rule-2:rgba(234,243,240,.30);
+  --accent:#65d6c0;       /* teal */
+  --accent-2:#f4a366;     /* amber */
+  --warn:#ff7a82;
+
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",system-ui,sans-serif;
+  --mono:"JetBrains Mono",monospace;
+  --hand:"Caveat",cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,select{font:inherit;color:inherit;background:transparent;border:0;outline:none}
+
+/* ── grain ── */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.04;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode:overlay;
+}
+
+/* ── top bar ── */
+.top{
+  position:sticky;top:0;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 32px;
+  background:rgba(15,26,28,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.top a.back{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.top a.back:hover{color:var(--ink)}
+.top .brand{font-family:var(--serif);font-size:18px;letter-spacing:-0.02em}
+.top .brand i{font-style:italic;color:var(--muted);font-weight:300}
+.top .meta{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+
+/* ── hero ── */
+.hero{
+  text-align:center;padding:64px 24px 36px;
+  border-bottom:1px solid var(--rule);
+  position:relative;
+}
+.hero .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(48px,9vw,120px);line-height:.92;letter-spacing:-0.04em;
+}
+.hero h1 i{font-style:italic;color:var(--muted);font-weight:300}
+.hero p{margin:18px auto 0;max-width:48ch;color:var(--muted);font-size:15.5px}
+
+/* ── stepper ── */
+.steps{
+  display:flex;align-items:center;justify-content:center;gap:20px;
+  padding:24px;border-bottom:1px solid var(--rule);
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);
+  text-transform:uppercase;
+}
+.steps span{display:flex;align-items:center;gap:10px}
+.steps span b{
+  display:inline-grid;place-items:center;
+  width:24px;height:24px;border-radius:50%;
+  border:1px solid var(--rule-2);font-weight:500;
+}
+.steps span.is-on b{background:var(--accent);color:#0d1413;border-color:var(--accent)}
+.steps span.is-done b{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.steps i{display:block;width:36px;height:1px;background:var(--rule);font-style:normal}
+
+/* ── layout ── */
+.shell{
+  max-width:1100px;margin:0 auto;padding:48px 32px 96px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:48px;
+}
+@media (max-width:880px){.shell{grid-template-columns:1fr;padding:32px 20px 64px}}
+
+.panel{
+  background:var(--paper-2);
+  border:1px solid var(--rule);
+  border-radius:14px;
+  padding:28px;
+}
+.panel h2{
+  font-family:var(--serif);font-weight:500;
+  font-size:24px;letter-spacing:-0.02em;
+  margin-bottom:6px;
+}
+.panel .small{
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;
+  color:var(--muted);text-transform:uppercase;margin-bottom:18px;
+}
+
+/* ── party + duration ── */
+.party{
+  display:grid;grid-template-columns:repeat(8,1fr);gap:6px;margin-top:6px;
+}
+.party button{
+  padding:10px 0;border:1px solid var(--rule-2);border-radius:8px;
+  font-family:var(--serif);font-size:16px;
+  transition:background .2s,border-color .2s,color .2s;
+}
+.party button:hover{border-color:var(--ink)}
+.party button.is-on{background:var(--accent);border-color:var(--accent);color:#0d1413}
+
+.duration{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.duration button{
+  padding:8px 14px;border:1px dashed var(--rule-2);border-radius:999px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);
+}
+.duration button.is-on{border-style:solid;border-color:var(--accent);color:var(--accent)}
+
+/* ── calendar ── */
+.cal{margin-top:22px}
+.cal__head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:14px;
+}
+.cal__head h3{font-family:var(--serif);font-weight:500;font-size:18px;letter-spacing:-0.01em}
+.cal__head button{
+  width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;
+  border:1px solid var(--rule-2);
+  transition:background .2s,border-color .2s;
+}
+.cal__head button:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cal__nav{display:flex;gap:8px}
+.cal__dow,.cal__grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal__dow span{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--muted);text-align:center;padding:6px 0;text-transform:uppercase}
+.cal__cell{
+  aspect-ratio:1;display:grid;place-items:center;
+  font-family:var(--mono);font-size:13px;
+  border-radius:8px;border:1px solid transparent;
+  cursor:pointer;
+  transition:background .15s,border-color .15s,color .15s;
+  position:relative;
+}
+.cal__cell:hover:not(.is-disabled){background:rgba(101,214,192,.10);border-color:var(--rule-2)}
+.cal__cell.is-other{color:var(--muted);opacity:.45;pointer-events:none}
+.cal__cell.is-disabled{color:var(--muted);opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.cal__cell.is-today{outline:1px solid var(--accent-2)}
+.cal__cell.is-selected{background:var(--accent);color:#0d1413;border-color:var(--accent)}
+.cal__cell.is-busy::after{
+  content:"";position:absolute;bottom:6px;left:50%;transform:translateX(-50%);
+  width:4px;height:4px;border-radius:50%;background:var(--warn);
+}
+
+/* ── slots ── */
+.slots{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px;
+}
+.slots button{
+  padding:10px 0;border:1px solid var(--rule-2);border-radius:8px;
+  font-family:var(--mono);font-size:13px;letter-spacing:.04em;
+}
+.slots button:hover:not(:disabled){background:rgba(101,214,192,.08);border-color:var(--accent)}
+.slots button.is-on{background:var(--accent);color:#0d1413;border-color:var(--accent)}
+.slots button:disabled{opacity:.3;cursor:not-allowed;text-decoration:line-through}
+.slots__group{margin-top:18px}
+.slots__group h4{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  color:var(--muted);text-transform:uppercase;margin-bottom:10px;
+}
+
+/* ── form ── */
+.form{display:grid;gap:14px;margin-top:6px}
+.field{
+  border:1px solid var(--rule-2);border-radius:10px;padding:12px 14px;
+  display:grid;gap:4px;transition:border-color .2s,background .2s;
+}
+.field:focus-within{border-color:var(--accent);background:rgba(101,214,192,.04)}
+.field label{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+.field input{font-family:var(--serif);font-size:17px;letter-spacing:-0.01em}
+.field input::placeholder{color:var(--muted);opacity:.6}
+.field--row{display:grid;grid-template-columns:1fr 1fr;gap:14px;border:0;padding:0}
+.field--row .field{margin:0}
+
+/* ── summary card ── */
+.summary{
+  position:sticky;top:96px;
+  border:1px solid var(--rule-2);
+  border-radius:14px;
+  background:linear-gradient(180deg,var(--paper-2),#0d1517);
+  padding:28px;
+  display:grid;gap:18px;
+}
+.summary h3{
+  font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:-0.02em;
+}
+.summary .row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:10px 0;border-bottom:1px dashed var(--rule);
+  font-size:14.5px;
+}
+.summary .row b{font-family:var(--serif);font-weight:500}
+.summary .row span.k{color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.summary .row.row--big b{font-size:22px;color:var(--accent)}
+.summary button.confirm{
+  margin-top:8px;padding:16px;border-radius:10px;
+  background:var(--accent);color:#0d1413;
+  font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  transition:filter .2s,transform .2s;
+}
+.summary button.confirm:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.summary button.confirm:disabled{opacity:.35;cursor:not-allowed}
+.summary .note{font-family:var(--hand);font-size:18px;color:var(--accent-2);text-align:center;margin-top:4px}
+
+/* ── ticket modal ── */
+.modal{
+  position:fixed;inset:0;z-index:30;
+  background:rgba(8,14,15,.78);
+  display:grid;place-items:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .35s;
+  padding:24px;
+}
+.modal.is-on{opacity:1;pointer-events:auto}
+.ticket{
+  background:#fffaf0;color:#1b1410;
+  width:min(440px,100%);
+  border-radius:10px;
+  font-family:var(--serif);
+  position:relative;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  transform:translateY(20px) scale(.98);
+  transition:transform .4s cubic-bezier(.22,1,.36,1);
+  overflow:hidden;
+}
+.modal.is-on .ticket{transform:none}
+.ticket__hdr{
+  padding:28px 28px 18px;text-align:center;border-bottom:2px dashed #d8c8b0;
+}
+.ticket__hdr small{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:#8a7a68;text-transform:uppercase}
+.ticket__hdr h2{font-size:36px;font-weight:500;letter-spacing:-0.025em;margin-top:8px}
+.ticket__hdr h2 i{font-style:italic;color:#8a7a68;font-weight:400}
+.ticket__body{padding:24px 28px}
+.ticket__row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dotted #d8c8b0;font-size:14px}
+.ticket__row span{color:#8a7a68;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.ticket__row b{font-weight:500}
+.ticket__code{
+  margin:18px 0 6px;text-align:center;
+  font-family:var(--mono);font-size:18px;letter-spacing:.4em;color:#c8501e;
+}
+.ticket__foot{
+  padding:18px 28px 24px;text-align:center;
+  font-family:var(--hand);font-size:18px;color:#8a7a68;
+}
+.ticket__actions{display:flex;gap:8px;padding:0 28px 28px}
+.ticket__actions button{
+  flex:1;padding:12px;border-radius:8px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+}
+.ticket__actions button.print{background:#1b1410;color:#fffaf0}
+.ticket__actions button.close{border:1px solid #d8c8b0;color:#1b1410}
+.ticket::before, .ticket::after{
+  content:"";position:absolute;width:24px;height:24px;
+  background:#0f1a1c;border-radius:50%;
+}
+.ticket::before{left:-12px;top:96px}
+.ticket::after{right:-12px;top:96px}
+
+@media print{
+  body *{visibility:hidden}
+  .modal,.ticket,.ticket *{visibility:visible}
+  .modal{position:absolute;background:#fff;padding:0}
+  .ticket{box-shadow:none;transform:none}
+  .ticket__actions{display:none}
+}
+
+/* ── footer ── */
+footer.foot{
+  text-align:center;padding:32px 24px 56px;border-top:1px solid var(--rule);
+  color:var(--muted);font-size:12.5px;
+}
+footer.foot a{color:var(--ink);border-bottom:1px solid var(--rule-2)}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a class="back" href="../../index.html">
+    <svg width="14" height="14" viewBox="0 0 14 14"><path d="M9 2 L4 7 L9 12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    back to journal
+  </a>
+  <div class="brand">Réservation <i>/ plate II</i></div>
+  <div class="meta">capacity: 36</div>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">— A reservation suite, demo —</div>
+  <h1>Hold a <i>table.</i></h1>
+  <p>Pick a date, party size and time. Three steps, one confirmation, a printable ticket. Built without a single npm dependency.</p>
+</header>
+
+<div class="steps" id="stepper">
+  <span class="is-on" data-step="1"><b>1</b>When</span>
+  <i></i>
+  <span data-step="2"><b>2</b>Who</span>
+  <i></i>
+  <span data-step="3"><b>3</b>Confirm</span>
+</div>
+
+<main class="shell">
+
+  <section>
+    <div class="panel">
+      <h2>Party &amp; date</h2>
+      <p class="small">— how many of you, and when</p>
+
+      <p class="small" style="margin-top:18px">Party size</p>
+      <div class="party" id="party">
+        <button data-p="1">1</button>
+        <button data-p="2" class="is-on">2</button>
+        <button data-p="3">3</button>
+        <button data-p="4">4</button>
+        <button data-p="5">5</button>
+        <button data-p="6">6</button>
+        <button data-p="7">7</button>
+        <button data-p="8">8+</button>
+      </div>
+
+      <p class="small" style="margin-top:18px">Stay</p>
+      <div class="duration" id="duration">
+        <button data-d="60">60 min</button>
+        <button data-d="90" class="is-on">90 min</button>
+        <button data-d="120">2 hours</button>
+        <button data-d="180">long lunch</button>
+      </div>
+
+      <div class="cal">
+        <div class="cal__head">
+          <h3 id="calLabel">May 2026</h3>
+          <div class="cal__nav">
+            <button id="calPrev" aria-label="previous month">‹</button>
+            <button id="calNext" aria-label="next month">›</button>
+          </div>
+        </div>
+        <div class="cal__dow">
+          <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+        </div>
+        <div class="cal__grid" id="calGrid"></div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:24px">
+      <h2>Pick a time</h2>
+      <p class="small">— slots available for your party &amp; date</p>
+      <div id="slotsWrap"><p class="small" style="color:var(--muted);margin-top:12px">Choose a date to see available slots.</p></div>
+    </div>
+
+    <div class="panel" style="margin-top:24px">
+      <h2>Your details</h2>
+      <p class="small">— we send a confirmation by email</p>
+      <div class="form">
+        <div class="field"><label for="fName">Name on the booking</label><input id="fName" placeholder="e.g. Alex Doe" autocomplete="name"></div>
+        <div class="field--row">
+          <div class="field"><label for="fEmail">Email</label><input id="fEmail" type="email" placeholder="alex@studio.com" autocomplete="email"></div>
+          <div class="field"><label for="fPhone">Phone</label><input id="fPhone" type="tel" placeholder="+90 (5__) ___ __ __" autocomplete="tel"></div>
+        </div>
+        <div class="field"><label for="fNote">Notes (optional)</label><input id="fNote" placeholder="window seat, anniversary, allergies…"></div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="summary" id="summary">
+    <h3>Reservation summary</h3>
+    <div class="row"><span class="k">Party</span> <b id="sumParty">2 guests</b></div>
+    <div class="row"><span class="k">Stay</span>  <b id="sumDuration">90 min</b></div>
+    <div class="row"><span class="k">Date</span>  <b id="sumDate">— pick one</b></div>
+    <div class="row"><span class="k">Time</span>  <b id="sumTime">—</b></div>
+    <div class="row row--big"><span class="k">For</span> <b id="sumName">a guest</b></div>
+    <button class="confirm" id="confirmBtn" disabled>Confirm reservation →</button>
+    <p class="note">we hold tables for 15 min past your arrival.</p>
+  </aside>
+
+</main>
+
+<div class="modal" id="modal">
+  <article class="ticket" role="dialog" aria-modal="true">
+    <div class="ticket__hdr">
+      <small>Bistro · Réservation</small>
+      <h2>Table <i>booked.</i></h2>
+    </div>
+    <div class="ticket__body">
+      <div class="ticket__row"><span>Guest</span><b id="tName">—</b></div>
+      <div class="ticket__row"><span>Party</span><b id="tParty">—</b></div>
+      <div class="ticket__row"><span>Date</span><b id="tDate">—</b></div>
+      <div class="ticket__row"><span>Time</span><b id="tTime">—</b></div>
+      <div class="ticket__row"><span>Stay</span><b id="tDur">—</b></div>
+      <div class="ticket__code" id="tCode">— — — — —</div>
+    </div>
+    <div class="ticket__foot">show this on arrival, or just say your name.</div>
+    <div class="ticket__actions">
+      <button class="close" id="closeModal">Close</button>
+      <button class="print" id="printBtn">Print / save PDF</button>
+    </div>
+  </article>
+</div>
+
+<footer class="foot">
+  This reservation suite is a fictional demo by The Studio Journal.
+  <br/>
+  <a href="../../index.html">← back to journal</a> · <a href="../menu/">try the bistro menu ↗</a>
+</footer>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+
+/* ─── State ─── */
+const state = {
+  party: 2,
+  duration: 90,
+  monthOffset: 0,
+  selectedDate: null,
+  selectedSlot: null,
+  name: "", email: "", phone: "", note: "",
+};
+
+const today = new Date(); today.setHours(0,0,0,0);
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+/* ─── Party ─── */
+$$("#party button").forEach(b => b.addEventListener("click", () => {
+  $$("#party button").forEach(x => x.classList.remove("is-on"));
+  b.classList.add("is-on");
+  state.party = parseInt(b.dataset.p, 10);
+  refresh();
+}));
+
+/* ─── Duration ─── */
+$$("#duration button").forEach(b => b.addEventListener("click", () => {
+  $$("#duration button").forEach(x => x.classList.remove("is-on"));
+  b.classList.add("is-on");
+  state.duration = parseInt(b.dataset.d, 10);
+  refresh();
+}));
+
+/* ─── Calendar ─── */
+$("#calPrev").addEventListener("click", () => { state.monthOffset--; renderCal(); });
+$("#calNext").addEventListener("click", () => { state.monthOffset++; renderCal(); });
+
+function renderCal(){
+  const ref = new Date();
+  ref.setDate(1);
+  ref.setMonth(ref.getMonth() + state.monthOffset);
+
+  const year = ref.getFullYear(), month = ref.getMonth();
+  $("#calLabel").textContent = `${MONTHS[month]} ${year}`;
+
+  const firstDow = (new Date(year, month, 1).getDay() + 6) % 7; // 0=Mon
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const daysInPrev = new Date(year, month, 0).getDate();
+
+  const cells = [];
+  // leading days
+  for (let i = firstDow - 1; i >= 0; i--) {
+    cells.push({ day: daysInPrev - i, other: true });
+  }
+  // current month
+  for (let d = 1; d <= daysInMonth; d++) {
+    const date = new Date(year, month, d);
+    const dow = date.getDay();
+    const past = date < today;
+    const closed = (dow === 1); // Monday closed
+    const busy = (dow === 5 || dow === 6); // Fri/Sat busy
+    cells.push({
+      day: d,
+      date,
+      past,
+      closed,
+      busy,
+      isToday: +date === +today,
+    });
+  }
+  // trailing
+  while (cells.length % 7 !== 0) cells.push({ day: cells.length - daysInMonth - firstDow + 1, other: true });
+
+  const grid = $("#calGrid");
+  grid.innerHTML = cells.map(c => {
+    if (c.other) return `<div class="cal__cell is-other">${c.day}</div>`;
+    const cls = ["cal__cell"];
+    if (c.past || c.closed) cls.push("is-disabled");
+    if (c.isToday) cls.push("is-today");
+    if (c.busy) cls.push("is-busy");
+    if (state.selectedDate && +state.selectedDate === +c.date) cls.push("is-selected");
+    return `<div class="${cls.join(" ")}" data-date="${c.date.toISOString()}">${c.day}</div>`;
+  }).join("");
+
+  $$("#calGrid .cal__cell").forEach(el => {
+    if (el.classList.contains("is-disabled") || el.classList.contains("is-other")) return;
+    el.addEventListener("click", () => {
+      state.selectedDate = new Date(el.dataset.date);
+      state.selectedSlot = null;
+      renderCal();
+      renderSlots();
+      refresh();
+      setStep(2);
+    });
+  });
+}
+
+/* ─── Slots ─── */
+function dailyAvailability(date){
+  // Capacity per slot decreases on Fri/Sat. Lunch + Dinner.
+  const dow = date.getDay();
+  const isWeekend = dow === 5 || dow === 6;
+  const lunch = ["12:00","12:30","13:00","13:30","14:00","14:30"];
+  const dinner = ["18:30","19:00","19:30","20:00","20:30","21:00","21:30","22:00"];
+  const seed = date.getDate() * 7 + dow;
+  const make = (slot, i) => {
+    // pseudo-random availability
+    const rnd = (Math.sin(seed + i * 37) + 1) / 2;
+    const cap = isWeekend ? Math.floor(rnd * 4) + 2 : Math.floor(rnd * 6) + 4; // remaining seats
+    return { time: slot, cap };
+  };
+  return {
+    lunch: lunch.map(make),
+    dinner: dinner.map((s, i) => make(s, i + 50)),
+  };
+}
+
+function renderSlots(){
+  const wrap = $("#slotsWrap");
+  if (!state.selectedDate) {
+    wrap.innerHTML = '<p class="small" style="color:var(--muted);margin-top:12px">Choose a date to see available slots.</p>';
+    return;
+  }
+  const av = dailyAvailability(state.selectedDate);
+  const html = [];
+  for (const [k, label] of [["lunch","Lunch service · 12:00 → 14:30"],["dinner","Dinner service · 18:30 → 22:00"]]) {
+    html.push(`<div class="slots__group"><h4>${label}</h4><div class="slots">`);
+    av[k].forEach(s => {
+      const ok = s.cap >= state.party;
+      const sel = state.selectedSlot === s.time;
+      html.push(`<button data-slot="${s.time}" ${ok?"":"disabled"} class="${sel?"is-on":""}" title="${ok? s.cap+' seats left':'fully booked'}">${s.time}</button>`);
+    });
+    html.push("</div></div>");
+  }
+  wrap.innerHTML = html.join("");
+  $$("#slotsWrap button[data-slot]").forEach(b => b.addEventListener("click", () => {
+    state.selectedSlot = b.dataset.slot;
+    renderSlots(); refresh();
+    setStep(2);
+  }));
+}
+
+/* ─── Form ─── */
+["#fName","#fEmail","#fPhone","#fNote"].forEach(sel => {
+  const k = sel.replace("#f","").toLowerCase();
+  $(sel).addEventListener("input", e => { state[k] = e.target.value; refresh(); });
+});
+
+/* ─── Summary + step ─── */
+function fmtDate(d){
+  if (!d) return "— pick one";
+  return d.toLocaleDateString("en-GB", { weekday:"short", day:"numeric", month:"long" });
+}
+
+function refresh(){
+  $("#sumParty").textContent = `${state.party} guest${state.party===1?"":"s"}`;
+  $("#sumDuration").textContent = state.duration === 180 ? "long lunch" : `${state.duration} min`;
+  $("#sumDate").textContent = fmtDate(state.selectedDate);
+  $("#sumTime").textContent = state.selectedSlot || "—";
+  $("#sumName").textContent = state.name?.trim() || "a guest";
+
+  const ready = state.selectedDate && state.selectedSlot && state.name && state.email;
+  $("#confirmBtn").disabled = !ready;
+  if (state.name && state.email) setStep(3);
+}
+
+function setStep(n){
+  const stepper = $("#stepper");
+  $$("#stepper span").forEach(s => {
+    const k = parseInt(s.dataset.step,10);
+    s.classList.toggle("is-on", k === n);
+    s.classList.toggle("is-done", k < n);
+  });
+}
+
+/* ─── Confirm ─── */
+function shortCode(){
+  const t = (Date.now() + Math.random() * 9999).toString(36).toUpperCase().replace(/\W/g,"");
+  return t.slice(-5).split("").join(" ");
+}
+
+$("#confirmBtn").addEventListener("click", () => {
+  $("#tName").textContent = state.name;
+  $("#tParty").textContent = `${state.party} guest${state.party===1?"":"s"}`;
+  $("#tDate").textContent = fmtDate(state.selectedDate);
+  $("#tTime").textContent = state.selectedSlot;
+  $("#tDur").textContent = state.duration === 180 ? "long lunch" : `${state.duration} min`;
+  $("#tCode").textContent = shortCode();
+  $("#modal").classList.add("is-on");
+});
+
+$("#closeModal").addEventListener("click", () => $("#modal").classList.remove("is-on"));
+$("#printBtn").addEventListener("click", () => window.print());
+$("#modal").addEventListener("click", e => { if (e.target === $("#modal")) $("#modal").classList.remove("is-on"); });
+
+/* ─── Init ─── */
+renderCal();
+refresh();
+</script>
+</body>
+</html>

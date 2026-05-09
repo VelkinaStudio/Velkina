@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<title>Pixel Studio — The Studio Journal · Plate IV</title>
+<meta name="description" content="A miniature pixel-art editor. Palette, fill bucket, undo, export PNG." />
+<link rel="icon" type="image/svg+xml" href="../../../public/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#13091e;
+  --bg-2:#1a1024;
+  --panel:#221432;
+  --line:rgba(255,255,255,.07);
+  --ink:#f0eaff;
+  --muted:#8676a3;
+  --cyan:#00FFFF;
+  --magenta:#FF00CC;
+  --accent:#ffe066;
+  --serif:"Fraunces",serif;
+  --mono:"JetBrains Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--bg);color:var(--ink);font-family:var(--mono);
+  min-height:100%;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(ellipse at 50% -10%, rgba(255,0,204,.10), transparent 60%),
+                   radial-gradient(ellipse at 50% 110%, rgba(0,255,255,.10), transparent 60%);
+}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input{font:inherit;color:inherit;background:transparent;border:0;outline:none}
+
+.top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 24px;border-bottom:1px solid var(--line);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);
+}
+.top a{color:var(--ink);display:inline-flex;align-items:center;gap:8px}
+.top a:hover{color:var(--cyan)}
+.top .brand{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink);text-transform:none;letter-spacing:-0.01em}
+
+.shell{
+  display:grid;grid-template-columns:240px 1fr 240px;gap:20px;
+  padding:32px 24px 60px;align-items:start;
+  max-width:1280px;margin:0 auto;
+}
+@media (max-width:980px){.shell{grid-template-columns:1fr}}
+
+.panel{
+  background:var(--bg-2);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:18px;
+}
+.panel h3{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:10px;
+}
+
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.tool{
+  padding:10px;border-radius:6px;border:1px solid var(--line);
+  background:rgba(255,255,255,.02);
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  transition:background .2s, border-color .2s;
+}
+.tool:hover{background:rgba(255,255,255,.04)}
+.tool.is-on{background:linear-gradient(135deg,var(--cyan),var(--magenta));color:#1a1024;border-color:transparent;font-weight:600}
+
+.size-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
+.size-row button{
+  padding:8px 0;border:1px solid var(--line);border-radius:6px;font-family:var(--mono);font-size:12px;
+}
+.size-row button.is-on{background:var(--ink);color:var(--bg-2);border-color:var(--ink)}
+
+.swatches{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:8px}
+.swatch{
+  aspect-ratio:1;border-radius:4px;border:2px solid transparent;
+  cursor:pointer;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+}
+.swatch.is-on{border-color:var(--ink);transform:scale(1.05)}
+
+.color-pick{
+  display:flex;align-items:center;gap:8px;
+  margin-top:12px;padding:8px;border:1px dashed var(--line);border-radius:6px;
+}
+.color-pick input[type=color]{width:32px;height:32px;border:0;background:none;cursor:pointer}
+.color-pick small{font-size:10.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+
+.actions{display:grid;gap:6px;margin-top:12px}
+.actions button{
+  padding:10px;border:1px solid var(--line);border-radius:6px;
+  font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.actions button:hover{background:rgba(255,255,255,.04)}
+.actions button kbd{font-family:var(--mono);font-size:10px;color:var(--muted);background:rgba(255,255,255,.04);padding:2px 6px;border-radius:3px;border:1px solid var(--line)}
+.actions button.danger{color:#ff7a82;border-color:rgba(255,122,130,.25)}
+.actions button.primary{
+  background:linear-gradient(135deg,var(--cyan),var(--magenta));color:#13091e;
+  border-color:transparent;font-weight:600;
+}
+
+.stage{
+  display:grid;place-items:center;
+  background:var(--panel);
+  border:1px solid var(--line);border-radius:10px;
+  padding:24px;
+  min-height:520px;
+  position:relative;
+}
+.stage canvas{
+  image-rendering:pixelated;image-rendering:crisp-edges;
+  background:#fff;
+  background-image:
+    linear-gradient(45deg,#eee 25%,transparent 25%,transparent 75%,#eee 75%,#eee),
+    linear-gradient(45deg,#eee 25%,transparent 25%,transparent 75%,#eee 75%,#eee);
+  background-size:16px 16px;
+  background-position:0 0, 8px 8px;
+  border-radius:6px;
+  box-shadow:0 30px 80px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.05);
+  cursor:crosshair;
+  touch-action:none;
+}
+.stage__hint{
+  position:absolute;bottom:8px;left:50%;transform:translateX(-50%);
+  font-size:10.5px;color:var(--muted);letter-spacing:.16em;text-transform:uppercase;
+}
+
+.preview{
+  display:grid;place-items:center;padding:18px;background:#fff;border-radius:6px;
+}
+.preview canvas{image-rendering:pixelated;image-rendering:crisp-edges;width:100%;display:block}
+
+.layers{display:grid;gap:6px;margin-top:8px}
+.layer{
+  display:flex;align-items:center;gap:10px;
+  padding:8px;border:1px solid var(--line);border-radius:6px;
+  font-size:11px;letter-spacing:.1em;
+}
+.layer .swatch{width:14px;height:14px;aspect-ratio:auto;border-radius:3px}
+
+.gallery{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px;
+}
+.gallery button{
+  aspect-ratio:1;border:1px solid var(--line);border-radius:6px;padding:4px;
+  background:#fff;
+}
+.gallery button:hover{border-color:var(--cyan)}
+.gallery canvas{image-rendering:pixelated;width:100%;height:100%}
+
+footer{text-align:center;color:var(--muted);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:24px}
+footer a{color:var(--ink);border-bottom:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a href="../../index.html"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M9 2 L4 7 L9 12" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> back to journal</a>
+  <div class="brand">Pixel Studio <span style="color:var(--muted);font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase">— plate IV</span></div>
+  <span>16 × 16 · cyan/magenta</span>
+</header>
+
+<main class="shell">
+
+  <!-- LEFT panel: tools & color -->
+  <aside class="panel">
+    <h3>Tool</h3>
+    <div class="tools" id="toolPanel">
+      <button class="tool is-on" data-tool="pen">✎ pen</button>
+      <button class="tool" data-tool="erase">⌫ erase</button>
+      <button class="tool" data-tool="fill">▧ fill</button>
+      <button class="tool" data-tool="pick">⊙ pick</button>
+    </div>
+
+    <h3 style="margin-top:18px">Canvas</h3>
+    <div class="size-row" id="sizeRow">
+      <button data-s="8">8</button>
+      <button data-s="16" class="is-on">16</button>
+      <button data-s="24">24</button>
+      <button data-s="32">32</button>
+    </div>
+
+    <h3 style="margin-top:18px">Palette</h3>
+    <div class="swatches" id="swatches"></div>
+    <div class="color-pick">
+      <input type="color" id="colorPick" value="#00FFFF">
+      <small id="colorHex">#00FFFF</small>
+    </div>
+
+    <h3 style="margin-top:18px">Actions</h3>
+    <div class="actions">
+      <button id="undoBtn">↶ undo <kbd>⌘Z</kbd></button>
+      <button id="redoBtn">↷ redo <kbd>⇧⌘Z</kbd></button>
+      <button id="clearBtn" class="danger">✕ clear</button>
+      <button id="exportBtn" class="primary">↧ export PNG</button>
+      <button id="saveBtn">＋ add to gallery</button>
+    </div>
+  </aside>
+
+  <!-- CENTER stage -->
+  <section class="stage">
+    <canvas id="canvas" width="384" height="384"></canvas>
+    <p class="stage__hint">click to draw · drag for stroke · pinch grid in left panel</p>
+  </section>
+
+  <!-- RIGHT panel: preview & gallery -->
+  <aside class="panel">
+    <h3>1× preview</h3>
+    <div class="preview"><canvas id="preview" width="64" height="64"></canvas></div>
+
+    <h3 style="margin-top:18px">Saved frames</h3>
+    <div class="gallery" id="gallery"></div>
+    <p style="font-size:10.5px;color:var(--muted);margin-top:10px;letter-spacing:.05em">saved on this device only</p>
+  </aside>
+
+</main>
+
+<footer>made by the studio · <a href="../../index.html">return to journal</a></footer>
+
+<script>
+const $  = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+
+const PALETTE = [
+  "#00FFFF","#FF00CC","#FFE066","#7af0c0","#ff5b9b","#65d6c0","#f4a366",
+  "#ffffff","#dddddd","#999999","#555555","#000000","#0E0E10","#C8501E",
+];
+
+const stage = $("#canvas");
+const sctx = stage.getContext("2d");
+const preview = $("#preview");
+const pctx = preview.getContext("2d");
+
+let GRID = 16;
+let cellSize = stage.width / GRID;
+let pixels = createGrid(GRID);
+let history = [], future = [];
+let tool = "pen";
+let color = "#00FFFF";
+let drawing = false;
+
+/* ── helpers ── */
+function createGrid(n){ return Array.from({length:n}, () => Array(n).fill(null)); }
+function snapshot(){
+  history.push(JSON.stringify(pixels));
+  if (history.length > 80) history.shift();
+  future.length = 0;
+}
+
+function setPixel(x, y, c){
+  if (x < 0 || y < 0 || x >= GRID || y >= GRID) return;
+  pixels[y][x] = c;
+}
+
+function flood(x, y, target, replacement){
+  if (target === replacement) return;
+  const stack = [[x,y]];
+  while (stack.length){
+    const [cx, cy] = stack.pop();
+    if (cx < 0 || cy < 0 || cx >= GRID || cy >= GRID) continue;
+    if (pixels[cy][cx] !== target) continue;
+    pixels[cy][cx] = replacement;
+    stack.push([cx+1,cy],[cx-1,cy],[cx,cy+1],[cx,cy-1]);
+  }
+}
+
+function render(){
+  sctx.clearRect(0, 0, stage.width, stage.height);
+  for (let y = 0; y < GRID; y++){
+    for (let x = 0; x < GRID; x++){
+      const c = pixels[y][x];
+      if (!c) continue;
+      sctx.fillStyle = c;
+      sctx.fillRect(x*cellSize, y*cellSize, cellSize, cellSize);
+    }
+  }
+  // grid lines
+  sctx.strokeStyle = "rgba(0,0,0,.10)";
+  sctx.lineWidth = 1;
+  for (let i = 0; i <= GRID; i++){
+    sctx.beginPath(); sctx.moveTo(i*cellSize, 0); sctx.lineTo(i*cellSize, stage.height); sctx.stroke();
+    sctx.beginPath(); sctx.moveTo(0, i*cellSize); sctx.lineTo(stage.width, i*cellSize); sctx.stroke();
+  }
+  // 1x preview
+  pctx.clearRect(0, 0, preview.width, preview.height);
+  const ps = preview.width / GRID;
+  for (let y = 0; y < GRID; y++){
+    for (let x = 0; x < GRID; x++){
+      const c = pixels[y][x];
+      if (!c) continue;
+      pctx.fillStyle = c;
+      pctx.fillRect(x*ps, y*ps, ps, ps);
+    }
+  }
+}
+
+/* ── pointer ── */
+function pointerPos(e){
+  const r = stage.getBoundingClientRect();
+  const cx = (e.clientX || e.touches?.[0]?.clientX) - r.left;
+  const cy = (e.clientY || e.touches?.[0]?.clientY) - r.top;
+  return {
+    x: Math.floor(cx / r.width * GRID),
+    y: Math.floor(cy / r.height * GRID),
+  };
+}
+
+function applyAt(p){
+  if (tool === "pen")  setPixel(p.x, p.y, color);
+  if (tool === "erase") setPixel(p.x, p.y, null);
+  if (tool === "fill") {
+    const target = pixels[p.y]?.[p.x] ?? null;
+    flood(p.x, p.y, target, color);
+  }
+  if (tool === "pick") {
+    const c = pixels[p.y]?.[p.x];
+    if (c) { color = c; $("#colorPick").value = c; $("#colorHex").textContent = c.toUpperCase(); markSwatch(); }
+  }
+  render();
+}
+
+stage.addEventListener("pointerdown", e => {
+  e.preventDefault();
+  drawing = true;
+  snapshot();
+  applyAt(pointerPos(e));
+});
+stage.addEventListener("pointermove", e => {
+  if (!drawing) return;
+  applyAt(pointerPos(e));
+});
+addEventListener("pointerup", () => drawing = false);
+
+/* ── tools ── */
+$$("#toolPanel .tool").forEach(b => b.addEventListener("click", () => {
+  $$("#toolPanel .tool").forEach(x => x.classList.remove("is-on"));
+  b.classList.add("is-on");
+  tool = b.dataset.tool;
+}));
+
+/* ── size ── */
+$$("#sizeRow button").forEach(b => b.addEventListener("click", () => {
+  $$("#sizeRow button").forEach(x => x.classList.remove("is-on"));
+  b.classList.add("is-on");
+  GRID = parseInt(b.dataset.s, 10);
+  cellSize = stage.width / GRID;
+  pixels = createGrid(GRID);
+  history.length = 0; future.length = 0;
+  render();
+}));
+
+/* ── palette ── */
+const swatches = $("#swatches");
+swatches.innerHTML = PALETTE.map(c => `<button class="swatch" data-c="${c}" style="background:${c}"></button>`).join("");
+function markSwatch(){
+  $$("#swatches .swatch").forEach(s => s.classList.toggle("is-on", s.dataset.c.toLowerCase() === color.toLowerCase()));
+}
+swatches.addEventListener("click", e => {
+  const b = e.target.closest(".swatch"); if (!b) return;
+  color = b.dataset.c;
+  $("#colorPick").value = color;
+  $("#colorHex").textContent = color.toUpperCase();
+  markSwatch();
+});
+markSwatch();
+
+$("#colorPick").addEventListener("input", e => {
+  color = e.target.value;
+  $("#colorHex").textContent = color.toUpperCase();
+  markSwatch();
+});
+
+/* ── undo/redo ── */
+$("#undoBtn").addEventListener("click", () => {
+  if (!history.length) return;
+  future.push(JSON.stringify(pixels));
+  pixels = JSON.parse(history.pop());
+  render();
+});
+$("#redoBtn").addEventListener("click", () => {
+  if (!future.length) return;
+  history.push(JSON.stringify(pixels));
+  pixels = JSON.parse(future.pop());
+  render();
+});
+
+$("#clearBtn").addEventListener("click", () => {
+  snapshot();
+  pixels = createGrid(GRID);
+  render();
+});
+
+addEventListener("keydown", e => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "z") {
+    e.preventDefault();
+    if (e.shiftKey) $("#redoBtn").click();
+    else $("#undoBtn").click();
+  }
+});
+
+/* ── export ── */
+$("#exportBtn").addEventListener("click", () => {
+  const out = document.createElement("canvas");
+  out.width = GRID; out.height = GRID;
+  const c = out.getContext("2d");
+  for (let y = 0; y < GRID; y++) for (let x = 0; x < GRID; x++){
+    if (pixels[y][x]) { c.fillStyle = pixels[y][x]; c.fillRect(x, y, 1, 1); }
+  }
+  const a = document.createElement("a");
+  a.download = `pixel-${GRID}x${GRID}-${Date.now()}.png`;
+  a.href = out.toDataURL("image/png");
+  a.click();
+});
+
+/* ── gallery (localStorage) ── */
+const galleryEl = $("#gallery");
+function loadGallery(){
+  const raw = JSON.parse(localStorage.getItem("pixel.gallery") || "[]");
+  galleryEl.innerHTML = raw.map((g, i) => `<button data-g="${i}"><canvas width="${g.n}" height="${g.n}"></canvas></button>`).join("");
+  raw.forEach((g, i) => {
+    const cv = galleryEl.querySelector(`button[data-g="${i}"] canvas`);
+    const c = cv.getContext("2d");
+    const grid = JSON.parse(g.data);
+    for (let y = 0; y < g.n; y++) for (let x = 0; x < g.n; x++){
+      if (grid[y][x]) { c.fillStyle = grid[y][x]; c.fillRect(x, y, 1, 1); }
+    }
+  });
+}
+$("#saveBtn").addEventListener("click", () => {
+  const raw = JSON.parse(localStorage.getItem("pixel.gallery") || "[]");
+  raw.unshift({ n: GRID, data: JSON.stringify(pixels) });
+  if (raw.length > 9) raw.length = 9;
+  localStorage.setItem("pixel.gallery", JSON.stringify(raw));
+  loadGallery();
+});
+galleryEl.addEventListener("click", e => {
+  const b = e.target.closest("button[data-g]"); if (!b) return;
+  const raw = JSON.parse(localStorage.getItem("pixel.gallery") || "[]");
+  const g = raw[+b.dataset.g];
+  if (!g) return;
+  GRID = g.n;
+  cellSize = stage.width / GRID;
+  pixels = JSON.parse(g.data);
+  $$("#sizeRow button").forEach(x => x.classList.toggle("is-on", parseInt(x.dataset.s,10) === GRID));
+  history.length = 0; future.length = 0;
+  render();
+});
+loadGallery();
+
+/* ── seed an example ── */
+function seedExample(){
+  const ex = [
+    [3,2,"#FF00CC"],[4,2,"#FF00CC"],[5,2,"#FF00CC"],[10,2,"#FF00CC"],[11,2,"#FF00CC"],[12,2,"#FF00CC"],
+    [2,3,"#FF00CC"],[6,3,"#FF00CC"],[9,3,"#FF00CC"],[13,3,"#FF00CC"],
+    [2,4,"#FF00CC"],[7,4,"#FF00CC"],[8,4,"#FF00CC"],[13,4,"#FF00CC"],
+    [3,5,"#FF00CC"],[12,5,"#FF00CC"],
+    [4,6,"#FF00CC"],[11,6,"#FF00CC"],
+    [5,7,"#FF00CC"],[10,7,"#FF00CC"],
+    [6,8,"#FF00CC"],[9,8,"#FF00CC"],
+    [7,9,"#FF00CC"],[8,9,"#FF00CC"],
+    [4,12,"#00FFFF"],[5,12,"#00FFFF"],[10,12,"#00FFFF"],[11,12,"#00FFFF"],
+    [3,13,"#00FFFF"],[6,13,"#00FFFF"],[9,13,"#00FFFF"],[12,13,"#00FFFF"],
+    [2,14,"#00FFFF"],[3,14,"#00FFFF"],[4,14,"#00FFFF"],[5,14,"#00FFFF"],[6,14,"#00FFFF"],[9,14,"#00FFFF"],[10,14,"#00FFFF"],[11,14,"#00FFFF"],[12,14,"#00FFFF"],[13,14,"#00FFFF"],
+  ];
+  ex.forEach(([x,y,c]) => { pixels[y][x] = c; });
+  render();
+}
+seedExample();
+</script>
+</body>
+</html>
