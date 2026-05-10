@@ -13,7 +13,8 @@ export type CustomerAgentViewProps = {
 export default function CustomerAgentView({messages, locale}: CustomerAgentViewProps) {
   const t = createT(messages ?? getDefaultMessages());
   const common = (t('common') as any) ?? {};
-  const isEnglish = locale === 'en';
+  // English is the safe fallback for non-Turkish locales (Romanian, etc.)
+  const isEnglish = locale !== 'tr';
 
   // Türkçe ve İngilizce içerik
   const content = {

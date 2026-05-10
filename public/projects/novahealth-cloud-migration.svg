@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Nova Health AWS cloud console mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0E0E12"/>
+      <stop offset="100%" stop-color="#1A1422"/>
+    </linearGradient>
+    <linearGradient id="topbar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#232F3E"/>
+      <stop offset="100%" stop-color="#1A2433"/>
+    </linearGradient>
+    <radialGradient id="glow5" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#FF9900" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FF9900" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#glow5)"/>
+
+  <g transform="translate(60,60)">
+    <rect width="1080" height="680" rx="14" fill="#FAFAFA" stroke="#000" stroke-opacity="0.15"/>
+    <rect width="1080" height="38" rx="14" fill="#E5E7EB"/>
+    <rect y="20" width="1080" height="18" fill="#E5E7EB"/>
+    <circle cx="20" cy="19" r="6" fill="#FF5F57"/>
+    <circle cx="40" cy="19" r="6" fill="#FEBC2E"/>
+    <circle cx="60" cy="19" r="6" fill="#28C840"/>
+    <rect x="86" y="9" width="500" height="20" rx="10" fill="#FFF" stroke="#000" stroke-opacity="0.08"/>
+    <text x="100" y="23" font-family="Inter, Arial, sans-serif" font-size="11" fill="#3a3a3a">🔒 console.aws.amazon.com/cloudwatch/dashboard/nova-health-prod</text>
+
+    <!-- aws top bar -->
+    <g transform="translate(0,38)">
+      <rect width="1080" height="40" fill="url(#topbar)"/>
+      <g transform="translate(16,14)">
+        <rect width="34" height="20" rx="2" fill="#FF9900"/>
+        <text x="17" y="14" font-family="Inter, Arial, sans-serif" font-size="11" fill="#232F3E" font-weight="900" text-anchor="middle">aws</text>
+        <text x="46" y="14" font-family="Inter, Arial, sans-serif" font-size="11" fill="#FFF">Services ▾</text>
+      </g>
+      <g font-family="Inter, Arial, sans-serif" font-size="11" fill="#FFF" opacity="0.85">
+        <text x="240" y="26">🔍 Search for services, features, blogs…</text>
+      </g>
+      <g font-family="Inter, Arial, sans-serif" font-size="11" fill="#FFF" transform="translate(880,14)">
+        <text>Ireland (eu-west-1) ▾</text>
+        <text x="160" y="0">nalba @ nova-health ▾</text>
+      </g>
+    </g>
+
+    <!-- breadcrumb -->
+    <g transform="translate(0,78)">
+      <rect width="1080" height="36" fill="#F2F4F7"/>
+      <text x="20" y="22" font-family="Inter, Arial, sans-serif" font-size="11" fill="#5C6B85">CloudWatch  /  Dashboards  /  <tspan font-weight="700" fill="#0F1A2F">nova-health-prod</tspan></text>
+      <rect x="900" y="8" width="160" height="20" rx="3" fill="#22C55E"/>
+      <text x="980" y="22" font-family="Inter, Arial, sans-serif" font-size="10" fill="#FFF" text-anchor="middle" font-weight="700">● ALL SYSTEMS HEALTHY</text>
+    </g>
+
+    <!-- main grid: 4 panels top, 2 bottom -->
+    <g transform="translate(20,124)" font-family="Inter, Arial, sans-serif">
+      <!-- Uptime card -->
+      <g>
+        <rect width="246" height="120" rx="6" fill="#FFF" stroke="#E5E7EB"/>
+        <text x="16" y="24" font-size="11" letter-spacing="2" fill="#5C6B85">UPTIME · 30 DAYS</text>
+        <text x="16" y="58" font-size="28" font-weight="800" fill="#0F1A2F">99.97%</text>
+        <text x="120" y="58" font-size="11" fill="#22C55E">↑ from 95.2% pre-migration</text>
+        <!-- bar -->
+        <g transform="translate(16,72)">
+          <rect width="214" height="6" rx="3" fill="#E5E7EB"/>
+          <rect width="214" height="6" rx="3" fill="#22C55E"/>
+        </g>
+        <text x="16" y="98" font-size="10" fill="#5C6B85">2 incidents · 14 min total downtime</text>
+      </g>
+
+      <!-- Requests panel -->
+      <g transform="translate(258,0)">
+        <rect width="246" height="120" rx="6" fill="#FFF" stroke="#E5E7EB"/>
+        <text x="16" y="24" font-size="11" letter-spacing="2" fill="#5C6B85">REQUESTS · LAST 24H</text>
+        <text x="16" y="58" font-size="28" font-weight="800" fill="#0F1A2F">2.4M</text>
+        <text x="116" y="58" font-size="11" fill="#22C55E">↑ 12%</text>
+        <!-- mini chart -->
+        <g transform="translate(16,68)">
+          <polyline points="0,30 20,28 40,24 60,22 80,26 100,20 120,18 140,22 160,14 180,18 200,10 214,12" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+          <polygon points="0,30 20,28 40,24 60,22 80,26 100,20 120,18 140,22 160,14 180,18 200,10 214,12 214,40 0,40" fill="#0EA5E9" fill-opacity="0.15"/>
+        </g>
+      </g>
+
+      <!-- p95 latency -->
+      <g transform="translate(516,0)">
+        <rect width="246" height="120" rx="6" fill="#FFF" stroke="#E5E7EB"/>
+        <text x="16" y="24" font-size="11" letter-spacing="2" fill="#5C6B85">P95 LATENCY</text>
+        <text x="16" y="58" font-size="28" font-weight="800" fill="#0F1A2F">142 ms</text>
+        <text x="130" y="58" font-size="11" fill="#22C55E">↓ from 940 ms</text>
+        <g transform="translate(16,68)">
+          <polyline points="0,18 20,20 40,16 60,18 80,14 100,16 120,12 140,14 160,10 180,12 200,8 214,10" fill="none" stroke="#22C55E" stroke-width="2"/>
+        </g>
+      </g>
+
+      <!-- Cost -->
+      <g transform="translate(774,0)">
+        <rect width="246" height="120" rx="6" fill="#FFF" stroke="#E5E7EB"/>
+        <text x="16" y="24" font-size="11" letter-spacing="2" fill="#5C6B85">MONTH-TO-DATE COST</text>
+        <text x="16" y="58" font-size="28" font-weight="800" fill="#0F1A2F">$412</text>
+        <text x="100" y="58" font-size="11" fill="#22C55E">↓ 38% YoY</text>
+        <text x="16" y="78" font-size="10" fill="#5C6B85">Old hosting: $670/mo · 99% downtime risk</text>
+        <g transform="translate(16,86)">
+          <rect width="50" height="18" rx="3" fill="#FF9900" fill-opacity="0.15"/>
+          <text x="25" y="98" font-size="10" fill="#9A5300" text-anchor="middle" font-weight="700">ECS</text>
+          <rect x="56" width="60" height="18" rx="3" fill="#22C55E" fill-opacity="0.15"/>
+          <text x="86" y="98" font-size="10" fill="#15803D" text-anchor="middle" font-weight="700">RDS</text>
+          <rect x="122" width="50" height="18" rx="3" fill="#0EA5E9" fill-opacity="0.15"/>
+          <text x="147" y="98" font-size="10" fill="#0369A1" text-anchor="middle" font-weight="700">S3</text>
+          <rect x="178" width="68" height="18" rx="3" fill="#8B5CF6" fill-opacity="0.15"/>
+          <text x="212" y="98" font-size="10" fill="#6D28D9" text-anchor="middle" font-weight="700">CloudFront</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Large request-rate chart -->
+    <g transform="translate(20,260)" font-family="Inter, Arial, sans-serif">
+      <rect width="640" height="280" rx="6" fill="#FFF" stroke="#E5E7EB"/>
+      <text x="16" y="24" font-size="13" font-weight="700" fill="#0F1A2F">Request rate · 7 days</text>
+      <text x="16" y="40" font-size="11" fill="#5C6B85">Across ECS service · all routes</text>
+      <g font-size="10" fill="#5C6B85" transform="translate(20,210)">
+        <text x="0">Mon</text>
+        <text x="90">Tue</text>
+        <text x="180">Wed</text>
+        <text x="270">Thu</text>
+        <text x="360">Fri</text>
+        <text x="450">Sat</text>
+        <text x="540">Sun</text>
+      </g>
+      <g transform="translate(20,60)">
+        <!-- grid -->
+        <g stroke="#E5E7EB">
+          <line x1="0" y1="0" x2="600" y2="0"/>
+          <line x1="0" y1="40" x2="600" y2="40"/>
+          <line x1="0" y1="80" x2="600" y2="80"/>
+          <line x1="0" y1="120" x2="600" y2="120"/>
+          <line x1="0" y1="140" x2="600" y2="140"/>
+        </g>
+        <!-- areas -->
+        <polygon points="0,90 50,80 100,70 150,75 200,60 250,55 300,45 350,50 400,40 450,30 500,32 550,25 600,30 600,140 0,140" fill="#0EA5E9" fill-opacity="0.18"/>
+        <polyline points="0,90 50,80 100,70 150,75 200,60 250,55 300,45 350,50 400,40 450,30 500,32 550,25 600,30" fill="none" stroke="#0EA5E9" stroke-width="2"/>
+        <polyline points="0,110 50,108 100,98 150,100 200,90 250,85 300,80 350,82 400,75 450,68 500,72 550,65 600,68" fill="none" stroke="#22C55E" stroke-width="2"/>
+      </g>
+      <g font-size="11" transform="translate(16,256)">
+        <circle cx="6" cy="-2" r="4" fill="#0EA5E9"/>
+        <text x="16" y="2" fill="#0F1A2F">2xx success · 99.87% of total</text>
+        <circle cx="240" cy="-2" r="4" fill="#22C55E"/>
+        <text x="250" y="2" fill="#0F1A2F">Health checks · all green</text>
+        <text x="500" y="2" fill="#5C6B85">Updated 2 min ago</text>
+      </g>
+    </g>
+
+    <!-- Architecture summary right -->
+    <g transform="translate(672,260)" font-family="Inter, Arial, sans-serif">
+      <rect width="368" height="280" rx="6" fill="#0F1A2F"/>
+      <text x="16" y="24" font-size="13" font-weight="700" fill="#FFF">Architecture · production</text>
+      <text x="16" y="40" font-size="10" fill="#FFF" opacity="0.7" letter-spacing="2">EU-WEST-1 · MULTI-AZ</text>
+
+      <g transform="translate(16,56)" font-size="11" fill="#FFF">
+        <g>
+          <rect width="336" height="34" rx="4" fill="#FFF" fill-opacity="0.06"/>
+          <rect x="6" y="6" width="22" height="22" rx="3" fill="#8B5CF6"/>
+          <text x="17" y="22" text-anchor="middle" font-weight="900" fill="#FFF" font-size="11">CF</text>
+          <text x="36" y="22">CloudFront · 47 edge locations</text>
+          <text x="326" y="22" text-anchor="end" fill="#22C55E">healthy</text>
+        </g>
+        <g transform="translate(0,42)">
+          <rect width="336" height="34" rx="4" fill="#FFF" fill-opacity="0.06"/>
+          <rect x="6" y="6" width="22" height="22" rx="3" fill="#FF9900"/>
+          <text x="17" y="22" text-anchor="middle" font-weight="900" fill="#FFF" font-size="11">EC</text>
+          <text x="36" y="22">ECS Fargate · 6 tasks · auto-scale</text>
+          <text x="326" y="22" text-anchor="end" fill="#22C55E">healthy</text>
+        </g>
+        <g transform="translate(0,84)">
+          <rect width="336" height="34" rx="4" fill="#FFF" fill-opacity="0.06"/>
+          <rect x="6" y="6" width="22" height="22" rx="3" fill="#0EA5E9"/>
+          <text x="17" y="22" text-anchor="middle" font-weight="900" fill="#FFF" font-size="11">RD</text>
+          <text x="36" y="22">RDS Postgres 16 · Multi-AZ</text>
+          <text x="326" y="22" text-anchor="end" fill="#22C55E">healthy</text>
+        </g>
+        <g transform="translate(0,126)">
+          <rect width="336" height="34" rx="4" fill="#FFF" fill-opacity="0.06"/>
+          <rect x="6" y="6" width="22" height="22" rx="3" fill="#22C55E"/>
+          <text x="17" y="22" text-anchor="middle" font-weight="900" fill="#FFF" font-size="11">S3</text>
+          <text x="36" y="22">S3 · 14 GB · versioned + replicated</text>
+          <text x="326" y="22" text-anchor="end" fill="#22C55E">healthy</text>
+        </g>
+        <g transform="translate(0,168)">
+          <rect width="336" height="34" rx="4" fill="#FFF" fill-opacity="0.06"/>
+          <rect x="6" y="6" width="22" height="22" rx="3" fill="#A259FF"/>
+          <text x="17" y="22" text-anchor="middle" font-weight="900" fill="#FFF" font-size="11">SE</text>
+          <text x="36" y="22">Sentry · 0 unresolved errors</text>
+          <text x="326" y="22" text-anchor="end" fill="#22C55E">healthy</text>
+        </g>
+      </g>
+      <g transform="translate(16,256)" font-size="10" fill="#FFF" opacity="0.65">
+        <text>Last backup: 18 min ago · PITR window: 30 days</text>
+      </g>
+    </g>
+
+    <!-- migration summary band -->
+    <g transform="translate(20,556)">
+      <rect width="1020" height="100" rx="6" fill="#FFF7E6" stroke="#FF9900" stroke-opacity="0.3"/>
+      <text x="20" y="28" font-family="Inter, Arial, sans-serif" font-size="11" letter-spacing="3" fill="#9A5300">MIGRATION SUMMARY · Q1 2026</text>
+      <g font-family="Inter, Arial, sans-serif" transform="translate(20,42)">
+        <g>
+          <text font-size="22" font-weight="800" fill="#0F1A2F">95.2% → 99.97%</text>
+          <text y="22" font-size="11" fill="#5C6B85">Uptime · 30-day window</text>
+        </g>
+        <g transform="translate(280,0)">
+          <text font-size="22" font-weight="800" fill="#0F1A2F">940 ms → 142 ms</text>
+          <text y="22" font-size="11" fill="#5C6B85">p95 API latency</text>
+        </g>
+        <g transform="translate(560,0)">
+          <text font-size="22" font-weight="800" fill="#0F1A2F">$670 → $412</text>
+          <text y="22" font-size="11" fill="#5C6B85">Monthly infrastructure cost</text>
+        </g>
+        <g transform="translate(820,0)">
+          <text font-size="22" font-weight="800" fill="#22C55E">12 days</text>
+          <text y="22" font-size="11" fill="#5C6B85">Full migration · zero data loss</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(20,750)" font-family="Inter, Arial, sans-serif" fill="#FAF7F2">
+    <text font-size="11" letter-spacing="3" opacity="0.6">CLOUD · AWS · MIGRATION · MONITORING · COST OPT</text>
+  </g>
+</svg>

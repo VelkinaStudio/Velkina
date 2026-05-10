@@ -1,326 +1,208 @@
 import React from 'react';
+import type { ReactNode } from 'react';
 import HeroShapesClient from '../../components/HeroShapesClient';
 import type {Locale, Messages} from '../../i18n/messages';
 import {createT, getDefaultMessages} from '../../i18n/messages';
-import type { ReactNode } from 'react';
+import {CONTACT, mailHref, whatsappHref} from '../../lib/contact';
 
 export type ServicesViewProps = {
   messages?: Messages;
   locale?: Locale;
 };
 
+const ICON: Record<string, ReactNode> = {
+  websites: <path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0zm9-9v18m-9-9h18M5.6 5.6c2 3.4 2 9.4 0 12.8M18.4 5.6c-2 3.4-2 9.4 0 12.8" strokeLinecap="round" strokeLinejoin="round"/>,
+  shopify: <path d="M3 7l9-4 9 4-9 4-9-4zm0 0v10l9 4 9-4V7" strokeLinecap="round" strokeLinejoin="round"/>,
+  'qr-menu': <path d="M3 3h7v7H3V3zm11 0h7v7h-7V3zM3 14h7v7H3v-7zm11 0h2v2h-2v-2zm4 0h3v3h-3v-3zm-4 5h3v2h-3v-2zm5 0h2v2h-2v-2z" strokeLinecap="round" strokeLinejoin="round"/>,
+  'google-ads': <path d="M3 16l5-9 4 7 4-5 5 7H3z" strokeLinecap="round" strokeLinejoin="round"/>,
+  'meta-ads': <path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8c0 2.5-1.2 4.8-3 6.3M12 4c-3 0-5.7 2.7-6.5 6m6.5-6c3 0 5.7 2.7 6.5 6" strokeLinecap="round" strokeLinejoin="round"/>,
+  cloud: <path d="M6.5 19a4.5 4.5 0 010-9 6 6 0 0111.7 1A4 4 0 0118 19H6.5z" strokeLinecap="round" strokeLinejoin="round"/>,
+  'ai-automation': <path d="M12 2v3m0 14v3M2 12h3m14 0h3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1M9 12a3 3 0 116 0 3 3 0 01-6 0z" strokeLinecap="round" strokeLinejoin="round"/>,
+  mobile: <path d="M7 2h10a2 2 0 012 2v16a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2zm3 18h4" strokeLinecap="round" strokeLinejoin="round"/>,
+  seo: <path d="M11 4a7 7 0 100 14 7 7 0 000-14zm5.5 12L21 20.5" strokeLinecap="round" strokeLinejoin="round"/>,
+  branding: <path d="M12 3l2.5 6 6.5.5-5 4.3 1.5 6.5L12 17l-5.5 3.3 1.5-6.5-5-4.3 6.5-.5L12 3z" strokeLinecap="round" strokeLinejoin="round"/>
+};
+
 export default function ServicesView({messages, locale}: ServicesViewProps) {
   const t = createT(messages ?? getDefaultMessages());
-  const lang = locale === 'tr' ? 'tr' : 'en';
-
-  const icons: Record<string, ReactNode> = {
-    websites: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Z"/></svg>
-    ),
-    applications: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
-    ),
-    'ai-automation': (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5h10.5m-10.5 4.5h10.5m-10.5 4.5h10.5"/></svg>
-    ),
-    ads: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5 9 7.5l4.5 4.5L20.25 6v12.75A2.25 2.25 0 0 1 18 21H6a2.25 2.25 0 0 1-2.25-2.25V13.5Z"/></svg>
-    ),
-    seo: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12 12 3l9.75 9M4.5 10.5V21h15V10.5"/></svg>
-    ),
-    middleware: (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 7.5h10.5m-10.5 4.5h10.5m-10.5 4.5h10.5"/></svg>
-    ),
-    'analytics-cro': (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5 9 7.5l4.5 4.5L20.25 6v12.75A2.25 2.25 0 0 1 18 21H6a2.25 2.25 0 0 1-2.25-2.25V13.5Z"/></svg>
-    ),
-    'hosting-devops': (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 7.5h16.5M3.75 16.5h16.5M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/></svg>
-    ),
-    'qr-menu': (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.5h5.25v5.25H3.75V4.5Zm0 9.75h5.25v5.25H3.75v-5.25Zm10.5-9.75h5.25v5.25h-5.25V4.5ZM14.25 14.25h2.25v2.25h-2.25v-2.25Zm3.75 0h2.25v2.25H18v-2.25Zm-3.75 3.75h2.25v2.25h-2.25v-2.25Zm3.75 0h2.25v2.25H18v-2.25Z"/></svg>
-    ),
-    // Legacy keys fallback (no-op)
-  };
-
-  const services = t('services');
-  const trItems = [
-    { id: 'qr-menu', title: 'Restoranlar için QR Menü', tag: 'Restoran • Kafe • Bar', intro: 'Misafirleriniz QR’ı okuttuğunda saniyeler içinde açılan, fotoğraflı, çok dilli, sezonluk değişiklikleri sizin yöneteceğiniz dijital menü. Uygulama indirme yok, basılı menü maliyeti yok.', deliverables: ['Markanıza özel mobil tasarım (özel font, renk, fotoğraf düzeni)', 'Menü içerik yönetimi (kategori/öğe/fiyat/foto/alerjen)', 'Çok dilli içerik (TR/EN/DE/RU/AR)', 'Masa bazlı QR kodlar + posterler', 'Hızlı yükleme (LCP < 1.5 sn)', 'Allergen ve içerik etiketleri', '"Garson çağır" + "Hesabı iste" eylemleri'], outcomes: ['Daha hızlı sipariş — siparişler arası süre düşer', 'Sıfır basılı menü maliyeti, sezonluk anında güncelleme', 'Tabaktan önce gözle satın alma → tatlı/içecek satışında artış', 'Dünyanın her yerinden gelen turistler kendi dilinde okur', 'Google üzerinde menü görünürlüğü (SEO + structured data)'], examples: ['Restoran (a la carte)', 'Kafe / kahveci', 'Bar / cocktail house', 'Otel kahvaltı menüsü', 'Tatlıcı / pastane'] },
-    { id: 'websites', title: 'Web Siteleri', tag: 'Tasarım • Frontend • Backend', intro: 'Hızlı, güvenilir ve net web siteleri. Tasarımdan canlıya kadar uçtan uca.', deliverables: ['Tasarım sistemi ve bileşenler', 'CMS entegrasyonu', 'Performans ve erişilebilirlik'], outcomes: ['Hızlı sayfalar', 'Yüksek algılanan kalite', 'SEO temelleri'], examples: ['Kurumsal site', 'Ürün‑pazarlama', 'Doküman portalı'] },
-    { id: 'applications', title: 'Uygulamalar', tag: 'Web App • Mobil • Panel', intro: 'İş süreçlerinize özel paneller ve kullanıcı uygulamaları.', deliverables: ['Akışlar ve yetkilendirme', 'Bileşen kütüphanesi', 'API entegrasyonları'], outcomes: ['Verimli ekipler', 'Daha az hata', 'Ölçeklenebilir mimari'], examples: ['Yönetim paneli', 'Müşteri portalı'] },
-    { id: 'ai-automation', title: 'AI Otomasyonu', tag: 'İş Akışları • Ajanlar', intro: 'Tekrarlayan işleri yapay zekâ ve iş akışlarıyla otomatikleştirin.', deliverables: ['Süreç analizi', 'n8n/entegrasyonlar', 'Takip ve raporlama'], outcomes: ['Zaman tasarrufu', 'Daha düşük maliyet', 'Tutarlı kalite'], examples: ['Lead yönlendirme', 'Belge işleme'] },
-    { id: 'ads', title: 'Meta & Google Reklamları', tag: 'Edinim • Yeniden Hedefleme', intro: 'Performans odaklı kampanyalar net ölçümleme ile.', deliverables: ['Kampanya kurulumu', 'Kreatif varyantlar', 'Olay akışı'], outcomes: ['Kaliteli trafik', 'Ölçülebilir büyüme'], examples: ['Arama', 'Görüntülü', 'Sosyal'] },
-    { id: 'seo', title: 'SEO Hizmetleri', tag: 'Teknik • İçerik • On‑page', intro: 'Arama görünürlüğü için teknik temel ve kaliteli içerik.', deliverables: ['Teknik audit', 'Bilgi mimarisi', 'İçerik planı'], outcomes: ['Artan organik trafik', 'Daha iyi sıralama'], examples: ['Schema', 'İç bağlantı'] },
-    { id: 'middleware', title: 'CRM/CMS Entegrasyonları', tag: 'HubSpot • Salesforce • Sanity', intro: 'Sistemler arası sağlam veri akışı ve ara katman.', deliverables: ['API tasarımı', 'Kimlik doğrulama', 'Gözlemlenebilirlik'], outcomes: ['Temiz veri', 'Güvenilir servisler'], examples: ['Webhooklar', 'İç servisler'] },
-    { id: 'analytics-cro', title: 'Analitik & CRO', tag: 'Ölçümleme • Deneyler', intro: 'Doğru ölçüm ve deneylerle dönüşüm optimizasyonu.', deliverables: ['Sunucu tarafı izleme', 'A/B testleri', 'Funnel analizi'], outcomes: ['Daha yüksek dönüşüm', 'İçgörü'], examples: ['Yeni varyantlar', 'Raporlar'] },
-    { id: 'hosting-devops', title: 'Barındırma & DevOps', tag: 'Vercel • Cloudflare • AWS', intro: 'Hızlı, güvenilir ve geri alınabilir dağıtımlar.', deliverables: ['CI/CD & önizlemeler', 'Önbellek & optimizasyon', 'Uptime panoları'], outcomes: ['%99.9+ uptime', 'Düşük risk'], examples: ['Statik/SSR', 'Çok bölgeli dağıtım'] },
-  ];
-  const enItems = [
-    { id: 'qr-menu', title: 'QR Menu for Restaurants', tag: 'Restaurants • Cafés • Bars', intro: 'When your guests scan the QR code, your menu opens in seconds — photos, multilingual, seasonally editable by you. No app downloads, no reprinting costs.', deliverables: ['Mobile design tailored to your brand (custom typography, color, photo layout)', 'Menu content management (category / item / price / photo / allergens)', 'Multilingual content (EN / TR / DE / RU / AR)', 'Per‑table QR codes + printable posters', 'Fast loading (LCP under 1.5 s)', 'Allergen and ingredient tags', '“Call waiter” + “Request bill” actions'], outcomes: ['Faster ordering — shorter time between sit‑down and first order', 'Zero printed‑menu cost, instant seasonal updates', 'Visual purchases — desserts and drinks attach‑rate goes up', 'International guests read in their own language', 'Menu visibility on Google (SEO + structured data)'], examples: ['Full‑service restaurant (à la carte)', 'Café / specialty coffee', 'Bar / cocktail house', 'Hotel breakfast menu', 'Patisserie / dessert shop'] },
-    { id: 'websites', title: 'Websites', tag: 'Design • Frontend • Backend', intro: 'Fast, reliable and clear websites. End‑to‑end from design to production.', deliverables: ['Design system & components', 'CMS integration', 'Performance & accessibility'], outcomes: ['Fast pages', 'Premium feel', 'SEO foundations'], examples: ['Corporate site', 'Product marketing', 'Docs portal'] },
-    { id: 'applications', title: 'Applications', tag: 'Web App • Mobile • Admin', intro: 'Custom admin panels and user applications for your workflows.', deliverables: ['Flows & authorization', 'Component library', 'API integrations'], outcomes: ['Efficient teams', 'Fewer errors', 'Scalable architecture'], examples: ['Admin panel', 'Customer portal'] },
-    { id: 'ai-automation', title: 'AI Automation', tag: 'Workflows • Agents', intro: 'Automate repetitive tasks with AI agents and workflow tooling.', deliverables: ['Process analysis', 'n8n/integrations', 'Monitoring & reporting'], outcomes: ['Time savings', 'Lower costs', 'Consistent quality'], examples: ['Lead routing', 'Document processing'] },
-    { id: 'ads', title: 'Meta & Google Ads', tag: 'Acquisition • Retargeting', intro: 'Performance campaigns with trustworthy measurement.', deliverables: ['Campaign setup', 'Creative variants', 'Event pipeline'], outcomes: ['Quality traffic', 'Measurable growth'], examples: ['Search', 'Display', 'Social'] },
-    { id: 'seo', title: 'SEO Services', tag: 'Technical • Content • On‑page', intro: 'Technical foundations and quality content for search visibility.', deliverables: ['Technical audit', 'Information architecture', 'Content plan'], outcomes: ['More organic traffic', 'Better rankings'], examples: ['Schema', 'Internal linking'] },
-    { id: 'middleware', title: 'CRM/CMS Integrations', tag: 'HubSpot • Salesforce • Sanity', intro: 'Robust data flows and middleware between systems.', deliverables: ['API design', 'Authentication', 'Observability'], outcomes: ['Clean data', 'Reliable services'], examples: ['Webhooks', 'Internal services'] },
-    { id: 'analytics-cro', title: 'Analytics & CRO', tag: 'Measurement • Experiments', intro: 'Conversion optimization with accurate measurement and A/B testing.', deliverables: ['Server‑side tracking', 'A/B tests', 'Funnel analysis'], outcomes: ['Higher conversion', 'Insights'], examples: ['New variants', 'Reports'] },
-    { id: 'hosting-devops', title: 'Hosting & DevOps', tag: 'Vercel • Cloudflare • AWS', intro: 'Fast, reliable and reversible deployments.', deliverables: ['CI/CD & previews', 'Caching & optimization', 'Uptime dashboards'], outcomes: ['99.9%+ uptime', 'Lower risk'], examples: ['Static/SSR', 'Multi‑region deploy'] },
-  ];
-  const items = (lang === 'en') ? enItems : trItems;
-
-  const title = services?.title ?? 'Hizmetlerimiz';
-  const heroDesc = services?.heroDesc ?? 'Web siteleri, uygulamalar, AI otomasyonu, reklam, SEO ve entegrasyonlar—fikrinizden büyümeye tek ekip.';
-  const modelsTitle = services?.modelsTitle ?? 'Çalışma Modelleri';
-  const includedTitle = services?.includedTitle ?? 'Her Çalışmada Dahil';
-  const start = services?.start ?? 'Başlat';
-  const deliverables = services?.deliverables ?? 'Teslimatlar';
-  const outcomes = services?.outcomes ?? 'Sonuçlar';
-  const examples = services?.examples ?? 'Örnekler';
-  const faq = services?.faq ?? 'SSS';
-  const faqs = Array.isArray(services?.faqs) ? services!.faqs : undefined;
-  const models = Array.isArray(services?.models) ? services!.models : undefined;
-  const included = Array.isArray(services?.included) ? services!.included : undefined;
-
-  const quickContact = services?.quickContact ?? 'Hızlı İletişim';
-  const quickContactDesc = services?.quickContactDesc ?? 'Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.';
-
-  const ctaWhatsapp = t('home', 'ctas')?.whatsapp ?? 'WhatsApp’tan yazın';
-  const ctaEmail = t('home', 'ctas')?.email ?? 'E‑posta gönderin';
-  const ctaSchedule = t('home', 'ctas')?.schedule ?? 'Görüşme planlayın';
+  const lang: 'en' | 'tr' | 'ro' = (locale === 'tr' || locale === 'ro') ? locale : 'en';
+  const services = (t('services') as any) || {};
+  const h = (t('home') as any) || {};
+  const common = (t('common') as any) || {};
+  const items: any[] = Array.isArray(services?.items) ? services.items : [];
 
   return (
-    <div className="pt-4">
+    <div>
       {/* Hero */}
-      <section className="vk-hero relative overflow-hidden">
-        <div
-          className="absolute -inset-24 blur-3xl opacity-60 pointer-events-none"
-          style={{
-            background:
-              'radial-gradient(600px 300px at 20% 10%, rgba(162,89,255,.35), transparent 60%), radial-gradient(600px 300px at 80% 80%, rgba(0,255,255,.25), transparent 60%)',
-          }}
-        ></div>
-        <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-20 pb-14 grid gap-10 sm:grid-cols-2 items-center">
-          {/* Left column: title + copy */}
-          <div>
-            <h1 className="font-heading text-4xl md:text-5xl">{title}</h1>
-            <p className="text-white/80 max-w-2xl mt-3">{heroDesc}</p>
+      <section className="relative overflow-hidden">
+        <div className="absolute -inset-24 blur-3xl opacity-50 pointer-events-none" style={{background: 'radial-gradient(600px 300px at 20% 10%, rgba(162,89,255,.30), transparent 60%), radial-gradient(600px 300px at 80% 80%, rgba(0,255,255,.20), transparent 60%)'}} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-12 md:pt-20 pb-10 md:pb-14">
+          <div className="text-xs uppercase tracking-[0.22em] text-vkcyan font-mono mb-3">
+            {lang === 'tr' ? 'Hizmetlerimiz' : lang === 'ro' ? 'Serviciile noastre' : 'Our services'}
           </div>
-          {/* Right column: animation canvas */}
-          <div className="relative min-h-[260px] md:min-h-[420px]">
-            <canvas id="vk-hero-shapes" className="absolute inset-0 w-full h-full" role="img" aria-label="Hizmetler görselleştirme"></canvas>
-          </div>
-        </div>
-        {/* Wire shapes */}
-        {/** Client-only visualizer lives outside grid like on home */}
-        <HeroShapesClient />
-      </section>
-
-      {/* What we do: TOC + models (separate section below hero) */}
-      <section className="max-w-7xl mx-auto px-6 md:px-10 py-8">
-        {/* Sticky, horizontally scrollable TOC for mobile */}
-        <div className="sticky top-20 z-30 -mx-6 md:mx-0 px-6 py-2 bg-vkbg/70 backdrop-blur border-y border-white/5">
-          {(() => {
-            const tocIds = ['qr-menu','websites','applications','ai-automation','ads','seo','analytics-cro','middleware','hosting-devops'];
-            const toc = tocIds.map(id => items.find((x:any)=>x.id===id)).filter(Boolean) as any[];
-            return (
-              <div className="relative">
-                <div className="pointer-events-none absolute inset-y-0 left-0 w-6" style={{background:'linear-gradient(90deg, var(--vk-bg), transparent)'}} />
-                <div className="pointer-events-none absolute inset-y-0 right-0 w-6" style={{background:'linear-gradient(270deg, var(--vk-bg), transparent)'}} />
-                <nav className="flex gap-2 overflow-x-auto hide-scrollbar snap-x" aria-label="Services table of contents">
-                  {toc.map((s:any) => (
-                    <a key={s.id} href={`#${s.id}`} className="snap-start px-3 py-1.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 text-white/80 whitespace-nowrap">
-                      {s.title}
-                    </a>
-                  ))}
-                </nav>
-              </div>
-            );
-          })()}
-        </div>
-        <div className="relative z-10 mt-6 vk-glass border border-white/10 rounded-xl p-5 shadow-soft">
-          <h2 className="font-heading text-xl">{modelsTitle}</h2>
-          {Array.isArray(models) ? (
-            <ul className="mt-2 grid gap-2 md:grid-cols-3 text-white/80 list-disc pl-5">
-              {models!.map((m, i) => (
-                <li key={i}>{m as any}</li>
-              ))}
-            </ul>
-          ) : (
-            <ul className="mt-2 grid gap-2 md:grid-cols-3 text-white/80 list-disc pl-5">
-              <li><strong className="text-white/90">Proje</strong>: Sabit kapsam, net çıktılar, hızlı teslim.</li>
-              <li><strong className="text-white/90">Sprint</strong>: Deney ve iterasyonlar için 1–2 haftalık döngüler.</li>
-              <li><strong className="text-white/90">Süreli Anlaşma</strong>: Süregelen yol haritası, optimizasyon ve destek.</li>
-            </ul>
-          )}
+          <h1 className="font-heading text-4xl md:text-6xl leading-tight max-w-3xl">{services?.title ?? 'Services'}</h1>
+          <p className="text-white/80 mt-5 text-base md:text-lg max-w-2xl">{services?.subtitle ?? services?.heroDesc}</p>
         </div>
       </section>
 
-      {/* Included with every engagement */}
-      <section className="max-w-7xl mx-auto px-6 md:px-10 pb-10">
-        <div className="vk-glass border border-white/10 rounded-xl p-5 shadow-soft">
-          <h2 className="font-heading text-xl">{includedTitle}</h2>
-          {Array.isArray(included) ? (
-            <ul className="mt-2 grid gap-2 md:grid-cols-2 text-white/80 list-disc pl-5">
-              {included!.map((x, i) => (
-                <li key={i}>{x as any}</li>
-              ))}
-            </ul>
-          ) : (
-            <ul className="mt-2 grid gap-2 md:grid-cols-2 text-white/80 list-disc pl-5">
-              <li>Net kapsam, kilometre taşları ve haftalık sprint değerlendirmeleri</li>
-              <li>Tasarım sistemi token’ları ve belgelenmiş bileşenler</li>
-              <li>Performans bütçesi, erişilebilirlik ve SEO temelleri</li>
-              <li>Kuruluşunuzda kaynak kodu; CI/CD ve önizlemeler</li>
-              <li>Gözlemlenebilirlik: loglar, metrikler ve çalışma süresi panoları</li>
-              <li>Devir dokümanları, Loom videoları ve makul bir geri alma planı</li>
-            </ul>
-          )}
+      {/* Sticky TOC chips */}
+      <div className="sticky top-20 z-30 -mx-6 md:mx-0 px-6 py-3 bg-vkbg/85 backdrop-blur border-y border-white/10">
+        <div className="max-w-7xl mx-auto relative">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-6 z-10" style={{background: 'linear-gradient(90deg, var(--vk-bg), transparent)'}} />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-6 z-10" style={{background: 'linear-gradient(270deg, var(--vk-bg), transparent)'}} />
+          <nav className="flex gap-2 overflow-x-auto hide-scrollbar snap-x" aria-label="Services table of contents">
+            {items.map((s: any) => (
+              <a key={s.id} href={`#${s.id}`} className="snap-start flex-shrink-0 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-vkcyan/40 text-white/80 text-sm whitespace-nowrap transition">
+                {s.title}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+
+      {/* Models + Included */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-12 grid gap-4 md:grid-cols-2">
+        <div className="vk-glass border border-white/10 rounded-2xl p-6 shadow-soft">
+          <h2 className="font-heading text-lg md:text-xl mb-3">{services?.modelsTitle ?? 'How we work'}</h2>
+          <ul className="space-y-2 text-white/80 text-sm md:text-base leading-relaxed">
+            {(services?.models ?? []).map((m: string, i: number) => (
+              <li key={i} className="flex items-start gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-vkcyan flex-shrink-0 mt-1"><circle cx="12" cy="12" r="3"/></svg>
+                <span>{m}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="vk-glass border border-white/10 rounded-2xl p-6 shadow-soft">
+          <h2 className="font-heading text-lg md:text-xl mb-3">{services?.includedTitle ?? 'Always included'}</h2>
+          <ul className="space-y-2 text-white/80 text-sm md:text-base leading-relaxed">
+            {(services?.included ?? []).map((m: string, i: number) => (
+              <li key={i} className="flex items-start gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-vkmint flex-shrink-0 mt-1"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                <span>{m}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      {/* Sections (grouped with subtle tone transitions) */}
-      <section className="max-w-7xl mx-auto px-6 md:px-10 pb-16">
-        {(() => {
-          const GROUPS: { key: string; title: string; ids: string[] }[] = [
-            { key: 'qr', title: lang==='en' ? 'For Restaurants & Hospitality' : 'Restoran & Konaklama', ids: ['qr-menu'] },
-            { key: 'design', title: lang==='en' ? 'Design & Development' : 'Tasarım & Geliştirme', ids: ['websites', 'applications'] },
-            { key: 'ai', title: lang==='en' ? 'AI & Automation' : 'Yapay Zekâ & Otomasyon', ids: ['ai-automation'] },
-            { key: 'marketing', title: lang==='en' ? 'Marketing & Growth' : 'Pazarlama & Büyüme', ids: ['ads', 'seo', 'analytics-cro'] },
-            { key: 'systems', title: lang==='en' ? 'Systems & Integrations' : 'Sistemler & Entegrasyonlar', ids: ['middleware', 'hosting-devops'] },
-          ];
-          const grouped = GROUPS.map(g => ({...g, items: items.filter((s:any)=>g.ids.includes(s.id))})).filter(g=>g.items.length>0);
+      {/* Service sections */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 pb-16 space-y-12">
+        {items.map((s: any) => {
+          const isQr = s.id === 'qr-menu';
           return (
-            <div className="grid gap-10">
-              {grouped.map((g, gi) => (
-                <div key={g.key}>
-                  <div className="mb-3">
-                    <h2 className="font-heading text-2xl md:text-3xl text-white/95">{g.title}</h2>
+            <article id={s.id} key={s.id} className="scroll-mt-32 vk-glass border border-white/10 rounded-2xl p-6 md:p-8 shadow-soft">
+              <header className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6 pb-6 border-b border-white/10">
+                <div className="flex items-start gap-4 flex-1">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={`w-6 h-6 ${isQr ? 'text-vkpink' : 'text-vkcyan'}`}>{ICON[s.id] ?? ICON.websites}</svg>
                   </div>
-                  <div className="rounded-2xl border border-white/10 vk-glass shadow-soft">
-                    <div className="p-6 grid gap-8">
-                      {g.items.map((s:any, idx:number) => (
-                        <div key={s.id}>
-                          <article id={s.id} className="scroll-mt-24">
-                            <header className="flex items-start justify-between gap-3">
-                              <div className="flex items-start gap-3">
-                                <span aria-hidden className="mt-1">{icons[s.id]}</span>
-                                <div>
-                                  <h3 className="font-heading text-xl md:text-2xl">{s.title}</h3>
-                                  <div className="text-xs text-white/60 mt-1">{s.tag}</div>
-                                </div>
-                              </div>
-                              <a href="#cta" className="hidden md:inline-flex items-center px-3 py-1.5 rounded-lg border border-white/15 text-white/90 bg-white/5 hover:bg-white/10">{start}</a>
-                            </header>
-                            <p className="text-white/80 mt-3">{s.intro}</p>
-                            {s.id === 'qr-menu' && (
-                              <a
-                                href={`/${locale ?? 'en'}/demo/qr-menu`}
-                                className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-vkpink text-black font-mono text-sm shadow-strong hover:-translate-y-0.5 transition"
-                              >
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.5h5.25v5.25H3.75V4.5Zm0 9.75h5.25v5.25H3.75v-5.25Zm10.5-9.75h5.25v5.25h-5.25V4.5ZM14.25 14.25h2.25v2.25h-2.25v-2.25Zm3.75 0h2.25v2.25H18v-2.25Zm-3.75 3.75h2.25v2.25h-2.25v-2.25Zm3.75 0h2.25v2.25H18v-2.25Z"/></svg>
-                                {lang==='en' ? 'Open the live demo →' : 'Çalışan demoyu aç →'}
-                              </a>
-                            )}
-                            <div className="mt-4 grid gap-6 md:grid-cols-3">
-                              <div>
-                                <h4 className="font-heading text-base text-white/90">{deliverables}</h4>
-                                <ul className="list-disc pl-5 text-white/80 mt-2">
-                                  {s.deliverables.map((d: any, i: number) => <li key={i}>{d}</li>)}
-                                </ul>
-                              </div>
-                              <div>
-                                <h4 className="font-heading text-base text-white/90">{outcomes}</h4>
-                                <ul className="list-disc pl-5 text-white/80 mt-2">
-                                  {s.outcomes.map((d: any, i: number) => <li key={i}>{d}</li>)}
-                                </ul>
-                              </div>
-                              <div>
-                                <h4 className="font-heading text-base text-white/90">{examples}</h4>
-                                <ul className="list-disc pl-5 text-white/80 mt-2">
-                                  {s.examples?.map((d: any, i: number) => <li key={i}>{d}</li>)}
-                                </ul>
-                              </div>
-                            </div>
-                          </article>
-                          {idx < g.items.length - 1 && (
-                            <div className="my-6 h-px bg-gradient-to-r from-white/0 via-white/15 to-white/0" aria-hidden="true" />
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                    {/* group tone separator */}
-                    <div className="h-8 bg-gradient-to-b from-white/5 to-transparent rounded-b-2xl" aria-hidden="true" />
+                  <div>
+                    <h2 className="font-heading text-2xl md:text-3xl text-white/95 leading-tight">{s.title}</h2>
+                    {s.tag && <div className="text-xs text-white/60 mt-1 font-mono">{s.tag}</div>}
+                    <p className="text-white/80 mt-3 text-sm md:text-base leading-relaxed max-w-2xl">{s.intro}</p>
                   </div>
-                  {gi < grouped.length - 1 && (
-                    <div className="mt-4 h-2 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-full" aria-hidden="true" />
+                </div>
+                <div className="flex-shrink-0 flex md:flex-col gap-2">
+                  {isQr ? (
+                    <a href={`/${locale}/demo/qr-menu`} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-vkpink text-black font-mono text-sm shadow-strong hover:-translate-y-0.5 transition font-semibold">
+                      {lang === 'tr' ? 'Demoyu aç' : lang === 'ro' ? 'Deschide demo' : 'Try the demo'}
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+                    </a>
+                  ) : (
+                    <a href={`/${locale}#cta`} className="inline-flex items-center px-4 py-2.5 rounded-xl border border-vkcyan/40 text-vkcyan bg-vkcyan/5 hover:bg-vkcyan/10 text-sm transition">
+                      {services?.start ?? (lang === 'tr' ? 'Başla' : lang === 'ro' ? 'Începe' : 'Start')}
+                    </a>
                   )}
                 </div>
-              ))}
-            </div>
+              </header>
+
+              <div className="grid gap-6 md:grid-cols-3">
+                <div>
+                  <h3 className="font-mono text-[10px] uppercase tracking-wider text-vkcyan mb-3">{services?.deliverables ?? 'Deliverables'}</h3>
+                  <ul className="space-y-2 text-white/80 text-sm leading-relaxed">
+                    {(s.deliverables ?? []).map((d: string, i: number) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-vkcyan flex-shrink-0">·</span>
+                        <span>{d}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-mono text-[10px] uppercase tracking-wider text-vkmint mb-3">{services?.outcomes ?? 'Outcomes'}</h3>
+                  <ul className="space-y-2 text-white/80 text-sm leading-relaxed">
+                    {(s.outcomes ?? []).map((d: string, i: number) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-3.5 h-3.5 text-vkmint flex-shrink-0 mt-1"><path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+                        <span>{d}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-mono text-[10px] uppercase tracking-wider text-vkpink mb-3">{services?.examples ?? 'Best for'}</h3>
+                  <ul className="space-y-2 text-white/80 text-sm leading-relaxed">
+                    {(s.examples ?? []).map((d: string, i: number) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="text-vkpink flex-shrink-0">→</span>
+                        <span>{d}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </article>
           );
-        })()}
+        })}
+      </section>
 
-        {/* FAQs */}
-        <section className="max-w-7xl mx-auto px-6 md:px-10 pt-4">
-          <div className="vk-glass border border-white/10 rounded-xl p-5 shadow-soft">
-            <h2 className="font-heading text-xl">{faq}</h2>
-            {Array.isArray(faqs) ? (
-              <div className="mt-2 grid gap-4 md:grid-cols-2 text-white/80">
-                {faqs!.map((qa, i) => (
-                  <div key={i}>
-                    <h3 className="font-heading text-base text-white/90">{(qa as any).q}</h3>
-                    <p className="mt-1">{(qa as any).a}</p>
-                  </div>
-                ))}
+      {/* FAQs */}
+      <section className="max-w-4xl mx-auto px-6 md:px-10 pb-16">
+        <div className="vk-glass border border-white/10 rounded-2xl p-6 md:p-8 shadow-soft">
+          <h2 className="font-heading text-2xl md:text-3xl mb-6">{services?.faq ?? 'FAQ'}</h2>
+          <div className="grid gap-5 md:grid-cols-2">
+            {(services?.faqs ?? []).map((qa: any, i: number) => (
+              <div key={i}>
+                <h3 className="font-heading text-base text-white/95">{qa.q}</h3>
+                <p className="mt-2 text-white/75 text-sm leading-relaxed">{qa.a}</p>
               </div>
-            ) : (
-              <div className="mt-2 grid gap-4 md:grid-cols-2 text-white/80">
-                <div>
-                  <h3 className="font-heading text-base text-white/90">Nasıl başlıyoruz?</h3>
-                  <p className="mt-1">Hedefler ve kısıtları hizalamak için 30–45 dakikalık bir görüşme ile başlarız. Ardından kapsam, zaman çizelgesi ve başarı metrikleri ile ilerleriz.</p>
-                </div>
-                <div>
-                  <h3 className="font-heading text-base text-white/90">Nasıl iletişim kuruyor ve teslim ediyoruz?</h3>
-                  <p className="mt-1">Demolar, asenkron güncellemeler ve açık proje panosu ile haftalık sprintler. Her değişiklik için önizleme linkleri ve PR’lar sağlarız.</p>
-                </div>
-                <div>
-                  <h3 className="font-heading text-base text-white/90">Fikri mülkiyet kime ait?</h3>
-                  <p className="mt-1">Size. Kaynak kodu kuruluşunuzda barınır; üçüncü taraf varlıklar için açık lisanslar kullanılır.</p>
-                </div>
-                <div>
-                  <h3 className="font-heading text-base text-white/90">Lansman sonrası destek var mı?</h3>
-                  <p className="mt-1">Evet — süreli anlaşmalarla yol haritası, CRO ve bakım desteği. Uzun sözleşmeler yok; ihtiyaca göre artar veya azalır.</p>
-                </div>
-                <div>
-                  <h3 className="font-heading text-base text-white/90">Tipik zaman çizelgeleri?</h3>
-                  <p className="mt-1">1–2 haftada ince bir dilim. 4–6 haftada pazarlama sitesi veya özellik seti. Daha büyük entegrasyonlar dönen sprintlerde evrilir.</p>
-                </div>
-                <div>
-                  <h3 className="font-heading text-base text-white/90">Barındırma ve platformlar?</h3>
-                  <p className="mt-1">Web için Vercel/Cloudflare, veri/hizmetler için tercih ettiğiniz bulutu öneriyoruz. Platform maliyetleri ayrı ve şeffaftır.</p>
-                </div>
-              </div>
-            )}
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Quick connect CTA */}
-        <div id="cta" className="mt-12 rounded-xl border border-white/10 vk-glass shadow-soft p-6 text-center">
-          <h2 className="font-heading text-2xl md:text-3xl mb-2">{quickContact}</h2>
-          <p className="text-white/80 mb-4">{quickContactDesc}</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a data-cta="whatsapp" className="inline-flex items-center px-5 py-2.5 rounded-xl bg-vkpink text-black shadow-strong font-mono">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 mr-2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c 0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l-4.155-4.155"/></svg>
-              {ctaWhatsapp}
+      {/* CTA */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 pb-20">
+        <div id="cta" className="rounded-2xl border border-white/10 vk-glass shadow-soft p-8 text-center relative overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none opacity-40" style={{background: 'radial-gradient(600px 300px at 50% 50%, rgba(0,255,255,0.12), transparent 70%)'}}/>
+          <h2 className="font-heading text-2xl md:text-3xl relative">{services?.quickContact ?? 'Quick contact'}</h2>
+          <p className="text-white/75 mt-3 relative">{services?.quickContactDesc}</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3 relative">
+            <a
+              data-cta="whatsapp"
+              href={whatsappHref(common?.whatsappPrefill)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl bg-vkpink text-black shadow-strong font-mono font-semibold"
+            >
+              {h?.ctas?.whatsapp}
             </a>
-            <a data-cta="email" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-vkcyan/50 text-vkcyan/90 bg-white/5 hover:bg-white/10 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 mr-2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0  0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
-              {ctaEmail}
+            <a
+              data-cta="email"
+              href={mailHref(common?.emailSubject)}
+              className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl border border-white/25 text-white/90 bg-white/5 hover:bg-white/10 transition"
+            >
+              {h?.ctas?.email}
             </a>
-            <a data-cta="schedule" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-white/15 text-white/90 bg-white/5 hover:bg-white/10 transition">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 mr-2" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008Z"/></svg>
-              {ctaSchedule}
+            <a
+              data-cta="schedule"
+              href={CONTACT.scheduleUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vk-cta inline-flex items-center px-5 py-3 rounded-2xl border border-white/15 text-white/90 bg-white/5 hover:bg-white/10 transition"
+            >
+              {h?.ctas?.schedule}
             </a>
           </div>
         </div>

@@ -1,552 +1,699 @@
 {
   "site": {
-    "title": "Velkina — Yazılım, yapay zekâ ve QR menü",
-    "description": "Velkina, işletmeler için net ve hızlı yazılımlar üretir. Özel web siteleri, uygulamalar ve yapay zekâ otomasyonu — ek olarak restoran, kafe ve barlar için QR menü çözümleri, mobil öncelikli ve haftalar içinde teslim.",
+    "title": "Velkina — Yazılım, Tasarım ve Büyüme Ajansı",
+    "description": "Velkina, işletmelerin internette büyümek için ihtiyaç duyduğu yazılım ve tasarımı kurar. Web siteleri, e-ticaret, Google ve Meta reklamları, bulut, mobil uygulamalar, AI otomasyonu ve restoran QR menüleri — hızlı teslim, dürüst ölçüm.",
     "name": "Velkina"
   },
   "nav": {
-    "home": "Ana sayfa",
+    "home": "Anasayfa",
     "services": "Hizmetler",
-    "useCases": "Projelerimiz",
+    "useCases": "İşler",
     "blog": "Blog",
     "about": "Hakkımızda",
     "contact": "İletişim",
     "privacy": "Gizlilik",
-    "terms": "Koşullar",
-    "startProject": "Proje başlat",
-    "customerAgent": "Türkçe Müşteri Ajanı"
+    "terms": "Şartlar",
+    "startProject": "Projeye başla",
+    "customerAgent": "AI Müşteri Asistanları"
   },
   "common": {
     "skipToContent": "İçeriğe geç",
-    "emailSubject": "Proje Talebi",
-    "whatsappPrefill": "Merhaba Velkina! Bir proje konuşmak istiyorum.",
+    "emailSubject": "Proje talebi",
+    "whatsappPrefill": "Merhaba Velkina! Bir proje hakkında konuşmak istiyorum.",
     "carouselPlay": "Karuseli oynat",
-    "carouselPause": "Karuseli duraklat"
+    "carouselPause": "Karuseli duraklat",
+    "viewWork": "İşleri gör",
+    "learnMore": "Detay",
+    "readCase": "Vaka çalışmasını oku",
+    "viewLive": "Canlıya bak",
+    "backToWork": "Tüm işlere dön"
   },
   "footer": {
     "company": "Şirket",
-    "quickLinks": "Hızlı Bağlantılar",
-    "getInTouch": "İletişime geçin",
-    "rightsReserved": "Tüm hakları saklıdır."
+    "quickLinks": "Hızlı bağlantılar",
+    "getInTouch": "İletişime geç",
+    "rightsReserved": "Tüm hakları saklıdır.",
+    "tagline": "İnternette büyümek isteyen işletmeler için yazılım ve tasarım."
   },
   "home": {
-    "heroDesc": "İşletmelerin çalışma şeklini dönüştüren akıllı yapay zeka ajanları geliştiriyoruz. Uzman ekibimiz, çağrıları ve iletişimleri insan benzeri anlayışla yönetebilen Türkçe müşteri hizmetleri ajanımız gibi özel çözümler yaratıyor.",
-    "heroSteps": [
-      "Analiz",
-      "Tasarım",
-      "Eğitim",
-      "Kurulum",
-      "Optimizasyon"
-    ],
-    "ctas": {
-      "whatsapp": "WhatsApp’tan yazın",
-      "email": "E‑posta gönderin",
-      "schedule": "Görüşme planlayın"
+    "hero": {
+      "eyebrow": "Yazılım · Tasarım · Büyüme",
+      "title": "İşletmenizin büyümesine yarayan yazılımı ve tasarımı kuruyoruz.",
+      "subtitle": "Velkina tam kapsamlı bir ajanstır. Web sitelerini, e-ticareti, reklamları, bulut altyapısını, AI asistanlarını ve mobil uygulamaları tasarlar, yayınlar ve işletiriz — jargon değil, netlik isteyen işletmeler için.",
+      "primaryCta": "Projeye başla",
+      "secondaryCta": "İşlerimize bak"
     },
-    "resultsTitle": "Kanıtlanmış Sonuçlar",
-    "resultsSubtitle": "Son projelerden öne çıkan sonuçlar",
-    "brandsTitle": "Müşterilerimiz",
-     "brandsCarouselLabel": "Güvenilen markalar karuseli",
-     "stackTitle": "Teknolojilerimiz",
-    "testimonials": {
-      "title": "Müşteriler ne diyor",
-      "carouselLabel": "Müşteri yorumları karuseli",
-      "items": [
-        {"quote":"Velkina, temiz bir tasarım sistemiyle sitemizi haftalar içinde yayına aldı.","name":"Aylin K.","role":"CMO, SaaS"},
-        {"quote":"Net kapsam, hızlı iterasyonlar ve ölçülebilir sonuçlar.","name":"Kerem D.","role":"Kurucu"},
-        {"quote":"Uçtan uca kıdemli ekip—handover yok, sadece momentum.","name":"Mert S.","role":"Ürün Lideri"},
-        {"quote":"Edge barındırma ve gözlemlenebilirlik, güvenle yayınlamamızı sağladı.","name":"Elif A.","role":"Mühendislik Yöneticisi"}
-      ]
+    "trustBar": {
+      "title": "Otelcilik, perakende, üretim, hukuk ve eğitim alanlarındaki işletmelerin güveniyle"
     },
-    "metrics": {
-      "published": {
-        "label": "Yayınlanan web sitesi/uygulama",
-        "sr": "120+ yayınlanan web sitesi ve uygulama"
-      },
-      "cwv": {
-        "label": "Core Web Vitals'ta 'İyi' seviyesine çıkan sayfalar",
-        "sr": "Sayfaların %86’sı Core Web Vitals 'İyi' seviyesine çıktı"
-      },
-      "conversion": {
-        "label": "Lansman sonrası ortalama dönüşüm artışı",
-        "sr": "Lansman sonrası ortalama dönüşüm artışı %35"
-      },
-      "medianTime": {
-        "label": "Medyan yayınlama süresi",
-        "sr": "Medyan yayınlama süresi 5 haftadır"
-      },
-      "integrations": {
-        "label": "Otomatikleştirilen API/entegrasyon",
-        "sr": "40+ API ve entegrasyon otomatikleştirildi"
-      },
-      "uptime": {
-        "label": "Gözlemlenen çalışma süresi (edge)",
-        "sr": "Gözlemlenen edge çalışma süresi %99,9"
-      }
+    "servicesIntro": {
+      "eyebrow": "Neler yapıyoruz",
+      "title": "İşletmenizin internette ihtiyacı olan her şey — tek çatı altında.",
+      "subtitle": "Yazılım, tasarım ve büyümeyi kapsayan tek bir kıdemli ekip. El değiştirme yok, birbiriyle didişen ajanslar yok, sürpriz yok."
+    },
+    "portfolioIntro": {
+      "eyebrow": "Seçilmiş işler",
+      "title": "Kurduğumuz, yayınladığımız ve büyüttüğümüz gerçek işletmeler.",
+      "subtitle": "Bir projeye dokunun: problemi, ne kurduğumuzu ve sonucu görün."
+    },
+    "processIntro": {
+      "eyebrow": "Nasıl çalışıyoruz",
+      "title": "Dört adım. Net kapsam, net fiyat, net süre.",
+      "subtitle": "Bir avro harcamadan önce, bütçeniz ve takviminizle nelerin mümkün olduğunu söyleriz."
+    },
+    "resultsIntro": {
+      "eyebrow": "Sayılarla sonuçlar",
+      "title": "Müşterilerimizin ölçtüğü çıktılar."
+    },
+    "stackIntro": {
+      "eyebrow": "Teknoloji",
+      "title": "Modern stack, bağımlılık yok.",
+      "subtitle": "İşe uyan araçları kullanırız — ve tam dokümantasyonla size devrederiz."
+    },
+    "testimonialsIntro": {
+      "eyebrow": "Müşteriler ne diyor",
+      "title": "Birlikte çalıştığımız kişilerden dürüst sözler."
+    },
+    "faqIntro": {
+      "eyebrow": "Sık sorulanlar",
+      "title": "Sormadan önce cevaplar."
+    },
+    "ctaSection": {
+      "eyebrow": "Konuşalım",
+      "title": "Bize işinizi anlatın. Biz size mümkün olanı söyleyelim.",
+      "subtitle": "İlk görüşme ücretsiz. Bir iş günü içinde dönüyoruz.",
+      "primaryCta": "WhatsApp'tan yazın",
+      "secondaryCta": "Görüşme planla"
     },
     "metrics2": {
-      "shipped": {
-        "label": "Teslim edilen projeler",
-        "sr": "120+ teslim edilen proje"
-      },
-      "leadsIncrease": {
-        "label": "Nitelikli lead artışı",
-        "sr": "Ortalama nitelikli lead artışı"
-      },
-      "supportReduction": {
-        "label": "Destek maliyeti azalması",
-        "sr": "Müşteri hizmetleri maliyetlerinde azalma"
-      },
-      "csat": {
-        "label": "Memnuniyet (CSAT)",
-        "sr": "Müşteri memnuniyeti"
-      },
-      "launchTime": {
-        "label": "Medyan yayın süresi",
-        "sr": "Medyan yayına alma süresi"
-      },
-      "uptime": {
-        "label": "Uptime",
-        "sr": "Gözlemlenen çalışma süresi"
-      }
+      "shipped": {"value": 120, "label": "Yayına alınan proje", "sr": "120'den fazla proje yayına alındı"},
+      "leadsIncrease": {"value": 86, "label": "Ort. nitelikli lead artışı", "sr": "Müşterilerde ortalama nitelikli lead artışı"},
+      "supportReduction": {"value": 40, "label": "Destek maliyetinde düşüş", "sr": "Müşteri destek maliyetinde ortalama düşüş"},
+      "csat": {"value": 95, "label": "Müşteri memnuniyeti", "sr": "Müşteri memnuniyet skoru"},
+      "launchTime": {"value": 5, "label": "Medyan lansman (hafta)", "sr": "Hafta cinsinden medyan lansman süresi"},
+      "uptime": {"value": 99.9, "decimals": 1, "label": "Çalışma süresi (%)", "sr": "Gözlemlenen çalışma süresi"}
     },
-    "servicesTitle": "Ne yapıyoruz",
+    "testimonials": {
+      "title": "Müşteriler ne diyor",
+      "carouselLabel": "Referans karuseli",
+      "items": [
+        {"quote": "Velkina sitemizi dört haftada yayına aldı. Net, hızlı, sürpriz yok.", "name": "Aylin K.", "role": "CMO, SaaS"},
+        {"quote": "Reklamlarımızı ve bulutumuzu birlikte yönetiyorlar. Tek ekip, tek fatura, kimse kimseye parmak sallamıyor.", "name": "Kerem D.", "role": "Kurucu, e-ticaret"},
+        {"quote": "İlk günden kıdemli insanlar. Sözleşmeden sonra junior'a devredilmedik.", "name": "Mert S.", "role": "Ürün Lideri"},
+        {"quote": "QR menümüz iki ayda kendini ödedi. Turistler artık kendi dillerinde sipariş veriyor.", "name": "Selin P.", "role": "Sahip, Lavinia Bistro"},
+        {"quote": "Bulut maliyetlerini sade bir dille anlattılar. Bir ayda AWS faturamızı %38 düşürdük.", "name": "Elif A.", "role": "Mühendislik Müdürü"}
+      ]
+    },
+    "ctas": {
+      "whatsapp": "WhatsApp",
+      "email": "E-posta gönder",
+      "schedule": "Görüşme planla"
+    },
+    "explore": "Keşfet",
+    "startProjectShort": "Projeye başla",
+    "stackTitle": "Birlikte çalıştığımız teknolojiler",
+    "brandsTitle": "Yardım ettiğimiz bazı işletmeler",
+    "brandsCarouselLabel": "Güvenilen markalar karuseli",
+    "heroSteps": ["Keşfet", "Tasarla", "Kur", "Yayınla", "Büyüt"],
+    "heroDesc": "İşletmenizin internette ihtiyacı olan yazılımı tasarlar, kurar ve işletiriz — web siteleri, e-ticaret, reklamlar, bulut, AI ve mobil uygulamalar.",
+    "resultsTitle": "Sayılarla sonuçlar",
+    "resultsSubtitle": "Son işlerden öne çıkanlar",
+    "servicesTitle": "Neler yapıyoruz",
     "servicesViewAll": "Tüm hizmetleri gör",
-    "explore": "İncele",
-    "startProjectShort": "Proje başlat — Hızlı iletişim"
+    "process": {
+      "steps": [
+        {"n": "01", "title": "Keşif görüşmesi", "body": "30 dakika. Dinleriz, sorarız ve doğru ekip olup olmadığımızı dürüstçe söyleriz."},
+        {"n": "02", "title": "Kapsam ve fiyat", "body": "Yazılı teklif: sabit kapsam, sabit fiyat, net takvim. Hedef kayması yok."},
+        {"n": "03", "title": "Kur ve yayınla", "body": "Haftalık demolar. Her cuma ilerlemeyi canlı görür, her adımı onaylarsınız."},
+        {"n": "04", "title": "İşlet ve büyüt", "body": "Lansman sonrası reklamlar, bulut, içerik ve iyileştirmeler için isteğe bağlı aylık retainer."}
+      ]
+    },
+    "industries": {
+      "title": "Birlikte çalıştığımız işletmeler",
+      "items": [
+        {"name": "Restoranlar, kafeler ve oteller", "desc": "QR menüler, web siteleri, rezervasyonlar, yorumlar."},
+        {"name": "E-ticaret ve perakende", "desc": "Shopify mağazaları, reklamlar, dönüşüm optimizasyonu."},
+        {"name": "Profesyonel hizmetler", "desc": "Hukuk, danışmanlık, sağlık — dönüştüren web siteleri."},
+        {"name": "Üretim ve B2B", "desc": "Çok dilli kurumsal siteler, kataloglar, lead yakalama."},
+        {"name": "Eğitim ve danışmanlık", "desc": "Başvuru platformları, CRM, ödeme, çok dilli."},
+        {"name": "İçerik üreticileri ve markalar", "desc": "Portfolyolar, içerik siteleri, video, kimlik."}
+      ]
+    },
+    "faq": {
+      "items": [
+        {"q": "Ne kadar hızlı başlayabilirsiniz?", "a": "Genelde imzadan sonra 1–2 hafta içinde başlarız. Basit bir web sitesi 3–5 haftada yayına girer. Daha büyük sistemler 8–14 hafta sürer."},
+        {"q": "Küçük işletmelerle çalışıyor musunuz?", "a": "Evet. Restoranlar, klinikler, hukuk büroları, perakende mağazaları — internette net ve modern yazılımla büyümek isteyen herkesle çalışırız."},
+        {"q": "Bir projenin maliyeti nedir?", "a": "Basit bir web sitesi yaklaşık €1.500'dan başlar. E-ticaret mağazaları yaklaşık €3.500. Daha büyük özel yazılımlar keşif görüşmesinin ardından fiyatlanır. Fiyatı asla saklamayız."},
+        {"q": "Sadece Türkiye'de mi çalışıyorsunuz?", "a": "Hayır. Avrupa genelinde işletmelerle çalışıyoruz — şu an Türkiye, Romanya ve Almanya'da aktifiz. Tüm ekip uzaktan çalışır, görüşmeler haftalık."},
+        {"q": "Kod ve tasarımın sahibi kim?", "a": "Siz. Kaynak kod sizin hesaplarınızda durur. Alan adı ve hosting sizin adınızadır. Bizim kapımıza bağlamayız."},
+        {"q": "Reklamları ve web sitesini birlikte yönetebilir misiniz?", "a": "Evet. En sık çalışma şeklimiz bu — siteyi kurar, üzerinde Google/Meta reklamlarını yönetiriz. Tek ekip, tek fatura."},
+        {"q": "Henüz ne istediğimi bilmiyorsam?", "a": "Ücretsiz 30 dakikalık görüşmeyi planlayın. İşletmeniz ve bütçeniz için neyin gerçekçi olduğunu söyleriz — doğru ekip olmasak bile."}
+      ]
+    }
   },
   "services": {
-    "metaTitle": "Velkina — Hizmetlerimiz",
-    "metaDesc": "Tam kapsam yazılım ajansı: web siteleri, uygulamalar, AI otomasyonu, Meta/Google reklamları, SEO, CRM/CMS entegrasyonları, analitik & CRO, barındırma & DevOps.",
-    "title": "Hizmetlerimiz",
-    "heroDesc": "Fikirden büyümeye—web, uygulama, AI otomasyonu, pazarlama, SEO ve entegrasyonlarda tek ekip.",
-    "modelsTitle": "Çalışma Modelleri",
-    "includedTitle": "Her Çalışmada Dahil",
+    "metaTitle": "Velkina — Hizmetler",
+    "metaDesc": "Tam kapsamlı yazılım, tasarım ve büyüme ajansı: web siteleri, Shopify, restoran QR menüleri, Google ve Meta reklamları, bulut, AI otomasyonu, mobil uygulamalar, SEO ve marka kimliği.",
+    "title": "Hizmetler",
+    "subtitle": "Modern bir işletmenin internette büyümek için ihtiyaç duyduğu her şey — tek bir kıdemli ekip tarafından tasarlanır, kurulur ve işletilir.",
+    "heroDesc": "Yazılım, tasarım ve büyüme — tek çatı altında.",
+    "modelsTitle": "Nasıl çalışıyoruz",
+    "includedTitle": "Her zaman dahil",
     "models": [
-      "Proje: Net kapsam, şeffaf çıktılar, hızlı teslim.",
-      "Sprint: 1–2 haftalık iterasyon ve deney döngüleri.",
-      "Süreli Anlaşma: Yol haritası, optimizasyon ve bakım."
+      "Proje: sabit kapsam, sabit fiyat, sabit takvim.",
+      "Sprint: iterasyonlar, deneyler ve küçük özellikler için 1–2 haftalık döngüler.",
+      "Retainer: reklamlar, bulut, içerik ve sürekli iyileştirmeler için aylık partner."
     ],
     "included": [
-      "Net kapsam, kilometre taşları ve haftalık sprint değerlendirmeleri",
-      "Tasarım sistemi token’ları ve belgelenmiş bileşenler",
-      "Performans bütçesi, erişilebilirlik ve SEO temelleri",
-      "Kaynak kodu kuruluşunuzda; önizlemeli CI/CD",
-      "Gözlemlenebilirlik: loglar, metrikler ve uptime panoları",
-      "Devir dokümanları, eğitim videoları ve makul geri alma planı"
+      "Gerçek önizleme linkiyle haftalık ilerleme demoları",
+      "Token'lı ve dokümante edilmiş bileşenlerle tasarım sistemi",
+      "İlk günden performans, erişilebilirlik ve SEO",
+      "Kod, hesaplar ve alan adları sizin adınıza — bağımlılık yok",
+      "Uptime, hata ve analiz panoları",
+      "Ekibinizin devralabilmesi için devir dokümanları ve ekran kayıtları"
     ],
     "faqs": [
-      {"q":"Nasıl başlıyoruz?","a":"Hedef ve kısıtları hizalamak için 30–45 dakikalık bir görüşme yaparız. Ardından kapsam, zaman planı ve başarı metrikleri ile ilerleriz."},
-      {"q":"Nasıl iletişim kuruyor ve teslim ediyoruz?","a":"Demolar, asenkron güncellemeler ve açık proje panosu ile haftalık sprintler. Her değişiklik önizleme linkiyle gelir."},
-      {"q":"Fikri mülkiyet kime ait?","a":"Size. Kaynak kodu kuruluşunuzda barınır; üçüncü taraf bileşenlerde uygun açık lisanslar kullanırız."},
-      {"q":"Lansman sonrası destek var mı?","a":"Evet — yol haritası, optimizasyon ve bakım için süreli anlaşmalar. Uzun sözleşmeler yok; ihtiyaca göre ölçeklenir."},
-      {"q":"Tipik zaman çizelgeleri?","a":"1–2 haftada ince bir dilim. 4–6 haftada pazarlama sitesi veya özellik seti. Daha büyük entegrasyonlar dönen sprintlerde evrilir."},
-      {"q":"Barındırma ve platformlar?","a":"Web için Vercel/Cloudflare, veri/hizmetler için tercih ettiğiniz bulut. Platform maliyetleri ayrı ve şeffaftır."}
+      {"q": "Nasıl başlıyoruz?", "a": "30 dakikalık keşif görüşmesi. Hedefler, kısıtlar, kapsam ve takvimde hizalanırız. Taahhüt yok."},
+      {"q": "Günlük çalışma nasıl?", "a": "Haftalık demo görüşmeleri, şeffaf bir proje panosu ve her değişiklik için bir önizleme linki. Sizin saat diliminizde çalışırız."},
+      {"q": "Fikri mülkiyet kimin?", "a": "Sizin. Kod sizin organizasyonunuzda durur. Üçüncü taraf bileşenlerde mümkün olduğunca açık lisanslar kullanılır."},
+      {"q": "Lansman sonrası destek var mı?", "a": "Evet. Aylık retainer'lar reklamları, hosting'i, güvenliği, içeriği ve yol haritasını kapsar. İstediğiniz zaman iptal edebilirsiniz."},
+      {"q": "Tipik süreler?", "a": "Basit site: 3–5 hafta. Shopify mağazası: 4–6 hafta. Özel uygulama: 8–14 hafta. Daha büyük sistemler sürekli sprint'lerde ilerler."},
+      {"q": "Hosting nerede?", "a": "Vercel, Cloudflare ya da tercih ettiğiniz bulut (AWS, GCP, Azure). Hosting maliyetleri şeffaftır ve sizin adınıza, sizin tarafınızdan ödenir."}
     ],
     "deliverables": "Teslimatlar",
     "outcomes": "Sonuçlar",
-    "examples": "Örnekler",
+    "examples": "Şunlar için ideal",
     "faq": "SSS",
-    "quickContact": "Hızlı İletişim",
-    "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.",
-    "start": "Başlat",
+    "quickContact": "Hızlı iletişim",
+    "quickContactDesc": "Bir iş günü içinde dönüyoruz.",
+    "start": "Başla",
     "items": [
-      {"id":"qr-menu","title":"Restoranlar için QR Menü","tag":"Restoran • Kafe • Bar","intro":"Misafirlerinizin saniyeler içinde okuduğu, hızlı ve estetik dijital menü. Uygulama yok, çok dilli ve fotoğraflı."},
-      {"id":"websites","title":"Web Siteleri","tag":"Tasarım • Frontend • Backend","intro":"Hızlı, güvenilir ve net web siteleri. Tasarımdan canlıya kadar uçtan uca."},
-      {"id":"applications","title":"Uygulamalar","tag":"Web App • Mobil • Panel","intro":"İş süreçlerinize özel paneller ve kullanıcı uygulamaları."},
-      {"id":"ai-automation","title":"AI Otomasyonu","tag":"İş Akışları • Ajanlar","intro":"Tekrarlayan işleri yapay zekâ ve iş akışlarıyla otomatikleştirin."},
-      {"id":"ads","title":"Meta & Google Reklamları","tag":"Edinim • Yeniden Hedefleme","intro":"Güvenilir ölçümlemeyle performans kampanyaları."},
-      {"id":"seo","title":"SEO Hizmetleri","tag":"Teknik • İçerik • On‑page","intro":"Arama görünürlüğü için teknik temel ve kaliteli içerik."},
-      {"id":"middleware","title":"CRM/CMS Entegrasyonları","tag":"HubSpot • Salesforce • Sanity","intro":"Sistemler arası sağlam veri akışı ve ara katman."},
-      {"id":"analytics-cro","title":"Analitik & CRO","tag":"Ölçümleme • Deneyler","intro":"Doğru ölçüm ve A/B testleriyle dönüşüm optimizasyonu."},
-      {"id":"hosting-devops","title":"Barındırma & DevOps","tag":"Vercel • Cloudflare • AWS","intro":"Hızlı, güvenilir ve geri alınabilir dağıtımlar."}
+      {
+        "id": "websites",
+        "title": "Web siteleri ve landing sayfaları",
+        "tag": "Tasarım · Frontend · Metin yazarlığı",
+        "intro": "Bir saniyenin altında yüklenen, ziyaretçileri müşteriye çeviren hızlı ve güzel web siteleri. Tek sayfalık bir landing'den tam kurumsal siteye kadar.",
+        "deliverables": ["Özel tasarım (şablon yok)", "Mobil öncelikli responsive yapım", "Kendi dilinizde metin yazarlığı", "SEO temelleri (schema, sitemap, meta)", "Ekibinizin biz olmadan düzenleyebileceği CMS", "Analytics + ısı haritaları"],
+        "outcomes": ["1 saniyenin altında yüklenir", "Daha yüksek dönüşüm oranı", "Arama motoru görünürlüğü", "Paylaşmaktan gurur duyacağınız bir site"],
+        "examples": ["Kurumsal web siteleri", "Ürün landing sayfaları", "Kişisel ve profesyonel siteler", "Portfolyo siteleri"]
+      },
+      {
+        "id": "shopify",
+        "title": "Shopify e-ticaret",
+        "tag": "Tema · Uygulamalar · Ödemeler",
+        "intro": "Shopify üzerinde online mağazalar — hızlı, dönüşüm odaklı, çok dilli. Mağazayı tasarlar, yayına alır, ekibinize eğitir ve isteğe bağlı reklamlarını yönetiriz.",
+        "deliverables": ["Özel Shopify teması", "Ürün fotoğrafçılığı yönlendirmesi", "Çok dilli kurulum (TR / EN / RO / daha fazlası)", "Ödeme ve kargo yapılandırması", "E-posta akışları (sepet terk, hoş geldin, geri kazanım)", "Pixel + GA4 + Meta CAPI"],
+        "outcomes": ["Daha yüksek sepete ekleme oranı", "Daha az sepet terki", "Uluslararası satış", "Geliştirici olmadan sahibinin yönetebileceği yapı"],
+        "examples": ["Moda ve güzellik", "Ev ve dekorasyon", "Gıda ve içecek", "Niş perakende"]
+      },
+      {
+        "id": "qr-menu",
+        "title": "Restoran QR menüleri",
+        "tag": "Restoranlar · Kafeler · Barlar · Oteller",
+        "intro": "Tarayınca 1 saniyede yüklenen, tam yönetim paneline sahip QR menü. Çok dilli, fotoğraflı ve yönetici her şeyi telefondan günceller.",
+        "deliverables": ["Mobil öncelikli menü tasarımı", "Ürün, fiyat ve fotoğraflar için yönetim paneli", "Çok dilli içerik (5+ dil)", "Masa bazlı QR kodlar + basılabilir posterler", "Alerjen ve diyet etiketleri", "Garson çağır ve hesap iste aksiyonları", "Google + TripAdvisor menü şeması"],
+        "outcomes": ["Sıfır baskı maliyeti", "Daha hızlı sipariş, daha yüksek ek satış", "Uluslararası misafirler kendi dilinde sipariş verir", "Sahibinin yönettiği güncellemeler"],
+        "examples": ["Restoranlar", "Kafeler ve kahveciler", "Barlar ve kokteyl mekanları", "Otel kahvaltı ve oda servisi"]
+      },
+      {
+        "id": "google-ads",
+        "title": "Google Ads yönetimi",
+        "tag": "Search · Display · Shopping · YouTube",
+        "intro": "Google Ads kampanyalarını yönetir, optimize eder ve raporlarız — lead, e-ticaret ya da yerel işletmeler için. Anahtarlar bizde; hesap sizde kalır.",
+        "deliverables": ["Kampanya yapısı ve stratejisi", "Anahtar kelime araştırması ve negatif listeler", "Reklam metni ve görsel varyantları", "Dönüşüm takibi ve GA4 entegrasyonu", "Haftalık optimizasyon", "Aylık performans raporu"],
+        "outcomes": ["Daha düşük lead başına maliyet", "E-ticarette daha yüksek ROAS", "Net aylık raporlama", "Hesap sizin adınıza"],
+        "examples": ["E-ticaret mağazaları", "Lead odaklı hizmetler", "Yerel işletmeler", "Uygulama yükleme kampanyaları"]
+      },
+      {
+        "id": "meta-ads",
+        "title": "Meta Ads (Facebook ve Instagram)",
+        "tag": "Edinim · Yeniden hedefleme · Yaratıcı",
+        "intro": "Yaratıcı testleri ve güvenilir ölçüm üzerine kurulu Meta Ads kampanyaları — Pixel + Conversions API.",
+        "deliverables": ["Pixel + Conversions API kurulumu", "Hedef kitle araştırması ve segmentasyon", "Statik + video yaratıcı (biz üretiriz)", "Haftalık yaratıcı testleri", "E-ticaret için katalog reklamları", "Aylık performans raporu"],
+        "outcomes": ["Daha düşük edinim maliyeti", "Zamanla büyüyen öğrenme", "iOS14 sonrası güvenilir atıf", "Dürüst raporlama"],
+        "examples": ["DTC e-ticaret", "Yerel hizmetler", "Lead toplama", "Uygulama büyütme"]
+      },
+      {
+        "id": "cloud",
+        "title": "Bulut yönetimi ve DevOps",
+        "tag": "AWS · GCP · Azure · Vercel · Cloudflare",
+        "intro": "Bulutunuzu kurar, işletir ve optimize ederiz. Eski hosting'ten taşır, faturayı keser, izleme kurar, siz rahat uyursunuz.",
+        "deliverables": ["Mimari incelemesi", "Taşıma planı + uygulama", "CI/CD pipeline'ları", "İzleme (uptime, hatalar, log'lar)", "Yedekleme ve felaket kurtarma", "Maliyet optimizasyonu incelemesi"],
+        "outcomes": ["%99,9+ uptime", "Daha düşük aylık bulut faturası", "Daha hızlı deploy'lar", "Güvenebileceğiniz kurtarma planı"],
+        "examples": ["AWS / GCP / Azure kurulumu", "Paylaşımlı hosting'ten taşıma", "Kubernetes ve container'lar", "Vercel + Cloudflare edge"]
+      },
+      {
+        "id": "ai-automation",
+        "title": "AI otomasyonu ve asistanlar",
+        "tag": "Akışlar · Asistanlar · Sohbet botları",
+        "intro": "İşinizin tekrarlayan kısımlarını otomatikleştiririz — müşteri desteği, lead yönlendirme, doküman işleme, iç araçlar — alanınıza göre ayarlanmış AI asistanlarıyla.",
+        "deliverables": ["Süreç incelemesi ve fırsat haritası", "Özel AI asistanı (OpenAI / Anthropic)", "Araçlarınızla entegrasyon (CRM, e-posta, Sheets)", "İzleme panosu", "Eğitim ve devir", "Aylık iyileştirme"],
+        "outcomes": ["Haftada saatler kazanırsınız", "Daha düşük destek maliyeti", "Daha hızlı lead yanıtı", "Tutarlı kalite"],
+        "examples": ["Müşteri hizmetleri asistanları", "Lead skorlama botları", "Doküman ayıklama", "İç soru-cevap botları"]
+      },
+      {
+        "id": "mobile",
+        "title": "Mobil uygulamalar (iOS ve Android)",
+        "tag": "React Native · Native iOS · Native Android",
+        "intro": "App Store ve Play Store'da yayınlanan mobil uygulamalar — MVP'den tam native yeniden yazıma. İnceleme, sertifikalar ve güncellemeleri biz yönetiriz.",
+        "deliverables": ["Ürün tasarımı ve prototip", "iOS + Android yapım (React Native ya da native)", "App Store + Play Store gönderimi", "Push bildirimleri, deep link'ler, analytics", "Crash raporlama", "OTA güncellemeleri"],
+        "outcomes": ["İlk denemede incelemeyi geçen uygulamalar", "Her iki platformda native his", "App store gecikmesi olmadan güncelleme", "Ölçülebilir kullanıcı tutma"],
+        "examples": ["Sadakat ve üyelik uygulamaları", "Talep üzerine hizmetler", "Rezervasyon ve sipariş uygulamaları", "İç saha uygulamaları"]
+      },
+      {
+        "id": "seo",
+        "title": "SEO ve içerik",
+        "tag": "Teknik · Sayfa içi · İçerik",
+        "intro": "Google size her ay ücretsiz müşteri getirsin. Teknik temelleri düzeltir, içerik planını yapar, isterseniz sizin yerinize yazarız.",
+        "deliverables": ["Teknik SEO incelemesi", "Schema ve yapılandırılmış veri", "Anahtar kelime ve konu araştırması", "Brief'li içerik planı", "Sayfa içi optimizasyon", "Backlink ulaşımı (isteğe bağlı)"],
+        "outcomes": ["Daha fazla organik trafik", "Ticari sorgularda daha iyi sıralama", "Ücretli reklamlara daha az bağımlılık", "3 dilde arama görünürlüğü"],
+        "examples": ["E-ticaret SEO", "Yerel SEO (Google Haritalar)", "Uluslararası SEO", "Programmatic SEO"]
+      },
+      {
+        "id": "branding",
+        "title": "Marka kimliği ve tasarım sistemleri",
+        "tag": "Logo · Kimlik · Token'lar",
+        "intro": "Müşterilerinizin hatırladığı, sade ve dürüst bir marka kimliği. Logo, renkler, tipografi, ses tonu — ve ekibinizin her zaman kullanabileceği bir tasarım sistemi.",
+        "deliverables": ["Logo (3 yön, 5 revizyon)", "Renk ve tipografi sistemi", "Ses ve ton rehberi", "Marka rehberi PDF'si", "Tasarım token'ları (Figma + kod)", "Sosyal medya ve baskı şablonları"],
+        "outcomes": ["Kanallar arasında tutarlı görünüm", "Ekibinizin tasarım yapması daha kolay", "Daha yüksek algılanan kalite", "Kalıcı bir marka"],
+        "examples": ["Yeni işletme lansmanları", "Yerleşik şirketler için rebrand", "Marka tazeleme", "Alt marka kimliği"]
+      }
     ]
   },
   "blog": {
     "metaTitle": "Velkina — Blog",
-    "metaDesc": "Velkina’dan içgörüler, pratik rehberler ve mühendislik notları.",
-    "title": "İçgörüler & Sinyaller",
-    "subtitle": "Mühendislik, büyüme ve dijital sistemler üzerine notlar.",
-    "searchPlaceholder": "Makalelerde ara…",
+    "metaDesc": "Velkina'dan içgörüler, pratik rehberler ve mühendislik notları.",
+    "title": "İçgörüler ve Sinyaller",
+    "subtitle": "İşletmeler için yazılım, tasarım ve büyüme üzerine Velkina notları.",
+    "searchPlaceholder": "Makale ara…",
     "statusShown": "{n} makale gösteriliyor",
     "filters": {
-      "all": "Tümü",
+      "all": "Hepsi",
       "engineering": "Mühendislik",
       "marketing": "Pazarlama",
       "product": "Ürün",
       "data": "Veri"
     },
-    "quickContact": "Hızlı İletişim",
-    "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.",
+    "quickContact": "Hızlı iletişim",
+    "quickContactDesc": "Bir iş günü içinde dönüyoruz.",
     "samplePosts": [
-      {"cat":"Engineering","title":"Birleşik orta katman API’leri inşa etmek","desc":"Ölçeklenen, gözlemlenebilir ve dayanıklı API merkezleri için kalıplar.","read":"6 dk"},
-      {"cat":"Marketing","title":"Harcamayı gerçekten yönlendiren atıf","desc":"Kanal ROI’si ve bütçe kaydırmaları için pragmatik yaklaşım.","read":"5 dk"},
-      {"cat":"Product","title":"Landing’den aktivasyona günler içinde","desc":"Yüksek kaldıraçlı animasyonlarla ince dilimler göndermek.","read":"7 dk"},
-      {"cat":"Data","title":"Gerçekten işe yarayan operasyon panoları","desc":"Eyleme dönük ekipler için öncü ve artçı göstergeler.","read":"4 dk"},
-      {"cat":"Engineering","title":"Servisler arası tipli veri hatları","desc":"Sözleşmeler ve codegen ile daha güvenli değişimler.","read":"6 dk"},
-      {"cat":"Product","title":"Kendini pazarlayan içerik sistemleri","desc":"Her yayında bileşik artan tasarım ve yapı.","read":"5 dk"},
-      {"cat":"Engineering","title":"Next.js 14 edge kalıpları","desc":"SSR/ISR/statik; önbellek, yeniden doğrulama ve DX.","read":"6 dk"},
-      {"cat":"Engineering","title":"Üretimde tasarım token’ları","desc":"Web, dokümantasyon ve pazarlamada tek doğruluk kaynağı.","read":"5 dk"},
-      {"cat":"Marketing","title":"Hareket ile yaratıcı test","desc":"Ağırlık eklemeden CVR’ı yükselten mikro etkileşimler.","read":"5 dk"},
-      {"cat":"Marketing","title":"Dönüştüren fiyatlandırma sayfaları","desc":"Açıklık, sürtünme kontrolü ve pişmanlığı azaltan hesaplayıcılar.","read":"6 dk"},
-      {"cat":"Data","title":"Güvenilir sunucu tarafı izleme","desc":"Onay, atıf ve olay yönlendirmesinde sağduyulu yapı.","read":"5 dk"},
-      {"cat":"Product","title":"Hızlı onboarding sağlayan dokümanlar","desc":"Daha az destek için yapı, örnekler ve net metin.","read":"6 dk"}
+      {"cat":"Mühendislik","title":"Birleşik middleware API'leri kurmak","desc":"Ölçeklenen, gözlemlenebilen ve uzun yaşayan API hub'ları için desenler.","read":"6 dk"},
+      {"cat":"Pazarlama","title":"Bütçeyi gerçekten yönlendiren atıf","desc":"Kanal ROI'si ve bütçe kaydırmaya pragmatik bir yaklaşım.","read":"5 dk"},
+      {"cat":"Ürün","title":"Landing'den aktivasyona günler içinde","desc":"Yüksek kaldıraçlı hareketle ince dilimleri yayına almak.","read":"7 dk"},
+      {"cat":"Veri","title":"Gerçekten işe yarayan operasyon panoları","desc":"Aksiyon odaklı ekipler için öncü ve sonuç göstergeleri.","read":"4 dk"},
+      {"cat":"Mühendislik","title":"Servisler arası tipli veri pipeline'ları","desc":"Sözleşmeler ve kod üretimi ile daha güvenli değişiklikler.","read":"6 dk"},
+      {"cat":"Ürün","title":"Kendi kendini pazarlayan içerik sistemleri","desc":"Her yayında katlanan tasarım ve yapı.","read":"5 dk"},
+      {"cat":"Mühendislik","title":"Next.js 14 edge desenleri","desc":"SSR/ISR/static; önbellek, yenileme ve DX.","read":"6 dk"},
+      {"cat":"Mühendislik","title":"Üretimde tasarım token'ları","desc":"Web, dokümanlar ve pazarlama arasında tek doğruluk kaynağı.","read":"5 dk"},
+      {"cat":"Pazarlama","title":"Hareketle yaratıcı test etmek","desc":"Ağırlık eklemeden CVR'yi yükselten mikro etkileşimler.","read":"5 dk"},
+      {"cat":"Pazarlama","title":"Dönüştüren fiyatlandırma sayfaları","desc":"Netlik, sürtünme kontrolü ve pişmanlığı azaltan hesaplayıcılar.","read":"6 dk"},
+      {"cat":"Veri","title":"Güvenilir sunucu taraflı takip","desc":"İzin, atıf ve olay yönlendirmesi için mantıklı bir kurulum.","read":"5 dk"},
+      {"cat":"Ürün","title":"Hızlı tanıştıran dokümanlar","desc":"Daha az destek talebi için yapı, örnekler ve net metin.","read":"6 dk"}
     ]
   },
   "useCases": {
-    "metaTitle": "Velkina — Kullanım Alanları",
-    "metaDesc": "Hızla hayata geçen senaryolar: siteler, sistemler, otomasyonlar ve ölçülebilir büyüme.",
-    "title": "Kullanım Alanları",
-    "subtitle": "Hızlı, gözlemlenebilir ve ölçeklenebilir şekilde teslim ettiğimiz projelerden bir seçki. Dönüşüm, netlik ve güveni artırmak için tasarlandı.",
+    "metaTitle": "Velkina — Seçilmiş İşler",
+    "metaDesc": "Kurduğumuz, yayınladığımız ve büyüttüğümüz gerçek projeler: otelcilik, perakende, hizmet ve üretim sektörlerinde web siteleri, e-ticaret, AI asistanları, bulut ve büyüme sistemleri.",
+    "title": "Seçilmiş İşler",
+    "subtitle": "Gerçek işletmeler, gerçek sonuçlar. Bir projeye dokunun: problemi, ne kurduğumuzu ve ölçülen sonucu görün.",
     "filters": {
-      "all": "Tümü",
-      "web": "Web",
-      "ai": "Yapay Zekâ",
-      "data": "Veri",
-      "growth": "Büyüme",
-      "integrations": "Entegrasyonlar"
+      "all": "Hepsi",
+      "websites": "Web siteleri",
+      "ecommerce": "E-ticaret",
+      "qr": "QR Menüler",
+      "ads": "Reklam ve Büyüme",
+      "cloud": "Bulut",
+      "ai": "AI",
+      "mobile": "Mobil"
     },
-    "quickContact": "Hızlı İletişim",
-    "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.",
-    "virtualTour": "Sanal Tur",
+    "quickContact": "Hızlı iletişim",
+    "quickContactDesc": "Bir iş günü içinde dönüyoruz.",
+    "virtualTour": "Sanal tur",
     "categories": {
-      "Web": "Web",
-      "AI": "Yapay Zekâ",
-      "Data": "Veri",
-      "Growth": "Büyüme",
-      "Integrations": "Entegrasyonlar"
+      "websites": "Web siteleri",
+      "ecommerce": "E-ticaret",
+      "qr": "QR Menüler",
+      "ads": "Reklam ve Büyüme",
+      "cloud": "Bulut",
+      "ai": "AI",
+      "mobile": "Mobil"
+    },
+    "labels": {
+      "problem": "Problem",
+      "approach": "Yaklaşımımız",
+      "result": "Sonuç",
+      "stack": "Stack",
+      "client": "Müşteri",
+      "year": "Yıl",
+      "scope": "Kapsam"
     },
     "projects": {
-      "title": "Projeler & Vaka Çalışmaları",
+      "title": "İşler",
       "items": [
         {
-          "cat": "QR Menü | Restoran",
+          "slug": "lavinia-bistro-qr-menu",
+          "category": "qr",
+          "client": "Lavinia Bistro",
+          "year": "2025",
+          "scope": "QR menü + yönetim paneli",
           "title": "Lavinia Bistro — QR Menü",
-          "url": "/tr/demo/qr-menu",
-          "desc": "60 kişilik bir bistro için fotoğraflı, çok dilli QR menü. Mobil öncelikli, 4G hatta 1 saniyenin altında açılıyor; menünün güncellenmesini ve sezonluk eklemeleri yönetici telefondan kendisi yapıyor.",
+          "tag": "QR Menü · Restoran",
+          "url": "/en/demo/qr-menu",
+          "tourSrc": "",
+          "mockup": "lavinia-bistro-qr-menu",
+          "intro": "İstanbul'da 60 kişilik bir bistro için fotoğraflı, çok dilli bir QR menü. Bir saniyenin altında yüklenir, sahibi her şeyi telefondan günceller ve turistler kendi dillerinde sipariş verir.",
+          "problem": "Bistro yılda üç kez menü bastırıyor, dil bariyeri yüzünden turist siparişlerini kaçırıyor ve önceki ajansından her menü değişikliği için 6 hafta bekliyordu.",
+          "approach": "Fotoğraflar, alerjen etiketleri ve 5 dilli geçiş ile özel, mobil öncelikli bir menü kurduk. Yönetim paneli sahibinin ürün eklemesini, fiyat değiştirmesini ve fotoğrafları telefondan saniyeler içinde güncellemesini sağlıyor. Servis kuyruğunu azaltmak için 'garson çağır' ve 'hesap iste' butonları ekledik.",
+          "result": "Menü baskıları sıfıra indi. Tatlı ve içeceklerde turistlerin ek sipariş oranı %38 arttı. Sahibi menüyü kendisi düzenliyor — geliştiriciye gerek yok.",
           "highlights": [
-            "Mobil öncelikli tasarım — 4G hatta 1 sn altı açılış",
-            "5 dil hazır (TR / EN / DE / RU / AR)",
-            "“Garson çağır” ve “Hesabı iste” aksiyonları servis kuyruğunu azaltır",
-            "Her öğede alerjen ve diyet etiketi öne çıkar",
-            "Yönetici telefonundan ürün/fiyat günceller, geliştirici gerektirmez"
-          ]
+            "4G üzerinde 1 saniyenin altında yüklenir",
+            "5 dil: TR / EN / DE / RU / AR",
+            "Garson çağır ve hesap iste aksiyonları servis kuyruğunu azaltır",
+            "Her üründe alerjen ve diyet etiketleri",
+            "Sahibi ürünleri ve fiyatları telefondan düzenler — geliştirici yok"
+          ],
+          "tags": ["QR Menü", "Restoran", "Çok dilli", "CMS"]
         },
         {
-          "cat": "Web | Beauty | Growth",
-          "title": "Dr. Sevim Aydın Beauty",
-          "url": "https://www.drsevimaydinbeauty.com",
-          "tourSrc": "https://www.google.com/maps/embed?pb=!4v1756115600484!6m8!1m7!1sCAoSHENJQUJJaEF1UWV0M0NyelNKNW9wNmF6UXFYSUc.!2m2!1d41.09449186254232!2d28.98261306933077!3f240!4f0!5f0.7820865974627469",
-          "desc": "Güzellik ve bakım merkezi için modern, estetik ve güven veren bir web sitesi tasarladık. Hedef, klinik hizmetlerini online ortamda daha şeffaf ve çekici bir şekilde sunmaktı.",
-          "highlights": [
-            "Kullanıcı dostu arayüz ile online randevu sistemi entegrasyonu",
-            "SEO uyumlu içerik → organik görünürlük +40%",
-            "Marka güvenilirliği ve hasta etkileşiminde artış",
-            "Responsive tasarım sayesinde mobil cihazlardan erişim %70’e çıktı"
-          ]
-        },
-        {
-          "cat": "Web | Manufacturing | B2B",
-          "title": "TP Thermoplast",
-          "url": "https://tpthermoplast.com",
-          "desc": "Plastik üretim firması için B2B odaklı kurumsal web sitesi hazırlandı. Hedef, uluslararası alıcılarla güvenilir bir iletişim noktası oluşturmaktı.",
-          "highlights": [
-            "Çok dilli yapı → ihracat hedefli müşteri kitlesine hitap",
-            "Ürün kataloğu + talep formları ile lead toplama",
-            "Web hız optimizasyonu → sayfa yüklenme süresi %50 kısaldı",
-            "Global iş bağlantılarında artış raporlandı"
-          ]
-        },
-        {
-          "cat": "Web | Home Décor | Growth",
-          "title": "Rain Group",
+          "slug": "rain-group-ecommerce",
+          "category": "ecommerce",
+          "client": "Rain Group",
+          "year": "2025",
+          "scope": "Shopify mağaza + marka + reklamlar",
+          "title": "Rain Group — Ev Tekstili Shopify",
+          "tag": "Shopify · Ev Tekstili",
           "url": "https://www.raingroupas.com",
-          "desc": "Ev tekstili ve dekorasyon ürünleri için kurumsal kimlik ve e-ticaret altyapısı kuruldu. Marka modern, güvenilir ve uluslararası bir imaj kazandı.",
+          "mockup": "rain-group-ecommerce",
+          "intro": "Bir ev tekstili ve dekorasyon markası için premium bir Shopify mağazası — minimal, güven veren ve uluslararası satış için kurulmuş.",
+          "problem": "Rain Group'un güzel bir ürün serisi vardı ama yalnızca toptan satıyordu. Doğrudan tüketiciye satan, İngilizce ve Türkçe, uluslararası kargo destekli bir mağazaya ihtiyaçları vardı.",
+          "approach": "Fotoğraflarına özel bir Shopify teması tasarladık. Çok dilli kurulum (TR/EN), uluslararası kargo bölgeleri ve Meta Ads için tam yaratıcı sistem. Marka sesini ve ürün fotoğrafçılığı yönünü de biz yönettik.",
+          "result": "DTC kanalı 6 haftada yayına girdi. Organik trafik ilk çeyrekte %60 büyüdü. Yaratıcı testlerin ardından Meta Ads ROAS'ı 3,4x'e oturdu.",
           "highlights": [
-            "Minimalist, güven veren UI/UX tasarım",
-            "Kurumsal kimlik + marka dili oluşturuldu",
-            "SEO & sosyal medya entegrasyonu ile trafik %60 büyüdü",
-            "E-ticaret için altyapı hazırlandı (gelecek faz entegrasyonu)"
-          ]
+            "Özel Shopify teması — şablon yok",
+            "Çok dilli (TR / EN) ve uluslararası kargo",
+            "Velkina tarafından Meta Ads + yaratıcı üretimi",
+            "Q1'de organik trafik +%60",
+            "Yaratıcı testler sonrası ücretli Meta'da ROAS 3,4x"
+          ],
+          "tags": ["Shopify", "E-ticaret", "Meta Ads", "Marka kimliği"]
         },
         {
-          "cat": "Web | Education | CRM",
-          "title": "EduTurkia",
+          "slug": "drsevim-beauty-clinic",
+          "category": "websites",
+          "client": "Dr. Sevim Aydın Beauty",
+          "year": "2024",
+          "scope": "Web sitesi + SEO + randevu",
+          "title": "Dr. Sevim Aydın Beauty",
+          "tag": "Web Sitesi · Estetik Klinik",
+          "url": "https://www.drsevimaydinbeauty.com",
+          "mockup": "drsevim-beauty-clinic",
+          "intro": "Bir estetik klinik için modern, güven veren bir web sitesi — hizmetleri net sunan ve ziyaretleri randevuya çeviren.",
+          "problem": "Saygın bir klinik ama internette hiç görünmüyordu. Hastalar yalnızca kulaktan kulağa ulaşıyordu. Google ya da Instagram'dan arayan genç müşterileri kaybediyorlardı.",
+          "approach": "Sakin, güven veren bir site tasarladık, online randevu sistemi entegre ettik ve SEO temellerini attık. Tedavi sayfaları, gerçek hastaların sorduğu sorular etrafında kurgulandı.",
+          "result": "Organik görünürlük +%40. Mobil oturumlar trafiğin %70'ine ulaştı. Klinik artık her hafta online üzerinden yeni hasta alıyor.",
+          "highlights": [
+            "Online randevu sistemi entegre",
+            "SEO odaklı tedavi sayfaları → +%40 organik görünürlük",
+            "Mobil oturumlar trafiğin %70'ine yükseldi",
+            "Güven sinyalleri (gerçek öncesi/sonrası, doktor referansları, yorumlar)"
+          ],
+          "tags": ["Web Sitesi", "SEO", "Randevu", "Sağlık"]
+        },
+        {
+          "slug": "tp-thermoplast-b2b",
+          "category": "websites",
+          "client": "TP Thermoplast",
+          "year": "2024",
+          "scope": "Çok dilli B2B web sitesi + katalog",
+          "title": "TP Thermoplast — B2B Üretim",
+          "tag": "Web Sitesi · Üretim · B2B",
+          "url": "https://tpthermoplast.com",
+          "mockup": "tp-thermoplast-b2b",
+          "intro": "İhracat odaklı alıcıları kazanmak için bir plastik üreticisine B2B web sitesi. Endüstriyel alıcılara göre ayarlanmış çok dilli katalog ve teklif formları.",
+          "problem": "TP Thermoplast 20 yıllık ihracatçıydı ama eski web sitesi şirketin ölçeğini yansıtmıyordu. Uluslararası alıcılar ürün şartnamelerini kendi dillerinde bulamıyordu.",
+          "approach": "Çok dilli yapı (TR/EN/DE), indirilebilir şartname dosyalarıyla yapılandırılmış ürün kataloğu, proje gereksinimlerini yakalayan teklif formları ve %50 daha hızlı sayfa yükleme.",
+          "result": "Sayfa yükleme süresi yarıya indi. Uluslararası teklif hacmi ölçülebilir şekilde büyüdü. Site, ihracat alıcıları için ciddi bir temas noktası haline geldi.",
+          "highlights": [
+            "Çok dilli yapı → ihracat odaklı alıcılarla konuşur",
+            "Yapılandırılmış ürün kataloğu + şartname indirmeleri",
+            "Endüstriyel alıcılara göre ayarlanmış teklif formları",
+            "Sayfa yükleme süresi %50 azaldı"
+          ],
+          "tags": ["Web Sitesi", "B2B", "Üretim", "Çok dilli"]
+        },
+        {
+          "slug": "eduturkia-platform",
+          "category": "websites",
+          "client": "EduTurkia",
+          "year": "2024",
+          "scope": "Platform + CRM + yönetim",
+          "title": "EduTurkia — Öğrenci Platformu",
+          "tag": "Platform · Eğitim · CRM",
           "url": "https://www.eduturkia.com/",
-          "desc": "Yabancı öğrenciler için Türkiye’de eğitim danışmanlığı platformu. Başvuru yönetimi, CRM entegrasyonu ve üniversite kataloğu ile kapsamlı bir sistem kuruldu.",
+          "mockup": "eduturkia-platform",
+          "intro": "Türkiye'deki üniversitelere başvuran uluslararası öğrenciler için bir eğitim danışmanlığı platformu. Başvuru yönetimi, CRM entegrasyonu ve üniversite kataloğu.",
+          "problem": "Bir danışmanlık şirketi yüzlerce öğrenci başvurusunu Excel'lerle yönetiyordu. Belgeler kayboluyor, tarihler kaçıyor, veliler süreci takip edemiyordu.",
+          "approach": "Öğrenci kayıtları, üniversite kataloğu, başvuru pipeline'ı ve yönetim paneli içeren özel bir platform kurduk. Satış ekibinin tüm yolculuğu tek yerden görebilmesi için CRM entegrasyonu. Çok dilli (TR/EN).",
+          "result": "Öğrenci takibi %100 dijitalleşti. SEO ve reklam entegrasyonundan sonra başvuru hacmi ölçülebilir şekilde büyüdü. Veliler artık süreci kendi panellerinden takip ediyor.",
           "highlights": [
-            "Admin panelinden yönetilebilir üniversite/öğrenci kayıt sistemi",
-            "CRM entegrasyonu → öğrenci takibi %100 dijital",
-            "Çok dilli yapı (Türkçe/İngilizce) → erişim artırıldı",
-            "SEO & reklam entegrasyonları → öğrenci başvurularında ciddi artış"
-          ]
+            "Özel platform — öğrenci kayıtları, başvurular, üniversiteler",
+            "CRM entegrasyonu → %100 dijital öğrenci takibi",
+            "Çok dilli (TR / EN) → genişleyen erişim",
+            "SEO + reklamlar → başvurularda belirgin artış"
+          ],
+          "tags": ["Platform", "Eğitim", "CRM", "Özel Yazılım"]
         },
         {
-          "cat": "Web | Art | Portfolio",
-          "title": "Ali Cengiz İşcanlı",
-          "url": "https://www.alicengiziscanli.com",
-          "desc": "Sanatçının eserlerini ön plana çıkaran online portfolyo web sitesi tasarlandı. Hedef, uluslararası sanat meraklılarına ulaşmak ve eserleri modern bir galeride sergiler gibi sunmaktı.",
-          "highlights": [
-            "Minimalist galeri tasarımı → sanat odaklı görünüm",
-            "Çok dilli içerik → global izleyici kitlesine erişim",
-            "Hızlı yüklenen optimize edilmiş görseller",
-            "Sanatçıya özgü marka kimliği online taşındı"
-          ]
-        },
-        {
-          "cat": "Web | 3D | Creative",
-          "title": "Clown3D",
+          "slug": "clown3d-creative-studio",
+          "category": "websites",
+          "client": "Clown 3D",
+          "year": "2024",
+          "scope": "Web sitesi + 3D portfolyo",
+          "title": "Clown 3D — Yaratıcı Stüdyo",
+          "tag": "Web Sitesi · 3D · Yaratıcı",
           "url": "https://www.clown3d.com",
-          "desc": "3D tasarım ve görselleştirme odaklı kreatif ajans için eğlenceli ve modern bir web sitesi oluşturuldu. Hedef, yaratıcı projeleri sergilemek ve potansiyel müşterilere ilham vermekti.",
+          "mockup": "clown3d-creative-studio",
+          "intro": "Potansiyel müşterilerin yaratıcı aralığını ilk saniyeden hissetmesini isteyen bir 3D tasarım ve görselleştirme stüdyosu için oyuncu, modern bir site.",
+          "problem": "Yetenekli bir stüdyo ama portfolyosu statik görsellerin içinde kaybolmuştu. Potansiyel müşterilerin işi sadece görmesi değil, hissetmesi gerekiyordu.",
+          "approach": "Dinamik animasyonlar, scroll ile tetiklenen 3D geçişler ve projeleri sektöre göre düzenleyen yaratıcı bir portfolyo yapısı. Doğru müşterilerin bulması için SEO en başından entegre edildi.",
+          "result": "Stüdyonun enerjisine uyan güçlü bir ilk izlenim. Gelişen organik görünürlük, uluslararası ajanslardan inbound talep getirdi.",
           "highlights": [
-            "Dinamik animasyonlar ve 3D görseller",
-            "Yaratıcı UI → ziyaretçide güçlü ilk izlenim",
-            "SEO entegrasyonu → organik aramalarda görünürlük",
-            "Portfolyo yapısı ile işlerin düzenli sergilenmesi"
-          ]
+            "Dinamik animasyonlar ve scroll ile tetiklenen 3D",
+            "Sektöre göre düzenlenmiş portfolyo yapısı",
+            "SEO entegrasyonu → daha iyi organik görünürlük",
+            "Uluslararası ajanslardan inbound talepler"
+          ],
+          "tags": ["Web Sitesi", "Yaratıcı", "3D", "Portfolyo"]
         },
         {
-          "cat": "Web | Personal | Portfolio",
-          "title": "Atar Avcı Hukuk Bürosu",
+          "slug": "ataravci-law-firm",
+          "category": "websites",
+          "client": "Atar Avcı Hukuk Bürosu",
+          "year": "2024",
+          "scope": "Web sitesi + içerik + SEO",
+          "title": "Atar Avcı — Hukuk Bürosu",
+          "tag": "Web Sitesi · Hukuk · Kişisel Marka",
           "url": "https://www.ataravci.com.tr",
-          "tourSrc": "https://www.google.com/maps/embed?pb=!4v1756115654370!6m8!1m7!1sCAoSHENJQUJJaERtNlJVa0NCdm5aWEYxaWhkelZkcGo.!2m2!1d41.06985723145268!2d28.9891160676344!3f320!4f20!5f0.7820865974627469",
-          "desc": "Profesyonel kişisel portfolyo sitesi hazırlandı. Hedef, müşterilere hizmetlerini tanıtmak ve modern bir online imaj oluşturmaktı.",
+          "mockup": "ataravci-law-firm",
+          "intro": "Bir hukuk bürosu için profesyonel, güven veren bir web sitesi — hizmetler net şekilde sunulmuş, iletişim formları ciddi taleplere göre ayarlanmış.",
+          "problem": "Saygın bir avukat ama tek kanalı referanslardı. Genç müşteriler önce internetten arıyordu; site olmadan büro görünmüyordu.",
+          "approach": "Minimal kişisel marka tasarımı, hukuk diliyle değil, sade Türkçe yazılmış hizmet sayfaları ve gerçek müşterilerin arattığı davalar etrafında SEO.",
+          "result": "Daha yüksek talep dönüşümü. Ticari hukuk sorgularında arama görünürlüğü gelişti. Site, her referans için bir güvenilirlik kontrolüne dönüştü.",
           "highlights": [
-            "Minimalist tasarım → kişisel marka odaklı görünüm",
-            "Responsive yapı ile her cihazda sorunsuz deneyim",
-            "SEO optimizasyonu ile görünürlük artırıldı",
-            "İletişim formları → müşteri dönüş oranında artış"
-          ]
+            "Minimal kişisel marka tasarımı",
+            "Hukuk dili yerine sade Türkçe hizmet sayfaları",
+            "Ticari hukuk sorgularında SEO",
+            "Ciddi taleplere göre ayarlanmış iletişim formları"
+          ],
+          "tags": ["Web Sitesi", "Hukuk", "SEO", "Kişisel Marka"]
+        },
+        {
+          "slug": "anatolia-hotel-booking",
+          "category": "websites",
+          "client": "Anatolia Hotel",
+          "year": "2025",
+          "scope": "Web sitesi + rezervasyon motoru + Google Ads",
+          "title": "Anatolia Hotel — Direkt Rezervasyon",
+          "tag": "Web Sitesi · Otelcilik · Reklam",
+          "url": "",
+          "mockup": "anatolia-hotel-booking",
+          "intro": "Booking.com komisyon bağımlılığını azaltmak isteyen 40 odalı bir butik otel için direkt rezervasyon sitesi ve Google Ads programı.",
+          "problem": "Otel her rezervasyonda OTA'lara %18 komisyon ödüyordu. Direkt bir kanalı yoktu ve geçmiş misafirlere e-posta gönderemiyordu.",
+          "approach": "Entegre rezervasyon motoruna sahip güzel bir direkt rezervasyon sitesi, marka ve yüksek niyetli sorgularda Google Ads ve geçmiş misafirler için bir e-posta programı. Çok dilli (TR/EN/DE).",
+          "result": "Direkt rezervasyonlar toplam hacmin %28'ine çıktı. OTA komisyon maliyeti üçte bir azaldı. Geçmiş misafirler artık indirim koduyla doğrudan rezervasyon yapıyor.",
+          "highlights": [
+            "Entegre rezervasyon motoru — komisyon yok",
+            "Marka ve yüksek niyetli sorgularda Google Ads",
+            "Geçmiş misafirler için e-posta programı",
+            "Direkt rezervasyonlar toplamın %28'ine yükseldi"
+          ],
+          "tags": ["Web Sitesi", "Rezervasyon", "Google Ads", "Otelcilik"]
+        },
+        {
+          "slug": "novahealth-cloud-migration",
+          "category": "cloud",
+          "client": "Nova Health",
+          "year": "2025",
+          "scope": "AWS taşıma + izleme",
+          "title": "Nova Health — AWS Taşıma",
+          "tag": "Bulut · Sağlık · DevOps",
+          "url": "",
+          "mockup": "novahealth-cloud-migration",
+          "intro": "Kararsız paylaşımlı hosting'ten, sıkı uptime gereksinimleri olan bir sağlık platformu için düzgün mimarili bir AWS kurulumuna taşıma.",
+          "problem": "Nova Health, ayda iki kez çöken paylaşımlı bir hosting'deydi. Yedekleme, izleme yoktu ve bir vaka anında ne yapacaklarını bilmiyorlardı.",
+          "approach": "Yığını AWS'e taşıdık (ECS + RDS + S3 + CloudFront), CloudWatch ve Sentry ile izleme kurduk, point-in-time geri yüklemeli günlük yedeklemeleri otomatikleştirdik ve vakalar için runbook yazdık.",
+          "result": "Uptime yaklaşık %95'ten %99,95'e çıktı. Aylık bulut faturası, eski paylaşımlı hosting + downtime maliyetinden daha düşük. Yedeklemeler artık gerçekten geri yükleniyor.",
+          "highlights": [
+            "AWS mimarisi — ECS, RDS, S3, CloudFront",
+            "Çağrı (paging) destekli izleme (CloudWatch + Sentry)",
+            "Point-in-time geri yüklemeli günlük yedeklemeler",
+            "Uptime %95 → %99,95",
+            "Eski hosting'ten daha düşük toplam maliyet"
+          ],
+          "tags": ["Bulut", "AWS", "Taşıma", "İzleme"]
+        },
+        {
+          "slug": "bosporus-travel-ai-agent",
+          "category": "ai",
+          "client": "Bosporus Travel",
+          "year": "2025",
+          "scope": "AI müşteri asistanı + WhatsApp entegrasyonu",
+          "title": "Bosporus Travel — AI Müşteri Asistanı",
+          "tag": "AI · Seyahat · Müşteri Hizmetleri",
+          "url": "",
+          "mockup": "bosporus-travel-ai-agent",
+          "intro": "Bir tur operatörünün gelen WhatsApp mesajlarının %80'ini cevaplayan bir AI müşteri asistanı — 4 dilde, 7/24.",
+          "problem": "Bosporus Travel, sabah 2'de aynı 20 soruyu soran turistlerden gelen WhatsApp mesajlarında boğuluyordu. Yanıtlar geç geldiği için tur rezervasyonları kaçırılıyordu.",
+          "approach": "Turlarına, fiyatlarına ve SSS'lerine göre eğitilmiş özel bir AI asistanı kurduk. Gelen WhatsApp mesajlarını yönetir, basit turları otonom olarak rezerve eder ve karmaşık olanları tam bağlamla bir insana iletir.",
+          "result": "Gelen mesajların %80'i asistan tarafından yönetiliyor. Yanıt süresi 4 saatten 30 saniyeye düştü. Gece saatlerinde tur rezervasyonları arttı.",
+          "highlights": [
+            "Turlar, fiyatlar ve SSS'ler üzerine eğitilmiş",
+            "WhatsApp Business API entegrasyonu",
+            "4 dil: EN / TR / DE / AR",
+            "Mesajların %80'ini otonom olarak yönetir",
+            "Karmaşık vakaları tam bağlamla iletir"
+          ],
+          "tags": ["AI", "WhatsApp", "Müşteri Hizmetleri", "Çok dilli"]
+        },
+        {
+          "slug": "skyline-media-mobile-app",
+          "category": "mobile",
+          "client": "Skyline Media",
+          "year": "2025",
+          "scope": "iOS + Android uygulaması",
+          "title": "Skyline Media — Mobil Uygulama",
+          "tag": "Mobil · Medya · iOS + Android",
+          "url": "",
+          "mockup": "skyline-media-mobile-app",
+          "intro": "Bir medya abonelik servisi için çapraz platform mobil uygulama — içerik keşfi, çevrimdışı okuma ve push bildirimleri.",
+          "problem": "Skyline'ın popüler bir web sitesi vardı ama okuyucuların her gün geri dönmesini sağlayamıyordu. Yol boyu kullanılabilecek bir mobil deneyime ihtiyaçları vardı.",
+          "approach": "Çevrimdışı öncelikli içerik senkronizasyonu, son dakika haberler için push bildirimleri ve kısa okuma seansları için ayarlanmış bir öneri akışıyla bir React Native uygulaması kurduk.",
+          "result": "İlk çeyrekte günlük aktif kullanıcı üçe katlandı. Ortalama oturum süresi web'den 4 kat daha yüksek. Push opt-in oranı %62.",
+          "highlights": [
+            "React Native — tek kod tabanı, iki platform",
+            "Çevrimdışı öncelikli içerik senkronizasyonu",
+            "Son dakika haberler için push bildirimleri",
+            "Q1'de DAU web'den 3 kat yüksek",
+            "%62 push opt-in oranı"
+          ],
+          "tags": ["Mobil", "iOS", "Android", "React Native", "Medya"]
+        },
+        {
+          "slug": "marmara-foods-google-ads",
+          "category": "ads",
+          "client": "Marmara Foods",
+          "year": "2025",
+          "scope": "Google Ads yönetimi — Search + Shopping",
+          "title": "Marmara Foods — Google Ads Büyümesi",
+          "tag": "Reklam · Gıda ve İçecek · E-ticaret",
+          "url": "",
+          "mockup": "marmara-foods-google-ads",
+          "intro": "Bir niş gıda e-ticaret markası için yönetilen Google Ads programı — Search, Shopping ve remarketing, aylık ayarlanır.",
+          "problem": "Marmara Foods reklamları bir araçla otopilotta yürütüyordu. ROAS tutarsızdı ve hangi kampanyaların para kazandırdığını söyleyemiyorlardı.",
+          "approach": "Hesabı net temalar etrafında yeniden yapılandırdık, gelişmiş dönüşümlerle doğru izleme kurduk, haftalık yaratıcı testleri yaptık ve her ay dürüstçe raporladık — durdurduğumuz kampanyalar dahil.",
+          "result": "Hesap ROAS'ı 4,2x'e oturdu. Edinim başına maliyet 90 günde %31 düştü. Ekip artık sadece tıklamayı değil, geliri tek panoda görüyor.",
+          "highlights": [
+            "Netlik için hesap yeniden yapılandırıldı",
+            "Gelişmiş dönüşümler + GA4 + sunucu taraflı olaylar",
+            "Haftalık yaratıcı testleri",
+            "Dürüst aylık raporlama (durdurduklarımız dahil)",
+            "ROAS 4,2x · CPA -%31, 90 günde"
+          ],
+          "tags": ["Google Ads", "E-ticaret", "Shopping", "Raporlama"]
         }
       ]
     }
   },
   "about": {
     "title": "Velkina Hakkında",
-    "desc": "İstanbul merkezli kıdemli bir dijital ajansız. Modern araçlar, edge barındırma ve ölçülebilir büyüme ile yüksek performanslı web siteleri, uygulamalar ve sistemler tasarlar, geliştirir ve ölçekleriz.",
-    "principlesTitle": "İlkeler",
+    "desc": "Velkina kıdemli bir yazılım, tasarım ve büyüme ajansıdır. Avrupa genelinde işletmelerle çalışırız — şu an Türkiye, Romanya ve Almanya'da aktifiz. İşletmelerin anladığı yazılımı tasarlar, yayınlar ve işletiriz.",
+    "principlesTitle": "Nasıl çalışıyoruz",
     "principles": [
-      "Önizlemeler, geri alma ve net demolarla haftalık teslimat",
-      "Önce tasarım sistemi: tutarlılık için token'lar, bileşenler ve hareket",
-      "Ölçülebilir büyüme: sunucu tarafı analitik, deneyler ve CRO"
+      "İlk görüşmeden son commit'e kadar kıdemli insanlar — imzadan sonra junior'a devir yok.",
+      "Gerçek önizleme linkleriyle haftalık demolar. Her cuma ilerlemeyi görür, her adımı onaylarsınız.",
+      "Yazılım, tasarım ve büyümeyi kapsayan tek ekip. Faturanızda birbiriyle didişen ajanslar yok.",
+      "Net kapsam, net fiyat, net süre. Bir şey iyi fikir değilse hayır deriz.",
+      "Kod, hesaplar ve alan adları sizin adınıza. Bağımlılık yok. Her retainer'ı istediğiniz zaman iptal edersiniz."
     ],
     "quickFactsTitle": "Hızlı bilgiler",
     "facts": [
-      "Sadece kıdemli ekip",
-      "Next.js 14, React, Edge",
-      "Tasarım × Mühendislik",
-      "Odak: müşteri mutluluğu, netlik, hız"
+      "Yalnızca kıdemli ekip",
+      "Modern stack — Next.js, React Native, Shopify, AWS",
+      "Yazılım × Tasarım × Büyüme",
+      "Aktif: TR · RO · DE"
     ]
   },
   "contact": {
     "title": "İletişim",
-    "subtitle": "Bir iş günü içinde döneriz. Baskı yok; sadece netlik.",
-    "email": "E‑posta",
+    "subtitle": "Bir iş günü içinde dönüyoruz. Baskı yok — sadece size yardımcı olup olamayacağımıza dair netlik.",
+    "email": "E-posta",
     "phone": "Telefon",
     "whatsapp": "WhatsApp",
-    "whatsappDesc": "Hızlı başlamak için bize yazın",
-    "schedule": "Görüşme planlayın",
-    "scheduleDesc": "Size uyan bir zaman seçin"
+    "whatsappDesc": "Bize yazın — başlamanın en hızlı yolu",
+    "schedule": "Görüşme planla",
+    "scheduleDesc": "Size uygun 30 dakikalık bir slot seçin"
   },
   "privacy": {
     "title": "Gizlilik Politikası",
-    "desc": "Basit tutuyoruz. Kişisel verileri satmayız. Web sitemizi ve hizmetlerimizi iyileştirmek için asgari ölçüde analitik toplarız.",
-    "lastUpdated": "2025-08-25",
+    "desc": "Sade tutuyoruz. Kişisel veri satmıyoruz. Web sitemizi ve hizmetlerimizi geliştirmek için minimum analiz topluyoruz.",
+    "lastUpdated": "2026-05-11",
     "sections": [
-      {
-        "title": "Veri Sorumlusu ve İletişim",
-        "body": [
-          "Velkina Yazılım ve Tasarım (\"Velkina\", \"biz\") web sitemiz ve müşteri ilişkilerimiz kapsamında işlenen kişisel veriler açısından veri sorumlusudur.",
-          "İletişim: omercannalbant@hotmail.com"
-        ]
-      },
-      {
-        "title": "Kapsam",
-        "body": [
-          "Bu politika; web sitemiz, formlar, e‑posta ve mesajlaşma uygulamaları üzerinden toplanan verileri ve hizmet sunumu sırasında işlenen verileri kapsar. Üçüncü taraf siteler bu politikanın kapsamı dışındadır."
-        ]
-      },
-      {
-        "title": "Topladığımız Veriler",
-        "body": [
-          "İletişim verileri (ad, e‑posta, telefon, şirket)",
-          "Proje/ticari bilgiler (gereksinimler, kapsam, bütçe, zaman çizelgesi)",
-          "Teknik veriler (IP, cihaz, tarayıcı); gizlilik dostu analitik ve sunucu tarafı olaylar",
-          "Destek kayıtları ve yazışmalar",
-          "Adaylara ilişkin işe alım verileri (CV, portfolyo)"
-        ]
-      },
-      {
-        "title": "Amaçlar ve Hukuki Dayanaklar",
-        "body": [
-          "Hizmet sağlama ve iyileştirme; sözleşmenin ifası veya sözleşme kurulmadan önceki adımlar",
-          "Taleplere yanıt, toplantı planlama; meşru menfaat",
-          "Güvenlik, dolandırıcılık ve kötüye kullanımı önleme; meşru menfaat",
-          "Hukuki yükümlülüklerin yerine getirilmesi (vergi, muhasebe)",
-          "Gerekli hallerde açık rıza ile pazarlama; dilediğiniz zaman vazgeçebilirsiniz"
-        ]
-      },
-      {
-        "title": "Saklama Süreleri",
-        "body": [
-          "Kişisel verileri, belirtilen amaçlar için gerekli olan veya mevzuatın zorunlu kıldığı süreler boyunca saklarız. Proje kayıtları hukuki/muhasebesel sebeplerle genellikle 6 yıla kadar tutulur."
-        ]
-      },
-      {
-        "title": "Paylaşım ve Alıcılar",
-        "body": [
-          "Sözleşmeli hizmet sağlayıcılar (barındırma, iletişim, analitik, ödeme)",
-          "Gizlilik yükümlülüğüne tabi danışmanlar (mali müşavir, avukat)",
-          "Yasal zorunluluk halinde yetkili kurumlar",
-          "Kişisel verileri satmayız."
-        ]
-      },
-      {
-        "title": "Uluslararası Aktarımlar",
-        "body": [
-          "Veriler yurt dışına aktarılırsa, uygun güvenceler (ör. standart sözleşme maddeleri/uygunluk kararları) uygulanır."
-        ]
-      },
-      {
-        "title": "Güvenlik",
-        "body": [
-          "Erişim kontrolleri, iletimde şifreleme, asgari yetki ve denetim kayıtları gibi teknik/organizasyonel tedbirler uygularız. Hiçbir yöntem %100 güvenli değildir."
-        ]
-      },
-      {
-        "title": "Haklarınız",
-        "body": [
-          "Mevzuata tabi olarak; erişim, düzeltme, silme, kısıtlama, taşınabilirlik ve işleme itiraz haklarına sahipsiniz. Rızaya dayalı işlemede rızanızı dilediğiniz an geri çekebilirsiniz.",
-          "Başvuru: omercannalbant@hotmail.com. Ayrıca ilgili veri koruma otoritesine şikayette bulunabilirsiniz."
-        ]
-      },
-      {
-        "title": "Çerezler ve Takip",
-        "body": [
-          "Gizlilik dostu analitikleri tercih ederiz. Bazı özellikler çerez veya benzeri teknolojiler gerektirebilir. Çerezleri tarayıcınızdan yönetebilirsiniz."
-        ]
-      },
-      {
-        "title": "Çocukların Verileri",
-        "body": [
-          "Hizmetlerimiz mevzuata göre 13/16 yaş altındaki çocuklara yönelik değildir."
-        ]
-      },
-      {
-        "title": "Değişiklikler",
-        "body": [
-          "Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişiklikler \"Son güncelleme\" tarihinin güncellenmesiyle belirtilecektir."
-        ]
-      }
+      {"title": "Veri Sorumlusu ve İletişim", "body": ["Velkina (\"Velkina\", \"biz\"), web sitemiz ve müşteri işlerimiz aracılığıyla işlenen kişisel veriler için veri sorumlusu olarak hareket eder.", "İletişim: omercannalbant@hotmail.com"]},
+      {"title": "Kapsam", "body": ["Bu politika; web sitemiz, formlarımız, e-postalarımız, mesajlaşma uygulamalarımız ve müşterilere hizmet sunumu sırasında toplanan verileri kapsar. Sitemizden bağlantı verilen üçüncü taraf siteleri kapsamaz."]},
+      {"title": "Topladığımız Veriler", "body": ["İletişim verileri (isim, e-posta, telefon, şirket)", "Proje ve ticari bilgiler (gereksinimler, kapsam, bütçe, takvim)", "Teknik veriler (IP, cihaz, tarayıcı); gizlilik dostu analitik ve sunucu taraflı olaylar", "Destek kayıtları ve iletişim", "Adaylar için işe alım verileri (CV, portfolyo)"]},
+      {"title": "Amaçlar ve Hukuki Dayanaklar", "body": ["Hizmet sunumu ve geliştirilmesi; sözleşmenin yerine getirilmesi ya da sözleşme öncesi adımlar", "Taleplere yanıt verme ve toplantı planlama; meşru menfaat", "Güvenlik, dolandırıcılık önleme ve kötüye kullanım tespiti; meşru menfaat", "Yasal yükümlülüklere uyum (vergi, muhasebe)", "Gerektiğinde rızaya dayalı pazarlama; istediğiniz zaman çıkabilirsiniz"]},
+      {"title": "Saklama", "body": ["Kişisel verileri yalnızca açıklanan amaçlar için gerekli olduğu kadar veya yasanın gerektirdiği süre boyunca saklarız. Proje kayıtları, hukuki/muhasebesel nedenlerle genellikle 6 yıla kadar saklanır."]},
+      {"title": "Paylaşım ve Alıcılar", "body": ["Sözleşmeli hizmet sağlayıcılar (hosting, iletişim, analitik, ödemeler)", "Gizlilikle bağlı profesyonel danışmanlar (muhasebeciler, avukatlar)", "Yasanın gerektirdiği durumlarda yetkili merciler", "Kişisel veri satmıyoruz."]},
+      {"title": "Uluslararası Aktarımlar", "body": ["Veriler kendi yetki alanınız dışına aktarıldığında uygun güvenceler (örn. SCC'ler/yeterlilik kararları) kullanılır."]},
+      {"title": "Güvenlik", "body": ["Erişim kontrolleri, aktarımda şifreleme, en az ayrıcalık ilkesiyle kimlik bilgileri ve denetim kaydı gibi teknik ve idari önlemleri uygularız. Hiçbir aktarım veya saklama yöntemi %100 güvenli değildir."]},
+      {"title": "Haklarınız", "body": ["Yasaya tabi olarak erişim, düzeltme, silme, kısıtlama, taşınabilirlik veya işlemeye itiraz hakkınızı kullanabilirsiniz. Önceki işlemeyi etkilemeksizin istediğiniz zaman rızanızı geri çekebilirsiniz.", "İletişim: omercannalbant@hotmail.com. Veri koruma kurumunuza da şikayette bulunabilirsiniz."]},
+      {"title": "Çerezler ve Takip", "body": ["Gizlilik dostu analitiği tercih ederiz. Bazı özellikler çerez veya benzer teknolojiler gerektirir. Çerezleri tarayıcınızdan kontrol edebilirsiniz."]},
+      {"title": "Çocuklar", "body": ["Hizmetlerimiz, yasaya göre 13/16 yaş altındaki çocuklara yönelik değildir."]},
+      {"title": "Değişiklikler", "body": ["Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişiklikler \"Son güncelleme\" tarihi güncellenerek belirtilecektir."]}
     ]
   },
   "terms": {
-    "title": "Hizmet Koşulları",
-    "desc": "Web sitemizi ve hizmetlerimizi kullanarak bu koşulları kabul etmiş olursunuz. Projeye özgü özel koşullar MSA/SOW içinde tanımlanır.",
-    "lastUpdated": "2025-08-25",
+    "title": "Kullanım Şartları",
+    "desc": "Web sitemizi ve hizmetlerimizi kullanarak bu şartları kabul etmiş olursunuz. Projeye özel şartlar MSA/SOW'umuzda tanımlanır.",
+    "lastUpdated": "2026-05-11",
     "sections": [
-      {
-        "title": "Tanımlar",
-        "body": [
-          "\"Velkina\" Velkina Yazılım ve Tasarım’ı ifade eder. \"Müşteri\" hizmet alan gerçek/tüzel kişiyi ifade eder. \"Hizmetler\" sipariş, teklif veya kapsam dokümanında tanımlanan çalışmaları ifade eder."
-        ]
-      },
-      {
-        "title": "Kapsam ve Siparişler",
-        "body": [
-          "Hizmetler, tarafların mutabık kaldığı Sipariş/Teklif/SOW (\"Sipariş\") kapsamında sağlanır. Kapsamdaki değişiklikler yazılı onay gerektirir ve ücret/zaman planını etkileyebilir."
-        ]
-      },
-      {
-        "title": "Müşterinin Yükümlülükleri",
-        "body": [
-          "Bilgi, sistem ve karar vericilere zamanında erişim sağlamak; teslimleri makul sürede inceleyip onaylamak; sağlanan materyallerin üçüncü kişi haklarını ihlal etmemesini temin etmek."
-        ]
-      },
-      {
-        "title": "Ücretler ve Ödeme",
-        "body": [
-          "Ücretler Siparişte belirtilir. Aksi kararlaştırılmadıkça faturalar 14 gün içinde ödenir. Gecikme halinde kanunen izin verilen azami oranda faiz uygulanabilir. Ücretlere vergiler dahil değildir."
-        ]
-      },
-      {
-        "title": "Fikri Mülkiyet",
-        "body": [
-          "Tam ödeme üzerine, müşteri için özel olarak oluşturulan çıktılar Müşteriye aittir; Velkina arka plan IP’si, açık kaynak ve üçüncü taraf materyaller hariçtir. Velkina, arka plan IP’si için yalnızca çıktılara gömülü şekilde, devredilemez ve münhasır olmayan bir lisans verir."
-        ]
-      },
-      {
-        "title": "Gizlilik",
-        "body": [
-          "Taraflar, birbirlerinden edindikleri gizli bilgileri gizli tutar ve Sözleşmenin ifası dışında kullanmaz; genel istisnalar saklıdır (aleni hale gelmiş, bağımsız geliştirilmiş, yasal zorunluluk)."
-        ]
-      },
-      {
-        "title": "Veri Koruma",
-        "body": [
-          "Kişisel veri işlendiğinde taraflar yürürlükteki veri koruma mevzuatına uyar. Velkina’nın veri işleyen sıfatıyla hareket ettiği durumlar için ayrı bir KVKK/GDPR ek protokolü (DPA) uygulanabilir."
-        ]
-      },
-      {
-        "title": "Garantiler",
-        "body": [
-          "Hizmetleri profesyonel ve özenli şekilde yürüteceğimizi beyan ederiz. Açıkça belirtilmedikçe Hizmetler \"olduğu gibi\" sunulur ve başka garanti verilmez."
-        ]
-      },
-      {
-        "title": "Sorumluluğun Sınırlandırılması",
-        "body": [
-          "Yürürlükteki hukukun izin verdiği azami ölçüde, taraflardan hiçbiri dolaylı/sonuçsal zararlardan sorumlu değildir. Velkina’nın toplam sorumluluğu, talebe sebep olan Hizmetler için olaydan önceki 12 ayda ödenen ücretleri aşmayacaktır."
-        ]
-      },
-      {
-        "title": "Tazminat",
-        "body": [
-          "Taraflar, sözleşmenin ihlali, ağır ihmal veya kasttan kaynaklanan üçüncü kişi taleplerine karşı birbirlerini tazmin eder."
-        ]
-      },
-      {
-        "title": "Süre ve Fesih",
-        "body": [
-          "Sözleşme, Siparişin yürürlük tarihiyle başlar ve tamamlanıncaya kadar sürer; esaslı ihlal halinde (bildirim ve giderim süresi sonrası) veya Siparişte belirtilen şekilde feshedilebilir. Fesih halinde muaccel ücretler tahakkuk eder; hükümlerden bir kısmı yürürlükte kalır."
-        ]
-      },
-      {
-        "title": "Alt Yükleniciler",
-        "body": [
-          "Gerekli uzmanlık için seçilmiş alt yüklenicilerden yararlanabiliriz. Hizmetlerden sorumluluğumuz devam eder."
-        ]
-      },
-      {
-        "title": "Tanıtım",
-        "body": [
-          "Müşteri onayıyla, portföy/pazarlama amaçlı olarak Müşteri adını ve gizli olmayan sonuçları referans gösterebiliriz."
-        ]
-      },
-      {
-        "title": "Uygulanacak Hukuk ve Uyuşmazlıklar",
-        "body": [
-          "İşbu koşullar Türkiye hukukuna tabidir. Uyuşmazlıklarda İstanbul mahkemeleri ve icra daireleri yetkilidir; emredici tüketici ve veri koruma kuralları saklıdır."
-        ]
-      },
-      {
-        "title": "Mücbir Sebep",
-        "body": [
-          "Taraflar makul kontrolü dışındaki nedenlerle gecikme veya ifa edememeden sorumlu değildir."
-        ]
-      },
-      {
-        "title": "Bütünlük ve Değişiklik",
-        "body": [
-          "Sipariş ile bu Koşullar birlikte tüm anlaşmayı oluşturur ve önceki beyanları ilga eder. Değişiklikler yazılı olmalıdır. Herhangi bir hükmün geçersizliği, kalan hükümlerin geçerliliğini etkilemez."
-        ]
-      },
-      {
-        "title": "Bildirimler",
-        "body": [
-          "Bildirimler, Siparişte belirtilen adreslere e‑posta ile yapılabilir ve teyit üzerine veya bir sonraki iş gününde alınmış sayılır."
-        ]
-      }
+      {"title": "Tanımlar", "body": ["\"Velkina\" Velkina'yı ifade eder. \"Müşteri\" hizmet alan kişi veya kuruluşu ifade eder. \"Hizmetler\" bir Sipariş, SOW veya teklifte tanımlanan işi ifade eder."]},
+      {"title": "Kapsam ve Siparişler", "body": ["Karşılıklı mutabık kalınan bir Sipariş/Teklif/SOW (\"Sipariş\") kapsamındaki Hizmetleri sunarız. Kapsam değişiklikleri yazılı mutabakat gerektirir ve ücretleri ile takvimi etkileyebilir."]},
+      {"title": "Müşteri Sorumlulukları", "body": ["Bilgiye, sistemlere ve karar vericilere zamanında erişim sağlama. Teslimatları gereksiz gecikme olmadan inceleme ve onaylama. Sağlanan tüm materyallerin üçüncü taraf haklarını ihlal etmediğini garanti etme."]},
+      {"title": "Ücretler ve Ödeme", "body": ["Ücretler Sipariş'te belirtildiği gibidir. Aksi kararlaştırılmadıkça, faturalar 14 gün içinde ödenir. Geç ödemeler, yasanın izin verdiği maksimum oranda faiz uygulanmasına yol açabilir. Tüm ücretler vergiler hariçtir."]},
+      {"title": "Fikri Mülkiyet", "body": ["Tam ödeme sonrasında Müşteri, özellikle Müşteri için oluşturulan teslimatların sahibi olur; Velkina'nın arka plan IP'si, açık kaynak bileşenler ve üçüncü taraf materyaller hariç. Velkina, teslimatlarda gömülü olduğu ölçüde arka plan IP'si için münhasır olmayan, devredilemez bir lisans verir."]},
+      {"title": "Gizlilik", "body": ["Her bir taraf, diğerinden aldığı gizli bilgileri gizli tutar ve yalnızca Sözleşme'nin ifası için kullanır; alışılmış istisnalar saklıdır (kamuya açık, bağımsız geliştirilmiş, yasaca zorunlu ifşa)."]},
+      {"title": "Veri Koruma", "body": ["Kişisel veri işlendiğinde taraflar geçerli veri koruma yasalarına uyar. Velkina'nın işleyen sıfatıyla hareket ettiği durumlarda ayrı bir DPA uygulanabilir."]},
+      {"title": "Garantiler", "body": ["Hizmetleri profesyonel ve ehil bir şekilde sunacağımızı garanti ederiz. Açıkça belirtilen haller dışında, Hizmetler başka herhangi bir garanti olmaksızın \"olduğu gibi\" sunulur."]},
+      {"title": "Sorumluluğun Sınırlandırılması", "body": ["Yasanın izin verdiği azami ölçüde, hiçbir taraf dolaylı, arızi veya sonuç olarak ortaya çıkan zararlardan sorumlu değildir. Velkina'nın Sözleşme'den doğan toplam sorumluluğu, talebe yol açan olaydan önceki 12 ay içinde ilgili Hizmetler için Müşteri tarafından ödenen ücretleri aşamaz."]},
+      {"title": "Tazminat", "body": ["Her bir taraf, Sözleşme ihlali, ağır ihmal veya kasıtlı kötü davranıştan kaynaklanan üçüncü taraf taleplerine karşı diğerini tazmin eder."]},
+      {"title": "Süre ve Fesih", "body": ["Sözleşme Sipariş'in yürürlük tarihinde başlar ve tamamlanana dek devam eder; ancak esaslı ihlal (bildirim ve düzeltme süresinden sonra) ya da Sipariş'te belirtilen kolaylık halinde önceden feshedilebilir."]},
+      {"title": "Alt Yüklenicilik", "body": ["İncelenmiş alt yükleniciler ve uzmanlar kullanabiliriz. Hizmetlerden sorumlu olmaya devam ederiz."]},
+      {"title": "Tanıtım", "body": ["Müşteri rızasıyla, portfolyo/pazarlama amacıyla Müşteri adını ve gizli olmayan sonuçları listeleyebiliriz."]},
+      {"title": "Geçerli Hukuk ve Uyuşmazlıklar", "body": ["Bu Sözleşme Türkiye yasalarına tabidir. Uyuşmazlıklar İstanbul mahkemelerinin münhasır yargı yetkisine tabidir; zorunlu tüketici ve veri koruma kurallarına halel gelmez."]},
+      {"title": "Mücbir Sebep", "body": ["Hiçbir taraf, makul kontrol dışındaki olaylardan kaynaklanan başarısızlık veya gecikmeden sorumlu değildir."]},
+      {"title": "Bütünleşik Sözleşme; Değişiklikler", "body": ["Sipariş ve bu Şartlar birlikte sözleşmenin tamamını oluşturur ve önceki anlaşmaların yerine geçer. Değişiklikler yazılı olmalıdır. Herhangi bir hüküm geçersiz olursa, geri kalanı yürürlükte kalır."]},
+      {"title": "Bildirimler", "body": ["Bildirimler, Sipariş'te belirtilen adreslere e-posta yoluyla yapılabilir ve onay üzerine ya da ertesi iş günü alınmış sayılır."]}
     ]
   }
 }

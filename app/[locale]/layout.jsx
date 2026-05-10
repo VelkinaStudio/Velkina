@@ -8,7 +8,11 @@ import LanguageSwitcher from '../../components/LanguageSwitcher';
 import MobileNavClient from '../../components/MobileNavClient';
 import en from '../../messages/en.json';
 import tr from '../../messages/tr.json';
+import ro from '../../messages/ro.json';
 import { Inter, Sora } from 'next/font/google';
+
+const DICTS = { en, tr, ro };
+const OG_LOCALES = { en: 'en_US', tr: 'tr_TR', ro: 'ro_RO' };
 import {CONTACT, telHref, mailHref, whatsappHref} from '../../lib/contact';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
@@ -18,8 +22,9 @@ const sora = Sora({ subsets: ['latin', 'latin-ext'], variable: '--font-sora' });
 
 export async function generateMetadata({params}) {
   const {locale} = params;
-  const dict = locale === 'en' ? en : tr;
-  const ogLocale = locale === 'tr' ? 'tr_TR' : 'en_US';
+  const dict = DICTS[locale] || en;
+  const ogLocale = OG_LOCALES[locale] || 'en_US';
+  const altLocales = Object.values(OG_LOCALES).filter(l => l !== ogLocale);
   return {
     title: dict.site.title,
     description: dict.site.description,
@@ -29,7 +34,8 @@ export async function generateMetadata({params}) {
       canonical: `/${locale}`,
       languages: {
         en: '/en',
-        tr: '/tr'
+        tr: '/tr',
+        ro: '/ro'
       }
     },
     openGraph: {
@@ -39,7 +45,7 @@ export async function generateMetadata({params}) {
       siteName: dict.site.name,
       type: 'website',
       locale: ogLocale,
-      alternateLocale: [ogLocale === 'tr_TR' ? 'en_US' : 'tr_TR']
+      alternateLocale: altLocales
     },
     twitter: {
       card: 'summary_large_image',
@@ -50,9 +56,9 @@ export async function generateMetadata({params}) {
   };
 }
 
-// Pre-render both locales for static export
+// Pre-render all three locales for static export
 export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'tr'}];
+  return [{locale: 'en'}, {locale: 'tr'}, {locale: 'ro'}];
 }
 
 export const viewport = {
@@ -65,7 +71,7 @@ export const viewport = {
 export default function LocaleLayout({children, params}) {
   const {locale} = params;
   // Using explicit messages & locale; no next-intl server APIs to keep static rendering
-  const messages = locale === 'en' ? en : tr;
+  const messages = DICTS[locale] || en;
   const t = messages.nav;
 
   return (

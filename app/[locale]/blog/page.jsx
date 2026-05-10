@@ -1,22 +1,25 @@
 import BlogView from '../../blog/BlogView';
 import en from '../../../messages/en.json';
 import tr from '../../../messages/tr.json';
+import ro from '../../../messages/ro.json';
+
+const DICTS = { en, tr, ro };
 
 export function generateStaticParams() {
-  return [{locale: 'tr'}, {locale: 'en'}];
+  return [{locale: 'en'}, {locale: 'tr'}, {locale: 'ro'}];
 }
 
 export function generateMetadata({params}) {
   const {locale} = params || {locale: 'en'};
-  const messages = locale === 'en' ? en : tr;
+  const messages = DICTS[locale] || en;
   return {
     title: messages.blog?.metaTitle || 'Velkina — Blog',
-    description: messages.blog?.metaDesc || 'Velkina’dan içgörüler, pratik rehberler ve mühendislik notları.'
+    description: messages.blog?.metaDesc || 'Insights, practical guides and engineering notes from Velkina.'
   };
 }
 
 export default function LocalizedBlog({params}) {
   const {locale} = params || {locale: 'en'};
-  const messages = locale === 'en' ? en : tr;
+  const messages = DICTS[locale] || en;
   return <BlogView messages={messages} locale={locale} />;
 }

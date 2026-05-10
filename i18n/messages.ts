@@ -1,30 +1,32 @@
 import en from '../messages/en.json';
 import tr from '../messages/tr.json';
+import ro from '../messages/ro.json';
 
 // Locales supported by the app
-export const LOCALES = ['tr', 'en'] as const;
+export const LOCALES = ['en', 'tr', 'ro'] as const;
 export type Locale = typeof LOCALES[number];
 export const DEFAULT_LOCALE: Locale = 'en';
 
-// Inferred message schema from the Turkish source of truth
-export type Messages = typeof tr;
+// Inferred message schema from the English source of truth
+export type Messages = typeof en;
 
 // Runtime map for messages
 const MESSAGES: Record<Locale, Messages> = {
-  tr,
   en,
+  tr: tr as unknown as Messages,
+  ro: ro as unknown as Messages,
 };
 
 export function isLocale(input: string | undefined | null): input is Locale {
-  return input === 'tr' || input === 'en';
+  return input === 'en' || input === 'tr' || input === 'ro';
 }
 
 export function getMessages(locale: Locale = DEFAULT_LOCALE): Messages {
-  return MESSAGES[locale] ?? tr;
+  return MESSAGES[locale] ?? en;
 }
 
 export function getDefaultMessages(): Messages {
-  return tr;
+  return en;
 }
 
 // Simple, typed accessor with up to 3 levels of nesting

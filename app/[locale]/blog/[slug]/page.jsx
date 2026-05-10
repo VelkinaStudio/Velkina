@@ -1,5 +1,8 @@
 import en from '../../../../messages/en.json';
 import tr from '../../../../messages/tr.json';
+import ro from '../../../../messages/ro.json';
+
+const DICTS = { en, tr, ro };
 
 function slugify(s = ''){
   return s
@@ -12,7 +15,7 @@ function slugify(s = ''){
 
 export function generateMetadata({ params }){
   const { locale = 'en', slug = '' } = params || {};
-  const messages = locale === 'en' ? en : tr;
+  const messages = DICTS[locale] || en;
   const posts = Array.isArray(messages?.blog?.samplePosts) ? messages.blog.samplePosts : [];
   const match = posts.find(p => slugify(p.title) === slug);
   const title = match?.title || (locale==='en' ? 'Blog' : 'Blog');
@@ -22,26 +25,38 @@ export function generateMetadata({ params }){
 
 export default function BlogPostPage({ params }){
   const { locale = 'en', slug = '' } = params || {};
-  const messages = locale === 'en' ? en : tr;
+  const messages = DICTS[locale] || en;
   const posts = Array.isArray(messages?.blog?.samplePosts) ? messages.blog.samplePosts : [];
   const match = posts.find(p => slugify(p.title) === slug);
 
-  const title = match?.title || (locale==='en' ? 'Untitled' : 'Başlıksız');
-  const desc = match?.desc || (locale==='en' ? 'Article coming soon.' : 'Makale yakında.');
-  const cat = match?.cat || (locale==='en' ? 'General' : 'Genel');
-  const read = match?.read || (locale==='en' ? '5 min' : '5 dk');
+  const LABELS = {
+    en: { untitled: 'Untitled', soon: 'Article coming soon.', general: 'General', read: '5 min', more: 'More from the blog',
+          sections: [
+            {h: 'Overview', p: '__DESC__'},
+            {h: 'What we built', p: 'We focus on clean architecture, performance and measurable impact across web, apps and AI.'},
+            {h: 'Outcomes', p: 'Clear improvements on speed, reliability and conversion with a senior engineering + design team.'}
+          ] },
+    tr: { untitled: 'Başlıksız', soon: 'Makale yakında.', general: 'Genel', read: '5 dk', more: 'Blogdan daha fazlası',
+          sections: [
+            {h: 'Genel Bakış', p: '__DESC__'},
+            {h: 'Ne inşa ettik', p: 'Web, uygulamalar ve yapay zekâda temiz mimari, performans ve ölçülebilir etkiye odaklanıyoruz.'},
+            {h: 'Sonuçlar', p: 'Kıdemli mühendislik + tasarım ekibiyle hız, güvenilirlik ve dönüşümde net iyileşmeler.'}
+          ] },
+    ro: { untitled: 'Fără titlu', soon: 'Articol în curând.', general: 'General', read: '5 min', more: 'Mai mult de pe blog',
+          sections: [
+            {h: 'Prezentare generală', p: '__DESC__'},
+            {h: 'Ce am construit', p: 'Ne concentrăm pe arhitectură curată, performanță și impact măsurabil în web, aplicații și AI.'},
+            {h: 'Rezultate', p: 'Îmbunătățiri clare în viteză, fiabilitate și conversie cu o echipă senior de inginerie și design.'}
+          ] }
+  };
+  const L = LABELS[locale] || LABELS.en;
 
-  const sections = (locale==='en')
-    ? [
-        {h: 'Overview', p: desc},
-        {h: 'What we built', p: 'We focus on clean architecture, performance and measurable impact across web, apps and AI.'},
-        {h: 'Outcomes', p: 'Clear improvements on speed, reliability and conversion with a senior engineering + design team.'}
-      ]
-    : [
-        {h: 'Genel Bakış', p: desc},
-        {h: 'Ne inşa ettik', p: 'Web, uygulamalar ve yapay zekâda temiz mimari, performans ve ölçülebilir etkiye odaklanıyoruz.'},
-        {h: 'Sonuçlar', p: 'Kıdemli mühendislik + tasarım ekibiyle hız, güvenilirlik ve dönüşümde net iyileşmeler.'}
-      ];
+  const title = match?.title || L.untitled;
+  const desc = match?.desc || L.soon;
+  const cat = match?.cat || L.general;
+  const read = match?.read || L.read;
+
+  const sections = L.sections.map(s => ({ ...s, p: s.p.replace('__DESC__', desc) }));
 
   return (
     <div className="pt-4">
@@ -65,7 +80,7 @@ export default function BlogPostPage({ params }){
       </article>
 
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-16">
-        <h3 className="font-heading text-2xl md:text-3xl mb-4">{locale==='en' ? 'More from the blog' : 'Blogdan daha fazlası'}</h3>
+        <h3 className="font-heading text-2xl md:text-3xl mb-4">{L.more}</h3>
         <div className="overflow-x-auto hide-scrollbar">
           <div className="flex gap-4 pr-8 snap-x snap-mandatory">
             {posts.filter(p=>slugify(p.title)!==slug).slice(0,6).map((p, i)=>{

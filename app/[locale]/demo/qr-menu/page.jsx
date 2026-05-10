@@ -1,19 +1,25 @@
 import QrMenuView from '../../../demo/qr-menu/QrMenuView';
 
+const TITLES = {
+  en: 'QR Menu Demo — Lavinia Bistro · Velkina',
+  tr: 'QR Menü Demo — Lavinia Bistro · Velkina',
+  ro: 'Demo Meniu QR — Lavinia Bistro · Velkina'
+};
+const DESCS = {
+  en: 'A working QR menu demo by Velkina for restaurants, cafés and bars. Mobile-first, multilingual, photo-rich.',
+  tr: 'Restoranlar, kafeler ve barlar için Velkina’nın çalışan QR menü demosu. Mobil öncelikli, çok dilli, fotoğraflı.',
+  ro: 'Demo de meniu QR funcțional pentru restaurante, cafenele și baruri. Mobile-first, multilingv, cu fotografii.'
+};
+
 export function generateStaticParams() {
-  return [{locale: 'tr'}, {locale: 'en'}];
+  return [{locale: 'en'}, {locale: 'tr'}, {locale: 'ro'}];
 }
 
 export function generateMetadata({params}) {
   const {locale} = params || {locale: 'en'};
-  const isTr = locale === 'tr';
   return {
-    title: isTr
-      ? 'QR Menü Demo — Lavinia Bistro · Velkina'
-      : 'QR Menu Demo — Lavinia Bistro · Velkina',
-    description: isTr
-      ? 'Restoranlar, kafeler ve barlar için Velkina’nın çalışan QR menü demosu. Mobil öncelikli, çok dilli, fotoğraflı.'
-      : 'A working QR menu demo by Velkina for restaurants, cafés, and bars. Mobile-first, multilingual, photo-rich.',
+    title: TITLES[locale] || TITLES.en,
+    description: DESCS[locale] || DESCS.en,
   };
 }
 

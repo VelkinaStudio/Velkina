@@ -1,22 +1,25 @@
 import HomeView from '../HomeViewSnap';
 import en from '../../messages/en.json';
 import tr from '../../messages/tr.json';
+import ro from '../../messages/ro.json';
+
+const DICTS = { en, tr, ro };
 
 export function generateStaticParams() {
-  return [{locale: 'tr'}, {locale: 'en'}];
+  return [{locale: 'en'}, {locale: 'tr'}, {locale: 'ro'}];
 }
 
 export function generateMetadata({params}) {
   const {locale} = params || {locale: 'en'};
-  const messages = locale === 'en' ? en : tr;
+  const messages = DICTS[locale] || en;
   return {
-    title: messages.site?.title || 'Velkina — Yarını Birlikte İnşa Edelim',
-    description: messages.site?.description || 'Velkina, İstanbul merkezli kıdemli bir yaratıcı mühendislik stüdyosudur. Next.js, edge barındırma ve modern araçlarla yüksek performanslı web siteleri, uygulamalar ve sistemler tasarlar, geliştirir ve ölçeklendirir.'
+    title: messages.site?.title || 'Velkina — Software & Design Agency',
+    description: messages.site?.description || 'Velkina builds software, design and growth systems for businesses.'
   };
 }
 
 export default function LocalizedHome({params}) {
   const {locale} = params || {locale: 'en'};
-  const messages = locale === 'en' ? en : tr;
+  const messages = DICTS[locale] || en;
   return <HomeView messages={messages} locale={locale} />;
 }
