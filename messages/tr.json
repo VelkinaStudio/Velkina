@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Velkina — İşletmeler için Yapay Zeka Ajanları",
-    "description": "Velkina, işletme otomasyonu için akıllı ajanlar geliştiren uzmanlaşmış bir yapay zeka ajansıdır. Türkçe müşteri hizmetleri çözümümüz gibi çağrıları ve iletişimleri insan benzeri anlayışla yönetebilen özel yapay zeka ajanları tasarlıyor, geliştiriyor ve konuşlandırıyoruz.",
+    "title": "Velkina — Yazılım, yapay zekâ ve QR menü",
+    "description": "Velkina, işletmeler için net ve hızlı yazılımlar üretir. Özel web siteleri, uygulamalar ve yapay zekâ otomasyonu — ek olarak restoran, kafe ve barlar için QR menü çözümleri, mobil öncelikli ve haftalar içinde teslim.",
     "name": "Velkina"
   },
   "nav": {
@@ -151,6 +151,7 @@
     "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.",
     "start": "Başlat",
     "items": [
+      {"id":"qr-menu","title":"Restoranlar için QR Menü","tag":"Restoran • Kafe • Bar","intro":"Misafirlerinizin saniyeler içinde okuduğu, hızlı ve estetik dijital menü. Uygulama yok, çok dilli ve fotoğraflı."},
       {"id":"websites","title":"Web Siteleri","tag":"Tasarım • Frontend • Backend","intro":"Hızlı, güvenilir ve net web siteleri. Tasarımdan canlıya kadar uçtan uca."},
       {"id":"applications","title":"Uygulamalar","tag":"Web App • Mobil • Panel","intro":"İş süreçlerinize özel paneller ve kullanıcı uygulamaları."},
       {"id":"ai-automation","title":"AI Otomasyonu","tag":"İş Akışları • Ajanlar","intro":"Tekrarlayan işleri yapay zekâ ve iş akışlarıyla otomatikleştirin."},
@@ -218,6 +219,19 @@
     "projects": {
       "title": "Projeler & Vaka Çalışmaları",
       "items": [
+        {
+          "cat": "QR Menü | Restoran",
+          "title": "Lavinia Bistro — QR Menü",
+          "url": "/tr/demo/qr-menu",
+          "desc": "60 kişilik bir bistro için fotoğraflı, çok dilli QR menü. Mobil öncelikli, 4G hatta 1 saniyenin altında açılıyor; menünün güncellenmesini ve sezonluk eklemeleri yönetici telefondan kendisi yapıyor.",
+          "highlights": [
+            "Mobil öncelikli tasarım — 4G hatta 1 sn altı açılış",
+            "5 dil hazır (TR / EN / DE / RU / AR)",
+            "“Garson çağır” ve “Hesabı iste” aksiyonları servis kuyruğunu azaltır",
+            "Her öğede alerjen ve diyet etiketi öne çıkar",
+            "Yönetici telefonundan ürün/fiyat günceller, geliştirici gerektirmez"
+          ]
+        },
         {
           "cat": "Web | Beauty | Growth",
           "title": "Dr. Sevim Aydın Beauty",
@@ -343,7 +357,7 @@
         "title": "Veri Sorumlusu ve İletişim",
         "body": [
           "Velkina Yazılım ve Tasarım (\"Velkina\", \"biz\") web sitemiz ve müşteri ilişkilerimiz kapsamında işlenen kişisel veriler açısından veri sorumlusudur.",
-          "İletişim: info@velkina.com"
+          "İletişim: omercannalbant@hotmail.com"
         ]
       },
       {
@@ -403,7 +417,7 @@
         "title": "Haklarınız",
         "body": [
           "Mevzuata tabi olarak; erişim, düzeltme, silme, kısıtlama, taşınabilirlik ve işleme itiraz haklarına sahipsiniz. Rızaya dayalı işlemede rızanızı dilediğiniz an geri çekebilirsiniz.",
-          "Başvuru: info@velkina.com. Ayrıca ilgili veri koruma otoritesine şikayette bulunabilirsiniz."
+          "Başvuru: omercannalbant@hotmail.com. Ayrıca ilgili veri koruma otoritesine şikayette bulunabilirsiniz."
         ]
       },
       {

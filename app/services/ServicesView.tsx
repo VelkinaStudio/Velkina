@@ -38,11 +38,15 @@ export default function ServicesView({messages, locale}: ServicesViewProps) {
     'hosting-devops': (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 7.5h16.5M3.75 16.5h16.5M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z"/></svg>
     ),
+    'qr-menu': (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6 text-vkcyan/90" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.5h5.25v5.25H3.75V4.5Zm0 9.75h5.25v5.25H3.75v-5.25Zm10.5-9.75h5.25v5.25h-5.25V4.5ZM14.25 14.25h2.25v2.25h-2.25v-2.25Zm3.75 0h2.25v2.25H18v-2.25Zm-3.75 3.75h2.25v2.25h-2.25v-2.25Zm3.75 0h2.25v2.25H18v-2.25Z"/></svg>
+    ),
     // Legacy keys fallback (no-op)
   };
 
   const services = t('services');
   const trItems = [
+    { id: 'qr-menu', title: 'Restoranlar için QR Menü', tag: 'Restoran • Kafe • Bar', intro: 'Misafirleriniz QR’ı okuttuğunda saniyeler içinde açılan, fotoğraflı, çok dilli, sezonluk değişiklikleri sizin yöneteceğiniz dijital menü. Uygulama indirme yok, basılı menü maliyeti yok.', deliverables: ['Markanıza özel mobil tasarım (özel font, renk, fotoğraf düzeni)', 'Menü içerik yönetimi (kategori/öğe/fiyat/foto/alerjen)', 'Çok dilli içerik (TR/EN/DE/RU/AR)', 'Masa bazlı QR kodlar + posterler', 'Hızlı yükleme (LCP < 1.5 sn)', 'Allergen ve içerik etiketleri', '"Garson çağır" + "Hesabı iste" eylemleri'], outcomes: ['Daha hızlı sipariş — siparişler arası süre düşer', 'Sıfır basılı menü maliyeti, sezonluk anında güncelleme', 'Tabaktan önce gözle satın alma → tatlı/içecek satışında artış', 'Dünyanın her yerinden gelen turistler kendi dilinde okur', 'Google üzerinde menü görünürlüğü (SEO + structured data)'], examples: ['Restoran (a la carte)', 'Kafe / kahveci', 'Bar / cocktail house', 'Otel kahvaltı menüsü', 'Tatlıcı / pastane'] },
     { id: 'websites', title: 'Web Siteleri', tag: 'Tasarım • Frontend • Backend', intro: 'Hızlı, güvenilir ve net web siteleri. Tasarımdan canlıya kadar uçtan uca.', deliverables: ['Tasarım sistemi ve bileşenler', 'CMS entegrasyonu', 'Performans ve erişilebilirlik'], outcomes: ['Hızlı sayfalar', 'Yüksek algılanan kalite', 'SEO temelleri'], examples: ['Kurumsal site', 'Ürün‑pazarlama', 'Doküman portalı'] },
     { id: 'applications', title: 'Uygulamalar', tag: 'Web App • Mobil • Panel', intro: 'İş süreçlerinize özel paneller ve kullanıcı uygulamaları.', deliverables: ['Akışlar ve yetkilendirme', 'Bileşen kütüphanesi', 'API entegrasyonları'], outcomes: ['Verimli ekipler', 'Daha az hata', 'Ölçeklenebilir mimari'], examples: ['Yönetim paneli', 'Müşteri portalı'] },
     { id: 'ai-automation', title: 'AI Otomasyonu', tag: 'İş Akışları • Ajanlar', intro: 'Tekrarlayan işleri yapay zekâ ve iş akışlarıyla otomatikleştirin.', deliverables: ['Süreç analizi', 'n8n/entegrasyonlar', 'Takip ve raporlama'], outcomes: ['Zaman tasarrufu', 'Daha düşük maliyet', 'Tutarlı kalite'], examples: ['Lead yönlendirme', 'Belge işleme'] },
@@ -53,6 +57,7 @@ export default function ServicesView({messages, locale}: ServicesViewProps) {
     { id: 'hosting-devops', title: 'Barındırma & DevOps', tag: 'Vercel • Cloudflare • AWS', intro: 'Hızlı, güvenilir ve geri alınabilir dağıtımlar.', deliverables: ['CI/CD & önizlemeler', 'Önbellek & optimizasyon', 'Uptime panoları'], outcomes: ['%99.9+ uptime', 'Düşük risk'], examples: ['Statik/SSR', 'Çok bölgeli dağıtım'] },
   ];
   const enItems = [
+    { id: 'qr-menu', title: 'QR Menu for Restaurants', tag: 'Restaurants • Cafés • Bars', intro: 'When your guests scan the QR code, your menu opens in seconds — photos, multilingual, seasonally editable by you. No app downloads, no reprinting costs.', deliverables: ['Mobile design tailored to your brand (custom typography, color, photo layout)', 'Menu content management (category / item / price / photo / allergens)', 'Multilingual content (EN / TR / DE / RU / AR)', 'Per‑table QR codes + printable posters', 'Fast loading (LCP under 1.5 s)', 'Allergen and ingredient tags', '“Call waiter” + “Request bill” actions'], outcomes: ['Faster ordering — shorter time between sit‑down and first order', 'Zero printed‑menu cost, instant seasonal updates', 'Visual purchases — desserts and drinks attach‑rate goes up', 'International guests read in their own language', 'Menu visibility on Google (SEO + structured data)'], examples: ['Full‑service restaurant (à la carte)', 'Café / specialty coffee', 'Bar / cocktail house', 'Hotel breakfast menu', 'Patisserie / dessert shop'] },
     { id: 'websites', title: 'Websites', tag: 'Design • Frontend • Backend', intro: 'Fast, reliable and clear websites. End‑to‑end from design to production.', deliverables: ['Design system & components', 'CMS integration', 'Performance & accessibility'], outcomes: ['Fast pages', 'Premium feel', 'SEO foundations'], examples: ['Corporate site', 'Product marketing', 'Docs portal'] },
     { id: 'applications', title: 'Applications', tag: 'Web App • Mobile • Admin', intro: 'Custom admin panels and user applications for your workflows.', deliverables: ['Flows & authorization', 'Component library', 'API integrations'], outcomes: ['Efficient teams', 'Fewer errors', 'Scalable architecture'], examples: ['Admin panel', 'Customer portal'] },
     { id: 'ai-automation', title: 'AI Automation', tag: 'Workflows • Agents', intro: 'Automate repetitive tasks with AI agents and workflow tooling.', deliverables: ['Process analysis', 'n8n/integrations', 'Monitoring & reporting'], outcomes: ['Time savings', 'Lower costs', 'Consistent quality'], examples: ['Lead routing', 'Document processing'] },
@@ -116,7 +121,7 @@ export default function ServicesView({messages, locale}: ServicesViewProps) {
         {/* Sticky, horizontally scrollable TOC for mobile */}
         <div className="sticky top-20 z-30 -mx-6 md:mx-0 px-6 py-2 bg-vkbg/70 backdrop-blur border-y border-white/5">
           {(() => {
-            const tocIds = ['websites','applications','ai-automation','ads','seo','analytics-cro','middleware','hosting-devops'];
+            const tocIds = ['qr-menu','websites','applications','ai-automation','ads','seo','analytics-cro','middleware','hosting-devops'];
             const toc = tocIds.map(id => items.find((x:any)=>x.id===id)).filter(Boolean) as any[];
             return (
               <div className="relative">
@@ -178,10 +183,11 @@ export default function ServicesView({messages, locale}: ServicesViewProps) {
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-16">
         {(() => {
           const GROUPS: { key: string; title: string; ids: string[] }[] = [
-            { key: 'design', title: 'Tasarım & Geliştirme', ids: ['websites', 'applications'] },
-            { key: 'ai', title: 'Yapay Zekâ & Otomasyon', ids: ['ai-automation'] },
-            { key: 'marketing', title: 'Pazarlama & Büyüme', ids: ['ads', 'seo', 'analytics-cro'] },
-            { key: 'systems', title: 'Sistemler & Entegrasyonlar', ids: ['middleware', 'hosting-devops'] },
+            { key: 'qr', title: lang==='en' ? 'For Restaurants & Hospitality' : 'Restoran & Konaklama', ids: ['qr-menu'] },
+            { key: 'design', title: lang==='en' ? 'Design & Development' : 'Tasarım & Geliştirme', ids: ['websites', 'applications'] },
+            { key: 'ai', title: lang==='en' ? 'AI & Automation' : 'Yapay Zekâ & Otomasyon', ids: ['ai-automation'] },
+            { key: 'marketing', title: lang==='en' ? 'Marketing & Growth' : 'Pazarlama & Büyüme', ids: ['ads', 'seo', 'analytics-cro'] },
+            { key: 'systems', title: lang==='en' ? 'Systems & Integrations' : 'Sistemler & Entegrasyonlar', ids: ['middleware', 'hosting-devops'] },
           ];
           const grouped = GROUPS.map(g => ({...g, items: items.filter((s:any)=>g.ids.includes(s.id))})).filter(g=>g.items.length>0);
           return (
@@ -207,6 +213,15 @@ export default function ServicesView({messages, locale}: ServicesViewProps) {
                               <a href="#cta" className="hidden md:inline-flex items-center px-3 py-1.5 rounded-lg border border-white/15 text-white/90 bg-white/5 hover:bg-white/10">{start}</a>
                             </header>
                             <p className="text-white/80 mt-3">{s.intro}</p>
+                            {s.id === 'qr-menu' && (
+                              <a
+                                href={`/${locale ?? 'en'}/demo/qr-menu`}
+                                className="mt-4 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-vkpink text-black font-mono text-sm shadow-strong hover:-translate-y-0.5 transition"
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 4.5h5.25v5.25H3.75V4.5Zm0 9.75h5.25v5.25H3.75v-5.25Zm10.5-9.75h5.25v5.25h-5.25V4.5ZM14.25 14.25h2.25v2.25h-2.25v-2.25Zm3.75 0h2.25v2.25H18v-2.25Zm-3.75 3.75h2.25v2.25h-2.25v-2.25Zm3.75 0h2.25v2.25H18v-2.25Z"/></svg>
+                                {lang==='en' ? 'Open the live demo →' : 'Çalışan demoyu aç →'}
+                              </a>
+                            )}
                             <div className="mt-4 grid gap-6 md:grid-cols-3">
                               <div>
                                 <h4 className="font-heading text-base text-white/90">{deliverables}</h4>

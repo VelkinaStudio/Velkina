@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Velkina — AI Agents for Business",
-    "description": "Velkina is a specialized AI agency focused on building intelligent agents for business automation. We design, develop and deploy custom AI agents like our Turkish customer service solution that can handle calls and communications with human-like understanding.",
+    "title": "Velkina — Software, AI and QR menus",
+    "description": "Velkina builds clear, fast software for businesses. Custom websites, applications and AI automation, plus QR menus for restaurants, cafés and bars — mobile-first and ready in weeks.",
     "name": "Velkina"
   },
   "nav": {
@@ -158,6 +158,7 @@
     "quickContactDesc": "We reply within one business day. No pressure; just clarity.",
     "start": "Start",
     "items": [
+      {"id":"qr-menu","title":"QR Menu for Restaurants","tag":"Restaurants • Cafés • Bars","intro":"A fast, beautiful menu your guests scan and read in seconds. No app store, no delays, multilingual, photo‑ready."},
       {"id":"websites","title":"Websites","tag":"Design • Frontend • Backend","intro":"Fast, reliable and clear websites. End‑to‑end from design to production."},
       {"id":"applications","title":"Applications","tag":"Web App • Mobile • Admin","intro":"Custom admin panels and user applications for your workflows."},
       {"id":"ai-automation","title":"AI Automation","tag":"Workflows • Agents","intro":"Automate repetitive tasks with AI agents and workflow tooling."},
@@ -225,6 +226,19 @@
     "projects": {
       "title": "Projects & Case Studies",
       "items": [
+        {
+          "cat": "QR Menu | Restaurant",
+          "title": "Lavinia Bistro — QR Menu",
+          "url": "/en/demo/qr-menu",
+          "desc": "A photo‑rich, multilingual QR menu for a 60‑seat bistro. Built mobile‑first, loads in under a second, and the manager updates prices and adds seasonal items from a phone.",
+          "highlights": [
+            "Mobile‑first design — loads on 4G in under 1 s",
+            "Five languages out of the box (TR / EN / DE / RU / AR)",
+            "“Call waiter” + “Request bill” actions reduce service queue",
+            "Allergen and dietary tags surfaced on every item",
+            "Owner edits items and prices from a phone, no developer needed"
+          ]
+        },
         {
           "cat": "Web | Beauty | Growth",
           "title": "Dr. Sevim Aydın Beauty",
@@ -350,7 +364,7 @@
         "title": "Controller & Contact",
         "body": [
           "Velkina Yazılım ve Tasarım (\"Velkina\", \"we\", \"us\") acts as the data controller for personal data processed through our website and client engagements.",
-          "Contact: info@velkina.com"
+          "Contact: omercannalbant@hotmail.com"
         ]
       },
       {
@@ -410,7 +424,7 @@
         "title": "Your Rights",
         "body": [
           "Subject to law, you may request access, rectification, deletion, restriction, portability or objection to processing. You may withdraw consent at any time without affecting prior processing.",
-          "Contact: info@velkina.com. You may also lodge a complaint with your data protection authority."
+          "Contact: omercannalbant@hotmail.com. You may also lodge a complaint with your data protection authority."
         ]
       },
       {

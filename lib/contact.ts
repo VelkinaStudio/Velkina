@@ -1,5 +1,5 @@
 export const CONTACT = {
-  email: 'info@velkina.com',
+  email: 'omercannalbant@hotmail.com',
   phoneDisplay: '+90 532 336 00 51',
   phoneE164: '+905323360051',
   whatsappDigits: '905323360051',

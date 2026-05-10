@@ -74,6 +74,7 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
   let serviceItems = Array.isArray(s?.items) ? s.items : [];
   if (!serviceItems || serviceItems.length === 0) {
     serviceItems = [
+      { id: 'qr-menu', title: lang==='en' ? 'QR Menu for Restaurants' : 'Restoranlar için QR Menü', tag: lang==='en' ? 'Restaurants • Cafés • Bars' : 'Restoran • Kafe • Bar', intro: lang==='en' ? 'A fast, beautiful menu your guests scan and read in seconds—multilingual, photo‑ready.' : 'Saniyeler içinde okunan, çok dilli, fotoğraflı dijital menü.' },
       { id: 'websites', title: lang==='en' ? 'Websites' : 'Web Siteleri', tag: lang==='en' ? 'Design • Frontend • Backend' : 'Tasarım • Frontend • Backend', intro: lang==='en' ? 'Fast, reliable websites—end‑to‑end from design to production.' : 'Hızlı, güvenilir web siteleri—tasarımdan canlıya.' },
       { id: 'applications', title: lang==='en' ? 'Applications' : 'Uygulamalar', tag: lang==='en' ? 'Web App • Mobile • Admin' : 'Web App • Mobil • Panel', intro: lang==='en' ? 'Custom apps and admin panels for your workflows.' : 'İş süreçlerinize özel uygulamalar ve paneller.' },
       { id: 'ai-automation', title: lang==='en' ? 'AI Automation' : 'AI Otomasyonu', tag: lang==='en' ? 'Workflows • Agents' : 'İş Akışları • Ajanlar', intro: lang==='en' ? 'Automate repetitive tasks with agents and workflows.' : 'Tekrarlayan işleri ajanlar ve iş akışlarıyla otomatikleştirin.' },
@@ -83,7 +84,7 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
     ];
   }
   // Curated order regardless of messages order
-  const svcOrder = ['websites','applications','ai-automation','ads','seo','analytics-cro','middleware','hosting-devops'];
+  const svcOrder = ['qr-menu','websites','applications','ai-automation','ads','seo','analytics-cro','middleware','hosting-devops'];
   const orderedServices = svcOrder.map(id => serviceItems.find((i:any)=>i.id===id)).filter(Boolean) as any[];
   const gridServices = orderedServices.length ? orderedServices : serviceItems;
 
@@ -194,28 +195,48 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
               <a href={`/${locale}/services`} className="text-white/80 hover:text-vkcyan text-sm border border-white/15 rounded-lg px-3 py-1.5 bg-white/5 hover:bg-white/10">{h?.servicesViewAll ?? (lang==='en' ? 'See all services' : 'Tüm hizmetleri gör')}</a>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {gridServices.slice(0, 6).map((item: any) => (
-                <a key={item.id} href={`/${locale}/services#${item.id}`} className="vk-card vk-glass border border-white/10 rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-0.5 transition block focus:outline-none focus:ring-2 focus:ring-vkcyan/50">
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h3 className="font-heading text-xl text-white/90">{item.title}</h3>
-                      {item.tag && <div className="text-xs text-white/60 mt-1">{item.tag}</div>}
-                      {item.intro && (
-                        <p className="text-sm text-white/70 mt-2">
-                          {typeof item.intro === 'string' && item.intro.length > 160 ? item.intro.slice(0, 157) + '…' : item.intro}
-                        </p>
-                      )}
+              {gridServices.slice(0, 6).map((item: any) => {
+                const isQr = item.id === 'qr-menu';
+                const href = isQr ? `/${locale}/demo/qr-menu` : `/${locale}/services#${item.id}`;
+                const exploreLabel = isQr
+                  ? (lang === 'en' ? 'Try the live demo' : 'Çalışan demoyu dene')
+                  : (h?.explore ?? (lang === 'en' ? 'Explore' : 'İncele'));
+                return (
+                  <a
+                    key={item.id}
+                    href={href}
+                    className={`vk-card vk-glass rounded-xl p-5 shadow-soft hover:shadow-strong hover:-translate-y-0.5 transition block focus:outline-none focus:ring-2 focus:ring-vkcyan/50 relative overflow-hidden ${
+                      isQr
+                        ? 'border border-vkpink/40 ring-1 ring-vkpink/30'
+                        : 'border border-white/10'
+                    }`}
+                  >
+                    {isQr && (
+                      <span aria-hidden className="absolute top-0 right-0 px-2 py-1 rounded-bl-lg bg-vkpink text-black text-[10px] font-mono tracking-wider uppercase">
+                        {lang === 'en' ? 'Live demo' : 'Canlı demo'}
+                      </span>
+                    )}
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className={`font-heading text-xl ${isQr ? 'text-white' : 'text-white/90'}`}>{item.title}</h3>
+                        {item.tag && <div className="text-xs text-white/60 mt-1">{item.tag}</div>}
+                        {item.intro && (
+                          <p className="text-sm text-white/70 mt-2">
+                            {typeof item.intro === 'string' && item.intro.length > 160 ? item.intro.slice(0, 157) + '…' : item.intro}
+                          </p>
+                        )}
+                      </div>
+                      <span aria-hidden className={`inline-flex items-center justify-center w-8 h-8 rounded-full border ${isQr ? 'bg-vkpink text-black border-vkpink' : 'bg-white/10 border-white/15'}`}>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4.5 h-4.5"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+                      </span>
                     </div>
-                    <span aria-hidden className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10 border border-white/15">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-4.5 h-4.5"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
-                    </span>
-                  </div>
-                  <div className="mt-3 inline-flex items-center text-white/80 text-sm">
-                    {h?.explore ?? (lang==='en' ? 'Explore' : 'İncele')}
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
-                  </div>
-                </a>
-              ))}
+                    <div className={`mt-3 inline-flex items-center text-sm ${isQr ? 'text-vkpink' : 'text-white/80'}`}>
+                      {exploreLabel}
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -234,6 +255,7 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
               const cards = (items && items.length ? items : []).map((it:any) => ({ cat: it.cat, title: it.title, url: it.url, desc: it.desc }));
               const fallback = lang==='en'
                 ? [
+                    {cat:'QR Menu | Restaurant', title:'Lavinia Bistro — QR Menu', url:`/${locale}/demo/qr-menu`, desc:'Photo‑rich, multilingual QR menu for a 60‑seat bistro. Mobile‑first, sub‑1s on 4G.'},
                     {cat:'Web | Beauty', title:'Dr. Sevim Aydın Beauty', url:'https://www.drsevimaydinbeauty.com', desc:'Clinic website with modern UI and appointment system.'},
                     {cat:'Web | Manufacturing', title:'TP Thermoplast', url:'https://tpthermoplast.com', desc:'B2B corporate site with multi-language and product catalog.'},
                     {cat:'Web | Décor', title:'Rain Group', url:'https://www.raingroupas.com', desc:'Corporate and e‑commerce foundation, modern brand image.'},
@@ -244,6 +266,7 @@ export default function HomeViewSnap({messages, locale}: HomeViewProps) {
                     {cat:'Web | Hospitality', title:'Anatolia Hotel', url:'/', desc:'Brand refresh and conversion‑focused booking journey.'}
                   ]
                 : [
+                    {cat:'QR Menü | Restoran', title:'Lavinia Bistro — QR Menü', url:`/${locale}/demo/qr-menu`, desc:'60 kişilik bir bistro için fotoğraflı, çok dilli QR menü. Mobil öncelikli, 4G üzerinde 1 sn altı.'},
                     {cat:'Web | Güzellik', title:'Dr. Sevim Aydın Beauty', url:'https://www.drsevimaydinbeauty.com', desc:'Modern arayüz ve randevu sistemi ile klinik sitesi.'},
                     {cat:'Web | Üretim', title:'TP Thermoplast', url:'https://tpthermoplast.com', desc:'Çok dilli, ürün kataloğuna sahip kurumsal site.'},
                     {cat:'Web | Dekor', title:'Rain Group', url:'https://www.raingroupas.com', desc:'Kurumsal + e‑ticaret temeli, modern marka imajı.'},
