@@ -25,7 +25,15 @@ export function generateMetadata({ params }) {
   if (!project) return { title: 'Velkina — Project' };
   return {
     title: `${project.title} · Velkina`,
-    description: project.intro
+    description: project.intro,
+    alternates: {
+      canonical: `/${locale}/use-cases/${slug}`,
+      languages: {
+        en: `/en/use-cases/${slug}`,
+        tr: `/tr/use-cases/${slug}`,
+        ro: `/ro/use-cases/${slug}`
+      }
+    }
   };
 }
 

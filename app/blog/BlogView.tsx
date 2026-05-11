@@ -2,6 +2,7 @@ import React from 'react';
 import BlogClient from './parts/BlogClient';
 import type {Locale, Messages} from '../../i18n/messages';
 import {createT, getDefaultMessages} from '../../i18n/messages';
+import {CONTACT, mailHref, whatsappHref} from '../../lib/contact';
 
 export type BlogViewProps = {
   messages?: Messages;
@@ -10,6 +11,7 @@ export type BlogViewProps = {
 
 export default function BlogView({messages, locale}: BlogViewProps) {
   const t = createT(messages ?? getDefaultMessages());
+  const common = (t('common') as any) || {};
   const slugify = (s: string) => (s || '')
     .toLowerCase()
     .replace(/[^a-z0-9çğıöşü\s-]/gi, '')
@@ -109,19 +111,35 @@ export default function BlogView({messages, locale}: BlogViewProps) {
           <h2 className="font-heading text-2xl md:text-3xl mb-2">{quickContact}</h2>
           <p className="text-white/80 mb-4">{quickContactDesc}</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a data-cta="whatsapp" className="inline-flex items-center px-5 py-2.5 rounded-xl bg-vkpink text-black shadow-strong font-mono">
+            <a
+              data-cta="whatsapp"
+              href={whatsappHref(common?.whatsappPrefill)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-5 py-2.5 rounded-xl bg-vkpink text-black shadow-strong font-mono"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 mr-2" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c 0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l-4.155-4.155" />
               </svg>
               {ctaWhatsapp}
             </a>
-            <a data-cta="email" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-vkcyan/50 text-vkcyan/90 bg-white/5 hover:bg-white/10 transition">
+            <a
+              data-cta="email"
+              href={mailHref(common?.emailSubject)}
+              className="inline-flex items-center px-5 py-2.5 rounded-xl border border-vkcyan/50 text-vkcyan/90 bg-white/5 hover:bg-white/10 transition"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 mr-2" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
               </svg>
               {ctaEmail}
             </a>
-            <a data-cta="schedule" className="inline-flex items-center px-5 py-2.5 rounded-xl border border-white/15 text-white/90 bg-white/5 hover:bg-white/10 transition">
+            <a
+              data-cta="schedule"
+              href={CONTACT.scheduleUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-5 py-2.5 rounded-xl border border-white/15 text-white/90 bg-white/5 hover:bg-white/10 transition"
+            >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 mr-2" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0  0 1 5.25 9h13.5A2.25 2.25 0  0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008Z" />
               </svg>

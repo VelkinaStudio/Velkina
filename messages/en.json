@@ -150,6 +150,27 @@
         {"q": "Can you also run ads and the website together?", "a": "Yes. That's our most common engagement — we build the site and run the Google/Meta ads on it. One team, one invoice."},
         {"q": "What if I don't know what I want yet?", "a": "Book the free 30-minute call. We'll tell you what's realistic for your business and budget — even if we're not the right fit."}
       ]
+    },
+    "ledger": {
+      "heading": "Recent work",
+      "subheading": "Velkina ships from İstanbul · Bucharest · Berlin",
+      "activeLabel": "Active this week",
+      "recentLabel": "Recent",
+      "active": [
+        {"date": "2026-05-12", "client": "Lavinia Bistro", "scope": "Menu QR, +RO/+DE locale pass", "status": "in_progress"},
+        {"date": "2026-05-09", "client": "EduTurkia", "scope": "Landing page A/B launched", "status": "shipped"},
+        {"date": "2026-05-07", "client": "Atar Avcı", "scope": "AWS infra audit", "status": "delivered"}
+      ],
+      "recent": [
+        {"date": "2026-04-28", "client": "Rain Group", "scope": "Meta ads relaunch", "outcome": "ROAS 3.4x sustained"},
+        {"date": "2026-04-21", "client": "Nova Health", "scope": "Uptime delivery", "outcome": "99.97% Q1 SLA"},
+        {"date": "2026-04-14", "client": "TP Thermoplast", "scope": "Export-data pipeline", "outcome": "Live"}
+      ],
+      "statusLabels": {
+        "in_progress": "In progress",
+        "shipped": "Shipped",
+        "delivered": "Delivered"
+      }
     }
   },
   "services": {
@@ -696,5 +717,140 @@
       {"title": "Entire Agreement; Changes", "body": ["The Order together with these Terms constitutes the entire agreement and supersedes prior understandings. Changes must be in writing. If any provision is invalid, the remainder remains in effect."]},
       {"title": "Notices", "body": ["Notices may be given by email to the addresses specified in the Order and are deemed received upon confirmation or the next business day."]}
     ]
+  },
+  "customerAgent": {
+    "metaTitle": "Velkina — AI Customer Service Agents (Multilingual)",
+    "metaDescription": "AI customer service agents fluent in Turkish, Romanian, English, German and Spanish. 24/7 support across web, WhatsApp and social — faster replies, lower cost, happier customers.",
+    "hero": {
+      "title": "AI Customer Service Agents (Multilingual)",
+      "description": "AI agents that talk to your customers in their language — Turkish, Romanian, English, German, Spanish. Available around the clock, integrated where your customers already are.",
+      "canvasAriaLabel": "Multilingual AI customer service agent visualization"
+    },
+    "overview": {
+      "heading": "Overview",
+      "body": "We build AI customer service agents that handle your customers' questions, share product details and resolve issues in the language they speak. Each agent is trained on your knowledge base, fits your tone of voice, and understands local context — not just translation, but actual conversation."
+    },
+    "features": {
+      "heading": "Key Features",
+      "items": [
+        {
+          "title": "24/7 Availability",
+          "description": "Your customers get answers at 2 a.m. on a Sunday. No queue, no waiting, no out-of-office reply."
+        },
+        {
+          "title": "Five Languages Out of the Box",
+          "description": "Turkish, Romanian, English, German and Spanish — each one native-sounding, not machine-translated. More languages on request."
+        },
+        {
+          "title": "Cultural Understanding",
+          "description": "The agent picks up on tone, formality and local cues so the conversation feels human, not robotic."
+        },
+        {
+          "title": "Multi-Channel Deployment",
+          "description": "Live on your website, WhatsApp, Instagram, Messenger and email — one brain, every channel."
+        },
+        {
+          "title": "Learns From Every Conversation",
+          "description": "We review transcripts weekly and feed real questions back into the knowledge base, so the agent gets sharper every month."
+        },
+        {
+          "title": "Smooth Handover to Humans",
+          "description": "When a question is too complex or too important, the agent hands the conversation to your team with full context."
+        }
+      ]
+    },
+    "benefits": {
+      "heading": "Benefits",
+      "items": [
+        {
+          "title": "Lower Support Cost",
+          "description": "Handle the routine 60-80% of incoming tickets without growing headcount."
+        },
+        {
+          "title": "Instant Response Times",
+          "description": "Replies in seconds, not hours. Most abandoned carts and lost leads come from waiting."
+        },
+        {
+          "title": "Consistent Service Quality",
+          "description": "Every customer gets the same accurate answer — no off days, no new-hire mistakes."
+        },
+        {
+          "title": "Scales With Demand",
+          "description": "Black Friday, product launches, viral moments — the agent handles ten times the volume without breaking."
+        },
+        {
+          "title": "Customer Insight",
+          "description": "Every conversation is a data point. We surface what customers actually ask, what they get stuck on, what they really want."
+        },
+        {
+          "title": "Higher Customer Satisfaction",
+          "description": "Fast, accurate, in-their-language answers — the three things every CSAT survey measures."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Use Cases",
+      "items": [
+        {
+          "title": "E-commerce Support",
+          "description": "Order tracking, product questions, returns and refunds — automated for online stores in any language you sell into."
+        },
+        {
+          "title": "Banking & Finance",
+          "description": "Account inquiries, transaction support and basic financial guidance, with strict handover rules for anything sensitive."
+        },
+        {
+          "title": "Travel & Hospitality",
+          "description": "Bookings, route information, accommodation questions — perfect for cross-border travelers who switch languages mid-trip."
+        },
+        {
+          "title": "Telecom & Utilities",
+          "description": "Service inquiries, plan changes, billing questions and basic technical troubleshooting — at the volume telcos actually face."
+        },
+        {
+          "title": "Healthcare",
+          "description": "Appointment scheduling, pre-visit information, FAQ on procedures — with strict compliance and human handover for clinical questions."
+        },
+        {
+          "title": "Public Services",
+          "description": "Help citizens with information on forms, procedures and offices — multilingual access for diverse populations."
+        }
+      ]
+    },
+    "implementation": {
+      "heading": "Implementation Process",
+      "items": [
+        {
+          "title": "Needs Assessment",
+          "description": "We map your support volume, top question categories and the gaps your current team can't cover."
+        },
+        {
+          "title": "Knowledge Base Setup",
+          "description": "We build the agent's source of truth from your help center, product docs, past tickets and team interviews."
+        },
+        {
+          "title": "Agent Training",
+          "description": "The agent is trained on your data and tested in each target language with native reviewers, not just developers."
+        },
+        {
+          "title": "Channel Integration",
+          "description": "We connect the agent to your website, WhatsApp Business, Instagram, your CRM and ticketing system."
+        },
+        {
+          "title": "Testing & Refinement",
+          "description": "We run shadow conversations with your team, fix edge cases, and only go live when answer quality is verified."
+        },
+        {
+          "title": "Launch & Monitoring",
+          "description": "After launch we watch every conversation for the first weeks, tune responses, and report what the agent learns."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Ready to give your customers fast, multilingual support?",
+      "contactButton": "Contact Us",
+      "whatsappButton": "Message on WhatsApp",
+      "emailButton": "Send an Email"
+    }
   }
 }

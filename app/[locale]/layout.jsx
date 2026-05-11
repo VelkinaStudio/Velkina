@@ -97,7 +97,8 @@ export default function LocaleLayout({children, params}) {
                 <Link href={`/${locale}/services`} className="text-white/80 hover:text-vkcyan">{t.services}</Link>
                 <Link href={`/${locale}/use-cases`} className="text-white/80 hover:text-vkcyan">{t.useCases}</Link>
                 <Link href={`/${locale}/customer-agent`} className="text-white/80 hover:text-vkcyan">{t.customerAgent}</Link>
-                <Link href={`/${locale}/blog`} className="text-white/80 hover:text-vkcyan">{t.blog}</Link>
+                {/* Blog hidden from public nav until real posts exist — route still alive at /[locale]/blog */}
+                {/* <Link href={`/${locale}/blog`} className="text-white/80 hover:text-vkcyan">{t.blog}</Link> */}
                 <Link href={`/${locale}/#cta`} className="text-white/90 font-mono px-3 py-1.5 rounded-xl bg-vkpink text-black shadow-strong">{t.startProject}</Link>
                 <LanguageSwitcher locale={locale} />
               </nav>
@@ -128,7 +129,8 @@ export default function LocaleLayout({children, params}) {
                 <li><Link href={`/${locale}`} className="hover:text-vkcyan">{messages.nav?.home ?? 'Home'}</Link></li>
                 <li><Link href={`/${locale}/services`} className="hover:text-vkcyan">{messages.nav?.services}</Link></li>
                 <li><Link href={`/${locale}/use-cases`} className="hover:text-vkcyan">{messages.nav?.useCases}</Link></li>
-                <li><Link href={`/${locale}/blog`} className="hover:text-vkcyan">{messages.nav?.blog}</Link></li>
+                {/* Blog hidden from footer until real posts exist — route still alive */}
+                {/* <li><Link href={`/${locale}/blog`} className="hover:text-vkcyan">{messages.nav?.blog}</Link></li> */}
               </ul>
             </div>
             <div>

@@ -25,7 +25,8 @@ export default function MobileNavClient({ locale, labels, startProjectLabel }){
     { href: `/${locale}/services`, label: labels?.services ?? 'Services' },
     { href: `/${locale}/use-cases`, label: labels?.useCases ?? 'Use Cases' },
     { href: `/${locale}/customer-agent`, label: labels?.customerAgent ?? 'Customer Agent' },
-    { href: `/${locale}/blog`, label: labels?.blog ?? 'Blog' },
+    // Blog hidden from mobile nav until real posts exist — route still alive at /[locale]/blog
+    // { href: `/${locale}/blog`, label: labels?.blog ?? 'Blog' },
   ];
 
   return (

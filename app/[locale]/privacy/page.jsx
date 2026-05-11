@@ -14,7 +14,11 @@ export function generateMetadata({params}) {
   const messages = DICTS[locale] || en;
   return {
     title: messages.privacy?.title ? `${messages.privacy.title} — Velkina` : 'Privacy — Velkina',
-    description: messages.privacy?.desc
+    description: messages.privacy?.desc,
+    alternates: {
+      canonical: `/${locale}/privacy`,
+      languages: { en: '/en/privacy', tr: '/tr/privacy', ro: '/ro/privacy' }
+    }
   };
 }
 

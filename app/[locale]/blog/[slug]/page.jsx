@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import en from '../../../../messages/en.json';
 import tr from '../../../../messages/tr.json';
 import ro from '../../../../messages/ro.json';
@@ -19,8 +20,8 @@ export function generateMetadata({ params }){
   const posts = Array.isArray(messages?.blog?.samplePosts) ? messages.blog.samplePosts : [];
   const match = posts.find(p => slugify(p.title) === slug);
   const title = match?.title || (locale==='en' ? 'Blog' : 'Blog');
-  const desc = match?.desc || (messages.blog?.metaDesc || 'Velkina’dan içgörüler, pratik rehberler ve mühendislik notları.');
-  return { title: `${title} — Blog`, description: desc };
+  const desc = match?.desc || messages.blog?.metaDesc || '';
+  return { title: `${title} — Blog`, description: desc, robots: { index: false, follow: false } };
 }
 
 export default function BlogPostPage({ params }){
@@ -28,6 +29,7 @@ export default function BlogPostPage({ params }){
   const messages = DICTS[locale] || en;
   const posts = Array.isArray(messages?.blog?.samplePosts) ? messages.blog.samplePosts : [];
   const match = posts.find(p => slugify(p.title) === slug);
+  if (!match) notFound();
 
   const LABELS = {
     en: { untitled: 'Untitled', soon: 'Article coming soon.', general: 'General', read: '5 min', more: 'More from the blog',

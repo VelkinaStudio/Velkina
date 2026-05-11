@@ -14,7 +14,11 @@ export function generateMetadata({params}) {
   const messages = DICTS[locale] || en;
   return {
     title: messages.services?.metaTitle || 'Velkina — Services',
-    description: messages.services?.metaDesc || 'Full-service software, design and growth agency.'
+    description: messages.services?.metaDesc || 'Full-service software, design and growth agency.',
+    alternates: {
+      canonical: `/${locale}/services`,
+      languages: { en: '/en/services', tr: '/tr/services', ro: '/ro/services' }
+    }
   };
 }
 

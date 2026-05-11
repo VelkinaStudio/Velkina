@@ -150,6 +150,27 @@
         {"q": "Puteți gestiona și reclamele, și site-ul, în același timp?", "a": "Da. Este cel mai frecvent tip de colaborare al nostru — construim site-ul și rulăm reclamele Google/Meta pentru el. O echipă, o factură."},
         {"q": "Ce fac dacă nu știu încă exact ce vreau?", "a": "Programați apelul gratuit de 30 de minute. Vă vom spune ce este realist pentru afacerea și bugetul dvs. — chiar și dacă nu suntem noi varianta potrivită."}
       ]
+    },
+    "ledger": {
+      "heading": "Lucrări recente",
+      "subheading": "Velkina livrează din İstanbul · București · Berlin",
+      "activeLabel": "Active săptămâna aceasta",
+      "recentLabel": "Recente",
+      "active": [
+        {"date": "2026-05-12", "client": "Lavinia Bistro", "scope": "Meniu QR, revizie locale RO/DE", "status": "in_progress"},
+        {"date": "2026-05-09", "client": "EduTurkia", "scope": "Test A/B pe landing page lansat", "status": "shipped"},
+        {"date": "2026-05-07", "client": "Atar Avcı", "scope": "Audit infrastructură AWS", "status": "delivered"}
+      ],
+      "recent": [
+        {"date": "2026-04-28", "client": "Rain Group", "scope": "Relansare Meta Ads", "outcome": "ROAS 3.4x susținut"},
+        {"date": "2026-04-21", "client": "Nova Health", "scope": "Livrare uptime", "outcome": "SLA T1 99,97%"},
+        {"date": "2026-04-14", "client": "TP Thermoplast", "scope": "Pipeline date export", "outcome": "În producție"}
+      ],
+      "statusLabels": {
+        "in_progress": "În lucru",
+        "shipped": "Lansat",
+        "delivered": "Livrat"
+      }
     }
   },
   "services": {
@@ -696,5 +717,142 @@
       {"title": "Acord integral; modificări", "body": ["Comanda împreună cu acești Termeni constituie acordul integral și înlocuiește înțelegerile anterioare. Modificările trebuie să fie făcute în scris. Dacă o prevedere este nevalidă, restul rămâne în vigoare."]},
       {"title": "Notificări", "body": ["Notificările pot fi transmise prin e-mail la adresele specificate în Comandă și se consideră primite la confirmare sau în următoarea zi lucrătoare."]}
     ]
+  },
+  "customerAgent": {
+    "metaTitle": "Velkina — Agenți AI pentru Servicii pentru Clienți (Multilingv)",
+    "metaDescription": "Agenți AI pentru servicii pentru clienți, fluenți în română, turcă, engleză, germană și spaniolă. Suport 24/7 pe web, WhatsApp și social — răspunsuri mai rapide, costuri mai mici, clienți mulțumiți.",
+    "hero": {
+      "title": "Agenți AI pentru Servicii pentru Clienți (Multilingv)",
+      "description": "Agenți AI care vorbesc cu clienții tăi în limba lor — română, turcă, engleză, germană, spaniolă. Disponibili non-stop, integrați acolo unde clienții tăi sunt deja.",
+      "canvasAriaLabel": "Vizualizare agent AI multilingv pentru servicii pentru clienți"
+    },
+    "overview": {
+      "heading": "Pe scurt",
+      "body": "Construim agenți AI care se ocupă de întrebările clienților tăi, oferă detalii despre produse și rezolvă probleme în limba în care vorbesc. Fiecare agent este antrenat pe baza ta de cunoștințe, se potrivește cu tonul brandului tău și înțelege contextul local — nu doar traducere, ci o conversație reală."
+    },
+    "features": {
+      "heading": "Caracteristici principale",
+      "items": [
+        {
+          "title": "Disponibilitate 24/7",
+          "description": "Clienții tăi primesc răspuns la 2 noaptea, duminica. Fără coadă, fără așteptare, fără mesaje de tip „suntem în afara programului”."
+        },
+        {
+          "title": "Cinci limbi din start",
+          "description": "Română, turcă, engleză, germană și spaniolă — fiecare sună natural, nu e tradusă automat. Adăugăm alte limbi la cerere."
+        },
+        {
+          "title": "Înțelegere culturală",
+          "description": "Agentul prinde tonul, gradul de formalitate și nuanțele locale, așa că discuția pare umană, nu robotică."
+        },
+        {
+          "title": "Implementare pe mai multe canale",
+          "description": "Activ pe site, WhatsApp, Instagram, Messenger și e-mail — un singur creier, toate canalele."
+        },
+        {
+          "title": "Învață din fiecare conversație",
+          "description": "Verificăm transcrierile săptămânal și adăugăm întrebările reale în baza de cunoștințe, astfel încât agentul devine mai bun lună de lună."
+        },
+        {
+          "title": "Predare fluentă către oameni",
+          "description": "Când întrebarea e prea complexă sau prea importantă, agentul transferă conversația către echipa ta cu tot contextul."
+        }
+      ]
+    },
+    "benefits": {
+      "heading": "Beneficii",
+      "items": [
+        {
+          "title": "Costuri de suport mai mici",
+          "description": "Acoperi rutina de 60-80% din tichetele primite fără să mărești echipa."
+        },
+        {
+          "title": "Timpi de răspuns instant",
+          "description": "Răspunsuri în secunde, nu în ore. Cele mai multe coșuri abandonate și clienți pierduți vin din așteptare."
+        },
+        {
+          "title": "Calitate constantă a serviciului",
+          "description": "Fiecare client primește același răspuns corect — fără zile proaste, fără greșeli de începător."
+        },
+        {
+          "title": "Scalează cu cererea",
+          "description": "Black Friday, lansări de produs, momente virale — agentul preia volum de zece ori mai mare fără probleme."
+        },
+        {
+          "title": "Insight despre clienți",
+          "description": "Fiecare conversație e un punct de date. Arătăm ce întreabă clienții cu adevărat, unde se blochează și ce își doresc.",
+          "_roReview": "„Insight” e împrumut din engleză — alternativa „înțelegere despre clienți” sună mai natural; păstrat „insight” fiindcă e termen standard în marketing/SaaS în RO. Verifică."
+        },
+        {
+          "title": "Satisfacție mai mare a clienților",
+          "description": "Răspunsuri rapide, corecte și în limba lor — cele trei lucruri pe care le măsoară orice sondaj CSAT."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Cazuri de utilizare",
+      "items": [
+        {
+          "title": "Suport pentru e-commerce",
+          "description": "Urmărirea comenzilor, întrebări despre produse, retururi și rambursări — automatizat pentru magazinele online în orice limbă în care vinzi."
+        },
+        {
+          "title": "Bancar și financiar",
+          "description": "Întrebări despre cont, suport pentru tranzacții și îndrumare financiară de bază, cu reguli stricte de predare pentru orice subiect sensibil."
+        },
+        {
+          "title": "Turism și ospitalitate",
+          "description": "Rezervări, informații despre trasee, întrebări despre cazare — perfect pentru călătorii care schimbă limba în timpul drumului."
+        },
+        {
+          "title": "Telecom și utilități",
+          "description": "Întrebări despre servicii, schimbări de abonament, întrebări de facturare și asistență tehnică de bază — la volumul real cu care lucrează operatorii."
+        },
+        {
+          "title": "Sănătate",
+          "description": "Programări, informații înainte de consultație, întrebări frecvente despre proceduri — cu conformitate strictă și predare către om pentru orice întrebare clinică.",
+          "_roReview": "Termenul „predare către om” pentru „handover to human” poate suna tehnic; „transfer către un coleg din echipă” ar fi mai cald. Decide după tonul de brand."
+        },
+        {
+          "title": "Servicii publice",
+          "description": "Ajută cetățenii cu informații despre formulare, proceduri și birouri — acces multilingv pentru populații diverse."
+        }
+      ]
+    },
+    "implementation": {
+      "heading": "Procesul de implementare",
+      "items": [
+        {
+          "title": "Evaluarea nevoilor",
+          "description": "Cartografiem volumul de suport, principalele categorii de întrebări și lacunele pe care echipa ta nu le poate acoperi acum."
+        },
+        {
+          "title": "Construirea bazei de cunoștințe",
+          "description": "Construim sursa de adevăr a agentului din centrul tău de ajutor, documentația produselor, tichetele anterioare și interviuri cu echipa."
+        },
+        {
+          "title": "Antrenarea agentului",
+          "description": "Agentul este antrenat pe datele tale și testat în fiecare limbă-țintă cu vorbitori nativi, nu doar cu dezvoltatori."
+        },
+        {
+          "title": "Integrarea pe canale",
+          "description": "Conectăm agentul la site, WhatsApp Business, Instagram, CRM-ul tău și sistemul de tichetare."
+        },
+        {
+          "title": "Testare și ajustare",
+          "description": "Rulăm conversații-test cu echipa ta, corectăm cazurile-limită și mergem live doar după ce calitatea răspunsurilor e verificată."
+        },
+        {
+          "title": "Lansare și monitorizare",
+          "description": "După lansare urmărim fiecare conversație în primele săptămâni, ajustăm răspunsurile și raportăm ce învață agentul."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Gata să oferi clienților tăi suport rapid și multilingv?",
+      "contactButton": "Contactează-ne",
+      "whatsappButton": "Scrie-ne pe WhatsApp",
+      "emailButton": "Trimite un e-mail"
+    }
   }
 }

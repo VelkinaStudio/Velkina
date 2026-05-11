@@ -14,7 +14,11 @@ export function generateMetadata({params}) {
   const messages = DICTS[locale] || en;
   return {
     title: messages.useCases?.metaTitle || 'Velkina — Portfolio',
-    description: messages.useCases?.metaDesc || 'Real projects we shipped: websites, e-commerce, AI agents, cloud and growth systems.'
+    description: messages.useCases?.metaDesc || 'Real projects we shipped: websites, e-commerce, AI agents, cloud and growth systems.',
+    alternates: {
+      canonical: `/${locale}/use-cases`,
+      languages: { en: '/en/use-cases', tr: '/tr/use-cases', ro: '/ro/use-cases' }
+    }
   };
 }
 

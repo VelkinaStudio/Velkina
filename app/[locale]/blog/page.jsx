@@ -14,7 +14,12 @@ export function generateMetadata({params}) {
   const messages = DICTS[locale] || en;
   return {
     title: messages.blog?.metaTitle || 'Velkina — Blog',
-    description: messages.blog?.metaDesc || 'Insights, practical guides and engineering notes from Velkina.'
+    description: messages.blog?.metaDesc || 'Insights, practical guides and engineering notes from Velkina.',
+    alternates: {
+      canonical: `/${locale}/blog`,
+      languages: { en: '/en/blog', tr: '/tr/blog', ro: '/ro/blog' }
+    },
+    robots: { index: false, follow: false }
   };
 }
 

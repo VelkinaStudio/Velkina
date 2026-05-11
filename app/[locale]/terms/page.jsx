@@ -14,7 +14,11 @@ export function generateMetadata({params}) {
   const messages = DICTS[locale] || en;
   return {
     title: messages.terms?.title ? `${messages.terms.title} — Velkina` : 'Terms — Velkina',
-    description: messages.terms?.desc
+    description: messages.terms?.desc,
+    alternates: {
+      canonical: `/${locale}/terms`,
+      languages: { en: '/en/terms', tr: '/tr/terms', ro: '/ro/terms' }
+    }
   };
 }
 

@@ -150,6 +150,27 @@
         {"q": "Reklamları ve web sitesini birlikte yönetebilir misiniz?", "a": "Evet. En sık çalışma şeklimiz bu — siteyi kurar, üzerinde Google/Meta reklamlarını yönetiriz. Tek ekip, tek fatura."},
         {"q": "Henüz ne istediğimi bilmiyorsam?", "a": "Ücretsiz 30 dakikalık görüşmeyi planlayın. İşletmeniz ve bütçeniz için neyin gerçekçi olduğunu söyleriz — doğru ekip olmasak bile."}
       ]
+    },
+    "ledger": {
+      "heading": "Son işler",
+      "subheading": "Velkina İstanbul · Bükreş · Berlin'den çalışıyor",
+      "activeLabel": "Bu hafta aktif",
+      "recentLabel": "Yakın zamanda",
+      "active": [
+        {"date": "2026-05-12", "client": "Lavinia Bistro", "scope": "QR menü, +RO/+DE dil revizyonu", "status": "in_progress"},
+        {"date": "2026-05-09", "client": "EduTurkia", "scope": "Landing sayfası A/B testi yayında", "status": "shipped"},
+        {"date": "2026-05-07", "client": "Atar Avcı", "scope": "AWS altyapı denetimi", "status": "delivered"}
+      ],
+      "recent": [
+        {"date": "2026-04-28", "client": "Rain Group", "scope": "Meta reklam yeniden lansmanı", "outcome": "ROAS 3.4x sürdürülüyor"},
+        {"date": "2026-04-21", "client": "Nova Health", "scope": "Uptime teslimatı", "outcome": "Ç1 SLA %99,97"},
+        {"date": "2026-04-14", "client": "TP Thermoplast", "scope": "İhracat veri pipeline'ı", "outcome": "Canlı"}
+      ],
+      "statusLabels": {
+        "in_progress": "Devam ediyor",
+        "shipped": "Yayında",
+        "delivered": "Teslim edildi"
+      }
     }
   },
   "services": {
@@ -696,5 +717,140 @@
       {"title": "Bütünleşik Sözleşme; Değişiklikler", "body": ["Sipariş ve bu Şartlar birlikte sözleşmenin tamamını oluşturur ve önceki anlaşmaların yerine geçer. Değişiklikler yazılı olmalıdır. Herhangi bir hüküm geçersiz olursa, geri kalanı yürürlükte kalır."]},
       {"title": "Bildirimler", "body": ["Bildirimler, Sipariş'te belirtilen adreslere e-posta yoluyla yapılabilir ve onay üzerine ya da ertesi iş günü alınmış sayılır."]}
     ]
+  },
+  "customerAgent": {
+    "metaTitle": "Velkina — Çok Dilli Yapay Zekâ Müşteri Hizmetleri Ajanları",
+    "metaDescription": "Türkçe, Romence, İngilizce, Almanca ve İspanyolca akıcı yapay zekâ müşteri hizmetleri ajanları. Web, WhatsApp ve sosyal medyada 7/24 destek — daha hızlı yanıt, daha düşük maliyet, daha memnun müşteri.",
+    "hero": {
+      "title": "Çok Dilli Yapay Zekâ Müşteri Hizmetleri Ajanları",
+      "description": "Müşterilerinizle kendi dillerinde konuşan yapay zekâ ajanları — Türkçe, Romence, İngilizce, Almanca, İspanyolca. Gün boyu çevrimiçi, müşterinizin zaten kullandığı kanallara entegre.",
+      "canvasAriaLabel": "Çok dilli yapay zekâ müşteri hizmetleri ajanı görselleştirmesi"
+    },
+    "overview": {
+      "heading": "Genel Bakış",
+      "body": "Müşterilerinizin sorularını yanıtlayan, ürün bilgisi paylaşan ve sorunları konuştukları dilde çözen yapay zekâ ajanları kuruyoruz. Her ajan kendi bilgi tabanınızla eğitilir, marka sesinize uyar ve yerel bağlamı anlar — düz çeviri değil, gerçek bir konuşma."
+    },
+    "features": {
+      "heading": "Temel Özellikler",
+      "items": [
+        {
+          "title": "7/24 Erişilebilirlik",
+          "description": "Müşterileriniz pazar gecesi saat 2'de bile yanıt alır. Kuyruk yok, bekleme yok, 'mesai dışı' otomatik yanıtı yok."
+        },
+        {
+          "title": "Hazırda Beş Dil",
+          "description": "Türkçe, Romence, İngilizce, Almanca ve İspanyolca — her biri makine çevirisi değil, doğal konuşan. Talep üzerine başka diller de eklenir."
+        },
+        {
+          "title": "Kültürel Anlayış",
+          "description": "Ajan; ton, resmiyet ve yerel ipuçlarını yakalar, konuşma robotik değil insan gibi hissettirir."
+        },
+        {
+          "title": "Çok Kanallı Dağıtım",
+          "description": "Web sitenizde, WhatsApp'ta, Instagram'da, Messenger'da ve e-postada canlı — tek bir beyin, tüm kanallar."
+        },
+        {
+          "title": "Her Konuşmadan Öğrenir",
+          "description": "Sohbet kayıtlarını her hafta inceler, gerçek soruları bilgi tabanına geri besleriz; ajan her ay biraz daha keskinleşir."
+        },
+        {
+          "title": "İnsana Pürüzsüz Devir",
+          "description": "Soru karmaşıksa veya önemliyse, ajan konuşmayı tüm bağlamıyla birlikte ekibinize devreder."
+        }
+      ]
+    },
+    "benefits": {
+      "heading": "Faydalar",
+      "items": [
+        {
+          "title": "Düşük Destek Maliyeti",
+          "description": "Gelen taleplerin rutin %60-80'ini personel artırmadan karşılarsınız."
+        },
+        {
+          "title": "Anında Yanıt Süresi",
+          "description": "Saatler değil saniyeler içinde yanıt. Çoğu terk edilmiş sepet ve kaybedilen fırsat bekleme yüzünden olur."
+        },
+        {
+          "title": "Tutarlı Hizmet Kalitesi",
+          "description": "Her müşteri aynı doğru yanıtı alır — kötü gün yok, yeni başlayan hatası yok."
+        },
+        {
+          "title": "Talebe Göre Ölçeklenir",
+          "description": "Kara Cuma, ürün lansmanları, viral anlar — ajan on katı hacmi sorunsuz karşılar."
+        },
+        {
+          "title": "Müşteri İçgörüsü",
+          "description": "Her konuşma bir veri noktasıdır. Müşterilerin gerçekten ne sorduğunu, nerede takıldığını, ne istediğini ortaya çıkarırız."
+        },
+        {
+          "title": "Daha Yüksek Müşteri Memnuniyeti",
+          "description": "Hızlı, doğru, kendi dilinde yanıt — her CSAT anketinin ölçtüğü üç şey."
+        }
+      ]
+    },
+    "useCases": {
+      "heading": "Kullanım Senaryoları",
+      "items": [
+        {
+          "title": "E-ticaret Desteği",
+          "description": "Sipariş takibi, ürün soruları, iade ve geri ödeme — satış yaptığınız her dilde otomatik."
+        },
+        {
+          "title": "Bankacılık ve Finans",
+          "description": "Hesap sorguları, işlem desteği ve temel finansal yönlendirme — hassas konularda katı devir kurallarıyla."
+        },
+        {
+          "title": "Seyahat ve Konaklama",
+          "description": "Rezervasyon, güzergâh bilgisi, konaklama soruları — yolculuk sırasında dil değiştiren misafirler için ideal."
+        },
+        {
+          "title": "Telekom ve Faturalı Hizmetler",
+          "description": "Servis sorguları, paket değişiklikleri, fatura soruları ve temel teknik destek — telekomların gerçekten karşılaştığı hacimde."
+        },
+        {
+          "title": "Sağlık Hizmetleri",
+          "description": "Randevu planlama, ziyaret öncesi bilgi, prosedür SSS — sıkı uyum ve klinik sorularda insana devir."
+        },
+        {
+          "title": "Kamu Hizmetleri",
+          "description": "Form, prosedür ve birim bilgisiyle vatandaşa yardım — farklı dilden nüfuslara erişim."
+        }
+      ]
+    },
+    "implementation": {
+      "heading": "Uygulama Süreci",
+      "items": [
+        {
+          "title": "İhtiyaç Değerlendirmesi",
+          "description": "Destek hacminizi, en sık gelen soru kategorilerini ve mevcut ekibinizin kapatamadığı boşlukları çıkarırız."
+        },
+        {
+          "title": "Bilgi Tabanı Kurulumu",
+          "description": "Yardım merkeziniz, ürün dokümanlarınız, eski biletler ve ekip görüşmelerinden ajanın doğru bilgi kaynağını oluştururuz."
+        },
+        {
+          "title": "Ajan Eğitimi",
+          "description": "Ajan, verilerinizle eğitilir ve her hedef dilde ana dili konuşan kişilerle test edilir — sadece geliştiriciyle değil."
+        },
+        {
+          "title": "Kanal Entegrasyonu",
+          "description": "Ajanı web sitenize, WhatsApp Business'a, Instagram'a, CRM ve bilet sisteminize bağlarız."
+        },
+        {
+          "title": "Test ve İyileştirme",
+          "description": "Ekibinizle gölge konuşmalar yürütürüz, kenar durumları düzeltir ve yanıt kalitesi doğrulanmadan yayına almayız."
+        },
+        {
+          "title": "Yayın ve İzleme",
+          "description": "Yayın sonrası ilk haftalarda her konuşmayı izler, yanıtları iyileştirir ve ajanın öğrendiklerini raporlarız."
+        }
+      ]
+    },
+    "cta": {
+      "heading": "Müşterilerinize hızlı ve çok dilli destek sunmaya hazır mısınız?",
+      "contactButton": "Bize Ulaşın",
+      "whatsappButton": "WhatsApp'tan yazın",
+      "emailButton": "E-posta gönderin"
+    }
   }
 }

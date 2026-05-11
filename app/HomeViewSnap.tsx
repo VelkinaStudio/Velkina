@@ -44,6 +44,10 @@ export default function HomeView({messages, locale}: HomeViewProps) {
   const m2 = h?.metrics2 || {};
   const heroData = h?.hero || {};
   const testimonials = Array.isArray(h?.testimonials?.items) ? h.testimonials.items : [];
+  const ledger = h?.ledger || {};
+  const ledgerActive: any[] = Array.isArray(ledger?.active) ? ledger.active : [];
+  const ledgerRecent: any[] = Array.isArray(ledger?.recent) ? ledger.recent : [];
+  const statusLabels: Record<string, string> = ledger?.statusLabels || {};
 
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const faqs: any[] = Array.isArray(h?.faq?.items) ? h.faq.items : [];
@@ -111,35 +115,49 @@ export default function HomeView({messages, locale}: HomeViewProps) {
             </div>
 
             <div className="lg:col-span-4 reveal-on-scroll" data-delay="200">
-              <div className="grid grid-cols-2 gap-px bg-vkborder rounded-md overflow-hidden border border-vkborder">
-                <div className="bg-vkbg p-5">
-                  <div className="font-heading text-3xl md:text-4xl text-vktext">
-                    <span className="vk-countup" data-to={String(m2?.shipped?.value ?? 120)}>0</span>+
-                  </div>
-                  <div className="text-vkmuted text-xs mt-2 leading-tight uppercase tracking-wider">{m2?.shipped?.label}</div>
+              <section className="vk-ledger" data-vk-section="ledger" aria-label={ledger?.heading}>
+                <div className="vk-ledger__header">
+                  <h2 className="vk-ledger__heading">{ledger?.heading}</h2>
+                  <p className="vk-ledger__sub">{ledger?.subheading}</p>
                 </div>
-                <div className="bg-vkbg p-5">
-                  <div className="font-heading text-3xl md:text-4xl text-vksuccess">
-                    <span className="vk-countup" data-to={String(m2?.uptime?.value ?? 99.9)} data-decimals="1">0.0</span>%
-                  </div>
-                  <div className="text-vkmuted text-xs mt-2 leading-tight uppercase tracking-wider">{m2?.uptime?.label}</div>
+
+                <div className="vk-ledger__group">
+                  <span className="vk-ledger__label">
+                    <span className="vk-ledger__pulse" aria-hidden="true" />
+                    {ledger?.activeLabel}
+                  </span>
+                  {ledgerActive.map((row: any, i: number) => (
+                    <div
+                      className="vk-ledger__row reveal-on-scroll"
+                      style={{transitionDelay: `${i * 80}ms`}}
+                      key={`active-${row.date}-${row.client}`}
+                    >
+                      <time className="vk-ledger__date" dateTime={row.date}>{row.date}</time>
+                      <span className="vk-ledger__client">{row.client}</span>
+                      <span className="vk-ledger__scope">{row.scope}</span>
+                      <span className={`vk-ledger__status vk-ledger__status--${row.status}`}>
+                        {statusLabels?.[row.status] ?? row.status}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-                <div className="bg-vkbg p-5">
-                  <div className="font-heading text-3xl md:text-4xl text-vkaccent">
-                    <span className="vk-countup" data-to={String(m2?.launchTime?.value ?? 5)}>0</span><span className="text-xl ml-1">{lang === 'tr' ? 'hf' : lang === 'ro' ? 'săpt' : 'wk'}</span>
-                  </div>
-                  <div className="text-vkmuted text-xs mt-2 leading-tight uppercase tracking-wider">{m2?.launchTime?.label}</div>
+
+                <div className="vk-ledger__group">
+                  <span className="vk-ledger__label vk-ledger__label--muted">{ledger?.recentLabel}</span>
+                  {ledgerRecent.map((row: any, i: number) => (
+                    <div
+                      className="vk-ledger__row reveal-on-scroll"
+                      style={{transitionDelay: `${(ledgerActive.length + i) * 80}ms`}}
+                      key={`recent-${row.date}-${row.client}`}
+                    >
+                      <time className="vk-ledger__date" dateTime={row.date}>{row.date}</time>
+                      <span className="vk-ledger__client">{row.client}</span>
+                      <span className="vk-ledger__scope">{row.scope}</span>
+                      <span className="vk-ledger__outcome">{row.outcome}</span>
+                    </div>
+                  ))}
                 </div>
-                <div className="bg-vkbg p-5">
-                  <div className="font-heading text-3xl md:text-4xl text-vktext">
-                    <span className="vk-countup" data-to={String(m2?.csat?.value ?? 95)}>0</span>%
-                  </div>
-                  <div className="text-vkmuted text-xs mt-2 leading-tight uppercase tracking-wider">{m2?.csat?.label}</div>
-                </div>
-              </div>
-              <div className="mt-6 text-vkmuted text-xs font-mono uppercase tracking-wider">
-                {lang === 'tr' ? 'Aktif olduğumuz yerler' : lang === 'ro' ? 'Activi în' : 'Active in'} <span className="text-vktext">Istanbul · Bucharest · Berlin</span>
-              </div>
+              </section>
             </div>
           </div>
         </div>
@@ -288,34 +306,8 @@ export default function HomeView({messages, locale}: HomeViewProps) {
         </div>
       </section>
 
-      {/* RESULTS METRICS */}
-      <section id="results" className="py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-2xl mb-12 reveal-on-scroll">
-            <div className="text-[11px] uppercase tracking-[0.28em] text-vkaccent font-mono mb-4">{h?.resultsIntro?.eyebrow}</div>
-            <h2 className="display-1 text-3xl md:text-5xl text-vktext">{h?.resultsIntro?.title}</h2>
-          </div>
-          <div className="grid gap-px grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 bg-vkborder border border-vkborder rounded-md overflow-hidden">
-            {[
-              {val: `${m2?.shipped?.value ?? 120}`, suffix: '+', label: m2?.shipped?.label, color: 'text-vktext'},
-              {val: `${m2?.leadsIncrease?.value ?? 86}`, prefix: '+', suffix: '%', label: m2?.leadsIncrease?.label, color: 'text-vksuccess'},
-              {val: `${m2?.supportReduction?.value ?? 40}`, prefix: '−', suffix: '%', label: m2?.supportReduction?.label, color: 'text-vkaccent'},
-              {val: `${m2?.csat?.value ?? 95}`, suffix: '%', label: m2?.csat?.label, color: 'text-vktext'},
-              {val: `${m2?.launchTime?.value ?? 5}`, label: m2?.launchTime?.label, color: 'text-vktext'},
-              {val: `${m2?.uptime?.value ?? 99.9}`, suffix: '%', decimals: 1, label: m2?.uptime?.label, color: 'text-vktext'}
-            ].map((stat, idx) => (
-              <div key={idx} className="bg-vkbg p-6 text-center reveal-on-scroll" data-delay={String(idx * 50)}>
-                <div className={`font-heading text-3xl md:text-4xl ${stat.color}`}>
-                  {stat.prefix}
-                  <span className="vk-countup" data-to={stat.val} data-decimals={stat.decimals ? String(stat.decimals) : undefined}>0</span>
-                  {stat.suffix}
-                </div>
-                <div className="text-vkmuted text-[10px] mt-3 leading-tight uppercase tracking-wider">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* RESULTS METRICS — removed 2026-05-12. The unattributed aggregate metrics (120/+86%/-40%/95%/5/99.9) competed with the per-client metrics in testimonials/use-cases.
+           Credibility is now carried by the Recent Work ledger in the hero (real client names + dates) and the testimonials section below (real names + measurable per-client outcomes). */}
 
       {/* TESTIMONIALS */}
       <section id="testimonials" className="py-24 md:py-32 border-y border-vkborder bg-gradient-to-b from-transparent via-vksurface/30 to-transparent">

@@ -20,6 +20,10 @@ export function generateMetadata({params}) {
   return {
     title: TITLES[locale] || TITLES.en,
     description: DESCS[locale] || DESCS.en,
+    alternates: {
+      canonical: `/${locale}/demo/qr-menu`,
+      languages: { en: '/en/demo/qr-menu', tr: '/tr/demo/qr-menu', ro: '/ro/demo/qr-menu' }
+    }
   };
 }
 
