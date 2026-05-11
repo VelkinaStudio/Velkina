@@ -8,11 +8,20 @@ module.exports = {
     extend: {
       colors: {
         vkbg: 'var(--vk-bg)',
-        vkcyan: 'var(--vk-cyan)',
-        vkpink: 'var(--vk-pink)',
-        vkmint: 'var(--vk-mint)',
+        vksurface: 'var(--vk-surface)',
+        vksurface2: 'var(--vk-surface-2)',
         vktext: 'var(--vk-text)',
-        vkpurple: 'var(--vk-purple)'
+        vkmuted: 'var(--vk-text-muted)',
+        vkaccent: 'var(--vk-accent)',
+        vkaccentsoft: 'var(--vk-accent-soft)',
+        vkaccentdeep: 'var(--vk-accent-deep)',
+        vksuccess: 'var(--vk-success)',
+        vkinfo: 'var(--vk-info)',
+        /* Legacy aliases — kept so existing className references don't break */
+        vkcyan: 'var(--vk-info)',
+        vkpink: 'var(--vk-accent)',
+        vkmint: 'var(--vk-success)',
+        vkpurple: 'var(--vk-accent-soft)'
       },
       boxShadow: {
         soft: 'var(--vk-shadow-soft)',

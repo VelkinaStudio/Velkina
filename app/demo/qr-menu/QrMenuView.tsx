@@ -4,7 +4,7 @@ import React, {useEffect, useMemo, useState} from 'react';
 import Link from 'next/link';
 import type {Locale} from '../../../i18n/messages';
 
-type MenuLang = 'en' | 'tr' | 'de';
+type MenuLang = 'en' | 'tr' | 'ro' | 'de';
 
 type LocalizedString = Record<MenuLang, string>;
 
@@ -19,8 +19,8 @@ type MenuItem = {
   price: number;
   allergens?: Allergen[];
   diet?: DietTag[];
-  /** CSS gradient art for the photo */
-  art: string;
+  /** Path to photograph */
+  photo: string;
 };
 
 type Category = {
@@ -35,11 +35,13 @@ const RESTAURANT = {
   tagline: {
     en: 'Mediterranean kitchen · Made today',
     tr: 'Akdeniz mutfağı · Bugünün ürünleri',
+    ro: 'Bucătărie mediteraneană · Făcut azi',
     de: 'Mediterrane Küche · Heute frisch',
   } as LocalizedString,
   location: {
     en: 'Bebek, Istanbul · Open until 23:30',
     tr: 'Bebek, İstanbul · 23:30’a kadar açık',
+    ro: 'Bebek, Istanbul · Deschis până la 23:30',
     de: 'Bebek, Istanbul · Geöffnet bis 23:30',
   } as LocalizedString,
 };
@@ -47,229 +49,242 @@ const RESTAURANT = {
 const CATS: Category[] = [
   {
     id: 'starters',
-    name: {en: 'Starters', tr: 'Başlangıçlar', de: 'Vorspeisen'},
+    name: {en: 'Starters', tr: 'Başlangıçlar', ro: 'Aperitive', de: 'Vorspeisen'},
     items: [
       {
         id: 'burrata',
-        name: {en: 'Burrata Salad', tr: 'Burrata Salatası', de: 'Burrata-Salat'},
+        name: {en: 'Burrata Salad', tr: 'Burrata Salatası', ro: 'Salată cu Burrata', de: 'Burrata-Salat'},
         desc: {
           en: 'Creamy burrata, heirloom tomato, basil oil, sourdough crumb.',
           tr: 'Kremalı burrata, geleneksel domates, fesleğenli zeytinyağı, ekşi maya kırıntı.',
+          ro: 'Burrata cremoasă, roșii tradiționale, ulei de busuioc, firimituri de pâine cu maia.',
           de: 'Cremige Burrata, alte Tomatensorten, Basilikumöl, Sauerteigbrösel.',
         },
         price: 14,
         allergens: ['dairy', 'gluten'],
         diet: ['veg'],
-        art: 'radial-gradient(circle at 30% 35%, #fff8d8 0%, #fef0a3 18%, #f4c061 38%, #e8842d 65%, #7c3a14 100%)',
+        photo: '/food/burrata.jpg',
       },
       {
         id: 'tartare',
-        name: {en: 'Beef Tartare', tr: 'Dana Tartar', de: 'Rindertatar'},
+        name: {en: 'Beef Tartare', tr: 'Dana Tartar', ro: 'Tartar de Vită', de: 'Rindertatar'},
         desc: {
           en: 'Hand-cut tenderloin, capers, shallot, smoked yolk, focaccia.',
           tr: 'Bıçakla doğranmış bonfile, kapari, arpacık, tütsülü yumurta sarısı, focaccia.',
+          ro: 'Mușchi de vită tăiat cu mâna, capere, șalotă, gălbenuș afumat, focaccia.',
           de: 'Handgeschnittenes Filet, Kapern, Schalotte, geräuchertes Eigelb, Focaccia.',
         },
         price: 19,
         allergens: ['egg', 'gluten'],
         diet: ['chef'],
-        art: 'radial-gradient(ellipse at 40% 50%, #f7c785 0%, #d8682f 22%, #8b2c12 60%, #3a1108 100%)',
+        photo: '/food/tartare.jpg',
       },
       {
         id: 'octopus',
-        name: {en: 'Charred Octopus', tr: 'Kömürlü Ahtapot', de: 'Gegrillter Oktopus'},
+        name: {en: 'Charred Octopus', tr: 'Kömürlü Ahtapot', ro: 'Caracatiță la Grătar', de: 'Gegrillter Oktopus'},
         desc: {
           en: 'Slow-cooked, paprika oil, white bean purée, lemon.',
           tr: 'Yavaş pişmiş, kırmızıbiberli yağ, beyaz fasulye püresi, limon.',
+          ro: 'Gătită lent, ulei de paprika, piure de fasole albă, lămâie.',
           de: 'Langsam gegart, Paprikaöl, weiße Bohnencreme, Zitrone.',
         },
         price: 22,
         allergens: ['fish'],
         diet: ['gf'],
-        art: 'radial-gradient(ellipse at 50% 60%, #ffd9a8 0%, #c87a4d 22%, #6a2a18 55%, #1d0907 100%)',
+        photo: '/food/octopus.jpg',
       },
     ],
   },
   {
     id: 'mains',
-    name: {en: 'Mains', tr: 'Ana Yemekler', de: 'Hauptspeisen'},
+    name: {en: 'Mains', tr: 'Ana Yemekler', ro: 'Feluri Principale', de: 'Hauptspeisen'},
     items: [
       {
         id: 'risotto',
-        name: {en: 'Truffle Risotto', tr: 'Trüflü Risotto', de: 'Trüffel-Risotto'},
+        name: {en: 'Truffle Risotto', tr: 'Trüflü Risotto', ro: 'Risotto cu Trufe', de: 'Trüffel-Risotto'},
         desc: {
           en: 'Carnaroli rice, parmigiano, summer truffle, sage butter.',
           tr: 'Carnaroli pirinç, parmigiano, yaz trüfü, adaçayılı tereyağı.',
+          ro: 'Orez Carnaroli, parmigiano, trufe de vară, unt cu salvie.',
           de: 'Carnaroli-Reis, Parmigiano, Sommertrüffel, Salbeibutter.',
         },
         price: 24,
         allergens: ['dairy', 'gluten'],
         diet: ['veg', 'chef'],
-        art: 'radial-gradient(ellipse at 50% 50%, #fff5dd 0%, #f0d796 18%, #b88341 50%, #4d2d12 100%)',
+        photo: '/food/risotto.jpg',
       },
       {
         id: 'lamb',
-        name: {en: 'Lamb Chops', tr: 'Kuzu Pirzola', de: 'Lammkoteletts'},
+        name: {en: 'Lamb Chops', tr: 'Kuzu Pirzola', ro: 'Cotlete de Miel', de: 'Lammkoteletts'},
         desc: {
           en: 'Rosemary jus, baby spinach, charred leeks, anchovy butter.',
           tr: 'Biberiyeli jus, taze ıspanak, közlenmiş pırasa, hamsi tereyağı.',
+          ro: 'Sos cu rozmarin, spanac tânăr, praz la grătar, unt cu anșoa.',
           de: 'Rosmarinjus, Babyspinat, gegrillter Lauch, Sardellenbutter.',
         },
         price: 32,
         allergens: ['dairy', 'fish'],
         diet: ['gf'],
-        art: 'radial-gradient(ellipse at 45% 55%, #ffc89a 0%, #c0682b 22%, #5d2110 65%, #1a0604 100%)',
+        photo: '/food/lamb.jpg',
       },
       {
         id: 'seabass',
-        name: {en: 'Whole Sea Bass', tr: 'Bütün Levrek', de: 'Ganzer Wolfsbarsch'},
+        name: {en: 'Whole Sea Bass', tr: 'Bütün Levrek', ro: 'Biban de Mare Întreg', de: 'Ganzer Wolfsbarsch'},
         desc: {
           en: 'Fennel, salt-crust, citrus oil, capers, soft potatoes.',
           tr: 'Rezene, tuz kabuğu, narenciyeli yağ, kapari, yumuşak patates.',
+          ro: 'Fenicul, crustă de sare, ulei de citrice, capere, cartofi noi.',
           de: 'Fenchel, Salzkruste, Zitrusöl, Kapern, weiche Kartoffeln.',
         },
         price: 28,
         allergens: ['fish'],
         diet: ['gf'],
-        art: 'radial-gradient(ellipse at 50% 45%, #fffaef 0%, #d8d4be 30%, #888776 60%, #2c2a23 100%)',
+        photo: '/food/seabass.jpg',
       },
       {
         id: 'mushroom',
-        name: {en: 'Wild Mushroom Pasta', tr: 'Yaban Mantarlı Makarna', de: 'Wildpilz-Pasta'},
+        name: {en: 'Wild Mushroom Pasta', tr: 'Yaban Mantarlı Makarna', ro: 'Paste cu Ciuperci de Pădure', de: 'Wildpilz-Pasta'},
         desc: {
           en: 'Tagliatelle, porcini, garlic confit, herbs.',
           tr: 'Tagliatelle, porcini, sarımsak konfit, taze otlar.',
+          ro: 'Tagliatelle, hribi, usturoi confit, ierburi proaspete.',
           de: 'Tagliatelle, Steinpilze, Knoblauch-Confit, Kräuter.',
         },
         price: 21,
         allergens: ['gluten', 'egg'],
         diet: ['veg'],
-        art: 'radial-gradient(ellipse at 50% 50%, #fce8b5 0%, #d39f54 22%, #6e3c1c 60%, #2a1208 100%)',
+        photo: '/food/mushroom.jpg',
       },
     ],
   },
   {
     id: 'desserts',
-    name: {en: 'Desserts', tr: 'Tatlılar', de: 'Desserts'},
+    name: {en: 'Desserts', tr: 'Tatlılar', ro: 'Deserturi', de: 'Desserts'},
     items: [
       {
         id: 'tiramisu',
-        name: {en: 'Tiramisu', tr: 'Tiramisu', de: 'Tiramisu'},
+        name: {en: 'Tiramisu', tr: 'Tiramisu', ro: 'Tiramisu', de: 'Tiramisu'},
         desc: {
           en: 'Mascarpone, espresso-soaked savoiardi, cocoa.',
           tr: 'Mascarpone, espressoda yumuşatılmış savoiardi, kakao.',
+          ro: 'Mascarpone, pișcoturi savoiardi înmuiate în espresso, cacao.',
           de: 'Mascarpone, in Espresso getränkte Savoiardi, Kakao.',
         },
         price: 9,
         allergens: ['dairy', 'gluten', 'egg'],
         diet: ['veg'],
-        art: 'linear-gradient(180deg, #f6e4c0 0%, #c79a66 30%, #6a3a1c 60%, #1a0c06 100%)',
+        photo: '/food/tiramisu.jpg',
       },
       {
         id: 'pana',
-        name: {en: 'Vanilla Panna Cotta', tr: 'Vanilyalı Panna Cotta', de: 'Vanille-Panna-Cotta'},
+        name: {en: 'Vanilla Panna Cotta', tr: 'Vanilyalı Panna Cotta', ro: 'Panna Cotta cu Vanilie', de: 'Vanille-Panna-Cotta'},
         desc: {
           en: 'Tahitian vanilla, raspberry coulis, almond crumble.',
           tr: 'Tahiti vanilyası, ahududu sosu, badem kırma.',
+          ro: 'Vanilie de Tahiti, sos de zmeură, crumble de migdale.',
           de: 'Tahiti-Vanille, Himbeercoulis, Mandelcrumble.',
         },
         price: 8,
         allergens: ['dairy', 'nuts'],
         diet: ['veg', 'gf'],
-        art: 'radial-gradient(circle at 40% 35%, #ffffff 0%, #f9eede 22%, #d57e8e 60%, #8a1f3c 100%)',
+        photo: '/food/pana.jpg',
       },
     ],
   },
   {
     id: 'drinks',
-    name: {en: 'Drinks', tr: 'İçecekler', de: 'Getränke'},
+    name: {en: 'Drinks', tr: 'İçecekler', ro: 'Băuturi', de: 'Getränke'},
     items: [
       {
         id: 'spritz',
-        name: {en: 'Lavinia Spritz', tr: 'Lavinia Spritz', de: 'Lavinia Spritz'},
+        name: {en: 'Lavinia Spritz', tr: 'Lavinia Spritz', ro: 'Lavinia Spritz', de: 'Lavinia Spritz'},
         desc: {
           en: 'Aperol, prosecco, soda, blood orange.',
           tr: 'Aperol, prosecco, soda, kan portakalı.',
+          ro: 'Aperol, prosecco, sifon, portocală roșie.',
           de: 'Aperol, Prosecco, Soda, Blutorange.',
         },
         price: 11,
         diet: ['chef'],
-        art: 'linear-gradient(180deg, #ffd1a8 0%, #ff8a3d 35%, #d63a14 70%, #4d0d04 100%)',
+        photo: '/food/spritz.jpg',
       },
       {
         id: 'wine',
-        name: {en: 'House Red, glass', tr: 'Ev Şarabı (Kırmızı), kadeh', de: 'Hauswein Rot, Glas'},
+        name: {en: 'House Red, glass', tr: 'Ev Şarabı (Kırmızı), kadeh', ro: 'Vin Roșu al Casei, pahar', de: 'Hauswein Rot, Glas'},
         desc: {
           en: 'Anatolian Boğazkere, plum and cocoa.',
           tr: 'Anadolu Boğazkere, erik ve kakao notaları.',
+          ro: 'Boğazkere din Anatolia, note de prună și cacao.',
           de: 'Anatolischer Boğazkere, Pflaume und Kakao.',
         },
         price: 9,
         diet: [],
-        art: 'linear-gradient(180deg, #6c1f2c 0%, #3a0d18 60%, #170509 100%)',
+        photo: '/food/wine.jpg',
       },
       {
         id: 'water',
-        name: {en: 'Sparkling Water 0.5L', tr: 'Maden Suyu 0.5L', de: 'Sprudelwasser 0,5L'},
-        desc: {en: 'Glass bottle.', tr: 'Cam şişe.', de: 'Glasflasche.'},
+        name: {en: 'Sparkling Water 0.5L', tr: 'Maden Suyu 0.5L', ro: 'Apă Minerală 0.5L', de: 'Sprudelwasser 0,5L'},
+        desc: {en: 'Glass bottle.', tr: 'Cam şişe.', ro: 'Sticlă de sticlă.', de: 'Glasflasche.'},
         price: 3,
-        art: 'linear-gradient(180deg, #d8f1ff 0%, #8fb9d4 50%, #294659 100%)',
+        photo: '/food/water.jpg',
       },
     ],
   },
 ];
 
 const ALLERGEN_LABEL: Record<Allergen, LocalizedString> = {
-  gluten: {en: 'gluten', tr: 'gluten', de: 'Gluten'},
-  dairy: {en: 'milk', tr: 'süt', de: 'Milch'},
-  nuts: {en: 'nuts', tr: 'kuruyemiş', de: 'Nüsse'},
-  egg: {en: 'egg', tr: 'yumurta', de: 'Ei'},
-  shellfish: {en: 'shellfish', tr: 'kabuklu', de: 'Schalentiere'},
-  fish: {en: 'fish', tr: 'balık', de: 'Fisch'},
-  soy: {en: 'soy', tr: 'soya', de: 'Soja'},
+  gluten: {en: 'gluten', tr: 'gluten', ro: 'gluten', de: 'Gluten'},
+  dairy: {en: 'milk', tr: 'süt', ro: 'lactate', de: 'Milch'},
+  nuts: {en: 'nuts', tr: 'kuruyemiş', ro: 'nuci', de: 'Nüsse'},
+  egg: {en: 'egg', tr: 'yumurta', ro: 'ou', de: 'Ei'},
+  shellfish: {en: 'shellfish', tr: 'kabuklu', ro: 'crustacee', de: 'Schalentiere'},
+  fish: {en: 'fish', tr: 'balık', ro: 'pește', de: 'Fisch'},
+  soy: {en: 'soy', tr: 'soya', ro: 'soia', de: 'Soja'},
 };
 
 const DIET_LABEL: Record<DietTag, LocalizedString> = {
-  veg: {en: 'vegetarian', tr: 'vejetaryen', de: 'vegetarisch'},
-  vegan: {en: 'vegan', tr: 'vegan', de: 'vegan'},
-  gf: {en: 'gluten-free', tr: 'glütensiz', de: 'glutenfrei'},
-  spicy: {en: 'spicy', tr: 'acılı', de: 'scharf'},
-  chef: {en: "chef's pick", tr: 'şefin seçimi', de: 'Empfehlung'},
+  veg: {en: 'vegetarian', tr: 'vejetaryen', ro: 'vegetarian', de: 'vegetarisch'},
+  vegan: {en: 'vegan', tr: 'vegan', ro: 'vegan', de: 'vegan'},
+  gf: {en: 'gluten-free', tr: 'glütensiz', ro: 'fără gluten', de: 'glutenfrei'},
+  spicy: {en: 'spicy', tr: 'acılı', ro: 'picant', de: 'scharf'},
+  chef: {en: "chef's pick", tr: 'şefin seçimi', ro: 'alegerea șefului', de: 'Empfehlung'},
 };
 
 const UI: Record<string, LocalizedString> = {
-  add: {en: 'Add', tr: 'Ekle', de: 'Hinzufügen'},
-  cart: {en: 'Your order', tr: 'Siparişiniz', de: 'Ihre Bestellung'},
-  total: {en: 'Total', tr: 'Toplam', de: 'Gesamt'},
-  callWaiter: {en: 'Call waiter', tr: 'Garson çağır', de: 'Kellner rufen'},
-  requestBill: {en: 'Request bill', tr: 'Hesabı iste', de: 'Rechnung'},
-  empty: {en: 'No items yet — tap a dish to add it.', tr: 'Henüz seçim yok — bir yemeğe dokunarak ekleyin.', de: 'Noch nichts — Gericht antippen, um es hinzuzufügen.'},
-  table: {en: 'Table', tr: 'Masa', de: 'Tisch'},
-  waiterToast: {en: 'A waiter is on the way.', tr: 'Garson yola çıktı.', de: 'Ein Kellner kommt.'},
-  billToast: {en: 'Your bill is being prepared.', tr: 'Hesabınız hazırlanıyor.', de: 'Rechnung wird vorbereitet.'},
-  poweredBy: {en: 'QR menu by Velkina', tr: 'QR menü: Velkina', de: 'QR-Menü von Velkina'},
-  info: {en: 'About this demo', tr: 'Bu demo hakkında', de: 'Über diese Demo'},
-  remove: {en: 'Remove', tr: 'Kaldır', de: 'Entfernen'},
-  close: {en: 'Close', tr: 'Kapat', de: 'Schließen'},
-  search: {en: 'Search the menu', tr: 'Menüde ara', de: 'Speisekarte durchsuchen'},
-  noResult: {en: 'No matches.', tr: 'Sonuç yok.', de: 'Keine Treffer.'},
+  add: {en: 'Add', tr: 'Ekle', ro: 'Adaugă', de: 'Hinzufügen'},
+  cart: {en: 'Your order', tr: 'Siparişiniz', ro: 'Comanda ta', de: 'Ihre Bestellung'},
+  total: {en: 'Total', tr: 'Toplam', ro: 'Total', de: 'Gesamt'},
+  callWaiter: {en: 'Call waiter', tr: 'Garson çağır', ro: 'Cheamă ospătarul', de: 'Kellner rufen'},
+  requestBill: {en: 'Request bill', tr: 'Hesabı iste', ro: 'Cere nota', de: 'Rechnung'},
+  empty: {en: 'No items yet — tap a dish to add it.', tr: 'Henüz seçim yok — bir yemeğe dokunarak ekleyin.', ro: 'Niciun produs încă — atinge un fel pentru a-l adăuga.', de: 'Noch nichts — Gericht antippen, um es hinzuzufügen.'},
+  table: {en: 'Table', tr: 'Masa', ro: 'Masa', de: 'Tisch'},
+  waiterToast: {en: 'A waiter is on the way.', tr: 'Garson yola çıktı.', ro: 'Un ospătar vine imediat.', de: 'Ein Kellner kommt.'},
+  billToast: {en: 'Your bill is being prepared.', tr: 'Hesabınız hazırlanıyor.', ro: 'Nota se pregătește.', de: 'Rechnung wird vorbereitet.'},
+  poweredBy: {en: 'QR menu by Velkina', tr: 'QR menü: Velkina', ro: 'Meniu QR de la Velkina', de: 'QR-Menü von Velkina'},
+  info: {en: 'About this demo', tr: 'Bu demo hakkında', ro: 'Despre acest demo', de: 'Über diese Demo'},
+  remove: {en: 'Remove', tr: 'Kaldır', ro: 'Elimină', de: 'Entfernen'},
+  close: {en: 'Close', tr: 'Kapat', ro: 'Închide', de: 'Schließen'},
+  search: {en: 'Search the menu', tr: 'Menüde ara', ro: 'Caută în meniu', de: 'Speisekarte durchsuchen'},
+  noResult: {en: 'No matches.', tr: 'Sonuç yok.', ro: 'Niciun rezultat.', de: 'Keine Treffer.'},
 };
 
-const UI_ITEM_SINGULAR: LocalizedString = {en: 'item', tr: 'ürün', de: 'Artikel'};
-const UI_ITEM_PLURAL: LocalizedString = {en: 'items', tr: 'ürün', de: 'Artikel'};
+const UI_ITEM_SINGULAR: LocalizedString = {en: 'item', tr: 'ürün', ro: 'produs', de: 'Artikel'};
+const UI_ITEM_PLURAL: LocalizedString = {en: 'items', tr: 'ürün', ro: 'produse', de: 'Artikel'};
 
 const INFO_BODY_1: LocalizedString = {
   en: 'This is a working demo of a QR menu Velkina builds for restaurants, cafés, and bars. Every item, photo, language toggle, and action is real — only the basket and waiter calls are scripted (no kitchen connected).',
   tr: 'Bu, Velkina’nın restoranlar, kafeler ve barlar için hazırladığı QR menünün çalışan bir demosu. Her ürün, fotoğraf, dil seçici ve eylem gerçek — yalnızca sepet ve garson çağrısı simüle edilmiştir (mutfağa bağlı değildir).',
+  ro: 'Acesta este un demo funcțional al meniului QR pe care Velkina îl construiește pentru restaurante, cafenele și baruri. Fiecare produs, fotografie, comutator de limbă și acțiune este real — doar coșul și apelul ospătarului sunt simulate (nu este conectată o bucătărie).',
   de: 'Eine funktionierende Demo des QR-Menüs, das Velkina für Restaurants, Cafés und Bars baut. Jeder Eintrag, jedes Foto, jede Sprachumschaltung und jede Aktion ist echt — nur Warenkorb und Kellnerruf sind simuliert (keine Küche verbunden).',
 };
 const INFO_BODY_2: LocalizedString = {
   en: 'Real installs include a manager dashboard for editing items, prices and translations, table-specific QR codes, allergen disclosure, and Google-indexed menu pages so your restaurant shows up when guests search.',
   tr: 'Gerçek kurulumlarda; ürünleri, fiyatları ve çevirileri düzenleyebileceğiniz yönetici paneli, masa bazlı QR kodlar, alerjen bilgisi ve misafirleriniz aradığında çıkacağınız Google’a indekslenmiş menü sayfaları yer alır.',
+  ro: 'Instalările reale includ un dashboard de manager pentru editarea produselor, prețurilor și traducerilor, coduri QR per masă, declarația alergenilor și pagini de meniu indexate de Google, astfel încât restaurantul tău să apară când oaspeții caută.',
   de: 'Echte Installationen enthalten ein Manager-Dashboard zum Bearbeiten von Speisen, Preisen und Übersetzungen, tischspezifische QR-Codes, Allergen-Hinweise und in Google indexierte Menüseiten, damit Ihr Restaurant gefunden wird.',
 };
-const CTA_SEE_SERVICE: LocalizedString = {en: 'See the service', tr: 'Hizmeti gör', de: 'Service ansehen'};
-const CTA_START: LocalizedString = {en: 'Start a project', tr: 'Proje başlat', de: 'Projekt starten'};
+const CTA_SEE_SERVICE: LocalizedString = {en: 'See the service', tr: 'Hizmeti gör', ro: 'Vezi serviciul', de: 'Service ansehen'};
+const CTA_START: LocalizedString = {en: 'Start a project', tr: 'Proje başlat', ro: 'Începe un proiect', de: 'Projekt starten'};
 
 const T = (locale: MenuLang, s?: LocalizedString) => (s ? s[locale] || s.en : '');
 
@@ -467,7 +482,7 @@ export default function QrMenuView({sitePath = '/en'}: {sitePath?: string}) {
             <div className="flex flex-col items-end gap-1.5">
               {/* Lang */}
               <div className="flex gap-0.5 rounded-full border" style={{borderColor: 'var(--line)', background: '#fff'}}>
-                {(['en', 'tr', 'de'] as MenuLang[]).map(L => (
+                {(['en', 'tr', 'ro', 'de'] as MenuLang[]).map(L => (
                   <button
                     key={L}
                     onClick={() => setLang(L)}
@@ -659,11 +674,12 @@ export default function QrMenuView({sitePath = '/en'}: {sitePath?: string}) {
             style={{background: '#fff', maxHeight: '90svh'}}
             onClick={e => e.stopPropagation()}
           >
-            <div className="h-44 relative" style={{background: open.art}}>
+            <div className="h-56 relative overflow-hidden" style={{background: '#222'}}>
+              <img src={open.photo} alt={T(lang, open.name)} className="w-full h-full object-cover" />
               <button
                 onClick={() => setOpen(null)}
-                className="absolute top-3 right-3 w-8 h-8 rounded-full flex items-center justify-center text-white"
-                style={{background: 'rgba(0,0,0,0.45)'}}
+                className="absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center text-white text-xl"
+                style={{background: 'rgba(0,0,0,0.55)'}}
                 aria-label={T(lang, UI.close)}
               >
                 ×
@@ -789,12 +805,13 @@ function ItemCard({
     >
       <button
         onClick={onOpen}
-        className="shrink-0 w-24 sm:w-28 relative"
-        style={{background: item.art, minHeight: 110}}
+        className="shrink-0 w-28 sm:w-32 relative overflow-hidden"
+        style={{minHeight: 120, background: '#222'}}
         aria-label={T(lang, item.name)}
       >
+        <img src={item.photo} alt={T(lang, item.name)} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
         {/* subtle ring */}
-        <span className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-l-2xl" />
+        <span className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-l-2xl pointer-events-none" />
         {item.diet?.includes('chef') && (
           <span className="absolute top-2 left-2 text-[9px] tracking-wider uppercase font-bold px-1.5 py-0.5 rounded-full" style={{background: '#fff', color: '#1B1A18'}}>★ chef</span>
         )}

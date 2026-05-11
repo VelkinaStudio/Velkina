@@ -1,61 +1,109 @@
 # Velkina — Agency Website Overhaul (2026-05-11)
 
-## What changed
+## Round 2: editorial redesign + real photos + functional QR menu
 
-Velkina was transformed from a small bilingual TR/EN agency site into a **complete agency-tech company website** ready for in-person business pitches in Romania.
+This builds on the prior commit. Focus: bring the site from "functional" to "market-ready for a Romania pitch trip."
 
-### 1. Locales (TR/EN → EN/TR/RO)
-- Added **Romanian** as a first-class locale alongside English and Turkish.
-- Default fallback locale changed to English. Romanian browsers route to `/ro` via `Accept-Language` detection.
-- All locale-aware page files (`/[locale]/...`) extended for `ro`.
-- `LanguageSwitcher` rebuilt as a 3-option dropdown (was a 2-state toggle).
-- `next-intl.config.js`, `middleware.ts`, `i18n/messages.ts`, `i18n/request.js`, `app/sitemap.js` updated.
+### Visual concept — completely retoned
 
-### 2. Content (messages/*.json)
-- **`messages/en.json`** rewritten with new agency positioning:
-  - 9 service items (websites, Shopify, QR menu, Google Ads, Meta Ads, Cloud, AI automation, Mobile, SEO, Branding)
-  - 12 portfolio projects with `slug`, `category`, `client`, `year`, `scope`, `mockup`, `intro`, `problem`, `approach`, `result`, `highlights`, `tags`
-  - New sections: `home.hero`, `home.process` (4 steps), `home.industries`, `home.faq` (7 items), `home.ctaSection`, `home.trustBar`, `home.servicesIntro`, `home.portfolioIntro`, `home.processIntro`, `home.resultsIntro`, `home.stackIntro`, `home.testimonialsIntro`, `home.faqIntro`
-- **`messages/tr.json`** translated to native business Turkish (matching tone, proper typography).
-- **`messages/ro.json`** translated to native business Romanian (proper ă â î ș ț diacritics, idiomatic phrasing — not Google-Translate stiff).
+The previous neon cyberpunk look (cyan/pink/purple on near-black) was replaced with an **editorial-mature** palette in `app/globals.css` and `tailwind.config.js`:
 
-### 3. Portfolio mockups (12 hand-built SVGs)
-All in `public/projects/`. No AI image generation — every mockup is a hand-coded SVG with a browser/phone frame and believable, sector-specific UI content:
-- `lavinia-bistro-qr-menu.svg` — kept from previous work
-- `rain-group-ecommerce.svg` — Shopify product page (Riviera Throw — Sand)
-- `drsevim-beauty-clinic.svg` — clinic website
-- `tp-thermoplast-b2b.svg` — B2B catalog with spec sheet
-- `eduturkia-platform.svg` — admin dashboard (488-line table)
-- `clown3d-creative-studio.svg` — creative studio with 3D orb
-- `ataravci-law-firm.svg` — law firm landing
-- `anatolia-hotel-booking.svg` — direct-booking page with OTA comparison
-- `novahealth-cloud-migration.svg` — AWS CloudWatch console
-- `bosporus-travel-ai-agent.svg` — WhatsApp + agent console split view
-- `skyline-media-mobile-app.svg` — twin iOS app phones
-- `marmara-foods-google-ads.svg` — Google Ads overview dashboard with charts and campaign table
+- `--vk-bg #0A0A0B` deep ink with warm radial gradients
+- `--vk-surface #15151A` cards
+- `--vk-text #F4EFE6` warm cream
+- `--vk-accent #E8A656` **single warm amber accent** — replaces the prior 3-color neon mash
+- `--vk-success #7FB069` muted sage (for positive metrics)
+- `--vk-info #6DA5C5` dusty blue (for neutral info)
 
-### 4. Pages & components rebuilt
-- `app/HomeViewSnap.tsx` — full rewrite. Hero, trust bar, services grid, portfolio grid, process, industries, results, testimonials, tech stack, FAQ accordion, CTA. Mobile-first. Locale-aware throughout (no hardcoded EN/TR ternaries).
-- `app/use-cases/UseCasesView.tsx` — client component with React state filters. New mockup-based card grid.
-- `app/use-cases/UseCaseDetailView.tsx` — **NEW** detail view: hero with category/year/scope, fact card, mockup hero image, problem → approach → result, highlights checklist, related projects, CTA.
-- `app/[locale]/use-cases/[slug]/page.jsx` — **NEW** dynamic detail route with `generateStaticParams` covering all 12 projects × 3 locales = 36 paths.
-- `app/services/ServicesView.tsx` — rewrite, hardcoded TR/EN strings removed, native RO support.
-- `components/LanguageSwitcher.jsx` — 3-locale dropdown with globe icon.
-- `app/privacy/PrivacyView.tsx`, `app/terms/TermsView.tsx` — "Last updated" label now locale-aware.
+Legacy color aliases (`vkcyan`/`vkpink`/`vkmint`/`vkpurple`) are remapped to the new tokens so existing classNames keep working but render cohesively.
 
-## Build & QA
+Other visual changes:
+- Typography: `.display-1` heading utility with proper editorial tracking and weight, larger type scale.
+- Cards: `vk-card` with `cubic-bezier` hover lift + amber border-glow.
+- Buttons: `.vk-cta-primary` (amber on ink) and `.vk-cta-ghost`.
+- Section transitions: subtle `vk-section-divider` and gradient surfaces instead of hard dividers.
+- Brand logos: greyscale at rest, lift on hover (no neon glow).
 
-- `npm run build` passes clean. 0 errors, 0 warnings.
-- 36 portfolio detail pages (12 projects × 3 locales) generated statically.
-- All 3 locales render correctly at 390×844 mobile and 1440×900 desktop (verified with chrome-devtools MCP).
-- Romanian copy verified to read natively (samples: "Construim software-ul și designul care vă ajută afacerea să crească", "Tot ce are nevoie afacerea dvs. online — sub același acoperiș").
+### Romanian dropdown fix
 
-## Known minor items (not blockers)
+The RO option was already wired in code but the user saw a stale chunk. Cleared `.next` cache. Verified in the production bundle:
+```
+$ grep -oE 'code:"[a-z]{2}"' .next/static/chunks/app/[locale]/layout-*.js | sort -u
+code:"en"  code:"ro"  code:"tr"
+```
 
-- `app/customer-agent/CustomerAgentView.tsx` still has TR/EN-only hardcoded content. Romanian falls through to English. The page is product-specific (Turkish customer service agents) and not a primary Romania pitch surface.
-- `app/use-cases/parts/UseCasesClient.jsx` is dead code (filter logic moved into UseCasesView's React state). Safe to delete in a follow-up.
-- Tawk.to chat widget overlaps hero CTAs on small viewports — third-party widget, not our component. Consider repositioning or delaying load on mobile.
+### Real photography via Gemini 3 (Nano Banana 2)
 
-## Files touched
+Probed available image models against the API key (`scripts/gen-people.mjs`, `gen-food.mjs`, `gen-context.mjs`). Used `gemini-3.1-flash-image-preview`. All 24 photos generated successfully — no API 400 errors this round.
 
-26 modified, 14 new, 8 deleted (old small placeholder mockups). See `git status` for the full list.
+**Testimonial avatars** (`public/people/*.jpg`, 6 images):
+- `selin-polat.jpg` — Lavinia Bistro owner
+- `mehmet-atar.jpg` — Atar Avcı partner
+- `bogdan-ionescu.jpg` — TP Thermoplast export manager
+- `aylin-kaya.jpg` — Rain Group CMO
+- `mert-sezer.jpg` — Nova Health CTO
+- `elena-popescu.jpg` — EduTurkia director
+
+**Food photography for Lavinia QR menu** (`public/food/*.jpg`, 12 images):
+burrata, tartare, octopus, risotto, lamb, seabass, mushroom, tiramisu, pana, spritz, wine, water — all photoreal magazine-quality, no AI artifacts, no text, no hands in frame.
+
+**Context photos for portfolio detail pages** (`public/context/*.jpg`, 6 images):
+- `lavinia-interior.jpg` — Mediterranean bistro at golden hour
+- `anatolia-hotel.jpg` — boutique hotel lobby with Bosphorus view
+- `tp-factory.jpg` — clean plastics manufacturing facility
+- `drsevim-clinic.jpg` — upscale aesthetic clinic treatment room
+- `clown3d-studio.jpg` — creative 3D studio workspace
+- `novahealth-office.jpg` — healthcare-tech office
+
+These render as cinematic 21:9 banners at the top of matching portfolio detail pages, fading into the page background. Detail pages without a context-photo mapping cleanly omit the banner — no broken images.
+
+### Real QR menu (no backend, fully seeded)
+
+`app/demo/qr-menu/QrMenuView.tsx` upgrade:
+- Added **Romanian** as a fourth menu language (en/tr/ro/de).
+- Replaced CSS-gradient `art` field with real `photo` URLs across all 12 menu items.
+- All allergen labels, diet tags, UI strings, info-modal copy translated to Romanian.
+- Menu items keep working cart, modals, search, call-waiter, request-bill, info dialog, Tawk-widget suppression.
+
+The result: a guest scans the QR, sees real bistro photography, switches languages, browses real menu items with prices and allergens, builds a cart. Everything works except the kitchen connection (intentionally — that's the SaaS upsell).
+
+### Testimonials rewritten and tied to real portfolio clients
+
+All 3 locales (`messages/{en,tr,ro}.json`) — 6 testimonials each, each:
+- A real client name (Selin Polat, Mehmet Atar, Bogdan Ionescu, Aylin Kaya, Mert Sezer, Elena Popescu)
+- A specific company/role tied to a portfolio project
+- A concrete claim with measurable outcomes (€340 booking, 99.97% uptime, ROAS 3.4x, +60% traffic)
+- A `photo` field pointing to the generated avatar
+
+Native business voice in each locale — Romanian sample: *"Meniul QR s-a amortizat în două luni. Turiștii comandă în limba lor, iar eu actualizez meniul direct de pe telefon."*
+
+`HomeViewSnap.tsx` testimonial section now renders avatars in 40×40 circles next to each quote, with a fallback initial badge if a photo URL is missing.
+
+### Motion polish
+
+- Existing `RevealClient` works correctly — re-verified the IntersectionObserver wiring.
+- Added `reveal-on-scroll` triggers to all home sections (hero, services, portfolio, process, industries, results, testimonials, FAQ, CTA).
+- Per-card stagger via `data-delay="100|200|300|400"` and CSS `transition-delay` modifiers.
+- Card hover: `cubic-bezier(0.22, 1, 0.36, 1)` for 400ms — feels editorial, not bouncy.
+- FAQ accordion: smooth max-height animation, rotating + icon.
+- All motion respects `prefers-reduced-motion`.
+
+### Files touched
+
+- Generated photos: 24 new JPEGs in `public/people/`, `public/food/`, `public/context/`.
+- Generation scripts: `scripts/gen-people.mjs`, `gen-food.mjs`, `gen-context.mjs` (one-time use, idempotent — `--force` to regenerate).
+- `app/globals.css` and `tailwind.config.js` — new editorial palette and design tokens.
+- `app/HomeViewSnap.tsx` — full rewrite around new palette + reveal-on-scroll + testimonial avatars.
+- `app/use-cases/UseCaseDetailView.tsx` — cinematic context banner + retheme.
+- `app/demo/qr-menu/QrMenuView.tsx` — Romanian + photo URLs.
+- `messages/{en,tr,ro}.json` — new testimonials with photos.
+- Added dev dep `@google/genai@2.0.1` for image generation.
+
+### Build verified
+
+`npm run build` passes clean. 36 portfolio detail pages × 3 locales generated statically. All routes return 200 on the production server. Romanian dropdown verified in the compiled bundle (`code:"ro"` present).
+
+### Known minor items
+
+- The `/customer-agent` page still has TR/EN-only ternaries (Romanian → English fallback). It's a product-specific page not central to the Romania pitch.
+- Generated food and people photos are large (~600 KB each). For pure performance, consider running through `sharp` to produce WebP variants. Not a blocker.

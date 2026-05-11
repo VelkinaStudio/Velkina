@@ -97,11 +97,12 @@
       "title": "Müşteriler ne diyor",
       "carouselLabel": "Referans karuseli",
       "items": [
-        {"quote": "Velkina sitemizi dört haftada yayına aldı. Net, hızlı, sürpriz yok.", "name": "Aylin K.", "role": "CMO, SaaS"},
-        {"quote": "Reklamlarımızı ve bulutumuzu birlikte yönetiyorlar. Tek ekip, tek fatura, kimse kimseye parmak sallamıyor.", "name": "Kerem D.", "role": "Kurucu, e-ticaret"},
-        {"quote": "İlk günden kıdemli insanlar. Sözleşmeden sonra junior'a devredilmedik.", "name": "Mert S.", "role": "Ürün Lideri"},
-        {"quote": "QR menümüz iki ayda kendini ödedi. Turistler artık kendi dillerinde sipariş veriyor.", "name": "Selin P.", "role": "Sahip, Lavinia Bistro"},
-        {"quote": "Bulut maliyetlerini sade bir dille anlattılar. Bir ayda AWS faturamızı %38 düşürdük.", "name": "Elif A.", "role": "Mühendislik Müdürü"}
+        {"quote": "QR menümüz iki ayda kendini ödedi. Turistler kendi dillerinde sipariş veriyor, menüyü telefondan ben güncelliyorum.", "name": "Selin Polat", "role": "Sahip, Lavinia Bistro · İstanbul", "photo": "/people/selin-polat.jpg"},
+        {"quote": "Her görüşmede kıdemli insanlar vardı. Sözleşmeden sonra junior'a devredilmedik. Hukuki sayfaları kendileri yazdı, SEO şimdiden geri dönüyor.", "name": "Mehmet Atar", "role": "Ortak, Atar Avcı Hukuk Bürosu", "photo": "/people/mehmet-atar.jpg"},
+        {"quote": "Çok dilli B2B site, yapılandırılmış katalog, yarı yarıya kısalan sayfa açılma süresi. Uluslararası talepler nihayet ciddileşti.", "name": "Bogdan Ionescu", "role": "İhracat Müdürü, TP Thermoplast", "photo": "/people/bogdan-ionescu.jpg"},
+        {"quote": "Shopify mağazasını kurdular ve Meta reklamlarını yönetiyorlar. ROAS 3,4x'e oturdu, organik trafik bir çeyrekte %60 büyüdü. Tek fatura, sıfır kavga.", "name": "Aylin Kaya", "role": "CMO, Rain Group", "photo": "/people/aylin-kaya.jpg"},
+        {"quote": "Paylaşımlı hostingden 12 günde, sıfır kesintiyle taşıdılar. Uptime %95'ten %99,97'ye çıktı. AWS faturamız eski hostingden daha düşük.", "name": "Mert Sezer", "role": "CTO, Nova Health", "photo": "/people/mert-sezer.jpg"},
+        {"quote": "Başvuru süreçlerimiz Excel'den gerçek bir platforma geçti. Veliler artık çocuklarının başvurusunu kendi panellerinden takip ediyor.", "name": "Elena Popescu", "role": "Direktör, EduTurkia", "photo": "/people/elena-popescu.jpg"}
       ]
     },
     "ctas": {

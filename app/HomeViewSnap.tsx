@@ -1,10 +1,7 @@
 'use client';
 
-import React, {useEffect, useRef, useState} from 'react';
-import HeroShapesClient from '../components/HeroShapesClient';
+import React, {useState} from 'react';
 import CountUpClient from '../components/CountUpClient';
-import CardParallaxClient from '../components/CardParallaxClient';
-import RailClient from '../components/RailClient';
 import RevealClient from '../components/RevealClient';
 import type {Locale, Messages} from '../i18n/messages';
 import {createT, getDefaultMessages} from '../i18n/messages';
@@ -48,7 +45,6 @@ export default function HomeView({messages, locale}: HomeViewProps) {
   const heroData = h?.hero || {};
   const testimonials = Array.isArray(h?.testimonials?.items) ? h.testimonials.items : [];
 
-  // FAQ accordion
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const faqs: any[] = Array.isArray(h?.faq?.items) ? h.faq.items : [];
 
@@ -79,86 +75,86 @@ export default function HomeView({messages, locale}: HomeViewProps) {
   return (
     <div className="relative">
       <CountUpClient />
-      <CardParallaxClient />
       <RevealClient />
-      <RailClient />
 
-      {/* HERO */}
-      <section id="hero" className="relative pt-8 pb-20 md:pt-16 md:pb-28 overflow-hidden">
-        <div className="absolute inset-y-0 right-0 z-0 overflow-hidden pointer-events-none w-full md:w-3/5 lg:w-1/2 opacity-80">
-          <canvas id="vk-hero-shapes" className="w-full h-full block" />
-        </div>
-        <div aria-hidden className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30" />
+      {/* HERO — editorial split */}
+      <section id="hero" className="relative pt-12 md:pt-20 pb-24 md:pb-32 overflow-hidden">
+        <div aria-hidden className="pointer-events-none absolute inset-0 opacity-90" style={{background: 'var(--vk-grad-warm)'}} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-3xl">
-            <div className="text-xs uppercase tracking-[0.22em] text-vkcyan/90 font-mono mb-4">
-              {heroData.eyebrow ?? 'Software · Design · Growth'}
-            </div>
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight">
-              {heroData.title ?? 'We build the software and design that helps your business grow.'}
-            </h1>
-            <p className="mt-6 text-white/80 text-base md:text-lg max-w-2xl leading-relaxed">
-              {heroData.subtitle ?? 'Full-service agency: websites, e-commerce, ads, cloud, AI agents and mobile apps.'}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={`/${locale}#cta`}
-                className="vk-cta inline-flex items-center px-6 py-3.5 rounded-2xl bg-vkpink text-black shadow-strong font-mono font-semibold"
-              >
-                {heroData.primaryCta ?? h?.ctas?.whatsapp ?? 'Start a project'}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 ml-2"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
-              </a>
-              <a
-                href={`/${locale}/use-cases`}
-                className="vk-cta inline-flex items-center px-6 py-3.5 rounded-2xl border border-white/25 text-white/95 bg-white/5 hover:bg-white/10 transition"
-              >
-                {heroData.secondaryCta ?? common?.viewWork ?? 'See our work'}
-              </a>
+        <div className="relative max-w-7xl mx-auto px-6 md:px-10">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-8 reveal-on-scroll">
+              <div className="text-[11px] uppercase tracking-[0.28em] text-vkaccent font-mono mb-6">
+                {heroData.eyebrow ?? 'Software · Design · Growth'}
+              </div>
+              <h1 className="display-1 text-5xl sm:text-6xl md:text-7xl lg:text-[88px] text-vktext">
+                {heroData.title ?? 'We build software and design that helps your business grow.'}
+              </h1>
+              <p className="mt-8 text-vktext/75 text-lg md:text-xl leading-relaxed max-w-2xl">
+                {heroData.subtitle ?? ''}
+              </p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <a
+                  href={`/${locale}#cta`}
+                  className="vk-cta vk-cta-primary inline-flex items-center px-6 py-4 rounded-md font-mono text-sm font-semibold tracking-wider uppercase"
+                >
+                  {heroData.primaryCta ?? 'Start a project'}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 ml-3"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+                </a>
+                <a
+                  href={`/${locale}/use-cases`}
+                  className="vk-cta vk-cta-ghost inline-flex items-center px-6 py-4 rounded-md font-mono text-sm font-semibold tracking-wider uppercase"
+                >
+                  {heroData.secondaryCta ?? 'See our work'}
+                </a>
+              </div>
             </div>
 
-            {/* Hero KPI strip */}
-            <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl">
-              <div className="border-l-2 border-vkcyan pl-3">
-                <div className="font-heading text-2xl text-white">
-                  <span className="vk-countup" data-to={String(m2?.shipped?.value ?? 120)}>0</span>+
+            <div className="lg:col-span-4 reveal-on-scroll" data-delay="200">
+              <div className="grid grid-cols-2 gap-px bg-vkborder rounded-md overflow-hidden border border-vkborder">
+                <div className="bg-vkbg p-5">
+                  <div className="font-heading text-3xl md:text-4xl text-vktext">
+                    <span className="vk-countup" data-to={String(m2?.shipped?.value ?? 120)}>0</span>+
+                  </div>
+                  <div className="text-vkmuted text-xs mt-2 leading-tight uppercase tracking-wider">{m2?.shipped?.label}</div>
                 </div>
-                <div className="text-white/60 text-xs leading-tight mt-1">{m2?.shipped?.label}</div>
+                <div className="bg-vkbg p-5">
+                  <div className="font-heading text-3xl md:text-4xl text-vksuccess">
+                    <span className="vk-countup" data-to={String(m2?.uptime?.value ?? 99.9)} data-decimals="1">0.0</span>%
+                  </div>
+                  <div className="text-vkmuted text-xs mt-2 leading-tight uppercase tracking-wider">{m2?.uptime?.label}</div>
+                </div>
+                <div className="bg-vkbg p-5">
+                  <div className="font-heading text-3xl md:text-4xl text-vkaccent">
+                    <span className="vk-countup" data-to={String(m2?.launchTime?.value ?? 5)}>0</span><span className="text-xl ml-1">{lang === 'tr' ? 'hf' : lang === 'ro' ? 'săpt' : 'wk'}</span>
+                  </div>
+                  <div className="text-vkmuted text-xs mt-2 leading-tight uppercase tracking-wider">{m2?.launchTime?.label}</div>
+                </div>
+                <div className="bg-vkbg p-5">
+                  <div className="font-heading text-3xl md:text-4xl text-vktext">
+                    <span className="vk-countup" data-to={String(m2?.csat?.value ?? 95)}>0</span>%
+                  </div>
+                  <div className="text-vkmuted text-xs mt-2 leading-tight uppercase tracking-wider">{m2?.csat?.label}</div>
+                </div>
               </div>
-              <div className="border-l-2 border-vkpink pl-3">
-                <div className="font-heading text-2xl text-white">
-                  <span className="vk-countup" data-to={String(m2?.uptime?.value ?? 99.9)} data-decimals="1">0.0</span>%
-                </div>
-                <div className="text-white/60 text-xs leading-tight mt-1">{m2?.uptime?.label}</div>
-              </div>
-              <div className="border-l-2 border-vkpurple pl-3">
-                <div className="font-heading text-2xl text-white">
-                  <span className="vk-countup" data-to={String(m2?.launchTime?.value ?? 5)}>0</span>{lang === 'tr' ? ' hf' : lang === 'ro' ? ' săpt' : ' wk'}
-                </div>
-                <div className="text-white/60 text-xs leading-tight mt-1">{m2?.launchTime?.label}</div>
-              </div>
-              <div className="border-l-2 border-vkmint pl-3">
-                <div className="font-heading text-2xl text-white">
-                  <span className="vk-countup" data-to={String(m2?.csat?.value ?? 95)}>0</span>%
-                </div>
-                <div className="text-white/60 text-xs leading-tight mt-1">{m2?.csat?.label}</div>
+              <div className="mt-6 text-vkmuted text-xs font-mono uppercase tracking-wider">
+                {lang === 'tr' ? 'Aktif olduğumuz yerler' : lang === 'ro' ? 'Activi în' : 'Active in'} <span className="text-vktext">Istanbul · Bucharest · Berlin</span>
               </div>
             </div>
           </div>
         </div>
-        <HeroShapesClient />
       </section>
 
-      {/* TRUST BAR (client logos) */}
-      <section id="trust" className="py-10 border-y border-white/5 bg-white/[0.015]">
+      {/* TRUST BAR */}
+      <section id="trust" className="py-12 border-y border-vkborder">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <p className="text-center text-white/55 text-xs uppercase tracking-[0.18em] font-mono mb-6">
+          <p className="text-center text-vkmuted text-[10px] uppercase tracking-[0.28em] font-mono mb-8">
             {h?.trustBar?.title ?? 'Trusted by businesses across Europe'}
           </p>
           <div className="overflow-hidden" data-ticker>
             <div className="ticker ticker--auto items-center">
               {[...brandLogos, ...brandLogos].map((c, idx) => (
-                <div key={`logo-${idx}`} className="flex items-center justify-center" style={{minWidth: 120}}>
+                <div key={`logo-${idx}`} className="flex items-center justify-center" style={{minWidth: 130}}>
                   <img src={c.src} alt={c.name} className="brand brand--bw h-7 w-auto object-contain" loading="lazy" />
                 </div>
               ))}
@@ -168,16 +164,16 @@ export default function HomeView({messages, locale}: HomeViewProps) {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-20 md:py-28 relative">
+      <section id="services" className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-2xl">
-            <div className="text-xs uppercase tracking-[0.22em] text-vkpink font-mono mb-3">{h?.servicesIntro?.eyebrow}</div>
-            <h2 className="font-heading text-3xl md:text-5xl leading-tight">{h?.servicesIntro?.title}</h2>
-            <p className="mt-4 text-white/75 text-base md:text-lg">{h?.servicesIntro?.subtitle}</p>
+          <div className="max-w-3xl reveal-on-scroll">
+            <div className="text-[11px] uppercase tracking-[0.28em] text-vkaccent font-mono mb-4">{h?.servicesIntro?.eyebrow}</div>
+            <h2 className="display-1 text-3xl md:text-5xl text-vktext">{h?.servicesIntro?.title}</h2>
+            <p className="mt-5 text-vktext/70 text-base md:text-lg leading-relaxed">{h?.servicesIntro?.subtitle}</p>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {serviceItems.map((item: any) => {
+          <div className="mt-14 grid gap-px sm:grid-cols-2 lg:grid-cols-3 bg-vkborder border border-vkborder rounded-lg overflow-hidden">
+            {serviceItems.map((item: any, idx: number) => {
               const isQr = item.id === 'qr-menu';
               const href = isQr ? `/${locale}/demo/qr-menu` : `/${locale}/services#${item.id}`;
               const iconPath = SERVICE_ICONS[item.id] ?? SERVICE_ICONS.websites;
@@ -185,24 +181,23 @@ export default function HomeView({messages, locale}: HomeViewProps) {
                 <a
                   key={item.id}
                   href={href}
-                  className={`group vk-card vk-glass rounded-2xl p-6 shadow-soft hover:shadow-strong hover:-translate-y-0.5 transition block focus:outline-none focus:ring-2 focus:ring-vkcyan/50 relative overflow-hidden ${
-                    isQr ? 'border border-vkpink/40 ring-1 ring-vkpink/30' : 'border border-white/10'
-                  }`}
+                  className={`group bg-vkbg hover:bg-vksurface transition-all duration-500 p-7 block focus:outline-none focus:bg-vksurface relative reveal-on-scroll`}
+                  data-delay={String(Math.min(idx * 60, 400))}
                 >
                   {isQr && (
-                    <span className="absolute top-0 right-0 px-2 py-1 rounded-bl-lg bg-vkpink text-black text-[10px] font-mono tracking-wider uppercase font-semibold">
+                    <span className="absolute top-4 right-4 px-2 py-1 rounded-full bg-vkaccent text-black text-[9px] font-mono tracking-[0.18em] uppercase font-semibold">
                       {lang === 'tr' ? 'Canlı demo' : lang === 'ro' ? 'Demo live' : 'Live demo'}
                     </span>
                   )}
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={`w-5 h-5 ${isQr ? 'text-vkpink' : 'text-vkcyan'}`}>{iconPath}</svg>
+                  <div className="w-11 h-11 rounded-md bg-vksurface border border-vkborder flex items-center justify-center mb-6 group-hover:bg-vkaccent/10 group-hover:border-vkaccent/40 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" className="w-5 h-5 text-vkaccent">{iconPath}</svg>
                   </div>
-                  <h3 className="font-heading text-xl text-white/95 leading-tight">{item.title}</h3>
-                  {item.tag && <div className="text-xs text-white/55 mt-1 font-mono">{item.tag}</div>}
-                  {item.intro && <p className="text-sm text-white/70 mt-3 leading-relaxed">{item.intro}</p>}
-                  <div className={`mt-4 inline-flex items-center text-sm font-medium ${isQr ? 'text-vkpink' : 'text-vkcyan'}`}>
-                    {isQr ? (lang === 'tr' ? 'Demoyu dene' : lang === 'ro' ? 'Încearcă demo' : 'Try the demo') : (h?.explore ?? 'Learn more')}
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
+                  <h3 className="font-heading text-xl text-vktext leading-snug">{item.title}</h3>
+                  {item.tag && <div className="text-[10px] text-vkmuted mt-1.5 font-mono uppercase tracking-wider">{item.tag}</div>}
+                  {item.intro && <p className="text-sm text-vktext/65 mt-4 leading-relaxed line-clamp-3">{item.intro}</p>}
+                  <div className="mt-5 inline-flex items-center text-sm text-vkaccent font-mono">
+                    {isQr ? (lang === 'tr' ? 'Demoyu aç' : lang === 'ro' ? 'Deschide demo' : 'Open demo') : (h?.explore ?? 'Learn more')}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
                   </div>
                 </a>
               );
@@ -212,50 +207,44 @@ export default function HomeView({messages, locale}: HomeViewProps) {
       </section>
 
       {/* PORTFOLIO */}
-      <section id="work" className="py-20 md:py-28 bg-white/[0.015] border-y border-white/5">
+      <section id="work" className="py-24 md:py-32 border-y border-vkborder bg-gradient-to-b from-transparent via-vksurface/30 to-transparent">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal-on-scroll">
             <div className="max-w-2xl">
-              <div className="text-xs uppercase tracking-[0.22em] text-vkcyan font-mono mb-3">{h?.portfolioIntro?.eyebrow}</div>
-              <h2 className="font-heading text-3xl md:text-5xl leading-tight">{h?.portfolioIntro?.title}</h2>
-              <p className="mt-4 text-white/75 text-base md:text-lg">{h?.portfolioIntro?.subtitle}</p>
+              <div className="text-[11px] uppercase tracking-[0.28em] text-vkaccent font-mono mb-4">{h?.portfolioIntro?.eyebrow}</div>
+              <h2 className="display-1 text-3xl md:text-5xl text-vktext">{h?.portfolioIntro?.title}</h2>
+              <p className="mt-5 text-vktext/70 text-base md:text-lg leading-relaxed">{h?.portfolioIntro?.subtitle}</p>
             </div>
-            <a href={`/${locale}/use-cases`} className="self-start md:self-end text-white/85 hover:text-vkcyan text-sm border border-white/15 rounded-lg px-4 py-2 bg-white/5 hover:bg-white/10 inline-flex items-center gap-2">
-              {lang === 'tr' ? 'Tüm projeler' : lang === 'ro' ? 'Toate proiectele' : 'All projects'}
+            <a href={`/${locale}/use-cases`} className="self-start md:self-end text-vktext hover:text-vkaccent text-sm border border-vkborder hover:border-vkaccent rounded-md px-5 py-3 inline-flex items-center gap-2 font-mono uppercase tracking-wider transition">
+              {lang === 'tr' ? 'Tüm projeler' : lang === 'ro' ? 'Toate proiectele' : 'All work'}
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
             </a>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.slice(0, 6).map((p: any) => (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {projects.slice(0, 6).map((p: any, idx: number) => (
               <a
                 key={p.slug}
                 href={`/${locale}/use-cases/${p.slug}`}
-                className="group vk-glass rounded-2xl border border-white/10 overflow-hidden shadow-soft hover:shadow-strong hover:-translate-y-0.5 transition block focus:outline-none focus:ring-2 focus:ring-vkcyan/50"
+                className="vk-card group rounded-md border border-vkborder overflow-hidden bg-vksurface block focus:outline-none focus:border-vkaccent reveal-on-scroll"
+                data-delay={String(Math.min(idx * 80, 400))}
               >
-                <div className="aspect-[3/2] overflow-hidden bg-black/30 border-b border-white/5">
+                <div className="aspect-[3/2] overflow-hidden bg-vkbg border-b border-vkborder">
                   <img
                     src={`/projects/${p.mockup || p.slug}.svg`}
                     alt={p.title}
-                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                     loading="lazy"
-                    onError={(e) => {
-                      try { (e.currentTarget as HTMLImageElement).src = '/projects/placeholder.svg'; } catch {}
-                    }}
                   />
                 </div>
-                <div className="p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-[10px] uppercase tracking-wider font-mono text-vkcyan">{catLabel(p.category)}</span>
-                    <span className="text-white/30">·</span>
-                    <span className="text-[10px] text-white/55 font-mono">{p.client}</span>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-[10px] uppercase tracking-[0.18em] font-mono text-vkaccent">{catLabel(p.category)}</span>
+                    <span className="text-vkmuted">·</span>
+                    <span className="text-[10px] text-vkmuted font-mono">{p.client}</span>
                   </div>
-                  <h3 className="font-heading text-lg text-white/95 leading-snug">{p.title}</h3>
-                  <p className="text-sm text-white/65 mt-2 line-clamp-2 leading-relaxed">{p.intro}</p>
-                  <div className="mt-3 inline-flex items-center text-sm text-vkcyan font-medium">
-                    {common?.readCase ?? 'Read case'}
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12l-7.5 7.5M21 12H3"/></svg>
-                  </div>
+                  <h3 className="font-heading text-xl text-vktext leading-snug">{p.title}</h3>
+                  <p className="text-sm text-vktext/65 mt-3 line-clamp-2 leading-relaxed">{p.intro}</p>
                 </div>
               </a>
             ))}
@@ -264,23 +253,20 @@ export default function HomeView({messages, locale}: HomeViewProps) {
       </section>
 
       {/* PROCESS */}
-      <section id="process" className="py-20 md:py-28">
+      <section id="process" className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-2xl">
-            <div className="text-xs uppercase tracking-[0.22em] text-vkpurple font-mono mb-3">{h?.processIntro?.eyebrow}</div>
-            <h2 className="font-heading text-3xl md:text-5xl leading-tight">{h?.processIntro?.title}</h2>
-            <p className="mt-4 text-white/75 text-base md:text-lg">{h?.processIntro?.subtitle}</p>
+          <div className="max-w-3xl reveal-on-scroll">
+            <div className="text-[11px] uppercase tracking-[0.28em] text-vkaccent font-mono mb-4">{h?.processIntro?.eyebrow}</div>
+            <h2 className="display-1 text-3xl md:text-5xl text-vktext">{h?.processIntro?.title}</h2>
+            <p className="mt-5 text-vktext/70 text-base md:text-lg leading-relaxed">{h?.processIntro?.subtitle}</p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
             {(h?.process?.steps ?? []).map((step: any, idx: number) => (
-              <div key={idx} className="relative">
-                <div className="font-mono text-vkcyan/70 text-sm mb-2">{step.n}</div>
-                <h3 className="font-heading text-xl text-white/95 leading-tight">{step.title}</h3>
-                <p className="mt-2 text-white/70 text-sm leading-relaxed">{step.body}</p>
-                {idx < 3 && (
-                  <div className="hidden lg:block absolute top-1 left-full w-full h-px bg-gradient-to-r from-white/15 to-transparent -translate-x-3" aria-hidden />
-                )}
+              <div key={idx} className="relative reveal-on-scroll" data-delay={String(idx * 100)}>
+                <div className="font-heading text-vkaccent/50 text-5xl mb-4">{step.n}</div>
+                <h3 className="font-heading text-xl text-vktext leading-tight">{step.title}</h3>
+                <p className="mt-3 text-vktext/65 text-sm leading-relaxed">{step.body}</p>
               </div>
             ))}
           </div>
@@ -288,14 +274,14 @@ export default function HomeView({messages, locale}: HomeViewProps) {
       </section>
 
       {/* INDUSTRIES */}
-      <section id="industries" className="py-20 md:py-28 bg-white/[0.015] border-y border-white/5">
+      <section id="industries" className="py-24 md:py-32 border-y border-vkborder bg-gradient-to-b from-transparent via-vksurface/30 to-transparent">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <h2 className="font-heading text-3xl md:text-5xl leading-tight max-w-3xl">{h?.industries?.title}</h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="display-1 text-3xl md:text-5xl text-vktext max-w-3xl reveal-on-scroll">{h?.industries?.title}</h2>
+          <div className="mt-12 grid gap-px sm:grid-cols-2 lg:grid-cols-3 bg-vkborder border border-vkborder rounded-md overflow-hidden">
             {(h?.industries?.items ?? []).map((ind: any, idx: number) => (
-              <div key={idx} className="vk-glass border border-white/10 rounded-xl p-5 shadow-soft">
-                <h3 className="font-heading text-lg text-white/95">{ind.name}</h3>
-                <p className="text-sm text-white/65 mt-2 leading-relaxed">{ind.desc}</p>
+              <div key={idx} className="bg-vkbg p-7 hover:bg-vksurface transition-colors duration-500 reveal-on-scroll" data-delay={String(Math.min(idx * 60, 400))}>
+                <h3 className="font-heading text-lg text-vktext">{ind.name}</h3>
+                <p className="text-sm text-vktext/65 mt-3 leading-relaxed">{ind.desc}</p>
               </div>
             ))}
           </div>
@@ -303,58 +289,58 @@ export default function HomeView({messages, locale}: HomeViewProps) {
       </section>
 
       {/* RESULTS METRICS */}
-      <section id="results" className="py-20 md:py-28">
+      <section id="results" className="py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-2xl mb-12">
-            <div className="text-xs uppercase tracking-[0.22em] text-vkmint font-mono mb-3">{h?.resultsIntro?.eyebrow}</div>
-            <h2 className="font-heading text-3xl md:text-5xl leading-tight">{h?.resultsIntro?.title}</h2>
+          <div className="max-w-2xl mb-12 reveal-on-scroll">
+            <div className="text-[11px] uppercase tracking-[0.28em] text-vkaccent font-mono mb-4">{h?.resultsIntro?.eyebrow}</div>
+            <h2 className="display-1 text-3xl md:text-5xl text-vktext">{h?.resultsIntro?.title}</h2>
           </div>
-          <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-6">
-            <div className="vk-glass border border-white/10 rounded-xl p-5 shadow-soft text-center">
-              <div className="font-heading text-3xl text-white">
-                <span className="vk-countup" data-to={String(m2?.shipped?.value ?? 120)}>0</span>+
+          <div className="grid gap-px grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 bg-vkborder border border-vkborder rounded-md overflow-hidden">
+            {[
+              {val: `${m2?.shipped?.value ?? 120}`, suffix: '+', label: m2?.shipped?.label, color: 'text-vktext'},
+              {val: `${m2?.leadsIncrease?.value ?? 86}`, prefix: '+', suffix: '%', label: m2?.leadsIncrease?.label, color: 'text-vksuccess'},
+              {val: `${m2?.supportReduction?.value ?? 40}`, prefix: '−', suffix: '%', label: m2?.supportReduction?.label, color: 'text-vkaccent'},
+              {val: `${m2?.csat?.value ?? 95}`, suffix: '%', label: m2?.csat?.label, color: 'text-vktext'},
+              {val: `${m2?.launchTime?.value ?? 5}`, label: m2?.launchTime?.label, color: 'text-vktext'},
+              {val: `${m2?.uptime?.value ?? 99.9}`, suffix: '%', decimals: 1, label: m2?.uptime?.label, color: 'text-vktext'}
+            ].map((stat, idx) => (
+              <div key={idx} className="bg-vkbg p-6 text-center reveal-on-scroll" data-delay={String(idx * 50)}>
+                <div className={`font-heading text-3xl md:text-4xl ${stat.color}`}>
+                  {stat.prefix}
+                  <span className="vk-countup" data-to={stat.val} data-decimals={stat.decimals ? String(stat.decimals) : undefined}>0</span>
+                  {stat.suffix}
+                </div>
+                <div className="text-vkmuted text-[10px] mt-3 leading-tight uppercase tracking-wider">{stat.label}</div>
               </div>
-              <div className="text-white/65 text-xs mt-2 leading-tight">{m2?.shipped?.label}</div>
-            </div>
-            <div className="vk-glass border border-white/10 rounded-xl p-5 shadow-soft text-center">
-              <div className="font-heading text-3xl text-vkcyan">+<span className="vk-countup" data-to={String(m2?.leadsIncrease?.value ?? 86)}>0</span>%</div>
-              <div className="text-white/65 text-xs mt-2 leading-tight">{m2?.leadsIncrease?.label}</div>
-            </div>
-            <div className="vk-glass border border-white/10 rounded-xl p-5 shadow-soft text-center">
-              <div className="font-heading text-3xl text-vkpink">-<span className="vk-countup" data-to={String(m2?.supportReduction?.value ?? 40)}>0</span>%</div>
-              <div className="text-white/65 text-xs mt-2 leading-tight">{m2?.supportReduction?.label}</div>
-            </div>
-            <div className="vk-glass border border-white/10 rounded-xl p-5 shadow-soft text-center">
-              <div className="font-heading text-3xl text-white"><span className="vk-countup" data-to={String(m2?.csat?.value ?? 95)}>0</span>%</div>
-              <div className="text-white/65 text-xs mt-2 leading-tight">{m2?.csat?.label}</div>
-            </div>
-            <div className="vk-glass border border-white/10 rounded-xl p-5 shadow-soft text-center">
-              <div className="font-heading text-3xl text-white"><span className="vk-countup" data-to={String(m2?.launchTime?.value ?? 5)}>0</span></div>
-              <div className="text-white/65 text-xs mt-2 leading-tight">{m2?.launchTime?.label}</div>
-            </div>
-            <div className="vk-glass border border-white/10 rounded-xl p-5 shadow-soft text-center">
-              <div className="font-heading text-3xl text-white"><span className="vk-countup" data-to={String(m2?.uptime?.value ?? 99.9)} data-decimals="1">0.0</span>%</div>
-              <div className="text-white/65 text-xs mt-2 leading-tight">{m2?.uptime?.label}</div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* TESTIMONIALS */}
-      <section id="testimonials" className="py-20 md:py-28 bg-white/[0.015] border-y border-white/5">
+      <section id="testimonials" className="py-24 md:py-32 border-y border-vkborder bg-gradient-to-b from-transparent via-vksurface/30 to-transparent">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-2xl mb-10">
-            <div className="text-xs uppercase tracking-[0.22em] text-vkcyan font-mono mb-3">{h?.testimonialsIntro?.eyebrow}</div>
-            <h2 className="font-heading text-3xl md:text-5xl leading-tight">{h?.testimonialsIntro?.title}</h2>
+          <div className="max-w-2xl mb-12 reveal-on-scroll">
+            <div className="text-[11px] uppercase tracking-[0.28em] text-vkaccent font-mono mb-4">{h?.testimonialsIntro?.eyebrow}</div>
+            <h2 className="display-1 text-3xl md:text-5xl text-vktext">{h?.testimonialsIntro?.title}</h2>
           </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((item: any, idx: number) => (
-              <figure key={idx} className="vk-glass border border-white/10 rounded-2xl p-6 shadow-soft">
-                <div className="text-vkcyan text-4xl font-serif leading-none mb-2">"</div>
-                <blockquote className="text-white/85 leading-relaxed text-base">{item?.quote}</blockquote>
-                <figcaption className="mt-4 pt-4 border-t border-white/10 text-sm">
-                  <div className="font-medium text-white/95">{item?.name}</div>
-                  {item?.role && <div className="text-white/60 text-xs mt-1">{item.role}</div>}
+              <figure key={idx} className="vk-card rounded-md border border-vkborder bg-vksurface p-7 reveal-on-scroll" data-delay={String(Math.min(idx * 80, 400))}>
+                <div className="text-vkaccent text-5xl font-serif leading-none mb-4 opacity-50">"</div>
+                <blockquote className="text-vktext/90 leading-relaxed text-base">{item?.quote}</blockquote>
+                <figcaption className="mt-6 pt-5 border-t border-vkborder flex items-center gap-3">
+                  {item?.photo ? (
+                    <img src={item.photo} alt={item.name} className="w-10 h-10 rounded-full object-cover border border-vkborder" />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-vksurface2 border border-vkborder flex items-center justify-center text-vkaccent font-mono text-sm">
+                      {(item?.name || '?').charAt(0)}
+                    </div>
+                  )}
+                  <div className="text-sm">
+                    <div className="font-medium text-vktext">{item?.name}</div>
+                    {item?.role && <div className="text-vkmuted text-xs mt-0.5">{item.role}</div>}
+                  </div>
                 </figcaption>
               </figure>
             ))}
@@ -363,17 +349,17 @@ export default function HomeView({messages, locale}: HomeViewProps) {
       </section>
 
       {/* TECH STACK */}
-      <section id="stack" className="py-16 md:py-20">
+      <section id="stack" className="py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-6 md:px-10">
-          <div className="max-w-2xl mb-10">
-            <div className="text-xs uppercase tracking-[0.22em] text-white/55 font-mono mb-3">{h?.stackIntro?.eyebrow}</div>
-            <h2 className="font-heading text-2xl md:text-3xl leading-tight">{h?.stackIntro?.title}</h2>
-            <p className="mt-3 text-white/65 text-sm md:text-base">{h?.stackIntro?.subtitle}</p>
+          <div className="max-w-2xl mb-10 reveal-on-scroll">
+            <div className="text-[11px] uppercase tracking-[0.28em] text-vkmuted font-mono mb-4">{h?.stackIntro?.eyebrow}</div>
+            <h2 className="font-heading text-2xl md:text-3xl text-vktext">{h?.stackIntro?.title}</h2>
+            <p className="mt-3 text-vktext/65 text-sm md:text-base leading-relaxed">{h?.stackIntro?.subtitle}</p>
           </div>
           <div className="overflow-hidden" data-ticker>
             <div className="ticker ticker--auto items-center">
               {[...techStack, ...techStack].map((b, i) => (
-                <div key={`tech-${i}`} className="flex items-center justify-center" style={{minWidth: 140}}>
+                <div key={`tech-${i}`} className="flex items-center justify-center" style={{minWidth: 150}}>
                   <img src={b.src} alt={b.name} className="brand brand--bw h-8 w-auto object-contain" loading="lazy" />
                 </div>
               ))}
@@ -383,27 +369,29 @@ export default function HomeView({messages, locale}: HomeViewProps) {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-20 md:py-28 bg-white/[0.015] border-y border-white/5">
+      <section id="faq" className="py-24 md:py-32 border-y border-vkborder bg-gradient-to-b from-transparent via-vksurface/30 to-transparent">
         <div className="max-w-3xl mx-auto px-6 md:px-10">
-          <div className="text-xs uppercase tracking-[0.22em] text-vkpurple font-mono mb-3">{h?.faqIntro?.eyebrow}</div>
-          <h2 className="font-heading text-3xl md:text-5xl leading-tight mb-10">{h?.faqIntro?.title}</h2>
-          <div className="space-y-3">
+          <div className="reveal-on-scroll">
+            <div className="text-[11px] uppercase tracking-[0.28em] text-vkaccent font-mono mb-4">{h?.faqIntro?.eyebrow}</div>
+            <h2 className="display-1 text-3xl md:text-5xl text-vktext mb-12">{h?.faqIntro?.title}</h2>
+          </div>
+          <div className="space-y-2">
             {faqs.map((f: any, idx: number) => {
               const open = openFaq === idx;
               return (
-                <div key={idx} className="vk-glass border border-white/10 rounded-xl overflow-hidden">
+                <div key={idx} className="border-b border-vkborder reveal-on-scroll" data-delay={String(Math.min(idx * 60, 400))}>
                   <button
                     type="button"
                     aria-expanded={open}
                     onClick={() => setOpenFaq(open ? null : idx)}
-                    className="w-full text-left flex items-start justify-between gap-4 px-5 py-4 hover:bg-white/[0.03] transition"
+                    className="w-full text-left flex items-start justify-between gap-6 py-5 hover:text-vkaccent transition-colors"
                   >
-                    <span className="font-heading text-base md:text-lg text-white/95 leading-snug">{f.q}</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className={`w-5 h-5 flex-shrink-0 mt-1 text-vkcyan transition-transform ${open ? 'rotate-45' : ''}`}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m-8-8h16"/></svg>
+                    <span className="font-heading text-lg md:text-xl text-vktext leading-snug">{f.q}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={`w-6 h-6 flex-shrink-0 mt-1 text-vkaccent transition-transform duration-300 ${open ? 'rotate-45' : ''}`}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m-8-8h16"/></svg>
                   </button>
-                  {open && (
-                    <div className="px-5 pb-5 text-white/75 text-sm md:text-base leading-relaxed">{f.a}</div>
-                  )}
+                  <div className={`overflow-hidden transition-all duration-500 ease-out ${open ? 'max-h-96 pb-6' : 'max-h-0'}`}>
+                    <p className="text-vktext/75 text-sm md:text-base leading-relaxed">{f.a}</p>
+                  </div>
                 </div>
               );
             })}
@@ -412,43 +400,40 @@ export default function HomeView({messages, locale}: HomeViewProps) {
       </section>
 
       {/* CTA */}
-      <section id="cta" className="py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none opacity-50" style={{background: 'radial-gradient(800px 400px at 50% 50%, rgba(0,255,255,0.15), transparent 70%), radial-gradient(600px 300px at 30% 80%, rgba(255,0,204,0.12), transparent 70%)'}} />
-        <div className="relative max-w-3xl mx-auto px-6 md:px-10 text-center">
-          <div className="text-xs uppercase tracking-[0.22em] text-vkpink font-mono mb-4">{h?.ctaSection?.eyebrow}</div>
-          <h2 className="font-heading text-4xl md:text-6xl leading-tight">{h?.ctaSection?.title}</h2>
-          <p className="mt-5 text-white/75 text-base md:text-lg">{h?.ctaSection?.subtitle}</p>
+      <section id="cta" className="py-28 md:py-40 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none opacity-60" style={{background: 'radial-gradient(800px 400px at 50% 50%, rgba(232,166,86,0.10), transparent 70%)'}} />
+        <div className="relative max-w-3xl mx-auto px-6 md:px-10 text-center reveal-on-scroll">
+          <div className="text-[11px] uppercase tracking-[0.28em] text-vkaccent font-mono mb-6">{h?.ctaSection?.eyebrow}</div>
+          <h2 className="display-1 text-4xl md:text-6xl lg:text-7xl text-vktext">{h?.ctaSection?.title}</h2>
+          <p className="mt-6 text-vktext/75 text-base md:text-lg max-w-2xl mx-auto">{h?.ctaSection?.subtitle}</p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <a
               data-cta="whatsapp"
               href={whatsappHref(common?.whatsappPrefill)}
               target="_blank"
               rel="noopener noreferrer"
-              className="vk-cta inline-flex items-center px-6 py-3.5 rounded-2xl bg-vkpink text-black shadow-strong font-mono font-semibold"
+              className="vk-cta vk-cta-primary inline-flex items-center px-6 py-4 rounded-md font-mono text-sm font-semibold tracking-wider uppercase"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 mr-2" aria-hidden="true"><path d="M20.52 3.48A11.93 11.93 0 0012.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.32-1.66a11.85 11.85 0 005.72 1.46h.01c6.56 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.17-3.42-8.42zM12.06 21.7h-.01a9.74 9.74 0 01-4.96-1.36l-.36-.21-3.75.98 1-3.66-.23-.38a9.78 9.78 0 01-1.5-5.18c0-5.42 4.42-9.83 9.84-9.83 2.63 0 5.1 1.02 6.96 2.88a9.77 9.77 0 012.88 6.96c0 5.42-4.42 9.8-9.87 9.8z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-2.5" aria-hidden="true"><path d="M20.52 3.48A11.93 11.93 0 0012.06 0C5.5 0 .17 5.33.17 11.9c0 2.1.55 4.15 1.6 5.95L0 24l6.32-1.66a11.85 11.85 0 005.72 1.46h.01c6.56 0 11.89-5.33 11.89-11.9 0-3.18-1.24-6.17-3.42-8.42z"/></svg>
               {h?.ctaSection?.primaryCta ?? h?.ctas?.whatsapp}
-            </a>
-            <a
-              data-cta="email"
-              href={mailHref(common?.emailSubject)}
-              className="vk-cta inline-flex items-center px-6 py-3.5 rounded-2xl border border-white/25 text-white/95 bg-white/5 hover:bg-white/10 transition"
-            >
-              {h?.ctas?.email}
             </a>
             <a
               data-cta="schedule"
               href={CONTACT.scheduleUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="vk-cta inline-flex items-center px-6 py-3.5 rounded-2xl border border-white/15 text-white/90 bg-white/5 hover:bg-white/10 transition"
+              className="vk-cta vk-cta-ghost inline-flex items-center px-6 py-4 rounded-md font-mono text-sm font-semibold tracking-wider uppercase"
             >
               {h?.ctaSection?.secondaryCta ?? h?.ctas?.schedule}
             </a>
+            <a
+              data-cta="email"
+              href={mailHref(common?.emailSubject)}
+              className="vk-cta vk-cta-ghost inline-flex items-center px-6 py-4 rounded-md font-mono text-sm font-semibold tracking-wider uppercase"
+            >
+              {h?.ctas?.email}
+            </a>
           </div>
-          <p className="mt-8 text-white/55 text-xs font-mono">
-            {lang === 'tr' ? 'Şu anda: İstanbul · Bükreş · Berlin' : lang === 'ro' ? 'Activi în: Istanbul · București · Berlin' : 'Active in: Istanbul · Bucharest · Berlin'}
-          </p>
         </div>
       </section>
     </div>

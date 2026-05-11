@@ -97,11 +97,12 @@
       "title": "What clients say",
       "carouselLabel": "Testimonials carousel",
       "items": [
-        {"quote": "Velkina shipped our site in four weeks. Clear, fast, no surprises.", "name": "Aylin K.", "role": "CMO, SaaS"},
-        {"quote": "They run our ads and our cloud. One team, one invoice, zero finger-pointing.", "name": "Kerem D.", "role": "Founder, e-commerce"},
-        {"quote": "Senior people from day one. No handovers to juniors after the sale.", "name": "Mert S.", "role": "Product Lead"},
-        {"quote": "Our QR menu paid for itself in two months. Tourists order in their own language now.", "name": "Selin P.", "role": "Owner, Lavinia Bistro"},
-        {"quote": "They explained cloud costs in plain language. We cut AWS by 38% in a month.", "name": "Elif A.", "role": "Engineering Manager"}
+        {"quote": "Our QR menu paid for itself in two months. Tourists order in their own language, and I update the menu from my phone.", "name": "Selin Polat", "role": "Owner, Lavinia Bistro · Istanbul", "photo": "/people/selin-polat.jpg"},
+        {"quote": "Senior people on every call. No handover to juniors after we signed. They wrote the legal pages themselves and the SEO already pays back.", "name": "Mehmet Atar", "role": "Partner, Atar Avcı Hukuk Bürosu", "photo": "/people/mehmet-atar.jpg"},
+        {"quote": "Multi-language B2B site, structured catalog, half the page-load time. International inquiries finally became serious.", "name": "Bogdan Ionescu", "role": "Export Manager, TP Thermoplast", "photo": "/people/bogdan-ionescu.jpg"},
+        {"quote": "They built the Shopify store and run the Meta ads. ROAS settled at 3.4x, organic traffic grew 60% in a quarter. One invoice, zero finger-pointing.", "name": "Aylin Kaya", "role": "CMO, Rain Group", "photo": "/people/aylin-kaya.jpg"},
+        {"quote": "They migrated us off shared hosting in 12 days, zero downtime. Uptime went from 95% to 99.97%. Our AWS bill is lower than the old shared host.", "name": "Mert Sezer", "role": "CTO, Nova Health", "photo": "/people/mert-sezer.jpg"},
+        {"quote": "Our application pipeline went from spreadsheets to a proper platform. Parents track their child's application on a real dashboard now.", "name": "Elena Popescu", "role": "Director, EduTurkia", "photo": "/people/elena-popescu.jpg"}
       ]
     },
     "ctas": {

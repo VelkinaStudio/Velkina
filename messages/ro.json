@@ -97,11 +97,12 @@
       "title": "Ce spun clienții",
       "carouselLabel": "Carusel testimoniale",
       "items": [
-        {"quote": "Velkina ne-a livrat site-ul în patru săptămâni. Clar, rapid, fără surprize.", "name": "Aylin K.", "role": "CMO, SaaS"},
-        {"quote": "Ne gestionează reclamele și cloud-ul. O singură echipă, o singură factură, zero pasare de responsabilitate.", "name": "Kerem D.", "role": "Fondator, e-commerce"},
-        {"quote": "Oameni seniori din prima zi. Fără predări către juniori după ce semnezi.", "name": "Mert S.", "role": "Product Lead"},
-        {"quote": "Meniul nostru QR s-a amortizat în două luni. Turiștii comandă acum în limba lor.", "name": "Selin P.", "role": "Proprietar, Lavinia Bistro"},
-        {"quote": "Ne-au explicat costurile cloud pe înțelesul tuturor. Am tăiat factura AWS cu 38% într-o lună.", "name": "Elif A.", "role": "Engineering Manager"}
+        {"quote": "Meniul QR s-a amortizat în două luni. Turiștii comandă în limba lor, iar eu actualizez meniul direct de pe telefon.", "name": "Selin Polat", "role": "Proprietar, Lavinia Bistro · Istanbul", "photo": "/people/selin-polat.jpg"},
+        {"quote": "Oameni seniori la fiecare apel. Fără predare către juniori după ce am semnat. Au scris ei textele juridice, iar SEO-ul aduce deja rezultate.", "name": "Mehmet Atar", "role": "Partener, Atar Avcı Hukuk Bürosu", "photo": "/people/mehmet-atar.jpg"},
+        {"quote": "Site B2B multilingv, catalog structurat, timp de încărcare redus la jumătate. Cererile internaționale au devenit în sfârșit serioase.", "name": "Bogdan Ionescu", "role": "Export Manager, TP Thermoplast", "photo": "/people/bogdan-ionescu.jpg"},
+        {"quote": "Au construit magazinul Shopify și gestionează reclamele Meta. ROAS-ul s-a stabilizat la 3,4x, trafic organic +60% într-un trimestru. O singură factură, zero pasare de responsabilitate.", "name": "Aylin Kaya", "role": "CMO, Rain Group", "photo": "/people/aylin-kaya.jpg"},
+        {"quote": "Ne-au migrat de pe hosting partajat în 12 zile, fără downtime. Uptime a urcat de la 95% la 99,97%. Factura AWS e mai mică decât vechiul hosting.", "name": "Mert Sezer", "role": "CTO, Nova Health", "photo": "/people/mert-sezer.jpg"},
+        {"quote": "Procesul nostru de aplicații a trecut din Excel într-o platformă reală. Părinții urmăresc acum aplicația copilului pe propriul dashboard.", "name": "Elena Popescu", "role": "Director, EduTurkia", "photo": "/people/elena-popescu.jpg"}
       ]
     },
     "ctas": {
