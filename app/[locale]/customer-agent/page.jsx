@@ -14,8 +14,8 @@ export function generateMetadata({params}) {
   const messages = DICTS[locale] || en;
   const ca = messages.customerAgent || {};
   return {
-    title: ca.metaTitle || 'Velkina — AI Customer Service Agents',
-    description: ca.metaDescription || 'Multilingual AI customer service agents (EN/TR/RO/DE/ES). 24/7 support, faster responses, higher satisfaction.',
+    title: ca.metaTitle || 'Velkina — AI agents for your business',
+    description: ca.metaDescription || 'We design, train and ship AI agents for real workflows — customer service, ops, sales, content, internal tools. Built and maintained by Velkina.',
     alternates: {
       canonical: `/${locale}/customer-agent`,
       languages: { en: '/en/customer-agent', tr: '/tr/customer-agent', ro: '/ro/customer-agent' }

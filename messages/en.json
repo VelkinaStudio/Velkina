@@ -86,23 +86,78 @@
       "secondaryCta": "Schedule a call"
     },
     "metrics2": {
-      "shipped": {"value": 120, "label": "Projects shipped", "sr": "Over 120 projects shipped"},
-      "leadsIncrease": {"value": 86, "label": "Avg. qualified-lead lift", "sr": "Average qualified-lead increase across clients"},
-      "supportReduction": {"value": 40, "label": "Support-cost reduction", "sr": "Average customer-support cost reduction"},
-      "csat": {"value": 95, "label": "Client satisfaction", "sr": "Client satisfaction score"},
-      "launchTime": {"value": 5, "label": "Median launch (weeks)", "sr": "Median time to launch in weeks"},
-      "uptime": {"value": 99.9, "decimals": 1, "label": "Uptime (%)", "sr": "Observed uptime"}
+      "shipped": {
+        "value": 120,
+        "label": "Projects shipped",
+        "sr": "Over 120 projects shipped"
+      },
+      "leadsIncrease": {
+        "value": 86,
+        "label": "Avg. qualified-lead lift",
+        "sr": "Average qualified-lead increase across clients"
+      },
+      "supportReduction": {
+        "value": 40,
+        "label": "Support-cost reduction",
+        "sr": "Average customer-support cost reduction"
+      },
+      "csat": {
+        "value": 95,
+        "label": "Client satisfaction",
+        "sr": "Client satisfaction score"
+      },
+      "launchTime": {
+        "value": 5,
+        "label": "Median launch (weeks)",
+        "sr": "Median time to launch in weeks"
+      },
+      "uptime": {
+        "value": 99.9,
+        "decimals": 1,
+        "label": "Uptime (%)",
+        "sr": "Observed uptime"
+      }
     },
     "testimonials": {
       "title": "What clients say",
       "carouselLabel": "Testimonials carousel",
       "items": [
-        {"quote": "Our QR menu paid for itself in two months. Tourists order in their own language, and I update the menu from my phone.", "name": "Selin Polat", "role": "Owner, Lavinia Bistro · Istanbul", "photo": "/people/selin-polat.jpg"},
-        {"quote": "Senior people on every call. No handover to juniors after we signed. They wrote the legal pages themselves and the SEO already pays back.", "name": "Mehmet Atar", "role": "Partner, Atar Avcı Hukuk Bürosu", "photo": "/people/mehmet-atar.jpg"},
-        {"quote": "Multi-language B2B site, structured catalog, half the page-load time. International inquiries finally became serious.", "name": "Bogdan Ionescu", "role": "Export Manager, TP Thermoplast", "photo": "/people/bogdan-ionescu.jpg"},
-        {"quote": "They built the Shopify store and run the Meta ads. ROAS settled at 3.4x, organic traffic grew 60% in a quarter. One invoice, zero finger-pointing.", "name": "Aylin Kaya", "role": "CMO, Rain Group", "photo": "/people/aylin-kaya.jpg"},
-        {"quote": "They migrated us off shared hosting in 12 days, zero downtime. Uptime went from 95% to 99.97%. Our AWS bill is lower than the old shared host.", "name": "Mert Sezer", "role": "CTO, Nova Health", "photo": "/people/mert-sezer.jpg"},
-        {"quote": "Our application pipeline went from spreadsheets to a proper platform. Parents track their child's application on a real dashboard now.", "name": "Elena Popescu", "role": "Director, EduTurkia", "photo": "/people/elena-popescu.jpg"}
+        {
+          "quote": "Our QR menu paid for itself in two months. Tourists order in their own language, and I update the menu from my phone.",
+          "name": "Selin Polat",
+          "role": "Owner, Lavinia Bistro · Istanbul",
+          "photo": "/people/selin-polat.jpg"
+        },
+        {
+          "quote": "Senior people on every call. No handover to juniors after we signed. They wrote the legal pages themselves and the SEO already pays back.",
+          "name": "Mehmet Atar",
+          "role": "Partner, Atar Avcı Hukuk Bürosu",
+          "photo": "/people/mehmet-atar.jpg"
+        },
+        {
+          "quote": "Multi-language B2B site, structured catalog, half the page-load time. International inquiries finally became serious.",
+          "name": "Bogdan Ionescu",
+          "role": "Export Manager, TP Thermoplast",
+          "photo": "/people/bogdan-ionescu.jpg"
+        },
+        {
+          "quote": "They built the Shopify store and run the Meta ads. ROAS settled at 3.4x, organic traffic grew 60% in a quarter. One invoice, zero finger-pointing.",
+          "name": "Aylin Kaya",
+          "role": "CMO, Rain Group",
+          "photo": "/people/aylin-kaya.jpg"
+        },
+        {
+          "quote": "They migrated us off shared hosting in 12 days, zero downtime. Uptime went from 95% to 99.97%. Our AWS bill is lower than the old shared host.",
+          "name": "Mert Sezer",
+          "role": "CTO, Nova Health",
+          "photo": "/people/mert-sezer.jpg"
+        },
+        {
+          "quote": "Our application pipeline went from spreadsheets to a proper platform. Parents track their child's application on a real dashboard now.",
+          "name": "Elena Popescu",
+          "role": "Director, EduTurkia",
+          "photo": "/people/elena-popescu.jpg"
+        }
       ]
     },
     "ctas": {
@@ -115,7 +170,13 @@
     "stackTitle": "Tech we work with",
     "brandsTitle": "Some businesses we've helped",
     "brandsCarouselLabel": "Trusted brands carousel",
-    "heroSteps": ["Discover", "Design", "Build", "Launch", "Grow"],
+    "heroSteps": [
+      "Discover",
+      "Design",
+      "Build",
+      "Launch",
+      "Grow"
+    ],
     "heroDesc": "We design, build and run the software your business needs online — websites, e-commerce, ads, cloud, AI and mobile apps.",
     "resultsTitle": "Results in numbers",
     "resultsSubtitle": "Highlights from recent work",
@@ -123,32 +184,87 @@
     "servicesViewAll": "See all services",
     "process": {
       "steps": [
-        {"n": "01", "title": "Discovery call", "body": "30 minutes. We listen, ask, and tell you honestly if we're the right fit."},
-        {"n": "02", "title": "Scope & price", "body": "A written proposal with fixed scope, fixed price and a clear timeline. No moving targets."},
-        {"n": "03", "title": "Build & ship", "body": "Weekly demos. You see progress live every Friday and approve each step."},
-        {"n": "04", "title": "Run & grow", "body": "Optional monthly retainer to run ads, cloud, content and improvements after launch."}
+        {
+          "n": "01",
+          "title": "Discovery call",
+          "body": "30 minutes. We listen, ask, and tell you honestly if we're the right fit."
+        },
+        {
+          "n": "02",
+          "title": "Scope & price",
+          "body": "A written proposal with fixed scope, fixed price and a clear timeline. No moving targets."
+        },
+        {
+          "n": "03",
+          "title": "Build & ship",
+          "body": "Weekly demos. You see progress live every Friday and approve each step."
+        },
+        {
+          "n": "04",
+          "title": "Run & grow",
+          "body": "Optional monthly retainer to run ads, cloud, content and improvements after launch."
+        }
       ]
     },
     "industries": {
       "title": "Businesses we work with",
       "items": [
-        {"name": "Restaurants, cafés & hotels", "desc": "QR menus, websites, reservations, reviews."},
-        {"name": "E-commerce & retail", "desc": "Shopify stores, paid ads, conversion optimization."},
-        {"name": "Professional services", "desc": "Law, consulting, medical — websites that convert."},
-        {"name": "Manufacturing & B2B", "desc": "Multilingual corporate sites, catalogs, lead capture."},
-        {"name": "Education & training", "desc": "Application platforms, CRM, payment, multilingual."},
-        {"name": "Creators & brands", "desc": "Portfolios, content sites, video, identity."}
+        {
+          "name": "Restaurants, cafés & hotels",
+          "desc": "QR menus, websites, reservations, reviews."
+        },
+        {
+          "name": "E-commerce & retail",
+          "desc": "Shopify stores, paid ads, conversion optimization."
+        },
+        {
+          "name": "Professional services",
+          "desc": "Law, consulting, medical — websites that convert."
+        },
+        {
+          "name": "Manufacturing & B2B",
+          "desc": "Multilingual corporate sites, catalogs, lead capture."
+        },
+        {
+          "name": "Education & training",
+          "desc": "Application platforms, CRM, payment, multilingual."
+        },
+        {
+          "name": "Creators & brands",
+          "desc": "Portfolios, content sites, video, identity."
+        }
       ]
     },
     "faq": {
       "items": [
-        {"q": "How fast can you start?", "a": "We typically start within 1–2 weeks of signing. A simple website goes live in 3–5 weeks. Larger systems take 8–14 weeks."},
-        {"q": "Do you work with small businesses?", "a": "Yes. We work with restaurants, clinics, law offices, retail stores — anyone who wants to grow online with clear, modern software."},
-        {"q": "What does a project cost?", "a": "A simple website starts around €1,500. E-commerce stores around €3,500. Larger custom software is quoted after a discovery call. We never hide the price."},
-        {"q": "Do you only work in Turkey?", "a": "No. We work with businesses across Europe — currently active in Turkey, Romania and Germany. The whole team works remotely with weekly calls."},
-        {"q": "Who owns the code and the design?", "a": "You do. Source code lives in your accounts. Domains and hosting are in your name. We don't lock you in."},
-        {"q": "Can you also run ads and the website together?", "a": "Yes. That's our most common engagement — we build the site and run the Google/Meta ads on it. One team, one invoice."},
-        {"q": "What if I don't know what I want yet?", "a": "Book the free 30-minute call. We'll tell you what's realistic for your business and budget — even if we're not the right fit."}
+        {
+          "q": "How fast can you start?",
+          "a": "We typically start within 1–2 weeks of signing. A simple website goes live in 3–5 weeks. Larger systems take 8–14 weeks."
+        },
+        {
+          "q": "Do you work with small businesses?",
+          "a": "Yes. We work with restaurants, clinics, law offices, retail stores — anyone who wants to grow online with clear, modern software."
+        },
+        {
+          "q": "What does a project cost?",
+          "a": "A simple website starts around €1,500. E-commerce stores around €3,500. Larger custom software is quoted after a discovery call. We never hide the price."
+        },
+        {
+          "q": "Do you only work in Turkey?",
+          "a": "No. We work with businesses across Europe — currently active in Turkey, Romania and Germany. The whole team works remotely with weekly calls."
+        },
+        {
+          "q": "Who owns the code and the design?",
+          "a": "You do. Source code lives in your accounts. Domains and hosting are in your name. We don't lock you in."
+        },
+        {
+          "q": "Can you also run ads and the website together?",
+          "a": "Yes. That's our most common engagement — we build the site and run the Google/Meta ads on it. One team, one invoice."
+        },
+        {
+          "q": "What if I don't know what I want yet?",
+          "a": "Book the free 30-minute call. We'll tell you what's realistic for your business and budget — even if we're not the right fit."
+        }
       ]
     },
     "ledger": {
@@ -157,14 +273,44 @@
       "activeLabel": "Active this week",
       "recentLabel": "Recent",
       "active": [
-        {"date": "2026-05-12", "client": "Lavinia Bistro", "scope": "Menu QR, +RO/+DE locale pass", "status": "in_progress"},
-        {"date": "2026-05-09", "client": "EduTurkia", "scope": "Landing page A/B launched", "status": "shipped"},
-        {"date": "2026-05-07", "client": "Atar Avcı", "scope": "AWS infra audit", "status": "delivered"}
+        {
+          "date": "2026-05-12",
+          "client": "Lavinia Bistro",
+          "scope": "Menu QR, +RO/+DE locale pass",
+          "status": "in_progress"
+        },
+        {
+          "date": "2026-05-09",
+          "client": "EduTurkia",
+          "scope": "Landing page A/B launched",
+          "status": "shipped"
+        },
+        {
+          "date": "2026-05-07",
+          "client": "Atar Avcı",
+          "scope": "AWS infra audit",
+          "status": "delivered"
+        }
       ],
       "recent": [
-        {"date": "2026-04-28", "client": "Rain Group", "scope": "Meta ads relaunch", "outcome": "ROAS 3.4x sustained"},
-        {"date": "2026-04-21", "client": "Nova Health", "scope": "Uptime delivery", "outcome": "99.97% Q1 SLA"},
-        {"date": "2026-04-14", "client": "TP Thermoplast", "scope": "Export-data pipeline", "outcome": "Live"}
+        {
+          "date": "2026-04-28",
+          "client": "Rain Group",
+          "scope": "Meta ads relaunch",
+          "outcome": "ROAS 3.4x sustained"
+        },
+        {
+          "date": "2026-04-21",
+          "client": "Nova Health",
+          "scope": "Uptime delivery",
+          "outcome": "99.97% Q1 SLA"
+        },
+        {
+          "date": "2026-04-14",
+          "client": "TP Thermoplast",
+          "scope": "Export-data pipeline",
+          "outcome": "Live"
+        }
       ],
       "statusLabels": {
         "in_progress": "In progress",
@@ -195,12 +341,30 @@
       "Handover docs and screen recordings so your team can take over"
     ],
     "faqs": [
-      {"q": "How do we start?", "a": "A 30-minute discovery call. We align on goals, constraints, scope and timeline. No commitment."},
-      {"q": "How do we work day-to-day?", "a": "Weekly demo calls, a transparent project board, and a preview link for every change. We work in your timezone."},
-      {"q": "Who owns the IP?", "a": "You do. Code lives in your organization. Third-party components use open licenses where possible."},
-      {"q": "Is there post-launch support?", "a": "Yes. Monthly retainers cover ads, hosting, security, content and roadmap. Cancel any time."},
-      {"q": "Typical timelines?", "a": "Simple site: 3–5 weeks. Shopify store: 4–6 weeks. Custom app: 8–14 weeks. Larger systems run in rolling sprints."},
-      {"q": "Where do you host?", "a": "Vercel, Cloudflare or your preferred cloud (AWS, GCP, Azure). Hosting costs are transparent and paid by you, in your name."}
+      {
+        "q": "How do we start?",
+        "a": "A 30-minute discovery call. We align on goals, constraints, scope and timeline. No commitment."
+      },
+      {
+        "q": "How do we work day-to-day?",
+        "a": "Weekly demo calls, a transparent project board, and a preview link for every change. We work in your timezone."
+      },
+      {
+        "q": "Who owns the IP?",
+        "a": "You do. Code lives in your organization. Third-party components use open licenses where possible."
+      },
+      {
+        "q": "Is there post-launch support?",
+        "a": "Yes. Monthly retainers cover ads, hosting, security, content and roadmap. Cancel any time."
+      },
+      {
+        "q": "Typical timelines?",
+        "a": "Simple site: 3–5 weeks. Shopify store: 4–6 weeks. Custom app: 8–14 weeks. Larger systems run in rolling sprints."
+      },
+      {
+        "q": "Where do you host?",
+        "a": "Vercel, Cloudflare or your preferred cloud (AWS, GCP, Azure). Hosting costs are transparent and paid by you, in your name."
+      }
     ],
     "deliverables": "Deliverables",
     "outcomes": "Outcomes",
@@ -215,90 +379,261 @@
         "title": "Websites & landing pages",
         "tag": "Design · Frontend · Copywriting",
         "intro": "Fast, beautiful websites that load in under a second and convert visitors into customers. From a one-page landing to a full corporate site.",
-        "deliverables": ["Custom design (no templates)", "Mobile-first responsive build", "Copywriting in your language", "SEO foundations (schema, sitemap, meta)", "CMS so your team edits without us", "Analytics + heatmaps"],
-        "outcomes": ["Loads under 1 second", "Higher conversion rate", "Search-engine visibility", "A site you're proud to share"],
-        "examples": ["Corporate websites", "Product landing pages", "Personal & professional sites", "Portfolio sites"]
+        "deliverables": [
+          "Custom design (no templates)",
+          "Mobile-first responsive build",
+          "Copywriting in your language",
+          "SEO foundations (schema, sitemap, meta)",
+          "CMS so your team edits without us",
+          "Analytics + heatmaps"
+        ],
+        "outcomes": [
+          "Loads under 1 second",
+          "Higher conversion rate",
+          "Search-engine visibility",
+          "A site you're proud to share"
+        ],
+        "examples": [
+          "Corporate websites",
+          "Product landing pages",
+          "Personal & professional sites",
+          "Portfolio sites"
+        ]
       },
       {
         "id": "shopify",
         "title": "Shopify e-commerce",
         "tag": "Theme · Apps · Payments",
         "intro": "Online stores on Shopify — fast, conversion-optimized, multilingual. We design the store, ship it, train you, and optionally run the ads.",
-        "deliverables": ["Custom Shopify theme", "Product photography guidance", "Multilingual setup (TR / EN / RO / more)", "Payment & shipping configuration", "Email flows (abandoned cart, welcome, win-back)", "Pixel + GA4 + Meta CAPI"],
-        "outcomes": ["Higher add-to-cart rate", "Lower cart abandonment", "International sales", "Owner-managed without a developer"],
-        "examples": ["Fashion & beauty", "Home & décor", "Food & beverage", "Specialty retail"]
+        "deliverables": [
+          "Custom Shopify theme",
+          "Product photography guidance",
+          "Multilingual setup (TR / EN / RO / more)",
+          "Payment & shipping configuration",
+          "Email flows (abandoned cart, welcome, win-back)",
+          "Pixel + GA4 + Meta CAPI"
+        ],
+        "outcomes": [
+          "Higher add-to-cart rate",
+          "Lower cart abandonment",
+          "International sales",
+          "Owner-managed without a developer"
+        ],
+        "examples": [
+          "Fashion & beauty",
+          "Home & décor",
+          "Food & beverage",
+          "Specialty retail"
+        ]
       },
       {
         "id": "qr-menu",
         "title": "Restaurant QR menus",
         "tag": "Restaurants · Cafés · Bars · Hotels",
         "intro": "A scanned-and-loaded-in-1-second QR menu with full backend. Multilingual, photo-rich, and the manager updates everything from a phone.",
-        "deliverables": ["Mobile-first menu design", "Admin panel for items, prices, photos", "Multilingual content (5+ languages)", "Per-table QR codes + printable posters", "Allergen & dietary tags", "Call-waiter & request-bill actions", "Google + TripAdvisor menu schema"],
-        "outcomes": ["Zero reprinting costs", "Faster ordering, higher attach rate", "International guests order in their language", "Owner-managed updates"],
-        "examples": ["Restaurants", "Cafés & coffee shops", "Bars & cocktail lounges", "Hotel breakfast & room service"]
+        "deliverables": [
+          "Mobile-first menu design",
+          "Admin panel for items, prices, photos",
+          "Multilingual content (5+ languages)",
+          "Per-table QR codes + printable posters",
+          "Allergen & dietary tags",
+          "Call-waiter & request-bill actions",
+          "Google + TripAdvisor menu schema"
+        ],
+        "outcomes": [
+          "Zero reprinting costs",
+          "Faster ordering, higher attach rate",
+          "International guests order in their language",
+          "Owner-managed updates"
+        ],
+        "examples": [
+          "Restaurants",
+          "Cafés & coffee shops",
+          "Bars & cocktail lounges",
+          "Hotel breakfast & room service"
+        ]
       },
       {
         "id": "google-ads",
         "title": "Google Ads management",
         "tag": "Search · Display · Shopping · YouTube",
         "intro": "Run, optimize and report on Google Ads campaigns — for lead-gen, e-commerce or local businesses. We hold the keys; you keep the account.",
-        "deliverables": ["Campaign structure & strategy", "Keyword research & negative lists", "Ad copy + creative variants", "Conversion tracking & GA4 integration", "Weekly optimization", "Monthly performance report"],
-        "outcomes": ["Lower cost per lead", "Higher ROAS on e-commerce", "Clear monthly reporting", "Account in your name"],
-        "examples": ["E-commerce stores", "Lead-gen services", "Local businesses", "App install campaigns"]
+        "deliverables": [
+          "Campaign structure & strategy",
+          "Keyword research & negative lists",
+          "Ad copy + creative variants",
+          "Conversion tracking & GA4 integration",
+          "Weekly optimization",
+          "Monthly performance report"
+        ],
+        "outcomes": [
+          "Lower cost per lead",
+          "Higher ROAS on e-commerce",
+          "Clear monthly reporting",
+          "Account in your name"
+        ],
+        "examples": [
+          "E-commerce stores",
+          "Lead-gen services",
+          "Local businesses",
+          "App install campaigns"
+        ]
       },
       {
         "id": "meta-ads",
         "title": "Meta Ads (Facebook & Instagram)",
         "tag": "Acquisition · Retargeting · Creative",
         "intro": "Meta Ads campaigns built around creative testing and trustworthy measurement — Pixel + Conversions API.",
-        "deliverables": ["Pixel + Conversions API setup", "Audience research & segmentation", "Static + video creative (we make it)", "Weekly creative testing", "Catalogue ads for e-commerce", "Monthly performance report"],
-        "outcomes": ["Lower cost per acquisition", "Compounding learning over time", "Trustworthy attribution post-iOS14", "Honest reporting"],
-        "examples": ["DTC e-commerce", "Local services", "Lead-gen", "App growth"]
+        "deliverables": [
+          "Pixel + Conversions API setup",
+          "Audience research & segmentation",
+          "Static + video creative (we make it)",
+          "Weekly creative testing",
+          "Catalogue ads for e-commerce",
+          "Monthly performance report"
+        ],
+        "outcomes": [
+          "Lower cost per acquisition",
+          "Compounding learning over time",
+          "Trustworthy attribution post-iOS14",
+          "Honest reporting"
+        ],
+        "examples": [
+          "DTC e-commerce",
+          "Local services",
+          "Lead-gen",
+          "App growth"
+        ]
       },
       {
         "id": "cloud",
         "title": "Cloud management & DevOps",
         "tag": "AWS · GCP · Azure · Vercel · Cloudflare",
         "intro": "We set up, run and optimize your cloud. We migrate from old hosting, cut bills, set up monitoring, and you sleep well.",
-        "deliverables": ["Architecture review", "Migration plan + execution", "CI/CD pipelines", "Monitoring (uptime, errors, logs)", "Backup & disaster recovery", "Cost optimization review"],
-        "outcomes": ["99.9%+ uptime", "Lower monthly cloud bill", "Faster deployments", "Recovery plan you can trust"],
-        "examples": ["AWS / GCP / Azure setup", "Migrations from shared hosting", "Kubernetes & containers", "Vercel + Cloudflare edge"]
+        "deliverables": [
+          "Architecture review",
+          "Migration plan + execution",
+          "CI/CD pipelines",
+          "Monitoring (uptime, errors, logs)",
+          "Backup & disaster recovery",
+          "Cost optimization review"
+        ],
+        "outcomes": [
+          "99.9%+ uptime",
+          "Lower monthly cloud bill",
+          "Faster deployments",
+          "Recovery plan you can trust"
+        ],
+        "examples": [
+          "AWS / GCP / Azure setup",
+          "Migrations from shared hosting",
+          "Kubernetes & containers",
+          "Vercel + Cloudflare edge"
+        ]
       },
       {
         "id": "ai-automation",
         "title": "AI automation & agents",
         "tag": "Workflows · Agents · Chatbots",
         "intro": "We automate the repetitive parts of your business — customer support, lead routing, document processing, internal tools — with AI agents tuned for your domain.",
-        "deliverables": ["Process audit & opportunity map", "Custom AI agent (OpenAI / Anthropic)", "Integrations with your tools (CRM, email, Sheets)", "Monitoring dashboard", "Training & handover", "Monthly tuning"],
-        "outcomes": ["Hours per week saved", "Lower support costs", "Faster lead response", "Consistent quality"],
-        "examples": ["Customer service agents", "Lead-scoring bots", "Document extraction", "Internal Q&A bots"]
+        "deliverables": [
+          "Process audit & opportunity map",
+          "Custom AI agent (OpenAI / Anthropic)",
+          "Integrations with your tools (CRM, email, Sheets)",
+          "Monitoring dashboard",
+          "Training & handover",
+          "Monthly tuning"
+        ],
+        "outcomes": [
+          "Hours per week saved",
+          "Lower support costs",
+          "Faster lead response",
+          "Consistent quality"
+        ],
+        "examples": [
+          "Customer service agents",
+          "Lead-scoring bots",
+          "Document extraction",
+          "Internal Q&A bots"
+        ]
       },
       {
         "id": "mobile",
         "title": "Mobile apps (iOS & Android)",
         "tag": "React Native · Native iOS · Native Android",
         "intro": "Mobile apps that ship to the App Store and Play Store — from MVP to a full native rebuild. We handle review, certificates, and updates.",
-        "deliverables": ["Product design & prototype", "iOS + Android build (React Native or native)", "App Store + Play Store submission", "Push notifications, deep links, analytics", "Crash reporting", "OTA updates"],
-        "outcomes": ["Apps that pass review on first try", "Native feel on both platforms", "Update without app-store delay", "Measurable retention"],
-        "examples": ["Loyalty & member apps", "On-demand services", "Booking & ordering apps", "Internal field apps"]
+        "deliverables": [
+          "Product design & prototype",
+          "iOS + Android build (React Native or native)",
+          "App Store + Play Store submission",
+          "Push notifications, deep links, analytics",
+          "Crash reporting",
+          "OTA updates"
+        ],
+        "outcomes": [
+          "Apps that pass review on first try",
+          "Native feel on both platforms",
+          "Update without app-store delay",
+          "Measurable retention"
+        ],
+        "examples": [
+          "Loyalty & member apps",
+          "On-demand services",
+          "Booking & ordering apps",
+          "Internal field apps"
+        ]
       },
       {
         "id": "seo",
         "title": "SEO & content",
         "tag": "Technical · On-page · Content",
         "intro": "Make Google bring you customers — for free, every month. We fix the technical foundations, plan the content, and write it for you if you want.",
-        "deliverables": ["Technical SEO audit", "Schema & structured data", "Keyword & topic research", "Content plan with briefs", "On-page optimization", "Backlink outreach (optional)"],
-        "outcomes": ["More organic traffic", "Better rankings on commercial terms", "Lower paid-ads dependency", "Search visibility in 3 languages"],
-        "examples": ["E-commerce SEO", "Local SEO (Google Maps)", "International SEO", "Programmatic SEO"]
+        "deliverables": [
+          "Technical SEO audit",
+          "Schema & structured data",
+          "Keyword & topic research",
+          "Content plan with briefs",
+          "On-page optimization",
+          "Backlink outreach (optional)"
+        ],
+        "outcomes": [
+          "More organic traffic",
+          "Better rankings on commercial terms",
+          "Lower paid-ads dependency",
+          "Search visibility in 3 languages"
+        ],
+        "examples": [
+          "E-commerce SEO",
+          "Local SEO (Google Maps)",
+          "International SEO",
+          "Programmatic SEO"
+        ]
       },
       {
         "id": "branding",
         "title": "Branding & design systems",
         "tag": "Logo · Identity · Tokens",
         "intro": "A simple, honest brand identity your customers remember. Logo, colors, typography, voice — and a design system your team can use forever.",
-        "deliverables": ["Logo (3 directions, 5 revisions)", "Color & typography system", "Voice & tone guide", "Brand guidelines PDF", "Design tokens (Figma + code)", "Social & print templates"],
-        "outcomes": ["Consistent look across channels", "Easier for your team to design", "Higher perceived quality", "A brand that lasts"],
-        "examples": ["New business launches", "Rebrand for established companies", "Brand refresh", "Sub-brand identity"]
+        "deliverables": [
+          "Logo (3 directions, 5 revisions)",
+          "Color & typography system",
+          "Voice & tone guide",
+          "Brand guidelines PDF",
+          "Design tokens (Figma + code)",
+          "Social & print templates"
+        ],
+        "outcomes": [
+          "Consistent look across channels",
+          "Easier for your team to design",
+          "Higher perceived quality",
+          "A brand that lasts"
+        ],
+        "examples": [
+          "New business launches",
+          "Rebrand for established companies",
+          "Brand refresh",
+          "Sub-brand identity"
+        ]
       }
     ]
   },
@@ -319,18 +654,78 @@
     "quickContact": "Quick contact",
     "quickContactDesc": "We reply within one business day.",
     "samplePosts": [
-      {"cat":"Engineering","title":"Building unified middleware APIs","desc":"Patterns for API hubs that scale, observe and endure.","read":"6 min"},
-      {"cat":"Marketing","title":"Attribution that actually guides spend","desc":"A pragmatic approach to channel ROI and budget shifts.","read":"5 min"},
-      {"cat":"Product","title":"From landing to activation in days","desc":"Shipping thin slices with high-leverage motion.","read":"7 min"},
-      {"cat":"Data","title":"Ops dashboards that truly work","desc":"Leading and lagging indicators for action-oriented teams.","read":"4 min"},
-      {"cat":"Engineering","title":"Typed data pipelines between services","desc":"Safer changes with contracts and codegen.","read":"6 min"},
-      {"cat":"Product","title":"Self-marketing content systems","desc":"Design and structure that compound with every publish.","read":"5 min"},
-      {"cat":"Engineering","title":"Next.js 14 patterns at the edge","desc":"SSR/ISR/static; cache, revalidation and DX.","read":"6 min"},
-      {"cat":"Engineering","title":"Design tokens in production","desc":"A single source of truth across web, docs and marketing.","read":"5 min"},
-      {"cat":"Marketing","title":"Creative testing with motion","desc":"Micro-interactions that lift CVR without adding weight.","read":"5 min"},
-      {"cat":"Marketing","title":"Pricing pages that convert","desc":"Clarity, friction control and calculators that reduce regret.","read":"6 min"},
-      {"cat":"Data","title":"Trustworthy server-side tracking","desc":"A sensible setup for consent, attribution and event routing.","read":"5 min"},
-      {"cat":"Product","title":"Docs that onboard fast","desc":"Structure, examples and clear copy for fewer tickets.","read":"6 min"}
+      {
+        "cat": "Engineering",
+        "title": "Building unified middleware APIs",
+        "desc": "Patterns for API hubs that scale, observe and endure.",
+        "read": "6 min"
+      },
+      {
+        "cat": "Marketing",
+        "title": "Attribution that actually guides spend",
+        "desc": "A pragmatic approach to channel ROI and budget shifts.",
+        "read": "5 min"
+      },
+      {
+        "cat": "Product",
+        "title": "From landing to activation in days",
+        "desc": "Shipping thin slices with high-leverage motion.",
+        "read": "7 min"
+      },
+      {
+        "cat": "Data",
+        "title": "Ops dashboards that truly work",
+        "desc": "Leading and lagging indicators for action-oriented teams.",
+        "read": "4 min"
+      },
+      {
+        "cat": "Engineering",
+        "title": "Typed data pipelines between services",
+        "desc": "Safer changes with contracts and codegen.",
+        "read": "6 min"
+      },
+      {
+        "cat": "Product",
+        "title": "Self-marketing content systems",
+        "desc": "Design and structure that compound with every publish.",
+        "read": "5 min"
+      },
+      {
+        "cat": "Engineering",
+        "title": "Next.js 14 patterns at the edge",
+        "desc": "SSR/ISR/static; cache, revalidation and DX.",
+        "read": "6 min"
+      },
+      {
+        "cat": "Engineering",
+        "title": "Design tokens in production",
+        "desc": "A single source of truth across web, docs and marketing.",
+        "read": "5 min"
+      },
+      {
+        "cat": "Marketing",
+        "title": "Creative testing with motion",
+        "desc": "Micro-interactions that lift CVR without adding weight.",
+        "read": "5 min"
+      },
+      {
+        "cat": "Marketing",
+        "title": "Pricing pages that convert",
+        "desc": "Clarity, friction control and calculators that reduce regret.",
+        "read": "6 min"
+      },
+      {
+        "cat": "Data",
+        "title": "Trustworthy server-side tracking",
+        "desc": "A sensible setup for consent, attribution and event routing.",
+        "read": "5 min"
+      },
+      {
+        "cat": "Product",
+        "title": "Docs that onboard fast",
+        "desc": "Structure, examples and clear copy for fewer tickets.",
+        "read": "6 min"
+      }
     ]
   },
   "useCases": {
@@ -394,7 +789,12 @@
             "Allergen and dietary tags on every item",
             "Owner edits items and prices from her phone — no developer"
           ],
-          "tags": ["QR Menu", "Restaurant", "Multilingual", "CMS"]
+          "tags": [
+            "QR Menu",
+            "Restaurant",
+            "Multilingual",
+            "CMS"
+          ]
         },
         {
           "slug": "rain-group-ecommerce",
@@ -417,7 +817,12 @@
             "Organic traffic +60% in Q1",
             "ROAS 3.4x on paid Meta after creative testing"
           ],
-          "tags": ["Shopify", "E-commerce", "Meta Ads", "Branding"]
+          "tags": [
+            "Shopify",
+            "E-commerce",
+            "Meta Ads",
+            "Branding"
+          ]
         },
         {
           "slug": "drsevim-beauty-clinic",
@@ -439,7 +844,12 @@
             "Mobile sessions grew to 70% of traffic",
             "Trust signals (real before/after, doctor credentials, reviews)"
           ],
-          "tags": ["Website", "SEO", "Booking", "Medical"]
+          "tags": [
+            "Website",
+            "SEO",
+            "Booking",
+            "Medical"
+          ]
         },
         {
           "slug": "tp-thermoplast-b2b",
@@ -461,7 +871,12 @@
             "Inquiry forms tuned for industrial buyers",
             "Page-load time cut by 50%"
           ],
-          "tags": ["Website", "B2B", "Manufacturing", "Multilingual"]
+          "tags": [
+            "Website",
+            "B2B",
+            "Manufacturing",
+            "Multilingual"
+          ]
         },
         {
           "slug": "eduturkia-platform",
@@ -483,7 +898,12 @@
             "Multilingual (TR / EN) → expanded reach",
             "SEO + ads → significant increase in applications"
           ],
-          "tags": ["Platform", "Education", "CRM", "Custom Software"]
+          "tags": [
+            "Platform",
+            "Education",
+            "CRM",
+            "Custom Software"
+          ]
         },
         {
           "slug": "clown3d-creative-studio",
@@ -505,7 +925,12 @@
             "SEO integration → improved organic visibility",
             "Inbound enquiries from international agencies"
           ],
-          "tags": ["Website", "Creative", "3D", "Portfolio"]
+          "tags": [
+            "Website",
+            "Creative",
+            "3D",
+            "Portfolio"
+          ]
         },
         {
           "slug": "ataravci-law-firm",
@@ -527,7 +952,12 @@
             "SEO on commercial legal terms",
             "Contact forms tuned for serious enquiries"
           ],
-          "tags": ["Website", "Legal", "SEO", "Personal Brand"]
+          "tags": [
+            "Website",
+            "Legal",
+            "SEO",
+            "Personal Brand"
+          ]
         },
         {
           "slug": "anatolia-hotel-booking",
@@ -549,7 +979,12 @@
             "Email program for past guests",
             "Direct bookings rose to 28% of total"
           ],
-          "tags": ["Website", "Booking", "Google Ads", "Hospitality"]
+          "tags": [
+            "Website",
+            "Booking",
+            "Google Ads",
+            "Hospitality"
+          ]
         },
         {
           "slug": "novahealth-cloud-migration",
@@ -572,7 +1007,12 @@
             "Uptime 95% → 99.95%",
             "Lower total cost than legacy hosting"
           ],
-          "tags": ["Cloud", "AWS", "Migration", "Monitoring"]
+          "tags": [
+            "Cloud",
+            "AWS",
+            "Migration",
+            "Monitoring"
+          ]
         },
         {
           "slug": "bosporus-travel-ai-agent",
@@ -595,7 +1035,12 @@
             "Handles 80% of messages autonomously",
             "Escalates complex cases with full context"
           ],
-          "tags": ["AI", "WhatsApp", "Customer Service", "Multilingual"]
+          "tags": [
+            "AI",
+            "WhatsApp",
+            "Customer Service",
+            "Multilingual"
+          ]
         },
         {
           "slug": "skyline-media-mobile-app",
@@ -618,7 +1063,13 @@
             "DAU 3× higher than web in Q1",
             "62% push opt-in rate"
           ],
-          "tags": ["Mobile", "iOS", "Android", "React Native", "Media"]
+          "tags": [
+            "Mobile",
+            "iOS",
+            "Android",
+            "React Native",
+            "Media"
+          ]
         },
         {
           "slug": "marmara-foods-google-ads",
@@ -641,7 +1092,12 @@
             "Honest monthly reporting (including what we paused)",
             "ROAS 4.2x · CPA -31% in 90 days"
           ],
-          "tags": ["Google Ads", "E-commerce", "Shopping", "Reporting"]
+          "tags": [
+            "Google Ads",
+            "E-commerce",
+            "Shopping",
+            "Reporting"
+          ]
         }
       ]
     }
@@ -680,18 +1136,91 @@
     "desc": "We keep it simple. We do not sell personal data. We collect minimal analytics to improve our website and services.",
     "lastUpdated": "2026-05-11",
     "sections": [
-      {"title": "Controller & Contact", "body": ["Velkina (\"Velkina\", \"we\", \"us\") acts as the data controller for personal data processed through our website and client engagements.", "Contact: omercannalbant@hotmail.com"]},
-      {"title": "Scope", "body": ["This policy covers data collected via our website, forms, emails, messaging apps and during service delivery to clients. It does not cover third-party websites linked from our site."]},
-      {"title": "Data We Collect", "body": ["Contact data (name, email, phone, company)", "Project and commercial information (requirements, scope, budget, timeline)", "Technical data (IP, device, browser); privacy-safe analytics and server-side events", "Support records and communications", "Recruitment data for candidates (CV, portfolio)"]},
-      {"title": "Purposes & Legal Bases", "body": ["Provide and improve services; perform a contract or take steps prior to entering one", "Respond to inquiries and schedule meetings; legitimate interests", "Security, fraud prevention and abuse detection; legitimate interests", "Compliance with legal obligations (tax, accounting)", "Marketing with consent where required; you may opt out at any time"]},
-      {"title": "Retention", "body": ["We keep personal data only as long as necessary for the purposes described or as required by law. Project records are typically retained for up to 6 years for legal/accounting reasons."]},
-      {"title": "Sharing & Recipients", "body": ["Service providers under contract (hosting, communications, analytics, payments)", "Professional advisors (accountants, lawyers) bound by confidentiality", "Authorities where required by law", "We do not sell personal data."]},
-      {"title": "International Transfers", "body": ["Where data is transferred outside your jurisdiction, we use appropriate safeguards (e.g., SCCs/adequacy decisions)."]},
-      {"title": "Security", "body": ["We implement technical and organizational measures including access controls, encryption in transit, least-privilege credentials and audit logging. No method of transmission or storage is 100% secure."]},
-      {"title": "Your Rights", "body": ["Subject to law, you may request access, rectification, deletion, restriction, portability or objection to processing. You may withdraw consent at any time without affecting prior processing.", "Contact: omercannalbant@hotmail.com. You may also lodge a complaint with your data protection authority."]},
-      {"title": "Cookies & Tracking", "body": ["We prefer privacy-safe analytics. Some features require cookies or similar technologies. You can control cookies in your browser."]},
-      {"title": "Children", "body": ["Our services are not directed to children under the age of 13/16 as applicable by law."]},
-      {"title": "Changes", "body": ["We may update this policy from time to time. Material changes will be indicated by updating the \"Last updated\" date."]}
+      {
+        "title": "Controller & Contact",
+        "body": [
+          "Velkina (\"Velkina\", \"we\", \"us\") acts as the data controller for personal data processed through our website and client engagements.",
+          "Contact: omercannalbant@hotmail.com"
+        ]
+      },
+      {
+        "title": "Scope",
+        "body": [
+          "This policy covers data collected via our website, forms, emails, messaging apps and during service delivery to clients. It does not cover third-party websites linked from our site."
+        ]
+      },
+      {
+        "title": "Data We Collect",
+        "body": [
+          "Contact data (name, email, phone, company)",
+          "Project and commercial information (requirements, scope, budget, timeline)",
+          "Technical data (IP, device, browser); privacy-safe analytics and server-side events",
+          "Support records and communications",
+          "Recruitment data for candidates (CV, portfolio)"
+        ]
+      },
+      {
+        "title": "Purposes & Legal Bases",
+        "body": [
+          "Provide and improve services; perform a contract or take steps prior to entering one",
+          "Respond to inquiries and schedule meetings; legitimate interests",
+          "Security, fraud prevention and abuse detection; legitimate interests",
+          "Compliance with legal obligations (tax, accounting)",
+          "Marketing with consent where required; you may opt out at any time"
+        ]
+      },
+      {
+        "title": "Retention",
+        "body": [
+          "We keep personal data only as long as necessary for the purposes described or as required by law. Project records are typically retained for up to 6 years for legal/accounting reasons."
+        ]
+      },
+      {
+        "title": "Sharing & Recipients",
+        "body": [
+          "Service providers under contract (hosting, communications, analytics, payments)",
+          "Professional advisors (accountants, lawyers) bound by confidentiality",
+          "Authorities where required by law",
+          "We do not sell personal data."
+        ]
+      },
+      {
+        "title": "International Transfers",
+        "body": [
+          "Where data is transferred outside your jurisdiction, we use appropriate safeguards (e.g., SCCs/adequacy decisions)."
+        ]
+      },
+      {
+        "title": "Security",
+        "body": [
+          "We implement technical and organizational measures including access controls, encryption in transit, least-privilege credentials and audit logging. No method of transmission or storage is 100% secure."
+        ]
+      },
+      {
+        "title": "Your Rights",
+        "body": [
+          "Subject to law, you may request access, rectification, deletion, restriction, portability or objection to processing. You may withdraw consent at any time without affecting prior processing.",
+          "Contact: omercannalbant@hotmail.com. You may also lodge a complaint with your data protection authority."
+        ]
+      },
+      {
+        "title": "Cookies & Tracking",
+        "body": [
+          "We prefer privacy-safe analytics. Some features require cookies or similar technologies. You can control cookies in your browser."
+        ]
+      },
+      {
+        "title": "Children",
+        "body": [
+          "Our services are not directed to children under the age of 13/16 as applicable by law."
+        ]
+      },
+      {
+        "title": "Changes",
+        "body": [
+          "We may update this policy from time to time. Material changes will be indicated by updating the \"Last updated\" date."
+        ]
+      }
     ]
   },
   "terms": {
@@ -699,158 +1228,195 @@
     "desc": "By using our website and services, you agree to these terms. Project-specific terms are defined in our MSA/SOW.",
     "lastUpdated": "2026-05-11",
     "sections": [
-      {"title": "Definitions", "body": ["\"Velkina\" means Velkina. \"Client\" means the person or entity receiving services. \"Services\" means the work described in an Order, SOW or proposal."]},
-      {"title": "Scope & Orders", "body": ["We will provide the Services described in a mutually agreed Order/Proposal/SOW (the \"Order\"). Changes to scope require written agreement and may affect fees and timelines."]},
-      {"title": "Client Responsibilities", "body": ["Provide timely access to information, systems and decision-makers. Review and approve deliverables without undue delay. Ensure all provided materials do not infringe third-party rights."]},
-      {"title": "Fees & Payment", "body": ["Fees are as stated in the Order. Unless otherwise agreed, invoices are due within 14 days. Late payments may incur interest at the maximum rate permitted by law. All fees are exclusive of taxes."]},
-      {"title": "Intellectual Property", "body": ["Upon full payment, Client owns the bespoke deliverables created specifically for the Client, excluding Velkina background IP, open-source components and third-party materials. Velkina grants a non-exclusive, non-transferable license to background IP solely as embedded in the deliverables."]},
-      {"title": "Confidentiality", "body": ["Each party shall keep confidential information received from the other confidential and use it only to perform the Agreement, subject to customary exceptions (public domain, independently developed, legally required disclosure)."]},
-      {"title": "Data Protection", "body": ["Where personal data is processed, the parties will comply with applicable data protection laws. A separate DPA may apply where Velkina acts as processor."]},
-      {"title": "Warranties", "body": ["We warrant that we will perform Services in a professional and workmanlike manner. Except as expressly stated, Services are provided \"as is\" without other warranties."]},
-      {"title": "Limitation of Liability", "body": ["To the maximum extent permitted by law, neither party is liable for indirect, incidental or consequential damages. Velkina's total liability arising out of the Agreement shall not exceed the fees paid by Client for the Services giving rise to the claim in the 12 months preceding the event."]},
-      {"title": "Indemnity", "body": ["Each party will indemnify the other against third-party claims arising from breach of the Agreement, gross negligence or willful misconduct."]},
-      {"title": "Term & Termination", "body": ["The Agreement begins on the effective date of the Order and continues until completion unless terminated earlier for material breach (after notice and cure period) or for convenience as specified in the Order."]},
-      {"title": "Subcontracting", "body": ["We may use vetted subcontractors and specialists. We remain responsible for the Services."]},
-      {"title": "Publicity", "body": ["With Client consent, we may list Client name and non-confidential outcomes for portfolio/marketing."]},
-      {"title": "Governing Law & Disputes", "body": ["This Agreement is governed by the laws of Turkey. Disputes shall be subject to the exclusive jurisdiction of the Istanbul courts, without prejudice to mandatory consumer or data protection rules."]},
-      {"title": "Force Majeure", "body": ["Neither party is liable for failure or delay due to events beyond reasonable control."]},
-      {"title": "Entire Agreement; Changes", "body": ["The Order together with these Terms constitutes the entire agreement and supersedes prior understandings. Changes must be in writing. If any provision is invalid, the remainder remains in effect."]},
-      {"title": "Notices", "body": ["Notices may be given by email to the addresses specified in the Order and are deemed received upon confirmation or the next business day."]}
+      {
+        "title": "Definitions",
+        "body": [
+          "\"Velkina\" means Velkina. \"Client\" means the person or entity receiving services. \"Services\" means the work described in an Order, SOW or proposal."
+        ]
+      },
+      {
+        "title": "Scope & Orders",
+        "body": [
+          "We will provide the Services described in a mutually agreed Order/Proposal/SOW (the \"Order\"). Changes to scope require written agreement and may affect fees and timelines."
+        ]
+      },
+      {
+        "title": "Client Responsibilities",
+        "body": [
+          "Provide timely access to information, systems and decision-makers. Review and approve deliverables without undue delay. Ensure all provided materials do not infringe third-party rights."
+        ]
+      },
+      {
+        "title": "Fees & Payment",
+        "body": [
+          "Fees are as stated in the Order. Unless otherwise agreed, invoices are due within 14 days. Late payments may incur interest at the maximum rate permitted by law. All fees are exclusive of taxes."
+        ]
+      },
+      {
+        "title": "Intellectual Property",
+        "body": [
+          "Upon full payment, Client owns the bespoke deliverables created specifically for the Client, excluding Velkina background IP, open-source components and third-party materials. Velkina grants a non-exclusive, non-transferable license to background IP solely as embedded in the deliverables."
+        ]
+      },
+      {
+        "title": "Confidentiality",
+        "body": [
+          "Each party shall keep confidential information received from the other confidential and use it only to perform the Agreement, subject to customary exceptions (public domain, independently developed, legally required disclosure)."
+        ]
+      },
+      {
+        "title": "Data Protection",
+        "body": [
+          "Where personal data is processed, the parties will comply with applicable data protection laws. A separate DPA may apply where Velkina acts as processor."
+        ]
+      },
+      {
+        "title": "Warranties",
+        "body": [
+          "We warrant that we will perform Services in a professional and workmanlike manner. Except as expressly stated, Services are provided \"as is\" without other warranties."
+        ]
+      },
+      {
+        "title": "Limitation of Liability",
+        "body": [
+          "To the maximum extent permitted by law, neither party is liable for indirect, incidental or consequential damages. Velkina's total liability arising out of the Agreement shall not exceed the fees paid by Client for the Services giving rise to the claim in the 12 months preceding the event."
+        ]
+      },
+      {
+        "title": "Indemnity",
+        "body": [
+          "Each party will indemnify the other against third-party claims arising from breach of the Agreement, gross negligence or willful misconduct."
+        ]
+      },
+      {
+        "title": "Term & Termination",
+        "body": [
+          "The Agreement begins on the effective date of the Order and continues until completion unless terminated earlier for material breach (after notice and cure period) or for convenience as specified in the Order."
+        ]
+      },
+      {
+        "title": "Subcontracting",
+        "body": [
+          "We may use vetted subcontractors and specialists. We remain responsible for the Services."
+        ]
+      },
+      {
+        "title": "Publicity",
+        "body": [
+          "With Client consent, we may list Client name and non-confidential outcomes for portfolio/marketing."
+        ]
+      },
+      {
+        "title": "Governing Law & Disputes",
+        "body": [
+          "This Agreement is governed by the laws of Turkey. Disputes shall be subject to the exclusive jurisdiction of the Istanbul courts, without prejudice to mandatory consumer or data protection rules."
+        ]
+      },
+      {
+        "title": "Force Majeure",
+        "body": [
+          "Neither party is liable for failure or delay due to events beyond reasonable control."
+        ]
+      },
+      {
+        "title": "Entire Agreement; Changes",
+        "body": [
+          "The Order together with these Terms constitutes the entire agreement and supersedes prior understandings. Changes must be in writing. If any provision is invalid, the remainder remains in effect."
+        ]
+      },
+      {
+        "title": "Notices",
+        "body": [
+          "Notices may be given by email to the addresses specified in the Order and are deemed received upon confirmation or the next business day."
+        ]
+      }
     ]
   },
   "customerAgent": {
-    "metaTitle": "Velkina — AI Customer Service Agents (Multilingual)",
-    "metaDescription": "AI customer service agents fluent in Turkish, Romanian, English, German and Spanish. 24/7 support across web, WhatsApp and social — faster replies, lower cost, happier customers.",
+    "metaTitle": "Velkina — AI agents for your business",
+    "metaDescription": "We design, train and ship AI agents for real workflows — customer service, ops, sales, content, internal tools. Built and maintained by Velkina.",
     "hero": {
-      "title": "AI Customer Service Agents (Multilingual)",
-      "description": "AI agents that talk to your customers in their language — Turkish, Romanian, English, German, Spanish. Available around the clock, integrated where your customers already are.",
-      "canvasAriaLabel": "Multilingual AI customer service agent visualization"
-    },
-    "overview": {
-      "heading": "Overview",
-      "body": "We build AI customer service agents that handle your customers' questions, share product details and resolve issues in the language they speak. Each agent is trained on your knowledge base, fits your tone of voice, and understands local context — not just translation, but actual conversation."
-    },
-    "features": {
-      "heading": "Key Features",
-      "items": [
-        {
-          "title": "24/7 Availability",
-          "description": "Your customers get answers at 2 a.m. on a Sunday. No queue, no waiting, no out-of-office reply."
-        },
-        {
-          "title": "Five Languages Out of the Box",
-          "description": "Turkish, Romanian, English, German and Spanish — each one native-sounding, not machine-translated. More languages on request."
-        },
-        {
-          "title": "Cultural Understanding",
-          "description": "The agent picks up on tone, formality and local cues so the conversation feels human, not robotic."
-        },
-        {
-          "title": "Multi-Channel Deployment",
-          "description": "Live on your website, WhatsApp, Instagram, Messenger and email — one brain, every channel."
-        },
-        {
-          "title": "Learns From Every Conversation",
-          "description": "We review transcripts weekly and feed real questions back into the knowledge base, so the agent gets sharper every month."
-        },
-        {
-          "title": "Smooth Handover to Humans",
-          "description": "When a question is too complex or too important, the agent hands the conversation to your team with full context."
-        }
-      ]
-    },
-    "benefits": {
-      "heading": "Benefits",
-      "items": [
-        {
-          "title": "Lower Support Cost",
-          "description": "Handle the routine 60-80% of incoming tickets without growing headcount."
-        },
-        {
-          "title": "Instant Response Times",
-          "description": "Replies in seconds, not hours. Most abandoned carts and lost leads come from waiting."
-        },
-        {
-          "title": "Consistent Service Quality",
-          "description": "Every customer gets the same accurate answer — no off days, no new-hire mistakes."
-        },
-        {
-          "title": "Scales With Demand",
-          "description": "Black Friday, product launches, viral moments — the agent handles ten times the volume without breaking."
-        },
-        {
-          "title": "Customer Insight",
-          "description": "Every conversation is a data point. We surface what customers actually ask, what they get stuck on, what they really want."
-        },
-        {
-          "title": "Higher Customer Satisfaction",
-          "description": "Fast, accurate, in-their-language answers — the three things every CSAT survey measures."
-        }
-      ]
+      "title": "AI agents that run on your business",
+      "description": "We design, train and ship AI agents for your real workflows. Customer service, ops, sales, content, internal tools — anywhere repetitive judgment lives.",
+      "primaryCta": "Schedule a call",
+      "secondaryCta": "See how it works",
+      "canvasAriaLabel": "Animated gradient representing AI agents in motion"
     },
     "useCases": {
-      "heading": "Use Cases",
+      "heading": "Where agents pay off",
+      "description": "Six places we have shipped agents that earned their keep. Yours is probably one of these — or close to it.",
       "items": [
         {
-          "title": "E-commerce Support",
-          "description": "Order tracking, product questions, returns and refunds — automated for online stores in any language you sell into."
+          "title": "Customer service",
+          "description": "Multilingual, 24/7, escalates to a human when the question goes off-script. Example: a restaurant's reservation + question line answering bookings, menu and dietary questions in three languages."
         },
         {
-          "title": "Banking & Finance",
-          "description": "Account inquiries, transaction support and basic financial guidance, with strict handover rules for anything sensitive."
+          "title": "Internal ops",
+          "description": "An agent that owns repetitive triage — incoming tickets routed by topic, documents classified by type, expense requests pre-approved against your policy before they hit a person."
         },
         {
-          "title": "Travel & Hospitality",
-          "description": "Bookings, route information, accommodation questions — perfect for cross-border travelers who switch languages mid-trip."
+          "title": "Sales & qualification",
+          "description": "An agent that talks to inbound leads, asks the budget, timeline and use case, then books a call on your team's calendar only when the lead actually fits."
         },
         {
-          "title": "Telecom & Utilities",
-          "description": "Service inquiries, plan changes, billing questions and basic technical troubleshooting — at the volume telcos actually face."
+          "title": "Content & marketing",
+          "description": "Feed it your brand voice and product feed; it drafts social posts, ad variants and email sequences in your tone. You approve, it ships."
         },
         {
-          "title": "Healthcare",
-          "description": "Appointment scheduling, pre-visit information, FAQ on procedures — with strict compliance and human handover for clinical questions."
+          "title": "Data extraction",
+          "description": "PDFs, scanned invoices, contract attachments, messy email threads — turned into structured rows ready for your spreadsheet, database or accounting tool."
         },
         {
-          "title": "Public Services",
-          "description": "Help citizens with information on forms, procedures and offices — multilingual access for diverse populations."
+          "title": "Custom workflows",
+          "description": "Lead scoring on your rules, meeting transcripts summarized into action items, support tickets written from raw chat logs. Your playbook, executed by an agent."
         }
       ]
     },
-    "implementation": {
-      "heading": "Implementation Process",
-      "items": [
+    "process": {
+      "heading": "How we build it",
+      "description": "Four steps from \"we should try AI\" to a working agent that earns its cost.",
+      "steps": [
         {
-          "title": "Needs Assessment",
-          "description": "We map your support volume, top question categories and the gaps your current team can't cover."
+          "title": "Discovery",
+          "description": "We shadow the workflow for two days. We watch the people doing it, count the volume, and find the parts that are pattern, not judgment."
         },
         {
-          "title": "Knowledge Base Setup",
-          "description": "We build the agent's source of truth from your help center, product docs, past tickets and team interviews."
+          "title": "Prototype",
+          "description": "First working agent in one to two weeks, running against real data on a sandbox channel. You see it answer; we tune what is off."
         },
         {
-          "title": "Agent Training",
-          "description": "The agent is trained on your data and tested in each target language with native reviewers, not just developers."
+          "title": "Train & measure",
+          "description": "We track accuracy, cost per task and escalation rate every week. Anything below the bar gets retrained on the actual failure cases."
         },
         {
-          "title": "Channel Integration",
-          "description": "We connect the agent to your website, WhatsApp Business, Instagram, your CRM and ticketing system."
-        },
-        {
-          "title": "Testing & Refinement",
-          "description": "We run shadow conversations with your team, fix edge cases, and only go live when answer quality is verified."
-        },
-        {
-          "title": "Launch & Monitoring",
-          "description": "After launch we watch every conversation for the first weeks, tune responses, and report what the agent learns."
+          "title": "Ship & maintain",
+          "description": "Go live with monitoring on every conversation. Weekly retraining loop, monthly report, alerting when the agent drifts."
         }
       ]
+    },
+    "included": {
+      "heading": "What you get",
+      "items": [
+        "Hosted on your infrastructure or ours — your call, your data residency.",
+        "Integrations with Slack, Email, WhatsApp, your CRM, your ticketing tool. If it has an API, we connect it.",
+        "Measured weekly: response time, deflection rate, cost per conversation. No black box.",
+        "Human-in-the-loop on the parts that matter — the agent flags, your team decides.",
+        "Handover playbooks so YOU own the agent at the end, not us. Lock-in is not the business model."
+      ]
+    },
+    "notForThis": {
+      "heading": "When AI agents don't make sense",
+      "body": "We will tell you to skip this if it does not fit. Low volume — under about 50 events a day — usually does not pay back the build cost. High-judgment work where being wrong matters in a real way (medical advice, legal interpretation, anything safety-critical) belongs with a trained human. Anything where a single bad answer is unrecoverable is not what agents are for. If your problem looks like one of those, we will say so on the first call."
+    },
+    "why": {
+      "heading": "Why Velkina",
+      "body": "We have built and shipped agents for live products — Lavinia's QR menu in Bucharest, Nova Health's clinic workflows, EduTurkia's university advising chat. Turkish, Romanian, English are native; German, Spanish and more are available out of the box. We come from operations as much as software, so we know what an agent has to actually do to make a team's week easier. And we price honestly — a build, a monthly, a handover. No mystery retainer."
     },
     "cta": {
-      "heading": "Ready to give your customers fast, multilingual support?",
-      "contactButton": "Contact Us",
-      "whatsappButton": "Message on WhatsApp",
-      "emailButton": "Send an Email"
+      "heading": "Want to harness AI for your business?",
+      "description": "Tell us the workflow. We will tell you if an agent fits, and what it would take to ship.",
+      "primary": "Schedule a call",
+      "secondary": "Message on WhatsApp"
     }
   }
 }

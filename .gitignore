@@ -36,3 +36,4 @@ tsconfig.tsbuildinfo
 
 # Claude Code session state (visual-debt tracking, etc.)
 .claude/
+.vercel
