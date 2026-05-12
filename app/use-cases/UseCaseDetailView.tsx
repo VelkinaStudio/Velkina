@@ -20,6 +20,20 @@ const CONTEXT_PHOTOS: Record<string, string> = {
   'novahealth-cloud-migration': '/context/novahealth-office.jpg'
 };
 
+// Real, live client-site screenshots (captured via Chrome DevTools).
+// Files in /public/portfolio-screenshots/. If a slug isn't mapped here, we
+// fall back to the hand-drawn SVG mockup — which is fine for the few projects
+// without a public URL (e.g. internal AWS migration).
+const LIVE_SCREENSHOTS: Record<string, string> = {
+  'lavinia-bistro-qr-menu': '/portfolio-screenshots/lavinia-bistro-qr-menu.webp',
+  'rain-group-ecommerce': '/portfolio-screenshots/rain-group-ecommerce.webp',
+  'drsevim-beauty-clinic': '/portfolio-screenshots/drsevim-beauty-clinic.webp',
+  'tp-thermoplast-b2b': '/portfolio-screenshots/tp-thermoplast-b2b.webp',
+  'eduturkia-platform': '/portfolio-screenshots/eduturkia-platform.webp',
+  'clown3d-creative-studio': '/portfolio-screenshots/clown3d-creative-studio.webp',
+  'ataravci-law-firm': '/portfolio-screenshots/ataravci-law-firm.webp'
+};
+
 export default function UseCaseDetailView({project, messages, locale}: Props) {
   const t = createT(messages);
   const uc = t('useCases') as any;
@@ -109,14 +123,20 @@ export default function UseCaseDetailView({project, messages, locale}: Props) {
         </div>
       </section>
 
-      {/* MOCKUP HERO */}
+      {/* LIVE SCREENSHOT (real) — falls back to hand-drawn SVG mockup if no live URL exists */}
       <section className="max-w-7xl mx-auto px-6 md:px-10 mb-12 md:mb-16">
-        <div className="rounded-md overflow-hidden border border-vkborder bg-vksurface shadow-strong">
+        <div className="rounded-md overflow-hidden border border-vkborder bg-vksurface shadow-strong relative group">
           <img
-            src={`/projects/${project.mockup || project.slug}.svg`}
-            alt={project.title}
+            src={LIVE_SCREENSHOTS[project.slug] || `/projects/${project.mockup || project.slug}.svg`}
+            alt={`${project.client} — ${project.title}`}
             className="w-full h-auto block"
+            loading="lazy"
           />
+          {LIVE_SCREENSHOTS[project.slug] && project.url && (
+            <div className="absolute bottom-3 right-3 bg-vkbg/85 backdrop-blur-sm border border-vkborder px-2.5 py-1 rounded-sm text-[10px] uppercase tracking-[0.16em] font-mono text-vkmuted">
+              live at {new URL(project.url).hostname.replace(/^www\./, '')}
+            </div>
+          )}
         </div>
       </section>
 
@@ -186,7 +206,7 @@ export default function UseCaseDetailView({project, messages, locale}: Props) {
       {/* CTA STRIP */}
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-20">
         <div className="rounded-md border border-vkborder vk-glass shadow-soft p-8 md:p-10 text-center relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none opacity-40" style={{background: 'radial-gradient(600px 300px at 50% 50%, rgba(232,166,86,0.12), transparent 70%)'}} />
+          <div className="absolute inset-0 pointer-events-none opacity-40" style={{background: 'radial-gradient(600px 300px at 50% 50%, rgba(244,239,230,0.06), transparent 70%)'}} />
           <h2 className="display-1 text-2xl md:text-4xl relative text-vktext">
             {lang === 'tr' ? 'Sıradaki proje sizinki olabilir.' : lang === 'ro' ? 'Următorul proiect ar putea fi al dvs.' : "Your project could be next."}
           </h2>

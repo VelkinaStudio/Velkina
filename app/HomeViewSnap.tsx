@@ -31,6 +31,19 @@ const CATEGORY_LABELS: Record<string, Record<string, string>> = {
   ro: {websites: 'Site-uri web', ecommerce: 'E-commerce', qr: 'Meniuri QR', ads: 'Reclame & Creștere', cloud: 'Cloud', ai: 'AI', mobile: 'Mobil'}
 };
 
+// Real, live client-site screenshots captured via Chrome DevTools.
+// Files in /public/portfolio-screenshots/. Slugs without a live URL fall back
+// to the existing /projects/<slug>.svg mockup.
+const LIVE_SCREENSHOTS: Record<string, string> = {
+  'lavinia-bistro-qr-menu': '/portfolio-screenshots/lavinia-bistro-qr-menu.webp',
+  'rain-group-ecommerce': '/portfolio-screenshots/rain-group-ecommerce.webp',
+  'drsevim-beauty-clinic': '/portfolio-screenshots/drsevim-beauty-clinic.webp',
+  'tp-thermoplast-b2b': '/portfolio-screenshots/tp-thermoplast-b2b.webp',
+  'eduturkia-platform': '/portfolio-screenshots/eduturkia-platform.webp',
+  'clown3d-creative-studio': '/portfolio-screenshots/clown3d-creative-studio.webp',
+  'ataravci-law-firm': '/portfolio-screenshots/ataravci-law-firm.webp'
+};
+
 export default function HomeView({messages, locale}: HomeViewProps) {
   const t = createT(messages ?? getDefaultMessages());
   const h = t('home') as any;
@@ -45,9 +58,7 @@ export default function HomeView({messages, locale}: HomeViewProps) {
   const heroData = h?.hero || {};
   const testimonials = Array.isArray(h?.testimonials?.items) ? h.testimonials.items : [];
   const ledger = h?.ledger || {};
-  const ledgerActive: any[] = Array.isArray(ledger?.active) ? ledger.active : [];
-  const ledgerRecent: any[] = Array.isArray(ledger?.recent) ? ledger.recent : [];
-  const statusLabels: Record<string, string> = ledger?.statusLabels || {};
+  const ledgerDelivered: any[] = Array.isArray(ledger?.delivered) ? ledger.delivered : [];
 
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const faqs: any[] = Array.isArray(h?.faq?.items) ? h.faq.items : [];
@@ -122,33 +133,11 @@ export default function HomeView({messages, locale}: HomeViewProps) {
                 </div>
 
                 <div className="vk-ledger__group">
-                  <span className="vk-ledger__label">
-                    <span className="vk-ledger__pulse" aria-hidden="true" />
-                    {ledger?.activeLabel}
-                  </span>
-                  {ledgerActive.map((row: any, i: number) => (
+                  {ledgerDelivered.map((row: any, i: number) => (
                     <div
-                      className="vk-ledger__row reveal-on-scroll"
+                      className="vk-ledger__row vk-ledger__row--delivered reveal-on-scroll"
                       style={{transitionDelay: `${i * 80}ms`}}
-                      key={`active-${row.date}-${row.client}`}
-                    >
-                      <time className="vk-ledger__date" dateTime={row.date}>{row.date}</time>
-                      <span className="vk-ledger__client">{row.client}</span>
-                      <span className="vk-ledger__scope">{row.scope}</span>
-                      <span className={`vk-ledger__status vk-ledger__status--${row.status}`}>
-                        {statusLabels?.[row.status] ?? row.status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="vk-ledger__group">
-                  <span className="vk-ledger__label vk-ledger__label--muted">{ledger?.recentLabel}</span>
-                  {ledgerRecent.map((row: any, i: number) => (
-                    <div
-                      className="vk-ledger__row reveal-on-scroll"
-                      style={{transitionDelay: `${(ledgerActive.length + i) * 80}ms`}}
-                      key={`recent-${row.date}-${row.client}`}
+                      key={`delivered-${row.date}-${row.client}`}
                     >
                       <time className="vk-ledger__date" dateTime={row.date}>{row.date}</time>
                       <span className="vk-ledger__client">{row.client}</span>
@@ -249,8 +238,8 @@ export default function HomeView({messages, locale}: HomeViewProps) {
               >
                 <div className="aspect-[3/2] overflow-hidden bg-vkbg border-b border-vkborder">
                   <img
-                    src={`/projects/${p.mockup || p.slug}.svg`}
-                    alt={p.title}
+                    src={LIVE_SCREENSHOTS[p.slug] || `/projects/${p.mockup || p.slug}.svg`}
+                    alt={`${p.client || p.title}${p.url ? ' — live site' : ''}`}
                     className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out"
                     loading="lazy"
                   />
@@ -393,7 +382,7 @@ export default function HomeView({messages, locale}: HomeViewProps) {
 
       {/* CTA */}
       <section id="cta" className="py-28 md:py-40 relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none opacity-60" style={{background: 'radial-gradient(800px 400px at 50% 50%, rgba(232,166,86,0.10), transparent 70%)'}} />
+        <div className="absolute inset-0 pointer-events-none opacity-60" style={{background: 'radial-gradient(800px 400px at 50% 50%, rgba(244,239,230,0.06), transparent 70%)'}} />
         <div className="relative max-w-3xl mx-auto px-6 md:px-10 text-center reveal-on-scroll">
           <div className="text-[11px] uppercase tracking-[0.28em] text-vkaccent font-mono mb-6">{h?.ctaSection?.eyebrow}</div>
           <h2 className="display-1 text-4xl md:text-6xl lg:text-7xl text-vktext">{h?.ctaSection?.title}</h2>

@@ -268,55 +268,46 @@
       ]
     },
     "ledger": {
-      "heading": "Recent work",
-      "subheading": "Velkina ships from İstanbul · Bucharest · Berlin",
-      "activeLabel": "Active this week",
-      "recentLabel": "Recent",
-      "active": [
+      "heading": "Selected work",
+      "subheading": "Shipping from İstanbul · Bucharest · Berlin since 2021",
+      "delivered": [
         {
-          "date": "2026-05-12",
+          "date": "2026-05",
           "client": "Lavinia Bistro",
-          "scope": "Menu QR, +RO/+DE locale pass",
-          "status": "in_progress"
+          "scope": "Multilingual QR menu — EN/TR/RO/DE",
+          "outcome": "Payback in 2 months"
         },
         {
-          "date": "2026-05-09",
-          "client": "EduTurkia",
-          "scope": "Landing page A/B launched",
-          "status": "shipped"
-        },
-        {
-          "date": "2026-05-07",
-          "client": "Atar Avcı",
-          "scope": "AWS infra audit",
-          "status": "delivered"
-        }
-      ],
-      "recent": [
-        {
-          "date": "2026-04-28",
+          "date": "2026-04",
           "client": "Rain Group",
-          "scope": "Meta ads relaunch",
+          "scope": "Meta Ads relaunch + creative",
           "outcome": "ROAS 3.4x sustained"
         },
         {
-          "date": "2026-04-21",
+          "date": "2026-04",
           "client": "Nova Health",
-          "scope": "Uptime delivery",
+          "scope": "AWS uptime delivery",
           "outcome": "99.97% Q1 SLA"
         },
         {
-          "date": "2026-04-14",
+          "date": "2026-03",
+          "client": "EduTurkia",
+          "scope": "Student platform + funnel rebuild",
+          "outcome": "+60% organic, Q1"
+        },
+        {
+          "date": "2026-03",
+          "client": "Atar Avcı",
+          "scope": "AWS infra + CDN migration",
+          "outcome": "€3.4k / month saved"
+        },
+        {
+          "date": "2026-02",
           "client": "TP Thermoplast",
-          "scope": "Export-data pipeline",
-          "outcome": "Live"
+          "scope": "Export-data pipeline (B2B)",
+          "outcome": "Live, full coverage"
         }
-      ],
-      "statusLabels": {
-        "in_progress": "In progress",
-        "shipped": "Shipped",
-        "delivered": "Delivered"
-      }
+      ]
     }
   },
   "services": {
@@ -1340,7 +1331,8 @@
       "description": "We design, train and ship AI agents for your real workflows. Customer service, ops, sales, content, internal tools — anywhere repetitive judgment lives.",
       "primaryCta": "Schedule a call",
       "secondaryCta": "See how it works",
-      "canvasAriaLabel": "Animated gradient representing AI agents in motion"
+      "canvasAriaLabel": "Animated gradient representing AI agents in motion",
+      "eyebrow": "Velkina · AI agents"
     },
     "useCases": {
       "heading": "Where agents pay off",

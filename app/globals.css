@@ -3,27 +3,36 @@
 @tailwind utilities;
 
 :root {
-  /* Editorial-mature palette: deep ink + warm cream + one amber accent */
+  /* Editorial mono palette: deep ink + clean white. No primary accent color.
+     Status indicators only use muted sage/blue/red where semantically needed
+     (shipped/info/error). Brand color = the type. */
   --vk-bg: #0A0A0B;
   --vk-surface: #15151A;
   --vk-surface-2: #1F1F26;
-  --vk-text: #F4EFE6;
-  --vk-text-muted: #A8A095;
+  --vk-text: #F4EFE6;            /* warm cream stays — feels editorial, not pure white */
+  --vk-text-muted: #8E8980;
+  --vk-text-dim: #5F5C57;
   --vk-border: rgba(244, 239, 230, 0.08);
-  --vk-border-strong: rgba(244, 239, 230, 0.16);
+  --vk-border-strong: rgba(244, 239, 230, 0.18);
 
-  --vk-accent: #E8A656;          /* warm amber — primary accent */
-  --vk-accent-soft: #F4D1A0;
-  --vk-accent-deep: #C7864A;
-  --vk-success: #7FB069;          /* muted sage — for positive metrics */
-  --vk-info: #6DA5C5;             /* dusty blue — for neutral info */
+  /* "Accent" is now the cream itself — most uses of var(--vk-accent) become
+     the primary text color. Where a true highlight is needed (CTA buttons,
+     focus rings), the color stays cream but with a glow/border treatment. */
+  --vk-accent: #F4EFE6;
+  --vk-accent-soft: #FFFFFF;
+  --vk-accent-deep: #D4CFC6;
 
-  /* Backward-compatible token aliases (legacy code still mentions these names) */
-  --vk-cyan: #6DA5C5;
-  --vk-pink: #E8A656;
+  /* Status colors stay (used semantically only — shipped/info/error) */
+  --vk-success: #7FB069;
+  --vk-info: #8FB8D0;
+  --vk-warn: #C97B4F;
+
+  /* Legacy aliases — keep functional but neutralized */
+  --vk-cyan: #8FB8D0;
+  --vk-pink: #F4EFE6;
   --vk-mint: #7FB069;
-  --vk-purple: #B89579;
-  --vk-violet: #B89579;
+  --vk-purple: #A8A095;
+  --vk-violet: #A8A095;
 
   --vk-radius-xs: 4px;
   --vk-radius-sm: 8px;
@@ -32,14 +41,14 @@
   --vk-radius-xl: 28px;
 
   --vk-shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --vk-shadow-strong: 0 24px 60px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(232, 166, 86, 0.08);
+  --vk-shadow-strong: 0 24px 60px rgba(0, 0, 0, 0.55), 0 4px 12px rgba(244, 239, 230, 0.05);
   --vk-shadow-inset: inset 0 1px 0 rgba(244, 239, 230, 0.04);
 
-  --vk-glow-amber: drop-shadow(0 0 24px rgba(232, 166, 86, 0.18));
+  --vk-glow-amber: drop-shadow(0 0 20px rgba(244, 239, 230, 0.10));
   --vk-glass: rgba(244, 239, 230, 0.03);
 
-  --vk-grad-warm: radial-gradient(1200px 600px at 80% -10%, rgba(232, 166, 86, 0.10), transparent 60%),
-                  radial-gradient(1000px 500px at 10% 120%, rgba(109, 165, 197, 0.06), transparent 60%);
+  /* No warm radial wash anymore — pure ink */
+  --vk-grad-warm: radial-gradient(1200px 600px at 80% -10%, rgba(244, 239, 230, 0.025), transparent 60%);
 }
 
 html {
@@ -54,7 +63,7 @@ body {
   background: var(--vk-bg);
   /* Subtle warm noise via gradient for editorial paper feel */
   background-image:
-    radial-gradient(1200px 800px at 100% 0%, rgba(232, 166, 86, 0.04), transparent 60%),
+    radial-gradient(1200px 800px at 100% 0%, rgba(244, 239, 230, 0.04), transparent 60%),
     radial-gradient(1000px 600px at 0% 100%, rgba(109, 165, 197, 0.025), transparent 60%);
 }
 
@@ -83,8 +92,8 @@ body {
 
 .vk-outline {
   border-color: var(--vk-accent) !important;
-  background: rgba(232, 166, 86, 0.08);
-  box-shadow: 0 0 0 1px rgba(232, 166, 86, 0.25) inset;
+  background: rgba(244, 239, 230, 0.08);
+  box-shadow: 0 0 0 1px rgba(244, 239, 230, 0.25) inset;
 }
 
 /* Navbar solid state */
@@ -258,7 +267,7 @@ a[data-cta]:focus-visible { outline: 2px solid var(--vk-accent); outline-offset:
   font-weight: 600;
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px dashed rgba(232, 166, 86, 0.18);
+  border-bottom: 1px dashed rgba(244, 239, 230, 0.18);
 }
 .vk-ledger__label--muted {
   color: var(--vk-text-muted);
@@ -270,13 +279,13 @@ a[data-cta]:focus-visible { outline: 2px solid var(--vk-accent); outline-offset:
   height: 6px;
   border-radius: 50%;
   background: var(--vk-accent);
-  box-shadow: 0 0 0 0 rgba(232, 166, 86, 0.55);
+  box-shadow: 0 0 0 0 rgba(244, 239, 230, 0.55);
   animation: vk-ledger-pulse 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }
 @keyframes vk-ledger-pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(232, 166, 86, 0.55); }
-  70%  { box-shadow: 0 0 0 8px rgba(232, 166, 86, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(232, 166, 86, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(244, 239, 230, 0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(244, 239, 230, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(244, 239, 230, 0); }
 }
 .vk-ledger__row {
   display: grid;
@@ -372,7 +381,7 @@ a[data-cta]:focus-visible { outline: 2px solid var(--vk-accent); outline-offset:
 
 /* Hero highlight: warm wash, not neon */
 .vk-highlight {
-  background: linear-gradient(180deg, rgba(244, 239, 230, 0) 62%, rgba(232, 166, 86, 0.32) 62%, rgba(232, 166, 86, 0.32) 100%);
+  background: linear-gradient(180deg, rgba(244, 239, 230, 0) 62%, rgba(244, 239, 230, 0.32) 62%, rgba(244, 239, 230, 0.32) 100%);
   border-radius: 4px;
   padding: 0 0.06em;
 }

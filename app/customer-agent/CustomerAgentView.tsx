@@ -34,20 +34,20 @@ export default function CustomerAgentView({messages, locale}: CustomerAgentViewP
     <div className="pt-4">
       {/* Hero */}
       <section className="vk-hero relative overflow-hidden">
-        {/* Soft amber-tinted gradient orb — replaces Turkish-specific HeroShapes canvas */}
+        {/* Quiet cream-tinted gradient orb — editorial mono palette */}
         <div
           aria-hidden="true"
           className="absolute -inset-24 blur-3xl opacity-70 pointer-events-none"
           style={{
             background:
-              'radial-gradient(620px 320px at 18% 12%, rgba(255, 176, 64, 0.30), transparent 65%), radial-gradient(560px 280px at 82% 78%, rgba(255, 138, 32, 0.18), transparent 65%)',
+              'radial-gradient(620px 320px at 18% 12%, rgba(244, 239, 230, 0.30), transparent 65%), radial-gradient(560px 280px at 82% 78%, rgba(244, 239, 230, 0.18), transparent 65%)',
           }}
         ></div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-10 pt-20 pb-16 grid gap-10 md:grid-cols-[1.15fr_0.85fr] items-center">
           <div>
-            <span className="inline-block text-xs uppercase tracking-[0.18em] text-vkaccent/90 mb-4">
-              Velkina · AI agents
+            <span className="inline-block text-xs uppercase tracking-[0.18em] text-vkmuted mb-4">
+              {hero.eyebrow ?? 'Velkina · AI agents'}
             </span>
             <h1 className="font-heading text-4xl md:text-5xl leading-tight">{hero.title}</h1>
             <p className="text-white/80 max-w-2xl mt-4 text-base md:text-lg">{hero.description}</p>
@@ -90,25 +90,25 @@ export default function CustomerAgentView({messages, locale}: CustomerAgentViewP
             position: absolute;
             inset: 22%;
             border-radius: 9999px;
-            background: radial-gradient(circle at 35% 30%, rgba(255, 200, 110, 0.95), rgba(255, 138, 32, 0.55) 55%, rgba(180, 70, 0, 0.0) 75%);
-            box-shadow: 0 0 80px rgba(255, 160, 60, 0.35), inset 0 0 60px rgba(255, 220, 160, 0.18);
+            background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.95), rgba(244, 239, 230, 0.55) 55%, rgba(0, 0, 0, 0.0) 75%);
+            box-shadow: 0 0 80px rgba(244, 239, 230, 0.35), inset 0 0 60px rgba(255, 255, 255, 0.18);
             filter: saturate(1.05);
           }
           .vk-agent-orb__ring {
             position: absolute;
             inset: 0;
             border-radius: 9999px;
-            border: 1px solid rgba(255, 176, 64, 0.20);
+            border: 1px solid rgba(244, 239, 230, 0.20);
             animation: vk-orb-spin 18s linear infinite;
           }
           .vk-agent-orb__ring--1 {
             inset: 6%;
-            border-color: rgba(255, 200, 120, 0.16);
+            border-color: rgba(255, 255, 255, 0.16);
             animation-duration: 24s;
           }
           .vk-agent-orb__ring--2 {
             inset: 14%;
-            border-color: rgba(255, 176, 64, 0.10);
+            border-color: rgba(244, 239, 230, 0.10);
             animation-duration: 32s;
             animation-direction: reverse;
           }

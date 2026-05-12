@@ -301,36 +301,11 @@ export default function QrMenuView({sitePath = '/en'}: {sitePath?: string}) {
   const [search, setSearch] = useState('');
   const [showInfo, setShowInfo] = useState(false);
 
-  // Mark body so site shell hides while in demo mode + tear down Tawk widget
+  // Mark body so the site shell (header/footer) hides in demo mode.
   useEffect(() => {
     document.body.setAttribute('data-qr-demo', 'true');
-    // Block Tawk before it appears
-    try {
-      (window as any).Tawk_API = (window as any).Tawk_API || {};
-      (window as any).Tawk_API.onLoad = function () {
-        try { (window as any).Tawk_API.hideWidget(); } catch {}
-      };
-      if ((window as any).Tawk_API && typeof (window as any).Tawk_API.hideWidget === 'function') {
-        (window as any).Tawk_API.hideWidget();
-      }
-    } catch {}
-    // Brute force: sweep any tawk-related DOM nodes
-    const sweep = () => {
-      const nodes = document.querySelectorAll('iframe[src*="tawk"], iframe[title*="chat"], [id*="tawk"], [class*="tawk"]');
-      nodes.forEach(n => {
-        (n as HTMLElement).style.display = 'none';
-      });
-    };
-    sweep();
-    const interval = setInterval(sweep, 500);
     return () => {
       document.body.removeAttribute('data-qr-demo');
-      clearInterval(interval);
-      try {
-        if ((window as any).Tawk_API && typeof (window as any).Tawk_API.showWidget === 'function') {
-          (window as any).Tawk_API.showWidget();
-        }
-      } catch {}
     };
   }, []);
 

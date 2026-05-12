@@ -268,55 +268,46 @@
       ]
     },
     "ledger": {
-      "heading": "Son işler",
-      "subheading": "Velkina İstanbul · Bükreş · Berlin'den çalışıyor",
-      "activeLabel": "Bu hafta aktif",
-      "recentLabel": "Yakın zamanda",
-      "active": [
+      "heading": "Seçili işler",
+      "subheading": "İstanbul · Bükreş · Berlin’den 2021’den beri ürün gönderiyoruz",
+      "delivered": [
         {
-          "date": "2026-05-12",
+          "date": "2026-05",
           "client": "Lavinia Bistro",
-          "scope": "QR menü, +RO/+DE dil revizyonu",
-          "status": "in_progress"
+          "scope": "Çok dilli QR menü — EN/TR/RO/DE",
+          "outcome": "2 ayda kendini amorti etti"
         },
         {
-          "date": "2026-05-09",
-          "client": "EduTurkia",
-          "scope": "Landing sayfası A/B testi yayında",
-          "status": "shipped"
-        },
-        {
-          "date": "2026-05-07",
-          "client": "Atar Avcı",
-          "scope": "AWS altyapı denetimi",
-          "status": "delivered"
-        }
-      ],
-      "recent": [
-        {
-          "date": "2026-04-28",
+          "date": "2026-04",
           "client": "Rain Group",
-          "scope": "Meta reklam yeniden lansmanı",
-          "outcome": "ROAS 3.4x sürdürülüyor"
+          "scope": "Meta Ads yeniden lansman + kreatif",
+          "outcome": "ROAS 3.4x sürdürüldü"
         },
         {
-          "date": "2026-04-21",
+          "date": "2026-04",
           "client": "Nova Health",
-          "scope": "Uptime teslimatı",
-          "outcome": "Ç1 SLA %99,97"
+          "scope": "AWS uptime teslimi",
+          "outcome": "Ç1 SLA %99.97"
         },
         {
-          "date": "2026-04-14",
+          "date": "2026-03",
+          "client": "EduTurkia",
+          "scope": "Öğrenci platformu + huni iyileştirmesi",
+          "outcome": "Ç1 organik +%60"
+        },
+        {
+          "date": "2026-03",
+          "client": "Atar Avcı",
+          "scope": "AWS altyapı + CDN göçü",
+          "outcome": "Ayda €3.4k tasarruf"
+        },
+        {
+          "date": "2026-02",
           "client": "TP Thermoplast",
-          "scope": "İhracat veri pipeline'ı",
-          "outcome": "Canlı"
+          "scope": "İhracat veri hattı (B2B)",
+          "outcome": "Tam kapsam ile canlı"
         }
-      ],
-      "statusLabels": {
-        "in_progress": "Devam ediyor",
-        "shipped": "Yayında",
-        "delivered": "Teslim edildi"
-      }
+      ]
     }
   },
   "services": {
@@ -1340,7 +1331,8 @@
       "description": "Gerçek iş akışların için AI ajanları tasarlıyor, eğitiyor ve devreye alıyoruz. Müşteri hizmetleri, operasyon, satış, içerik, iç araçlar — tekrar eden karar nerede varsa.",
       "primaryCta": "Görüşme planla",
       "secondaryCta": "Nasıl çalıştığını gör",
-      "canvasAriaLabel": "Hareket halindeki AI ajanlarını temsil eden gradyan animasyonu"
+      "canvasAriaLabel": "Hareket halindeki AI ajanlarını temsil eden gradyan animasyonu",
+      "eyebrow": "Velkina · AI ajanları"
     },
     "useCases": {
       "heading": "Ajanların işe yaradığı yerler",

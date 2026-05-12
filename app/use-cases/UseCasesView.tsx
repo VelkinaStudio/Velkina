@@ -12,6 +12,17 @@ export type UseCasesViewProps = {
 
 const FILTER_ORDER = ['all', 'websites', 'ecommerce', 'qr', 'ads', 'cloud', 'ai', 'mobile'];
 
+// Real, live client-site screenshots captured via Chrome DevTools.
+const LIVE_SCREENSHOTS: Record<string, string> = {
+  'lavinia-bistro-qr-menu': '/portfolio-screenshots/lavinia-bistro-qr-menu.webp',
+  'rain-group-ecommerce': '/portfolio-screenshots/rain-group-ecommerce.webp',
+  'drsevim-beauty-clinic': '/portfolio-screenshots/drsevim-beauty-clinic.webp',
+  'tp-thermoplast-b2b': '/portfolio-screenshots/tp-thermoplast-b2b.webp',
+  'eduturkia-platform': '/portfolio-screenshots/eduturkia-platform.webp',
+  'clown3d-creative-studio': '/portfolio-screenshots/clown3d-creative-studio.webp',
+  'ataravci-law-firm': '/portfolio-screenshots/ataravci-law-firm.webp'
+};
+
 export default function UseCasesView({messages, locale}: UseCasesViewProps) {
   const t = createT(messages ?? getDefaultMessages());
   const uc = t('useCases') as any;
@@ -60,8 +71,8 @@ export default function UseCasesView({messages, locale}: UseCasesViewProps) {
             >
               <div className="aspect-[3/2] overflow-hidden bg-black/30 border-b border-white/5">
                 <img
-                  src={`/projects/${p.mockup || p.slug}.svg`}
-                  alt={p.title}
+                  src={LIVE_SCREENSHOTS[p.slug] || `/projects/${p.mockup || p.slug}.svg`}
+                  alt={`${p.client || p.title}${p.url ? ' — live site' : ''}`}
                   className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                   loading="lazy"
                   onError={(e) => {

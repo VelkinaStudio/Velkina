@@ -268,55 +268,46 @@
       ]
     },
     "ledger": {
-      "heading": "Lucrări recente",
-      "subheading": "Velkina livrează din İstanbul · București · Berlin",
-      "activeLabel": "Active săptămâna aceasta",
-      "recentLabel": "Recente",
-      "active": [
+      "heading": "Lucrări selectate",
+      "subheading": "Livrăm din İstanbul · București · Berlin din 2021",
+      "delivered": [
         {
-          "date": "2026-05-12",
+          "date": "2026-05",
           "client": "Lavinia Bistro",
-          "scope": "Meniu QR, revizie locale RO/DE",
-          "status": "in_progress"
+          "scope": "Meniu QR multilingv — EN/TR/RO/DE",
+          "outcome": "Amortizat în 2 luni"
         },
         {
-          "date": "2026-05-09",
-          "client": "EduTurkia",
-          "scope": "Test A/B pe landing page lansat",
-          "status": "shipped"
-        },
-        {
-          "date": "2026-05-07",
-          "client": "Atar Avcı",
-          "scope": "Audit infrastructură AWS",
-          "status": "delivered"
-        }
-      ],
-      "recent": [
-        {
-          "date": "2026-04-28",
+          "date": "2026-04",
           "client": "Rain Group",
-          "scope": "Relansare Meta Ads",
-          "outcome": "ROAS 3.4x susținut"
+          "scope": "Relansare Meta Ads + creație",
+          "outcome": "ROAS 3.4x menținut"
         },
         {
-          "date": "2026-04-21",
+          "date": "2026-04",
           "client": "Nova Health",
-          "scope": "Livrare uptime",
-          "outcome": "SLA T1 99,97%"
+          "scope": "Livrare uptime AWS",
+          "outcome": "SLA T1: 99.97%"
         },
         {
-          "date": "2026-04-14",
+          "date": "2026-03",
+          "client": "EduTurkia",
+          "scope": "Platformă pentru studenți + funnel",
+          "outcome": "+60% organic, T1"
+        },
+        {
+          "date": "2026-03",
+          "client": "Atar Avcı",
+          "scope": "Migrare AWS + CDN",
+          "outcome": "€3.4k / lună economisit"
+        },
+        {
+          "date": "2026-02",
           "client": "TP Thermoplast",
-          "scope": "Pipeline date export",
-          "outcome": "În producție"
+          "scope": "Pipeline date export (B2B)",
+          "outcome": "Live, acoperire completă"
         }
-      ],
-      "statusLabels": {
-        "in_progress": "În lucru",
-        "shipped": "Lansat",
-        "delivered": "Livrat"
-      }
+      ]
     }
   },
   "services": {
@@ -1340,7 +1331,8 @@
       "description": "Construim agenți AI pentru fluxurile tale de lucru reale. Servicii clienți, operațional, vânzări, conținut, instrumente interne — oriunde apar decizii repetitive.",
       "primaryCta": "Programează o discuție",
       "secondaryCta": "Vezi cum funcționează",
-      "canvasAriaLabel": "Animație de gradient care reprezintă agenți AI în mișcare"
+      "canvasAriaLabel": "Animație de gradient care reprezintă agenți AI în mișcare",
+      "eyebrow": "Velkina · Agenți AI"
     },
     "useCases": {
       "heading": "Unde aduc agenții valoare",
