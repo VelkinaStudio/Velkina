@@ -11,8 +11,12 @@ export default createMiddleware({
 });
 
 export const config = {
-  // Enforce locale prefixes and ignore Next.js internals & static files
+  // Enforce locale prefixes everywhere EXCEPT:
+  //   _next      → Next.js internals
+  //   *.foo      → static files
+  //   demo/*     → English-only demo sites (showcase mini-products)
+  //   robots.txt, sitemap.xml → handled by Next directly
   matcher: [
-    '/((?!_next|.*\\..*).*)'
+    '/((?!_next|demo|robots\\.txt|sitemap\\.xml|.*\\..*).*)'
   ]
 };
