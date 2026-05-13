@@ -29,7 +29,12 @@
       "headline": "We build the software businesses use to run, sell and grow.",
       "sub": "Websites, e-commerce, mobile apps and AI automation — shipped quickly, by a small team, in three languages.",
       "primaryCta": "Talk on WhatsApp",
-      "secondaryCta": "See recent work"
+      "secondaryCta": "See recent work",
+      "stats": [
+        { "k": "Since", "v": "2021" },
+        { "k": "Shipped this quarter", "v": "6 projects" },
+        { "k": "Founder reply time", "v": "< 2h on WhatsApp" }
+      ]
     },
     "ledger": {
       "eyebrow": "Recent work",

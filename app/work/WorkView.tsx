@@ -42,7 +42,7 @@ export default function WorkView({ messages, locale }: { messages: any; locale: 
                   style={{textDecoration: 'none'}}
                 >
                   <div
-                    className="aspect-[4/3] overflow-hidden rounded-lg relative"
+                    className="aspect-[16/10] overflow-hidden rounded-lg relative"
                     style={{
                       background: isReal ? 'var(--vk-surface)' : 'linear-gradient(135deg, #1B1B22 0%, #131318 100%)',
                       border: '1px solid var(--vk-border)'

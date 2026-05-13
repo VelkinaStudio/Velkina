@@ -78,6 +78,17 @@ export default function HomeView({ messages, locale }: { messages: any; locale: 
               {hero.secondaryCta}
             </Link>
           </div>
+
+          {hero.stats && (
+            <dl className="vk-hero-stats mt-12">
+              {hero.stats.map((s: any, i: number) => (
+                <div key={i} className="vk-hero-stat">
+                  <dt className="vk-label">{s.k}</dt>
+                  <dd className="vk-hero-stat-v">{s.v}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
         </div>
       </section>
 

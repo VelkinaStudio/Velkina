@@ -29,7 +29,12 @@
       "headline": "Construim software-ul cu care afacerile funcționează, vând și cresc.",
       "sub": "Website-uri, e-commerce, aplicații mobile și automatizări AI — livrate rapid, de o echipă mică, în trei limbi.",
       "primaryCta": "Scrie pe WhatsApp",
-      "secondaryCta": "Vezi proiectele recente"
+      "secondaryCta": "Vezi proiectele recente",
+      "stats": [
+        { "k": "Din anul", "v": "2021" },
+        { "k": "Livrate în acest trimestru", "v": "6 proiecte" },
+        { "k": "Răspuns fondator", "v": "< 2h pe WhatsApp" }
+      ]
     },
     "ledger": {
       "eyebrow": "Proiecte recente",

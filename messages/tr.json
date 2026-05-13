@@ -29,7 +29,12 @@
       "headline": "İşletmenizin çalışması, satması ve büyümesi için yazılım kuruyoruz.",
       "sub": "Web siteleri, e-ticaret, mobil uygulama ve yapay zekâ otomasyonu — küçük bir ekiple, hızlıca, üç dilde teslim edilir.",
       "primaryCta": "WhatsApp'tan yaz",
-      "secondaryCta": "Son işleri gör"
+      "secondaryCta": "Son işleri gör",
+      "stats": [
+        { "k": "Kuruluş", "v": "2021" },
+        { "k": "Bu çeyrek teslim", "v": "6 proje" },
+        { "k": "Kurucu yanıt süresi", "v": "WhatsApp'ta < 2 saat" }
+      ]
     },
     "ledger": {
       "eyebrow": "Son işler",
