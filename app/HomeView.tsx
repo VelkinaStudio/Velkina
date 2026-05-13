@@ -123,23 +123,23 @@ export default function HomeView({ messages, locale }: { messages: any; locale: 
             </h2>
           </div>
 
-          <div role="list">
+          <ul className="list-none p-0 m-0">
             {serviceItems.map((s, i) => (
-              <Link
-                key={s.id}
-                href={`/${locale}/services#${s.id}`}
-                className="vk-service-row"
-                role="listitem"
-              >
-                <div className="vk-service-row-num">{String(i + 1).padStart(2, '0')}</div>
-                <div className="vk-service-row-body">
-                  <div className="vk-service-row-title">{s.title}</div>
-                  <div className="vk-service-row-line">{s.line}</div>
-                </div>
-                <div className="vk-service-row-arrow" aria-hidden="true">→</div>
-              </Link>
+              <li key={s.id}>
+                <Link
+                  href={`/${locale}/services#${s.id}`}
+                  className="vk-service-row"
+                >
+                  <span className="vk-service-row-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="vk-service-row-body">
+                    <span className="vk-service-row-title">{s.title}</span>
+                    <span className="vk-service-row-line">{s.line}</span>
+                  </span>
+                  <span className="vk-service-row-arrow" aria-hidden="true">→</span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
 
           <div className="mt-10">
             <Link href={`/${locale}/services`} className="vk-nav-link font-mono text-xs uppercase tracking-widest">
