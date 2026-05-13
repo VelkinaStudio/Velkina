@@ -182,6 +182,62 @@
       "whatsapp": "WhatsApp",
       "email": "E-posta",
       "schedule": "20 dk ayır"
+    },
+    "v7": {
+      "drag": "DAHA FAZLASI İÇİN SÜRÜKLE →",
+      "recentRibbon": "GÜNCEL DEFTER · SON 90 GÜN",
+      "descriptions": [
+        "Kadıköy'de 30 masalı bir restoran, PDF gibi değil, dergi gibi okunan bir QR menü istedi. 4 haftada teslim ettik. Servis hızı korundu.",
+        "Antalyalı outdoor markası — marjı bozmadan reklam harcamasını büyütmek istedi. Shopify yeniden platform + Meta Ads, ürün sayfasını yapan ekibin elinden.",
+        "Eski hostingi tepe yükte çöken bir tele-sağlık platformu. Bir hafta sonunda sıfır kesintiyle AWS'ye taşıdık; 99,97% uptime sürüyor.",
+        "Üç dilde sıralanması gereken bir öğrenci platformu — sıcaklığını kaybetmeden. Editöryal CMS, haftalık içerik sprintleri, 90 günde +%60 organik.",
+        "Aylık 3,4 bin €'luk hosting faturasından çıkış. Aynı uptime, düşen fatura, hızlanan operasyon. Kimsenin reklamını yapmadığı iş.",
+        "Endüstriyel boru üreticisi — 6 pazarda fiyat, stok, bayi portalı için B2B veri hattı. Üretimde, sessizce çalışıyor."
+      ],
+      "taglineLead": "İki operatör.",
+      "taglineMid": "Gerçek yazılım.",
+      "taglineEnd": "Yukarıdaki defter de gerçek.",
+      "operatorIntro": "Velkina iki kişidir, departman değil.",
+      "nalbaRole": "frontend · tasarım · iş",
+      "bahaRole": "backend · altyapı · operasyon",
+      "servicesEyebrow": "İŞ ÇİFTLERİ",
+      "servicesHeading": "Ne yaptığımızı, neyi teslim ettiğimiz kanıtlıyor.",
+      "servicePairs": [
+        {
+          "service": "Web siteleri",
+          "proof": "Lavinia Bistro · QR menü platformu · 2026-05"
+        },
+        {
+          "service": "E-ticaret",
+          "proof": "Rain Group · Shopify + Meta Ads · 2026-04"
+        },
+        {
+          "service": "Cloud / DevOps",
+          "proof": "Nova Health · AWS geçişi · 2026-04"
+        },
+        {
+          "service": "AI ajanları",
+          "proof": "EduTurkia · çok dilli editöryal CMS · 2026-03"
+        },
+        {
+          "service": "Mobil uygulamalar",
+          "proof": "TP Thermoplast · B2B bayi hattı · 2026-02"
+        }
+      ],
+      "bigNumberEyebrow": "DEFTER · 2018'DEN BERİ",
+      "bigNumberValue": "47",
+      "bigNumberCaption": "2018'DEN BU YANA TESLİM EDİLEN PROJE",
+      "bigNumberFootnote": "Sekiz yıl. İki operatör. Gerçek müşteri faturaları, sunum matematiği değil.",
+      "voiceEyebrow": "OPERATÖRLER",
+      "voiceHeading": "Gerçekten konuştuğunuz iki kişi.",
+      "nalbaVoice": "Frontend, tasarım ve müşteri iletişimi benim. Lavinia Bistro QR menü baştan sona benim elimden çıktı — piksel yerleşimi, metin, küçük editöryal kararlar. Site özenli hissettiriyorsa, onu özenle düşündüm.",
+      "bahaVoice": "Sunucular, veri hatları, kimsenin planlamak istemediği geçişler bende. Nova Health bir hafta sonunda eski hostingten çıktı; Atar Avcı faturası aylık 3,4 bin € düştü. Altyapı, düşünmek zorunda kalmadığınızda iyi çalışmıştır.",
+      "contactEyebrow": "İLETİŞİM",
+      "contactHeading": "Üç bağlantı. Form yok.",
+      "contactSub": "E-posta, WhatsApp veya 20 dakikalık takvim. Bir iş günü içinde cevap.",
+      "contactEmail": "E-posta",
+      "contactWhatsapp": "WhatsApp",
+      "contactSchedule": "20 dk randevu"
     }
   },
   "services": {

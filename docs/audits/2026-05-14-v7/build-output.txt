@@ -1,0 +1,20 @@
+├   └ [+36 more paths]
+├ ○ /demo/anatolia-hotel                 185 B            96 kB
+├ ○ /demo/bosporus-travel                4.99 kB         101 kB
+├ ○ /demo/konak-coffee                   4.83 kB         101 kB
+├ ○ /demo/lavinia-bistro                 7.79 kB         104 kB
+├ ○ /demo/marmara-foods                  5.17 kB         101 kB
+├ ○ /demo/nova-health                    6.59 kB         102 kB
+├ ○ /demo/skyline-media                  185 B            96 kB
+└ ○ /sitemap.xml                         0 B                0 B
++ First Load JS shared by all            87.1 kB
+  ├ chunks/117-ee92ac0daf6a66f9.js       31.6 kB
+  ├ chunks/fd9d1056-e3d373074663785d.js  53.6 kB
+  └ other shared chunks (total)          1.91 kB
+
+
+ƒ Middleware                             39.3 kB
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses getStaticProps)
+

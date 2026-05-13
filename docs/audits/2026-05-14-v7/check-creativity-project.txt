@@ -1,0 +1,16 @@
+
+design-creativity-engine — check-creativity report
+Target: D:/Velkina
+P0: 3  P1: 1  P2: 0
+
+[P0] BANNED_DISPLAY_FONT: Banned typeface "Inter" used as display in app\globals.css. See ../references/type-identity.md.
+    • font-family: var(--font-inter), "Inter"
+    • font-family: var(--font-inter
+    • font-family: var(--font-display), "Söhne", "Inter Tight", "Inter"
+[P0] BANNED_DISPLAY_FONT: Banned typeface "Roboto" used as display in app\globals.css. See ../references/type-identity.md.
+    • font-family: var(--font-inter), "Inter", system-ui, -apple-system, "Segoe UI", Roboto
+[P0] BANNED_DISPLAY_FONT: Banned typeface "Sora" used as display in app\globals.css. See ../references/type-identity.md.
+    • font-family: var(--font-sora), "Sora"
+    • font-family: var(--font-sora), "Sora"
+    • font-family: var(--font-sora), "Sora"
+[P1] THREE_UP_GRID_LIKELY: app\work\WorkView.tsx has grid-cols-3 alongside "card" references. Verify this is not the banned 3-up identical-card pattern. See ../references/section-rhythm.md.

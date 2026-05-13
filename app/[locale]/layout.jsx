@@ -3,7 +3,7 @@ import Link from 'next/link';
 import en from '../../messages/en.json';
 import tr from '../../messages/tr.json';
 import ro from '../../messages/ro.json';
-import { Inter, Sora, Instrument_Serif } from 'next/font/google';
+import { Inter, Sora, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import { CONTACT, whatsappHref, mailHref } from '../../lib/contact';
 import MobileMenu from '../../components/MobileMenu';
 
@@ -12,9 +12,21 @@ const OG_LOCALES = { en: 'en_US', tr: 'tr_TR', ro: 'ro_RO' };
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
+// Söhne (Klim Type Foundry) is the v7 design-direction-committed display face.
+// Klim licenses are paid; Velkina does not currently hold a Söhne license.
+// HONEST SUBSTITUTION: we render the v7 hero in a sans-serif fallback chain
+// (Inter Tight-ish via Inter latin-ext) until the Klim license is purchased.
+// When the license is acquired, drop a /public/fonts/Söhne-*.woff2 set in
+// and swap `--font-display` to point at `localFont({ src: ... })`.
+// See docs/design/velkina-v7-direction.md §2 Type identity.
 const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter', display: 'swap' });
 const sora = Sora({ subsets: ['latin', 'latin-ext'], variable: '--font-sora', display: 'swap' });
 const serif = Instrument_Serif({ subsets: ['latin', 'latin-ext'], weight: '400', style: ['normal', 'italic'], variable: '--font-serif', display: 'swap' });
+const mono = JetBrains_Mono({ subsets: ['latin', 'latin-ext'], weight: ['400', '500', '700'], variable: '--font-mono-jb', display: 'swap' });
+// Display fallback: Inter at weight extremes (300 + 800) approximates Söhne
+// proportions until the real Klim license is in. Mark explicitly so any
+// future reader knows this is a placeholder, not the committed face.
+const displaySans = Inter({ subsets: ['latin', 'latin-ext'], weight: ['300', '400', '500', '700', '800'], variable: '--font-display', display: 'swap' });
 
 export async function generateMetadata({ params }) {
   const { locale } = params;
@@ -76,7 +88,7 @@ export default function LocaleLayout({ children, params }) {
   const otherLocales = ['en', 'tr', 'ro'].filter(l => l !== locale);
 
   return (
-    <html lang={locale} className={`${inter.variable} ${sora.variable} ${serif.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${sora.variable} ${serif.variable} ${mono.variable} ${displaySans.variable}`}>
       <body>
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[10000] focus:px-3 focus:py-2 focus:bg-white focus:text-black focus:rounded-lg">
           {common.skipToContent}

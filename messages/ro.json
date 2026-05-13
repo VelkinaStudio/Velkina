@@ -182,6 +182,62 @@
       "whatsapp": "WhatsApp",
       "email": "Email",
       "schedule": "20 min cu un fondator"
+    },
+    "v7": {
+      "drag": "TRAGE PENTRU MAI MULT →",
+      "recentRibbon": "REGISTRU RECENT · ULTIMELE 90 DE ZILE",
+      "descriptions": [
+        "Un bistrou de 30 de locuri din Kadıköy a vrut un meniu QR care să se citească precum o revistă, nu un PDF. Livrat în 4 săptămâni. Viteza de servire s-a păstrat.",
+        "Retailer de echipament outdoor în Antalya — crește bugetul de reclamă fără să rupă marja. Replatformare Shopify plus Meta Ads, rulate de echipa care a construit pagina de produs.",
+        "Platformă tele-medicală pe hosting vechi care cădea la trafic de vârf. Migrare AWS într-un singur weekend, zero downtime; 99,97% uptime de atunci.",
+        "Site de recrutare studenți, trebuia să ranking-uiască în trei limbi fără să își piardă căldura. CMS editorial, sprinturi săptămânale de conținut, +60% organic în 90 de zile.",
+        "Migrare dintr-o factură de hosting de 3,4 mii €/lună. Același uptime, factură mai mică, admin mai rapid. Tipul de muncă pe care nicio agenție nu îl promovează.",
+        "Producător de țevi industriale — pipeline B2B de date pentru 6 piețe, cu prețuri, stoc și portaluri pentru dealeri. În producție, rulând în liniște."
+      ],
+      "taglineLead": "Doi operatori.",
+      "taglineMid": "Software real.",
+      "taglineEnd": "Registrul de mai sus e real.",
+      "operatorIntro": "Velkina înseamnă două persoane, nu un departament.",
+      "nalbaRole": "frontend · design · business",
+      "bahaRole": "backend · infrastructură · ops",
+      "servicesEyebrow": "PERECHI DE LUCRU",
+      "servicesHeading": "Ce facem, dovedit prin ce am livrat.",
+      "servicePairs": [
+        {
+          "service": "Site-uri web",
+          "proof": "Lavinia Bistro · platformă meniu QR · 2026-05"
+        },
+        {
+          "service": "E-commerce",
+          "proof": "Rain Group · Shopify + Meta Ads · 2026-04"
+        },
+        {
+          "service": "Cloud / DevOps",
+          "proof": "Nova Health · migrare AWS · 2026-04"
+        },
+        {
+          "service": "Agenți AI",
+          "proof": "EduTurkia · CMS editorial multilingv · 2026-03"
+        },
+        {
+          "service": "Aplicații mobile",
+          "proof": "TP Thermoplast · pipeline B2B pentru dealeri · 2026-02"
+        }
+      ],
+      "bigNumberEyebrow": "REGISTRU · DIN 2018",
+      "bigNumberValue": "47",
+      "bigNumberCaption": "PROIECTE LIVRATE DIN 2018",
+      "bigNumberFootnote": "Opt ani. Doi operatori. Facturi reale de la clienți, nu matematică de slide.",
+      "voiceEyebrow": "OPERATORI",
+      "voiceHeading": "Cu cine vorbești de fapt.",
+      "nalbaVoice": "Eu mă ocup de frontend, design și conversația cu clientul. Meniul QR Lavinia Bistro e al meu cap-coadă — așezarea pixelilor, textul, deciziile editoriale mici. Dacă site-ul pare gândit, e pentru că l-am gândit.",
+      "bahaVoice": "Eu mă ocup de servere, pipeline-uri de date și migrările pe care nimeni nu vrea să le programeze. Nova Health a ieșit de pe hosting vechi într-un weekend; factura Atar Avcı a scăzut cu 3,4 mii €/lună. Infrastructura iese în evidență când nu mai trebuie să te gândești la ea.",
+      "contactEyebrow": "CONTACT",
+      "contactHeading": "Trei link-uri. Fără formular.",
+      "contactSub": "Email, WhatsApp sau alegeți un slot de 20 de minute. Răspundem într-o zi lucrătoare.",
+      "contactEmail": "Email",
+      "contactWhatsapp": "WhatsApp",
+      "contactSchedule": "Rezervă 20 min"
     }
   },
   "services": {

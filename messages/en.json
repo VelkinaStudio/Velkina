@@ -182,6 +182,62 @@
       "whatsapp": "WhatsApp",
       "email": "Email",
       "schedule": "Book 20 min"
+    },
+    "v7": {
+      "drag": "DRAG TO SEE MORE →",
+      "recentRibbon": "RECENT LEDGER · LAST 90 DAYS",
+      "descriptions": [
+        "A 30-cover restaurant in Kadıköy wanted a QR menu that read like an editorial site, not a PDF. We shipped one in 4 weeks. Orders held steady through table-turn.",
+        "Outdoor-gear retailer in Antalya, scaling ad spend without bleeding margin. Shopify replatform plus Meta Ads run by the people who built the product page.",
+        "Tele-health platform on legacy hosting that fell over at peak. We moved them to AWS with zero downtime over a single weekend; 99.97% uptime since.",
+        "Student-recruitment site that needed to rank in three languages without losing the warmth. Editorial CMS, weekly content sprints, 60% organic lift in 90 days.",
+        "Cloud migration off a 3.4k-per-month hosting bill. Same uptime, lower invoice, faster admin. The kind of work no agency advertises.",
+        "Industrial-pipes manufacturer needed a B2B data pipeline across 6 markets — pricing, stock, dealer portals, the lot. Live in production. Quietly running."
+      ],
+      "taglineLead": "Two operators.",
+      "taglineMid": "Real software.",
+      "taglineEnd": "Recent ledger above.",
+      "operatorIntro": "Velkina is two people, not a department.",
+      "nalbaRole": "frontend · design · business",
+      "bahaRole": "backend · infrastructure · ops",
+      "servicesEyebrow": "WORK PAIRS",
+      "servicesHeading": "What we do, proven by what we shipped.",
+      "servicePairs": [
+        {
+          "service": "Websites",
+          "proof": "Lavinia Bistro · QR menu platform · 2026-05"
+        },
+        {
+          "service": "E-commerce",
+          "proof": "Rain Group · Shopify + Meta Ads · 2026-04"
+        },
+        {
+          "service": "Cloud / DevOps",
+          "proof": "Nova Health · AWS migration · 2026-04"
+        },
+        {
+          "service": "AI agents",
+          "proof": "EduTurkia · multilingual editorial CMS · 2026-03"
+        },
+        {
+          "service": "Mobile apps",
+          "proof": "TP Thermoplast · B2B dealer pipeline · 2026-02"
+        }
+      ],
+      "bigNumberEyebrow": "LEDGER · SINCE 2018",
+      "bigNumberValue": "47",
+      "bigNumberCaption": "PROJECTS SHIPPED SINCE 2018",
+      "bigNumberFootnote": "Eight years. Two operators. Real client invoices, not slide-deck math.",
+      "voiceEyebrow": "OPERATORS",
+      "voiceHeading": "Who you actually talk to.",
+      "nalbaVoice": "I run the frontend, the design and the client conversation. The Lavinia Bistro QR menu is mine end-to-end — pixel placement, copy, the small editorial decisions. If the site feels considered, it is because I considered it.",
+      "bahaVoice": "I handle the servers, the data pipelines, the migrations nobody wants to schedule. Nova Health came off legacy hosting over a single weekend; the Atar Avcı bill is down 3.4k a month. The infrastructure shows up when you do not have to think about it.",
+      "contactEyebrow": "CONTACT",
+      "contactHeading": "Three links. No form.",
+      "contactSub": "Email, WhatsApp, or pick a 20-minute slot. We answer within a business day.",
+      "contactEmail": "Email",
+      "contactWhatsapp": "WhatsApp",
+      "contactSchedule": "Book 20 min"
     }
   },
   "services": {
