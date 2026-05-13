@@ -1,13 +1,12 @@
 export default function robots() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.velkina.com';
   return {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
-      },
+        allow: '/'
+      }
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    sitemap: `${baseUrl}/sitemap.xml`
   };
 }
