@@ -6,15 +6,15 @@ import ro from '../../../messages/ro.json';
 const DICTS = { en, tr, ro };
 
 export function generateStaticParams() {
-  return [{locale: 'en'}, {locale: 'tr'}, {locale: 'ro'}];
+  return [{ locale: 'en' }, { locale: 'tr' }, { locale: 'ro' }];
 }
 
-export function generateMetadata({params}) {
-  const {locale} = params || {locale: 'en'};
+export function generateMetadata({ params }) {
+  const { locale } = params || { locale: 'en' };
   const messages = DICTS[locale] || en;
   return {
-    title: messages.contact?.title ? `Velkina — ${messages.contact.title}` : 'Velkina — Contact',
-    description: messages.contact?.subtitle || 'Quick contact with Velkina.',
+    title: `${messages.contact.hero.heading} — ${messages.site.name}`,
+    description: messages.contact.hero.sub,
     alternates: {
       canonical: `/${locale}/contact`,
       languages: { en: '/en/contact', tr: '/tr/contact', ro: '/ro/contact' }
@@ -22,8 +22,8 @@ export function generateMetadata({params}) {
   };
 }
 
-export default function LocalizedContact({params}) {
-  const {locale} = params || {locale: 'en'};
+export default function LocalizedContact({ params }) {
+  const { locale } = params || { locale: 'en' };
   const messages = DICTS[locale] || en;
   return <ContactView messages={messages} locale={locale} />;
 }

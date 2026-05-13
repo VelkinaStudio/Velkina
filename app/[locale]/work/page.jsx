@@ -1,4 +1,4 @@
-import ServicesView from '../../services/ServicesView';
+import WorkView from '../../work/WorkView';
 import en from '../../../messages/en.json';
 import tr from '../../../messages/tr.json';
 import ro from '../../../messages/ro.json';
@@ -13,17 +13,17 @@ export function generateMetadata({ params }) {
   const { locale } = params || { locale: 'en' };
   const messages = DICTS[locale] || en;
   return {
-    title: `${messages.services.hero.heading} — ${messages.site.name}`,
-    description: messages.services.hero.sub,
+    title: `${messages.work.hero.heading} — ${messages.site.name}`,
+    description: messages.work.hero.sub,
     alternates: {
-      canonical: `/${locale}/services`,
-      languages: { en: '/en/services', tr: '/tr/services', ro: '/ro/services' }
+      canonical: `/${locale}/work`,
+      languages: { en: '/en/work', tr: '/tr/work', ro: '/ro/work' }
     }
   };
 }
 
-export default function LocalizedServices({ params }) {
+export default function LocalizedWork({ params }) {
   const { locale } = params || { locale: 'en' };
   const messages = DICTS[locale] || en;
-  return <ServicesView messages={messages} locale={locale} />;
+  return <WorkView messages={messages} locale={locale} />;
 }

@@ -1,55 +1,96 @@
 import Link from 'next/link';
-import React from 'react';
-import type {Locale, Messages} from '../../i18n/messages';
-import {createT, getDefaultMessages} from '../../i18n/messages';
+import { whatsappHref } from '../../lib/contact';
 
-export type AboutViewProps = {
-  messages?: Messages;
-  locale?: Locale;
-};
+type Locale = 'en' | 'tr' | 'ro';
 
-export default function AboutView({messages, locale}: AboutViewProps) {
-  const t = createT(messages ?? getDefaultMessages());
-  const m = t('about') as any;
-  const nav = t('nav') as any;
-  const prefix = locale ? `/${locale}` : '';
-
-  const principles: string[] = Array.isArray(m?.principles) ? m.principles : [];
-  const facts: string[] = Array.isArray(m?.facts) ? m.facts : [];
+export default function AboutView({ messages, locale }: { messages: any; locale: Locale }) {
+  const a = messages.about;
+  const common = messages.common;
 
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
-      <header className="mb-8">
-        <h1 className="font-heading text-3xl md:text-4xl">{m?.title ?? 'About'}</h1>
-        <p className="text-white/80 mt-2 max-w-3xl">{m?.desc ?? 'Who we are, how we work, and why teams partner with Velkina.'}</p>
-      </header>
-
-      <section className="grid gap-6 lg:grid-cols-3">
-        <article className="vk-glass border border-white/10 rounded-xl p-6 shadow-soft lg:col-span-2">
-          <h2 className="font-heading text-xl mb-2">{m?.principlesTitle ?? 'Principles'}</h2>
-          <ul className="space-y-2 text-white/80">
-            {principles.map((item, i) => (
-              <li key={i} className="flex gap-2">
-                <span className="mt-1 inline-block w-1.5 h-1.5 rounded-full bg-vkcyan" aria-hidden="true" /> {item}
-              </li>
-            ))}
-          </ul>
-        </article>
-        <aside className="vk-glass border border-white/10 rounded-xl p-6 shadow-soft">
-          <h2 className="font-heading text-xl mb-2">{m?.quickFactsTitle ?? 'Quick facts'}</h2>
-          <ul className="text-white/80 space-y-1">
-            {facts.map((fact, i) => (
-              <li key={i}>{fact}</li>
-            ))}
-          </ul>
-        </aside>
+    <div>
+      <section className="vk-section" style={{paddingTop: '4rem'}}>
+        <div className="vk-container">
+          <span className="vk-eyebrow">{a.hero.eyebrow}</span>
+          <h1 className="vk-h1 mt-5" style={{maxWidth: '22ch'}}>{a.hero.heading}</h1>
+          <p className="vk-lead vk-muted mt-5" style={{maxWidth: '52ch'}}>{a.hero.sub}</p>
+        </div>
       </section>
 
-      <div className="mt-10 text-center">
-        <Link href={`${prefix}/#cta`} className="inline-flex items-center px-5 py-3 rounded-xl bg-vkpink text-black font-mono shadow-strong">
-          {nav?.startProject ?? 'Start project'}
-        </Link>
-      </div>
+      <hr className="vk-rule" />
+
+      <section className="vk-section">
+        <div className="vk-container">
+          <div className="grid gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <h2 className="vk-eyebrow">{a.story.heading}</h2>
+            </div>
+            <div className="lg:col-span-7 lg:col-start-6 space-y-5">
+              {a.story.body.map((p: string, i: number) => (
+                <p key={i} className="vk-lead" style={{fontSize: '1.0625rem', lineHeight: 1.65}}>{p}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr className="vk-rule" />
+
+      <section className="vk-section">
+        <div className="vk-container">
+          <h2 className="vk-h2" style={{maxWidth: '16ch'}}>{a.values.heading}</h2>
+          <div className="grid gap-6 mt-8 sm:grid-cols-2">
+            {a.values.items.map((v: any, i: number) => (
+              <div key={i} className="vk-card">
+                <div className="font-mono text-xs uppercase tracking-widest vk-muted">{String(i + 1).padStart(2, '0')}</div>
+                <div className="vk-h3 mt-2">{v.title}</div>
+                <p className="vk-muted mt-2" style={{lineHeight: 1.6}}>{v.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <hr className="vk-rule" />
+
+      <section className="vk-section">
+        <div className="vk-container">
+          <h2 className="vk-h2">{a.founders.heading}</h2>
+          <div className="grid gap-8 mt-8 sm:grid-cols-2">
+            {a.founders.items.map((f: any, i: number) => (
+              <div key={i}>
+                <div className="vk-h3">{f.name}</div>
+                <div className="vk-label mt-2">{f.role}</div>
+                <p className="mt-3" style={{lineHeight: 1.7}}>{f.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <hr className="vk-rule" />
+
+      <section className="vk-section">
+        <div className="vk-container">
+          <h2 className="vk-eyebrow">{a.where.heading}</h2>
+          <ul className="mt-4 space-y-2 vk-h3" style={{fontFamily: 'var(--font-sora), Sora, sans-serif'}}>
+            {a.where.items.map((w: string, i: number) => (
+              <li key={i}>{w}</li>
+            ))}
+          </ul>
+
+          <div className="mt-10">
+            <a
+              href={whatsappHref(common.whatsappPrefill)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vk-btn vk-btn-primary"
+            >
+              {messages.home.cta.whatsapp}
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

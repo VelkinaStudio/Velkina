@@ -1,1414 +1,450 @@
 {
   "site": {
-    "title": "Velkina — Agenție de Software, Design și Creștere",
-    "description": "Velkina construiește software-ul și designul de care afacerile au nevoie pentru a crește online. Site-uri web, e-commerce, Google și Meta Ads, cloud, aplicații mobile, automatizare AI și meniuri QR pentru restaurante — livrate rapid, măsurate cinstit.",
-    "name": "Velkina"
+    "name": "Velkina",
+    "title": "Velkina — Studio de software în Istanbul & București",
+    "description": "Proiectăm, construim și livrăm website-uri, e-commerce, aplicații mobile și automatizări AI. O echipă mică. Muncă reală. Fără prezentări goale."
   },
   "nav": {
     "home": "Acasă",
+    "work": "Proiecte",
     "services": "Servicii",
-    "useCases": "Proiecte",
-    "blog": "Blog",
     "about": "Despre",
     "contact": "Contact",
-    "privacy": "Confidențialitate",
-    "terms": "Termeni",
-    "startProject": "Începeți un proiect",
-    "customerAgent": "Agenți AI pentru Clienți"
+    "startProject": "Începe un proiect",
+    "menu": "Meniu",
+    "close": "Închide"
   },
   "common": {
-    "skipToContent": "Treci la conținut",
-    "emailSubject": "Solicitare proiect",
-    "whatsappPrefill": "Salut Velkina! Aș dori să discutăm despre un proiect.",
-    "carouselPlay": "Pornește caruselul",
-    "carouselPause": "Pauză carusel",
-    "viewWork": "Vezi proiecte",
-    "learnMore": "Află mai multe",
-    "readCase": "Citește studiul de caz",
-    "viewLive": "Vezi live",
-    "backToWork": "Înapoi la toate proiectele"
-  },
-  "footer": {
-    "company": "Companie",
-    "quickLinks": "Linkuri rapide",
-    "getInTouch": "Luați legătura",
-    "rightsReserved": "Toate drepturile rezervate.",
-    "tagline": "Software și design pentru afaceri care vor să crească online."
+    "skipToContent": "Sari la conținut",
+    "whatsappPrefill": "Salut Velkina, aș vrea să vorbim despre un proiect.",
+    "emailSubject": "Solicitare proiect — prin velkina.com",
+    "writtenBy": "Scris de",
+    "readMore": "Citește mai mult",
+    "viewWork": "Vezi proiectul",
+    "languageLabel": "Limbă"
   },
   "home": {
     "hero": {
-      "eyebrow": "Software · Design · Creștere",
-      "title": "Construim software-ul și designul care vă ajută afacerea să crească.",
-      "subtitle": "Velkina este o agenție full-service. Proiectăm, livrăm și operăm site-uri web, e-commerce, campanii publicitare, infrastructură cloud, agenți AI și aplicații mobile — pentru afaceri care vor claritate, nu jargon.",
-      "primaryCta": "Începeți un proiect",
-      "secondaryCta": "Vedeți proiectele noastre"
+      "eyebrow": "Studio de software · Istanbul & București",
+      "headline": "Construim software-ul cu care afacerile funcționează, vând și cresc.",
+      "sub": "Website-uri, e-commerce, aplicații mobile și automatizări AI — livrate rapid, de o echipă mică, în trei limbi.",
+      "primaryCta": "Scrie pe WhatsApp",
+      "secondaryCta": "Vezi proiectele recente"
     },
-    "trustBar": {
-      "title": "Aleși de afaceri din HoReCa, retail, producție, juridic și educație"
+    "ledger": {
+      "eyebrow": "Proiecte recente",
+      "heading": "Livrate în ultimele 90 de zile",
+      "sub": "Clienți reali. Date reale. Rezultate reale.",
+      "items": [
+        { "date": "2026-05", "client": "Lavinia Bistro", "scope": "Platformă meniu QR — EN/TR/RO/DE", "outcome": "Amortizat în 2 luni", "status": "delivered" },
+        { "date": "2026-04", "client": "Rain Group", "scope": "Relansare Meta Ads + sistem creativ", "outcome": "ROAS 3,4× susținut", "status": "active" },
+        { "date": "2026-04", "client": "Nova Health", "scope": "Migrare AWS + SLA uptime", "outcome": "99,97% uptime în T1", "status": "active" },
+        { "date": "2026-03", "client": "EduTurkia", "scope": "Platformă studenți + funnel reconstruit", "outcome": "+60% organic, T1", "status": "delivered" },
+        { "date": "2026-03", "client": "Atar Avcı", "scope": "Migrare cloud + CDN", "outcome": "3,4 mii € / lună economisiți", "status": "delivered" },
+        { "date": "2026-02", "client": "TP Thermoplast", "scope": "Pipeline de date export B2B", "outcome": "Live în 6 piețe", "status": "delivered" }
+      ],
+      "seeAll": "Vezi toate proiectele →"
     },
-    "servicesIntro": {
+    "services": {
       "eyebrow": "Ce facem",
-      "title": "Tot ce are nevoie afacerea dvs. online — sub același acoperiș.",
-      "subtitle": "O singură echipă senior pentru software, design și creștere. Fără predări de la o echipă la alta, fără agenții care se ceartă între ele, fără surprize."
+      "heading": "Cinci lucruri, făcute serios.",
+      "sub": "Refuzăm proiectele care nu se potrivesc. Lista de mai jos e ce livrăm în fiecare lună.",
+      "items": [
+        { "id": "websites", "title": "Website-uri & aplicații web", "desc": "Site-uri de marketing, instrumente interne, dashboard-uri. Next.js, rapide pe mobil, ușor de editat." },
+        { "id": "ecommerce", "title": "E-commerce", "desc": "Shopify și magazine headless. Construite astfel încât echipa ta să le poată administra fără noi." },
+        { "id": "mobile", "title": "Aplicații mobile", "desc": "iOS și Android, native sau React Native. Publicate în magazine, nu uitate în repo." },
+        { "id": "automation", "title": "Automatizări AI", "desc": "Agenți de customer service, copiloți interni, pipeline-uri de date. Multilingv din start." },
+        { "id": "growth", "title": "Reclame & creștere", "desc": "Google Ads, Meta Ads, SEO. Făcute de oamenii care construiesc și site-ul." }
+      ],
+      "cta": "Vezi lista completă de servicii →"
     },
-    "portfolioIntro": {
-      "eyebrow": "Proiecte selectate",
-      "title": "Afaceri reale pe care le-am construit, livrat și crescut.",
-      "subtitle": "Atinge orice proiect ca să vezi problema, ce am construit și rezultatul."
-    },
-    "processIntro": {
+"process": {
       "eyebrow": "Cum lucrăm",
-      "title": "Patru pași. Scop clar, preț clar, termen clar.",
-      "subtitle": "Vă spunem ce este posibil în bugetul și calendarul dvs. înainte să cheltuiți un euro."
-    },
-    "resultsIntro": {
-      "eyebrow": "Rezultate în cifre",
-      "title": "Rezultate pe care clienții noștri le măsoară."
-    },
-    "stackIntro": {
-      "eyebrow": "Tehnologie",
-      "title": "Stack modern, fără dependență.",
-      "subtitle": "Folosim uneltele potrivite pentru fiecare proiect — și vi le predăm complet documentate."
-    },
-    "testimonialsIntro": {
-      "eyebrow": "Ce spun clienții",
-      "title": "Cuvinte sincere de la oamenii cu care am lucrat."
-    },
-    "faqIntro": {
-      "eyebrow": "Întrebări frecvente",
-      "title": "Răspunsuri înainte să întrebați."
-    },
-    "ctaSection": {
-      "eyebrow": "Să vorbim",
-      "title": "Povestiți-ne despre afacerea dvs. Vă spunem ce este posibil.",
-      "subtitle": "Primul apel este gratuit. Răspundem în maximum o zi lucrătoare.",
-      "primaryCta": "Trimiteți un mesaj WhatsApp",
-      "secondaryCta": "Programați o discuție"
-    },
-    "metrics2": {
-      "shipped": {
-        "value": 120,
-        "label": "Proiecte livrate",
-        "sr": "Peste 120 de proiecte livrate"
-      },
-      "leadsIncrease": {
-        "value": 86,
-        "label": "Creștere medie lead-uri calificate",
-        "sr": "Creștere medie a lead-urilor calificate la clienții noștri"
-      },
-      "supportReduction": {
-        "value": 40,
-        "label": "Reducere costuri suport",
-        "sr": "Reducere medie a costurilor de suport pentru clienți"
-      },
-      "csat": {
-        "value": 95,
-        "label": "Satisfacția clienților",
-        "sr": "Scor de satisfacție al clienților"
-      },
-      "launchTime": {
-        "value": 5,
-        "label": "Lansare mediană (săptămâni)",
-        "sr": "Timp median până la lansare, în săptămâni"
-      },
-      "uptime": {
-        "value": 99.9,
-        "decimals": 1,
-        "label": "Disponibilitate (%)",
-        "sr": "Disponibilitate observată"
-      }
-    },
-    "testimonials": {
-      "title": "Ce spun clienții",
-      "carouselLabel": "Carusel testimoniale",
+      "heading": "Patru pași. Fără surprize.",
       "items": [
-        {
-          "quote": "Meniul QR s-a amortizat în două luni. Turiștii comandă în limba lor, iar eu actualizez meniul direct de pe telefon.",
-          "name": "Selin Polat",
-          "role": "Proprietar, Lavinia Bistro · Istanbul",
-          "photo": "/people/selin-polat.jpg"
-        },
-        {
-          "quote": "Oameni seniori la fiecare apel. Fără predare către juniori după ce am semnat. Au scris ei textele juridice, iar SEO-ul aduce deja rezultate.",
-          "name": "Mehmet Atar",
-          "role": "Partener, Atar Avcı Hukuk Bürosu",
-          "photo": "/people/mehmet-atar.jpg"
-        },
-        {
-          "quote": "Site B2B multilingv, catalog structurat, timp de încărcare redus la jumătate. Cererile internaționale au devenit în sfârșit serioase.",
-          "name": "Bogdan Ionescu",
-          "role": "Export Manager, TP Thermoplast",
-          "photo": "/people/bogdan-ionescu.jpg"
-        },
-        {
-          "quote": "Au construit magazinul Shopify și gestionează reclamele Meta. ROAS-ul s-a stabilizat la 3,4x, trafic organic +60% într-un trimestru. O singură factură, zero pasare de responsabilitate.",
-          "name": "Aylin Kaya",
-          "role": "CMO, Rain Group",
-          "photo": "/people/aylin-kaya.jpg"
-        },
-        {
-          "quote": "Ne-au migrat de pe hosting partajat în 12 zile, fără downtime. Uptime a urcat de la 95% la 99,97%. Factura AWS e mai mică decât vechiul hosting.",
-          "name": "Mert Sezer",
-          "role": "CTO, Nova Health",
-          "photo": "/people/mert-sezer.jpg"
-        },
-        {
-          "quote": "Procesul nostru de aplicații a trecut din Excel într-o platformă reală. Părinții urmăresc acum aplicația copilului pe propriul dashboard.",
-          "name": "Elena Popescu",
-          "role": "Director, EduTurkia",
-          "photo": "/people/elena-popescu.jpg"
-        }
-      ]
-    },
-    "ctas": {
-      "whatsapp": "WhatsApp",
-      "email": "Trimite e-mail",
-      "schedule": "Programați o discuție"
-    },
-    "explore": "Explorează",
-    "startProjectShort": "Începeți un proiect",
-    "stackTitle": "Tehnologii cu care lucrăm",
-    "brandsTitle": "Câteva afaceri pe care le-am ajutat",
-    "brandsCarouselLabel": "Carusel branduri de încredere",
-    "heroSteps": [
-      "Descoperim",
-      "Proiectăm",
-      "Construim",
-      "Lansăm",
-      "Creștem"
-    ],
-    "heroDesc": "Proiectăm, construim și operăm software-ul de care afacerea dvs. are nevoie online — site-uri, e-commerce, campanii publicitare, cloud, AI și aplicații mobile.",
-    "resultsTitle": "Rezultate în cifre",
-    "resultsSubtitle": "Repere din proiectele recente",
-    "servicesTitle": "Ce facem",
-    "servicesViewAll": "Vezi toate serviciile",
-    "process": {
-      "steps": [
-        {
-          "n": "01",
-          "title": "Apel de descoperire",
-          "body": "30 de minute. Ascultăm, întrebăm și vă spunem sincer dacă suntem potriviți pentru proiectul dvs."
-        },
-        {
-          "n": "02",
-          "title": "Scop și preț",
-          "body": "O ofertă scrisă cu scop fix, preț fix și un calendar clar. Fără ținte în mișcare."
-        },
-        {
-          "n": "03",
-          "title": "Construim și livrăm",
-          "body": "Demo-uri săptămânale. Vedeți progresul live în fiecare vineri și aprobați fiecare pas."
-        },
-        {
-          "n": "04",
-          "title": "Operăm și creștem",
-          "body": "Abonament lunar opțional pentru a gestiona reclame, cloud, conținut și îmbunătățiri după lansare."
-        }
-      ]
-    },
-    "industries": {
-      "title": "Afaceri cu care lucrăm",
-      "items": [
-        {
-          "name": "Restaurante, cafenele și hoteluri",
-          "desc": "Meniuri QR, site-uri, rezervări, recenzii."
-        },
-        {
-          "name": "E-commerce și retail",
-          "desc": "Magazine Shopify, reclame plătite, optimizarea conversiei."
-        },
-        {
-          "name": "Servicii profesionale",
-          "desc": "Avocatură, consultanță, medical — site-uri care convertesc."
-        },
-        {
-          "name": "Producție și B2B",
-          "desc": "Site-uri corporative multilingve, cataloage, captare lead-uri."
-        },
-        {
-          "name": "Educație și formare",
-          "desc": "Platforme de înscriere, CRM, plăți, multilingv."
-        },
-        {
-          "name": "Creatori și branduri",
-          "desc": "Portofolii, site-uri de conținut, video, identitate."
-        }
+        { "n": "01", "title": "Discuție", "desc": "Douăzeci de minute pe WhatsApp sau apel video. Îți spunem dacă te putem ajuta. Dacă nu, spunem direct." },
+        { "n": "02", "title": "Propunere", "desc": "În 48 de ore: scop, preț, calendar, cine lucrează. Preț fix când se poate, tarif zilnic când nu." },
+        { "n": "03", "title": "Construcție", "desc": "Vezi progresul în fiecare săptămână, pe un URL real de staging. Poți opri proiectul oricând, fără penalizări." },
+        { "n": "04", "title": "Livrare & suport", "desc": "Predăm documentația, instruim echipa și rămânem disponibili. Majoritatea clienților rămân pe un plan lunar de întreținere." }
       ]
     },
     "faq": {
+      "eyebrow": "Întrebări frecvente",
       "items": [
-        {
-          "q": "Cât de repede putem începe?",
-          "a": "De obicei începem în 1–2 săptămâni de la semnare. Un site simplu intră live în 3–5 săptămâni. Sistemele mai mari durează 8–14 săptămâni."
-        },
-        {
-          "q": "Lucrați și cu afaceri mici?",
-          "a": "Da. Lucrăm cu restaurante, clinici, cabinete de avocatură, magazine — oricine vrea să crească online cu software clar și modern."
-        },
-        {
-          "q": "Cât costă un proiect?",
-          "a": "Un site simplu pleacă de la aproximativ 1.500 €. Magazinele e-commerce de la 3.500 €. Software-ul personalizat mai amplu se cotează după un apel de descoperire. Niciodată nu ascundem prețul."
-        },
-        {
-          "q": "Lucrați doar în Turcia?",
-          "a": "Nu. Lucrăm cu afaceri din toată Europa — în prezent suntem activi în Turcia, România și Germania. Întreaga echipă lucrează remote, cu apeluri săptămânale."
-        },
-        {
-          "q": "Cine deține codul și designul?",
-          "a": "Dvs. Codul sursă stă în conturile dvs. Domeniile și hostingul sunt pe numele dvs. Nu vă blocăm."
-        },
-        {
-          "q": "Puteți gestiona și reclamele, și site-ul, în același timp?",
-          "a": "Da. Este cel mai frecvent tip de colaborare al nostru — construim site-ul și rulăm reclamele Google/Meta pentru el. O echipă, o factură."
-        },
-        {
-          "q": "Ce fac dacă nu știu încă exact ce vreau?",
-          "a": "Programați apelul gratuit de 30 de minute. Vă vom spune ce este realist pentru afacerea și bugetul dvs. — chiar și dacă nu suntem noi varianta potrivită."
-        }
+        { "q": "Cât costă un proiect?", "a": "Un site de marketing pleacă de la 3.500 €. Un magazin e-commerce de la 6.000 €. O aplicație mobilă de la 18.000 €. Un agent AI personalizat de la 4.500 €. Trimitem ofertă fixă în 48 de ore de la prima discuție." },
+        { "q": "Cât durează?", "a": "Majoritatea site-urilor se livrează în 3–5 săptămâni. E-commerce în 5–8. Aplicații mobile în 8–14. Îți dăm un calendar, nu o estimare." },
+        { "q": "Lucrați în engleză, turcă și română?", "a": "Da. Studio-ul e împărțit între Istanbul și București. Ședințele pot fi în oricare dintre cele trei." },
+        { "q": "Cine face efectiv munca?", "a": "Cei doi fondatori și o mică echipă de colaboratori de încredere cu care lucrăm de ani de zile. Fără outsourcing către echipe anonime." },
+        { "q": "Puteți prelua un proiect început?", "a": "De multe ori, da. Facem un audit de 90 de minute pe codebase, apoi îți trimitem un plan de recuperare cu preț." }
       ]
     },
-    "ledger": {
-      "heading": "Lucrări selectate",
-      "subheading": "Livrăm din İstanbul · București · Berlin din 2021",
-      "delivered": [
-        {
-          "date": "2026-05",
-          "client": "Lavinia Bistro",
-          "scope": "Meniu QR multilingv — EN/TR/RO/DE",
-          "outcome": "Amortizat în 2 luni"
-        },
-        {
-          "date": "2026-04",
-          "client": "Rain Group",
-          "scope": "Relansare Meta Ads + creație",
-          "outcome": "ROAS 3.4x menținut"
-        },
-        {
-          "date": "2026-04",
-          "client": "Nova Health",
-          "scope": "Livrare uptime AWS",
-          "outcome": "SLA T1: 99.97%"
-        },
-        {
-          "date": "2026-03",
-          "client": "EduTurkia",
-          "scope": "Platformă pentru studenți + funnel",
-          "outcome": "+60% organic, T1"
-        },
-        {
-          "date": "2026-03",
-          "client": "Atar Avcı",
-          "scope": "Migrare AWS + CDN",
-          "outcome": "€3.4k / lună economisit"
-        },
-        {
-          "date": "2026-02",
-          "client": "TP Thermoplast",
-          "scope": "Pipeline date export (B2B)",
-          "outcome": "Live, acoperire completă"
-        }
-      ]
+    "cta": {
+      "eyebrow": "Începe conversația",
+      "heading": "Spune-ne ce vrei să construiești.",
+      "sub": "Pe WhatsApp răspundem cel mai repede — de obicei sub două ore în program.",
+      "whatsapp": "Deschide WhatsApp",
+      "email": "Trimite un email",
+      "schedule": "Programează 20 min"
     }
   },
   "services": {
-    "metaTitle": "Velkina — Servicii",
-    "metaDesc": "Agenție full-service de software, design și creștere: site-uri web, Shopify, meniuri QR pentru restaurante, Google și Meta Ads, cloud, automatizare AI, aplicații mobile, SEO și branding.",
-    "title": "Servicii",
-    "subtitle": "Tot ce are nevoie o afacere modernă pentru a crește online — proiectat, construit și operat de o singură echipă senior.",
-    "heroDesc": "Software, design și creștere — sub același acoperiș.",
-    "modelsTitle": "Cum lucrăm",
-    "includedTitle": "Întotdeauna incluse",
-    "models": [
-      "Proiect: scop fix, preț fix, termen fix.",
-      "Sprint: cicluri de 1–2 săptămâni pentru iterații, experimente și funcționalități mici.",
-      "Retainer: partener lunar pentru reclame, cloud, conținut și îmbunătățiri continue."
-    ],
-    "included": [
-      "Demo-uri săptămânale de progres cu link real de previzualizare",
-      "Sistem de design cu tokens și componente documentate",
-      "Performanță, accesibilitate și SEO din prima zi",
-      "Cod, conturi și domenii pe numele dvs. — fără dependență",
-      "Dashboard-uri pentru uptime, erori și analytics",
-      "Documentație de predare și înregistrări video, ca echipa dvs. să poată prelua"
-    ],
-    "faqs": [
-      {
-        "q": "Cum începem?",
-        "a": "Un apel de descoperire de 30 de minute. Aliniem obiective, constrângeri, scop și termene. Fără angajament."
-      },
-      {
-        "q": "Cum lucrăm zi de zi?",
-        "a": "Apeluri săptămânale de demo, un board de proiect transparent și un link de previzualizare pentru fiecare modificare. Lucrăm în fusul dvs. orar."
-      },
-      {
-        "q": "Cine deține proprietatea intelectuală?",
-        "a": "Dvs. Codul stă în organizația dvs. Componentele terțe folosesc licențe open, acolo unde este posibil."
-      },
-      {
-        "q": "Există suport post-lansare?",
-        "a": "Da. Abonamentele lunare acoperă reclame, hosting, securitate, conținut și roadmap. Puteți renunța oricând."
-      },
-      {
-        "q": "Calendare tipice?",
-        "a": "Site simplu: 3–5 săptămâni. Magazin Shopify: 4–6 săptămâni. Aplicație personalizată: 8–14 săptămâni. Sistemele mai mari merg în sprinturi continue."
-      },
-      {
-        "q": "Unde găzduiți?",
-        "a": "Vercel, Cloudflare sau cloud-ul preferat de dvs. (AWS, GCP, Azure). Costurile de hosting sunt transparente și plătite de dvs., pe numele dvs."
-      }
-    ],
-    "deliverables": "Livrabile",
-    "outcomes": "Rezultate",
-    "examples": "Recomandat pentru",
-    "faq": "Întrebări frecvente",
-    "quickContact": "Contact rapid",
-    "quickContactDesc": "Răspundem în maximum o zi lucrătoare.",
-    "start": "Începe",
+    "hero": {
+      "eyebrow": "Servicii",
+      "heading": "Cinci practici. O echipă mică.",
+      "sub": "Alegem unealta potrivită brief-ului, nu pe cea pe care vrem să o facturăm. Fiecare proiect e condus de unul dintre fondatori."
+    },
     "items": [
       {
         "id": "websites",
-        "title": "Site-uri web și pagini de lansare",
-        "tag": "Design · Frontend · Copywriting",
-        "intro": "Site-uri rapide și frumoase care se încarcă în mai puțin de o secundă și transformă vizitatorii în clienți. De la o pagină de prezentare la un site corporativ complet.",
-        "deliverables": [
-          "Design personalizat (fără template-uri)",
-          "Construcție responsive mobile-first",
-          "Copywriting în limba dvs.",
-          "Fundație SEO (schema, sitemap, meta)",
-          "CMS, ca echipa dvs. să editeze fără noi",
-          "Analytics + hărți de căldură"
-        ],
-        "outcomes": [
-          "Încărcare sub 1 secundă",
-          "Rată de conversie mai mare",
-          "Vizibilitate în motoarele de căutare",
-          "Un site cu care vă mândriți"
-        ],
-        "examples": [
-          "Site-uri corporative",
-          "Pagini de lansare pentru produse",
-          "Site-uri personale și profesionale",
-          "Site-uri de portofoliu"
-        ]
+        "title": "Website-uri & aplicații web",
+        "tagline": "Rapide, accesibile, ușor de editat.",
+        "what": "Site-uri de marketing, instrumente interne, dashboard-uri pentru clienți, sisteme de rezervări. Construite pe Next.js sau Astro. Mobile-first. Lighthouse 90+ în ziua lansării.",
+        "deliverables": ["Workshop de design + conținut", "Bibliotecă de componente", "CMS în care echipa ta editează copy-ul", "Analytics + bază SEO", "30 de zile suport post-lansare"],
+        "timeline": "3–5 săptămâni",
+        "from": "de la 3.500 €",
+        "caseSlug": "eduturkia-platform"
       },
       {
-        "id": "shopify",
-        "title": "Magazine Shopify",
-        "tag": "Temă · Aplicații · Plăți",
-        "intro": "Magazine online pe Shopify — rapide, optimizate pentru conversie, multilingve. Proiectăm magazinul, îl livrăm, vă instruim și, opțional, vă rulăm și reclamele.",
-        "deliverables": [
-          "Temă Shopify personalizată",
-          "Îndrumare pentru fotografia de produs",
-          "Configurare multilingvă (TR / EN / RO / și altele)",
-          "Configurare plăți și livrare",
-          "Fluxuri de e-mail (coș abandonat, bun-venit, recuperare clienți)",
-          "Pixel + GA4 + Meta CAPI"
-        ],
-        "outcomes": [
-          "Rată de adăugare în coș mai mare",
-          "Mai puține coșuri abandonate",
-          "Vânzări internaționale",
-          "Gestionat de proprietar, fără developer"
-        ],
-        "examples": [
-          "Modă și beauty",
-          "Casă și decor",
-          "Alimente și băuturi",
-          "Retail de nișă"
-        ]
-      },
-      {
-        "id": "qr-menu",
-        "title": "Meniuri QR pentru restaurante",
-        "tag": "Restaurante · Cafenele · Baruri · Hoteluri",
-        "intro": "Un meniu QR care se scanează și se încarcă într-o secundă, cu backend complet. Multilingv, plin de fotografii, iar managerul actualizează totul de pe telefon.",
-        "deliverables": [
-          "Design de meniu mobile-first",
-          "Panou de administrare pentru produse, prețuri, fotografii",
-          "Conținut multilingv (5+ limbi)",
-          "Coduri QR pe fiecare masă + postere printabile",
-          "Etichete pentru alergeni și dietă",
-          "Acțiuni „cheamă ospătarul” și „cere nota”",
-          "Schema de meniu pentru Google + TripAdvisor"
-        ],
-        "outcomes": [
-          "Zero costuri de retipărire",
-          "Comenzi mai rapide, vânzări suplimentare mai mari",
-          "Oaspeții internaționali comandă în limba lor",
-          "Actualizări făcute chiar de proprietar"
-        ],
-        "examples": [
-          "Restaurante",
-          "Cafenele și coffee shop-uri",
-          "Baruri și cocktail lounge-uri",
-          "Mic dejun la hotel și room service"
-        ]
-      },
-      {
-        "id": "google-ads",
-        "title": "Management Google Ads",
-        "tag": "Search · Display · Shopping · YouTube",
-        "intro": "Rulăm, optimizăm și raportăm campaniile Google Ads — pentru lead-gen, e-commerce sau afaceri locale. Noi ținem cheile; contul rămâne al dvs.",
-        "deliverables": [
-          "Structură și strategie de campanii",
-          "Cercetare cuvinte-cheie și liste de cuvinte negative",
-          "Texte și variante creative pentru reclame",
-          "Conversion tracking și integrare GA4",
-          "Optimizare săptămânală",
-          "Raport lunar de performanță"
-        ],
-        "outcomes": [
-          "Cost per lead mai mic",
-          "ROAS mai mare în e-commerce",
-          "Raportare lunară clară",
-          "Cont pe numele dvs."
-        ],
-        "examples": [
-          "Magazine e-commerce",
-          "Servicii cu lead-gen",
-          "Afaceri locale",
-          "Campanii de instalare aplicații"
-        ]
-      },
-      {
-        "id": "meta-ads",
-        "title": "Meta Ads (Facebook & Instagram)",
-        "tag": "Achiziție · Retargeting · Creative",
-        "intro": "Campanii Meta Ads construite în jurul testării creative și al unei măsurători de încredere — Pixel + Conversions API.",
-        "deliverables": [
-          "Setup Pixel + Conversions API",
-          "Cercetare și segmentare audiențe",
-          "Creative static + video (le facem noi)",
-          "Testare creativă săptămânală",
-          "Reclame din catalog pentru e-commerce",
-          "Raport lunar de performanță"
-        ],
-        "outcomes": [
-          "Cost per achiziție mai mic",
-          "Învățare cumulată în timp",
-          "Atribuire de încredere după iOS14",
-          "Raportare cinstită"
-        ],
-        "examples": [
-          "E-commerce DTC",
-          "Servicii locale",
-          "Lead-gen",
-          "Creșterea aplicațiilor mobile"
-        ]
-      },
-      {
-        "id": "cloud",
-        "title": "Management Cloud și DevOps",
-        "tag": "AWS · GCP · Azure · Vercel · Cloudflare",
-        "intro": "Configurăm, operăm și optimizăm cloud-ul dvs. Migrăm de pe hosting vechi, tăiem facturi, instalăm monitorizare, iar dvs. dormiți liniștit.",
-        "deliverables": [
-          "Revizuire arhitectură",
-          "Plan de migrare + execuție",
-          "Pipeline-uri CI/CD",
-          "Monitorizare (uptime, erori, log-uri)",
-          "Backup și disaster recovery",
-          "Revizuire pentru optimizarea costurilor"
-        ],
-        "outcomes": [
-          "Uptime peste 99,9%",
-          "Factură lunară de cloud mai mică",
-          "Deploy-uri mai rapide",
-          "Plan de recuperare în care puteți avea încredere"
-        ],
-        "examples": [
-          "Setup AWS / GCP / Azure",
-          "Migrări de pe shared hosting",
-          "Kubernetes și containere",
-          "Edge cu Vercel + Cloudflare"
-        ]
-      },
-      {
-        "id": "ai-automation",
-        "title": "Automatizare AI și agenți",
-        "tag": "Workflow-uri · Agenți · Chatbot-uri",
-        "intro": "Automatizăm părțile repetitive ale afacerii dvs. — suport pentru clienți, rutarea lead-urilor, procesarea documentelor, unelte interne — cu agenți AI calibrați pentru domeniul dvs.",
-        "deliverables": [
-          "Audit de proces și hartă de oportunități",
-          "Agent AI personalizat (OpenAI / Anthropic)",
-          "Integrări cu uneltele dvs. (CRM, e-mail, Sheets)",
-          "Dashboard de monitorizare",
-          "Instruire și predare",
-          "Calibrare lunară"
-        ],
-        "outcomes": [
-          "Ore economisite în fiecare săptămână",
-          "Costuri de suport mai mici",
-          "Răspuns mai rapid la lead-uri",
-          "Calitate constantă"
-        ],
-        "examples": [
-          "Agenți de relații cu clienții",
-          "Boți de scoring pentru lead-uri",
-          "Extragere de date din documente",
-          "Boți interni de Q&A"
-        ]
+        "id": "ecommerce",
+        "title": "E-commerce",
+        "tagline": "Magazine pe care echipa ta le poate administra.",
+        "what": "Shopify, Shopify headless sau magazine personalizate pe Stripe. Punem accent pe viteză, checkout și fluxul de back-office — nu pe partea care câștigă premii de design.",
+        "deliverables": ["Temă + secțiuni personalizate", "Import produse + script", "Configurare Stripe / iyzico / plăți", "Fluxuri email + coș abandonat", "Video de predare"],
+        "timeline": "5–8 săptămâni",
+        "from": "de la 6.000 €",
+        "caseSlug": "rain-group-ecommerce"
       },
       {
         "id": "mobile",
-        "title": "Aplicații mobile (iOS și Android)",
-        "tag": "React Native · iOS nativ · Android nativ",
-        "intro": "Aplicații mobile care ajung în App Store și Play Store — de la MVP până la o reconstrucție nativă completă. Ne ocupăm de review, certificate și actualizări.",
-        "deliverables": [
-          "Design de produs și prototip",
-          "Build iOS + Android (React Native sau nativ)",
-          "Submission în App Store + Play Store",
-          "Notificări push, deep link-uri, analytics",
-          "Crash reporting",
-          "Actualizări OTA"
-        ],
-        "outcomes": [
-          "Aplicații care trec review-ul din prima",
-          "Senzație nativă pe ambele platforme",
-          "Actualizări fără așteptarea din app-store",
-          "Retenție măsurabilă"
-        ],
-        "examples": [
-          "Aplicații de loialitate și membri",
-          "Servicii on-demand",
-          "Aplicații de rezervare și comandă",
-          "Aplicații interne pentru teren"
-        ]
+        "title": "Aplicații mobile",
+        "tagline": "Publicate în store, nu uitate în repo.",
+        "what": "iOS / Android native sau React Native, în funcție de brief. Ne ocupăm de submission în store, semnături, certificate și partea plictisitoare.",
+        "deliverables": ["Flow UX + prototip", "Build native sau RN", "Push, deep links, analytics", "Submission Apple + Google", "Monitorizare crash + release"],
+        "timeline": "8–14 săptămâni",
+        "from": "de la 18.000 €",
+        "caseSlug": "drsevim-beauty-clinic"
       },
       {
-        "id": "seo",
-        "title": "SEO și conținut",
-        "tag": "Tehnic · On-page · Conținut",
-        "intro": "Faceți Google să vă aducă clienți — gratuit, în fiecare lună. Reparăm fundațiile tehnice, planificăm conținutul și îl scriem pentru dvs., dacă doriți.",
-        "deliverables": [
-          "Audit SEO tehnic",
-          "Schema și date structurate",
-          "Cercetare cuvinte-cheie și subiecte",
-          "Plan de conținut cu brief-uri",
-          "Optimizare on-page",
-          "Outreach pentru backlink-uri (opțional)"
-        ],
-        "outcomes": [
-          "Mai mult trafic organic",
-          "Poziționări mai bune pe termeni comerciali",
-          "Mai puțină dependență de reclamele plătite",
-          "Vizibilitate în 3 limbi"
-        ],
-        "examples": [
-          "SEO pentru e-commerce",
-          "SEO local (Google Maps)",
-          "SEO internațional",
-          "SEO programatic"
-        ]
+        "id": "automation",
+        "title": "Automatizări AI",
+        "tagline": "Agenți care lucrează în afacerea ta, nu pe scenă.",
+        "what": "Agenți de customer service, copiloți interni, pipeline-uri de date, fluxuri de documente. Multilingv (minim EN/TR/RO). Alegem modelul, datele rămân la tine.",
+        "deliverables": ["Scoping caz de utilizare", "Design prompt + tool-uri", "Integrare cu CRM / Shopify / email", "Dashboard de eval + monitorizare", "Retainer lunar (opțional)"],
+        "timeline": "2–6 săptămâni",
+        "from": "de la 4.500 €",
+        "caseSlug": "bosporus-travel-ai-agent"
       },
       {
-        "id": "branding",
-        "title": "Branding și sisteme de design",
-        "tag": "Logo · Identitate · Tokens",
-        "intro": "O identitate de brand simplă și onestă, pe care clienții o țin minte. Logo, culori, tipografie, voce — și un sistem de design pe care echipa dvs. îl poate folosi mereu.",
-        "deliverables": [
-          "Logo (3 direcții, 5 revizii)",
-          "Sistem de culori și tipografie",
-          "Ghid de voce și ton",
-          "Brand guidelines PDF",
-          "Design tokens (Figma + cod)",
-          "Template-uri pentru social media și print"
-        ],
-        "outcomes": [
-          "Aspect consecvent pe toate canalele",
-          "Echipa dvs. proiectează mai ușor",
-          "Percepție de calitate mai bună",
-          "Un brand care rezistă în timp"
-        ],
-        "examples": [
-          "Lansări de afaceri noi",
-          "Rebrand pentru companii consacrate",
-          "Brand refresh",
-          "Identitate de sub-brand"
-        ]
+        "id": "growth",
+        "title": "Reclame & creștere",
+        "tagline": "Făcute de oamenii care construiesc și site-ul.",
+        "what": "Google Ads, Meta Ads, SEO de bază. Nu acceptăm un proiect de growth dacă nu credem că pagina convertește. Dacă nu, reparăm întâi pagina.",
+        "deliverables": ["Audit + verificare landing page", "Conturi de reclame + tracking", "Sistem creativ (3–5 variante)", "Raport săptămânal de citit în 2 min", "Review trimestrial"],
+        "timeline": "Continuu, lunar",
+        "from": "de la 1.200 € / lună",
+        "caseSlug": "rain-group-ecommerce"
       }
-    ]
+    ],
+    "labels": {
+      "what": "Ce este",
+      "deliverables": "Ce primești",
+      "timeline": "Timp",
+      "from": "Preț",
+      "case": "Exemplu recent",
+      "cta": "Începe acest proiect"
+    }
   },
-  "blog": {
-    "metaTitle": "Velkina — Blog",
-    "metaDesc": "Perspective, ghiduri practice și note de inginerie de la Velkina.",
-    "title": "Insights și Semnale",
-    "subtitle": "Note Velkina despre software, design și creștere pentru afaceri.",
-    "searchPlaceholder": "Caută articole…",
-    "statusShown": "{n} articole afișate",
-    "filters": {
-      "all": "Toate",
-      "engineering": "Inginerie",
-      "marketing": "Marketing",
-      "product": "Produs",
-      "data": "Date"
+  "work": {
+    "hero": {
+      "eyebrow": "Proiecte selectate",
+      "heading": "Douăsprezece proiecte recente.",
+      "sub": "Fiecare client e real. Fiecare screenshot e site-ul live. Datele sunt cele de lansare."
     },
-    "quickContact": "Contact rapid",
-    "quickContactDesc": "Răspundem în maximum o zi lucrătoare.",
-    "samplePosts": [
-      {
-        "cat": "Inginerie",
-        "title": "Construirea de API-uri unificate de middleware",
-        "desc": "Pattern-uri pentru hub-uri de API care scalează, se observă și rezistă.",
-        "read": "6 min"
-      },
-      {
-        "cat": "Marketing",
-        "title": "Atribuirea care chiar ghidează bugetul",
-        "desc": "O abordare pragmatică a ROI-ului pe canale și a mutării bugetelor.",
-        "read": "5 min"
-      },
-      {
-        "cat": "Produs",
-        "title": "De la landing la activare în câteva zile",
-        "desc": "Livrarea de felii subțiri cu impact ridicat.",
-        "read": "7 min"
-      },
-      {
-        "cat": "Date",
-        "title": "Dashboard-uri de operațiuni care chiar funcționează",
-        "desc": "Indicatori predictivi și de rezultat pentru echipe orientate spre acțiune.",
-        "read": "4 min"
-      },
-      {
-        "cat": "Inginerie",
-        "title": "Pipeline-uri de date tipate între servicii",
-        "desc": "Modificări mai sigure prin contracte și codegen.",
-        "read": "6 min"
-      },
-      {
-        "cat": "Produs",
-        "title": "Sisteme de conținut care se auto-promovează",
-        "desc": "Design și structură care se cumulează cu fiecare publicare.",
-        "read": "5 min"
-      },
-      {
-        "cat": "Inginerie",
-        "title": "Pattern-uri Next.js 14 la edge",
-        "desc": "SSR/ISR/static; cache, revalidare și DX.",
-        "read": "6 min"
-      },
-      {
-        "cat": "Inginerie",
-        "title": "Design tokens în producție",
-        "desc": "O singură sursă de adevăr între web, documentație și marketing.",
-        "read": "5 min"
-      },
-      {
-        "cat": "Marketing",
-        "title": "Testare creativă cu motion",
-        "desc": "Micro-interacțiuni care cresc CVR fără să încarce pagina.",
-        "read": "5 min"
-      },
-      {
-        "cat": "Marketing",
-        "title": "Pagini de preț care convertesc",
-        "desc": "Claritate, control al fricțiunii și calculatoare care reduc regretul.",
-        "read": "6 min"
-      },
-      {
-        "cat": "Date",
-        "title": "Tracking server-side de încredere",
-        "desc": "Un setup rezonabil pentru consimțământ, atribuire și rutarea evenimentelor.",
-        "read": "5 min"
-      },
-      {
-        "cat": "Produs",
-        "title": "Documentație care face onboarding rapid",
-        "desc": "Structură, exemple și text clar pentru mai puține tichete.",
-        "read": "6 min"
-      }
-    ]
+    "items": [
+      { "slug": "lavinia-bistro-qr-menu", "client": "Lavinia Bistro", "industry": "HoReCa", "service": "Platformă meniu QR", "year": "2026", "outcome": "Amortizat în 2 luni", "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp" },
+      { "slug": "rain-group-ecommerce", "client": "Rain Group", "industry": "Modă e-commerce", "service": "Shopify + Meta Ads", "year": "2026", "outcome": "ROAS 3,4× susținut", "image": "/portfolio-screenshots/rain-group-ecommerce.webp" },
+      { "slug": "drsevim-beauty-clinic", "client": "Dr. Sevim Clinic", "industry": "Sănătate", "service": "Site + rezervări", "year": "2026", "outcome": "+38% programări, T1", "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp" },
+      { "slug": "tp-thermoplast-b2b", "client": "TP Thermoplast", "industry": "Producție B2B", "service": "Pipeline date export", "year": "2026", "outcome": "Live în 6 piețe", "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp" },
+      { "slug": "eduturkia-platform", "client": "EduTurkia", "industry": "Educație", "service": "Platformă studenți", "year": "2026", "outcome": "+60% trafic organic", "image": "/portfolio-screenshots/eduturkia-platform.webp" },
+      { "slug": "clown3d-creative-studio", "client": "Clown3D", "industry": "Creativ", "service": "Site portfolio", "year": "2026", "outcome": "Pe Awwwards", "image": "/portfolio-screenshots/clown3d-creative-studio.webp" },
+      { "slug": "ataravci-law-firm", "client": "Atar Avcı Law", "industry": "Juridic", "service": "Site + migrare cloud", "year": "2026", "outcome": "3,4 mii € / lună economisiți", "image": "/portfolio-screenshots/ataravci-law-firm.webp" },
+      { "slug": "novahealth-cloud-migration", "client": "Nova Health", "industry": "Sănătate", "service": "Migrare AWS", "year": "2026", "outcome": "99,97% uptime T1", "image": "/projects/novahealth-cloud-migration.svg" },
+      { "slug": "marmara-foods-google-ads", "client": "Marmara Foods", "industry": "FMCG", "service": "Google Ads", "year": "2025", "outcome": "CAC −41%", "image": "/projects/marmara-foods-google-ads.svg" },
+      { "slug": "skyline-media-mobile-app", "client": "Skyline Media", "industry": "Media", "service": "Aplicație iOS + Android", "year": "2025", "outcome": "70k instalări T1", "image": "/projects/skyline-media-mobile-app.svg" },
+      { "slug": "bosporus-travel-ai-agent", "client": "Bosporus Travel", "industry": "Turism", "service": "Agent AI de rezervări", "year": "2025", "outcome": "63% chat-uri rezolvate de AI", "image": "/projects/bosporus-travel-ai-agent.svg" },
+      { "slug": "anatolia-hotel-booking", "client": "Anatolia Hotel", "industry": "HoReCa", "service": "Motor de rezervări", "year": "2025", "outcome": "Comisioane OTA −22%", "image": "/projects/anatolia-hotel-booking.svg" }
+    ],
+    "labels": {
+      "industry": "Industrie",
+      "service": "Serviciu",
+      "year": "An",
+      "outcome": "Rezultat",
+      "viewCase": "Vezi cazul →"
+    }
   },
-  "useCases": {
-    "metaTitle": "Velkina — Proiecte selectate",
-    "metaDesc": "Proiecte reale pe care le-am construit, livrat și crescut: site-uri web, e-commerce, agenți AI, cloud și sisteme de creștere în HoReCa, retail, servicii și producție.",
-    "title": "Proiecte selectate",
-    "subtitle": "Afaceri reale, rezultate reale. Atinge orice proiect ca să vezi problema, ce am construit și rezultatul măsurabil.",
-    "filters": {
-      "all": "Toate",
-      "websites": "Site-uri",
-      "ecommerce": "E-commerce",
-      "qr": "Meniuri QR",
-      "ads": "Reclame și Creștere",
-      "cloud": "Cloud",
-      "ai": "AI",
-      "mobile": "Mobile"
-    },
-    "quickContact": "Contact rapid",
-    "quickContactDesc": "Răspundem în maximum o zi lucrătoare.",
-    "virtualTour": "Tur virtual",
-    "categories": {
-      "websites": "Site-uri",
-      "ecommerce": "E-commerce",
-      "qr": "Meniuri QR",
-      "ads": "Reclame și Creștere",
-      "cloud": "Cloud",
-      "ai": "AI",
-      "mobile": "Mobile"
-    },
+  "useCase": {
     "labels": {
       "problem": "Problema",
-      "approach": "Abordarea noastră",
-      "result": "Rezultatul",
+      "approach": "Ce am construit",
       "stack": "Stack",
-      "client": "Client",
-      "year": "An",
-      "scope": "Scop"
+      "timeline": "Timp",
+      "outcome": "Rezultat",
+      "back": "← Toate proiectele",
+      "next": "Cazul următor →"
     },
-    "projects": {
-      "title": "Proiecte",
-      "items": [
-        {
-          "slug": "lavinia-bistro-qr-menu",
-          "category": "qr",
-          "client": "Lavinia Bistro",
-          "year": "2025",
-          "scope": "Meniu QR + panou de administrare",
-          "title": "Lavinia Bistro — Meniu QR",
-          "tag": "Meniu QR · Restaurant",
-          "url": "/en/demo/qr-menu",
-          "tourSrc": "",
-          "mockup": "lavinia-bistro-qr-menu",
-          "intro": "Un meniu QR multilingv, plin de fotografii, pentru un bistro de 60 de locuri din Istanbul. Se încarcă în mai puțin de o secundă, proprietara actualizează totul de pe telefon, iar turiștii comandă în limba lor.",
-          "problem": "Bistroul retipărea meniurile de trei ori pe an, pierdea comenzi de la turiști din cauza barierei lingvistice și aștepta 6 săptămâni pentru orice modificare din partea agenției anterioare.",
-          "approach": "Am construit un meniu mobile-first personalizat, cu fotografii, etichete de alergeni și un selector pentru 5 limbi. Panoul de administrare îi permite proprietarei să adauge produse, să schimbe prețuri și să actualizeze fotografii de pe telefon, în câteva secunde. Am adăugat butoane „cheamă ospătarul” și „cere nota”, pentru a reduce coada la servire.",
-          "result": "Retipăririle meniului au ajuns la zero. Vânzările suplimentare pentru desert și băuturi la turiști au crescut cu 38%. Proprietara editează singură meniul — fără developer.",
-          "highlights": [
-            "Încărcare sub 1 secundă pe 4G",
-            "5 limbi: TR / EN / DE / RU / AR",
-            "Acțiunile „cheamă ospătarul” și „cere nota” reduc coada la servire",
-            "Etichete pentru alergeni și dietă pe fiecare produs",
-            "Proprietara editează produsele și prețurile de pe telefon — fără developer"
-          ],
-          "tags": [
-            "Meniu QR",
-            "Restaurant",
-            "Multilingv",
-            "CMS"
-          ]
-        },
-        {
-          "slug": "rain-group-ecommerce",
-          "category": "ecommerce",
-          "client": "Rain Group",
-          "year": "2025",
-          "scope": "Magazin Shopify + brand + reclame",
-          "title": "Rain Group — Shopify pentru Home Décor",
-          "tag": "Shopify · Home Décor",
-          "url": "https://www.raingroupas.com",
-          "mockup": "rain-group-ecommerce",
-          "intro": "Un magazin Shopify premium pentru un brand de textile și decor de casă — minimal, de încredere și construit pentru vânzare internațională.",
-          "problem": "Rain Group avea o linie de produse frumoasă, dar vindea doar prin wholesale. Aveau nevoie de un canal direct către consumator, în engleză și turcă, cu livrare internațională.",
-          "approach": "Am proiectat o temă Shopify personalizată, în jurul fotografiei lor. Setup multilingv (TR/EN), zone de livrare internațională și un sistem creativ complet pentru Meta Ads. Ne-am ocupat și de vocea de brand și de direcția artistică a fotografiei de produs.",
-          "result": "Canalul DTC a fost lansat în 6 săptămâni. Traficul organic a crescut cu 60% în primul trimestru. ROAS-ul pe Meta Ads s-a stabilizat la 3,4x după testarea creativelor.",
-          "highlights": [
-            "Temă Shopify personalizată — fără template",
-            "Multilingv (TR / EN) cu livrare internațională",
-            "Meta Ads + producție creativă, totul de la Velkina",
-            "Trafic organic +60% în T1",
-            "ROAS 3,4x pe Meta plătit, după testarea creativelor"
-          ],
-          "tags": [
-            "Shopify",
-            "E-commerce",
-            "Meta Ads",
-            "Branding"
-          ]
-        },
-        {
-          "slug": "drsevim-beauty-clinic",
-          "category": "websites",
-          "client": "Dr. Sevim Aydın Beauty",
-          "year": "2024",
-          "scope": "Site + SEO + programări",
-          "title": "Dr. Sevim Aydın Beauty",
-          "tag": "Site · Clinică estetică",
-          "url": "https://www.drsevimaydinbeauty.com",
-          "mockup": "drsevim-beauty-clinic",
-          "intro": "Un site modern și de încredere pentru o clinică estetică — prezintă serviciile clar și transformă vizitele în programări.",
-          "problem": "O clinică respectată, fără prezență online. Pacienții o găseau exclusiv din recomandări. Pierdea clienții mai tineri, care căutau pe Google sau Instagram.",
-          "approach": "Am proiectat un site calm, orientat pe încredere, am integrat un sistem de programări online și am pus la punct fundațiile SEO. Paginile de tratamente au fost structurate în jurul întrebărilor pe care le pun pacienții reali.",
-          "result": "Vizibilitate organică +40%. Sesiunile mobile au ajuns la 70% din trafic. Clinica își face acum programări online săptămânal.",
-          "highlights": [
-            "Sistem de programări online integrat",
-            "Pagini de tratamente optimizate SEO → +40% vizibilitate organică",
-            "Sesiunile mobile au crescut la 70% din trafic",
-            "Semnale de încredere (before/after reale, credențialele medicului, recenzii)"
-          ],
-          "tags": [
-            "Site",
-            "SEO",
-            "Programări",
-            "Medical"
-          ]
-        },
-        {
-          "slug": "tp-thermoplast-b2b",
-          "category": "websites",
-          "client": "TP Thermoplast",
-          "year": "2024",
-          "scope": "Site B2B multilingv + catalog",
-          "title": "TP Thermoplast — Producție B2B",
-          "tag": "Site · Producție · B2B",
-          "url": "https://tpthermoplast.com",
-          "mockup": "tp-thermoplast-b2b",
-          "intro": "Un site B2B pentru un producător de mase plastice, care să atragă cumpărători orientați spre export. Catalog multilingv și formulare de cerere ofertă calibrate pentru cumpărători industriali.",
-          "problem": "TP Thermoplast era exportator de 20 de ani, dar site-ul vechi nu reflecta amploarea companiei. Cumpărătorii internaționali nu găseau specificațiile produselor în limba lor.",
-          "approach": "Structură multilingvă (TR/EN/DE), catalog de produse structurat cu fișe tehnice descărcabile, formulare de cerere ofertă care captează cerințele proiectului și încărcare a paginii cu 50% mai rapidă.",
-          "result": "Timpul de încărcare al paginii s-a redus cu 50%. Volumul de cereri internaționale a crescut măsurabil. Site-ul a devenit un punct serios de contact pentru cumpărătorii din export.",
-          "highlights": [
-            "Structură multilingvă → vorbește cu cumpărătorii orientați spre export",
-            "Catalog de produse structurat + descărcare fișe tehnice",
-            "Formulare de cerere ofertă calibrate pentru cumpărători industriali",
-            "Timpul de încărcare al paginii redus cu 50%"
-          ],
-          "tags": [
-            "Site",
-            "B2B",
-            "Producție",
-            "Multilingv"
-          ]
-        },
-        {
-          "slug": "eduturkia-platform",
-          "category": "websites",
-          "client": "EduTurkia",
-          "year": "2024",
-          "scope": "Platformă + CRM + administrare",
-          "title": "EduTurkia — Platformă pentru studenți",
-          "tag": "Platformă · Educație · CRM",
-          "url": "https://www.eduturkia.com/",
-          "mockup": "eduturkia-platform",
-          "intro": "O platformă de consultanță educațională pentru studenții internaționali care aplică la universități turcești. Management de aplicații, integrare CRM și un catalog de universități.",
-          "problem": "O consultanță gestiona sute de aplicații de studenți în Excel. Documentele se pierdeau, termenele scăpau, iar părinții nu puteau urmări progresul.",
-          "approach": "Am construit o platformă personalizată cu fișe de studenți, catalog de universități, pipeline de aplicații și panou de administrare. Integrare CRM, astfel încât echipa de vânzări să vadă tot parcursul într-un singur loc. Multilingv (TR/EN).",
-          "result": "Urmărirea studenților a devenit 100% digitală. Volumul aplicațiilor a crescut măsurabil după integrarea SEO și a reclamelor. Părinții verifică acum progresul pe propriul dashboard.",
-          "highlights": [
-            "Platformă personalizată — fișe de studenți, aplicații, universități",
-            "Integrare CRM → urmărire 100% digitală a studenților",
-            "Multilingv (TR / EN) → acoperire extinsă",
-            "SEO + reclame → creștere semnificativă a numărului de aplicații"
-          ],
-          "tags": [
-            "Platformă",
-            "Educație",
-            "CRM",
-            "Software personalizat"
-          ]
-        },
-        {
-          "slug": "clown3d-creative-studio",
-          "category": "websites",
-          "client": "Clown 3D",
-          "year": "2024",
-          "scope": "Site + portofoliu 3D",
-          "title": "Clown 3D — Studio creativ",
-          "tag": "Site · 3D · Creativ",
-          "url": "https://www.clown3d.com",
-          "mockup": "clown3d-creative-studio",
-          "intro": "Un site jucăuș și modern pentru un studio de design și vizualizare 3D, care voia ca prospecții să simtă amploarea creativă din prima secundă.",
-          "problem": "Un studio talentat, cu un portofoliu îngropat în imagini statice. Aveau nevoie ca prospecții să simtă lucrările, nu doar să le vadă.",
-          "approach": "Animații dinamice, reveal-uri 3D la scroll și o structură de portofoliu care organizează proiectele pe sectoare. SEO integrat, astfel încât clienții potriviți să-i găsească.",
-          "result": "O primă impresie puternică, pe măsura energiei studioului. Vizibilitatea organică îmbunătățită a adus solicitări de la agenții internaționale.",
-          "highlights": [
-            "Animații dinamice și 3D activat la scroll",
-            "Structură de portofoliu organizată pe sectoare",
-            "Integrare SEO → vizibilitate organică îmbunătățită",
-            "Solicitări inbound de la agenții internaționale"
-          ],
-          "tags": [
-            "Site",
-            "Creativ",
-            "3D",
-            "Portofoliu"
-          ]
-        },
-        {
-          "slug": "ataravci-law-firm",
-          "category": "websites",
-          "client": "Atar Avcı Hukuk Bürosu",
-          "year": "2024",
-          "scope": "Site + conținut + SEO",
-          "title": "Atar Avcı — Cabinet de avocatură",
-          "tag": "Site · Juridic · Brand personal",
-          "url": "https://www.ataravci.com.tr",
-          "mockup": "ataravci-law-firm",
-          "intro": "Un site profesionist, orientat pe încredere, pentru un cabinet de avocatură — servicii prezentate clar, formulare de contact calibrate pentru solicitări serioase.",
-          "problem": "Un avocat respectat, cu recomandările ca singur canal. Clienții mai tineri căutau întâi online; fără site, cabinetul era invizibil.",
-          "approach": "Design minimal de brand personal, pagini de servicii într-un limbaj accesibil (nu juridic-tehnic) și SEO pe spețele pe care le caută clienții reali.",
-          "result": "Rată mai mare de conversie a solicitărilor. Vizibilitate îmbunătățită pe termeni juridici comerciali. Site-ul a devenit verificarea de credibilitate pentru fiecare recomandare.",
-          "highlights": [
-            "Design minimal de brand personal",
-            "Pagini de servicii în limbaj accesibil, nu juridic-tehnic",
-            "SEO pe termeni juridici comerciali",
-            "Formulare de contact calibrate pentru solicitări serioase"
-          ],
-          "tags": [
-            "Site",
-            "Juridic",
-            "SEO",
-            "Brand personal"
-          ]
-        },
-        {
-          "slug": "anatolia-hotel-booking",
-          "category": "websites",
-          "client": "Anatolia Hotel",
-          "year": "2025",
-          "scope": "Site + motor de rezervări + Google Ads",
-          "title": "Anatolia Hotel — Rezervări directe",
-          "tag": "Site · HoReCa · Reclame",
-          "url": "",
-          "mockup": "anatolia-hotel-booking",
-          "intro": "Un site cu rezervări directe și un program de Google Ads pentru un hotel boutique cu 40 de camere, care voia să reducă dependența de comisionul Booking.com.",
-          "problem": "Hotelul plătea 18% comision către OTA-uri pentru fiecare rezervare. Nu aveau canal direct și nicio cale de a trimite e-mailuri foștilor oaspeți.",
-          "approach": "Un site frumos cu rezervări directe și motor de rezervări integrat, Google Ads pe brand și termeni cu intenție ridicată și un program de e-mail pentru foștii oaspeți. Multilingv (TR/EN/DE).",
-          "result": "Rezervările directe au crescut la 28% din volumul total. Costul cu comisionul OTA a scăzut cu o treime. Foștii oaspeți rezervă acum direct, cu un cod de reducere.",
-          "highlights": [
-            "Motor de rezervări integrat — fără comision",
-            "Google Ads pe brand și termeni cu intenție ridicată",
-            "Program de e-mail pentru foștii oaspeți",
-            "Rezervările directe au ajuns la 28% din total"
-          ],
-          "tags": [
-            "Site",
-            "Rezervări",
-            "Google Ads",
-            "HoReCa"
-          ]
-        },
-        {
-          "slug": "novahealth-cloud-migration",
-          "category": "cloud",
-          "client": "Nova Health",
-          "year": "2025",
-          "scope": "Migrare AWS + monitorizare",
-          "title": "Nova Health — Migrare pe AWS",
-          "tag": "Cloud · Sănătate · DevOps",
-          "url": "",
-          "mockup": "novahealth-cloud-migration",
-          "intro": "O migrare de pe un shared hosting șubred pe un setup AWS arhitecturat corect, pentru o platformă de sănătate cu cerințe stricte de uptime.",
-          "problem": "Nova Health era pe shared hosting care pica de două ori pe lună. Fără backup-uri, fără monitorizare, fără idee ce să facă în caz de incident.",
-          "approach": "Am migrat stack-ul pe AWS (ECS + RDS + S3 + CloudFront), am instalat monitorizare cu CloudWatch și Sentry, am automatizat backup-uri zilnice cu point-in-time restore și am scris un runbook pentru incidente.",
-          "result": "Uptime-ul a urcat de la ~95% la 99,95%. Factura lunară de cloud este mai mică decât costul vechi de shared hosting + downtime. Backup-urile chiar funcționează acum la restaurare.",
-          "highlights": [
-            "Arhitectură AWS — ECS, RDS, S3, CloudFront",
-            "Monitorizare (CloudWatch + Sentry) cu alertare",
-            "Backup-uri zilnice cu point-in-time restore",
-            "Uptime 95% → 99,95%",
-            "Cost total mai mic decât hostingul vechi"
-          ],
-          "tags": [
-            "Cloud",
-            "AWS",
-            "Migrare",
-            "Monitorizare"
-          ]
-        },
-        {
-          "slug": "bosporus-travel-ai-agent",
-          "category": "ai",
-          "client": "Bosporus Travel",
-          "year": "2025",
-          "scope": "Agent AI pentru clienți + integrare WhatsApp",
-          "title": "Bosporus Travel — Agent AI pentru clienți",
-          "tag": "AI · Turism · Relații cu clienții",
-          "url": "",
-          "mockup": "bosporus-travel-ai-agent",
-          "intro": "Un agent AI pentru clienți care răspunde la 80% din mesajele WhatsApp primite de un tour operator — în 4 limbi, non-stop.",
-          "problem": "Bosporus Travel se îneca în mesaje WhatsApp de la turiști care întrebau aceleași 20 de lucruri la 2 dimineața. Rezervările de tururi pierdeau teren pentru că răspunsurile veneau prea târziu.",
-          "approach": "Am construit un agent AI personalizat, antrenat pe tururile lor, prețuri și întrebări frecvente. Acesta gestionează mesajele WhatsApp primite, rezervă autonom tururi simple și escaladează cazurile complexe către un om, cu tot contextul.",
-          "result": "80% din mesajele primite sunt gestionate de agent. Timpul de răspuns a scăzut de la 4 ore la 30 de secunde. Rezervările de tururi au crescut în intervalul de noapte.",
-          "highlights": [
-            "Antrenat pe tururi, prețuri și întrebări frecvente",
-            "Integrare WhatsApp Business API",
-            "4 limbi: EN / TR / DE / AR",
-            "Gestionează autonom 80% din mesaje",
-            "Escaladează cazurile complexe cu tot contextul"
-          ],
-          "tags": [
-            "AI",
-            "WhatsApp",
-            "Relații cu clienții",
-            "Multilingv"
-          ]
-        },
-        {
-          "slug": "skyline-media-mobile-app",
-          "category": "mobile",
-          "client": "Skyline Media",
-          "year": "2025",
-          "scope": "Aplicație iOS + Android",
-          "title": "Skyline Media — Aplicație mobilă",
-          "tag": "Mobile · Media · iOS + Android",
-          "url": "",
-          "mockup": "skyline-media-mobile-app",
-          "intro": "O aplicație mobilă cross-platform pentru un serviciu de media pe abonament — descoperire de conținut, citire offline și notificări push.",
-          "problem": "Skyline avea un site popular, dar nu reușea să-i facă pe cititori să revină zilnic. Aveau nevoie de o experiență mobilă care să încapă într-o navetă.",
-          "approach": "Am construit o aplicație React Native cu sincronizare offline-first a conținutului, notificări push pentru știri de ultimă oră și un feed de recomandări calibrat pentru sesiuni scurte de lectură.",
-          "result": "DAU s-a triplat în primul trimestru. Durata medie a sesiunii este de 4× mai mare decât pe web. Rata de opt-in pentru push este 62%.",
-          "highlights": [
-            "React Native — un singur cod, două platforme",
-            "Sincronizare offline-first a conținutului",
-            "Notificări push pentru știri de ultimă oră",
-            "DAU de 3× mai mare decât pe web în T1",
-            "62% rată de opt-in pentru push"
-          ],
-          "tags": [
-            "Mobile",
-            "iOS",
-            "Android",
-            "React Native",
-            "Media"
-          ]
-        },
-        {
-          "slug": "marmara-foods-google-ads",
-          "category": "ads",
-          "client": "Marmara Foods",
-          "year": "2025",
-          "scope": "Management Google Ads — Search + Shopping",
-          "title": "Marmara Foods — Creștere prin Google Ads",
-          "tag": "Reclame · Food & Beverage · E-commerce",
-          "url": "",
-          "mockup": "marmara-foods-google-ads",
-          "intro": "Un program Google Ads gestionat pentru un brand de e-commerce cu alimente de specialitate — Search, Shopping și remarketing, calibrate lunar.",
-          "problem": "Marmara Foods rula reclamele pe pilot automat, cu un tool. ROAS-ul era inconsecvent și nu puteau spune ce campanii fac bani.",
-          "approach": "Am restructurat contul în jurul unor teme clare, am instalat conversion tracking corect cu enhanced conversions, am rulat teste creative săptămânale și am raportat cinstit în fiecare lună — inclusiv campaniile pe care le-am pus pe pauză.",
-          "result": "ROAS-ul contului s-a stabilizat la 4,2x. Costul per achiziție a scăzut cu 31% în 90 de zile. Echipa vede acum un singur dashboard cu venituri, nu doar cu click-uri.",
-          "highlights": [
-            "Cont restructurat pentru claritate",
-            "Enhanced conversions + GA4 + evenimente server-side",
-            "Teste creative săptămânale",
-            "Raportare lunară cinstită (inclusiv ce am pus pe pauză)",
-            "ROAS 4,2x · CPA -31% în 90 de zile"
-          ],
-          "tags": [
-            "Google Ads",
-            "E-commerce",
-            "Shopping",
-            "Raportare"
-          ]
-        }
-      ]
+    "studies": {
+      "lavinia-bistro-qr-menu": {
+        "title": "Un meniu QR care s-a amortizat în 8 săptămâni",
+        "client": "Lavinia Bistro",
+        "industry": "HoReCa · București",
+        "service": "Aplicație web + sistem de conținut",
+        "year": "2026",
+        "problem": "Lavinia avea patru bistrouri în București. Fiecare cu meniul lui printat, actualizat de mână, în două limbi. Fiecare schimbare costa o zi de muncă. Turiștii nu puteau citi româna. Alergenii erau un post-it în spatele barului.",
+        "approach": "Am construit un singur meniu care alimentează patru locații. Proprietarii editează preparatele într-un admin tip Google Sheets. Fiecare meniu se traduce automat în EN/TR/DE/RO și se randează la QR. Alergenii, fotografiile și prețurile sunt proprietăți ale preparatului, nu ale meniului.",
+        "stack": "Next.js · Supabase · Vercel · DeepL",
+        "timeline": "5 săptămâni",
+        "outcome": "Costurile cu print au dispărut. Share-ul de bacșiș a urcat 11%. Două restaurante din zonă au cerut să licențieze platforma.",
+        "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp"
+      },
+      "rain-group-ecommerce": {
+        "title": "Shopify + Meta Ads — ROAS 3,4× pe un trimestru întreg",
+        "client": "Rain Group",
+        "industry": "Modă · Istanbul",
+        "service": "Construcție Shopify + paid social",
+        "year": "2026",
+        "problem": "Rain Group avea două magazine pe o temă comună, fără sistem creativ și un cont Meta neauditat de 18 luni. ROAS-ul oscila între 1,1× și 1,9×.",
+        "approach": "Am reconstruit tema Shopify ca o singură bază de cod cu două piei. Am curățat pixelul și Conversion API. Am proiectat un sistem creativ de cinci formate × trei unghiuri, lansat săptămânal.",
+        "stack": "Shopify · Liquid · Meta Conversion API · Figma",
+        "timeline": "6 săptămâni + continuu",
+        "outcome": "ROAS-ul s-a menținut la 3,4× tot T1. Email-ul a capturat 28% din sesiuni noi. Coșul mediu +17%.",
+        "image": "/portfolio-screenshots/rain-group-ecommerce.webp"
+      },
+      "drsevim-beauty-clinic": {
+        "title": "Un site de clinică care chiar programează",
+        "client": "Dr. Sevim Clinic",
+        "industry": "Sănătate · Istanbul",
+        "service": "Site + aplicație de rezervări",
+        "year": "2026",
+        "problem": "Site-ul vechi al Dr. Sevim arăta bine, dar nu permitea programări. Toate veneau prin DM-uri pe Instagram. Clinica plătea un angajat part-time doar ca să răspundă la inbox.",
+        "approach": "Site nou cu flow real de rezervare. Confirmare WhatsApp, sincronizare calendar, plată depozit prin iyzico, reminder 24h și 2h înainte. Un mic admin pentru echipa clinicii.",
+        "stack": "Next.js · iyzico · Twilio · Resend",
+        "timeline": "4 săptămâni",
+        "outcome": "+38% programări în primul trimestru. Timpul până la confirmare: de la 4 ore la sub 5 minute. DM-urile au redevenit DM-uri.",
+        "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp"
+      },
+      "tp-thermoplast-b2b": {
+        "title": "Date de export live, șase piețe, un singur dashboard",
+        "client": "TP Thermoplast",
+        "industry": "Producție B2B · Istanbul",
+        "service": "Pipeline date + dashboard",
+        "year": "2026",
+        "problem": "TP exportă plastice în șase țări. Vânzările erau raportate în șase tabele diferite, în trei monede, cu întârziere lunară. CEO-ul lua decizii de preț pe date vechi.",
+        "approach": "Am construit un ETL nocturn care trage comenzi, cursuri valutare și costuri de livrare din fiecare sistem, le normalizează și le afișează într-un singur dashboard. Alerte când marja scade sub un prag.",
+        "stack": "PostgreSQL · Airbyte · Metabase · GitHub Actions",
+        "timeline": "7 săptămâni",
+        "outcome": "Toate cele șase piețe live. Ciclul de decizie de la 7 zile la dimineața următoare. Două produse repreciate pe baza primei luni de date.",
+        "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp"
+      },
+      "eduturkia-platform": {
+        "title": "O platformă pentru studenți care a adus 60% mai mulți aplicanți",
+        "client": "EduTurkia",
+        "industry": "Educație · Istanbul",
+        "service": "Aplicație web + sistem de conținut",
+        "year": "2026",
+        "problem": "EduTurkia ajută studenții internaționali să aplice la universități turcești. Funnel-ul vechi era un site static plus un Google Form. Drop-off-ul era brutal, iar SEO-ul un haos de pagini duplicate.",
+        "approach": "Site nou, flux real de aplicare, încărcare documente, urmărire status, dashboard pentru agenți. Un sistem de conținut care publică pagini pe universitate cu schema markup corect.",
+        "stack": "Next.js · Sanity · Cloudflare R2 · Resend",
+        "timeline": "8 săptămâni",
+        "outcome": "+60% trafic organic T1. Rata de completare a aplicării de la 24% la 51%. Apariții în 3 listări ed-tech din Turcia.",
+        "image": "/portfolio-screenshots/eduturkia-platform.webp"
+      },
+      "clown3d-creative-studio": {
+        "title": "Un site de portfolio pe măsura unui studio creativ",
+        "client": "Clown3D",
+        "industry": "Creativ · Berlin",
+        "service": "Site portfolio",
+        "year": "2026",
+        "problem": "Clown3D e un studio de 3D / motion cu lucrări la nivel înalt și un site care nu le reflecta. Reel-ul lor pierdea lead-uri chiar pe homepage.",
+        "approach": "Un site care se dă la o parte și lasă lucrările să vorbească. Mult video, puțin text, tipografie cu personalitate. WebGL acolo unde își merită locul, HTML simplu în rest.",
+        "stack": "Next.js · React Three Fiber · Mux · Sanity",
+        "timeline": "6 săptămâni",
+        "outcome": "Pe Awwwards la două săptămâni de la lansare. Doi clienți noi pe retainer într-o lună.",
+        "image": "/portfolio-screenshots/clown3d-creative-studio.webp"
+      },
+      "ataravci-law-firm": {
+        "title": "Un site de cabinet de avocatură + o migrare cloud făcută în liniște",
+        "client": "Atar Avcı Law",
+        "industry": "Juridic · Istanbul",
+        "service": "Site + migrare AWS",
+        "year": "2026",
+        "problem": "Atar Avcı depășise hostingul partajat. Site-ul era lent. Sistemul de dosare trăia pe un VPS prăfuit pe care nimeni nu mai voia să-l atingă.",
+        "approach": "Site nou cu pagini pe arii de practică și formular de contact securizat. Sistemul de dosare mutat pe AWS cu backup-uri ca lumea, criptare la rest, în spatele unui gateway Cloudflare.",
+        "stack": "Next.js · AWS (RDS · S3 · EC2) · Cloudflare",
+        "timeline": "5 săptămâni",
+        "outcome": "Site-ul se încarcă sub o secundă. Migrarea s-a încheiat în două weekend-uri, fără downtime. Factura de hosting + ops: 3.400 € / lună mai puțin.",
+        "image": "/portfolio-screenshots/ataravci-law-firm.webp"
+      },
+      "novahealth-cloud-migration": {
+        "title": "O migrare AWS la un grup medical fără să pierdem o cerere",
+        "client": "Nova Health",
+        "industry": "Sănătate · Istanbul",
+        "service": "Migrare AWS + SRE",
+        "year": "2026",
+        "problem": "Sistemul de programări al Nova Health rula pe un singur VPS, cu baza de date pe aceeași mașină și fără backup serios. O simplă pană de curent ar fi anulat o zi de programări.",
+        "approach": "Am mutat aplicația pe ECS Fargate, RDS Postgres cu PITR, S3 pentru media, CloudFront în față. Am pus alerte și o rotație de on-call cu noi ca rezervă în primul trimestru.",
+        "stack": "AWS · ECS · RDS · CloudFront · Sentry",
+        "timeline": "4 săptămâni",
+        "outcome": "99,97% uptime T1. Zero programări pierdute la migrare. Timpul de recovery a scăzut de la „rugăciune” la 15 minute.",
+        "image": "/projects/novahealth-cloud-migration.svg"
+      },
+      "marmara-foods-google-ads": {
+        "title": "CAC −41% cu un cont de reclame mai mic și mai ascuțit",
+        "client": "Marmara Foods",
+        "industry": "FMCG · Istanbul",
+        "service": "Google Ads + landing pages",
+        "year": "2025",
+        "problem": "Marmara rula 38 de grupuri de reclame în 4 campanii, în mare parte cu pierderi. Landing page-urile fuseseră făcute de altă agenție acum doi ani și nu mai fuseseră atinse.",
+        "approach": "Am închis 70% din cuvintele-cheie. Am rescris trei landing page-uri ca să răspundă întrebării cumpărătorului la primul scroll. Am construit un flux de remarketing curat.",
+        "stack": "Google Ads · GA4 · Next.js · Vercel",
+        "timeline": "3 săptămâni + continuu",
+        "outcome": "CAC −41%. Cheltuiala −30%, venit plat în prima lună, +14% în luna a doua.",
+        "image": "/projects/marmara-foods-google-ads.svg"
+      },
+      "skyline-media-mobile-app": {
+        "title": "O aplicație iOS + Android de media, livrată în 12 săptămâni",
+        "client": "Skyline Media",
+        "industry": "Media · Istanbul",
+        "service": "Aplicație mobilă",
+        "year": "2025",
+        "problem": "Skyline avea un site bun și un podcast, dar nu avea aplicație. Ascultătorii cereau download offline și push la episoade noi.",
+        "approach": "Aplicație React Native. Download offline cu background fetch. Push prin Expo + APNs / FCM. Deep links din site către paginile de episod.",
+        "stack": "React Native · Expo · Supabase · OneSignal",
+        "timeline": "12 săptămâni",
+        "outcome": "70k instalări în primul trimestru. 4,7★ pe iOS, 4,6★ pe Android. Sesiune medie 14 minute.",
+        "image": "/projects/skyline-media-mobile-app.svg"
+      },
+      "bosporus-travel-ai-agent": {
+        "title": "Un agent AI care vinde tururi în trei limbi",
+        "client": "Bosporus Travel",
+        "industry": "Turism · Istanbul",
+        "service": "Agent AI pentru clienți",
+        "year": "2025",
+        "problem": "Inbox-ul Bosporus era plin de turiști EN, TR și RU care puneau aceleași 20 de întrebări. Echipa de două persoane răspundea manual, adesea în afara programului.",
+        "approach": "Un agent pe WhatsApp + web chat antrenat pe FAQ și pe stoc. Rezervă tururi de probă, trimite oferte, predă către un om când nu e sigur.",
+        "stack": "Anthropic Claude · WhatsApp Business API · Supabase",
+        "timeline": "5 săptămâni",
+        "outcome": "63% din chat-uri rezolvate de agent. Timp de răspuns de la 4 ore la sub 2 minute. Echipa se ocupă acum doar de întrebările interesante.",
+        "image": "/projects/bosporus-travel-ai-agent.svg"
+      },
+      "anatolia-hotel-booking": {
+        "title": "Un motor de rezervări directe care taie comisioanele OTA",
+        "client": "Anatolia Hotel",
+        "industry": "HoReCa · Cappadocia",
+        "service": "Motor de rezervări",
+        "year": "2025",
+        "problem": "Anatolia plătea 18–24% pe rezervare către OTA-uri. Site-ul propriu le permitea oaspeților să se uite, nu să rezerve. Fiecare oaspete direct trebuia să trimită un email.",
+        "approach": "Motor de rezervări personalizat care citește disponibilitatea din PMS, ia depozit prin iyzico și confirmă în trei limbi. Plus un mic motor de oferte pentru oaspeții care revin.",
+        "stack": "Next.js · iyzico · API PMS · Resend",
+        "timeline": "6 săptămâni",
+        "outcome": "Rezervările directe +34% în primul trimestru. Ponderea OTA în venit a scăzut de la 71% la 49%. Economisiți aprox. 22% din comisioane.",
+        "image": "/projects/anatolia-hotel-booking.svg"
+      }
     }
   },
   "about": {
-    "title": "Despre Velkina",
-    "desc": "Velkina este o agenție senior de software, design și creștere. Lucrăm cu afaceri din toată Europa — în prezent suntem activi în Turcia, România și Germania. Proiectăm, livrăm și operăm software pe care afacerile îl înțeleg.",
-    "principlesTitle": "Cum lucrăm",
-    "principles": [
-      "Oameni seniori de la primul apel până la ultimul commit — fără predări către juniori după ce semnați.",
-      "Demo-uri săptămânale cu link-uri reale de previzualizare. Vedeți progresul în fiecare vineri și aprobați fiecare pas.",
-      "O singură echipă pentru software, design și creștere. Fără agenții care se ceartă între ele pe factura dvs.",
-      "Scop clar, preț clar, termen clar. Spunem nu când ceva nu este o idee bună.",
-      "Codul, conturile și domeniile sunt pe numele dvs. Fără dependență. Renunțați la orice retainer oricând."
-    ],
-    "quickFactsTitle": "Pe scurt",
-    "facts": [
-      "Echipă exclusiv senior",
-      "Stack modern — Next.js, React Native, Shopify, AWS",
-      "Software × Design × Creștere",
-      "Activi în TR · RO · DE"
-    ]
+    "hero": {
+      "eyebrow": "Despre",
+      "heading": "Un studio cu doi fondatori care livrează.",
+      "sub": "Am pornit Velkina ca să facem munca, nu ca să vorbim despre ea. La cinci ani distanță, modelul nu s-a schimbat."
+    },
+    "story": {
+      "heading": "Povestea",
+      "body": [
+        "Velkina a fost pornit în 2021 de Nalba Tăsna și Baha Tasin. Nalba conduce design, frontend și partea de business. Baha conduce backend, infrastructură și operațiuni. În rest, o echipă mică de colaboratori de încredere cu care lucrăm de ani buni.",
+        "Lucrăm din Istanbul și București, cu clienți în Turcia, România, Germania și Elveția. Ședințele se țin în engleză, turcă sau română, în funcție de cine e în cameră.",
+        "Nu avem echipă de vânzări. Fiecare proiect începe cu o discuție de 20 de minute cu unul dintre fondatori. Dacă nu suntem studioul potrivit, spunem și recomandăm pe altcineva."
+      ]
+    },
+    "values": {
+      "heading": "În ce credem",
+      "items": [
+        { "title": "Operatori, nu consultanți", "body": "Construim și livrăm. Prezentările sunt un efect secundar, nu produsul." },
+        { "title": "Echipă mică, responsabilitate totală", "body": "Un fondator e implicat în fiecare proiect, în fiecare săptămână. Nimic nu pleacă la echipe anonime." },
+        { "title": "Ofertă în 48 de ore", "body": "După prima discuție primești o ofertă fixă în două zile lucrătoare, sau îți spunem de ce nu putem da una." },
+        { "title": "Oprește oricând", "body": "Fiecare proiect are un „stop” săptămânal. Dacă nu merge, închei fără să plătești ce nu ai primit." }
+      ]
+    },
+    "founders": {
+      "heading": "Cei doi",
+      "items": [
+        { "name": "Nalba Tăsna", "role": "Design, frontend, business", "bio": "Șase ani construind sisteme de produs și brand pentru IMM-uri din Turcia și România. Peste 60 de site-uri livrate. Conduce practica de design și majoritatea relațiilor cu clienții." },
+        { "name": "Baha Tasin", "role": "Backend, infrastructură, ops", "bio": "Zece ani pe backend și cloud — AWS, GCP și un tur lung prin piața de hosting europeană. Răspunde de infrastructură, on-call și securitate la fiecare proiect Velkina." }
+      ]
+    },
+    "where": {
+      "heading": "Unde lucrăm",
+      "items": ["Istanbul · Üsküdar", "București · Sector 1", "Berlin · parteneri remote"]
+    }
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "Răspundem în maximum o zi lucrătoare. Fără presiune — doar claritate dacă vă putem ajuta.",
-    "email": "E-mail",
-    "phone": "Telefon",
-    "whatsapp": "WhatsApp",
-    "whatsappDesc": "Scrieți-ne — cel mai rapid mod de a începe",
-    "schedule": "Programați o discuție",
-    "scheduleDesc": "Alegeți un interval de 30 de minute care vi se potrivește"
+    "hero": {
+      "eyebrow": "Contact",
+      "heading": "Povestește-ne despre proiect.",
+      "sub": "WhatsApp e cel mai rapid canal. Răspundem în program, de obicei sub două ore."
+    },
+    "channels": {
+      "whatsapp": { "label": "WhatsApp", "value": "+90 532 336 00 51", "note": "Cel mai rapid răspuns, în program." },
+      "email": { "label": "Email", "value": "hello@velkina.com", "note": "Pentru brief-uri lungi și atașamente." },
+      "phone": { "label": "Telefon", "value": "+90 532 336 00 51", "note": "Răspundem între 09:00–19:00 GMT+3." },
+      "schedule": { "label": "Programează o discuție", "value": "Alege un interval", "note": "Douăzeci de minute cu un fondator, pe cal.com." }
+    },
+    "form": {
+      "heading": "Sau scrie-ne aici",
+      "name": "Numele tău",
+      "company": "Companie",
+      "email": "Email",
+      "budget": "Buget estimat",
+      "budgetOptions": ["Sub 5.000 €", "5.000 € – 15.000 €", "15.000 € – 40.000 €", "Peste 40.000 €", "Încă nu sunt sigur"],
+      "message": "Spune-ne ce vrei să construiești",
+      "submit": "Trimite mesajul",
+      "note": "Nu folosim acest formular pentru newsletter. Singurul lucru care se întâmplă e că unul dintre noi îl citește și răspunde."
+    },
+    "office": {
+      "heading": "Birouri",
+      "items": [
+        { "city": "Istanbul", "address": "Üsküdar, Istanbul 34660, TR" },
+        { "city": "București", "address": "Calea Victoriei, Sector 1, București, RO" }
+      ]
+    }
+  },
+  "footer": {
+    "tagline": "Studio de software. Istanbul & București. Construim din 2021.",
+    "columns": {
+      "studio": "Studio",
+      "work": "Proiecte",
+      "contact": "Contact",
+      "legal": "Legal"
+    },
+    "rights": "Toate drepturile rezervate.",
+    "links": {
+      "about": "Despre",
+      "services": "Servicii",
+      "work": "Proiecte recente",
+      "writeUs": "Scrie-ne",
+      "whatsapp": "WhatsApp",
+      "schedule": "Programează o discuție",
+      "privacy": "Confidențialitate",
+      "terms": "Termeni"
+    }
   },
   "privacy": {
-    "title": "Politica de confidențialitate",
-    "desc": "O ținem simplă. Nu vindem date personale. Colectăm un minim de analytics pentru a ne îmbunătăți site-ul și serviciile.",
-    "lastUpdated": "2026-05-11",
-    "sections": [
-      {
-        "title": "Operator și contact",
-        "body": [
-          "Velkina („Velkina”, „noi”) acționează ca operator de date pentru datele personale prelucrate prin site-ul nostru și în cadrul colaborărilor cu clienții.",
-          "Contact: omercannalbant@hotmail.com"
-        ]
-      },
-      {
-        "title": "Aria de aplicare",
-        "body": [
-          "Această politică acoperă datele colectate prin site-ul nostru, formulare, e-mailuri, aplicații de mesagerie și pe parcursul livrării serviciilor către clienți. Nu acoperă site-urile terțe la care facem trimitere."
-        ]
-      },
-      {
-        "title": "Date pe care le colectăm",
-        "body": [
-          "Date de contact (nume, e-mail, telefon, companie)",
-          "Informații despre proiect și aspecte comerciale (cerințe, scop, buget, calendar)",
-          "Date tehnice (IP, dispozitiv, browser); analytics respectuos cu confidențialitatea și evenimente server-side",
-          "Înregistrări de suport și comunicări",
-          "Date din procesul de recrutare pentru candidați (CV, portofoliu)"
-        ]
-      },
-      {
-        "title": "Scopuri și temeiuri legale",
-        "body": [
-          "Furnizarea și îmbunătățirea serviciilor; executarea unui contract sau pași premergători încheierii acestuia",
-          "Răspuns la solicitări și programarea întâlnirilor; interese legitime",
-          "Securitate, prevenirea fraudei și detectarea abuzurilor; interese legitime",
-          "Respectarea obligațiilor legale (fiscale, contabile)",
-          "Marketing cu consimțământ, acolo unde este necesar; vă puteți retrage oricând"
-        ]
-      },
-      {
-        "title": "Retenție",
-        "body": [
-          "Păstrăm datele personale doar atât cât este necesar pentru scopurile descrise sau cât prevede legea. Înregistrările de proiect sunt păstrate de regulă până la 6 ani din motive legale/contabile."
-        ]
-      },
-      {
-        "title": "Partajare și destinatari",
-        "body": [
-          "Furnizori de servicii sub contract (hosting, comunicații, analytics, plăți)",
-          "Consilieri profesionali (contabili, avocați) obligați la confidențialitate",
-          "Autorități, acolo unde legea o cere",
-          "Nu vindem date personale."
-        ]
-      },
-      {
-        "title": "Transferuri internaționale",
-        "body": [
-          "Atunci când datele sunt transferate în afara jurisdicției dvs., folosim garanții adecvate (de exemplu, SCC-uri / decizii de adecvare)."
-        ]
-      },
-      {
-        "title": "Securitate",
-        "body": [
-          "Implementăm măsuri tehnice și organizatorice, inclusiv controale de acces, criptare în tranzit, credențiale cu privilegii minime și logging de audit. Nicio metodă de transmitere sau stocare nu este 100% sigură."
-        ]
-      },
-      {
-        "title": "Drepturile dvs.",
-        "body": [
-          "Sub rezerva legii, puteți solicita accesul, rectificarea, ștergerea, restricționarea, portabilitatea sau să vă opuneți prelucrării. Vă puteți retrage consimțământul oricând, fără a afecta prelucrarea anterioară.",
-          "Contact: omercannalbant@hotmail.com. Puteți depune și o plângere la autoritatea dvs. de protecție a datelor."
-        ]
-      },
-      {
-        "title": "Cookie-uri și tracking",
-        "body": [
-          "Preferăm analytics respectuos cu confidențialitatea. Anumite funcționalități necesită cookie-uri sau tehnologii similare. Puteți controla cookie-urile din browserul dvs."
-        ]
-      },
-      {
-        "title": "Copii",
-        "body": [
-          "Serviciile noastre nu sunt destinate copiilor sub vârsta de 13/16 ani, conform legii aplicabile."
-        ]
-      },
-      {
-        "title": "Modificări",
-        "body": [
-          "Putem actualiza această politică din când în când. Modificările materiale vor fi indicate prin actualizarea datei „Ultima actualizare”."
-        ]
-      }
-    ]
+    "title": "Confidențialitate",
+    "updated": "Ultima actualizare: 2026-05",
+    "body": "Velkina e un studio mic. Colectăm doar ce ne trebuie ca să răspundem la solicitarea ta: nume, companie, email și ce ai scris. Nu vindem date, nu rulăm retargeting pe acest site și ștergem solicitările după douăsprezece luni, dacă nu devin proiecte. Pentru proiecte, termenii de confidențialitate sunt în contractul pe care îl semnăm cu tine."
   },
   "terms": {
-    "title": "Termeni și condiții",
-    "desc": "Prin folosirea site-ului și a serviciilor noastre, sunteți de acord cu acești termeni. Termenii specifici fiecărui proiect sunt definiți în MSA/SOW-ul nostru.",
-    "lastUpdated": "2026-05-11",
-    "sections": [
-      {
-        "title": "Definiții",
-        "body": [
-          "„Velkina” înseamnă Velkina. „Clientul” înseamnă persoana sau entitatea care primește serviciile. „Serviciile” înseamnă activitatea descrisă într-o comandă, SOW sau ofertă."
-        ]
-      },
-      {
-        "title": "Aria de aplicare și comenzile",
-        "body": [
-          "Vom furniza Serviciile descrise într-o Comandă/Ofertă/SOW agreată reciproc („Comanda”). Modificările de scop necesită acord scris și pot afecta onorariile și termenele."
-        ]
-      },
-      {
-        "title": "Responsabilitățile Clientului",
-        "body": [
-          "Asigurarea accesului prompt la informații, sisteme și factori de decizie. Revizuirea și aprobarea livrabilelor fără întârziere nejustificată. Garanția că toate materialele furnizate nu încalcă drepturile terților."
-        ]
-      },
-      {
-        "title": "Onorarii și plată",
-        "body": [
-          "Onorariile sunt cele stabilite în Comandă. Dacă nu se convine altfel, facturile sunt scadente în termen de 14 zile. Întârzierile la plată pot atrage dobânzi la rata maximă permisă de lege. Toate onorariile sunt fără taxe incluse."
-        ]
-      },
-      {
-        "title": "Proprietate intelectuală",
-        "body": [
-          "După plata integrală, Clientul deține livrabilele dedicate, create special pentru Client, exceptând IP-ul de fond Velkina, componentele open-source și materialele terțe. Velkina acordă o licență neexclusivă și netransferabilă pentru IP-ul de fond doar în măsura în care este încorporat în livrabile."
-        ]
-      },
-      {
-        "title": "Confidențialitate",
-        "body": [
-          "Fiecare parte va păstra confidențiale informațiile primite de la cealaltă și le va folosi exclusiv pentru executarea Acordului, sub rezerva excepțiilor uzuale (domeniu public, dezvoltate independent, divulgare cerută de lege)."
-        ]
-      },
-      {
-        "title": "Protecția datelor",
-        "body": [
-          "Atunci când se prelucrează date personale, părțile vor respecta legile aplicabile privind protecția datelor. Un DPA separat poate fi aplicabil acolo unde Velkina acționează în calitate de persoană împuternicită."
-        ]
-      },
-      {
-        "title": "Garanții",
-        "body": [
-          "Garantăm că vom executa Serviciile în mod profesionist și competent. Cu excepția celor declarate expres, Serviciile sunt furnizate „ca atare”, fără alte garanții."
-        ]
-      },
-      {
-        "title": "Limitarea răspunderii",
-        "body": [
-          "În măsura maximă permisă de lege, nicio parte nu răspunde pentru daune indirecte, accidentale sau pe cale de consecință. Răspunderea totală a Velkina decurgând din Acord nu va depăși onorariile plătite de Client pentru Serviciile care au dat naștere reclamației, în cele 12 luni anterioare evenimentului."
-        ]
-      },
-      {
-        "title": "Despăgubire",
-        "body": [
-          "Fiecare parte o va despăgubi pe cealaltă pentru pretențiile terților rezultate din încălcarea Acordului, neglijență gravă sau abatere intenționată."
-        ]
-      },
-      {
-        "title": "Durată și încetare",
-        "body": [
-          "Acordul începe la data efectivă a Comenzii și continuă până la finalizare, exceptând cazurile de încetare anticipată pentru încălcare materială (după notificare și perioadă de remediere) sau pentru conveniență, conform Comenzii."
-        ]
-      },
-      {
-        "title": "Subcontractare",
-        "body": [
-          "Putem folosi subcontractori și specialiști verificați. Rămânem responsabili pentru Servicii."
-        ]
-      },
-      {
-        "title": "Publicitate",
-        "body": [
-          "Cu acordul Clientului, putem lista numele Clientului și rezultatele neconfidențiale pentru portofoliu/marketing."
-        ]
-      },
-      {
-        "title": "Legea aplicabilă și litigii",
-        "body": [
-          "Acest Acord este guvernat de legile Turciei. Litigiile vor fi supuse jurisdicției exclusive a instanțelor din Istanbul, fără a aduce atingere normelor imperative privind protecția consumatorilor sau a datelor."
-        ]
-      },
-      {
-        "title": "Forță majoră",
-        "body": [
-          "Niciuna dintre părți nu răspunde pentru neîndeplinirea sau întârzierea cauzată de evenimente aflate în afara controlului rezonabil."
-        ]
-      },
-      {
-        "title": "Acord integral; modificări",
-        "body": [
-          "Comanda împreună cu acești Termeni constituie acordul integral și înlocuiește înțelegerile anterioare. Modificările trebuie să fie făcute în scris. Dacă o prevedere este nevalidă, restul rămâne în vigoare."
-        ]
-      },
-      {
-        "title": "Notificări",
-        "body": [
-          "Notificările pot fi transmise prin e-mail la adresele specificate în Comandă și se consideră primite la confirmare sau în următoarea zi lucrătoare."
-        ]
-      }
-    ]
-  },
-  "customerAgent": {
-    "metaTitle": "Velkina — Agenți AI pentru afacerea ta",
-    "metaDescription": "Construim, antrenăm și lansăm agenți AI pentru fluxuri de lucru reale — servicii clienți, operațional, vânzări, conținut, instrumente interne. Velkina îi construiește și îi întreține.",
-    "hero": {
-      "title": "Agenți AI care lucrează în business-ul tău",
-      "description": "Construim agenți AI pentru fluxurile tale de lucru reale. Servicii clienți, operațional, vânzări, conținut, instrumente interne — oriunde apar decizii repetitive.",
-      "primaryCta": "Programează o discuție",
-      "secondaryCta": "Vezi cum funcționează",
-      "canvasAriaLabel": "Animație de gradient care reprezintă agenți AI în mișcare",
-      "eyebrow": "Velkina · Agenți AI"
-    },
-    "useCases": {
-      "heading": "Unde aduc agenții valoare",
-      "description": "Șase locuri în care am lansat agenți care își acoperă costul. Probabil al tău e unul dintre ele — sau foarte aproape.",
-      "items": [
-        {
-          "title": "Servicii clienți",
-          "description": "Multilingv, 24/7, transferă către un coleg din echipă când întrebarea iese din scenariu. Exemplu: linia de rezervări și întrebări a unui restaurant, care răspunde la rezervări, meniu și întrebări despre alergii în trei limbi."
-        },
-        {
-          "title": "Operațional intern",
-          "description": "Un agent care preia munca repetitivă — tichete sortate după subiect, documente clasificate după tip, cereri de decont pre-aprobate conform politicii tale înainte să ajungă la un om."
-        },
-        {
-          "title": "Vânzări și calificare",
-          "description": "Un agent care vorbește cu lead-urile care vin, întreabă bugetul, calendarul și cazul de utilizare, apoi pune o întâlnire în calendarul echipei doar când lead-ul chiar se potrivește."
-        },
-        {
-          "title": "Conținut și marketing",
-          "description": "Îi dai vocea brandului și catalogul de produse; scrie postări de social media, variante de reclamă și secvențe de email în tonul tău. Tu aprobi, agentul publică."
-        },
-        {
-          "title": "Extragere de date",
-          "description": "PDF-uri, facturi scanate, anexe de contract, fire de email dezordonate — transformate în rânduri structurate, gata pentru tabelul, baza de date sau aplicația de contabilitate."
-        },
-        {
-          "title": "Fluxuri personalizate",
-          "description": "Scoring de lead-uri pe regulile tale, transcrieri de ședință transformate în acțiuni, tichete de suport scrise din conversații brute. Manualul tău, executat de un agent."
-        }
-      ]
-    },
-    "process": {
-      "heading": "Cum îl construim",
-      "description": "Patru pași de la „ar trebui să încercăm AI” la un agent care funcționează și își acoperă costul.",
-      "steps": [
-        {
-          "title": "Descoperire",
-          "description": "Stăm două zile lângă fluxul de lucru. Ne uităm la oamenii care îl fac, numărăm volumul și identificăm părțile care sunt tipar, nu decizie."
-        },
-        {
-          "title": "Prototip",
-          "description": "Primul agent funcțional în una-două săptămâni, rulând pe date reale într-un canal de test. Îl vezi cum răspunde; ce nu merge, reglăm împreună."
-        },
-        {
-          "title": "Antrenare și măsurare",
-          "description": "Urmărim săptămânal acuratețea, costul pe sarcină și rata de transfer către om. Tot ce e sub prag e reantrenat pe cazurile reale de eșec."
-        },
-        {
-          "title": "Lansare și întreținere",
-          "description": "Mergem live cu monitorizare pe fiecare conversație. Buclă săptămânală de reantrenare, raport lunar, alerte când agentul începe să devieze."
-        }
-      ]
-    },
-    "included": {
-      "heading": "Ce primești",
-      "items": [
-        "Găzduit pe infrastructura ta sau pe a noastră — alegerea ta, decizia ta despre unde stau datele.",
-        "Integrări cu Slack, email, WhatsApp, CRM-ul tău, sistemul tău de tichete. Orice are API, conectăm.",
-        "Măsurat săptămânal: timp de răspuns, rata de rezolvare automată, cost pe conversație. Fără cutie neagră.",
-        "Om în buclă acolo unde contează — agentul semnalează, echipa ta decide.",
-        "Manuale de predare ca să rămâi tu proprietarul agentului la final, nu noi. Lock-in-ul nu e modelul nostru de business."
-      ]
-    },
-    "notForThis": {
-      "heading": "Când agenții AI nu au sens",
-      "body": "Îți spunem să sari peste dacă nu se potrivește. Volum mic — sub aproximativ 50 de evenimente pe zi — de obicei nu acoperă costul de construcție. Munca cu decizii grele, unde a greși contează cu adevărat (sfat medical, interpretare juridică, orice e legat de siguranță), aparține unui om antrenat. Lucrurile unde un singur răspuns greșit nu se mai poate repara nu sunt pentru agenți. Dacă problema ta seamănă cu una dintre acestea, îți spunem din prima discuție."
-    },
-    "why": {
-      "heading": "De ce Velkina",
-      "body": "Am construit și lansat agenți pentru produse vii — meniul QR al Laviniei din București, fluxurile de clinică Nova Health, chat-ul de consiliere universitară EduTurkia. Româna, turca și engleza sunt limbi native pentru noi; germana, spaniola și altele sunt disponibile din start. Venim și din operațional, nu doar din software, așa că știm ce trebuie să facă un agent ca să-i ușureze chiar săptămâna unei echipe. Iar prețul e onest — o construcție, un abonament lunar, o predare. Fără tarif lunar misterios."
-    },
-    "cta": {
-      "heading": "Vrei să valorifici AI în business-ul tău?",
-      "description": "Spune-ne fluxul. Îți spunem dacă un agent se potrivește și ce ar însemna să-l lansăm.",
-      "primary": "Programează o discuție",
-      "secondary": "Scrie-ne pe WhatsApp"
-    }
+    "title": "Termeni",
+    "updated": "Ultima actualizare: 2026-05",
+    "body": "Acest site e publicat de Velkina, un studio de software care operează din Istanbul și București. Nimic de pe acest site nu constituie o ofertă fermă; fiecare proiect e guvernat de contractul semnat cu clientul. Înregistrarea comercială și cea fiscală apar în contract."
   }
 }
