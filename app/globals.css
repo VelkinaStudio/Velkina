@@ -32,7 +32,8 @@
   --vk-fs-h3: 1.375rem;
   --vk-fs-h2: 1.75rem;
   --vk-fs-h1: 2.125rem;
-  --vk-fs-display: 2.5rem;
+  --vk-fs-display: 3.5rem;
+  --vk-fs-mega: 4rem;
 
   /* Section rhythm */
   --vk-section-y: 4rem;
@@ -43,9 +44,10 @@
 @media (min-width: 768px) {
   :root {
     --vk-fs-h3: 1.5rem;
-    --vk-fs-h2: 2.25rem;
-    --vk-fs-h1: 3rem;
-    --vk-fs-display: 3.75rem;
+    --vk-fs-h2: 2.5rem;
+    --vk-fs-h1: 3.25rem;
+    --vk-fs-display: 5rem;
+    --vk-fs-mega: 6.5rem;
     --vk-section-y: 6rem;
     --vk-container-x: 2rem;
   }
@@ -53,9 +55,10 @@
 
 @media (min-width: 1280px) {
   :root {
-    --vk-fs-h1: 3.5rem;
-    --vk-fs-display: 4.5rem;
-    --vk-section-y: 7rem;
+    --vk-fs-h1: 3.75rem;
+    --vk-fs-display: 7rem;
+    --vk-fs-mega: 10rem;
+    --vk-section-y: 8rem;
   }
 }
 
@@ -91,6 +94,13 @@ body {
   letter-spacing: 0.04em;
 }
 
+.font-serif {
+  font-family: var(--font-serif), "Instrument Serif", "EB Garamond", Georgia, serif;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+}
+
 /* ── Container ─────────────────────────────────────────── */
 .vk-container {
   max-width: var(--vk-max);
@@ -124,9 +134,11 @@ body {
 }
 
 .vk-h1 { font-family: var(--font-sora), "Sora", sans-serif; font-size: var(--vk-fs-h1); line-height: 1.05; letter-spacing: -0.025em; font-weight: 600; }
-.vk-display { font-family: var(--font-sora), "Sora", sans-serif; font-size: var(--vk-fs-display); line-height: 1.02; letter-spacing: -0.03em; font-weight: 600; }
-.vk-h2 { font-family: var(--font-sora), "Sora", sans-serif; font-size: var(--vk-fs-h2); line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; }
+.vk-display { font-family: var(--font-sora), "Sora", sans-serif; font-size: var(--vk-fs-display); line-height: 0.98; letter-spacing: -0.035em; font-weight: 500; }
+.vk-mega { font-family: var(--font-sora), "Sora", sans-serif; font-size: var(--vk-fs-mega); line-height: 0.92; letter-spacing: -0.045em; font-weight: 500; }
+.vk-h2 { font-family: var(--font-sora), "Sora", sans-serif; font-size: var(--vk-fs-h2); line-height: 1.05; letter-spacing: -0.025em; font-weight: 500; }
 .vk-h3 { font-family: var(--font-sora), "Sora", sans-serif; font-size: var(--vk-fs-h3); line-height: 1.2; letter-spacing: -0.01em; font-weight: 600; }
+.vk-italic { font-family: var(--font-serif), "Instrument Serif", "EB Garamond", Georgia, serif; font-style: italic; font-weight: 400; letter-spacing: -0.005em; }
 .vk-lead { font-size: var(--vk-fs-lead); line-height: 1.55; color: var(--vk-text); }
 .vk-muted { color: var(--vk-text-muted); }
 .vk-dim { color: var(--vk-text-dim); }
@@ -197,6 +209,10 @@ body {
   gap: 0.25rem 1rem;
   padding: 1.125rem 0;
   border-bottom: 1px solid var(--vk-border);
+  transition: padding 220ms ease;
+}
+.vk-ledger-row:hover {
+  padding-inline-start: 0.5rem;
 }
 @media (min-width: 768px) {
   .vk-ledger-row {
@@ -223,7 +239,7 @@ body {
 }
 .vk-ledger-scope {
   color: var(--vk-text-muted);
-  font-size: 0.92rem;
+  font-size: 1rem;
   margin-top: 0.125rem;
 }
 .vk-ledger-outcome {
@@ -275,46 +291,165 @@ body {
 }
 .vk-service:hover { border-color: var(--vk-border-strong); transform: translateY(-2px); }
 .vk-service-icon {
-  width: 40px; height: 40px;
+  width: 28px; height: 28px;
   color: var(--vk-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(244, 239, 230, 0.06);
-  border: 1px solid var(--vk-border);
-  border-radius: 10px;
-  padding: 8px;
+  opacity: 0.9;
 }
 .vk-service-icon svg { width: 100%; height: 100%; }
 
-/* ── Hero stats ───────────────────────────────────────── */
-.vk-hero-stats {
+/* Service row variant — for "we do this" list */
+.vk-service-row {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin: 0;
-  border-top: 1px solid var(--vk-border);
-  padding-top: 1.25rem;
-  max-width: 640px;
+  grid-template-columns: minmax(40px, auto) 1fr auto;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--vk-border);
+  text-decoration: none;
+  color: inherit;
+  transition: padding 220ms ease, color 220ms ease;
 }
-@media (min-width: 640px) {
-  .vk-hero-stats {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
+.vk-service-row:hover {
+  padding-inline-start: 0.5rem;
+  color: var(--vk-text);
 }
-.vk-hero-stat {
+.vk-service-row:hover .vk-service-row-arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+.vk-service-row-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--vk-text-muted);
+  text-transform: uppercase;
+}
+.vk-service-row-body {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.2rem;
 }
-.vk-hero-stat-v {
-  margin: 0;
-  font-family: var(--font-sora), "Sora", sans-serif;
-  font-size: 1.0625rem;
+.vk-service-row-title {
+  font-family: var(--font-sora), sans-serif;
+  font-size: 1.5rem;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   color: var(--vk-text);
+}
+@media (min-width: 768px) {
+  .vk-service-row-title { font-size: 2rem; }
+}
+.vk-service-row-line {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--vk-text-muted);
+}
+.vk-service-row-arrow {
+  font-size: 1.5rem;
+  color: var(--vk-text-muted);
+  opacity: 0.6;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+/* ── Signature kinetic display ────────────────────────── */
+.vk-kinetic {
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+  height: 0.92em;
+  overflow: hidden;
+  min-width: 5ch;
+}
+.vk-kinetic-list {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  animation: vk-rotate 12s steps(1) infinite;
+}
+.vk-kinetic-list li {
+  height: 0.92em;
+  line-height: 0.92em;
+  display: flex;
+  align-items: baseline;
+  font-family: var(--font-serif), "Instrument Serif", serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--vk-text);
+  letter-spacing: -0.01em;
+}
+@keyframes vk-rotate {
+  0%, 16%   { transform: translateY(0); }
+  20%, 36%  { transform: translateY(-0.92em); }
+  40%, 56%  { transform: translateY(-1.84em); }
+  60%, 76%  { transform: translateY(-2.76em); }
+  80%, 96%  { transform: translateY(-3.68em); }
+  100%      { transform: translateY(-4.6em); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vk-kinetic-list { animation: none; }
+}
+
+/* ── Hero figure / mark ──────────────────────────────── */
+.vk-hero-mark {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-sora), sans-serif;
+  font-size: clamp(20rem, 50vw, 50rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: var(--vk-surface-2);
+  opacity: 0.4;
+  z-index: 0;
+  top: 50%;
+  left: -0.05em;
+  transform: translateY(-50%);
+}
+
+/* ── Marquee strip ───────────────────────────────────── */
+.vk-marquee {
+  overflow: hidden;
+  border-block: 1px solid var(--vk-border);
+  padding-block: 1.5rem;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.vk-marquee-track {
+  display: flex;
+  gap: 4rem;
+  width: max-content;
+  animation: vk-marquee 36s linear infinite;
+  align-items: center;
+  font-family: var(--font-sora), sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+.vk-marquee-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--vk-text);
+}
+.vk-marquee-track span::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--vk-accent);
+  border-radius: 999px;
+  opacity: 0.7;
+}
+@keyframes vk-marquee {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vk-marquee-track { animation: none; }
 }
 .vk-service-title { font-weight: 600; font-size: 1.0625rem; }
 .vk-service-desc { color: var(--vk-text-muted); font-size: 0.92rem; line-height: 1.55; }

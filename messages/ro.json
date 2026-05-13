@@ -25,78 +25,78 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Studio de software · Istanbul & București",
-      "headline": "Construim software-ul cu care afacerile funcționează, vând și cresc.",
-      "sub": "Website-uri, e-commerce, aplicații mobile și automatizări AI — livrate rapid, de o echipă mică, în trei limbi.",
-      "primaryCta": "Scrie pe WhatsApp",
-      "secondaryCta": "Vezi proiectele recente",
-      "stats": [
-        { "k": "Din anul", "v": "2021" },
-        { "k": "Livrate în acest trimestru", "v": "6 proiecte" },
-        { "k": "Răspuns fondator", "v": "< 2h pe WhatsApp" }
-      ]
+      "label": "Velkina · Studio",
+      "we": "Noi",
+      "verb": "construim",
+      "verbItalic": "livrăm",
+      "objects": ["website-uri.", "e-commerce.", "aplicații mobile.", "agenți AI.", "interfețe."],
+      "tag": "design + inginerie",
+      "primaryCta": "Începe un proiect",
+      "secondaryCta": "Vezi proiectele"
     },
     "ledger": {
-      "eyebrow": "Proiecte recente",
-      "heading": "Livrate în ultimele 90 de zile",
-      "sub": "Clienți reali. Date reale. Rezultate reale.",
+      "eyebrow": "Livrate",
+      "headingLead": "Noi",
+      "headingItalic": "am făcut asta.",
       "items": [
-        { "date": "2026-05", "client": "Lavinia Bistro", "scope": "Platformă meniu QR — EN/TR/RO/DE", "outcome": "Amortizat în 2 luni", "status": "delivered" },
-        { "date": "2026-04", "client": "Rain Group", "scope": "Relansare Meta Ads + sistem creativ", "outcome": "ROAS 3,4× susținut", "status": "active" },
-        { "date": "2026-04", "client": "Nova Health", "scope": "Migrare AWS + SLA uptime", "outcome": "99,97% uptime în T1", "status": "active" },
-        { "date": "2026-03", "client": "EduTurkia", "scope": "Platformă studenți + funnel reconstruit", "outcome": "+60% organic, T1", "status": "delivered" },
-        { "date": "2026-03", "client": "Atar Avcı", "scope": "Migrare cloud + CDN", "outcome": "3,4 mii € / lună economisiți", "status": "delivered" },
-        { "date": "2026-02", "client": "TP Thermoplast", "scope": "Pipeline de date export B2B", "outcome": "Live în 6 piețe", "status": "delivered" }
+        { "date": "2026-05", "client": "Lavinia Bistro", "kind": "Platformă meniu QR", "outcome": "Amortizat în 8 săptămâni", "status": "delivered" },
+        { "date": "2026-04", "client": "Rain Group", "kind": "Shopify + Meta Ads", "outcome": "ROAS 3,4× susținut", "status": "active" },
+        { "date": "2026-04", "client": "Nova Health", "kind": "Migrare AWS", "outcome": "99,97% uptime", "status": "active" },
+        { "date": "2026-03", "client": "EduTurkia", "kind": "Platformă studenți", "outcome": "+60% organic", "status": "delivered" },
+        { "date": "2026-03", "client": "Atar Avcı", "kind": "Migrare cloud", "outcome": "Hosting −3,4 mii €/lună", "status": "delivered" },
+        { "date": "2026-02", "client": "TP Thermoplast", "kind": "Pipeline date B2B", "outcome": "Live în 6 piețe", "status": "delivered" }
       ],
-      "seeAll": "Vezi toate proiectele →"
+      "seeAll": "Toate proiectele →"
     },
     "services": {
       "eyebrow": "Ce facem",
-      "heading": "Cinci lucruri, făcute serios.",
-      "sub": "Refuzăm proiectele care nu se potrivesc. Lista de mai jos e ce livrăm în fiecare lună.",
+      "headingLead": "Noi",
+      "headingItalic": "facem asta.",
       "items": [
-        { "id": "websites", "title": "Website-uri & aplicații web", "desc": "Site-uri de marketing, instrumente interne, dashboard-uri. Next.js, rapide pe mobil, ușor de editat." },
-        { "id": "ecommerce", "title": "E-commerce", "desc": "Shopify și magazine headless. Construite astfel încât echipa ta să le poată administra fără noi." },
-        { "id": "mobile", "title": "Aplicații mobile", "desc": "iOS și Android, native sau React Native. Publicate în magazine, nu uitate în repo." },
-        { "id": "automation", "title": "Automatizări AI", "desc": "Agenți de customer service, copiloți interni, pipeline-uri de date. Multilingv din start." },
-        { "id": "growth", "title": "Reclame & creștere", "desc": "Google Ads, Meta Ads, SEO. Făcute de oamenii care construiesc și site-ul." }
+        { "id": "websites", "title": "Website-uri", "line": "Rapide, accesibile, cu personalitate." },
+        { "id": "ecommerce", "title": "E-commerce", "line": "Shopify și headless. Vinde pagină cu pagină." },
+        { "id": "mobile", "title": "Aplicații mobile", "line": "iOS, Android. Publicate în magazine." },
+        { "id": "automation", "title": "Agenți AI", "line": "Suport multilingv, copiloți, pipeline-uri." },
+        { "id": "growth", "title": "Reclame & creștere", "line": "Făcute de oamenii care construiesc pagina." }
       ],
-      "cta": "Vezi lista completă de servicii →"
+      "cta": "Fiecare serviciu →"
     },
-"process": {
-      "eyebrow": "Cum lucrăm",
-      "heading": "Patru pași. Fără surprize.",
+    "process": {
+      "eyebrow": "Cum merge",
+      "headingLead": "Așa",
+      "headingItalic": "merge.",
       "items": [
-        { "n": "01", "title": "Discuție", "desc": "Douăzeci de minute pe WhatsApp sau apel video. Îți spunem dacă te putem ajuta. Dacă nu, spunem direct." },
-        { "n": "02", "title": "Propunere", "desc": "În 48 de ore: scop, preț, calendar, cine lucrează. Preț fix când se poate, tarif zilnic când nu." },
-        { "n": "03", "title": "Construcție", "desc": "Vezi progresul în fiecare săptămână, pe un URL real de staging. Poți opri proiectul oricând, fără penalizări." },
-        { "n": "04", "title": "Livrare & suport", "desc": "Predăm documentația, instruim echipa și rămânem disponibili. Majoritatea clienților rămân pe un plan lunar de întreținere." }
+        { "n": "01", "title": "Vorbim", "desc": "Douăzeci de minute. Îți spunem dacă te putem ajuta. Dacă nu, spunem direct." },
+        { "n": "02", "title": "Planificăm", "desc": "După 48 de ore: scop, calendar, cine e pe proiect." },
+        { "n": "03", "title": "Construim", "desc": "Progres săptămânal pe un URL real. Oprești oricând." },
+        { "n": "04", "title": "Livrăm", "desc": "Predăm, îți instruim echipa, rămânem disponibili." }
       ]
     },
     "faq": {
-      "eyebrow": "Întrebări frecvente",
+      "eyebrow": "Întrebări",
       "items": [
-        { "q": "Cât costă un proiect?", "a": "Un site de marketing pleacă de la 3.500 €. Un magazin e-commerce de la 6.000 €. O aplicație mobilă de la 18.000 €. Un agent AI personalizat de la 4.500 €. Trimitem ofertă fixă în 48 de ore de la prima discuție." },
-        { "q": "Cât durează?", "a": "Majoritatea site-urilor se livrează în 3–5 săptămâni. E-commerce în 5–8. Aplicații mobile în 8–14. Îți dăm un calendar, nu o estimare." },
-        { "q": "Lucrați în engleză, turcă și română?", "a": "Da. Studio-ul e împărțit între Istanbul și București. Ședințele pot fi în oricare dintre cele trei." },
-        { "q": "Cine face efectiv munca?", "a": "Cei doi fondatori și o mică echipă de colaboratori de încredere cu care lucrăm de ani de zile. Fără outsourcing către echipe anonime." },
-        { "q": "Puteți prelua un proiect început?", "a": "De multe ori, da. Facem un audit de 90 de minute pe codebase, apoi îți trimitem un plan de recuperare cu preț." }
+        { "q": "Cât durează?", "a": "Site-uri: 3–5 săptămâni. E-commerce: 5–8. Aplicații mobile: 8–14. Îți dăm un calendar, nu o estimare." },
+        { "q": "Lucrați în engleză, turcă și română?", "a": "În toate trei. Ședințele în oricare preferi." },
+        { "q": "Puteți prelua un proiect început?", "a": "De cele mai multe ori, da. Audit de 90 de minute pe codebase, apoi plan de recuperare." },
+        { "q": "Faceți doar proiecte noi?", "a": "Nu. Jumătate din munca noastră e să salvăm sau să reconstruim ce a început altcineva." },
+        { "q": "Suport după lansare?", "a": "Majoritatea clienților rămân pe un retainer lunar. Opțional, niciodată obligatoriu." }
       ]
     },
     "cta": {
-      "eyebrow": "Începe conversația",
-      "heading": "Spune-ne ce vrei să construiești.",
-      "sub": "Pe WhatsApp răspundem cel mai repede — de obicei sub două ore în program.",
-      "whatsapp": "Deschide WhatsApp",
-      "email": "Trimite un email",
-      "schedule": "Programează 20 min"
+      "eyebrow": "Pasul următor",
+      "headingLead": "Spune-ne",
+      "headingItalic": "ce construiești.",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "schedule": "20 min cu un fondator"
     }
   },
   "services": {
     "hero": {
       "eyebrow": "Servicii",
-      "heading": "Cinci practici. O echipă mică.",
-      "sub": "Alegem unealta potrivită brief-ului, nu pe cea pe care vrem să o facturăm. Fiecare proiect e condus de unul dintre fondatori."
+      "headingLead": "Cinci practici.",
+      "headingItalic": "Un studio.",
+      "sub": "Alegem unealta potrivită brief-ului, nu pe cea pe care vrem să o facturăm."
     },
     "items": [
       {
@@ -359,36 +359,26 @@
   "about": {
     "hero": {
       "eyebrow": "Despre",
-      "heading": "Un studio cu doi fondatori care livrează.",
-      "sub": "Am pornit Velkina ca să facem munca, nu ca să vorbim despre ea. La cinci ani distanță, modelul nu s-a schimbat."
+      "headingLead": "Velkina e un",
+      "headingItalic": "studio",
+      "headingTail": "— pentru design + inginerie."
     },
     "story": {
-      "heading": "Povestea",
+      "heading": "Ce facem",
       "body": [
-        "Velkina a fost pornit în 2021 de Nalba Tăsna și Baha Tasin. Nalba conduce design, frontend și partea de business. Baha conduce backend, infrastructură și operațiuni. În rest, o echipă mică de colaboratori de încredere cu care lucrăm de ani buni.",
-        "Lucrăm din Istanbul și București, cu clienți în Turcia, România, Germania și Elveția. Ședințele se țin în engleză, turcă sau română, în funcție de cine e în cameră.",
-        "Nu avem echipă de vânzări. Fiecare proiect începe cu o discuție de 20 de minute cu unul dintre fondatori. Dacă nu suntem studioul potrivit, spunem și recomandăm pe altcineva."
+        "Software-ul cu care afacerile funcționează, vând și cresc. Website-uri cu personalitate. E-commerce care chiar trece de checkout. Aplicații mobile publicate. Agenți AI care țin o conversație. Interfețe care merită click-ul.",
+        "Fiecare proiect e condus de cineva care a scris codul și a desenat ecranele. Fără account manageri. Fără outsourcing la echipe pe care nu le-am întâlnit.",
+        "Alegem unealta potrivită pentru brief, nu pe cea pe care vrem să o facturăm."
       ]
     },
     "values": {
-      "heading": "În ce credem",
+      "heading": "Cum lucrăm",
       "items": [
-        { "title": "Operatori, nu consultanți", "body": "Construim și livrăm. Prezentările sunt un efect secundar, nu produsul." },
-        { "title": "Echipă mică, responsabilitate totală", "body": "Un fondator e implicat în fiecare proiect, în fiecare săptămână. Nimic nu pleacă la echipe anonime." },
-        { "title": "Ofertă în 48 de ore", "body": "După prima discuție primești o ofertă fixă în două zile lucrătoare, sau îți spunem de ce nu putem da una." },
-        { "title": "Oprește oricând", "body": "Fiecare proiect are un „stop” săptămânal. Dacă nu merge, închei fără să plătești ce nu ai primit." }
+        { "title": "Facem, nu pitch-uim", "body": "Prezentările sunt un efect secundar, nu produsul." },
+        { "title": "Design + inginerie la același birou", "body": "Aceeași minte desenează ecranul și scrie codul care îl desenează." },
+        { "title": "Ofertă în 48 de ore", "body": "După prima discuție primești o ofertă fixă în două zile lucrătoare." },
+        { "title": "Oprește oricând", "body": "Fiecare proiect are un „stop” săptămânal. Închei fără să plătești ce nu ai primit." }
       ]
-    },
-    "founders": {
-      "heading": "Cei doi",
-      "items": [
-        { "name": "Nalba Tăsna", "role": "Design, frontend, business", "bio": "Șase ani construind sisteme de produs și brand pentru IMM-uri din Turcia și România. Peste 60 de site-uri livrate. Conduce practica de design și majoritatea relațiilor cu clienții." },
-        { "name": "Baha Tasin", "role": "Backend, infrastructură, ops", "bio": "Zece ani pe backend și cloud — AWS, GCP și un tur lung prin piața de hosting europeană. Răspunde de infrastructură, on-call și securitate la fiecare proiect Velkina." }
-      ]
-    },
-    "where": {
-      "heading": "Unde lucrăm",
-      "items": ["Istanbul · Üsküdar", "București · Sector 1", "Berlin · parteneri remote"]
     }
   },
   "contact": {

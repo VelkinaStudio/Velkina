@@ -25,78 +25,78 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Yazılım stüdyosu · İstanbul & Bükreş",
-      "headline": "İşletmenizin çalışması, satması ve büyümesi için yazılım kuruyoruz.",
-      "sub": "Web siteleri, e-ticaret, mobil uygulama ve yapay zekâ otomasyonu — küçük bir ekiple, hızlıca, üç dilde teslim edilir.",
-      "primaryCta": "WhatsApp'tan yaz",
-      "secondaryCta": "Son işleri gör",
-      "stats": [
-        { "k": "Kuruluş", "v": "2021" },
-        { "k": "Bu çeyrek teslim", "v": "6 proje" },
-        { "k": "Kurucu yanıt süresi", "v": "WhatsApp'ta < 2 saat" }
-      ]
+      "label": "Velkina · Stüdyo",
+      "we": "Biz",
+      "verb": "kuruyoruz",
+      "verbItalic": "teslim ediyoruz",
+      "objects": ["web siteleri.", "e-ticaret.", "mobil uygulamalar.", "AI ajanları.", "arayüzler."],
+      "tag": "tasarım + mühendislik",
+      "primaryCta": "Projeye başla",
+      "secondaryCta": "İşleri gör"
     },
     "ledger": {
-      "eyebrow": "Son işler",
-      "heading": "Son 90 günde teslim edilenler",
-      "sub": "Gerçek müşteriler. Gerçek tarihler. Gerçek sonuçlar.",
+      "eyebrow": "Teslim",
+      "headingLead": "Biz",
+      "headingItalic": "bunu yaptık.",
       "items": [
-        { "date": "2026-05", "client": "Lavinia Bistro", "scope": "QR menü platformu — EN/TR/RO/DE", "outcome": "2 ayda geri ödeme", "status": "delivered" },
-        { "date": "2026-04", "client": "Rain Group", "scope": "Meta Ads yeniden kurgu + kreatif sistem", "outcome": "ROAS 3,4× sürdürüldü", "status": "active" },
-        { "date": "2026-04", "client": "Nova Health", "scope": "AWS geçiş + uptime SLA", "outcome": "1. çeyrekte %99,97 uptime", "status": "active" },
-        { "date": "2026-03", "client": "EduTurkia", "scope": "Öğrenci platformu + funnel yenileme", "outcome": "1. çeyrekte +%60 organik", "status": "delivered" },
-        { "date": "2026-03", "client": "Atar Avcı", "scope": "Cloud + CDN geçişi", "outcome": "Ayda 3,4 bin € tasarruf", "status": "delivered" },
-        { "date": "2026-02", "client": "TP Thermoplast", "scope": "B2B ihracat veri hattı", "outcome": "6 pazarda canlı", "status": "delivered" }
+        { "date": "2026-05", "client": "Lavinia Bistro", "kind": "QR menü platformu", "outcome": "8 haftada kendini ödedi", "status": "delivered" },
+        { "date": "2026-04", "client": "Rain Group", "kind": "Shopify + Meta Ads", "outcome": "ROAS 3,4× sürdürüldü", "status": "active" },
+        { "date": "2026-04", "client": "Nova Health", "kind": "AWS geçişi", "outcome": "%99,97 uptime", "status": "active" },
+        { "date": "2026-03", "client": "EduTurkia", "kind": "Öğrenci platformu", "outcome": "+%60 organik", "status": "delivered" },
+        { "date": "2026-03", "client": "Atar Avcı", "kind": "Cloud geçişi", "outcome": "Faturada −3,4 bin €/ay", "status": "delivered" },
+        { "date": "2026-02", "client": "TP Thermoplast", "kind": "B2B veri hattı", "outcome": "6 pazarda canlı", "status": "delivered" }
       ],
       "seeAll": "Tüm işleri gör →"
     },
     "services": {
       "eyebrow": "Ne yapıyoruz",
-      "heading": "Beş alan, hakkıyla yapılmış.",
-      "sub": "Bize uymayan işi kibarca geri çeviriyoruz. Aşağıdaki liste, her ay teslim ettiğimiz iş.",
+      "headingLead": "Biz",
+      "headingItalic": "bunu yapıyoruz.",
       "items": [
-        { "id": "websites", "title": "Web siteleri & web uygulamaları", "desc": "Tanıtım siteleri, iç araçlar, panolar. Next.js, mobilde hızlı, düzenlemesi kolay." },
-        { "id": "ecommerce", "title": "E-ticaret", "desc": "Shopify ve headless mağazalar. Ekibinizin bizsiz yönetebileceği şekilde kurulur." },
-        { "id": "mobile", "title": "Mobil uygulamalar", "desc": "iOS ve Android, native veya React Native. Repo'da kalmaz, mağazalara çıkar." },
-        { "id": "automation", "title": "Yapay zekâ otomasyonu", "desc": "Müşteri hizmetleri ajanları, iç kopilotlar, veri hatları. Çok dilli, varsayılan olarak." },
-        { "id": "growth", "title": "Reklam & büyüme", "desc": "Google Ads, Meta Ads, SEO. Reklamı yapanlar siteyi de kuruyor." }
+        { "id": "websites", "title": "Web siteleri", "line": "Hızlı, erişilebilir, karakterli." },
+        { "id": "ecommerce", "title": "E-ticaret", "line": "Shopify ve headless. Sayfa sayfa satar." },
+        { "id": "mobile", "title": "Mobil uygulamalar", "line": "iOS, Android. Mağazalara çıkar." },
+        { "id": "automation", "title": "AI ajanları", "line": "Çok dilli destek, kopilotlar, hatlar." },
+        { "id": "growth", "title": "Reklam & büyüme", "line": "Sayfayı kuranlar reklamı da yürütüyor." }
       ],
-      "cta": "Tüm hizmet listesini gör →"
+      "cta": "Her hizmet →"
     },
-"process": {
-      "eyebrow": "Nasıl çalışıyoruz",
-      "heading": "Dört adım. Sürpriz yok.",
+    "process": {
+      "eyebrow": "Nasıl yürür",
+      "headingLead": "Şöyle",
+      "headingItalic": "yürür.",
       "items": [
-        { "n": "01", "title": "Görüşme", "desc": "WhatsApp veya görüntülü 20 dakika. Yardımcı olabilir miyiz, dürüstçe söyleriz. Olamazsak da söyleriz." },
-        { "n": "02", "title": "Teklif", "desc": "48 saat içinde: kapsam, fiyat, takvim, kim çalışıyor. Mümkünse sabit fiyat, değilse gündelik." },
-        { "n": "03", "title": "Yapım", "desc": "Her hafta gerçek bir staging URL'sinde ilerlemeyi görürsünüz. Cezasız, istediğinizde durdurabilirsiniz." },
-        { "n": "04", "title": "Teslim & destek", "desc": "Belgeleri devrederiz, ekibinizi eğitiriz, ulaşılabilir kalırız. Çoğu müşteri aylık bakım planında kalır." }
+        { "n": "01", "title": "Konuş", "desc": "Yirmi dakika. Yardım edebilirsek söyleriz. Edemezsek de söyleriz." },
+        { "n": "02", "title": "Planla", "desc": "48 saat sonra: kapsam, takvim, kim çalışacak." },
+        { "n": "03", "title": "Yap", "desc": "Gerçek bir URL'de haftalık ilerleme. İstediğinde durdur." },
+        { "n": "04", "title": "Teslim", "desc": "Devrederiz, ekibinizi eğitiriz, sonrasında ulaşılabilir kalırız." }
       ]
     },
     "faq": {
-      "eyebrow": "Sıkça sorulanlar",
+      "eyebrow": "Sorular",
       "items": [
-        { "q": "Bir proje ne kadar?", "a": "Tanıtım sitesi 3.500 €'dan başlar. E-ticaret 6.000 €. Mobil uygulama 18.000 €. Özel yapay zekâ ajanı 4.500 €. Görüşmeden sonra 48 saatte sabit teklif yollarız." },
-        { "q": "Ne kadar sürer?", "a": "Çoğu site 3–5 hafta. E-ticaret 5–8 hafta. Mobil uygulama 8–14 hafta. Tahmin değil, takvim veririz." },
-        { "q": "İngilizce, Türkçe ve Romence çalışıyor musunuz?", "a": "Evet. Stüdyo İstanbul ve Bükreş arasında bölünmüş. Proje görüşmeleri üç dilden birinde olabilir." },
-        { "q": "İşi gerçekte kim yapıyor?", "a": "İki kurucu ve yıllardır birlikte çalıştığımız güvenilir bir küçük yüklenici ekibi. İsimsiz ekiplere dış kaynak yok." },
-        { "q": "Yarım kalmış bir projeyi devralır mısınız?", "a": "Çoğu zaman evet. Önce 90 dakikalık bir kod tabanı denetimi yaparız, sonra fiyatlı bir kurtarma planı yollarız." }
+        { "q": "Ne kadar sürer?", "a": "Site: 3–5 hafta. E-ticaret: 5–8. Mobil uygulama: 8–14. Tahmin değil, takvim veririz." },
+        { "q": "İngilizce, Türkçe ve Romence çalışıyor musunuz?", "a": "Üçünde de. Hangisini tercih ederseniz." },
+        { "q": "Yarım kalmış bir projeyi devralır mısınız?", "a": "Çoğu zaman evet. Önce 90 dakikalık kod denetimi, sonra kurtarma planı yollarız." },
+        { "q": "Sadece sıfırdan mı yapıyorsunuz?", "a": "Hayır. İşimizin yarısı, başkasının başlattığı projeyi kurtarmak ya da yeniden kurmak." },
+        { "q": "Lansman sonrası destek?", "a": "Çoğu müşteri aylık bir bakım planında kalır. Opsiyonel, asla zorunlu değil." }
       ]
     },
     "cta": {
-      "eyebrow": "Konuşmaya başla",
-      "heading": "Ne kurmak istediğinizi anlatın.",
-      "sub": "En hızlı yanıt WhatsApp'tan gelir — çalışma saatlerinde genelde iki saat içinde.",
-      "whatsapp": "WhatsApp'ı aç",
-      "email": "E-posta yolla",
-      "schedule": "20 dakikalık görüşme ayarla"
+      "eyebrow": "Sıradaki",
+      "headingLead": "Ne kurduğunuzu",
+      "headingItalic": "anlatın.",
+      "whatsapp": "WhatsApp",
+      "email": "E-posta",
+      "schedule": "20 dk ayır"
     }
   },
   "services": {
     "hero": {
       "eyebrow": "Hizmetler",
-      "heading": "Beş alan. Tek küçük ekip.",
-      "sub": "Briefi en iyi karşılayan aracı seçeriz, faturalamak istediğimizi değil. Her projeye bir kurucu bizzat liderlik eder."
+      "headingLead": "Beş alan.",
+      "headingItalic": "Tek stüdyo.",
+      "sub": "Brief'i en iyi karşılayan aracı seçeriz, faturalamak istediğimizi değil."
     },
     "items": [
       {
@@ -359,36 +359,26 @@
   "about": {
     "hero": {
       "eyebrow": "Hakkımızda",
-      "heading": "İş yapan iki kurucu stüdyosu.",
-      "sub": "Velkina'yı konuşmak için değil, iş yapmak için kurduk. Beş yıl oldu, model değişmedi."
+      "headingLead": "Velkina bir",
+      "headingItalic": "stüdyo",
+      "headingTail": "— tasarım + mühendislik için."
     },
     "story": {
-      "heading": "Hikâye",
+      "heading": "Ne yapıyoruz",
       "body": [
-        "Velkina 2021'de Nalba Tăsna ve Baha Tasin tarafından kuruldu. Nalba tasarımı, frontend'i ve işin ticari tarafını yürütüyor. Baha backend'i, altyapıyı ve operasyonu yürütüyor. Geri kalan herkes yıllardır birlikte çalıştığımız küçük bir güvenilir yüklenici ekibi.",
-        "İstanbul ve Bükreş'ten çalışıyoruz; müşterilerimiz Türkiye, Romanya, Almanya ve İsviçre'de. Proje görüşmeleri odadaki kişiye göre İngilizce, Türkçe veya Romence oluyor.",
-        "Satış ekibi tutmuyoruz. Her proje, kuruculardan biriyle 20 dakikalık bir görüşmeyle başlar. Doğru dükkân olmadığımızı düşünüyorsak söyleriz ve uygun olan başka birini öneririz."
+        "İşletmelerin çalışması, satması ve büyümesi için yazılım. Kişiliği olan web siteleri. Gerçekten ödeme alan e-ticaret. Mağazaya çıkan mobil uygulamalar. Konuşmayı sürdüren AI ajanları. Tıklamayı hak eden arayüzler.",
+        "Her projeye, kodu yazan ve ekranı çizen kişi liderlik eder. Müşteri yöneticisi yok. Hiç tanımadığımız ekiplere dış kaynak yok.",
+        "Brief'i en iyi karşılayan aracı seçeriz, faturalamak istediğimizi değil."
       ]
     },
     "values": {
-      "heading": "Neye inanıyoruz",
+      "heading": "Nasıl çalışıyoruz",
       "items": [
-        { "title": "Danışman değil, operatör", "body": "İşi biz kurar, biz teslim ederiz. Sunum yan ürün, ürün değil." },
-        { "title": "Küçük ekip, tam sorumluluk", "body": "Her hafta her projede bir kurucu var. İsimsiz ekiplere dış kaynak yok." },
-        { "title": "48 saatte teklif", "body": "İlk görüşmeden sonra iki iş günü içinde sabit fiyat teklifi alırsınız, ya da neden alamayacağınızı söyleriz." },
-        { "title": "İstediğinizde durdurun", "body": "Her projenin haftalık bir 'durdur' saati var. Yürümüyorsa, almadığınız işin parasını ödemeden bitirebilirsiniz." }
+        { "title": "Yap, sat değil", "body": "Sunum yan ürün, ürün değil." },
+        { "title": "Tasarım + mühendislik tek masada", "body": "Aynı zihin ekranı çizer, ekranı çizen kodu yazar." },
+        { "title": "48 saatte teklif", "body": "İlk görüşmeden sonra iki iş günü içinde sabit fiyat alırsınız." },
+        { "title": "İstediğinizde durdurun", "body": "Her projenin haftalık 'durdur' saati var. Almadığınız işin parasını ödemeden bitirin." }
       ]
-    },
-    "founders": {
-      "heading": "İkimiz",
-      "items": [
-        { "name": "Nalba Tăsna", "role": "Tasarım, frontend, ticari", "bio": "Türkiye ve Romanya'daki KOBİ'ler için altı yıl ürün ve marka sistemleri kurdu. 60'ı aşkın site teslim etti. Stüdyonun tasarım pratiğini ve çoğu müşteri ilişkisini yürütüyor." },
-        { "name": "Baha Tasin", "role": "Backend, altyapı, operasyon", "bio": "Backend ve cloud'da on yıl — AWS, GCP ve Avrupa hosting pazarında uzun bir geçmiş. Her Velkina projesinin altyapı, nöbet ve güvenliği onda." }
-      ]
-    },
-    "where": {
-      "heading": "Nerede çalışıyoruz",
-      "items": ["İstanbul · Üsküdar", "Bükreş · Sector 1", "Berlin · uzaktan ortaklar"]
     }
   },
   "contact": {

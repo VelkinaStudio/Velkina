@@ -12,8 +12,11 @@ export default function AboutView({ messages, locale }: { messages: any; locale:
       <section className="vk-section" style={{paddingTop: '4rem'}}>
         <div className="vk-container">
           <span className="vk-eyebrow">{a.hero.eyebrow}</span>
-          <h1 className="vk-h1 mt-5" style={{maxWidth: '22ch'}}>{a.hero.heading}</h1>
-          <p className="vk-lead vk-muted mt-5" style={{maxWidth: '52ch'}}>{a.hero.sub}</p>
+          <h1 className="vk-display mt-5" style={{maxWidth: '16ch'}}>
+            {a.hero.headingLead}{' '}
+            <span className="vk-italic">{a.hero.headingItalic}</span>{' '}
+            {a.hero.headingTail}
+          </h1>
         </div>
       </section>
 
@@ -55,40 +58,14 @@ export default function AboutView({ messages, locale }: { messages: any; locale:
 
       <section className="vk-section">
         <div className="vk-container">
-          <h2 className="vk-h2">{a.founders.heading}</h2>
-          <div className="grid gap-8 mt-8 sm:grid-cols-2">
-            {a.founders.items.map((f: any, i: number) => (
-              <div key={i}>
-                <div className="vk-h3">{f.name}</div>
-                <div className="vk-label mt-2">{f.role}</div>
-                <p className="mt-3" style={{lineHeight: 1.7}}>{f.bio}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <hr className="vk-rule" />
-
-      <section className="vk-section">
-        <div className="vk-container">
-          <h2 className="vk-eyebrow">{a.where.heading}</h2>
-          <ul className="mt-4 space-y-2 vk-h3" style={{fontFamily: 'var(--font-sora), Sora, sans-serif'}}>
-            {a.where.items.map((w: string, i: number) => (
-              <li key={i}>{w}</li>
-            ))}
-          </ul>
-
-          <div className="mt-10">
-            <a
-              href={whatsappHref(common.whatsappPrefill)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="vk-btn vk-btn-primary"
-            >
-              {messages.home.cta.whatsapp}
-            </a>
-          </div>
+          <a
+            href={whatsappHref(common.whatsappPrefill)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="vk-btn vk-btn-primary"
+          >
+            {messages.home.cta.whatsapp}
+          </a>
         </div>
       </section>
     </div>

@@ -27,7 +27,10 @@ export default function ServicesView({ messages, locale }: { messages: any; loca
       <section className="vk-section" style={{paddingTop: '4rem'}}>
         <div className="vk-container">
           <span className="vk-eyebrow">{s.hero.eyebrow}</span>
-          <h1 className="vk-h1 mt-5" style={{maxWidth: '22ch'}}>{s.hero.heading}</h1>
+          <h1 className="vk-display mt-5" style={{maxWidth: '16ch'}}>
+            {s.hero.headingLead}{' '}
+            <span className="vk-italic">{s.hero.headingItalic}</span>
+          </h1>
           <p className="vk-lead vk-muted mt-5" style={{maxWidth: '52ch'}}>{s.hero.sub}</p>
         </div>
       </section>
@@ -60,17 +63,6 @@ export default function ServicesView({ messages, locale }: { messages: any; loca
                   <span className="vk-eyebrow">{String(idx + 1).padStart(2, '0')} · {it.title}</span>
                   <h2 className="vk-h2 mt-4" style={{maxWidth: '14ch'}}>{it.tagline}</h2>
                   <p className="vk-muted mt-4" style={{maxWidth: '40ch'}}>{it.what}</p>
-
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-4 mt-8">
-                    <div>
-                      <div className="vk-label">{labels.timeline}</div>
-                      <div className="mt-1">{it.timeline}</div>
-                    </div>
-                    <div>
-                      <div className="vk-label">{labels.from}</div>
-                      <div className="mt-1">{it.from}</div>
-                    </div>
-                  </div>
 
                   <div className="mt-8">
                     <a

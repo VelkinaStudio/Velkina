@@ -3,7 +3,7 @@ import Link from 'next/link';
 import en from '../../messages/en.json';
 import tr from '../../messages/tr.json';
 import ro from '../../messages/ro.json';
-import { Inter, Sora } from 'next/font/google';
+import { Inter, Sora, Instrument_Serif } from 'next/font/google';
 import { CONTACT, whatsappHref, mailHref } from '../../lib/contact';
 import MobileMenu from '../../components/MobileMenu';
 
@@ -14,6 +14,7 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter', display: 'swap' });
 const sora = Sora({ subsets: ['latin', 'latin-ext'], variable: '--font-sora', display: 'swap' });
+const serif = Instrument_Serif({ subsets: ['latin', 'latin-ext'], weight: '400', style: ['normal', 'italic'], variable: '--font-serif', display: 'swap' });
 
 export async function generateMetadata({ params }) {
   const { locale } = params;
@@ -75,7 +76,7 @@ export default function LocaleLayout({ children, params }) {
   const otherLocales = ['en', 'tr', 'ro'].filter(l => l !== locale);
 
   return (
-    <html lang={locale} className={`${inter.variable} ${sora.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${sora.variable} ${serif.variable}`}>
       <body>
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[10000] focus:px-3 focus:py-2 focus:bg-white focus:text-black focus:rounded-lg">
           {common.skipToContent}

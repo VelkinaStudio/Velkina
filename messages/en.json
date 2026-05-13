@@ -25,78 +25,78 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Software studio · Istanbul & Bucharest",
-      "headline": "We build the software businesses use to run, sell and grow.",
-      "sub": "Websites, e-commerce, mobile apps and AI automation — shipped quickly, by a small team, in three languages.",
-      "primaryCta": "Talk on WhatsApp",
-      "secondaryCta": "See recent work",
-      "stats": [
-        { "k": "Since", "v": "2021" },
-        { "k": "Shipped this quarter", "v": "6 projects" },
-        { "k": "Founder reply time", "v": "< 2h on WhatsApp" }
-      ]
+      "label": "Velkina · Studio",
+      "we": "We",
+      "verb": "build",
+      "verbItalic": "ship",
+      "objects": ["websites.", "e-commerce.", "mobile apps.", "AI agents.", "interfaces."],
+      "tag": "design + engineering",
+      "primaryCta": "Start a project",
+      "secondaryCta": "See the work"
     },
     "ledger": {
-      "eyebrow": "Recent work",
-      "heading": "Shipped in the last 90 days",
-      "sub": "Real clients. Real dates. Real outcomes.",
+      "eyebrow": "Shipped",
+      "headingLead": "We did",
+      "headingItalic": "this.",
       "items": [
-        { "date": "2026-05", "client": "Lavinia Bistro", "scope": "QR menu platform — EN/TR/RO/DE", "outcome": "Payback in 2 months", "status": "delivered" },
-        { "date": "2026-04", "client": "Rain Group", "scope": "Meta Ads relaunch + creative system", "outcome": "ROAS 3.4× sustained", "status": "active" },
-        { "date": "2026-04", "client": "Nova Health", "scope": "AWS migration + uptime SLA", "outcome": "99.97% Q1 uptime", "status": "active" },
-        { "date": "2026-03", "client": "EduTurkia", "scope": "Student platform + funnel rebuild", "outcome": "+60% organic, Q1", "status": "delivered" },
-        { "date": "2026-03", "client": "Atar Avcı", "scope": "Cloud + CDN migration", "outcome": "€3.4k / month saved", "status": "delivered" },
-        { "date": "2026-02", "client": "TP Thermoplast", "scope": "B2B export data pipeline", "outcome": "Live across 6 markets", "status": "delivered" }
+        { "date": "2026-05", "client": "Lavinia Bistro", "kind": "QR menu platform", "outcome": "Paid for itself in 8 weeks", "status": "delivered" },
+        { "date": "2026-04", "client": "Rain Group", "kind": "Shopify + Meta Ads", "outcome": "ROAS 3.4× sustained", "status": "active" },
+        { "date": "2026-04", "client": "Nova Health", "kind": "AWS migration", "outcome": "99.97% uptime", "status": "active" },
+        { "date": "2026-03", "client": "EduTurkia", "kind": "Student platform", "outcome": "+60% organic", "status": "delivered" },
+        { "date": "2026-03", "client": "Atar Avcı", "kind": "Cloud migration", "outcome": "Hosting bill −€3.4k/mo", "status": "delivered" },
+        { "date": "2026-02", "client": "TP Thermoplast", "kind": "B2B data pipeline", "outcome": "Live across 6 markets", "status": "delivered" }
       ],
       "seeAll": "See all work →"
     },
     "services": {
       "eyebrow": "What we do",
-      "heading": "Five things, done properly.",
-      "sub": "We turn down work that does not fit. The list below is what we ship every month.",
+      "headingLead": "We do",
+      "headingItalic": "this.",
       "items": [
-        { "id": "websites", "title": "Websites & web apps", "desc": "Marketing sites, internal tools, dashboards. Next.js, fast on mobile, easy to edit." },
-        { "id": "ecommerce", "title": "E-commerce", "desc": "Shopify and headless stores. Built so your team can run them without us." },
-        { "id": "mobile", "title": "Mobile apps", "desc": "iOS and Android, native or React Native. Shipped to the stores, not left in a repo." },
-        { "id": "automation", "title": "AI automation", "desc": "Customer-service agents, internal copilots, data pipelines. Multilingual by default." },
-        { "id": "growth", "title": "Ads & growth", "desc": "Google Ads, Meta Ads, SEO. Run by people who also build the site they advertise." }
+        { "id": "websites", "title": "Websites", "line": "Fast, accessible, opinionated." },
+        { "id": "ecommerce", "title": "E-commerce", "line": "Shopify and headless. Sold by the page." },
+        { "id": "mobile", "title": "Mobile apps", "line": "iOS, Android. Shipped to the stores." },
+        { "id": "automation", "title": "AI agents", "line": "Multilingual support, copilots, pipelines." },
+        { "id": "growth", "title": "Ads & growth", "line": "Run by the people who built the page." }
       ],
-      "cta": "See full service list →"
+      "cta": "Every service →"
     },
-"process": {
-      "eyebrow": "How we work",
-      "heading": "Four steps. No surprises.",
+    "process": {
+      "eyebrow": "How it works",
+      "headingLead": "It goes",
+      "headingItalic": "like this.",
       "items": [
-        { "n": "01", "title": "Call", "desc": "Twenty minutes on WhatsApp or a video call. We tell you whether we can help. If we can't, we say so." },
-        { "n": "02", "title": "Proposal", "desc": "Within 48 hours: scope, price, timeline, who works on it. Fixed price when we can, day rate when we can't." },
-        { "n": "03", "title": "Build", "desc": "You see progress every week, on a real staging URL. You can stop us at any point, no penalty." },
-        { "n": "04", "title": "Ship & support", "desc": "We hand over docs, train your team, and stay reachable. Most clients keep us on a monthly care plan." }
+        { "n": "01", "title": "Talk", "desc": "Twenty minutes. We tell you if we can help. If we can't, we say." },
+        { "n": "02", "title": "Plan", "desc": "Forty-eight hours later: scope, calendar, who's on it." },
+        { "n": "03", "title": "Build", "desc": "Weekly progress on a real URL. Stop whenever you want." },
+        { "n": "04", "title": "Ship", "desc": "We hand it off, train your team, stay reachable after." }
       ]
     },
     "faq": {
-      "eyebrow": "Common questions",
+      "eyebrow": "Questions",
       "items": [
-        { "q": "How much does a project cost?", "a": "A marketing website starts at €3,500. An e-commerce store at €6,000. A mobile app at €18,000. A custom AI agent at €4,500. We send a fixed quote within 48 hours of a call." },
-        { "q": "How long does it take?", "a": "Most websites ship in 3–5 weeks. E-commerce in 5–8 weeks. Mobile apps in 8–14 weeks. We give you a calendar, not a guess." },
-        { "q": "Do you work in English, Turkish and Romanian?", "a": "Yes. The studio is split between Istanbul and Bucharest. Project meetings can be in any of the three." },
-        { "q": "Who actually does the work?", "a": "The two founders and a small bench of trusted contractors we have worked with for years. No outsourcing to anonymous teams." },
-        { "q": "Can you take over an unfinished project?", "a": "Often yes. We do a 90-minute audit of the codebase first, then send you a recovery plan with a price." }
+        { "q": "How long does it take?", "a": "Websites: 3–5 weeks. E-commerce: 5–8. Mobile apps: 8–14. We give you a calendar, not a guess." },
+        { "q": "Do you work in English, Turkish and Romanian?", "a": "All three. Meetings in whichever you prefer." },
+        { "q": "Can you take over an unfinished project?", "a": "Often yes. We do a 90-minute audit on the codebase, then send a recovery plan." },
+        { "q": "Do you only do new builds?", "a": "No. Half of our work is rescuing or rebuilding what someone else started." },
+        { "q": "What about ongoing support?", "a": "Most clients keep us on a monthly retainer after launch. Optional, never required." }
       ]
     },
     "cta": {
-      "eyebrow": "Start the conversation",
-      "heading": "Tell us what you want to build.",
-      "sub": "WhatsApp gets the fastest reply — usually under two hours in business time.",
-      "whatsapp": "Open WhatsApp",
-      "email": "Send an email",
-      "schedule": "Book a 20-min call"
+      "eyebrow": "Next",
+      "headingLead": "Tell us",
+      "headingItalic": "what you're building.",
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "schedule": "Book 20 min"
     }
   },
   "services": {
     "hero": {
       "eyebrow": "Services",
-      "heading": "Five practices. One small team.",
-      "sub": "We pick the right tool for the brief, not the one we want to bill for. Every project is led by a founder."
+      "headingLead": "Five practices.",
+      "headingItalic": "One studio.",
+      "sub": "We pick the right tool for the brief, not the one we want to bill for."
     },
     "items": [
       {
@@ -359,36 +359,26 @@
   "about": {
     "hero": {
       "eyebrow": "About",
-      "heading": "A two-founder studio that ships.",
-      "sub": "We started Velkina to do the work, not to talk about it. Five years in, the model has not changed."
+      "headingLead": "Velkina is a",
+      "headingItalic": "studio",
+      "headingTail": "for design + engineering."
     },
     "story": {
-      "heading": "The story",
+      "heading": "What we make",
       "body": [
-        "Velkina was started in 2021 by Nalba Tăsna and Baha Tasin. Nalba runs design, frontend and the business. Baha runs backend, infrastructure and operations. Everything else is a small bench of trusted contractors we have worked with for years.",
-        "We work out of Istanbul and Bucharest, with clients in Turkey, Romania, Germany and Switzerland. Project meetings happen in English, Turkish or Romanian depending on who is in the room.",
-        "We do not employ a sales team. Every project starts with a 20-minute call with one of the founders. If we don't think we're the right shop, we say so and recommend someone who is."
+        "Software businesses use to run, sell and grow. Websites with personality. E-commerce that checks out. Mobile apps that ship. AI agents that hold a conversation. Interfaces that earn the click.",
+        "Every project is led by someone who wrote the code and drew the screens. No account managers. No outsourcing to teams we've never met.",
+        "We pick the right tool for the brief, not the one we want to bill for."
       ]
     },
     "values": {
-      "heading": "What we believe",
+      "heading": "How we work",
       "items": [
-        { "title": "Operators, not consultants", "body": "We build and ship the thing. Decks are a side-effect, not the product." },
-        { "title": "Small team, full ownership", "body": "A founder is on every project, every week. Nothing is outsourced to anonymous teams." },
-        { "title": "Quote in 48 hours", "body": "After the first call you get a fixed quote within two working days, or we tell you why we can't." },
-        { "title": "Stop anytime", "body": "Every project has a weekly stop-clock. If it isn't working, you can end it without paying for what you didn't get." }
+        { "title": "Make it, don't pitch it", "body": "Decks are a side-effect, not the product." },
+        { "title": "Design + engineering at one desk", "body": "Same brain draws the screen and writes the code that draws the screen." },
+        { "title": "Forty-eight hours to a quote", "body": "After the first call you get a fixed offer in two working days." },
+        { "title": "Stop anytime", "body": "Every project has a weekly stop-clock. End it without paying for what you didn't get." }
       ]
-    },
-    "founders": {
-      "heading": "The two of us",
-      "items": [
-        { "name": "Nalba Tăsna", "role": "Design, frontend, business", "bio": "Spent six years building product and brand systems for SMBs in Turkey and Romania. Has shipped 60+ websites. Runs the studio's design practice and most client relationships." },
-        { "name": "Baha Tasin", "role": "Backend, infrastructure, ops", "bio": "Ten years on backend and cloud — AWS, GCP and a long tour through the European hosting market. Owns infrastructure, on-call and security across every Velkina project." }
-      ]
-    },
-    "where": {
-      "heading": "Where we work",
-      "items": ["Istanbul · Üsküdar", "Bucharest · Sector 1", "Berlin · remote partners"]
     }
   },
   "contact": {

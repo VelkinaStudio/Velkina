@@ -40,7 +40,7 @@ export default function MobileMenu({ locale, nav, common, otherLocales }) {
       {open && (
         <div
           className="fixed inset-0 z-[100]"
-          style={{background: 'rgba(10,10,11,0.96)', backdropFilter: 'blur(20px)'}}
+          style={{background: 'var(--vk-bg)'}}
           role="dialog"
           aria-modal="true"
         >
