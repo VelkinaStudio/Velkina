@@ -108,7 +108,18 @@ export default function LocaleLayout({ children, params }) {
               </a>
             </nav>
             <div className="md:hidden">
-              <MobileMenu locale={locale} nav={nav} common={common} otherLocales={otherLocales} />
+              <MobileMenu
+                locale={locale}
+                nav={nav}
+                common={common}
+                otherLocales={otherLocales}
+                ledgerPreview={(messages.home?.ledger?.items || []).slice(0, 4).map(it => {
+                  const match = (messages.work?.items || []).find(w => w.client === it.client);
+                  return { ...it, slug: match?.slug };
+                })}
+                workLabels={messages.work?.labels || {}}
+                ctaLabels={messages.home?.cta || {}}
+              />
             </div>
           </div>
         </header>

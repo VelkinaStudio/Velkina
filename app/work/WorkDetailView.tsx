@@ -73,6 +73,19 @@ export default function WorkDetailView({
 
             <aside className="lg:col-span-4">
               <div className="vk-card sticky" style={{top: '5rem'}}>
+                {study.liveUrl && (
+                  <>
+                    <a
+                      href={study.liveUrl}
+                      target={/^https?:/.test(study.liveUrl) ? '_blank' : undefined}
+                      rel={/^https?:/.test(study.liveUrl) ? 'noopener noreferrer' : undefined}
+                      className="vk-btn vk-btn-primary w-full"
+                      style={{marginBottom: '1rem'}}
+                    >
+                      {messages.work?.labels?.viewLive || 'Visit live →'}
+                    </a>
+                  </>
+                )}
                 <div>
                   <div className="vk-label">{labels.stack}</div>
                   <div className="mt-2 font-mono text-sm" style={{color: 'var(--vk-text)'}}>{study.stack}</div>
@@ -87,7 +100,7 @@ export default function WorkDetailView({
                   href={whatsappHref(common.whatsappPrefill)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="vk-btn vk-btn-primary w-full"
+                  className="vk-btn vk-btn-secondary w-full"
                 >
                   {messages.home.cta.whatsapp}
                 </a>

@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
-import { whatsappHref } from '../lib/contact';
+import { CONTACT, whatsappHref, mailHref } from '../lib/contact';
 
-export default function MobileMenu({ locale, nav, common, otherLocales }) {
+export default function MobileMenu({ locale, nav, common, otherLocales, ledgerPreview = [], workLabels = {}, ctaLabels = {} }) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -28,12 +28,12 @@ export default function MobileMenu({ locale, nav, common, otherLocales }) {
 
   const overlay = open && (
     <div
-      className="fixed inset-0 z-[100]"
+      className="fixed inset-0 z-[100] overflow-y-auto"
       style={{background: 'var(--vk-bg)'}}
       role="dialog"
       aria-modal="true"
     >
-      <div className="flex items-center justify-between vk-container h-16">
+      <div className="flex items-center justify-between vk-container h-16 sticky top-0 z-10" style={{background: 'var(--vk-bg)', borderBottom: '1px solid var(--vk-border)'}}>
         <Link href={`/${locale}`} onClick={() => setOpen(false)} className="font-heading text-base tracking-widest" style={{letterSpacing: '0.18em'}}>
           VELKINA
         </Link>
@@ -49,30 +49,93 @@ export default function MobileMenu({ locale, nav, common, otherLocales }) {
           </svg>
         </button>
       </div>
-      <nav className="vk-container pt-8 pb-12">
-        <ul className="space-y-5 font-heading" style={{fontSize: '2rem', lineHeight: 1.1}}>
-          <li><Link href={`/${locale}/work`} onClick={() => setOpen(false)}>{nav.work}</Link></li>
-          <li><Link href={`/${locale}/services`} onClick={() => setOpen(false)}>{nav.services}</Link></li>
-          <li><Link href={`/${locale}/about`} onClick={() => setOpen(false)}>{nav.about}</Link></li>
-          <li><Link href={`/${locale}/contact`} onClick={() => setOpen(false)}>{nav.contact}</Link></li>
-        </ul>
-        <hr className="vk-rule mt-8 mb-6" />
-        <a
-          href={whatsappHref(common.whatsappPrefill)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="vk-btn vk-btn-primary w-full"
-        >
-          {nav.startProject}
-        </a>
-        <div className="mt-6 flex items-center gap-4 font-mono text-xs uppercase tracking-widest" style={{color: 'var(--vk-text-muted)'}}>
-          <span>{common.languageLabel}:</span>
-          <Link href={`/${locale}`} onClick={() => setOpen(false)} style={{color: 'var(--vk-text)'}}>{locale}</Link>
-          {otherLocales.map(l => (
-            <Link key={l} href={`/${l}`} onClick={() => setOpen(false)}>{l}</Link>
-          ))}
-        </div>
-      </nav>
+
+      <div className="vk-container pt-10 pb-20 space-y-12">
+        {/* Primary nav */}
+        <nav>
+          <span className="vk-eyebrow">Index · 01</span>
+          <ul className="mt-5 space-y-3 font-heading" style={{fontSize: '2.25rem', lineHeight: 1.05, letterSpacing: '-0.025em', fontWeight: 500}}>
+            <li><Link href={`/${locale}/work`} onClick={() => setOpen(false)}>{nav.work} <span className="vk-italic vk-muted" style={{fontSize: '1.25rem'}}>— what we shipped</span></Link></li>
+            <li><Link href={`/${locale}/services`} onClick={() => setOpen(false)}>{nav.services} <span className="vk-italic vk-muted" style={{fontSize: '1.25rem'}}>— what we do</span></Link></li>
+            <li><Link href={`/${locale}/about`} onClick={() => setOpen(false)}>{nav.about} <span className="vk-italic vk-muted" style={{fontSize: '1.25rem'}}>— who we are</span></Link></li>
+            <li><Link href={`/${locale}/contact`} onClick={() => setOpen(false)}>{nav.contact} <span className="vk-italic vk-muted" style={{fontSize: '1.25rem'}}>— get in touch</span></Link></li>
+          </ul>
+        </nav>
+
+        {/* Recent work */}
+        {ledgerPreview.length > 0 && (
+          <section>
+            <span className="vk-eyebrow">Recent · 02</span>
+            <ul className="mt-5 space-y-3 list-none p-0">
+              {ledgerPreview.slice(0, 4).map((p, i) => (
+                <li key={i} className="flex items-baseline justify-between gap-3 border-b py-3" style={{borderColor: 'var(--vk-border)'}}>
+                  <div>
+                    {p.slug ? (
+                      <Link href={`/${locale}/work/${p.slug}`} onClick={() => setOpen(false)} className="font-medium">
+                        {p.client}
+                      </Link>
+                    ) : (
+                      <span className="font-medium">{p.client}</span>
+                    )}
+                    <span className="vk-italic vk-muted ml-2" style={{fontSize: '0.95rem'}}>{p.kind}</span>
+                  </div>
+                  <span className="font-mono text-xs uppercase tracking-widest vk-dim">{p.date}</span>
+                </li>
+              ))}
+            </ul>
+            <Link href={`/${locale}/work`} onClick={() => setOpen(false)} className="mt-4 inline-block font-mono text-xs uppercase tracking-widest vk-nav-link">
+              {workLabels.viewLive ? 'See all work →' : 'See all work →'}
+            </Link>
+          </section>
+        )}
+
+        {/* Quick contact */}
+        <section>
+          <span className="vk-eyebrow">Contact · 03</span>
+          <div className="mt-5 grid gap-3">
+            <a
+              href={whatsappHref(common.whatsappPrefill)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vk-btn vk-btn-primary w-full"
+              onClick={() => setOpen(false)}
+            >
+              {ctaLabels.whatsapp || 'WhatsApp'}
+            </a>
+            <a
+              href={mailHref(common.emailSubject)}
+              className="vk-btn vk-btn-secondary w-full"
+              onClick={() => setOpen(false)}
+            >
+              {ctaLabels.email || 'Email'}
+            </a>
+            <a
+              href={CONTACT.scheduleUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="vk-btn vk-btn-secondary w-full"
+              onClick={() => setOpen(false)}
+            >
+              {ctaLabels.schedule || 'Book a call'}
+            </a>
+          </div>
+        </section>
+
+        {/* Locale switcher + footer info */}
+        <section className="pt-8 border-t" style={{borderColor: 'var(--vk-border)'}}>
+          <div className="flex items-center gap-4 font-mono text-xs uppercase tracking-widest" style={{color: 'var(--vk-text-muted)'}}>
+            <span>{common.languageLabel}:</span>
+            <Link href={`/${locale}`} onClick={() => setOpen(false)} style={{color: 'var(--vk-text)'}}>{locale}</Link>
+            {otherLocales.map(l => (
+              <Link key={l} href={`/${l}`} onClick={() => setOpen(false)}>{l}</Link>
+            ))}
+          </div>
+          <div className="mt-6 font-mono text-xs uppercase tracking-widest" style={{color: 'var(--vk-text-dim)'}}>
+            <div>{CONTACT.email}</div>
+            <div className="mt-1">{CONTACT.phoneDisplay}</div>
+          </div>
+        </section>
+      </div>
     </div>
   );
 

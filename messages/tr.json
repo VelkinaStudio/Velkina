@@ -29,7 +29,13 @@
       "we": "Biz",
       "verb": "kuruyoruz",
       "verbItalic": "teslim ediyoruz",
-      "objects": ["web siteleri.", "e-ticaret.", "mobil uygulamalar.", "AI ajanları.", "arayüzler."],
+      "objects": [
+        "web siteleri.",
+        "e-ticaret.",
+        "mobil uygulamalar.",
+        "AI ajanları.",
+        "arayüzler."
+      ],
       "tag": "tasarım + mühendislik",
       "primaryCta": "Projeye başla",
       "secondaryCta": "İşleri gör"
@@ -39,12 +45,48 @@
       "headingLead": "Biz",
       "headingItalic": "bunu yaptık.",
       "items": [
-        { "date": "2026-05", "client": "Lavinia Bistro", "kind": "QR menü platformu", "outcome": "8 haftada kendini ödedi", "status": "delivered" },
-        { "date": "2026-04", "client": "Rain Group", "kind": "Shopify + Meta Ads", "outcome": "ROAS 3,4× sürdürüldü", "status": "active" },
-        { "date": "2026-04", "client": "Nova Health", "kind": "AWS geçişi", "outcome": "%99,97 uptime", "status": "active" },
-        { "date": "2026-03", "client": "EduTurkia", "kind": "Öğrenci platformu", "outcome": "+%60 organik", "status": "delivered" },
-        { "date": "2026-03", "client": "Atar Avcı", "kind": "Cloud geçişi", "outcome": "Faturada −3,4 bin €/ay", "status": "delivered" },
-        { "date": "2026-02", "client": "TP Thermoplast", "kind": "B2B veri hattı", "outcome": "6 pazarda canlı", "status": "delivered" }
+        {
+          "date": "2026-05",
+          "client": "Lavinia Bistro",
+          "kind": "QR menü platformu",
+          "outcome": "8 haftada kendini ödedi",
+          "status": "delivered"
+        },
+        {
+          "date": "2026-04",
+          "client": "Rain Group",
+          "kind": "Shopify + Meta Ads",
+          "outcome": "ROAS 3,4× sürdürüldü",
+          "status": "active"
+        },
+        {
+          "date": "2026-04",
+          "client": "Nova Health",
+          "kind": "AWS geçişi",
+          "outcome": "%99,97 uptime",
+          "status": "active"
+        },
+        {
+          "date": "2026-03",
+          "client": "EduTurkia",
+          "kind": "Öğrenci platformu",
+          "outcome": "+%60 organik",
+          "status": "delivered"
+        },
+        {
+          "date": "2026-03",
+          "client": "Atar Avcı",
+          "kind": "Cloud geçişi",
+          "outcome": "Faturada −3,4 bin €/ay",
+          "status": "delivered"
+        },
+        {
+          "date": "2026-02",
+          "client": "TP Thermoplast",
+          "kind": "B2B veri hattı",
+          "outcome": "6 pazarda canlı",
+          "status": "delivered"
+        }
       ],
       "seeAll": "Tüm işleri gör →"
     },
@@ -53,11 +95,31 @@
       "headingLead": "Biz",
       "headingItalic": "bunu yapıyoruz.",
       "items": [
-        { "id": "websites", "title": "Web siteleri", "line": "Hızlı, erişilebilir, karakterli." },
-        { "id": "ecommerce", "title": "E-ticaret", "line": "Shopify ve headless. Sayfa sayfa satar." },
-        { "id": "mobile", "title": "Mobil uygulamalar", "line": "iOS, Android. Mağazalara çıkar." },
-        { "id": "automation", "title": "AI ajanları", "line": "Çok dilli destek, kopilotlar, hatlar." },
-        { "id": "growth", "title": "Reklam & büyüme", "line": "Sayfayı kuranlar reklamı da yürütüyor." }
+        {
+          "id": "websites",
+          "title": "Web siteleri",
+          "line": "Hızlı, erişilebilir, karakterli."
+        },
+        {
+          "id": "ecommerce",
+          "title": "E-ticaret",
+          "line": "Shopify ve headless. Sayfa sayfa satar."
+        },
+        {
+          "id": "mobile",
+          "title": "Mobil uygulamalar",
+          "line": "iOS, Android. Mağazalara çıkar."
+        },
+        {
+          "id": "automation",
+          "title": "AI ajanları",
+          "line": "Çok dilli destek, kopilotlar, hatlar."
+        },
+        {
+          "id": "growth",
+          "title": "Reklam & büyüme",
+          "line": "Sayfayı kuranlar reklamı da yürütüyor."
+        }
       ],
       "cta": "Her hizmet →"
     },
@@ -66,20 +128,51 @@
       "headingLead": "Şöyle",
       "headingItalic": "yürür.",
       "items": [
-        { "n": "01", "title": "Konuş", "desc": "Yirmi dakika. Yardım edebilirsek söyleriz. Edemezsek de söyleriz." },
-        { "n": "02", "title": "Planla", "desc": "48 saat sonra: kapsam, takvim, kim çalışacak." },
-        { "n": "03", "title": "Yap", "desc": "Gerçek bir URL'de haftalık ilerleme. İstediğinde durdur." },
-        { "n": "04", "title": "Teslim", "desc": "Devrederiz, ekibinizi eğitiriz, sonrasında ulaşılabilir kalırız." }
+        {
+          "n": "01",
+          "title": "Konuş",
+          "desc": "Yirmi dakika. Yardım edebilirsek söyleriz. Edemezsek de söyleriz."
+        },
+        {
+          "n": "02",
+          "title": "Planla",
+          "desc": "48 saat sonra: kapsam, takvim, kim çalışacak."
+        },
+        {
+          "n": "03",
+          "title": "Yap",
+          "desc": "Gerçek bir URL'de haftalık ilerleme. İstediğinde durdur."
+        },
+        {
+          "n": "04",
+          "title": "Teslim",
+          "desc": "Devrederiz, ekibinizi eğitiriz, sonrasında ulaşılabilir kalırız."
+        }
       ]
     },
     "faq": {
       "eyebrow": "Sorular",
       "items": [
-        { "q": "Ne kadar sürer?", "a": "Site: 3–5 hafta. E-ticaret: 5–8. Mobil uygulama: 8–14. Tahmin değil, takvim veririz." },
-        { "q": "İngilizce, Türkçe ve Romence çalışıyor musunuz?", "a": "Üçünde de. Hangisini tercih ederseniz." },
-        { "q": "Yarım kalmış bir projeyi devralır mısınız?", "a": "Çoğu zaman evet. Önce 90 dakikalık kod denetimi, sonra kurtarma planı yollarız." },
-        { "q": "Sadece sıfırdan mı yapıyorsunuz?", "a": "Hayır. İşimizin yarısı, başkasının başlattığı projeyi kurtarmak ya da yeniden kurmak." },
-        { "q": "Lansman sonrası destek?", "a": "Çoğu müşteri aylık bir bakım planında kalır. Opsiyonel, asla zorunlu değil." }
+        {
+          "q": "Ne kadar sürer?",
+          "a": "Site: 3–5 hafta. E-ticaret: 5–8. Mobil uygulama: 8–14. Tahmin değil, takvim veririz."
+        },
+        {
+          "q": "İngilizce, Türkçe ve Romence çalışıyor musunuz?",
+          "a": "Üçünde de. Hangisini tercih ederseniz."
+        },
+        {
+          "q": "Yarım kalmış bir projeyi devralır mısınız?",
+          "a": "Çoğu zaman evet. Önce 90 dakikalık kod denetimi, sonra kurtarma planı yollarız."
+        },
+        {
+          "q": "Sadece sıfırdan mı yapıyorsunuz?",
+          "a": "Hayır. İşimizin yarısı, başkasının başlattığı projeyi kurtarmak ya da yeniden kurmak."
+        },
+        {
+          "q": "Lansman sonrası destek?",
+          "a": "Çoğu müşteri aylık bir bakım planında kalır. Opsiyonel, asla zorunlu değil."
+        }
       ]
     },
     "cta": {
@@ -104,7 +197,13 @@
         "title": "Web siteleri & web uygulamaları",
         "tagline": "Hızlı, erişilebilir, düzenlemesi kolay.",
         "what": "Tanıtım siteleri, iç araçlar, müşteri panoları, rezervasyon sistemleri. Next.js veya Astro üzerine. Mobil öncelikli. Lansman gününde Lighthouse 90+.",
-        "deliverables": ["Tasarım + içerik atölyesi", "Bileşen kitaplığı", "Ekibinizin yazıyı düzenleyebileceği CMS", "Analitik + SEO temelleri", "Lansman sonrası 30 gün destek"],
+        "deliverables": [
+          "Tasarım + içerik atölyesi",
+          "Bileşen kitaplığı",
+          "Ekibinizin yazıyı düzenleyebileceği CMS",
+          "Analitik + SEO temelleri",
+          "Lansman sonrası 30 gün destek"
+        ],
         "timeline": "3–5 hafta",
         "from": "3.500 €'dan",
         "caseSlug": "eduturkia-platform"
@@ -114,7 +213,13 @@
         "title": "E-ticaret",
         "tagline": "Ekibinizin gerçekten yönetebileceği mağazalar.",
         "what": "Shopify, headless Shopify veya özel Stripe mağazaları. Hızlı, ödeme akışı düzgün, arka ofis akıcı — ödül kazandıran tasarımlardan değil, satan dükkânlardan yanayız.",
-        "deliverables": ["Tema + özel bölümler", "Ürün içe aktarma ve script", "Stripe / iyzico ödeme kurulumu", "E-posta + sepet bırakma akışları", "Devir eğitimi videosu"],
+        "deliverables": [
+          "Tema + özel bölümler",
+          "Ürün içe aktarma ve script",
+          "Stripe / iyzico ödeme kurulumu",
+          "E-posta + sepet bırakma akışları",
+          "Devir eğitimi videosu"
+        ],
         "timeline": "5–8 hafta",
         "from": "6.000 €'dan",
         "caseSlug": "rain-group-ecommerce"
@@ -124,7 +229,13 @@
         "title": "Mobil uygulamalar",
         "tagline": "Mağazalara çıkar, repo'da kalmaz.",
         "what": "Brief'e göre native iOS / Android veya React Native. Apple ve Google mağaza başvuruları, sertifikalar ve sıkıcı işler bizde.",
-        "deliverables": ["UX akış + prototip", "Native veya RN yapım", "Push, derin bağlantı, analitik", "Mağaza başvurusu (Apple + Google)", "Çökme + sürüm izleme"],
+        "deliverables": [
+          "UX akış + prototip",
+          "Native veya RN yapım",
+          "Push, derin bağlantı, analitik",
+          "Mağaza başvurusu (Apple + Google)",
+          "Çökme + sürüm izleme"
+        ],
         "timeline": "8–14 hafta",
         "from": "18.000 €'dan",
         "caseSlug": "drsevim-beauty-clinic"
@@ -134,7 +245,13 @@
         "title": "Yapay zekâ otomasyonu",
         "tagline": "Sahnede değil, işletmenizde çalışan ajanlar.",
         "what": "Müşteri hizmetleri ajanları, iç kopilotlar, veri hatları, belge akışları. Çok dilli (en az EN/TR/RO). Modeli biz seçeriz, veriler sizde kalır.",
-        "deliverables": ["Kullanım senaryosu çıkarımı", "Prompt + araç tasarımı", "CRM / Shopify / e-posta entegrasyonu", "Eval + izleme panosu", "Aylık bakım (opsiyonel)"],
+        "deliverables": [
+          "Kullanım senaryosu çıkarımı",
+          "Prompt + araç tasarımı",
+          "CRM / Shopify / e-posta entegrasyonu",
+          "Eval + izleme panosu",
+          "Aylık bakım (opsiyonel)"
+        ],
         "timeline": "2–6 hafta",
         "from": "4.500 €'dan",
         "caseSlug": "bosporus-travel-ai-agent"
@@ -144,7 +261,13 @@
         "title": "Reklam & büyüme",
         "tagline": "Reklamı yapan, siteyi de kuruyor.",
         "what": "Google Ads, Meta Ads, temel SEO. Sayfanın dönüştüğüne inanmıyorsak büyüme işi almıyoruz; o zaman önce sayfayı düzeltiyoruz.",
-        "deliverables": ["Denetim + iniş sayfası kontrolü", "Reklam hesapları + izleme kurulumu", "Kreatif sistem (3–5 varyant)", "2 dakikada okunan haftalık rapor", "Üç ayda bir gözden geçirme"],
+        "deliverables": [
+          "Denetim + iniş sayfası kontrolü",
+          "Reklam hesapları + izleme kurulumu",
+          "Kreatif sistem (3–5 varyant)",
+          "2 dakikada okunan haftalık rapor",
+          "Üç ayda bir gözden geçirme"
+        ],
         "timeline": "Aylık, sürekli",
         "from": "ayda 1.200 €'dan",
         "caseSlug": "rain-group-ecommerce"
@@ -166,25 +289,144 @@
       "sub": "Her müşteri gerçek. Her ekran görüntüsü canlı sayfa. Tarihler projenin teslim tarihi."
     },
     "items": [
-      { "slug": "lavinia-bistro-qr-menu", "client": "Lavinia Bistro", "industry": "Yeme-içme", "service": "QR menü platformu", "year": "2026", "outcome": "2 ayda geri ödeme", "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp" },
-      { "slug": "rain-group-ecommerce", "client": "Rain Group", "industry": "Moda e-ticaret", "service": "Shopify + Meta Ads", "year": "2026", "outcome": "ROAS 3,4× sürdürüldü", "image": "/portfolio-screenshots/rain-group-ecommerce.webp" },
-      { "slug": "drsevim-beauty-clinic", "client": "Dr. Sevim Klinik", "industry": "Sağlık", "service": "Web sitesi + rezervasyon", "year": "2026", "outcome": "1. çeyrekte +%38 rezervasyon", "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp" },
-      { "slug": "tp-thermoplast-b2b", "client": "TP Thermoplast", "industry": "B2B üretim", "service": "İhracat veri hattı", "year": "2026", "outcome": "6 pazarda canlı", "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp" },
-      { "slug": "eduturkia-platform", "client": "EduTurkia", "industry": "Eğitim", "service": "Öğrenci platformu", "year": "2026", "outcome": "+%60 organik trafik", "image": "/portfolio-screenshots/eduturkia-platform.webp" },
-      { "slug": "clown3d-creative-studio", "client": "Clown3D", "industry": "Yaratıcı", "service": "Portfolyo sitesi", "year": "2026", "outcome": "Awwwards'ta yer aldı", "image": "/portfolio-screenshots/clown3d-creative-studio.webp" },
-      { "slug": "ataravci-law-firm", "client": "Atar Avcı Hukuk", "industry": "Hukuk", "service": "Web sitesi + cloud geçişi", "year": "2026", "outcome": "Ayda 3,4 bin € tasarruf", "image": "/portfolio-screenshots/ataravci-law-firm.webp" },
-      { "slug": "novahealth-cloud-migration", "client": "Nova Health", "industry": "Sağlık", "service": "AWS geçişi", "year": "2026", "outcome": "1. çeyrekte %99,97 uptime", "image": "/projects/novahealth-cloud-migration.svg" },
-      { "slug": "marmara-foods-google-ads", "client": "Marmara Foods", "industry": "Hızlı tüketim", "service": "Google Ads", "year": "2025", "outcome": "CAC %41 düştü", "image": "/projects/marmara-foods-google-ads.svg" },
-      { "slug": "skyline-media-mobile-app", "client": "Skyline Media", "industry": "Medya", "service": "iOS + Android uygulama", "year": "2025", "outcome": "1. çeyrekte 70k indirme", "image": "/projects/skyline-media-mobile-app.svg" },
-      { "slug": "bosporus-travel-ai-agent", "client": "Bosporus Travel", "industry": "Seyahat", "service": "Yapay zekâ rezervasyon ajanı", "year": "2025", "outcome": "Sohbetlerin %63'ü AI ile çözüldü", "image": "/projects/bosporus-travel-ai-agent.svg" },
-      { "slug": "anatolia-hotel-booking", "client": "Anatolia Hotel", "industry": "Konaklama", "service": "Rezervasyon motoru", "year": "2025", "outcome": "OTA komisyonu %22 düştü", "image": "/projects/anatolia-hotel-booking.svg" }
+      {
+        "slug": "lavinia-bistro-qr-menu",
+        "client": "Lavinia Bistro",
+        "industry": "Yeme-içme",
+        "service": "QR menü platformu",
+        "year": "2026",
+        "outcome": "2 ayda geri ödeme",
+        "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
+        "liveUrl": "/demo/lavinia-bistro"
+      },
+      {
+        "slug": "rain-group-ecommerce",
+        "client": "Rain Group",
+        "industry": "Moda e-ticaret",
+        "service": "Shopify + Meta Ads",
+        "year": "2026",
+        "outcome": "ROAS 3,4× sürdürüldü",
+        "image": "/portfolio-screenshots/rain-group-ecommerce.webp",
+        "liveUrl": "https://raingroup.com.tr"
+      },
+      {
+        "slug": "drsevim-beauty-clinic",
+        "client": "Dr. Sevim Klinik",
+        "industry": "Sağlık",
+        "service": "Web sitesi + rezervasyon",
+        "year": "2026",
+        "outcome": "1. çeyrekte +%38 rezervasyon",
+        "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
+        "liveUrl": "https://drsevim.com"
+      },
+      {
+        "slug": "tp-thermoplast-b2b",
+        "client": "TP Thermoplast",
+        "industry": "B2B üretim",
+        "service": "İhracat veri hattı",
+        "year": "2026",
+        "outcome": "6 pazarda canlı",
+        "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
+        "liveUrl": "https://tpthermoplast.com"
+      },
+      {
+        "slug": "eduturkia-platform",
+        "client": "EduTurkia",
+        "industry": "Eğitim",
+        "service": "Öğrenci platformu",
+        "year": "2026",
+        "outcome": "+%60 organik trafik",
+        "image": "/portfolio-screenshots/eduturkia-platform.webp",
+        "liveUrl": "https://eduturkia.com"
+      },
+      {
+        "slug": "clown3d-creative-studio",
+        "client": "Clown3D",
+        "industry": "Yaratıcı",
+        "service": "Portfolyo sitesi",
+        "year": "2026",
+        "outcome": "Awwwards'ta yer aldı",
+        "image": "/portfolio-screenshots/clown3d-creative-studio.webp",
+        "liveUrl": "https://clown3d.com"
+      },
+      {
+        "slug": "ataravci-law-firm",
+        "client": "Atar Avcı Hukuk",
+        "industry": "Hukuk",
+        "service": "Web sitesi + cloud geçişi",
+        "year": "2026",
+        "outcome": "Ayda 3,4 bin € tasarruf",
+        "image": "/portfolio-screenshots/ataravci-law-firm.webp",
+        "liveUrl": "https://ataravci.com.tr"
+      },
+      {
+        "slug": "novahealth-cloud-migration",
+        "client": "Nova Health",
+        "industry": "Sağlık",
+        "service": "AWS geçişi",
+        "year": "2026",
+        "outcome": "1. çeyrekte %99,97 uptime",
+        "image": "/projects/novahealth-cloud-migration.svg",
+        "liveUrl": "/demo/nova-health"
+      },
+      {
+        "slug": "marmara-foods-google-ads",
+        "client": "Marmara Foods",
+        "industry": "Hızlı tüketim",
+        "service": "Google Ads",
+        "year": "2025",
+        "outcome": "CAC %41 düştü",
+        "image": "/projects/marmara-foods-google-ads.svg",
+        "liveUrl": "/demo/marmara-foods"
+      },
+      {
+        "slug": "skyline-media-mobile-app",
+        "client": "Skyline Media",
+        "industry": "Medya",
+        "service": "iOS + Android uygulama",
+        "year": "2025",
+        "outcome": "1. çeyrekte 70k indirme",
+        "image": "/projects/skyline-media-mobile-app.svg",
+        "liveUrl": "/demo/skyline-media"
+      },
+      {
+        "slug": "bosporus-travel-ai-agent",
+        "client": "Bosporus Travel",
+        "industry": "Seyahat",
+        "service": "Yapay zekâ rezervasyon ajanı",
+        "year": "2025",
+        "outcome": "Sohbetlerin %63'ü AI ile çözüldü",
+        "image": "/projects/bosporus-travel-ai-agent.svg",
+        "liveUrl": "/demo/bosporus-travel"
+      },
+      {
+        "slug": "anatolia-hotel-booking",
+        "client": "Anatolia Hotel",
+        "industry": "Konaklama",
+        "service": "Rezervasyon motoru",
+        "year": "2025",
+        "outcome": "OTA komisyonu %22 düştü",
+        "image": "/projects/anatolia-hotel-booking.svg",
+        "liveUrl": "/demo/anatolia-hotel"
+      },
+      {
+        "slug": "konak-coffee-house",
+        "client": "Konak Coffee House",
+        "industry": "Yeme-içme",
+        "service": "Web sitesi + online sipariş",
+        "year": "2025",
+        "outcome": "Online siparişler gelirin %38'i",
+        "image": "/projects/konak-coffee-house.svg",
+        "liveUrl": "/demo/konak-coffee"
+      }
     ],
     "labels": {
       "industry": "Sektör",
       "service": "Hizmet",
       "year": "Yıl",
       "outcome": "Sonuç",
-      "viewCase": "Vakaya bak →"
+      "viewCase": "Vakaya bak →",
+      "viewLive": "Siteyi aç →"
     }
   },
   "useCase": {
@@ -209,7 +451,8 @@
         "stack": "Next.js · Supabase · Vercel · DeepL",
         "timeline": "5 hafta",
         "outcome": "Baskı maliyeti sıfıra indi. Bahşiş payı %11 arttı. Mahalledeki iki restoran platformu lisanslamak istedi.",
-        "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp"
+        "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
+        "liveUrl": "/demo/lavinia-bistro"
       },
       "rain-group-ecommerce": {
         "title": "Shopify + Meta Ads — bir çeyrek boyunca ROAS 3,4×",
@@ -222,7 +465,8 @@
         "stack": "Shopify · Liquid · Meta Conversion API · Figma",
         "timeline": "6 hafta yapım + sürekli",
         "outcome": "ROAS 1. çeyrek boyunca 3,4× kaldı. Yeni oturumların %28'i e-postaya yakalandı. Ortalama sepet %17 yükseldi.",
-        "image": "/portfolio-screenshots/rain-group-ecommerce.webp"
+        "image": "/portfolio-screenshots/rain-group-ecommerce.webp",
+        "liveUrl": "https://raingroup.com.tr"
       },
       "drsevim-beauty-clinic": {
         "title": "Gerçekten randevu alan bir klinik sitesi",
@@ -235,7 +479,8 @@
         "stack": "Next.js · iyzico · Twilio · Resend",
         "timeline": "4 hafta",
         "outcome": "İlk çeyrekte +%38 randevu. Onay süresi 4 saatten 5 dakikanın altına indi. DM'ler tekrar DM olabildi.",
-        "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp"
+        "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
+        "liveUrl": "https://drsevim.com"
       },
       "tp-thermoplast-b2b": {
         "title": "Altı pazarın canlı ihracat verisi, tek pano",
@@ -248,7 +493,8 @@
         "stack": "PostgreSQL · Airbyte · Metabase · GitHub Actions",
         "timeline": "7 hafta",
         "outcome": "Altı pazar canlı. Karar döngüsü 7 günden ertesi sabaha indi. İlk ayın verisiyle iki ürün yeniden fiyatlandı.",
-        "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp"
+        "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
+        "liveUrl": "https://tpthermoplast.com"
       },
       "eduturkia-platform": {
         "title": "%60 daha fazla aday getiren öğrenci platformu",
@@ -261,7 +507,8 @@
         "stack": "Next.js · Sanity · Cloudflare R2 · Resend",
         "timeline": "8 hafta",
         "outcome": "1. çeyrekte +%60 organik trafik. Başvuru tamamlama %24'ten %51'e çıktı. 3 Türk eğitim teknolojisi listesinde yer aldı.",
-        "image": "/portfolio-screenshots/eduturkia-platform.webp"
+        "image": "/portfolio-screenshots/eduturkia-platform.webp",
+        "liveUrl": "https://eduturkia.com"
       },
       "clown3d-creative-studio": {
         "title": "Adına yaraşır bir yaratıcı stüdyo portfolyosu",
@@ -274,7 +521,8 @@
         "stack": "Next.js · React Three Fiber · Mux · Sanity",
         "timeline": "6 hafta",
         "outcome": "Lansmandan iki hafta sonra Awwwards'ta yer aldı. Bir ay içinde iki yeni retainer müşteri.",
-        "image": "/portfolio-screenshots/clown3d-creative-studio.webp"
+        "image": "/portfolio-screenshots/clown3d-creative-studio.webp",
+        "liveUrl": "https://clown3d.com"
       },
       "ataravci-law-firm": {
         "title": "Bir hukuk bürosu sitesi + sessiz bir cloud geçişi",
@@ -287,7 +535,8 @@
         "stack": "Next.js · AWS (RDS · S3 · EC2) · Cloudflare",
         "timeline": "5 hafta",
         "outcome": "Site bir saniyenin altında açılıyor. Geçiş iki hafta sonunda, kesintisiz bitti. Hosting + ops faturası ayda 3.400 € düştü.",
-        "image": "/portfolio-screenshots/ataravci-law-firm.webp"
+        "image": "/portfolio-screenshots/ataravci-law-firm.webp",
+        "liveUrl": "https://ataravci.com.tr"
       },
       "novahealth-cloud-migration": {
         "title": "Bir klinik grubunu tek bir talebi düşürmeden AWS'ye almak",
@@ -300,7 +549,8 @@
         "stack": "AWS · ECS · RDS · CloudFront · Sentry",
         "timeline": "4 hafta",
         "outcome": "1. çeyrekte %99,97 uptime. Geçişte sıfır randevu kaybı. Kurtarma hedefi 'dua et'ten 15 dakikaya indi.",
-        "image": "/projects/novahealth-cloud-migration.svg"
+        "image": "/projects/novahealth-cloud-migration.svg",
+        "liveUrl": "/demo/nova-health"
       },
       "marmara-foods-google-ads": {
         "title": "Daha küçük, daha keskin bir hesapla CAC'i %41 düşürmek",
@@ -313,7 +563,8 @@
         "stack": "Google Ads · GA4 · Next.js · Vercel",
         "timeline": "3 hafta + sürekli",
         "outcome": "CAC %41 düştü. Harcama %30 azaldı, gelir önce sabit kaldı, ikinci ayda %14 arttı.",
-        "image": "/projects/marmara-foods-google-ads.svg"
+        "image": "/projects/marmara-foods-google-ads.svg",
+        "liveUrl": "/demo/marmara-foods"
       },
       "skyline-media-mobile-app": {
         "title": "12 haftada teslim edilen iOS + Android medya uygulaması",
@@ -326,7 +577,8 @@
         "stack": "React Native · Expo · Supabase · OneSignal",
         "timeline": "12 hafta",
         "outcome": "İlk çeyrekte 70k indirme. iOS'ta 4,7★, Android'de 4,6★. Ortalama oturum 14 dakika.",
-        "image": "/projects/skyline-media-mobile-app.svg"
+        "image": "/projects/skyline-media-mobile-app.svg",
+        "liveUrl": "/demo/skyline-media"
       },
       "bosporus-travel-ai-agent": {
         "title": "Üç dilde tur satan bir yapay zekâ ajanı",
@@ -339,7 +591,8 @@
         "stack": "Anthropic Claude · WhatsApp Business API · Supabase",
         "timeline": "5 hafta",
         "outcome": "Sohbetlerin %63'ü ajan tarafından çözüldü. Yanıt süresi 4 saatten 2 dakikanın altına indi. Ekip artık sadece ilginç soruları yanıtlıyor.",
-        "image": "/projects/bosporus-travel-ai-agent.svg"
+        "image": "/projects/bosporus-travel-ai-agent.svg",
+        "liveUrl": "/demo/bosporus-travel"
       },
       "anatolia-hotel-booking": {
         "title": "OTA komisyonunu kesen bir doğrudan rezervasyon motoru",
@@ -352,7 +605,22 @@
         "stack": "Next.js · iyzico · PMS API · Resend",
         "timeline": "6 hafta",
         "outcome": "Doğrudan rezervasyonlar 1. çeyrekte %34 arttı. OTA gelir payı %71'den %49'a düştü. Komisyondan kabaca %22 tasarruf.",
-        "image": "/projects/anatolia-hotel-booking.svg"
+        "image": "/projects/anatolia-hotel-booking.svg",
+        "liveUrl": "/demo/anatolia-hotel"
+      },
+      "konak-coffee-house": {
+        "title": "Kapılar açılmadan sipariş alan bir kahvecisitesi",
+        "client": "Konak Coffee House",
+        "industry": "Yeme-içme · İstanbul",
+        "service": "Web sitesi + online sipariş",
+        "year": "2025",
+        "problem": "Konak'ın sabah sırası kapının dışına taşıyordu. Sahibi, müdavimlerin yolda sipariş etmesini istedi — ama her hazır POS teklifi yazar kasayı değiştirmeyi gerektiriyordu, baristalar zaten kendi yazar kasalarını biliyordu.",
+        "approach": "Mevcut fiş yazıcısına yerel ağ üzerinden basan, 5 dakikalık aralıklarla teslim zamanları ayarlayan, baristaların kullandığı kısaltmalarla yazan bağımsız bir web sipariş katmanı. Yazar kasaya dokunmadı.",
+        "stack": "Next.js · Stripe · iyzico · IPP yazıcı · Vercel",
+        "timeline": "4 hafta",
+        "outcome": "Online siparişler hafta içi gelirin %38'i. Sabah servis süresi 4 dakika azaldı. POS akışında sıfır değişiklik.",
+        "image": "/projects/konak-coffee-house.svg",
+        "liveUrl": "/demo/konak-coffee"
       }
     }
   },
@@ -374,10 +642,22 @@
     "values": {
       "heading": "Nasıl çalışıyoruz",
       "items": [
-        { "title": "Yap, sat değil", "body": "Sunum yan ürün, ürün değil." },
-        { "title": "Tasarım + mühendislik tek masada", "body": "Aynı zihin ekranı çizer, ekranı çizen kodu yazar." },
-        { "title": "48 saatte teklif", "body": "İlk görüşmeden sonra iki iş günü içinde sabit fiyat alırsınız." },
-        { "title": "İstediğinizde durdurun", "body": "Her projenin haftalık 'durdur' saati var. Almadığınız işin parasını ödemeden bitirin." }
+        {
+          "title": "Yap, sat değil",
+          "body": "Sunum yan ürün, ürün değil."
+        },
+        {
+          "title": "Tasarım + mühendislik tek masada",
+          "body": "Aynı zihin ekranı çizer, ekranı çizen kodu yazar."
+        },
+        {
+          "title": "48 saatte teklif",
+          "body": "İlk görüşmeden sonra iki iş günü içinde sabit fiyat alırsınız."
+        },
+        {
+          "title": "İstediğinizde durdurun",
+          "body": "Her projenin haftalık 'durdur' saati var. Almadığınız işin parasını ödemeden bitirin."
+        }
       ]
     }
   },
@@ -388,10 +668,26 @@
       "sub": "WhatsApp en hızlı kanal. Çalışma saatlerinde, genelde iki saat içinde yanıtlıyoruz."
     },
     "channels": {
-      "whatsapp": { "label": "WhatsApp", "value": "+90 532 336 00 51", "note": "En hızlı yanıt, çalışma saatleri." },
-      "email": { "label": "E-posta", "value": "hello@velkina.com", "note": "Uzun briefler ve dosya ekleri için." },
-      "phone": { "label": "Telefon", "value": "+90 532 336 00 51", "note": "09:00–19:00 GMT+3 arası açıyoruz." },
-      "schedule": { "label": "Görüşme ayarla", "value": "Saat seç", "note": "Bir kurucuyla cal.com üzerinden 20 dakika." }
+      "whatsapp": {
+        "label": "WhatsApp",
+        "value": "+90 532 336 00 51",
+        "note": "En hızlı yanıt, çalışma saatleri."
+      },
+      "email": {
+        "label": "E-posta",
+        "value": "hello@velkina.com",
+        "note": "Uzun briefler ve dosya ekleri için."
+      },
+      "phone": {
+        "label": "Telefon",
+        "value": "+90 532 336 00 51",
+        "note": "09:00–19:00 GMT+3 arası açıyoruz."
+      },
+      "schedule": {
+        "label": "Görüşme ayarla",
+        "value": "Saat seç",
+        "note": "Bir kurucuyla cal.com üzerinden 20 dakika."
+      }
     },
     "form": {
       "heading": "Veya buradan yazın",
@@ -399,7 +695,13 @@
       "company": "Şirket",
       "email": "E-posta",
       "budget": "Tahmini bütçe",
-      "budgetOptions": ["5.000 € altı", "5.000 € – 15.000 €", "15.000 € – 40.000 €", "40.000 € üstü", "Henüz emin değilim"],
+      "budgetOptions": [
+        "5.000 € altı",
+        "5.000 € – 15.000 €",
+        "15.000 € – 40.000 €",
+        "40.000 € üstü",
+        "Henüz emin değilim"
+      ],
       "message": "Ne kurmak istediğinizi yazın",
       "submit": "Mesajı yolla",
       "note": "Bu formu bülten için kullanmıyoruz. Yalnızca birimiz okuyor ve yanıtlıyor."
@@ -407,8 +709,14 @@
     "office": {
       "heading": "Ofisler",
       "items": [
-        { "city": "İstanbul", "address": "Üsküdar, İstanbul 34660, TR" },
-        { "city": "Bükreş", "address": "Calea Victoriei, Sector 1, Bükreş, RO" }
+        {
+          "city": "İstanbul",
+          "address": "Üsküdar, İstanbul 34660, TR"
+        },
+        {
+          "city": "Bükreş",
+          "address": "Calea Victoriei, Sector 1, Bükreş, RO"
+        }
       ]
     }
   },

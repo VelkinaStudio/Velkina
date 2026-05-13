@@ -11,7 +11,7 @@ const nextConfig = {
       { source: '/:locale(en|tr|ro)/blog', destination: '/:locale', permanent: false },
       { source: '/:locale(en|tr|ro)/blog/:slug', destination: '/:locale', permanent: false },
       { source: '/:locale(en|tr|ro)/customer-agent', destination: '/:locale/services#automation', permanent: true },
-      { source: '/:locale(en|tr|ro)/demo/qr-menu', destination: '/:locale/work/lavinia-bistro-qr-menu', permanent: false }
+      { source: '/:locale(en|tr|ro)/demo/qr-menu', destination: '/demo/lavinia-bistro', permanent: false }
     ];
   }
 };

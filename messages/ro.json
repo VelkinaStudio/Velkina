@@ -29,7 +29,13 @@
       "we": "Noi",
       "verb": "construim",
       "verbItalic": "livrăm",
-      "objects": ["website-uri.", "e-commerce.", "aplicații mobile.", "agenți AI.", "interfețe."],
+      "objects": [
+        "website-uri.",
+        "e-commerce.",
+        "aplicații mobile.",
+        "agenți AI.",
+        "interfețe."
+      ],
       "tag": "design + inginerie",
       "primaryCta": "Începe un proiect",
       "secondaryCta": "Vezi proiectele"
@@ -39,12 +45,48 @@
       "headingLead": "Noi",
       "headingItalic": "am făcut asta.",
       "items": [
-        { "date": "2026-05", "client": "Lavinia Bistro", "kind": "Platformă meniu QR", "outcome": "Amortizat în 8 săptămâni", "status": "delivered" },
-        { "date": "2026-04", "client": "Rain Group", "kind": "Shopify + Meta Ads", "outcome": "ROAS 3,4× susținut", "status": "active" },
-        { "date": "2026-04", "client": "Nova Health", "kind": "Migrare AWS", "outcome": "99,97% uptime", "status": "active" },
-        { "date": "2026-03", "client": "EduTurkia", "kind": "Platformă studenți", "outcome": "+60% organic", "status": "delivered" },
-        { "date": "2026-03", "client": "Atar Avcı", "kind": "Migrare cloud", "outcome": "Hosting −3,4 mii €/lună", "status": "delivered" },
-        { "date": "2026-02", "client": "TP Thermoplast", "kind": "Pipeline date B2B", "outcome": "Live în 6 piețe", "status": "delivered" }
+        {
+          "date": "2026-05",
+          "client": "Lavinia Bistro",
+          "kind": "Platformă meniu QR",
+          "outcome": "Amortizat în 8 săptămâni",
+          "status": "delivered"
+        },
+        {
+          "date": "2026-04",
+          "client": "Rain Group",
+          "kind": "Shopify + Meta Ads",
+          "outcome": "ROAS 3,4× susținut",
+          "status": "active"
+        },
+        {
+          "date": "2026-04",
+          "client": "Nova Health",
+          "kind": "Migrare AWS",
+          "outcome": "99,97% uptime",
+          "status": "active"
+        },
+        {
+          "date": "2026-03",
+          "client": "EduTurkia",
+          "kind": "Platformă studenți",
+          "outcome": "+60% organic",
+          "status": "delivered"
+        },
+        {
+          "date": "2026-03",
+          "client": "Atar Avcı",
+          "kind": "Migrare cloud",
+          "outcome": "Hosting −3,4 mii €/lună",
+          "status": "delivered"
+        },
+        {
+          "date": "2026-02",
+          "client": "TP Thermoplast",
+          "kind": "Pipeline date B2B",
+          "outcome": "Live în 6 piețe",
+          "status": "delivered"
+        }
       ],
       "seeAll": "Toate proiectele →"
     },
@@ -53,11 +95,31 @@
       "headingLead": "Noi",
       "headingItalic": "facem asta.",
       "items": [
-        { "id": "websites", "title": "Website-uri", "line": "Rapide, accesibile, cu personalitate." },
-        { "id": "ecommerce", "title": "E-commerce", "line": "Shopify și headless. Vinde pagină cu pagină." },
-        { "id": "mobile", "title": "Aplicații mobile", "line": "iOS, Android. Publicate în magazine." },
-        { "id": "automation", "title": "Agenți AI", "line": "Suport multilingv, copiloți, pipeline-uri." },
-        { "id": "growth", "title": "Reclame & creștere", "line": "Făcute de oamenii care construiesc pagina." }
+        {
+          "id": "websites",
+          "title": "Website-uri",
+          "line": "Rapide, accesibile, cu personalitate."
+        },
+        {
+          "id": "ecommerce",
+          "title": "E-commerce",
+          "line": "Shopify și headless. Vinde pagină cu pagină."
+        },
+        {
+          "id": "mobile",
+          "title": "Aplicații mobile",
+          "line": "iOS, Android. Publicate în magazine."
+        },
+        {
+          "id": "automation",
+          "title": "Agenți AI",
+          "line": "Suport multilingv, copiloți, pipeline-uri."
+        },
+        {
+          "id": "growth",
+          "title": "Reclame & creștere",
+          "line": "Făcute de oamenii care construiesc pagina."
+        }
       ],
       "cta": "Fiecare serviciu →"
     },
@@ -66,20 +128,51 @@
       "headingLead": "Așa",
       "headingItalic": "merge.",
       "items": [
-        { "n": "01", "title": "Vorbim", "desc": "Douăzeci de minute. Îți spunem dacă te putem ajuta. Dacă nu, spunem direct." },
-        { "n": "02", "title": "Planificăm", "desc": "După 48 de ore: scop, calendar, cine e pe proiect." },
-        { "n": "03", "title": "Construim", "desc": "Progres săptămânal pe un URL real. Oprești oricând." },
-        { "n": "04", "title": "Livrăm", "desc": "Predăm, îți instruim echipa, rămânem disponibili." }
+        {
+          "n": "01",
+          "title": "Vorbim",
+          "desc": "Douăzeci de minute. Îți spunem dacă te putem ajuta. Dacă nu, spunem direct."
+        },
+        {
+          "n": "02",
+          "title": "Planificăm",
+          "desc": "După 48 de ore: scop, calendar, cine e pe proiect."
+        },
+        {
+          "n": "03",
+          "title": "Construim",
+          "desc": "Progres săptămânal pe un URL real. Oprești oricând."
+        },
+        {
+          "n": "04",
+          "title": "Livrăm",
+          "desc": "Predăm, îți instruim echipa, rămânem disponibili."
+        }
       ]
     },
     "faq": {
       "eyebrow": "Întrebări",
       "items": [
-        { "q": "Cât durează?", "a": "Site-uri: 3–5 săptămâni. E-commerce: 5–8. Aplicații mobile: 8–14. Îți dăm un calendar, nu o estimare." },
-        { "q": "Lucrați în engleză, turcă și română?", "a": "În toate trei. Ședințele în oricare preferi." },
-        { "q": "Puteți prelua un proiect început?", "a": "De cele mai multe ori, da. Audit de 90 de minute pe codebase, apoi plan de recuperare." },
-        { "q": "Faceți doar proiecte noi?", "a": "Nu. Jumătate din munca noastră e să salvăm sau să reconstruim ce a început altcineva." },
-        { "q": "Suport după lansare?", "a": "Majoritatea clienților rămân pe un retainer lunar. Opțional, niciodată obligatoriu." }
+        {
+          "q": "Cât durează?",
+          "a": "Site-uri: 3–5 săptămâni. E-commerce: 5–8. Aplicații mobile: 8–14. Îți dăm un calendar, nu o estimare."
+        },
+        {
+          "q": "Lucrați în engleză, turcă și română?",
+          "a": "În toate trei. Ședințele în oricare preferi."
+        },
+        {
+          "q": "Puteți prelua un proiect început?",
+          "a": "De cele mai multe ori, da. Audit de 90 de minute pe codebase, apoi plan de recuperare."
+        },
+        {
+          "q": "Faceți doar proiecte noi?",
+          "a": "Nu. Jumătate din munca noastră e să salvăm sau să reconstruim ce a început altcineva."
+        },
+        {
+          "q": "Suport după lansare?",
+          "a": "Majoritatea clienților rămân pe un retainer lunar. Opțional, niciodată obligatoriu."
+        }
       ]
     },
     "cta": {
@@ -104,7 +197,13 @@
         "title": "Website-uri & aplicații web",
         "tagline": "Rapide, accesibile, ușor de editat.",
         "what": "Site-uri de marketing, instrumente interne, dashboard-uri pentru clienți, sisteme de rezervări. Construite pe Next.js sau Astro. Mobile-first. Lighthouse 90+ în ziua lansării.",
-        "deliverables": ["Workshop de design + conținut", "Bibliotecă de componente", "CMS în care echipa ta editează copy-ul", "Analytics + bază SEO", "30 de zile suport post-lansare"],
+        "deliverables": [
+          "Workshop de design + conținut",
+          "Bibliotecă de componente",
+          "CMS în care echipa ta editează copy-ul",
+          "Analytics + bază SEO",
+          "30 de zile suport post-lansare"
+        ],
         "timeline": "3–5 săptămâni",
         "from": "de la 3.500 €",
         "caseSlug": "eduturkia-platform"
@@ -114,7 +213,13 @@
         "title": "E-commerce",
         "tagline": "Magazine pe care echipa ta le poate administra.",
         "what": "Shopify, Shopify headless sau magazine personalizate pe Stripe. Punem accent pe viteză, checkout și fluxul de back-office — nu pe partea care câștigă premii de design.",
-        "deliverables": ["Temă + secțiuni personalizate", "Import produse + script", "Configurare Stripe / iyzico / plăți", "Fluxuri email + coș abandonat", "Video de predare"],
+        "deliverables": [
+          "Temă + secțiuni personalizate",
+          "Import produse + script",
+          "Configurare Stripe / iyzico / plăți",
+          "Fluxuri email + coș abandonat",
+          "Video de predare"
+        ],
         "timeline": "5–8 săptămâni",
         "from": "de la 6.000 €",
         "caseSlug": "rain-group-ecommerce"
@@ -124,7 +229,13 @@
         "title": "Aplicații mobile",
         "tagline": "Publicate în store, nu uitate în repo.",
         "what": "iOS / Android native sau React Native, în funcție de brief. Ne ocupăm de submission în store, semnături, certificate și partea plictisitoare.",
-        "deliverables": ["Flow UX + prototip", "Build native sau RN", "Push, deep links, analytics", "Submission Apple + Google", "Monitorizare crash + release"],
+        "deliverables": [
+          "Flow UX + prototip",
+          "Build native sau RN",
+          "Push, deep links, analytics",
+          "Submission Apple + Google",
+          "Monitorizare crash + release"
+        ],
         "timeline": "8–14 săptămâni",
         "from": "de la 18.000 €",
         "caseSlug": "drsevim-beauty-clinic"
@@ -134,7 +245,13 @@
         "title": "Automatizări AI",
         "tagline": "Agenți care lucrează în afacerea ta, nu pe scenă.",
         "what": "Agenți de customer service, copiloți interni, pipeline-uri de date, fluxuri de documente. Multilingv (minim EN/TR/RO). Alegem modelul, datele rămân la tine.",
-        "deliverables": ["Scoping caz de utilizare", "Design prompt + tool-uri", "Integrare cu CRM / Shopify / email", "Dashboard de eval + monitorizare", "Retainer lunar (opțional)"],
+        "deliverables": [
+          "Scoping caz de utilizare",
+          "Design prompt + tool-uri",
+          "Integrare cu CRM / Shopify / email",
+          "Dashboard de eval + monitorizare",
+          "Retainer lunar (opțional)"
+        ],
         "timeline": "2–6 săptămâni",
         "from": "de la 4.500 €",
         "caseSlug": "bosporus-travel-ai-agent"
@@ -144,7 +261,13 @@
         "title": "Reclame & creștere",
         "tagline": "Făcute de oamenii care construiesc și site-ul.",
         "what": "Google Ads, Meta Ads, SEO de bază. Nu acceptăm un proiect de growth dacă nu credem că pagina convertește. Dacă nu, reparăm întâi pagina.",
-        "deliverables": ["Audit + verificare landing page", "Conturi de reclame + tracking", "Sistem creativ (3–5 variante)", "Raport săptămânal de citit în 2 min", "Review trimestrial"],
+        "deliverables": [
+          "Audit + verificare landing page",
+          "Conturi de reclame + tracking",
+          "Sistem creativ (3–5 variante)",
+          "Raport săptămânal de citit în 2 min",
+          "Review trimestrial"
+        ],
         "timeline": "Continuu, lunar",
         "from": "de la 1.200 € / lună",
         "caseSlug": "rain-group-ecommerce"
@@ -166,25 +289,144 @@
       "sub": "Fiecare client e real. Fiecare screenshot e site-ul live. Datele sunt cele de lansare."
     },
     "items": [
-      { "slug": "lavinia-bistro-qr-menu", "client": "Lavinia Bistro", "industry": "HoReCa", "service": "Platformă meniu QR", "year": "2026", "outcome": "Amortizat în 2 luni", "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp" },
-      { "slug": "rain-group-ecommerce", "client": "Rain Group", "industry": "Modă e-commerce", "service": "Shopify + Meta Ads", "year": "2026", "outcome": "ROAS 3,4× susținut", "image": "/portfolio-screenshots/rain-group-ecommerce.webp" },
-      { "slug": "drsevim-beauty-clinic", "client": "Dr. Sevim Clinic", "industry": "Sănătate", "service": "Site + rezervări", "year": "2026", "outcome": "+38% programări, T1", "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp" },
-      { "slug": "tp-thermoplast-b2b", "client": "TP Thermoplast", "industry": "Producție B2B", "service": "Pipeline date export", "year": "2026", "outcome": "Live în 6 piețe", "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp" },
-      { "slug": "eduturkia-platform", "client": "EduTurkia", "industry": "Educație", "service": "Platformă studenți", "year": "2026", "outcome": "+60% trafic organic", "image": "/portfolio-screenshots/eduturkia-platform.webp" },
-      { "slug": "clown3d-creative-studio", "client": "Clown3D", "industry": "Creativ", "service": "Site portfolio", "year": "2026", "outcome": "Pe Awwwards", "image": "/portfolio-screenshots/clown3d-creative-studio.webp" },
-      { "slug": "ataravci-law-firm", "client": "Atar Avcı Law", "industry": "Juridic", "service": "Site + migrare cloud", "year": "2026", "outcome": "3,4 mii € / lună economisiți", "image": "/portfolio-screenshots/ataravci-law-firm.webp" },
-      { "slug": "novahealth-cloud-migration", "client": "Nova Health", "industry": "Sănătate", "service": "Migrare AWS", "year": "2026", "outcome": "99,97% uptime T1", "image": "/projects/novahealth-cloud-migration.svg" },
-      { "slug": "marmara-foods-google-ads", "client": "Marmara Foods", "industry": "FMCG", "service": "Google Ads", "year": "2025", "outcome": "CAC −41%", "image": "/projects/marmara-foods-google-ads.svg" },
-      { "slug": "skyline-media-mobile-app", "client": "Skyline Media", "industry": "Media", "service": "Aplicație iOS + Android", "year": "2025", "outcome": "70k instalări T1", "image": "/projects/skyline-media-mobile-app.svg" },
-      { "slug": "bosporus-travel-ai-agent", "client": "Bosporus Travel", "industry": "Turism", "service": "Agent AI de rezervări", "year": "2025", "outcome": "63% chat-uri rezolvate de AI", "image": "/projects/bosporus-travel-ai-agent.svg" },
-      { "slug": "anatolia-hotel-booking", "client": "Anatolia Hotel", "industry": "HoReCa", "service": "Motor de rezervări", "year": "2025", "outcome": "Comisioane OTA −22%", "image": "/projects/anatolia-hotel-booking.svg" }
+      {
+        "slug": "lavinia-bistro-qr-menu",
+        "client": "Lavinia Bistro",
+        "industry": "HoReCa",
+        "service": "Platformă meniu QR",
+        "year": "2026",
+        "outcome": "Amortizat în 2 luni",
+        "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
+        "liveUrl": "/demo/lavinia-bistro"
+      },
+      {
+        "slug": "rain-group-ecommerce",
+        "client": "Rain Group",
+        "industry": "Modă e-commerce",
+        "service": "Shopify + Meta Ads",
+        "year": "2026",
+        "outcome": "ROAS 3,4× susținut",
+        "image": "/portfolio-screenshots/rain-group-ecommerce.webp",
+        "liveUrl": "https://raingroup.com.tr"
+      },
+      {
+        "slug": "drsevim-beauty-clinic",
+        "client": "Dr. Sevim Clinic",
+        "industry": "Sănătate",
+        "service": "Site + rezervări",
+        "year": "2026",
+        "outcome": "+38% programări, T1",
+        "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
+        "liveUrl": "https://drsevim.com"
+      },
+      {
+        "slug": "tp-thermoplast-b2b",
+        "client": "TP Thermoplast",
+        "industry": "Producție B2B",
+        "service": "Pipeline date export",
+        "year": "2026",
+        "outcome": "Live în 6 piețe",
+        "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
+        "liveUrl": "https://tpthermoplast.com"
+      },
+      {
+        "slug": "eduturkia-platform",
+        "client": "EduTurkia",
+        "industry": "Educație",
+        "service": "Platformă studenți",
+        "year": "2026",
+        "outcome": "+60% trafic organic",
+        "image": "/portfolio-screenshots/eduturkia-platform.webp",
+        "liveUrl": "https://eduturkia.com"
+      },
+      {
+        "slug": "clown3d-creative-studio",
+        "client": "Clown3D",
+        "industry": "Creativ",
+        "service": "Site portfolio",
+        "year": "2026",
+        "outcome": "Pe Awwwards",
+        "image": "/portfolio-screenshots/clown3d-creative-studio.webp",
+        "liveUrl": "https://clown3d.com"
+      },
+      {
+        "slug": "ataravci-law-firm",
+        "client": "Atar Avcı Law",
+        "industry": "Juridic",
+        "service": "Site + migrare cloud",
+        "year": "2026",
+        "outcome": "3,4 mii € / lună economisiți",
+        "image": "/portfolio-screenshots/ataravci-law-firm.webp",
+        "liveUrl": "https://ataravci.com.tr"
+      },
+      {
+        "slug": "novahealth-cloud-migration",
+        "client": "Nova Health",
+        "industry": "Sănătate",
+        "service": "Migrare AWS",
+        "year": "2026",
+        "outcome": "99,97% uptime T1",
+        "image": "/projects/novahealth-cloud-migration.svg",
+        "liveUrl": "/demo/nova-health"
+      },
+      {
+        "slug": "marmara-foods-google-ads",
+        "client": "Marmara Foods",
+        "industry": "FMCG",
+        "service": "Google Ads",
+        "year": "2025",
+        "outcome": "CAC −41%",
+        "image": "/projects/marmara-foods-google-ads.svg",
+        "liveUrl": "/demo/marmara-foods"
+      },
+      {
+        "slug": "skyline-media-mobile-app",
+        "client": "Skyline Media",
+        "industry": "Media",
+        "service": "Aplicație iOS + Android",
+        "year": "2025",
+        "outcome": "70k instalări T1",
+        "image": "/projects/skyline-media-mobile-app.svg",
+        "liveUrl": "/demo/skyline-media"
+      },
+      {
+        "slug": "bosporus-travel-ai-agent",
+        "client": "Bosporus Travel",
+        "industry": "Turism",
+        "service": "Agent AI de rezervări",
+        "year": "2025",
+        "outcome": "63% chat-uri rezolvate de AI",
+        "image": "/projects/bosporus-travel-ai-agent.svg",
+        "liveUrl": "/demo/bosporus-travel"
+      },
+      {
+        "slug": "anatolia-hotel-booking",
+        "client": "Anatolia Hotel",
+        "industry": "HoReCa",
+        "service": "Motor de rezervări",
+        "year": "2025",
+        "outcome": "Comisioane OTA −22%",
+        "image": "/projects/anatolia-hotel-booking.svg",
+        "liveUrl": "/demo/anatolia-hotel"
+      },
+      {
+        "slug": "konak-coffee-house",
+        "client": "Konak Coffee House",
+        "industry": "HoReCa",
+        "service": "Site + comandă online",
+        "year": "2025",
+        "outcome": "Comenzile online 38% din venit",
+        "image": "/projects/konak-coffee-house.svg",
+        "liveUrl": "/demo/konak-coffee"
+      }
     ],
     "labels": {
       "industry": "Industrie",
       "service": "Serviciu",
       "year": "An",
       "outcome": "Rezultat",
-      "viewCase": "Vezi cazul →"
+      "viewCase": "Vezi cazul →",
+      "viewLive": "Vezi live →"
     }
   },
   "useCase": {
@@ -209,7 +451,8 @@
         "stack": "Next.js · Supabase · Vercel · DeepL",
         "timeline": "5 săptămâni",
         "outcome": "Costurile cu print au dispărut. Share-ul de bacșiș a urcat 11%. Două restaurante din zonă au cerut să licențieze platforma.",
-        "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp"
+        "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
+        "liveUrl": "/demo/lavinia-bistro"
       },
       "rain-group-ecommerce": {
         "title": "Shopify + Meta Ads — ROAS 3,4× pe un trimestru întreg",
@@ -222,7 +465,8 @@
         "stack": "Shopify · Liquid · Meta Conversion API · Figma",
         "timeline": "6 săptămâni + continuu",
         "outcome": "ROAS-ul s-a menținut la 3,4× tot T1. Email-ul a capturat 28% din sesiuni noi. Coșul mediu +17%.",
-        "image": "/portfolio-screenshots/rain-group-ecommerce.webp"
+        "image": "/portfolio-screenshots/rain-group-ecommerce.webp",
+        "liveUrl": "https://raingroup.com.tr"
       },
       "drsevim-beauty-clinic": {
         "title": "Un site de clinică care chiar programează",
@@ -235,7 +479,8 @@
         "stack": "Next.js · iyzico · Twilio · Resend",
         "timeline": "4 săptămâni",
         "outcome": "+38% programări în primul trimestru. Timpul până la confirmare: de la 4 ore la sub 5 minute. DM-urile au redevenit DM-uri.",
-        "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp"
+        "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
+        "liveUrl": "https://drsevim.com"
       },
       "tp-thermoplast-b2b": {
         "title": "Date de export live, șase piețe, un singur dashboard",
@@ -248,7 +493,8 @@
         "stack": "PostgreSQL · Airbyte · Metabase · GitHub Actions",
         "timeline": "7 săptămâni",
         "outcome": "Toate cele șase piețe live. Ciclul de decizie de la 7 zile la dimineața următoare. Două produse repreciate pe baza primei luni de date.",
-        "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp"
+        "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
+        "liveUrl": "https://tpthermoplast.com"
       },
       "eduturkia-platform": {
         "title": "O platformă pentru studenți care a adus 60% mai mulți aplicanți",
@@ -261,7 +507,8 @@
         "stack": "Next.js · Sanity · Cloudflare R2 · Resend",
         "timeline": "8 săptămâni",
         "outcome": "+60% trafic organic T1. Rata de completare a aplicării de la 24% la 51%. Apariții în 3 listări ed-tech din Turcia.",
-        "image": "/portfolio-screenshots/eduturkia-platform.webp"
+        "image": "/portfolio-screenshots/eduturkia-platform.webp",
+        "liveUrl": "https://eduturkia.com"
       },
       "clown3d-creative-studio": {
         "title": "Un site de portfolio pe măsura unui studio creativ",
@@ -274,7 +521,8 @@
         "stack": "Next.js · React Three Fiber · Mux · Sanity",
         "timeline": "6 săptămâni",
         "outcome": "Pe Awwwards la două săptămâni de la lansare. Doi clienți noi pe retainer într-o lună.",
-        "image": "/portfolio-screenshots/clown3d-creative-studio.webp"
+        "image": "/portfolio-screenshots/clown3d-creative-studio.webp",
+        "liveUrl": "https://clown3d.com"
       },
       "ataravci-law-firm": {
         "title": "Un site de cabinet de avocatură + o migrare cloud făcută în liniște",
@@ -287,7 +535,8 @@
         "stack": "Next.js · AWS (RDS · S3 · EC2) · Cloudflare",
         "timeline": "5 săptămâni",
         "outcome": "Site-ul se încarcă sub o secundă. Migrarea s-a încheiat în două weekend-uri, fără downtime. Factura de hosting + ops: 3.400 € / lună mai puțin.",
-        "image": "/portfolio-screenshots/ataravci-law-firm.webp"
+        "image": "/portfolio-screenshots/ataravci-law-firm.webp",
+        "liveUrl": "https://ataravci.com.tr"
       },
       "novahealth-cloud-migration": {
         "title": "O migrare AWS la un grup medical fără să pierdem o cerere",
@@ -300,7 +549,8 @@
         "stack": "AWS · ECS · RDS · CloudFront · Sentry",
         "timeline": "4 săptămâni",
         "outcome": "99,97% uptime T1. Zero programări pierdute la migrare. Timpul de recovery a scăzut de la „rugăciune” la 15 minute.",
-        "image": "/projects/novahealth-cloud-migration.svg"
+        "image": "/projects/novahealth-cloud-migration.svg",
+        "liveUrl": "/demo/nova-health"
       },
       "marmara-foods-google-ads": {
         "title": "CAC −41% cu un cont de reclame mai mic și mai ascuțit",
@@ -313,7 +563,8 @@
         "stack": "Google Ads · GA4 · Next.js · Vercel",
         "timeline": "3 săptămâni + continuu",
         "outcome": "CAC −41%. Cheltuiala −30%, venit plat în prima lună, +14% în luna a doua.",
-        "image": "/projects/marmara-foods-google-ads.svg"
+        "image": "/projects/marmara-foods-google-ads.svg",
+        "liveUrl": "/demo/marmara-foods"
       },
       "skyline-media-mobile-app": {
         "title": "O aplicație iOS + Android de media, livrată în 12 săptămâni",
@@ -326,7 +577,8 @@
         "stack": "React Native · Expo · Supabase · OneSignal",
         "timeline": "12 săptămâni",
         "outcome": "70k instalări în primul trimestru. 4,7★ pe iOS, 4,6★ pe Android. Sesiune medie 14 minute.",
-        "image": "/projects/skyline-media-mobile-app.svg"
+        "image": "/projects/skyline-media-mobile-app.svg",
+        "liveUrl": "/demo/skyline-media"
       },
       "bosporus-travel-ai-agent": {
         "title": "Un agent AI care vinde tururi în trei limbi",
@@ -339,7 +591,8 @@
         "stack": "Anthropic Claude · WhatsApp Business API · Supabase",
         "timeline": "5 săptămâni",
         "outcome": "63% din chat-uri rezolvate de agent. Timp de răspuns de la 4 ore la sub 2 minute. Echipa se ocupă acum doar de întrebările interesante.",
-        "image": "/projects/bosporus-travel-ai-agent.svg"
+        "image": "/projects/bosporus-travel-ai-agent.svg",
+        "liveUrl": "/demo/bosporus-travel"
       },
       "anatolia-hotel-booking": {
         "title": "Un motor de rezervări directe care taie comisioanele OTA",
@@ -352,7 +605,22 @@
         "stack": "Next.js · iyzico · API PMS · Resend",
         "timeline": "6 săptămâni",
         "outcome": "Rezervările directe +34% în primul trimestru. Ponderea OTA în venit a scăzut de la 71% la 49%. Economisiți aprox. 22% din comisioane.",
-        "image": "/projects/anatolia-hotel-booking.svg"
+        "image": "/projects/anatolia-hotel-booking.svg",
+        "liveUrl": "/demo/anatolia-hotel"
+      },
+      "konak-coffee-house": {
+        "title": "Un site de cafenea care ia comenzi înainte să se deschidă ușa",
+        "client": "Konak Coffee House",
+        "industry": "HoReCa · Istanbul",
+        "service": "Site + comandă online",
+        "year": "2025",
+        "problem": "Coada de dimineață a lui Konak se întindea pe stradă. Proprietarul voia ca habitueii să comande pe drum — dar fiecare ofertă de POS comercial cerea schimbarea casei, iar baristii știau deja casa.",
+        "approach": "Un strat de comandă web independent, care printează pe imprimanta fiscală existentă peste rețeaua locală, programează ridicări în sloturi de 5 minute și scrie aceeași prescurtare pe care o folosesc baristii. POS-ul nu se atinge.",
+        "stack": "Next.js · Stripe · iyzico · IPP printing · Vercel",
+        "timeline": "4 săptămâni",
+        "outcome": "Comenzile online reprezintă acum 38% din veniturile zilelor lucrătoare. Timpul mediu de servire dimineața a scăzut cu 4 minute. Zero modificări la fluxul POS.",
+        "image": "/projects/konak-coffee-house.svg",
+        "liveUrl": "/demo/konak-coffee"
       }
     }
   },
@@ -374,10 +642,22 @@
     "values": {
       "heading": "Cum lucrăm",
       "items": [
-        { "title": "Facem, nu pitch-uim", "body": "Prezentările sunt un efect secundar, nu produsul." },
-        { "title": "Design + inginerie la același birou", "body": "Aceeași minte desenează ecranul și scrie codul care îl desenează." },
-        { "title": "Ofertă în 48 de ore", "body": "După prima discuție primești o ofertă fixă în două zile lucrătoare." },
-        { "title": "Oprește oricând", "body": "Fiecare proiect are un „stop” săptămânal. Închei fără să plătești ce nu ai primit." }
+        {
+          "title": "Facem, nu pitch-uim",
+          "body": "Prezentările sunt un efect secundar, nu produsul."
+        },
+        {
+          "title": "Design + inginerie la același birou",
+          "body": "Aceeași minte desenează ecranul și scrie codul care îl desenează."
+        },
+        {
+          "title": "Ofertă în 48 de ore",
+          "body": "După prima discuție primești o ofertă fixă în două zile lucrătoare."
+        },
+        {
+          "title": "Oprește oricând",
+          "body": "Fiecare proiect are un „stop” săptămânal. Închei fără să plătești ce nu ai primit."
+        }
       ]
     }
   },
@@ -388,10 +668,26 @@
       "sub": "WhatsApp e cel mai rapid canal. Răspundem în program, de obicei sub două ore."
     },
     "channels": {
-      "whatsapp": { "label": "WhatsApp", "value": "+90 532 336 00 51", "note": "Cel mai rapid răspuns, în program." },
-      "email": { "label": "Email", "value": "hello@velkina.com", "note": "Pentru brief-uri lungi și atașamente." },
-      "phone": { "label": "Telefon", "value": "+90 532 336 00 51", "note": "Răspundem între 09:00–19:00 GMT+3." },
-      "schedule": { "label": "Programează o discuție", "value": "Alege un interval", "note": "Douăzeci de minute cu un fondator, pe cal.com." }
+      "whatsapp": {
+        "label": "WhatsApp",
+        "value": "+90 532 336 00 51",
+        "note": "Cel mai rapid răspuns, în program."
+      },
+      "email": {
+        "label": "Email",
+        "value": "hello@velkina.com",
+        "note": "Pentru brief-uri lungi și atașamente."
+      },
+      "phone": {
+        "label": "Telefon",
+        "value": "+90 532 336 00 51",
+        "note": "Răspundem între 09:00–19:00 GMT+3."
+      },
+      "schedule": {
+        "label": "Programează o discuție",
+        "value": "Alege un interval",
+        "note": "Douăzeci de minute cu un fondator, pe cal.com."
+      }
     },
     "form": {
       "heading": "Sau scrie-ne aici",
@@ -399,7 +695,13 @@
       "company": "Companie",
       "email": "Email",
       "budget": "Buget estimat",
-      "budgetOptions": ["Sub 5.000 €", "5.000 € – 15.000 €", "15.000 € – 40.000 €", "Peste 40.000 €", "Încă nu sunt sigur"],
+      "budgetOptions": [
+        "Sub 5.000 €",
+        "5.000 € – 15.000 €",
+        "15.000 € – 40.000 €",
+        "Peste 40.000 €",
+        "Încă nu sunt sigur"
+      ],
       "message": "Spune-ne ce vrei să construiești",
       "submit": "Trimite mesajul",
       "note": "Nu folosim acest formular pentru newsletter. Singurul lucru care se întâmplă e că unul dintre noi îl citește și răspunde."
@@ -407,8 +709,14 @@
     "office": {
       "heading": "Birouri",
       "items": [
-        { "city": "Istanbul", "address": "Üsküdar, Istanbul 34660, TR" },
-        { "city": "București", "address": "Calea Victoriei, Sector 1, București, RO" }
+        {
+          "city": "Istanbul",
+          "address": "Üsküdar, Istanbul 34660, TR"
+        },
+        {
+          "city": "București",
+          "address": "Calea Victoriei, Sector 1, București, RO"
+        }
       ]
     }
   },

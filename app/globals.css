@@ -202,6 +202,9 @@ body {
 .vk-ledger {
   border-top: 1px solid var(--vk-border);
 }
+.vk-ledger-row-wrap {
+  position: relative;
+}
 .vk-ledger-row {
   display: grid;
   grid-template-columns: minmax(70px, auto) 1fr;
@@ -209,10 +212,53 @@ body {
   gap: 0.25rem 1rem;
   padding: 1.125rem 0;
   border-bottom: 1px solid var(--vk-border);
-  transition: padding 220ms ease;
+  transition: padding 220ms ease, color 220ms ease;
 }
-.vk-ledger-row:hover {
+.vk-ledger-row-link {
+  text-decoration: none;
+  color: inherit;
+}
+.vk-ledger-row-link:hover {
   padding-inline-start: 0.5rem;
+  color: var(--vk-text);
+}
+.vk-ledger-live {
+  position: absolute;
+  right: 0;
+  top: 1.125rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--vk-text-dim);
+  transition: color 160ms ease;
+  text-decoration: none;
+  z-index: 2;
+  padding: 0.25rem 0;
+}
+.vk-ledger-live:hover {
+  color: var(--vk-text);
+}
+@media (min-width: 768px) {
+  .vk-ledger-live {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding-inline: 1rem;
+    background: var(--vk-bg);
+    border-left: 1px solid var(--vk-border);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 220ms ease, opacity 220ms ease, color 160ms ease;
+    pointer-events: none;
+  }
+  .vk-ledger-row-wrap:hover .vk-ledger-live {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
 @media (min-width: 768px) {
   .vk-ledger-row {
@@ -455,6 +501,24 @@ body {
 }
 .vk-service-title { font-weight: 600; font-size: 1.0625rem; }
 .vk-service-desc { color: var(--vk-text-muted); font-size: 0.92rem; line-height: 1.55; }
+
+/* ── Work card "Visit live" link ──────────────────────── */
+.vk-work-card {
+  display: flex;
+  flex-direction: column;
+}
+.vk-work-card-live {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vk-text-dim);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+.vk-work-card-live:hover { color: var(--vk-text); }
 
 /* ── Pill / chip ──────────────────────────────────────── */
 .vk-chip {

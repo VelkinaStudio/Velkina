@@ -9,6 +9,7 @@ type WorkItem = {
   year: string;
   outcome: string;
   image: string;
+  liveUrl?: string;
 };
 
 export default function WorkView({ messages, locale }: { messages: any; locale: Locale }) {
@@ -30,57 +31,69 @@ export default function WorkView({ messages, locale }: { messages: any; locale: 
 
       <section className="vk-section">
         <div className="vk-container">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 list-none p-0 m-0">
             {items.map((it, idx) => {
               const isReal = it.image.endsWith('.webp');
               const eager = idx < 6;
+              const isExternal = !!it.liveUrl && /^https?:/.test(it.liveUrl);
               return (
-                <Link
-                  key={it.slug}
-                  href={`/${locale}/work/${it.slug}`}
-                  className="group block"
-                  style={{textDecoration: 'none'}}
-                >
-                  <div
-                    className="aspect-[16/10] overflow-hidden rounded-lg relative"
-                    style={{
-                      background: isReal ? 'var(--vk-surface)' : 'linear-gradient(135deg, #1B1B22 0%, #131318 100%)',
-                      border: '1px solid var(--vk-border)'
-                    }}
+                <li key={it.slug} className="vk-work-card">
+                  <Link
+                    href={`/${locale}/work/${it.slug}`}
+                    className="group block"
+                    style={{textDecoration: 'none'}}
                   >
-                    {isReal ? (
-                      <img
-                        src={it.image}
-                        alt={`${it.client} — ${it.service}`}
-                        loading={eager ? 'eager' : 'lazy'}
-                        decoding="async"
-                        fetchPriority={eager ? 'high' : 'auto'}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex flex-col justify-between p-5">
-                        <div className="font-mono text-xs uppercase tracking-widest" style={{color: 'var(--vk-text-muted)'}}>
-                          {it.year} · {it.industry}
-                        </div>
-                        <div>
-                          <div className="font-heading text-xl" style={{lineHeight: 1.1, letterSpacing: '-0.02em'}}>
-                            {it.client}
+                    <div
+                      className="aspect-[16/10] overflow-hidden rounded-lg relative"
+                      style={{
+                        background: isReal ? 'var(--vk-surface)' : 'linear-gradient(135deg, #1B1B22 0%, #131318 100%)',
+                        border: '1px solid var(--vk-border)'
+                      }}
+                    >
+                      {isReal ? (
+                        <img
+                          src={it.image}
+                          alt={`${it.client} — ${it.service}`}
+                          loading={eager ? 'eager' : 'lazy'}
+                          decoding="async"
+                          fetchPriority={eager ? 'high' : 'auto'}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 flex flex-col justify-between p-5">
+                          <div className="font-mono text-xs uppercase tracking-widest" style={{color: 'var(--vk-text-muted)'}}>
+                            {it.year} · {it.industry}
                           </div>
-                          <div className="text-sm vk-muted mt-1">{it.service}</div>
+                          <div>
+                            <div className="font-heading text-xl" style={{lineHeight: 1.1, letterSpacing: '-0.02em'}}>
+                              {it.client}
+                            </div>
+                            <div className="text-sm vk-muted mt-1">{it.service}</div>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                  </div>
-                  <div className="mt-4 flex items-baseline justify-between gap-3">
-                    <div className="font-medium">{it.client}</div>
-                    <div className="font-mono text-xs uppercase tracking-widest" style={{color: 'var(--vk-text-dim)'}}>{it.year}</div>
-                  </div>
-                  <div className="text-sm vk-muted mt-1">{it.service} · {it.industry}</div>
-                  <div className="font-mono text-xs uppercase tracking-widest mt-2" style={{color: 'var(--vk-success)'}}>{it.outcome}</div>
-                </Link>
+                      )}
+                    </div>
+                    <div className="mt-4 flex items-baseline justify-between gap-3">
+                      <div className="font-medium">{it.client}</div>
+                      <div className="font-mono text-xs uppercase tracking-widest" style={{color: 'var(--vk-text-dim)'}}>{it.year}</div>
+                    </div>
+                    <div className="text-sm vk-muted mt-1">{it.service} · {it.industry}</div>
+                    <div className="font-mono text-xs uppercase tracking-widest mt-2" style={{color: 'var(--vk-success)'}}>{it.outcome}</div>
+                  </Link>
+                  {it.liveUrl && (
+                    <a
+                      href={it.liveUrl}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                      className="vk-work-card-live"
+                    >
+                      {labels.viewLive || 'Visit live →'}
+                    </a>
+                  )}
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
       </section>
     </div>

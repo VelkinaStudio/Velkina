@@ -29,7 +29,13 @@
       "we": "We",
       "verb": "build",
       "verbItalic": "ship",
-      "objects": ["websites.", "e-commerce.", "mobile apps.", "AI agents.", "interfaces."],
+      "objects": [
+        "websites.",
+        "e-commerce.",
+        "mobile apps.",
+        "AI agents.",
+        "interfaces."
+      ],
       "tag": "design + engineering",
       "primaryCta": "Start a project",
       "secondaryCta": "See the work"
@@ -39,12 +45,48 @@
       "headingLead": "We did",
       "headingItalic": "this.",
       "items": [
-        { "date": "2026-05", "client": "Lavinia Bistro", "kind": "QR menu platform", "outcome": "Paid for itself in 8 weeks", "status": "delivered" },
-        { "date": "2026-04", "client": "Rain Group", "kind": "Shopify + Meta Ads", "outcome": "ROAS 3.4× sustained", "status": "active" },
-        { "date": "2026-04", "client": "Nova Health", "kind": "AWS migration", "outcome": "99.97% uptime", "status": "active" },
-        { "date": "2026-03", "client": "EduTurkia", "kind": "Student platform", "outcome": "+60% organic", "status": "delivered" },
-        { "date": "2026-03", "client": "Atar Avcı", "kind": "Cloud migration", "outcome": "Hosting bill −€3.4k/mo", "status": "delivered" },
-        { "date": "2026-02", "client": "TP Thermoplast", "kind": "B2B data pipeline", "outcome": "Live across 6 markets", "status": "delivered" }
+        {
+          "date": "2026-05",
+          "client": "Lavinia Bistro",
+          "kind": "QR menu platform",
+          "outcome": "Paid for itself in 8 weeks",
+          "status": "delivered"
+        },
+        {
+          "date": "2026-04",
+          "client": "Rain Group",
+          "kind": "Shopify + Meta Ads",
+          "outcome": "ROAS 3.4× sustained",
+          "status": "active"
+        },
+        {
+          "date": "2026-04",
+          "client": "Nova Health",
+          "kind": "AWS migration",
+          "outcome": "99.97% uptime",
+          "status": "active"
+        },
+        {
+          "date": "2026-03",
+          "client": "EduTurkia",
+          "kind": "Student platform",
+          "outcome": "+60% organic",
+          "status": "delivered"
+        },
+        {
+          "date": "2026-03",
+          "client": "Atar Avcı",
+          "kind": "Cloud migration",
+          "outcome": "Hosting bill −€3.4k/mo",
+          "status": "delivered"
+        },
+        {
+          "date": "2026-02",
+          "client": "TP Thermoplast",
+          "kind": "B2B data pipeline",
+          "outcome": "Live across 6 markets",
+          "status": "delivered"
+        }
       ],
       "seeAll": "See all work →"
     },
@@ -53,11 +95,31 @@
       "headingLead": "We do",
       "headingItalic": "this.",
       "items": [
-        { "id": "websites", "title": "Websites", "line": "Fast, accessible, opinionated." },
-        { "id": "ecommerce", "title": "E-commerce", "line": "Shopify and headless. Sold by the page." },
-        { "id": "mobile", "title": "Mobile apps", "line": "iOS, Android. Shipped to the stores." },
-        { "id": "automation", "title": "AI agents", "line": "Multilingual support, copilots, pipelines." },
-        { "id": "growth", "title": "Ads & growth", "line": "Run by the people who built the page." }
+        {
+          "id": "websites",
+          "title": "Websites",
+          "line": "Fast, accessible, opinionated."
+        },
+        {
+          "id": "ecommerce",
+          "title": "E-commerce",
+          "line": "Shopify and headless. Sold by the page."
+        },
+        {
+          "id": "mobile",
+          "title": "Mobile apps",
+          "line": "iOS, Android. Shipped to the stores."
+        },
+        {
+          "id": "automation",
+          "title": "AI agents",
+          "line": "Multilingual support, copilots, pipelines."
+        },
+        {
+          "id": "growth",
+          "title": "Ads & growth",
+          "line": "Run by the people who built the page."
+        }
       ],
       "cta": "Every service →"
     },
@@ -66,20 +128,51 @@
       "headingLead": "It goes",
       "headingItalic": "like this.",
       "items": [
-        { "n": "01", "title": "Talk", "desc": "Twenty minutes. We tell you if we can help. If we can't, we say." },
-        { "n": "02", "title": "Plan", "desc": "Forty-eight hours later: scope, calendar, who's on it." },
-        { "n": "03", "title": "Build", "desc": "Weekly progress on a real URL. Stop whenever you want." },
-        { "n": "04", "title": "Ship", "desc": "We hand it off, train your team, stay reachable after." }
+        {
+          "n": "01",
+          "title": "Talk",
+          "desc": "Twenty minutes. We tell you if we can help. If we can't, we say."
+        },
+        {
+          "n": "02",
+          "title": "Plan",
+          "desc": "Forty-eight hours later: scope, calendar, who's on it."
+        },
+        {
+          "n": "03",
+          "title": "Build",
+          "desc": "Weekly progress on a real URL. Stop whenever you want."
+        },
+        {
+          "n": "04",
+          "title": "Ship",
+          "desc": "We hand it off, train your team, stay reachable after."
+        }
       ]
     },
     "faq": {
       "eyebrow": "Questions",
       "items": [
-        { "q": "How long does it take?", "a": "Websites: 3–5 weeks. E-commerce: 5–8. Mobile apps: 8–14. We give you a calendar, not a guess." },
-        { "q": "Do you work in English, Turkish and Romanian?", "a": "All three. Meetings in whichever you prefer." },
-        { "q": "Can you take over an unfinished project?", "a": "Often yes. We do a 90-minute audit on the codebase, then send a recovery plan." },
-        { "q": "Do you only do new builds?", "a": "No. Half of our work is rescuing or rebuilding what someone else started." },
-        { "q": "What about ongoing support?", "a": "Most clients keep us on a monthly retainer after launch. Optional, never required." }
+        {
+          "q": "How long does it take?",
+          "a": "Websites: 3–5 weeks. E-commerce: 5–8. Mobile apps: 8–14. We give you a calendar, not a guess."
+        },
+        {
+          "q": "Do you work in English, Turkish and Romanian?",
+          "a": "All three. Meetings in whichever you prefer."
+        },
+        {
+          "q": "Can you take over an unfinished project?",
+          "a": "Often yes. We do a 90-minute audit on the codebase, then send a recovery plan."
+        },
+        {
+          "q": "Do you only do new builds?",
+          "a": "No. Half of our work is rescuing or rebuilding what someone else started."
+        },
+        {
+          "q": "What about ongoing support?",
+          "a": "Most clients keep us on a monthly retainer after launch. Optional, never required."
+        }
       ]
     },
     "cta": {
@@ -104,7 +197,13 @@
         "title": "Websites & web apps",
         "tagline": "Fast, accessible, easy to edit.",
         "what": "Marketing sites, internal tools, customer dashboards, booking systems. Built on Next.js or Astro. Mobile-first. Lighthouse 90+ on launch day.",
-        "deliverables": ["Design + content workshop", "Component library", "CMS so your team can edit copy", "Analytics + SEO basics", "30-day post-launch support"],
+        "deliverables": [
+          "Design + content workshop",
+          "Component library",
+          "CMS so your team can edit copy",
+          "Analytics + SEO basics",
+          "30-day post-launch support"
+        ],
         "timeline": "3–5 weeks",
         "from": "from €3,500",
         "caseSlug": "eduturkia-platform"
@@ -114,7 +213,13 @@
         "title": "E-commerce",
         "tagline": "Stores your team can actually run.",
         "what": "Shopify, headless Shopify, or custom Stripe storefronts. We focus on speed, checkout, and the back-office workflow — not the part that wins design awards.",
-        "deliverables": ["Theme + custom sections", "Product import + import script", "Stripe / iyzico / payments setup", "Email + abandoned-cart flows", "Hand-off training video"],
+        "deliverables": [
+          "Theme + custom sections",
+          "Product import + import script",
+          "Stripe / iyzico / payments setup",
+          "Email + abandoned-cart flows",
+          "Hand-off training video"
+        ],
         "timeline": "5–8 weeks",
         "from": "from €6,000",
         "caseSlug": "rain-group-ecommerce"
@@ -124,7 +229,13 @@
         "title": "Mobile apps",
         "tagline": "Shipped to the stores, not stuck in a repo.",
         "what": "Native iOS / Android or React Native, depending on the brief. We do app-store submissions, signing, certificates and the boring bits.",
-        "deliverables": ["UX flow + prototype", "Native or RN build", "Push, deep links, analytics", "Store submission (Apple + Google)", "Crash + release monitoring"],
+        "deliverables": [
+          "UX flow + prototype",
+          "Native or RN build",
+          "Push, deep links, analytics",
+          "Store submission (Apple + Google)",
+          "Crash + release monitoring"
+        ],
         "timeline": "8–14 weeks",
         "from": "from €18,000",
         "caseSlug": "drsevim-beauty-clinic"
@@ -134,7 +245,13 @@
         "title": "AI automation",
         "tagline": "Agents that work in your business, not on stage.",
         "what": "Customer-service agents, internal copilots, data pipelines, document workflows. Multilingual (EN/TR/RO at minimum). We pick the model, you own the data.",
-        "deliverables": ["Use-case scoping", "Prompt + tool design", "Integration with your CRM / Shopify / email", "Eval + monitoring dashboard", "Monthly retainer (optional)"],
+        "deliverables": [
+          "Use-case scoping",
+          "Prompt + tool design",
+          "Integration with your CRM / Shopify / email",
+          "Eval + monitoring dashboard",
+          "Monthly retainer (optional)"
+        ],
         "timeline": "2–6 weeks",
         "from": "from €4,500",
         "caseSlug": "bosporus-travel-ai-agent"
@@ -144,7 +261,13 @@
         "title": "Ads & growth",
         "tagline": "Run by people who also build the site.",
         "what": "Google Ads, Meta Ads, basic SEO. We only take growth work if we believe the page converts. If we don't, we fix the page first.",
-        "deliverables": ["Audit + landing-page check", "Ad accounts + tracking setup", "Creative system (3–5 variants)", "Weekly report you can read in 2 min", "Quarterly review"],
+        "deliverables": [
+          "Audit + landing-page check",
+          "Ad accounts + tracking setup",
+          "Creative system (3–5 variants)",
+          "Weekly report you can read in 2 min",
+          "Quarterly review"
+        ],
         "timeline": "Ongoing, monthly",
         "from": "from €1,200 / month",
         "caseSlug": "rain-group-ecommerce"
@@ -166,25 +289,144 @@
       "sub": "Every client is real. Every screenshot is the live site. Dates are when the project shipped."
     },
     "items": [
-      { "slug": "lavinia-bistro-qr-menu", "client": "Lavinia Bistro", "industry": "Hospitality", "service": "QR menu platform", "year": "2026", "outcome": "Payback in 2 months", "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp" },
-      { "slug": "rain-group-ecommerce", "client": "Rain Group", "industry": "Fashion e-commerce", "service": "Shopify + Meta Ads", "year": "2026", "outcome": "ROAS 3.4× sustained", "image": "/portfolio-screenshots/rain-group-ecommerce.webp" },
-      { "slug": "drsevim-beauty-clinic", "client": "Dr. Sevim Clinic", "industry": "Healthcare", "service": "Website + booking app", "year": "2026", "outcome": "+38% bookings, Q1", "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp" },
-      { "slug": "tp-thermoplast-b2b", "client": "TP Thermoplast", "industry": "B2B manufacturing", "service": "Export data pipeline", "year": "2026", "outcome": "Live across 6 markets", "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp" },
-      { "slug": "eduturkia-platform", "client": "EduTurkia", "industry": "Education", "service": "Student platform", "year": "2026", "outcome": "+60% organic traffic", "image": "/portfolio-screenshots/eduturkia-platform.webp" },
-      { "slug": "clown3d-creative-studio", "client": "Clown3D", "industry": "Creative", "service": "Portfolio website", "year": "2026", "outcome": "Featured on Awwwards", "image": "/portfolio-screenshots/clown3d-creative-studio.webp" },
-      { "slug": "ataravci-law-firm", "client": "Atar Avcı Law", "industry": "Legal", "service": "Website + cloud migration", "year": "2026", "outcome": "€3.4k / month saved", "image": "/portfolio-screenshots/ataravci-law-firm.webp" },
-      { "slug": "novahealth-cloud-migration", "client": "Nova Health", "industry": "Healthcare", "service": "AWS migration", "year": "2026", "outcome": "99.97% uptime Q1", "image": "/projects/novahealth-cloud-migration.svg" },
-      { "slug": "marmara-foods-google-ads", "client": "Marmara Foods", "industry": "FMCG", "service": "Google Ads", "year": "2025", "outcome": "CAC down 41%", "image": "/projects/marmara-foods-google-ads.svg" },
-      { "slug": "skyline-media-mobile-app", "client": "Skyline Media", "industry": "Media", "service": "iOS + Android app", "year": "2025", "outcome": "70k installs Q1", "image": "/projects/skyline-media-mobile-app.svg" },
-      { "slug": "bosporus-travel-ai-agent", "client": "Bosporus Travel", "industry": "Travel", "service": "AI booking agent", "year": "2025", "outcome": "63% chats resolved by AI", "image": "/projects/bosporus-travel-ai-agent.svg" },
-      { "slug": "anatolia-hotel-booking", "client": "Anatolia Hotel", "industry": "Hospitality", "service": "Booking engine", "year": "2025", "outcome": "Cut OTA fees by 22%", "image": "/projects/anatolia-hotel-booking.svg" }
+      {
+        "slug": "lavinia-bistro-qr-menu",
+        "client": "Lavinia Bistro",
+        "industry": "Hospitality",
+        "service": "QR menu platform",
+        "year": "2026",
+        "outcome": "Payback in 2 months",
+        "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
+        "liveUrl": "/demo/lavinia-bistro"
+      },
+      {
+        "slug": "rain-group-ecommerce",
+        "client": "Rain Group",
+        "industry": "Fashion e-commerce",
+        "service": "Shopify + Meta Ads",
+        "year": "2026",
+        "outcome": "ROAS 3.4× sustained",
+        "image": "/portfolio-screenshots/rain-group-ecommerce.webp",
+        "liveUrl": "https://raingroup.com.tr"
+      },
+      {
+        "slug": "drsevim-beauty-clinic",
+        "client": "Dr. Sevim Clinic",
+        "industry": "Healthcare",
+        "service": "Website + booking app",
+        "year": "2026",
+        "outcome": "+38% bookings, Q1",
+        "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
+        "liveUrl": "https://drsevim.com"
+      },
+      {
+        "slug": "tp-thermoplast-b2b",
+        "client": "TP Thermoplast",
+        "industry": "B2B manufacturing",
+        "service": "Export data pipeline",
+        "year": "2026",
+        "outcome": "Live across 6 markets",
+        "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
+        "liveUrl": "https://tpthermoplast.com"
+      },
+      {
+        "slug": "eduturkia-platform",
+        "client": "EduTurkia",
+        "industry": "Education",
+        "service": "Student platform",
+        "year": "2026",
+        "outcome": "+60% organic traffic",
+        "image": "/portfolio-screenshots/eduturkia-platform.webp",
+        "liveUrl": "https://eduturkia.com"
+      },
+      {
+        "slug": "clown3d-creative-studio",
+        "client": "Clown3D",
+        "industry": "Creative",
+        "service": "Portfolio website",
+        "year": "2026",
+        "outcome": "Featured on Awwwards",
+        "image": "/portfolio-screenshots/clown3d-creative-studio.webp",
+        "liveUrl": "https://clown3d.com"
+      },
+      {
+        "slug": "ataravci-law-firm",
+        "client": "Atar Avcı Law",
+        "industry": "Legal",
+        "service": "Website + cloud migration",
+        "year": "2026",
+        "outcome": "€3.4k / month saved",
+        "image": "/portfolio-screenshots/ataravci-law-firm.webp",
+        "liveUrl": "https://ataravci.com.tr"
+      },
+      {
+        "slug": "novahealth-cloud-migration",
+        "client": "Nova Health",
+        "industry": "Healthcare",
+        "service": "AWS migration",
+        "year": "2026",
+        "outcome": "99.97% uptime Q1",
+        "image": "/projects/novahealth-cloud-migration.svg",
+        "liveUrl": "/demo/nova-health"
+      },
+      {
+        "slug": "marmara-foods-google-ads",
+        "client": "Marmara Foods",
+        "industry": "FMCG",
+        "service": "Google Ads",
+        "year": "2025",
+        "outcome": "CAC down 41%",
+        "image": "/projects/marmara-foods-google-ads.svg",
+        "liveUrl": "/demo/marmara-foods"
+      },
+      {
+        "slug": "skyline-media-mobile-app",
+        "client": "Skyline Media",
+        "industry": "Media",
+        "service": "iOS + Android app",
+        "year": "2025",
+        "outcome": "70k installs Q1",
+        "image": "/projects/skyline-media-mobile-app.svg",
+        "liveUrl": "/demo/skyline-media"
+      },
+      {
+        "slug": "bosporus-travel-ai-agent",
+        "client": "Bosporus Travel",
+        "industry": "Travel",
+        "service": "AI booking agent",
+        "year": "2025",
+        "outcome": "63% chats resolved by AI",
+        "image": "/projects/bosporus-travel-ai-agent.svg",
+        "liveUrl": "/demo/bosporus-travel"
+      },
+      {
+        "slug": "anatolia-hotel-booking",
+        "client": "Anatolia Hotel",
+        "industry": "Hospitality",
+        "service": "Booking engine",
+        "year": "2025",
+        "outcome": "Cut OTA fees by 22%",
+        "image": "/projects/anatolia-hotel-booking.svg",
+        "liveUrl": "/demo/anatolia-hotel"
+      },
+      {
+        "slug": "konak-coffee-house",
+        "client": "Konak Coffee House",
+        "industry": "Hospitality",
+        "service": "Website + online order",
+        "year": "2025",
+        "outcome": "Online orders 38% of revenue",
+        "image": "/projects/konak-coffee-house.svg",
+        "liveUrl": "/demo/konak-coffee"
+      }
     ],
     "labels": {
       "industry": "Industry",
       "service": "Service",
       "year": "Year",
       "outcome": "Outcome",
-      "viewCase": "View case →"
+      "viewCase": "View case →",
+      "viewLive": "Visit live →"
     }
   },
   "useCase": {
@@ -209,7 +451,8 @@
         "stack": "Next.js · Supabase · Vercel · DeepL",
         "timeline": "5 weeks",
         "outcome": "Print costs gone. Tip share up 11%. Two restaurants in the neighbourhood asked to license the platform.",
-        "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp"
+        "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
+        "liveUrl": "/demo/lavinia-bistro"
       },
       "rain-group-ecommerce": {
         "title": "Shopify + Meta Ads — ROAS 3.4× for a full quarter",
@@ -222,7 +465,8 @@
         "stack": "Shopify · Liquid · Meta Conversion API · Figma",
         "timeline": "6 weeks build + ongoing",
         "outcome": "ROAS held at 3.4× across Q1. Email captured 28% of new sessions. Average order value up 17%.",
-        "image": "/portfolio-screenshots/rain-group-ecommerce.webp"
+        "image": "/portfolio-screenshots/rain-group-ecommerce.webp",
+        "liveUrl": "https://raingroup.com.tr"
       },
       "drsevim-beauty-clinic": {
         "title": "A clinic website that actually books appointments",
@@ -235,7 +479,8 @@
         "stack": "Next.js · Stripe / iyzico · Twilio · Resend",
         "timeline": "4 weeks",
         "outcome": "+38% bookings in the first quarter. Time-to-confirm dropped from 4 hours to under 5 minutes. DMs back to being DMs.",
-        "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp"
+        "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
+        "liveUrl": "https://drsevim.com"
       },
       "tp-thermoplast-b2b": {
         "title": "Live export data, six markets, one dashboard",
@@ -248,7 +493,8 @@
         "stack": "PostgreSQL · Airbyte · Metabase · GitHub Actions",
         "timeline": "7 weeks",
         "outcome": "All six markets live. Decision cycle from 7 days to next-morning. Two products repriced based on the first month of data.",
-        "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp"
+        "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
+        "liveUrl": "https://tpthermoplast.com"
       },
       "eduturkia-platform": {
         "title": "A student platform that brought in 60% more applicants",
@@ -261,7 +507,8 @@
         "stack": "Next.js · Sanity · Cloudflare R2 · Resend",
         "timeline": "8 weeks",
         "outcome": "+60% organic traffic Q1. Application completion rate went from 24% to 51%. Featured in 3 Turkish ed-tech roundups.",
-        "image": "/portfolio-screenshots/eduturkia-platform.webp"
+        "image": "/portfolio-screenshots/eduturkia-platform.webp",
+        "liveUrl": "https://eduturkia.com"
       },
       "clown3d-creative-studio": {
         "title": "A portfolio site for a creative studio that earns its name",
@@ -274,7 +521,8 @@
         "stack": "Next.js · React Three Fiber · Mux · Sanity",
         "timeline": "6 weeks",
         "outcome": "Featured on Awwwards two weeks after launch. Two new retainer clients within a month.",
-        "image": "/portfolio-screenshots/clown3d-creative-studio.webp"
+        "image": "/portfolio-screenshots/clown3d-creative-studio.webp",
+        "liveUrl": "https://clown3d.com"
       },
       "ataravci-law-firm": {
         "title": "A law firm site + a quiet cloud migration",
@@ -287,7 +535,8 @@
         "stack": "Next.js · AWS (RDS · S3 · EC2) · Cloudflare",
         "timeline": "5 weeks",
         "outcome": "Site loads in under a second. Migration finished in two weekends with no downtime. Hosting + ops bill: €3,400 / month lower.",
-        "image": "/portfolio-screenshots/ataravci-law-firm.webp"
+        "image": "/portfolio-screenshots/ataravci-law-firm.webp",
+        "liveUrl": "https://ataravci.com.tr"
       },
       "novahealth-cloud-migration": {
         "title": "Migrating a clinic group to AWS without dropping a request",
@@ -300,7 +549,8 @@
         "stack": "AWS · ECS · RDS · CloudFront · Sentry",
         "timeline": "4 weeks",
         "outcome": "99.97% uptime Q1. Zero appointments lost during migration. Recovery time objective dropped from 'pray' to 15 minutes.",
-        "image": "/projects/novahealth-cloud-migration.svg"
+        "image": "/projects/novahealth-cloud-migration.svg",
+        "liveUrl": "/demo/nova-health"
       },
       "marmara-foods-google-ads": {
         "title": "Cutting CAC by 41% with a smaller, sharper ad account",
@@ -313,7 +563,8 @@
         "stack": "Google Ads · GA4 · Next.js · Vercel",
         "timeline": "3 weeks + ongoing",
         "outcome": "CAC down 41%. Spend reduced 30%, revenue flat at first and up 14% in month two.",
-        "image": "/projects/marmara-foods-google-ads.svg"
+        "image": "/projects/marmara-foods-google-ads.svg",
+        "liveUrl": "/demo/marmara-foods"
       },
       "skyline-media-mobile-app": {
         "title": "An iOS + Android app for a media brand, shipped in 12 weeks",
@@ -326,7 +577,8 @@
         "stack": "React Native · Expo · Supabase · OneSignal",
         "timeline": "12 weeks",
         "outcome": "70k installs in the first quarter. 4.7★ on iOS, 4.6★ on Android. Average session 14 minutes.",
-        "image": "/projects/skyline-media-mobile-app.svg"
+        "image": "/projects/skyline-media-mobile-app.svg",
+        "liveUrl": "/demo/skyline-media"
       },
       "bosporus-travel-ai-agent": {
         "title": "An AI agent that books trips in three languages",
@@ -339,7 +591,8 @@
         "stack": "Anthropic Claude · WhatsApp Business API · Supabase",
         "timeline": "5 weeks",
         "outcome": "63% of chats resolved by the agent. Response time from 4h to under 2 minutes. The team handles only the interesting questions now.",
-        "image": "/projects/bosporus-travel-ai-agent.svg"
+        "image": "/projects/bosporus-travel-ai-agent.svg",
+        "liveUrl": "/demo/bosporus-travel"
       },
       "anatolia-hotel-booking": {
         "title": "A direct booking engine that cuts OTA fees",
@@ -352,7 +605,22 @@
         "stack": "Next.js · iyzico · PMS API · Resend",
         "timeline": "6 weeks",
         "outcome": "Direct bookings up 34% in the first quarter. OTA share of revenue dropped from 71% to 49%. Saved roughly 22% on commissions.",
-        "image": "/projects/anatolia-hotel-booking.svg"
+        "image": "/projects/anatolia-hotel-booking.svg",
+        "liveUrl": "/demo/anatolia-hotel"
+      },
+      "konak-coffee-house": {
+        "title": "A coffee house site that takes orders before the doors open",
+        "client": "Konak Coffee House",
+        "industry": "Hospitality · Istanbul",
+        "service": "Website + online order",
+        "year": "2025",
+        "problem": "Konak's morning queue stretched down the block. The owner wanted regulars to pre-order on the way in — but every off-the-shelf POS quote required swapping the till, and the staff already knew their till.",
+        "approach": "A standalone web ordering layer that prints to the existing receipt printer over the local network, schedules pickups in 5-minute slots, and writes the same shorthand the baristas already use. Keeps the till untouched.",
+        "stack": "Next.js · Stripe · iyzico · IPP printing · Vercel",
+        "timeline": "4 weeks",
+        "outcome": "Online orders now account for 38% of weekday revenue. Average morning service time down 4 minutes. Zero changes to POS workflow.",
+        "image": "/projects/konak-coffee-house.svg",
+        "liveUrl": "/demo/konak-coffee"
       }
     }
   },
@@ -374,10 +642,22 @@
     "values": {
       "heading": "How we work",
       "items": [
-        { "title": "Make it, don't pitch it", "body": "Decks are a side-effect, not the product." },
-        { "title": "Design + engineering at one desk", "body": "Same brain draws the screen and writes the code that draws the screen." },
-        { "title": "Forty-eight hours to a quote", "body": "After the first call you get a fixed offer in two working days." },
-        { "title": "Stop anytime", "body": "Every project has a weekly stop-clock. End it without paying for what you didn't get." }
+        {
+          "title": "Make it, don't pitch it",
+          "body": "Decks are a side-effect, not the product."
+        },
+        {
+          "title": "Design + engineering at one desk",
+          "body": "Same brain draws the screen and writes the code that draws the screen."
+        },
+        {
+          "title": "Forty-eight hours to a quote",
+          "body": "After the first call you get a fixed offer in two working days."
+        },
+        {
+          "title": "Stop anytime",
+          "body": "Every project has a weekly stop-clock. End it without paying for what you didn't get."
+        }
       ]
     }
   },
@@ -388,10 +668,26 @@
       "sub": "WhatsApp is the fastest line. We reply in business hours, usually within two hours."
     },
     "channels": {
-      "whatsapp": { "label": "WhatsApp", "value": "+90 532 336 00 51", "note": "Fastest reply, business hours." },
-      "email": { "label": "Email", "value": "hello@velkina.com", "note": "For longer briefs and attachments." },
-      "phone": { "label": "Phone", "value": "+90 532 336 00 51", "note": "We pick up between 09:00–19:00 GMT+3." },
-      "schedule": { "label": "Book a call", "value": "Pick a slot", "note": "Twenty minutes with a founder, on cal.com." }
+      "whatsapp": {
+        "label": "WhatsApp",
+        "value": "+90 532 336 00 51",
+        "note": "Fastest reply, business hours."
+      },
+      "email": {
+        "label": "Email",
+        "value": "hello@velkina.com",
+        "note": "For longer briefs and attachments."
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "+90 532 336 00 51",
+        "note": "We pick up between 09:00–19:00 GMT+3."
+      },
+      "schedule": {
+        "label": "Book a call",
+        "value": "Pick a slot",
+        "note": "Twenty minutes with a founder, on cal.com."
+      }
     },
     "form": {
       "heading": "Or write to us here",
@@ -399,7 +695,13 @@
       "company": "Company",
       "email": "Email",
       "budget": "Rough budget",
-      "budgetOptions": ["Under €5,000", "€5,000 – €15,000", "€15,000 – €40,000", "€40,000+", "Not sure yet"],
+      "budgetOptions": [
+        "Under €5,000",
+        "€5,000 – €15,000",
+        "€15,000 – €40,000",
+        "€40,000+",
+        "Not sure yet"
+      ],
       "message": "Tell us what you want to build",
       "submit": "Send message",
       "note": "We do not use this form for newsletters. The only thing that happens is one of us reads it and replies."
@@ -407,8 +709,14 @@
     "office": {
       "heading": "Offices",
       "items": [
-        { "city": "Istanbul", "address": "Üsküdar, Istanbul 34660, TR" },
-        { "city": "Bucharest", "address": "Calea Victoriei, Sector 1, Bucharest, RO" }
+        {
+          "city": "Istanbul",
+          "address": "Üsküdar, Istanbul 34660, TR"
+        },
+        {
+          "city": "Bucharest",
+          "address": "Calea Victoriei, Sector 1, Bucharest, RO"
+        }
       ]
     }
   },

@@ -4,7 +4,7 @@ import { CONTACT, mailHref, whatsappHref } from '../lib/contact';
 
 type Locale = 'en' | 'tr' | 'ro';
 
-type LedgerItem = { date: string; client: string; kind: string; outcome: string; status: 'active' | 'delivered' };
+type LedgerItem = { date: string; client: string; kind: string; outcome: string; status: 'active' | 'delivered'; slug?: string; liveUrl?: string };
 type ServiceItem = { id: string; title: string; line: string };
 type ProcessItem = { n: string; title: string; desc: string };
 type FaqItem = { q: string; a: string };
@@ -20,7 +20,14 @@ export default function HomeView({ messages, locale }: { messages: any; locale: 
   const cta = h.cta;
 
   const ledgerItems = ledger.items as LedgerItem[];
+  const workItems = (messages.work?.items || []) as Array<{ slug: string; client: string; liveUrl?: string }>;
+  // Join ledger client → work slug + liveUrl
+  const enrichedLedger = ledgerItems.map(l => {
+    const match = workItems.find(w => w.client === l.client);
+    return { ...l, slug: match?.slug, liveUrl: match?.liveUrl };
+  });
   const serviceItems = services.items as ServiceItem[];
+  const workLabels = messages.work?.labels || {};
   // Marquee uses ledger client names + scopes — doubled so it loops seamlessly
   const marqueeItems = ledgerItems.flatMap(l => [`${l.client}`, l.kind]);
   const marquee = [...marqueeItems, ...marqueeItems];
@@ -93,22 +100,48 @@ export default function HomeView({ messages, locale }: { messages: any; locale: 
             </Link>
           </div>
 
-          <div className="vk-ledger">
-            {ledgerItems.map((it, i) => (
-              <div key={i} className="vk-ledger-row">
-                <div className="vk-ledger-date">{it.date}</div>
-                <div className="vk-ledger-body">
-                  <div className="vk-ledger-client">{it.client}</div>
-                  <div className="vk-ledger-scope vk-italic">{it.kind}</div>
-                </div>
-                <div className="vk-ledger-outcome">
-                  <span className="vk-ledger-status" data-status={it.status}>
-                    {it.outcome}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ul className="vk-ledger list-none p-0 m-0">
+            {enrichedLedger.map((it, i) => {
+              const isExternal = !!it.liveUrl && /^https?:/.test(it.liveUrl);
+              return (
+                <li key={i} className="vk-ledger-row-wrap">
+                  {it.slug ? (
+                    <Link href={`/${locale}/work/${it.slug}`} className="vk-ledger-row vk-ledger-row-link">
+                      <span className="vk-ledger-date">{it.date}</span>
+                      <span className="vk-ledger-body">
+                        <span className="vk-ledger-client">{it.client}</span>
+                        <span className="vk-ledger-scope vk-italic">{it.kind}</span>
+                      </span>
+                      <span className="vk-ledger-outcome">
+                        <span className="vk-ledger-status" data-status={it.status}>{it.outcome}</span>
+                      </span>
+                    </Link>
+                  ) : (
+                    <div className="vk-ledger-row">
+                      <span className="vk-ledger-date">{it.date}</span>
+                      <span className="vk-ledger-body">
+                        <span className="vk-ledger-client">{it.client}</span>
+                        <span className="vk-ledger-scope vk-italic">{it.kind}</span>
+                      </span>
+                      <span className="vk-ledger-outcome">
+                        <span className="vk-ledger-status" data-status={it.status}>{it.outcome}</span>
+                      </span>
+                    </div>
+                  )}
+                  {it.liveUrl && (
+                    <a
+                      href={it.liveUrl}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                      className="vk-ledger-live"
+                    >
+                      {workLabels.viewLive || 'Visit live →'}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </section>
 
