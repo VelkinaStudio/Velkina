@@ -217,8 +217,8 @@
   if (grid) {
     grid.innerHTML = projects.map((p, i) => {
       const num = String(i + 1).padStart(2, "0");
-      const thumb = `../public/projects/${p.slug}.svg`;
-      const fallback = `../public/projects/placeholder.svg`;
+      const thumb = `../projects/${p.slug}.svg`;
+      const fallback = `../projects/placeholder.svg`;
       return `
         <a class="polaroid" href="${p.url}" target="_blank" rel="noopener" data-scene>
           <div class="polaroid__media">

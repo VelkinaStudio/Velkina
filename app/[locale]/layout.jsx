@@ -8,13 +8,15 @@ import LanguageSwitcher from '../../components/LanguageSwitcher';
 import MobileNavClient from '../../components/MobileNavClient';
 import en from '../../messages/en.json';
 import tr from '../../messages/tr.json';
-import { Inter, Sora } from 'next/font/google';
+import { Inter, Sora, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import {CONTACT, telHref, mailHref, whatsappHref} from '../../lib/contact';
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
 const inter = Inter({ subsets: ['latin', 'latin-ext'], variable: '--font-inter' });
 const sora = Sora({ subsets: ['latin', 'latin-ext'], variable: '--font-sora' });
+const instrument = Instrument_Serif({ subsets: ['latin'], weight: '400', style: ['normal', 'italic'], variable: '--font-instrument' });
+const jetbrains = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' });
 
 export async function generateMetadata({params}) {
   const {locale} = params;
@@ -69,7 +71,7 @@ export default function LocaleLayout({children, params}) {
   const t = messages.nav;
 
   return (
-    <html lang={locale} className={`${inter.variable} ${sora.variable}`}>
+    <html lang={locale} className={`${inter.variable} ${sora.variable} ${instrument.variable} ${jetbrains.variable}`}>
       <head />
       <body
         className="font-body bg-vkbg text-vktext min-h-screen flex flex-col"
@@ -81,19 +83,25 @@ export default function LocaleLayout({children, params}) {
 
         <header data-nav className="fixed top-0 inset-x-0 z-50 transition">
           <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
-            <Link href={`/${locale}`} className="font-heading text-lg tracking-wider">VELKINA</Link>
+            <Link href={`/${locale}`} className="vk-brand inline-flex items-baseline gap-2" aria-label="Velkina home">
+              <span className="font-display text-2xl leading-none">Velkina</span>
+              <span className="font-mono text-[10px] tracking-[0.18em] uppercase text-white/40">/studio</span>
+            </Link>
             <div className="flex items-center gap-3">
               {/* Mobile: hamburger opens drawer */}
               <MobileNavClient locale={locale} labels={t} startProjectLabel={messages.home?.startProjectShort} />
               {/* Desktop navigation */}
-              <nav className="hidden md:flex items-center gap-6" aria-label="Primary">
-                <Link href={`/${locale}`} className="text-white/80 hover:text-vkcyan">{t.home ?? 'Home'}</Link>
-                <Link href={`/${locale}/services`} className="text-white/80 hover:text-vkcyan">{t.services}</Link>
-                <Link href={`/${locale}/use-cases`} className="text-white/80 hover:text-vkcyan">{t.useCases}</Link>
-                <Link href={`/${locale}/customer-agent`} className="text-white/80 hover:text-vkcyan">{t.customerAgent}</Link>
-                <Link href={`/${locale}/blog`} className="text-white/80 hover:text-vkcyan">{t.blog}</Link>
-                <Link href={`/${locale}/#cta`} className="text-white/90 font-mono px-3 py-1.5 rounded-xl bg-vkpink text-black shadow-strong">{t.startProject}</Link>
+              <nav className="hidden md:flex items-center gap-7 text-[14px]" aria-label="Primary">
+                <Link href={`/${locale}/services`} className="text-white/70 hover:text-white transition-colors">{t.services}</Link>
+                <Link href={`/${locale}/use-cases`} className="text-white/70 hover:text-white transition-colors">{t.useCases}</Link>
+                <Link href="/portfolio/index.html" className="text-white/70 hover:text-white transition-colors">{t.journal ?? 'Journal'}</Link>
+                <Link href={`/${locale}/blog`} className="text-white/70 hover:text-white transition-colors">{t.blog}</Link>
+                <Link href={`/${locale}/about`} className="text-white/70 hover:text-white transition-colors">{t.about ?? 'Studio'}</Link>
                 <LanguageSwitcher locale={locale} />
+                <Link href={`/${locale}/#cta`} className="vk-cta-pill inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 hover:border-white/40 text-white">
+                  <span>{t.startProject}</span>
+                  <span aria-hidden>→</span>
+                </Link>
               </nav>
             </div>
           </div>

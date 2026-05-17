@@ -1,4 +1,4 @@
-import HomeView from '../HomeViewSnap';
+import HomeView from '../HomeView';
 import en from '../../messages/en.json';
 import tr from '../../messages/tr.json';
 

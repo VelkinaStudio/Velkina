@@ -14,7 +14,8 @@
     "privacy": "Gizlilik",
     "terms": "Koşullar",
     "startProject": "Proje başlat",
-    "customerAgent": "Türkçe Müşteri Ajanı"
+    "customerAgent": "Türkçe Müşteri Ajanı",
+    "journal": "Günlük"
   },
   "common": {
     "skipToContent": "İçeriğe geç",
@@ -46,16 +47,32 @@
     "resultsTitle": "Kanıtlanmış Sonuçlar",
     "resultsSubtitle": "Son projelerden öne çıkan sonuçlar",
     "brandsTitle": "Müşterilerimiz",
-     "brandsCarouselLabel": "Güvenilen markalar karuseli",
-     "stackTitle": "Teknolojilerimiz",
+    "brandsCarouselLabel": "Güvenilen markalar karuseli",
+    "stackTitle": "Teknolojilerimiz",
     "testimonials": {
       "title": "Müşteriler ne diyor",
       "carouselLabel": "Müşteri yorumları karuseli",
       "items": [
-        {"quote":"Velkina, temiz bir tasarım sistemiyle sitemizi haftalar içinde yayına aldı.","name":"Aylin K.","role":"CMO, SaaS"},
-        {"quote":"Net kapsam, hızlı iterasyonlar ve ölçülebilir sonuçlar.","name":"Kerem D.","role":"Kurucu"},
-        {"quote":"Uçtan uca kıdemli ekip—handover yok, sadece momentum.","name":"Mert S.","role":"Ürün Lideri"},
-        {"quote":"Edge barındırma ve gözlemlenebilirlik, güvenle yayınlamamızı sağladı.","name":"Elif A.","role":"Mühendislik Yöneticisi"}
+        {
+          "quote": "Velkina, temiz bir tasarım sistemiyle sitemizi haftalar içinde yayına aldı.",
+          "name": "Aylin K.",
+          "role": "CMO, SaaS"
+        },
+        {
+          "quote": "Net kapsam, hızlı iterasyonlar ve ölçülebilir sonuçlar.",
+          "name": "Kerem D.",
+          "role": "Kurucu"
+        },
+        {
+          "quote": "Uçtan uca kıdemli ekip—handover yok, sadece momentum.",
+          "name": "Mert S.",
+          "role": "Ürün Lideri"
+        },
+        {
+          "quote": "Edge barındırma ve gözlemlenebilirlik, güvenle yayınlamamızı sağladı.",
+          "name": "Elif A.",
+          "role": "Mühendislik Yöneticisi"
+        }
       ]
     },
     "metrics": {
@@ -136,12 +153,30 @@
       "Devir dokümanları, eğitim videoları ve makul geri alma planı"
     ],
     "faqs": [
-      {"q":"Nasıl başlıyoruz?","a":"Hedef ve kısıtları hizalamak için 30–45 dakikalık bir görüşme yaparız. Ardından kapsam, zaman planı ve başarı metrikleri ile ilerleriz."},
-      {"q":"Nasıl iletişim kuruyor ve teslim ediyoruz?","a":"Demolar, asenkron güncellemeler ve açık proje panosu ile haftalık sprintler. Her değişiklik önizleme linkiyle gelir."},
-      {"q":"Fikri mülkiyet kime ait?","a":"Size. Kaynak kodu kuruluşunuzda barınır; üçüncü taraf bileşenlerde uygun açık lisanslar kullanırız."},
-      {"q":"Lansman sonrası destek var mı?","a":"Evet — yol haritası, optimizasyon ve bakım için süreli anlaşmalar. Uzun sözleşmeler yok; ihtiyaca göre ölçeklenir."},
-      {"q":"Tipik zaman çizelgeleri?","a":"1–2 haftada ince bir dilim. 4–6 haftada pazarlama sitesi veya özellik seti. Daha büyük entegrasyonlar dönen sprintlerde evrilir."},
-      {"q":"Barındırma ve platformlar?","a":"Web için Vercel/Cloudflare, veri/hizmetler için tercih ettiğiniz bulut. Platform maliyetleri ayrı ve şeffaftır."}
+      {
+        "q": "Nasıl başlıyoruz?",
+        "a": "Hedef ve kısıtları hizalamak için 30–45 dakikalık bir görüşme yaparız. Ardından kapsam, zaman planı ve başarı metrikleri ile ilerleriz."
+      },
+      {
+        "q": "Nasıl iletişim kuruyor ve teslim ediyoruz?",
+        "a": "Demolar, asenkron güncellemeler ve açık proje panosu ile haftalık sprintler. Her değişiklik önizleme linkiyle gelir."
+      },
+      {
+        "q": "Fikri mülkiyet kime ait?",
+        "a": "Size. Kaynak kodu kuruluşunuzda barınır; üçüncü taraf bileşenlerde uygun açık lisanslar kullanırız."
+      },
+      {
+        "q": "Lansman sonrası destek var mı?",
+        "a": "Evet — yol haritası, optimizasyon ve bakım için süreli anlaşmalar. Uzun sözleşmeler yok; ihtiyaca göre ölçeklenir."
+      },
+      {
+        "q": "Tipik zaman çizelgeleri?",
+        "a": "1–2 haftada ince bir dilim. 4–6 haftada pazarlama sitesi veya özellik seti. Daha büyük entegrasyonlar dönen sprintlerde evrilir."
+      },
+      {
+        "q": "Barındırma ve platformlar?",
+        "a": "Web için Vercel/Cloudflare, veri/hizmetler için tercih ettiğiniz bulut. Platform maliyetleri ayrı ve şeffaftır."
+      }
     ],
     "deliverables": "Teslimatlar",
     "outcomes": "Sonuçlar",
@@ -151,14 +186,54 @@
     "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.",
     "start": "Başlat",
     "items": [
-      {"id":"websites","title":"Web Siteleri","tag":"Tasarım • Frontend • Backend","intro":"Hızlı, güvenilir ve net web siteleri. Tasarımdan canlıya kadar uçtan uca."},
-      {"id":"applications","title":"Uygulamalar","tag":"Web App • Mobil • Panel","intro":"İş süreçlerinize özel paneller ve kullanıcı uygulamaları."},
-      {"id":"ai-automation","title":"AI Otomasyonu","tag":"İş Akışları • Ajanlar","intro":"Tekrarlayan işleri yapay zekâ ve iş akışlarıyla otomatikleştirin."},
-      {"id":"ads","title":"Meta & Google Reklamları","tag":"Edinim • Yeniden Hedefleme","intro":"Güvenilir ölçümlemeyle performans kampanyaları."},
-      {"id":"seo","title":"SEO Hizmetleri","tag":"Teknik • İçerik • On‑page","intro":"Arama görünürlüğü için teknik temel ve kaliteli içerik."},
-      {"id":"middleware","title":"CRM/CMS Entegrasyonları","tag":"HubSpot • Salesforce • Sanity","intro":"Sistemler arası sağlam veri akışı ve ara katman."},
-      {"id":"analytics-cro","title":"Analitik & CRO","tag":"Ölçümleme • Deneyler","intro":"Doğru ölçüm ve A/B testleriyle dönüşüm optimizasyonu."},
-      {"id":"hosting-devops","title":"Barındırma & DevOps","tag":"Vercel • Cloudflare • AWS","intro":"Hızlı, güvenilir ve geri alınabilir dağıtımlar."}
+      {
+        "id": "websites",
+        "title": "Web Siteleri",
+        "tag": "Tasarım • Frontend • Backend",
+        "intro": "Hızlı, güvenilir ve net web siteleri. Tasarımdan canlıya kadar uçtan uca."
+      },
+      {
+        "id": "applications",
+        "title": "Uygulamalar",
+        "tag": "Web App • Mobil • Panel",
+        "intro": "İş süreçlerinize özel paneller ve kullanıcı uygulamaları."
+      },
+      {
+        "id": "ai-automation",
+        "title": "AI Otomasyonu",
+        "tag": "İş Akışları • Ajanlar",
+        "intro": "Tekrarlayan işleri yapay zekâ ve iş akışlarıyla otomatikleştirin."
+      },
+      {
+        "id": "ads",
+        "title": "Meta & Google Reklamları",
+        "tag": "Edinim • Yeniden Hedefleme",
+        "intro": "Güvenilir ölçümlemeyle performans kampanyaları."
+      },
+      {
+        "id": "seo",
+        "title": "SEO Hizmetleri",
+        "tag": "Teknik • İçerik • On‑page",
+        "intro": "Arama görünürlüğü için teknik temel ve kaliteli içerik."
+      },
+      {
+        "id": "middleware",
+        "title": "CRM/CMS Entegrasyonları",
+        "tag": "HubSpot • Salesforce • Sanity",
+        "intro": "Sistemler arası sağlam veri akışı ve ara katman."
+      },
+      {
+        "id": "analytics-cro",
+        "title": "Analitik & CRO",
+        "tag": "Ölçümleme • Deneyler",
+        "intro": "Doğru ölçüm ve A/B testleriyle dönüşüm optimizasyonu."
+      },
+      {
+        "id": "hosting-devops",
+        "title": "Barındırma & DevOps",
+        "tag": "Vercel • Cloudflare • AWS",
+        "intro": "Hızlı, güvenilir ve geri alınabilir dağıtımlar."
+      }
     ]
   },
   "blog": {
@@ -178,18 +253,78 @@
     "quickContact": "Hızlı İletişim",
     "quickContactDesc": "Bir iş günü içinde yanıtlarız. Baskı yok; sadece netlik.",
     "samplePosts": [
-      {"cat":"Engineering","title":"Birleşik orta katman API’leri inşa etmek","desc":"Ölçeklenen, gözlemlenebilir ve dayanıklı API merkezleri için kalıplar.","read":"6 dk"},
-      {"cat":"Marketing","title":"Harcamayı gerçekten yönlendiren atıf","desc":"Kanal ROI’si ve bütçe kaydırmaları için pragmatik yaklaşım.","read":"5 dk"},
-      {"cat":"Product","title":"Landing’den aktivasyona günler içinde","desc":"Yüksek kaldıraçlı animasyonlarla ince dilimler göndermek.","read":"7 dk"},
-      {"cat":"Data","title":"Gerçekten işe yarayan operasyon panoları","desc":"Eyleme dönük ekipler için öncü ve artçı göstergeler.","read":"4 dk"},
-      {"cat":"Engineering","title":"Servisler arası tipli veri hatları","desc":"Sözleşmeler ve codegen ile daha güvenli değişimler.","read":"6 dk"},
-      {"cat":"Product","title":"Kendini pazarlayan içerik sistemleri","desc":"Her yayında bileşik artan tasarım ve yapı.","read":"5 dk"},
-      {"cat":"Engineering","title":"Next.js 14 edge kalıpları","desc":"SSR/ISR/statik; önbellek, yeniden doğrulama ve DX.","read":"6 dk"},
-      {"cat":"Engineering","title":"Üretimde tasarım token’ları","desc":"Web, dokümantasyon ve pazarlamada tek doğruluk kaynağı.","read":"5 dk"},
-      {"cat":"Marketing","title":"Hareket ile yaratıcı test","desc":"Ağırlık eklemeden CVR’ı yükselten mikro etkileşimler.","read":"5 dk"},
-      {"cat":"Marketing","title":"Dönüştüren fiyatlandırma sayfaları","desc":"Açıklık, sürtünme kontrolü ve pişmanlığı azaltan hesaplayıcılar.","read":"6 dk"},
-      {"cat":"Data","title":"Güvenilir sunucu tarafı izleme","desc":"Onay, atıf ve olay yönlendirmesinde sağduyulu yapı.","read":"5 dk"},
-      {"cat":"Product","title":"Hızlı onboarding sağlayan dokümanlar","desc":"Daha az destek için yapı, örnekler ve net metin.","read":"6 dk"}
+      {
+        "cat": "Engineering",
+        "title": "Birleşik orta katman API’leri inşa etmek",
+        "desc": "Ölçeklenen, gözlemlenebilir ve dayanıklı API merkezleri için kalıplar.",
+        "read": "6 dk"
+      },
+      {
+        "cat": "Marketing",
+        "title": "Harcamayı gerçekten yönlendiren atıf",
+        "desc": "Kanal ROI’si ve bütçe kaydırmaları için pragmatik yaklaşım.",
+        "read": "5 dk"
+      },
+      {
+        "cat": "Product",
+        "title": "Landing’den aktivasyona günler içinde",
+        "desc": "Yüksek kaldıraçlı animasyonlarla ince dilimler göndermek.",
+        "read": "7 dk"
+      },
+      {
+        "cat": "Data",
+        "title": "Gerçekten işe yarayan operasyon panoları",
+        "desc": "Eyleme dönük ekipler için öncü ve artçı göstergeler.",
+        "read": "4 dk"
+      },
+      {
+        "cat": "Engineering",
+        "title": "Servisler arası tipli veri hatları",
+        "desc": "Sözleşmeler ve codegen ile daha güvenli değişimler.",
+        "read": "6 dk"
+      },
+      {
+        "cat": "Product",
+        "title": "Kendini pazarlayan içerik sistemleri",
+        "desc": "Her yayında bileşik artan tasarım ve yapı.",
+        "read": "5 dk"
+      },
+      {
+        "cat": "Engineering",
+        "title": "Next.js 14 edge kalıpları",
+        "desc": "SSR/ISR/statik; önbellek, yeniden doğrulama ve DX.",
+        "read": "6 dk"
+      },
+      {
+        "cat": "Engineering",
+        "title": "Üretimde tasarım token’ları",
+        "desc": "Web, dokümantasyon ve pazarlamada tek doğruluk kaynağı.",
+        "read": "5 dk"
+      },
+      {
+        "cat": "Marketing",
+        "title": "Hareket ile yaratıcı test",
+        "desc": "Ağırlık eklemeden CVR’ı yükselten mikro etkileşimler.",
+        "read": "5 dk"
+      },
+      {
+        "cat": "Marketing",
+        "title": "Dönüştüren fiyatlandırma sayfaları",
+        "desc": "Açıklık, sürtünme kontrolü ve pişmanlığı azaltan hesaplayıcılar.",
+        "read": "6 dk"
+      },
+      {
+        "cat": "Data",
+        "title": "Güvenilir sunucu tarafı izleme",
+        "desc": "Onay, atıf ve olay yönlendirmesinde sağduyulu yapı.",
+        "read": "5 dk"
+      },
+      {
+        "cat": "Product",
+        "title": "Hızlı onboarding sağlayan dokümanlar",
+        "desc": "Daha az destek için yapı, örnekler ve net metin.",
+        "read": "6 dk"
+      }
     ]
   },
   "useCases": {
@@ -534,5 +669,79 @@
         ]
       }
     ]
+  },
+  "home2": {
+    "heroEyebrow": "Velkina · İstanbul · 2025'ten beri",
+    "heroLine1": "Müşterilerin",
+    "heroLine2": "hissedebileceği",
+    "heroLine3a": "yazılım üretiyoruz",
+    "heroLead": "İstanbul'da kıdemli bir yazılım stüdyosu. Lansman sonrası işin nasıl hissettirdiğini önemseyen müşteriler için web siteleri, uygulamalar ve yapay zekâ destekli sistemler tasarlıyor, geliştiriyor ve ölçeklendiriyoruz.",
+    "heroCtaPrimary": "Projeyi başlat",
+    "heroCtaSecondary": "Seçili işleri gör",
+    "mWeb": "Web",
+    "mApps": "Uygulamalar",
+    "mAi": "YZ Otomasyonu",
+    "mBrand": "Marka Sistemleri",
+    "mPerf": "Performans",
+    "mSeo": "SEO & Büyüme",
+    "numbersEyebrow": "— Rakamlarla",
+    "numbersTitle1": "Lansman sonrası",
+    "numbersTitle2": "dürüst ölçümler.",
+    "kpi1": "Yayında olan proje",
+    "kpi2": "Ortalama organik artış",
+    "kpi3": "Daha hızlı yüklenme",
+    "kpi4": "Hizmet verilen sektör",
+    "workEyebrow": "— Seçili işler",
+    "workTitle1": "On bir vaka,",
+    "workTitle2": "bugün yayında.",
+    "workLead": "Yedi canlı müşteri projesi ve dört stüdyo deneyi — el işçiliğini göstermek için yayımladığımız türden. Bir kartı tıklayıp siteyi ya da demoyu açın.",
+    "workFootnote": "Daha derin bir vaka çalışması mı? Her proje için stüdyo günlüğünde notlar var — dizgili ve yazdırılabilir.",
+    "workJournalLink": "Stüdyo günlüğünü aç",
+    "processEyebrow": "— Çalışma şeklimiz",
+    "processTitle1": "Net bir döngü,",
+    "processTitle2": "haftalık demolar.",
+    "processLead": "1–2 haftalık döngülerle ilerliyoruz. Her cuma önizleme linki, her döngüde ölçülebilir bir hedef, sonunda yazılı bir teslim.",
+    "p1k": "Belirle",
+    "p1t": "Dilimi tanımla.",
+    "p1d": "Kısa bir görüşme, kapsamı belirlenmiş bir değer dilimi, yazılı başarı metriği. Ön keşif PDF'i yok.",
+    "p2k": "Tasarla",
+    "p2t": "Önce token, sonra piksel.",
+    "p2d": "Renk, tipografi, hareket — herhangi bir ekran onaylanmadan önce sistem olarak tanımlanır. Erken karar, ucuz tutarlılık.",
+    "p3k": "Yayınla",
+    "p3t": "Cuma önizlemeleri.",
+    "p3d": "Her sprint canlı önizleme linki, kısa demo ve geri alma planı ile biter.",
+    "p4k": "Ölç",
+    "p4t": "Sunucu tarafı gerçek.",
+    "p4d": "Sunucu tarafı analitik, haftalık okumalar, basit bir deney listesi. Görüşle değil, veriyle tartışırız.",
+    "capsEyebrow": "— Yetkinlikler",
+    "capsTitle1": "Baştan sona",
+    "capsTitle2": "neler yapıyoruz.",
+    "c1t": "Web Siteleri",
+    "c1d": "Editöriyel, e-ticaret ve iki dilli pazarlama siteleri. Edge'de render, erişilebilir, hızlı.",
+    "c2t": "Uygulamalar",
+    "c2d": "Gerçek verinize bağlı özel yönetim panelleri, dashboardlar, kullanıcıya yönelik uygulamalar.",
+    "c3t": "YZ Otomasyonu",
+    "c3d": "Gelen kutusu, rezervasyon, içerik ve operasyonu sessizce yöneten ajanlar ve iş akışları.",
+    "c4t": "Marka & Kimlik",
+    "c4d": "İsim, logo, tipografi sistemleri ve büyümeye dayanan hareket dili.",
+    "c5t": "SEO & Büyüme",
+    "c5d": "Sunucu tarafı analitik, içerik motorları ve ölçülebilir kazanım sağlayan CRO deneyleri.",
+    "c6t": "Hosting & DevOps",
+    "c6d": "Vercel, Cloudflare, önizleme ortamlarıyla CI/CD ve okunabilir gözlemlenebilirlik.",
+    "jEyebrow": "— Stüdyo günlüğü",
+    "jTitle": "Sayı Nº 01'i okuyun",
+    "jTitleItalic": "— el-ciltli bir stüdyo günlüğü.",
+    "jLead": "Kırk sekiz sayfa seçili işler, ilkeler, mutfaktan plakalar ve kısa, dürüst bir kayıt. Bir dergi gibi dizilmiş, baştan sona okunabilir.",
+    "jCta": "Günlüğü aç",
+    "stackEyebrow": "— Birlikte yayınladığımız araç seti",
+    "stackTitle1": "Savunabileceğimiz",
+    "stackTitle2": "araçlar üzerine kurulu.",
+    "ctaEyebrow": "— İletişim",
+    "ctaTitle1": "Aklınızda bir",
+    "ctaTitle2": "şey var mı?",
+    "ctaLead": "Kısa bir görüşme, sonra yazılı kapsam ve sabit fiyat. Bir iş günü içinde cevap veriyoruz.",
+    "cChannels": "Kanallar",
+    "cStudio": "Stüdyo",
+    "cMore": "Daha fazla"
   }
 }

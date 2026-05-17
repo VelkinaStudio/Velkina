@@ -14,7 +14,8 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "startProject": "Start project",
-    "customerAgent": "Turkish Customer Agent"
+    "customerAgent": "Turkish Customer Agent",
+    "journal": "Journal"
   },
   "common": {
     "skipToContent": "Skip to content",
@@ -46,10 +47,26 @@
       "title": "What clients say",
       "carouselLabel": "Testimonials carousel",
       "items": [
-        {"quote":"Velkina shipped our site in weeks with a clean design system.","name":"Aylin K.","role":"CMO, SaaS"},
-        {"quote":"Clear scope, fast iterations and measurable results.","name":"Kerem D.","role":"Founder"},
-        {"quote":"A senior team end‑to‑end—no handovers, just momentum.","name":"Mert S.","role":"Product Lead"},
-        {"quote":"Edge hosting and observability gave us confidence to ship.","name":"Elif A.","role":"Engineering Manager"}
+        {
+          "quote": "Velkina shipped our site in weeks with a clean design system.",
+          "name": "Aylin K.",
+          "role": "CMO, SaaS"
+        },
+        {
+          "quote": "Clear scope, fast iterations and measurable results.",
+          "name": "Kerem D.",
+          "role": "Founder"
+        },
+        {
+          "quote": "A senior team end‑to‑end—no handovers, just momentum.",
+          "name": "Mert S.",
+          "role": "Product Lead"
+        },
+        {
+          "quote": "Edge hosting and observability gave us confidence to ship.",
+          "name": "Elif A.",
+          "role": "Engineering Manager"
+        }
       ]
     },
     "metrics": {
@@ -143,12 +160,30 @@
       "Handover docs, training videos and a sensible rollback plan"
     ],
     "faqs": [
-      {"q":"How do we start?","a":"We begin with a 30–45 minute call to align on goals and constraints. Then we proceed with scope, timeline and success metrics."},
-      {"q":"How do we communicate and deliver?","a":"Weekly sprint reviews with demos, async updates and a transparent project board. Every change has a preview link."},
-      {"q":"Who owns the IP?","a":"You do. Source code lives in your organization; we use open licenses for third‑party components where applicable."},
-      {"q":"Is there post‑launch support?","a":"Yes — retainers for roadmap, optimization and maintenance. No long contracts; scale up or down as needed."},
-      {"q":"Typical timelines?","a":"A thin slice in 1–2 weeks. Marketing site or feature sets in 4–6 weeks. Larger integrations evolve over rolling sprints."},
-      {"q":"Hosting and platforms?","a":"We recommend Vercel/Cloudflare for web and your preferred cloud for data/services. Platform costs are separate and transparent."}
+      {
+        "q": "How do we start?",
+        "a": "We begin with a 30–45 minute call to align on goals and constraints. Then we proceed with scope, timeline and success metrics."
+      },
+      {
+        "q": "How do we communicate and deliver?",
+        "a": "Weekly sprint reviews with demos, async updates and a transparent project board. Every change has a preview link."
+      },
+      {
+        "q": "Who owns the IP?",
+        "a": "You do. Source code lives in your organization; we use open licenses for third‑party components where applicable."
+      },
+      {
+        "q": "Is there post‑launch support?",
+        "a": "Yes — retainers for roadmap, optimization and maintenance. No long contracts; scale up or down as needed."
+      },
+      {
+        "q": "Typical timelines?",
+        "a": "A thin slice in 1–2 weeks. Marketing site or feature sets in 4–6 weeks. Larger integrations evolve over rolling sprints."
+      },
+      {
+        "q": "Hosting and platforms?",
+        "a": "We recommend Vercel/Cloudflare for web and your preferred cloud for data/services. Platform costs are separate and transparent."
+      }
     ],
     "deliverables": "Deliverables",
     "outcomes": "Outcomes",
@@ -158,14 +193,54 @@
     "quickContactDesc": "We reply within one business day. No pressure; just clarity.",
     "start": "Start",
     "items": [
-      {"id":"websites","title":"Websites","tag":"Design • Frontend • Backend","intro":"Fast, reliable and clear websites. End‑to‑end from design to production."},
-      {"id":"applications","title":"Applications","tag":"Web App • Mobile • Admin","intro":"Custom admin panels and user applications for your workflows."},
-      {"id":"ai-automation","title":"AI Automation","tag":"Workflows • Agents","intro":"Automate repetitive tasks with AI agents and workflow tooling."},
-      {"id":"ads","title":"Meta & Google Ads","tag":"Acquisition • Retargeting","intro":"Performance campaigns with trustworthy measurement."},
-      {"id":"seo","title":"SEO Services","tag":"Technical • Content • On‑page","intro":"Technical foundations and quality content for search visibility."},
-      {"id":"middleware","title":"CRM/CMS Integrations","tag":"HubSpot • Salesforce • Sanity","intro":"Robust data flows and middleware between systems."},
-      {"id":"analytics-cro","title":"Analytics & CRO","tag":"Measurement • Experiments","intro":"Conversion optimization with accurate measurement and A/B testing."},
-      {"id":"hosting-devops","title":"Hosting & DevOps","tag":"Vercel • Cloudflare • AWS","intro":"Fast, reliable and reversible deployments."}
+      {
+        "id": "websites",
+        "title": "Websites",
+        "tag": "Design • Frontend • Backend",
+        "intro": "Fast, reliable and clear websites. End‑to‑end from design to production."
+      },
+      {
+        "id": "applications",
+        "title": "Applications",
+        "tag": "Web App • Mobile • Admin",
+        "intro": "Custom admin panels and user applications for your workflows."
+      },
+      {
+        "id": "ai-automation",
+        "title": "AI Automation",
+        "tag": "Workflows • Agents",
+        "intro": "Automate repetitive tasks with AI agents and workflow tooling."
+      },
+      {
+        "id": "ads",
+        "title": "Meta & Google Ads",
+        "tag": "Acquisition • Retargeting",
+        "intro": "Performance campaigns with trustworthy measurement."
+      },
+      {
+        "id": "seo",
+        "title": "SEO Services",
+        "tag": "Technical • Content • On‑page",
+        "intro": "Technical foundations and quality content for search visibility."
+      },
+      {
+        "id": "middleware",
+        "title": "CRM/CMS Integrations",
+        "tag": "HubSpot • Salesforce • Sanity",
+        "intro": "Robust data flows and middleware between systems."
+      },
+      {
+        "id": "analytics-cro",
+        "title": "Analytics & CRO",
+        "tag": "Measurement • Experiments",
+        "intro": "Conversion optimization with accurate measurement and A/B testing."
+      },
+      {
+        "id": "hosting-devops",
+        "title": "Hosting & DevOps",
+        "tag": "Vercel • Cloudflare • AWS",
+        "intro": "Fast, reliable and reversible deployments."
+      }
     ]
   },
   "blog": {
@@ -185,18 +260,78 @@
     "quickContact": "Quick Contact",
     "quickContactDesc": "We reply within one business day. No pressure; just clarity.",
     "samplePosts": [
-      {"cat":"Engineering","title":"Building unified middleware APIs","desc":"Patterns for API hubs that scale, observe, and endure.","read":"6 min"},
-      {"cat":"Marketing","title":"Attribution that actually guides spend","desc":"A pragmatic approach to channel ROI and budget shifts.","read":"5 min"},
-      {"cat":"Product","title":"From landing to activation in days","desc":"Shipping thin slices with high‑leverage motion.","read":"7 min"},
-      {"cat":"Data","title":"Ops dashboards that truly work","desc":"Leading and lagging indicators for action‑oriented teams.","read":"4 min"},
-      {"cat":"Engineering","title":"Typed data pipelines between services","desc":"Safer changes with contracts and codegen.","read":"6 min"},
-      {"cat":"Product","title":"Self‑marketing content systems","desc":"Design and structure that compound with every publish.","read":"5 min"},
-      {"cat":"Engineering","title":"Next.js 14 patterns at the edge","desc":"SSR/ISR/static; cache, revalidation and DX.","read":"6 min"},
-      {"cat":"Engineering","title":"Design tokens in production","desc":"A single source of truth across web, docs and marketing.","read":"5 min"},
-      {"cat":"Marketing","title":"Creative testing with motion","desc":"Micro‑interactions that lift CVR without adding weight.","read":"5 min"},
-      {"cat":"Marketing","title":"Pricing pages that convert","desc":"Clarity, friction control and calculators that reduce regret.","read":"6 min"},
-      {"cat":"Data","title":"Trustworthy server‑side tracking","desc":"A sensible setup for consent, attribution and event routing.","read":"5 min"},
-      {"cat":"Product","title":"Docs that onboard fast","desc":"Structure, examples and clear copy for fewer tickets.","read":"6 min"}
+      {
+        "cat": "Engineering",
+        "title": "Building unified middleware APIs",
+        "desc": "Patterns for API hubs that scale, observe, and endure.",
+        "read": "6 min"
+      },
+      {
+        "cat": "Marketing",
+        "title": "Attribution that actually guides spend",
+        "desc": "A pragmatic approach to channel ROI and budget shifts.",
+        "read": "5 min"
+      },
+      {
+        "cat": "Product",
+        "title": "From landing to activation in days",
+        "desc": "Shipping thin slices with high‑leverage motion.",
+        "read": "7 min"
+      },
+      {
+        "cat": "Data",
+        "title": "Ops dashboards that truly work",
+        "desc": "Leading and lagging indicators for action‑oriented teams.",
+        "read": "4 min"
+      },
+      {
+        "cat": "Engineering",
+        "title": "Typed data pipelines between services",
+        "desc": "Safer changes with contracts and codegen.",
+        "read": "6 min"
+      },
+      {
+        "cat": "Product",
+        "title": "Self‑marketing content systems",
+        "desc": "Design and structure that compound with every publish.",
+        "read": "5 min"
+      },
+      {
+        "cat": "Engineering",
+        "title": "Next.js 14 patterns at the edge",
+        "desc": "SSR/ISR/static; cache, revalidation and DX.",
+        "read": "6 min"
+      },
+      {
+        "cat": "Engineering",
+        "title": "Design tokens in production",
+        "desc": "A single source of truth across web, docs and marketing.",
+        "read": "5 min"
+      },
+      {
+        "cat": "Marketing",
+        "title": "Creative testing with motion",
+        "desc": "Micro‑interactions that lift CVR without adding weight.",
+        "read": "5 min"
+      },
+      {
+        "cat": "Marketing",
+        "title": "Pricing pages that convert",
+        "desc": "Clarity, friction control and calculators that reduce regret.",
+        "read": "6 min"
+      },
+      {
+        "cat": "Data",
+        "title": "Trustworthy server‑side tracking",
+        "desc": "A sensible setup for consent, attribution and event routing.",
+        "read": "5 min"
+      },
+      {
+        "cat": "Product",
+        "title": "Docs that onboard fast",
+        "desc": "Structure, examples and clear copy for fewer tickets.",
+        "read": "6 min"
+      }
     ]
   },
   "useCases": {
@@ -541,5 +676,79 @@
         ]
       }
     ]
+  },
+  "home2": {
+    "heroEyebrow": "Velkina · Istanbul · est. 2025",
+    "heroLine1": "We engineer",
+    "heroLine2": "software clients",
+    "heroLine3a": "can feel",
+    "heroLead": "A senior software studio in Istanbul. We design, ship and scale websites, applications and AI-powered systems for clients who care about the work after launch — speed, conversion, retention, the way the thing actually feels.",
+    "heroCtaPrimary": "Start a project",
+    "heroCtaSecondary": "See selected work",
+    "mWeb": "Websites",
+    "mApps": "Applications",
+    "mAi": "AI Automation",
+    "mBrand": "Brand Systems",
+    "mPerf": "Performance",
+    "mSeo": "SEO & Growth",
+    "numbersEyebrow": "— By the numbers",
+    "numbersTitle1": "Honest measurements,",
+    "numbersTitle2": "after launch.",
+    "kpi1": "Live projects shipped",
+    "kpi2": "Average organic uplift",
+    "kpi3": "Faster load times",
+    "kpi4": "Industries served",
+    "workEyebrow": "— Selected work",
+    "workTitle1": "Eleven cases,",
+    "workTitle2": "in production today.",
+    "workLead": "Seven live client engagements plus four studio experiments — the kind we publish to demonstrate craft. Click any card to visit the live site or open the demo.",
+    "workFootnote": "Want a deeper case study? Each project has notes in the studio journal — typeset and printable.",
+    "workJournalLink": "Open the studio journal",
+    "processEyebrow": "— How we work",
+    "processTitle1": "A clear cycle,",
+    "processTitle2": "weekly demos.",
+    "processLead": "We move in 1–2 week sprints. Preview links every Friday, a measurable goal every cycle, a written hand-over at the end.",
+    "p1k": "Map",
+    "p1t": "Define the slice.",
+    "p1d": "A short call, a scoped slice of value, a written success metric. No upfront discovery PDFs.",
+    "p2k": "Design",
+    "p2t": "Tokens then pixels.",
+    "p2d": "Color, type, motion — defined as a system before any screen is signed off. Consistency is cheap when decided early.",
+    "p3k": "Ship",
+    "p3t": "Friday previews.",
+    "p3d": "Each sprint ends with a live preview link, a short demo and a roll-back plan.",
+    "p4k": "Measure",
+    "p4t": "Server-side truth.",
+    "p4d": "Server-side analytics, weekly reads, a simple experiment list. We argue with data, not opinions.",
+    "capsEyebrow": "— Capabilities",
+    "capsTitle1": "What we build,",
+    "capsTitle2": "end to end.",
+    "c1t": "Websites",
+    "c1d": "Editorial, e-commerce and bilingual marketing sites. Edge-rendered, accessible, fast.",
+    "c2t": "Applications",
+    "c2d": "Custom admin panels, dashboards and user-facing apps wired to your real data.",
+    "c3t": "AI Automation",
+    "c3d": "Agents and workflows that handle inbox, booking, content and ops — quietly, reliably.",
+    "c4t": "Brand & Identity",
+    "c4d": "Names, logos, type systems and motion language that survive scale.",
+    "c5t": "SEO & Growth",
+    "c5d": "Server-side analytics, content engines and CRO experiments with measured uplift.",
+    "c6t": "Hosting & DevOps",
+    "c6d": "Vercel, Cloudflare, CI/CD with preview environments and observability you can read.",
+    "jEyebrow": "— The studio journal",
+    "jTitle": "Read Issue Nº 01",
+    "jTitleItalic": "— a hand-bound studio journal.",
+    "jLead": "Forty-eight pages of selected work, principles, plates from the kitchen and a short, honest record. Typeset like a magazine, readable end to end.",
+    "jCta": "Open the journal",
+    "stackEyebrow": "— The toolkit we ship with",
+    "stackTitle1": "Built on tools",
+    "stackTitle2": "we can defend.",
+    "ctaEyebrow": "— Get in touch",
+    "ctaTitle1": "Have something",
+    "ctaTitle2": "in mind?",
+    "ctaLead": "A short call, then a written scope and a fixed price. We reply within one business day.",
+    "cChannels": "Channels",
+    "cStudio": "Studio",
+    "cMore": "More"
   }
 }
