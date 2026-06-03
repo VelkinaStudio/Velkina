@@ -36,12 +36,14 @@ export default function HeroCanvas({ quality = 1 }: { quality?: number }) {
         {quality >= 1 && (
           <EffectComposer enableNormalPass={false}>
             <Bloom
-              intensity={0.9}
-              luminanceThreshold={0.15}
+              intensity={0.7}
+              luminanceThreshold={0.2}
               luminanceSmoothing={0.4}
               mipmapBlur
               radius={0.6}
             />
+            {/* Inkwell comic passes re-integrate once verified in isolation
+                (examples/local harness). Bloom-only keeps the hero solid. */}
           </EffectComposer>
         )}
       </PerformanceMonitor>
