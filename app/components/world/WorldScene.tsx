@@ -7,6 +7,8 @@ import CameraRig from "./CameraRig";
 import Room from "./Room";
 import SceneLighting from "./SceneLighting";
 import StationObjects from "./StationObjects";
+import Velkina from "./Velkina";
+import { Pixl, Sifir } from "./Critters";
 import Dock from "./Dock";
 import { STATIONS, PROJECT_STATIONS } from "@/app/lib/stations";
 
@@ -70,6 +72,9 @@ export default function WorldScene({
           <SceneLighting />
           <Room />
           <StationObjects onPick={go} />
+          <Velkina position={[0, 1.15, -0.4]} />
+          <Pixl position={[0.3, 0.2, 0.3]} />
+          <Sifir position={[-3.0, 0.1, -2.3]} />
         </Suspense>
       </Canvas>
       <Dock active={station} onPick={go} />
