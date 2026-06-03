@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerformanceMonitor, AdaptiveEvents } from "@react-three/drei";
 import CameraRig from "./CameraRig";
-import PlaceholderRoom from "./PlaceholderRoom";
+import Room from "./Room";
+import SceneLighting from "./SceneLighting";
+import StationObjects from "./StationObjects";
 import Dock from "./Dock";
 import { STATIONS, PROJECT_STATIONS } from "@/app/lib/stations";
 
@@ -64,7 +66,11 @@ export default function WorldScene({
         />
         <AdaptiveEvents />
         <CameraRig target={station} reduced={reduced} onSettled={onSettled} />
-        <PlaceholderRoom onPick={go} />
+        <Suspense fallback={null}>
+          <SceneLighting />
+          <Room />
+          <StationObjects onPick={go} />
+        </Suspense>
       </Canvas>
       <Dock active={station} onPick={go} />
     </>
