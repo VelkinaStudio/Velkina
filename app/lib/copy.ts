@@ -1,148 +1,142 @@
-// Velkina site copy — EN + TR. Plain, professional, modest voice. No hype,
-// no fabricated metrics, no persona nicknames. "We are Velkina."
+// Velkina — site copy, EN + TR. Warm, plain, spoken. We say what we ARE, not
+// what we're not. No defensive framing, no hype words, no fabricated metrics.
 
 export type Lang = "en" | "tr";
 
 const en = {
-    nav: { work: "Work", oss: "Open source", studio: "Studio", contact: "Contact" },
-    hero: {
-      h1: "We are Velkina.",
-      subhead:
-        "A two-person studio in Istanbul. We build software, websites, and stores — one project at a time, no account manager in between.",
-      selectLabel: "The arsenal",
-      selectCta: "Open",
+  nav: { work: "Work", studio: "Studio", team: "Us", contact: "Say hi" },
+  hero: {
+    h1: "Come in. This is our studio.",
+    sub: "We're Velkina — Ömer and Baha, two people building software, websites, and stores out of Istanbul. Have a look around; everything in here is something we actually made.",
+    prompt: "Tap a desk to look around",
+    enter: "Look around",
+  },
+  whatWeDo: {
+    label: "What we make",
+    intro: "You talk to the two people who build it. Nothing gets passed down a chain.",
+    items: [
+      { k: "Software", v: "Web apps and the systems a business actually runs on, day to day." },
+      { k: "Websites", v: "Sites and landing pages that load fast and read clearly." },
+      { k: "Stores", v: "Custom Shopify stores the owner can run alone — add products, change prices, edit pages without emailing us." },
+      { k: "AI & automation", v: "Things that keep working after launch: watching ad campaigns, moving data, answering in four languages." },
+      { k: "Brand", v: "The name, the look, and the visual system around the product." },
+    ],
+  },
+  work: {
+    label: "Selected work",
+    intro: "A few things we shipped and still look after. Tap any object in the room — or any card here — for the story.",
+    brief: "The problem",
+    decision: "What we decided",
+    outcome: "What changed",
+    visit: "Visit the live site",
+    open: "Open",
+    close: "Close",
+  },
+  team: {
+    label: "The two of us",
+    omer: {
+      name: "Ömer Can Nalbant",
+      role: "Front-end, design, business",
+      line: "Built this room by hand instead of buying a template. He'll cut a feature before he'll ship a slow page.",
     },
-    whatWeDo: {
-      label: "What we do",
-      intro: "We're small on purpose. You brief the two people who build it — nothing gets handed down a chain.",
-      items: [
-        { k: "Software", v: "Web apps, internal tools, and the platforms a business actually runs on." },
-        { k: "Websites", v: "Marketing sites, portfolios, and landing pages that load fast and read well." },
-        { k: "E-commerce", v: "Custom Shopify themes the owner can run — edit products, prices, and pages without emailing us." },
-        { k: "AI", v: "Automation and integrations that run unattended: watching campaigns, moving data, answering in four languages. Things that stay on after launch." },
-        { k: "Brand", v: "Identity, naming, and the visual system around the product." },
-      ],
+    baha: {
+      name: "Baha Taşkın",
+      role: "Back-end, infrastructure, ops",
+      line: "Wrote the Stripe payouts behind RuleSell and the rules engine that pauses Meta campaigns on their own numbers. He'd rather delete code than add it.",
     },
-    work: {
-      label: "Selected work",
-      intro: "Six projects we shipped and still maintain. Open any one for the brief, what we built, and what changed.",
-      brief: "The problem",
-      process: "What we did",
-      outcome: "What changed",
-      visit: "Visit",
-      open: "Open",
-      close: "Close",
-    },
-    oss: {
-      label: "Open source",
-      intro: "Tools we built for our own work and put out for anyone. Small, dependency-light, MIT-licensed.",
-      view: "View on GitHub",
-      all: "All repositories",
-    },
-    team: {
-      label: "The two of us",
-      people: [
-        {
-          name: "Ömer Can Nalbant",
-          role: "Front-end, design, and business",
-          line: "Designs and writes the front end. Built this site by hand instead of buying a template. Would rather cut a feature than ship a slow page.",
-        },
-        {
-          name: "Baha Taşkın",
-          role: "Back-end, infrastructure, and operations",
-          line: "Builds the backends. Shipped the Stripe Connect payouts behind RuleSell and the rules engine that pauses Meta campaigns on their own numbers. Would rather delete code than add it.",
-        },
-      ],
-      closing: "Two people, three projects at a time. We pick what we say yes to, so nothing sits in a queue.",
-    },
-    contact: {
-      label: "Contact",
-      heading: "Tell us what you're building.",
-      body: "Send a few sentences about the project. We'll tell you honestly whether we're the right fit — and if we're not, who is.",
-      cta: "Start a project",
-      email: "hello@velkina.com",
-      location: "Istanbul",
-    },
-    footer: {
-      identity: "Velkina — Istanbul",
-      note: "Hand-built in Istanbul. No template, no stock.",
-      sound: "Sound",
-      reduce: "Reduce motion",
-      on: "on",
-      off: "off",
-    },
+    closing: "Two people, a few projects at a time. We pick what we say yes to, so nothing sits in a queue.",
+  },
+  contact: {
+    label: "Say hi",
+    heading: "Tell us what you're building.",
+    body: "A few sentences is plenty. We'll tell you honestly if we're the right fit — and if we're not, who is.",
+    email: "hello@velkina.com",
+    copy: "Copy email",
+    copied: "Copied",
+    location: "Istanbul",
+  },
+  oss: {
+    label: "Open source",
+    intro: "Small tools we built for our own work and put out for anyone — dependency-light, MIT-licensed.",
+    view: "View on GitHub",
+    all: "All repositories",
+  },
+  ui: {
+    home: "Back to the room",
+    reduceMotion: "Reduce motion",
+    loading: "Tidying the studio…",
+    soundOn: "sound on",
+    soundOff: "sound off",
+  },
 };
 
 export type Copy = typeof en;
 
 const tr: Copy = {
-    nav: { work: "İşler", oss: "Açık kaynak", studio: "Stüdyo", contact: "İletişim" },
-    hero: {
-      h1: "Biz Velkina’yız.",
-      subhead:
-        "İstanbul’da iki kişilik bir stüdyo. Yazılım, web sitesi ve mağaza kuruyoruz — aynı anda tek proje, araya giren bir müşteri temsilcisi yok.",
-      selectLabel: "Cephanelik",
-      selectCta: "Aç",
+  nav: { work: "İşler", studio: "Stüdyo", team: "Biz", contact: "Merhaba de" },
+  hero: {
+    h1: "Buyur, gir. Burası stüdyomuz.",
+    sub: "Biz Velkina’yız — Ömer ve Baha. İstanbul’dan yazılım, web sitesi ve mağaza yapan iki kişi. Etrafa bir bak; buradaki her şeyi gerçekten biz yaptık.",
+    prompt: "Etrafa bakmak için bir masaya dokun",
+    enter: "Etrafa bak",
+  },
+  whatWeDo: {
+    label: "Ne yapıyoruz",
+    intro: "İşi yapan iki kişiyle konuşursun. Hiçbir şey elden ele dolaşmaz.",
+    items: [
+      { k: "Yazılım", v: "Web uygulamaları ve bir işin her gün üzerinde döndüğü sistemler." },
+      { k: "Web siteleri", v: "Hızlı açılan, net okunan siteler ve landing sayfaları." },
+      { k: "Mağaza", v: "Sahibinin tek başına yönetebileceği özel Shopify mağazaları — ürün ekler, fiyat değiştirir, sayfayı bize yazmadan düzenler." },
+      { k: "Yapay zekâ & otomasyon", v: "Yayından sonra da çalışan şeyler: reklam kampanyalarını izlemek, veri taşımak, dört dilde yanıt vermek." },
+      { k: "Marka", v: "Ürünün etrafındaki isim, görünüm ve görsel sistem." },
+    ],
+  },
+  work: {
+    label: "Seçili işler",
+    intro: "Yayına alıp hâlâ baktığımız birkaç şey. Odadaki herhangi bir nesneye — ya da buradaki bir karta — dokun, hikâyesini gör.",
+    brief: "Problem",
+    decision: "Ne karar verdik",
+    outcome: "Ne değişti",
+    visit: "Canlı siteyi gör",
+    open: "Aç",
+    close: "Kapat",
+  },
+  team: {
+    label: "Biz iki kişiyiz",
+    omer: {
+      name: "Ömer Can Nalbant",
+      role: "Front-end, tasarım, iş",
+      line: "Bu odayı şablon almak yerine elle kurdu. Yavaş bir sayfa yayınlamaktansa bir özelliği keser.",
     },
-    whatWeDo: {
-      label: "Ne yapıyoruz",
-      intro: "Bilerek küçüğüz. İşi yapan iki kişiye anlatırsınız — hiçbir şey bir zincirin alt kademesine devredilmez.",
-      items: [
-        { k: "Yazılım", v: "Web uygulamaları, iç araçlar ve bir işin gerçekten üzerinde çalıştığı sistemler." },
-        { k: "Web siteleri", v: "Hızlı açılan ve iyi okunan tanıtım siteleri, portfolyolar ve landing sayfaları." },
-        { k: "E-ticaret", v: "Sahibinin kendi yönetebileceği özel Shopify temaları — ürünü, fiyatı ve sayfayı bize yazmadan düzenler." },
-        { k: "Yapay zekâ", v: "Arka planda tek başına çalışan otomasyon ve entegrasyonlar: kampanyaları izler, veriyi taşır, dört dilde yanıt verir. Yayından sonra da çalışmaya devam eder." },
-        { k: "Marka", v: "Kimlik, isimlendirme ve ürünün etrafındaki görsel sistem." },
-      ],
+    baha: {
+      name: "Baha Taşkın",
+      role: "Back-end, altyapı, operasyon",
+      line: "RuleSell’in arkasındaki Stripe ödemelerini ve Meta kampanyalarını kendi sayılarıyla durduran kural motorunu yazdı. Kod eklemektense silmeyi sever.",
     },
-    work: {
-      label: "Seçili işler",
-      intro: "Yayına alıp bakımını sürdürdüğümüz altı proje. Herhangi birini aç; brief’i, ne kurduğumuzu ve neyin değiştiğini gör.",
-      brief: "Problem",
-      process: "Ne yaptık",
-      outcome: "Ne değişti",
-      visit: "Siteye git",
-      open: "Aç",
-      close: "Kapat",
-    },
-    oss: {
-      label: "Açık kaynak",
-      intro: "Kendi işimiz için yapıp herkese açtığımız araçlar. Küçük, az bağımlılıklı, MIT lisanslı.",
-      view: "GitHub'da gör",
-      all: "Tüm repolar",
-    },
-    team: {
-      label: "Biz iki kişiyiz",
-      people: [
-        {
-          name: "Ömer Can Nalbant",
-          role: "Front-end, tasarım ve iş geliştirme",
-          line: "Ön yüzü tasarlar ve yazar. Bu siteyi şablon almak yerine elle kurdu. Yavaş bir sayfa yayınlamaktansa bir özelliği keser.",
-        },
-        {
-          name: "Baha Taşkın",
-          role: "Back-end, altyapı ve operasyon",
-          line: "Arka uçları kurar. RuleSell’in arkasındaki Stripe Connect ödemelerini ve Meta kampanyalarını kendi sayılarıyla durduran kural motorunu yazdı. Kod eklemektense silmeyi tercih eder.",
-        },
-      ],
-      closing: "İki kişi, aynı anda üç proje. Neye evet diyeceğimizi biz seçeriz; böylece hiçbir iş sırada beklemez.",
-    },
-    contact: {
-      label: "İletişim",
-      heading: "Ne inşa ettiğinizi anlatın.",
-      body: "Proje hakkında birkaç cümle gönderin. Doğru ekip miyiz dürüstçe söyleriz — değilsek, kimin olduğunu da.",
-      cta: "Projeye başlayın",
-      email: "hello@velkina.com",
-      location: "İstanbul",
-    },
-    footer: {
-      identity: "Velkina — İstanbul",
-      note: "İstanbul’da elle yapıldı. Şablon yok, stok yok.",
-      sound: "Ses",
-      reduce: "Hareketi azalt",
-      on: "açık",
-      off: "kapalı",
-    },
+    closing: "İki kişi, aynı anda birkaç proje. Neye evet diyeceğimizi biz seçeriz; hiçbir iş sırada beklemez.",
+  },
+  contact: {
+    label: "Merhaba de",
+    heading: "Ne kurduğunu anlat.",
+    body: "Birkaç cümle yeter. Doğru ekip miyiz dürüstçe söyleriz — değilsek, kimin olduğunu da.",
+    email: "hello@velkina.com",
+    copy: "E-postayı kopyala",
+    copied: "Kopyalandı",
+    location: "İstanbul",
+  },
+  oss: {
+    label: "Açık kaynak",
+    intro: "Kendi işimiz için yapıp herkese açtığımız küçük araçlar — az bağımlılıklı, MIT lisanslı.",
+    view: "GitHub’da gör",
+    all: "Tüm repolar",
+  },
+  ui: {
+    home: "Odaya dön",
+    reduceMotion: "Hareketi azalt",
+    loading: "Stüdyo toparlanıyor…",
+    soundOn: "ses açık",
+    soundOff: "ses kapalı",
+  },
 };
 
 export const COPY: Record<Lang, Copy> = { en, tr };

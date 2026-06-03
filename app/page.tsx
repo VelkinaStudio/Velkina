@@ -1,15 +1,14 @@
 import "./site.css";
 import { LangProvider } from "./lib/LangProvider";
-import Nav from "./components/Nav";
-import Sections from "./components/Sections";
+import StudioWorld from "./components/StudioWorld";
 
-// Single-page physics-toy portfolio. The hero text + the real work list render
-// as static HTML (LCP + crawlable); the throwable pile is a deferred client toy.
+// The explorable studio-world. A cute, smooth, glossy 3D room you walk through
+// to discover the studio — mounted over a DOM-first content layer that is the
+// SEO + reduced-motion + no-WebGL fallback (and good on its own).
 export default function HomePage() {
   return (
     <LangProvider>
-      <Nav />
-      <Sections />
+      <StudioWorld />
     </LangProvider>
   );
 }
