@@ -135,5 +135,28 @@ a:focus-visible, button:focus-visible {
 .vk-c-footer { border-top: 1px solid var(--line-soft); margin-top: 2rem; padding-top: 1.5rem; font-size: 0.82rem; color: color-mix(in srgb, var(--ink) 50%, transparent); }
 
 /* ===========================================================================
-   3D ROOM layer styles get appended below as the scene is built.
+   3D ROOM layer
    =========================================================================== */
+
+/* the station dock — glossy pills, bottom-center, always available */
+.vk-dock {
+  position: fixed; left: 50%; bottom: clamp(0.8rem, 3vw, 1.6rem);
+  transform: translateX(-50%); z-index: 20;
+  display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center;
+  max-width: 94vw; padding: 0.4rem;
+  background: rgba(255,255,255,0.55); backdrop-filter: blur(10px);
+  border: 1px solid var(--line); border-radius: 999px;
+}
+.vk-dock-pill {
+  font-family: var(--vk-body); font-weight: 600; font-size: 0.8rem;
+  color: var(--ink); background: transparent; border: none; cursor: pointer;
+  padding: 0.45rem 0.85rem; border-radius: 999px; min-height: 40px;
+  transition: background 0.2s var(--ease-out), color 0.2s;
+  white-space: nowrap;
+}
+.vk-dock-pill:hover { background: rgba(255,106,77,0.14); }
+.vk-dock-pill.is-active { background: var(--accent); color: var(--paper); }
+@media (max-width: 700px) {
+  .vk-dock { gap: 0.25rem; }
+  .vk-dock-pill { font-size: 0.72rem; padding: 0.4rem 0.6rem; }
+}

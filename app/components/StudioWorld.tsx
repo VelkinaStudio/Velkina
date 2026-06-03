@@ -1,27 +1,35 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Content from "./Content";
 
-// Orchestrator. Decides between the 3D explorable room and the DOM fallback,
-// based on capability + prefers-reduced-motion + a manual toggle. Step 1 ships
-// the DOM content as the standalone page; the 3D scene is layered in next.
+// Orchestrator. 3D explorable room when the device can handle it and motion is
+// allowed; otherwise the DOM content (which is always rendered for SEO/AT and
+// becomes the visible page in fallback). The 3D bundle loads only when chosen.
+
+const WorldScene = dynamic(() => import("./world/WorldScene"), { ssr: false });
 
 export default function StudioWorld() {
-  // null = undecided (SSR), true = show 3D, false = DOM fallback
   const [enabled, setEnabled] = useState<boolean | null>(null);
 
   useEffect(() => {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // capability sniff: WebGL + not a tiny/low-memory device
     let webgl = false;
     try {
       const c = document.createElement("canvas");
       webgl = !!(c.getContext("webgl2") || c.getContext("webgl"));
     } catch {}
-    setEnabled(webgl && !reduced);
+    const small = window.innerWidth < 480 && navigator.hardwareConcurrency != null && navigator.hardwareConcurrency <= 4;
+    setEnabled(webgl && !reduced && !small);
   }, []);
 
-  // Until the 3D scene is wired (next step), always render the DOM content.
-  return <Content variant="standalone" />;
+  // Always render Content: it's the SEO/AT layer + the fallback page.
+  // When 3D is on, Content is visually hidden (kept for crawlers) and the room shows.
+  return (
+    <>
+      <Content variant={enabled ? "embedded" : "standalone"} />
+      {enabled && <WorldScene />}
+    </>
+  );
 }
