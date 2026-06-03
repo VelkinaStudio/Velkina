@@ -13,7 +13,9 @@
     "jsx": "preserve",
     "strict": true,
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@/*": ["./*"]
+    },
     "types": [
       "node",
       "react",

@@ -1,22 +1,21 @@
-import createMiddleware from 'next-intl/middleware';
+import createMiddleware from "next-intl/middleware";
 
-export default createMiddleware({
-  // Supported locales: English, Turkish, Romanian
-  locales: ['en', 'tr', 'ro'],
-  // Default locale when visiting '/'; Accept-Language will route TR/RO browsers automatically
-  defaultLocale: 'en',
-  // Always prefix URLs with the locale segment and detect from Accept-Language on first visit
-  localePrefix: 'always',
-  localeDetection: true
+// v9: the maximalist English experience lives at the ROOT (app/page.tsx).
+// The /en /tr /ro localized routes still exist for SEO + TR/RO visitors, but
+// we no longer force-redirect "/" away from the new root experience.
+const intlMiddleware = createMiddleware({
+  locales: ["en", "tr", "ro"],
+  defaultLocale: "en",
+  localePrefix: "always",
+  localeDetection: false, // don't auto-bounce "/" to "/tr" etc.
 });
 
+export default function middleware(request: any) {
+  return intlMiddleware(request);
+}
+
 export const config = {
-  // Enforce locale prefixes everywhere EXCEPT:
-  //   _next      → Next.js internals
-  //   *.foo      → static files
-  //   demo/*     → English-only demo sites (showcase mini-products)
-  //   robots.txt, sitemap.xml → handled by Next directly
-  matcher: [
-    '/((?!_next|demo|robots\\.txt|sitemap\\.xml|.*\\..*).*)'
-  ]
+  // Only run intl middleware on the explicit locale routes; leave "/", the
+  // root experience, demos, and static files alone.
+  matcher: ["/(en|tr|ro)/:path*"],
 };
