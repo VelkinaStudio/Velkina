@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import { useLang } from "@/lib/i18n";
 
 // Heavy WebGL canvas — client-only, lazy. Never SSR (three touches window).
 // Comic glossy wordmark when the GPU can handle it; a designed 2D comic title
@@ -27,6 +28,7 @@ function useCapability() {
 
 export default function Hero() {
   const cap = useCapability();
+  const { t } = useLang();
 
   return (
     <section className="vk-hero vk-hero--comic" aria-label="Velkina">
@@ -35,7 +37,7 @@ export default function Hero() {
         {/* Designed 2D comic title — ALWAYS the visible base layer (beautiful on
             its own, never blank). The WebGL wordmark overlays it as enhancement. */}
         <div className="vk-hero-title is-front">
-          <span className="vk-hero-kicker vk-mono">Velkina — a two-person studio</span>
+          <span className="vk-hero-kicker vk-mono">{t.hero.kicker}</span>
           <h1 className="vk-hero-name" aria-label="Velkina">
             {"VELKINA".split("").map((c, i) => (
               <span key={i} className="vk-hero-letter" style={{ ["--i" as any]: i }}>
@@ -54,18 +56,17 @@ export default function Hero() {
           </div>
         )}
 
-        {/* Hand-lettered caption — the human hook (Austen/Gambino-flavoured wit) */}
+        {/* Hand-lettered caption — the human hook */}
         <div className="vk-hero-caption">
           <p className="vk-hero-line">
-            We make software, brands &amp; the occasional game —
-            <em> and the tools we make them with.</em>
+            {t.hero.line1} <em>{t.hero.line2}</em>
           </p>
-          <p className="vk-hero-sub vk-mono">Ömer &amp; Baha · İstanbul</p>
+          <p className="vk-hero-sub vk-mono">{t.hero.sub}</p>
         </div>
 
-        <div className="vk-hero-corner vk-mono" aria-hidden="true">EST. 2024 · ISSUE 01</div>
+        <div className="vk-hero-corner vk-mono" aria-hidden="true">{t.hero.corner}</div>
         <a href="#work" className="vk-hero-scroll vk-mono" aria-label="Scroll to work">
-          <span>READ ON</span>
+          <span>{t.hero.read}</span>
           <span className="vk-hero-scroll-arrow">↓</span>
         </a>
       </div>

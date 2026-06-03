@@ -1,32 +1,33 @@
 import "./sections.css";
+import { LangProvider } from "@/lib/i18n";
 import SmoothScroll from "@/components/SmoothScroll";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Hero from "@/components/sections/Hero";
 import Statement from "@/components/sections/Statement";
-import Capabilities from "@/components/sections/Capabilities";
 import Work from "@/components/sections/Work";
-import Operators from "@/components/sections/Operators";
 import AIStack from "@/components/sections/AIStack";
-import Process from "@/components/sections/Process";
+import Operators from "@/components/sections/Operators";
 import Contact from "@/components/sections/Contact";
 
+// Creative-duo portfolio (comic world). Agency funnel (Capabilities/Process)
+// dropped per direction — the AI section carries "what we play with".
 export default function HomePage() {
   return (
-    <SmoothScroll>
-      <a id="top" />
-      <Nav />
-      <main>
-        <Hero />
-        <Statement />
-        <Work />
-        <Capabilities />
-        <AIStack />
-        <Operators />
-        <Process />
-        <Contact />
-      </main>
-      <Footer />
-    </SmoothScroll>
+    <LangProvider>
+      <SmoothScroll>
+        <a id="top" />
+        <Nav />
+        <main>
+          <Hero />
+          <Statement />
+          <Work />
+          <AIStack />
+          <Operators />
+          <Contact />
+        </main>
+        <Footer />
+      </SmoothScroll>
+    </LangProvider>
   );
 }

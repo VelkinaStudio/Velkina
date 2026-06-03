@@ -262,3 +262,13 @@
 .vk-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--vk-ease-out), transform 0.8s var(--vk-ease-out); }
 .vk-reveal.is-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .vk-reveal { opacity: 1; transform: none; } }
+
+/* ---------- Lang toggle + comic nav ---------- */
+.vk-lang-toggle {
+  font-family: var(--vk-font-mono); font-size: 0.7rem; letter-spacing: 0.1em;
+  background: var(--vk-volt); color: #14100c; border: 1px solid #14100c;
+  border-radius: 4px; padding: 0.2rem 0.5rem; cursor: pointer; font-weight: 700;
+  box-shadow: 2px 2px 0 #14100c; transition: transform 120ms var(--vk-ease-out);
+}
+.vk-lang-toggle:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 #14100c; }
+.vk-lang-toggle:active { transform: translate(1px,1px); box-shadow: 1px 1px 0 #14100c; }
