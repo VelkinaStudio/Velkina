@@ -54,6 +54,15 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+      <head>
+        {/* Mark JS-on before first paint so scroll-reveal only hides content
+            when JS can reveal it again. No-JS / pre-hydration => visible. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+      </head>
       <body className="vk-grain">{children}</body>
     </html>
   );

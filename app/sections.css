@@ -258,10 +258,12 @@
 .vk-footer-row { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; font-family: var(--vk-font-mono); font-size: 0.78rem; color: var(--vk-dim); }
 .vk-footer-row a:hover { color: var(--vk-volt); }
 
-/* Scroll-reveal base (GSAP toggles .is-in) */
-.vk-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--vk-ease-out), transform 0.8s var(--vk-ease-out); }
-.vk-reveal.is-in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .vk-reveal { opacity: 1; transform: none; } }
+/* Scroll-reveal base (IntersectionObserver toggles .is-in).
+   Only hide when JS is present to bring them back (.js set in <head> before
+   first paint). No-JS / pre-hydration => content fully visible, never blank. */
+.js .vk-reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--vk-ease-out), transform 0.8s var(--vk-ease-out); }
+.js .vk-reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .vk-reveal { opacity: 1; transform: none; } }
 
 /* ---------- Lang toggle + comic nav ---------- */
 .vk-lang-toggle {
