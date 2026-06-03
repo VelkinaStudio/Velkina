@@ -5,7 +5,7 @@ import { AnimatePresence } from "motion/react";
 import { PROJECTS } from "@/app/lib/data/projects";
 import { REPOS } from "@/app/lib/data/opensource";
 import { useLang } from "@/app/lib/LangProvider";
-import WeaponSelect from "./WeaponSelect";
+import Console from "./studio/Console";
 import WorkDetail from "./WorkDetail";
 import MagneticCTA from "./MagneticCTA";
 import SoundToggle from "./SoundToggle";
@@ -36,15 +36,16 @@ export default function Sections() {
 
   return (
     <main id="top" ref={rootRef}>
-      {/* HERO — the signature: text paints first, the pile is the toy */}
+      {/* HERO — the signature: a miniature Istanbul studio, live-rendered by our
+          own engine (inkwell). Drag the shader knobs, the whole room re-renders.
+          Hero text paints first (LCP + crawlable); the scene is a deferred toy. */}
       <section className="vk-hero">
         <div className="vk-hero-head">
           <h1 className="vk-h1">{t.hero.h1}</h1>
           <p className="vk-hero-sub">{t.hero.subhead}</p>
         </div>
 
-        <span className="vk-arsenal-label">{t.hero.selectLabel}</span>
-        <WeaponSelect />
+        <Console onProject={setOpenId} />
 
         <a href="#studio" className="vk-hero-scroll" aria-label="scroll">
           <span />

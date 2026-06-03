@@ -12,6 +12,12 @@ const en = {
       selectLabel: "The arsenal",
       selectCta: "Open",
     },
+    studio: {
+      consoleLabel: "inkwell — render console",
+      caption: "We built the engine rendering this room. Drag a knob.",
+      reset: "reset",
+      hint: "This whole studio is live, rendered by our own engine. Turn the knobs.",
+    },
     whatWeDo: {
       label: "What we do",
       intro: "We're small on purpose. You brief the two people who build it — nothing gets handed down a chain.",
@@ -83,6 +89,12 @@ const tr: Copy = {
         "İstanbul’da iki kişilik bir stüdyo. Yazılım, web sitesi ve mağaza kuruyoruz — aynı anda tek proje, araya giren bir müşteri temsilcisi yok.",
       selectLabel: "Cephanelik",
       selectCta: "Aç",
+    },
+    studio: {
+      consoleLabel: "inkwell — render konsolu",
+      caption: "Bu odayı render eden motoru biz yaptık. Bir düğmeyi çevir.",
+      reset: "sıfırla",
+      hint: "Bu stüdyonun tamamı canlı — kendi motorumuzla render ediliyor. Düğmeleri çevir.",
     },
     whatWeDo: {
       label: "Ne yapıyoruz",
