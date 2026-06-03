@@ -3,6 +3,8 @@
 import { useEffect, useState, useCallback, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerformanceMonitor, AdaptiveEvents } from "@react-three/drei";
+import { EffectComposer } from "@react-three/postprocessing";
+import { GouacheEffect } from "./gouache/GouachePost";
 import CameraRig from "./CameraRig";
 import Room from "./Room";
 import SceneLighting from "./SceneLighting";
@@ -76,6 +78,9 @@ export default function WorldScene({
           <Pixl position={[0.3, 0.2, 0.3]} />
           <Sifir position={[-3.0, 0.1, -2.3]} />
         </Suspense>
+        <EffectComposer enableNormalPass={false}>
+          <GouacheEffect />
+        </EffectComposer>
       </Canvas>
       <Dock active={station} onPick={go} />
     </>
