@@ -5,18 +5,16 @@ import { Canvas } from "@react-three/fiber";
 import { PerformanceMonitor, AdaptiveEvents } from "@react-three/drei";
 import { EffectComposer } from "@react-three/postprocessing";
 import { GouacheEffect } from "./gouache/GouachePost";
-import CameraRig from "./CameraRig";
-import Room from "./Room";
 import SceneLighting from "./SceneLighting";
-import StationObjects from "./StationObjects";
+import Garden from "./Garden";
+import GardenCamera from "./GardenCamera";
 import Velkina from "./Velkina";
 import { Pixl, Sifir } from "./Critters";
-import Dock from "./Dock";
-import { STATIONS, PROJECT_STATIONS } from "@/app/lib/stations";
+import { GARDEN, GARDEN_PROJECTS } from "@/app/lib/garden";
 
-// The explorable scene shell. frameloop='demand' (room is static; animation
-// drives invalidate). DPR capped + adaptively lowered via PerformanceMonitor.
-// Navigation: click object / dock pill / arrow keys / Esc. No free orbit.
+// The painted garden you travel by scroll. The camera dollies along the garden
+// path, settling into each composed shot. GOUACHE render passes applied. A tall
+// invisible scroll spacer drives the playhead; a label shows the current area.
 
 export default function WorldScene({
   reduced,
@@ -25,64 +23,52 @@ export default function WorldScene({
   reduced?: boolean;
   onOpenProject?: (id: string) => void;
 }) {
-  const [station, setStation] = useState("home");
   const [dpr, setDpr] = useState(1.5);
+  const [areaLabel, setAreaLabel] = useState(GARDEN[0].label);
 
-  const go = useCallback((id: string) => {
-    setStation(id);
-    // a project object both flies there AND opens the panel after settle
-  }, []);
-
-  const onSettled = useCallback((id: string) => {
-    if (PROJECT_STATIONS.includes(id)) onOpenProject?.(id);
+  const onArrive = useCallback((id: string) => {
+    const wp = GARDEN.find((w) => w.id === id);
+    if (wp) setAreaLabel(wp.label);
+    if (GARDEN_PROJECTS.includes(id)) onOpenProject?.(id);
   }, [onOpenProject]);
-
-  // keyboard nav: arrows = next/prev station, Esc = home
-  useEffect(() => {
-    const order = STATIONS.map((s) => s.id);
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setStation("home");
-      else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
-        setStation((cur) => order[Math.min(order.indexOf(cur) + 1, order.length - 1)]);
-      } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
-        setStation((cur) => order[Math.max(order.indexOf(cur) - 1, 0)]);
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
 
   return (
     <>
+      {/* tall scroll spacer: gives the page height so scroll drives the playhead */}
+      <div style={{ height: `${GARDEN.length * 100}vh` }} aria-hidden />
+
       <Canvas
         frameloop="demand"
         dpr={dpr}
-        camera={{ position: [0, 2.6, 8.2], fov: 42 }}
+        camera={{ position: GARDEN[0].cam, fov: GARDEN[0].fov }}
         gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
-        onPointerMissed={() => setStation("home")}
         style={{ position: "fixed", inset: 0 }}
       >
-        <color attach="background" args={["#fbeee6"]} />
+        <color attach="background" args={["#f3e3c8"]} />
         <PerformanceMonitor
           flipflops={3}
           onChange={({ factor }) => setDpr(Math.round((0.75 + 1.0 * factor) * 10) / 10)}
           onFallback={() => setDpr(1)}
         />
         <AdaptiveEvents />
-        <CameraRig target={station} reduced={reduced} onSettled={onSettled} />
+        <GardenCamera reduced={reduced} onArrive={onArrive} />
         <Suspense fallback={null}>
           <SceneLighting />
-          <Room />
-          <StationObjects onPick={go} />
-          <Velkina position={[0, 1.15, -0.4]} />
-          <Pixl position={[0.3, 0.2, 0.3]} />
-          <Sifir position={[-3.0, 0.1, -2.3]} />
+          <Garden />
+          <Velkina position={[-6.1, 1.9, 0.5]} />
+          <Pixl position={[0.2, 0.5, 0.4]} />
+          <Sifir position={[-3.0, 0.5, -0.3]} />
         </Suspense>
         <EffectComposer enableNormalPass={false}>
           <GouacheEffect />
         </EffectComposer>
       </Canvas>
-      <Dock active={station} onPick={go} />
+
+      {/* the current-area caption, bottom-left — quiet, lets the image lead */}
+      <div className="vk-area" aria-live="polite">
+        <span className="vk-area-label">{areaLabel.en}</span>
+      </div>
+      <div className="vk-scrollhint" aria-hidden>scroll to walk the garden ↓</div>
     </>
   );
 }
