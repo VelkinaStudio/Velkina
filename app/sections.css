@@ -7,78 +7,118 @@
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
 
-/* ---------- HERO ---------- */
-.vk-hero {
+/* ============================================================
+   HERO — "Issue 01" comic page (Spider-Verse world)
+   Comic-paper canvas, halftone + ink texture, panel framing,
+   glossy comic wordmark (WebGL) or a designed 2D title.
+   ============================================================ */
+.vk-hero--comic {
+  --paper: #f3ecdc;
+  --ink: #14100c;
+  --hero-red: #ff5436;
+  --hero-blue: #2f6df6;
   position: relative;
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  display: grid;
+  place-items: stretch;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
   isolation: isolate;
-  user-select: none; /* dragging over the canvas shouldn't select the foreground text */
+  overflow: hidden;
 }
-.vk-hero::before {
-  /* faint voltage glow behind the wordmark */
-  content: "";
-  position: absolute; inset: 0; z-index: 0; pointer-events: none;
-  background: radial-gradient(ellipse 70% 50% at 50% 45%, rgba(198,242,78,0.07) 0%, transparent 60%);
+/* Ben-Day halftone dot field on the paper (CSS, behind everything) */
+.vk-hero--comic::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image: radial-gradient(var(--ink) 1px, transparent 1.4px);
+  background-size: 8px 8px;
+  opacity: 0.06;
 }
+/* warm spotlight so the centre pops */
+.vk-hero--comic::after {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse 60% 50% at 50% 42%, rgba(255,210,120,0.35), transparent 70%);
+  mix-blend-mode: multiply;
+}
+
+/* the comic panel — a bordered frame like a page panel */
+.vk-hero-panel {
+  position: relative; z-index: 1;
+  border: 3px solid var(--ink);
+  border-radius: 6px;
+  box-shadow: 8px 8px 0 var(--ink);
+  background: transparent;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+}
+
 .vk-hero-canvas { position: absolute; inset: 0; z-index: 1; }
 
-.vk-hero-static {
-  position: absolute; inset: 0; z-index: 1;
-  display: none; align-items: center; justify-content: center;
-}
-.vk-hero-static.is-visible { display: flex; }
-.vk-hero-static .vk-display {
-  font-size: var(--vk-fs-mega);
-  color: var(--vk-bone);
-  letter-spacing: -0.04em;
+/* 2D comic title (a11y/SEO always; visible on lite/static) */
+.vk-hero-title {
+  position: relative; z-index: 2;
+  align-self: center; justify-self: center;
   text-align: center;
+  padding: clamp(2rem, 6vw, 4rem) 1rem 0;
+}
+.vk-hero-title.is-behind { position: absolute; inset: 0; display: grid; place-content: center;
+  opacity: 0; pointer-events: none; } /* WebGL carries the visual; keep for a11y */
+.vk-hero-kicker {
+  display: inline-block; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--ink); opacity: 0.65; margin-bottom: 0.75rem;
+}
+.vk-hero-name {
+  margin: 0; display: flex; justify-content: center; gap: 0.02em;
+  font-family: var(--vk-font-display); font-weight: 900;
+  font-size: clamp(3.2rem, 17vw, 13rem); line-height: 0.82; letter-spacing: -0.02em;
+}
+.vk-hero-letter {
+  display: inline-block; color: var(--hero-red);
+  /* candy-comic: chunky ink edge + glossy highlight */
+  -webkit-text-stroke: clamp(2px, 0.4vw, 4px) var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0 var(--ink), 6px 6px 0 rgba(47,109,246,0.45);
+  transform: translateY(0.5em) rotate(-4deg) scale(0.9); opacity: 0;
+  animation: vk-pop 0.5s var(--vk-ease-expo) forwards;
+  animation-delay: calc(var(--i) * 0.06s + 0.1s);
+}
+.vk-hero-letter:nth-child(even) { color: #ffce3a; }
+@keyframes vk-pop {
+  60% { transform: translateY(-0.06em) rotate(2deg) scale(1.06); opacity: 1; }
+  100% { transform: translateY(0) rotate(0) scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vk-hero-letter { animation: none; transform: none; opacity: 1; }
 }
 
-.vk-hero-frame {
+/* hand-lettered caption box, bottom of the panel */
+.vk-hero-caption {
   position: relative; z-index: 3;
-  display: grid; grid-template-rows: auto 1fr auto;
-  flex: 1; min-height: 100svh;
-  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--ink); color: var(--paper);
+  padding: clamp(1rem, 2.5vw, 1.6rem) clamp(1.25rem, 4vw, 2.5rem);
+  display: flex; justify-content: space-between; align-items: end; gap: 1.5rem; flex-wrap: wrap;
 }
-.vk-hero-top {
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+.vk-hero-line {
+  font-family: var(--vk-font-display); font-weight: 600;
+  font-size: clamp(1.05rem, 2.4vw, 1.6rem); line-height: 1.2; letter-spacing: -0.01em;
+  max-width: 30ch; margin: 0;
 }
-.vk-hero-h1 {
-  /* the tagline lives small at the bottom; the canvas carries the big VELKINA */
-  align-self: end;
-  font-family: var(--vk-font-display);
-  font-weight: 700;
-  font-size: clamp(1.6rem, 4.5vw, 3rem);
-  letter-spacing: -0.02em;
-  line-height: 1.0;
-  max-width: 16ch;
-  color: var(--vk-text);
-  margin: 0;
-}
-.vk-hero-bottom {
-  display: flex; align-items: end; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
-}
-.vk-hero-sub {
-  font-family: var(--vk-font-mono);
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
-  color: var(--vk-muted);
-  max-width: 36ch;
-  line-height: 1.6;
+.vk-hero-line em { font-style: normal; color: #ffce3a; }
+.vk-hero-sub { font-size: 0.72rem; letter-spacing: 0.12em; color: var(--paper); opacity: 0.7; margin: 0; white-space: nowrap; }
+
+/* panel corner stamp + scroll cue */
+.vk-hero-corner {
+  position: absolute; top: 0.9rem; right: 1rem; z-index: 4;
+  font-size: 0.62rem; letter-spacing: 0.2em; color: var(--ink); opacity: 0.55;
 }
 .vk-hero-scroll {
-  display: flex; align-items: center; gap: 0.75rem;
-  font-size: 0.7rem; letter-spacing: 0.22em; color: var(--vk-dim);
+  position: absolute; bottom: calc(100% + 0); left: 1rem; z-index: 4;
+  display: none; /* the caption + corner carry it; keep markup for a11y */
 }
-.vk-hero-scroll-line {
-  display: block; width: 1px; height: 36px;
-  background: linear-gradient(180deg, var(--vk-volt), transparent);
-  animation: vk-scroll-pulse 2s var(--vk-ease-inout) infinite;
+@media (min-width: 768px) {
+  .vk-hero-name { gap: 0; }
 }
-@keyframes vk-scroll-pulse { 0%,100%{transform:scaleY(0.4);opacity:0.5} 50%{transform:scaleY(1);opacity:1} }
 
 /* ---------- STATEMENT ---------- */
 .vk-statement { padding-block: clamp(5rem, 12vw, 11rem); }

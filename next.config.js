@@ -1,8 +1,20 @@
 const withNextIntl = require('next-intl/plugin')();
+const path = require('path');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // Transpile our local linked render engine (ships JSX + modern syntax).
+  transpilePackages: ['@velkina/inkwell'],
+  webpack(config) {
+    // One three.js + postprocessing instance across the app and linked inkwell.
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      three: path.resolve(__dirname, 'node_modules/three'),
+      postprocessing: path.resolve(__dirname, 'node_modules/postprocessing'),
+    };
+    return config;
+  },
   async redirects() {
     return [
       // Old route → new route, keep SEO equity from the prior site
