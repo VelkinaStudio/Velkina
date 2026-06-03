@@ -1,9 +1,45 @@
+import * as React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { whatsappHref } from '../../lib/contact';
 
 type Locale = 'en' | 'tr' | 'ro';
 
+type Metric = { label: string; value: string };
+type GalleryItem = { src: string; caption: string };
+
+type Study = {
+  title: string;
+  client: string;
+  industry: string;
+  service: string;
+  year: string;
+  problem: string;
+  approach: string;
+  decisions?: string[];
+  stack: string;
+  timeline: string;
+  outcome: string;
+  metrics?: Metric[];
+  gallery?: GalleryItem[];
+  image?: string;
+  liveUrl?: string;
+};
+
+/*
+ * Velkina v8 — /work/[slug] deep case study.
+ *
+ * 5-act story structure:
+ *   A. Cover (full-bleed)
+ *   B. The complex problem (200-400 words)
+ *   C. Engineering & design decisions (4-6 specific moves)
+ *   D. Visual proof gallery (1-N screenshots)
+ *   E. The plain outcome (single sentence) + metrics row
+ *   F. Next case study tease
+ *
+ * For lighter projects (no `decisions` array, no `metrics`, just a
+ * problem + approach + outcome), the view degrades gracefully to a
+ * slim template: Cover → Problem/Approach → 1 image → Outcome → Next.
+ */
 export default function WorkDetailView({
   messages,
   locale,
@@ -13,112 +49,170 @@ export default function WorkDetailView({
   locale: Locale;
   slug: string;
 }) {
-  const studies = messages.useCase?.studies || {};
+  const studies: Record<string, Study> = messages.useCase?.studies || {};
   const study = studies[slug];
   if (!study) notFound();
 
-  const labels = messages.useCase.labels;
-  const common = messages.common;
-  const all: string[] = (messages.work?.items || []).map((i: any) => i.slug);
-  const idx = all.indexOf(slug);
-  const nextSlug = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : all[0];
+  const tagLabels = messages.work?.tagLabels || {};
+  const slugTag = (messages.work?.slugTag || {}) as Record<string, string>;
+  const tagKey = slugTag[slug] || 'web';
+  const tag = tagLabels[tagKey] || '';
+
+  // Compute next slug — wrap around at the end of the catalog.
+  const allSlugs: string[] = (messages.work?.items || []).map((i: any) => i.slug);
+  const idx = allSlugs.indexOf(slug);
+  const nextSlug = idx >= 0 && idx < allSlugs.length - 1 ? allSlugs[idx + 1] : allSlugs[0];
+  const nextStudy = studies[nextSlug];
+  const nextItem = (messages.work?.items || []).find((i: any) => i.slug === nextSlug);
+
+  const decisions = study.decisions || [];
+  const metrics = study.metrics || [];
+  const gallery = study.gallery && study.gallery.length > 0
+    ? study.gallery
+    : (study.image ? [{ src: study.image, caption: study.title }] : []);
+  const isDeepStudy = decisions.length >= 4;
 
   return (
-    <div>
-      <section style={{paddingTop: '2rem', paddingBottom: '1rem'}}>
-        <div className="vk-container">
-          <Link href={`/${locale}/work`} className="vk-nav-link font-mono text-xs uppercase tracking-widest">
-            {labels.back}
-          </Link>
+    <article className="v8-root v8-case">
+
+      {/* SECTION A — Cover */}
+      <section className="v8-case-cover" aria-labelledby="v8-case-title">
+        <div className="v8-wrap">
+          <div className="v8-case-cover-inner">
+            <Link href={`/${locale}/work`} className="v8-case-back">
+              ← {tagLabels.workIndexEyebrow ? 'ALL WORK' : 'ALL WORK'}
+            </Link>
+
+            <div className="v8-case-tags">
+              {tag && <span className="v8-case-tag">{tag}</span>}
+              <span className="v8-case-tag">{study.industry}</span>
+              <span className="v8-case-tag">{study.year}</span>
+              {isDeepStudy && (
+                <span className="v8-case-tag" style={{ color: 'var(--v8-accent)', borderColor: 'var(--v8-accent)' }}>
+                  {tagLabels.deep || 'DEEP CASE STUDY'}
+                </span>
+              )}
+            </div>
+
+            <h1 id="v8-case-title" className="v8-case-title">{study.title}</h1>
+            <p className="v8-case-client">{study.client} · {study.service}</p>
+
+            {study.image && (
+              <div className="v8-case-cover-image">
+                <img src={study.image} alt={`${study.client} — ${study.service}`} />
+              </div>
+            )}
+
+            <div className="v8-case-side">
+              <div className="v8-case-side-item">
+                <span className="v8-case-side-label">{tagLabels.detailStack || 'STACK'}</span>
+                <span className="v8-case-side-value">{study.stack}</span>
+              </div>
+              <div className="v8-case-side-item">
+                <span className="v8-case-side-label">{tagLabels.detailTimeline || 'TIMELINE'}</span>
+                <span className="v8-case-side-value">{study.timeline}</span>
+              </div>
+              {study.liveUrl && (
+                <div className="v8-case-side-item">
+                  <span className="v8-case-side-label">LIVE</span>
+                  <a
+                    href={study.liveUrl}
+                    target={/^https?:/.test(study.liveUrl) ? '_blank' : undefined}
+                    rel={/^https?:/.test(study.liveUrl) ? 'noopener noreferrer' : undefined}
+                    className="v8-case-side-value"
+                    style={{ color: 'var(--v8-accent)', textDecoration: 'underline', textUnderlineOffset: '4px' }}
+                  >
+                    {/^https?:/.test(study.liveUrl) ? study.liveUrl.replace(/^https?:\/\//, '') : 'View live →'}
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="vk-section" style={{paddingTop: '1rem'}}>
-        <div className="vk-container">
-          <div className="flex flex-wrap gap-2">
-            <span className="vk-chip">{study.industry}</span>
-            <span className="vk-chip">{study.service}</span>
-            <span className="vk-chip">{study.year}</span>
+      {/* SECTION B — The problem (eyebrow only, no narrating subheading) */}
+      <section className="v8-case-section">
+        <div className="v8-wrap">
+          <div className="v8-case-section-eyebrow">{tagLabels.detailProblem || 'THE PROBLEM'}</div>
+          <div className="v8-case-prose">
+            <p>{study.problem}</p>
+            <p>{study.approach}</p>
           </div>
-          <h1 className="vk-h1 mt-5" style={{maxWidth: '24ch'}}>{study.title}</h1>
-          <p className="vk-lead vk-muted mt-4">{study.client}</p>
+        </div>
+      </section>
 
-          {study.image && study.image.endsWith('.webp') && (
-            <div className="mt-10 rounded-lg overflow-hidden" style={{background: 'var(--vk-surface)', border: '1px solid var(--vk-border)'}}>
-              <img src={study.image} alt={study.client} className="w-full h-auto" />
+      {/* SECTION C — Decisions (deep case studies only) */}
+      {decisions.length > 0 && (
+        <section className="v8-case-section">
+          <div className="v8-wrap">
+            <div className="v8-case-section-eyebrow">{tagLabels.detailDecisions || 'HOW IT WAS BUILT'}</div>
+            <div className="v8-decisions">
+              {decisions.map((d, i) => (
+                <div key={i} className="v8-decision">
+                  <span className="v8-decision-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="v8-decision-text">{d}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SECTION D — Product gallery */}
+      {gallery.length > 0 && (
+        <section className="v8-case-section">
+          <div className="v8-wrap">
+            <div className="v8-case-section-eyebrow">{tagLabels.detailGallery || 'PRODUCT'}</div>
+            <div className="v8-gallery">
+              {gallery.map((g, i) => (
+                <figure key={i} className="v8-gallery-item" style={{ margin: 0 }}>
+                  <img src={g.src} alt={g.caption} loading={i === 0 ? 'eager' : 'lazy'} />
+                  {g.caption && <figcaption className="v8-gallery-caption">{g.caption}</figcaption>}
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SECTION E — Outcome + metrics */}
+      <section className="v8-case-section">
+        <div className="v8-wrap">
+          <div className="v8-case-section-eyebrow">{tagLabels.detailOutcome || 'OUTCOME'}</div>
+          <p className="v8-outcome-line">
+            <em>{study.outcome}</em>
+          </p>
+          {metrics.length > 0 && (
+            <div className="v8-metrics">
+              {metrics.map((m, i) => (
+                <div key={i} className="v8-metric">
+                  <span className="v8-metric-value">{m.value}</span>
+                  <span className="v8-metric-label">{m.label}</span>
+                </div>
+              ))}
             </div>
           )}
         </div>
       </section>
 
-      <hr className="vk-rule" />
-
-      <section className="vk-section">
-        <div className="vk-container">
-          <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-8 space-y-10">
-              <div>
-                <h2 className="vk-eyebrow">{labels.problem}</h2>
-                <p className="mt-3" style={{lineHeight: 1.7}}>{study.problem}</p>
+      {/* SECTION F — Next case tease */}
+      {nextStudy && nextItem && (
+        <section className="v8-case-next" aria-label="Next case study">
+          <div className="v8-wrap">
+            <Link href={`/${locale}/work/${nextSlug}`} className="v8-case-next-card">
+              <div className="v8-case-next-image">
+                <img src={nextItem.image} alt={nextStudy.client} loading="lazy" />
               </div>
               <div>
-                <h2 className="vk-eyebrow">{labels.approach}</h2>
-                <p className="mt-3" style={{lineHeight: 1.7}}>{study.approach}</p>
+                <div className="v8-case-next-eyebrow">{tagLabels.detailNext || 'NEXT CASE STUDY'}</div>
+                <h3 className="v8-case-next-title">{nextStudy.title}</h3>
+                <span className="v8-case-next-client">{nextStudy.client} · {nextStudy.year}</span>
               </div>
-              <div>
-                <h2 className="vk-eyebrow">{labels.outcome}</h2>
-                <p className="mt-3 vk-lead">{study.outcome}</p>
-              </div>
-            </div>
-
-            <aside className="lg:col-span-4">
-              <div className="vk-card sticky" style={{top: '5rem'}}>
-                {study.liveUrl && (
-                  <>
-                    <a
-                      href={study.liveUrl}
-                      target={/^https?:/.test(study.liveUrl) ? '_blank' : undefined}
-                      rel={/^https?:/.test(study.liveUrl) ? 'noopener noreferrer' : undefined}
-                      className="vk-btn vk-btn-primary w-full"
-                      style={{marginBottom: '1rem'}}
-                    >
-                      {messages.work?.labels?.viewLive || 'Visit live →'}
-                    </a>
-                  </>
-                )}
-                <div>
-                  <div className="vk-label">{labels.stack}</div>
-                  <div className="mt-2 font-mono text-sm" style={{color: 'var(--vk-text)'}}>{study.stack}</div>
-                </div>
-                <hr className="vk-rule my-5" />
-                <div>
-                  <div className="vk-label">{labels.timeline}</div>
-                  <div className="mt-2">{study.timeline}</div>
-                </div>
-                <hr className="vk-rule my-5" />
-                <a
-                  href={whatsappHref(common.whatsappPrefill)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="vk-btn vk-btn-secondary w-full"
-                >
-                  {messages.home.cta.whatsapp}
-                </a>
-              </div>
-            </aside>
+            </Link>
           </div>
-        </div>
-      </section>
-
-      <hr className="vk-rule" />
-
-      <section className="vk-section">
-        <div className="vk-container">
-          <Link href={`/${locale}/work/${nextSlug}`} className="vk-nav-link font-mono text-xs uppercase tracking-widest">
-            {labels.next}
-          </Link>
-        </div>
-      </section>
-    </div>
+        </section>
+      )}
+    </article>
   );
 }

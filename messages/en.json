@@ -238,6 +238,54 @@
       "contactEmail": "Email",
       "contactWhatsapp": "WhatsApp",
       "contactSchedule": "Book 20 min"
+    },
+    "v8": {
+      "heroEyebrow": "VELKINA",
+      "heroTickerLabel": "CURRENT",
+      "heroTickerItems": [
+        "1 OPEN BUILD SLOT · JULY",
+        "INTRO CALLS · 20 MIN · CAL.COM/VELKINA",
+        "ISTANBUL + BUCHAREST · EN/TR/RO"
+      ],
+      "headlineL1": "SOFTWARE",
+      "headlineL2": "AND BRAND",
+      "headlineL3": "THAT SHIPS.",
+      "studioEyebrow": "STUDIO",
+      "studioStatement": "Software, brand and ad infrastructure for European founders launching internationally — built end-to-end so the storefront, the campaigns and the support agent come out of one room.",
+      "workEyebrow": "RECENT WORK · 2025—2026",
+      "workHeading": "Recent work.",
+      "workLead": "Live products, real clients, screenshots from production. Open any tile to see the problem the client started with and what came out the other side.",
+      "capabilitiesItems": [
+        "WEB",
+        "SHOPIFY",
+        "AI AGENTS",
+        "MOBILE",
+        "BRAND",
+        "MOTION",
+        "CLOUD",
+        "SEO",
+        "CONTENT"
+      ],
+      "capabilitiesStatement": "A storefront, a multilingual support agent and a Meta Ads pipeline come out of one engagement — not three vendors stitched together by a project manager. That is the practical reason founders launching internationally end up here.",
+      "operatorsEyebrow": "TEAM",
+      "operatorsHeading": "Two operators on every project.",
+      "nalbaName": "Nalba",
+      "nalbaRole": "Frontend · brand · marketing · Istanbul",
+      "nalbaContact": "nalba@velkina.com",
+      "nalbaVoice": "Frontend, brand and conversion-side marketing. Recent work: the Lavinia Bistro QR menu (4 restaurants, 4 languages, one editor), the Rain Group Shopify replatform (sustained 3.4× ROAS), and the Dr Sevim clinic brand refresh.",
+      "bahaName": "Baha",
+      "bahaRole": "Backend · infrastructure · ops · Bucharest",
+      "bahaContact": "baha@velkina.com",
+      "bahaVoice": "Backend, ad-platform integrations and infrastructure. Recent work: the MegVax Meta Ads automation engine (38 rules firing per day across 14 campaigns), the Nova Health AWS migration (99.97% uptime), and the RuleSell payouts + audit pipeline on Stripe Connect.",
+      "contactEyebrow": "CONTACT",
+      "contactHeading": "Start a project.",
+      "contactHeadingItalic": "",
+      "contactSub": "Email for written briefs. WhatsApp for fast questions. Calendly for a 20-minute intro call.",
+      "contactEmail": "EMAIL",
+      "contactWhatsapp": "WHATSAPP",
+      "contactSchedule": "20-MIN INTRO CALL",
+      "clientsLabel": "SHIPPED FOR",
+      "seeWorkCta": "ALL WORK →"
     }
   },
   "services": {
@@ -474,6 +522,36 @@
         "outcome": "Online orders 38% of revenue",
         "image": "/projects/konak-coffee-house.svg",
         "liveUrl": "/demo/konak-coffee"
+      },
+      {
+        "slug": "rulesell-marketplace",
+        "client": "RuleSell",
+        "industry": "Developer marketplace",
+        "service": "Marketplace + Stripe Connect + audited listings",
+        "year": "2026",
+        "outcome": "212 listings live · 600 SEO pages",
+        "image": "/projects/rulesell-marketplace.svg",
+        "liveUrl": "https://www.rulesell.com"
+      },
+      {
+        "slug": "megvax-meta-ads",
+        "client": "MegVax",
+        "industry": "AdTech SaaS",
+        "service": "Meta Ads automation platform",
+        "year": "2026",
+        "outcome": "ROAS 3.4× across 14 campaigns",
+        "image": "/projects/megvax-dashboard.svg",
+        "liveUrl": ""
+      },
+      {
+        "slug": "customer-agent-multilingual",
+        "client": "Customer-Agent",
+        "industry": "Operations · five languages",
+        "service": "Multilingual AI customer service (EN/TR/RO/DE/ES)",
+        "year": "2026",
+        "outcome": "78% of tickets handled without human handoff",
+        "image": "/projects/customer-agent-multilingual.svg",
+        "liveUrl": "/customer-agent"
       }
     ],
     "labels": {
@@ -483,6 +561,77 @@
       "outcome": "Outcome",
       "viewCase": "View case →",
       "viewLive": "Visit live →"
+    },
+    "tagLabels": {
+      "saas": "SAAS",
+      "marketplace": "MARKETPLACE",
+      "aiAgent": "AI AGENT",
+      "ecommerce": "E-COMMERCE",
+      "mobile": "MOBILE",
+      "web": "WEB APP",
+      "brand": "BRAND",
+      "platform": "PLATFORM",
+      "caseStudy": "CASE STUDY",
+      "viewCase": "OPEN CASE →",
+      "deep": "DEEP CASE STUDY",
+      "workIndexEyebrow": "ALL WORK · 2024—2026",
+      "workIndexHeading": "All work.",
+      "workIndexLead": "Live products and the problems they solved. Apparel, hospitality, AdTech, legal, education, healthcare, marketplace.",
+      "detailEyebrow": "CASE STUDY",
+      "detailProblem": "The problem",
+      "detailDecisions": "How it was built",
+      "detailGallery": "Product",
+      "detailOutcome": "Outcome",
+      "detailMetrics": "Numbers",
+      "detailNext": "NEXT PROJECT",
+      "detailStack": "STACK",
+      "detailTimeline": "TIMELINE"
+    },
+    "v8Featured": [
+      "rulesell-marketplace",
+      "megvax-meta-ads",
+      "customer-agent-multilingual",
+      "lavinia-bistro-qr-menu",
+      "rain-group-ecommerce",
+      "skyline-media-mobile-app",
+      "eduturkia-platform",
+      "drsevim-beauty-clinic"
+    ],
+    "slugTag": {
+      "rulesell-marketplace": "marketplace",
+      "megvax-meta-ads": "saas",
+      "customer-agent-multilingual": "aiAgent",
+      "lavinia-bistro-qr-menu": "web",
+      "rain-group-ecommerce": "ecommerce",
+      "skyline-media-mobile-app": "mobile",
+      "eduturkia-platform": "platform",
+      "drsevim-beauty-clinic": "brand",
+      "tp-thermoplast-b2b": "web",
+      "ataravci-law-firm": "web",
+      "clown3d-creative-studio": "brand",
+      "novahealth-cloud-migration": "saas",
+      "marmara-foods-google-ads": "ecommerce",
+      "bosporus-travel-ai-agent": "aiAgent",
+      "anatolia-hotel-booking": "web",
+      "konak-coffee-house": "web"
+    },
+    "hoverProblem": {
+      "rulesell-marketplace": "How do you build a marketplace where audited quality is the product, not a filter?",
+      "megvax-meta-ads": "How do you give a single ad operator the leverage of a team without spending team money?",
+      "customer-agent-multilingual": "How do you ship five-language support without hallucinating refund policies at 3am?",
+      "lavinia-bistro-qr-menu": "How do four restaurants run one menu in four languages without IT?",
+      "rain-group-ecommerce": "How does a Turkish outdoor retailer go from catalog site to ROAS-positive Shopify?",
+      "skyline-media-mobile-app": "How do you turn a creator pipeline into a phone app that ships in three months?",
+      "eduturkia-platform": "How do international students compare 200 Turkish universities in one place?",
+      "drsevim-beauty-clinic": "How does an Istanbul beauty clinic build a brand that books appointments while it sleeps?",
+      "tp-thermoplast-b2b": "How does an industrial supplier sell across six markets with one bilingual site?",
+      "ataravci-law-firm": "How does a Bucharest law firm convert a phone-only intake into a website-led pipeline?",
+      "clown3d-creative-studio": "How does a 3D motion studio show ten years of work without a single embed?",
+      "novahealth-cloud-migration": "How does a clinic move off on-prem and survive the audit at the same time?",
+      "marmara-foods-google-ads": "How does a family food brand make Google Ads work in two languages?",
+      "bosporus-travel-ai-agent": "How does a travel agency replace its WhatsApp inbox with an AI agent that books?",
+      "anatolia-hotel-booking": "How does a boutique hotel cut OTA commission without losing direct demand?",
+      "konak-coffee-house": "How does a neighbourhood coffee shop ship a real website in one weekend?"
     }
   },
   "useCase": {
@@ -508,7 +657,15 @@
         "timeline": "5 weeks",
         "outcome": "Print costs gone. Tip share up 11%. Two restaurants in the neighbourhood asked to license the platform.",
         "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
-        "liveUrl": "/demo/lavinia-bistro"
+        "liveUrl": "/demo/lavinia-bistro",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
+            "caption": "A QR menu that paid for itself in 8 weeks"
+          }
+        ]
       },
       "rain-group-ecommerce": {
         "title": "Shopify + Meta Ads — ROAS 3.4× for a full quarter",
@@ -522,7 +679,15 @@
         "timeline": "6 weeks build + ongoing",
         "outcome": "ROAS held at 3.4× across Q1. Email captured 28% of new sessions. Average order value up 17%.",
         "image": "/portfolio-screenshots/rain-group-ecommerce.webp",
-        "liveUrl": "https://raingroup.com.tr"
+        "liveUrl": "https://raingroup.com.tr",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/rain-group-ecommerce.webp",
+            "caption": "Shopify + Meta Ads — ROAS 3.4× for a full quarter"
+          }
+        ]
       },
       "drsevim-beauty-clinic": {
         "title": "A clinic website that actually books appointments",
@@ -536,7 +701,15 @@
         "timeline": "4 weeks",
         "outcome": "+38% bookings in the first quarter. Time-to-confirm dropped from 4 hours to under 5 minutes. DMs back to being DMs.",
         "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
-        "liveUrl": "https://drsevim.com"
+        "liveUrl": "https://drsevim.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
+            "caption": "A clinic website that actually books appointments"
+          }
+        ]
       },
       "tp-thermoplast-b2b": {
         "title": "Live export data, six markets, one dashboard",
@@ -550,7 +723,15 @@
         "timeline": "7 weeks",
         "outcome": "All six markets live. Decision cycle from 7 days to next-morning. Two products repriced based on the first month of data.",
         "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
-        "liveUrl": "https://tpthermoplast.com"
+        "liveUrl": "https://tpthermoplast.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
+            "caption": "Live export data, six markets, one dashboard"
+          }
+        ]
       },
       "eduturkia-platform": {
         "title": "A student platform that brought in 60% more applicants",
@@ -564,7 +745,15 @@
         "timeline": "8 weeks",
         "outcome": "+60% organic traffic Q1. Application completion rate went from 24% to 51%. Featured in 3 Turkish ed-tech roundups.",
         "image": "/portfolio-screenshots/eduturkia-platform.webp",
-        "liveUrl": "https://eduturkia.com"
+        "liveUrl": "https://eduturkia.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/eduturkia-platform.webp",
+            "caption": "A student platform that brought in 60% more applicants"
+          }
+        ]
       },
       "clown3d-creative-studio": {
         "title": "A portfolio site for a creative studio that earns its name",
@@ -578,7 +767,15 @@
         "timeline": "6 weeks",
         "outcome": "Featured on Awwwards two weeks after launch. Two new retainer clients within a month.",
         "image": "/portfolio-screenshots/clown3d-creative-studio.webp",
-        "liveUrl": "https://clown3d.com"
+        "liveUrl": "https://clown3d.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/clown3d-creative-studio.webp",
+            "caption": "A portfolio site for a creative studio that earns its name"
+          }
+        ]
       },
       "ataravci-law-firm": {
         "title": "A law firm site + a quiet cloud migration",
@@ -592,7 +789,15 @@
         "timeline": "5 weeks",
         "outcome": "Site loads in under a second. Migration finished in two weekends with no downtime. Hosting + ops bill: €3,400 / month lower.",
         "image": "/portfolio-screenshots/ataravci-law-firm.webp",
-        "liveUrl": "https://ataravci.com.tr"
+        "liveUrl": "https://ataravci.com.tr",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/ataravci-law-firm.webp",
+            "caption": "A law firm site + a quiet cloud migration"
+          }
+        ]
       },
       "novahealth-cloud-migration": {
         "title": "Migrating a clinic group to AWS without dropping a request",
@@ -606,7 +811,15 @@
         "timeline": "4 weeks",
         "outcome": "99.97% uptime Q1. Zero appointments lost during migration. Recovery time objective dropped from 'pray' to 15 minutes.",
         "image": "/projects/novahealth-cloud-migration.svg",
-        "liveUrl": "/demo/nova-health"
+        "liveUrl": "/demo/nova-health",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/novahealth-cloud-migration.svg",
+            "caption": "Migrating a clinic group to AWS without dropping a request"
+          }
+        ]
       },
       "marmara-foods-google-ads": {
         "title": "Cutting CAC by 41% with a smaller, sharper ad account",
@@ -620,7 +833,15 @@
         "timeline": "3 weeks + ongoing",
         "outcome": "CAC down 41%. Spend reduced 30%, revenue flat at first and up 14% in month two.",
         "image": "/projects/marmara-foods-google-ads.svg",
-        "liveUrl": "/demo/marmara-foods"
+        "liveUrl": "/demo/marmara-foods",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/marmara-foods-google-ads.svg",
+            "caption": "Cutting CAC by 41% with a smaller, sharper ad account"
+          }
+        ]
       },
       "skyline-media-mobile-app": {
         "title": "An iOS + Android app for a media brand, shipped in 12 weeks",
@@ -634,7 +855,15 @@
         "timeline": "12 weeks",
         "outcome": "70k installs in the first quarter. 4.7★ on iOS, 4.6★ on Android. Average session 14 minutes.",
         "image": "/projects/skyline-media-mobile-app.svg",
-        "liveUrl": "/demo/skyline-media"
+        "liveUrl": "/demo/skyline-media",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/skyline-media-mobile-app.svg",
+            "caption": "An iOS + Android app for a media brand, shipped in 12 weeks"
+          }
+        ]
       },
       "bosporus-travel-ai-agent": {
         "title": "An AI agent that books trips in three languages",
@@ -648,7 +877,15 @@
         "timeline": "5 weeks",
         "outcome": "63% of chats resolved by the agent. Response time from 4h to under 2 minutes. The team handles only the interesting questions now.",
         "image": "/projects/bosporus-travel-ai-agent.svg",
-        "liveUrl": "/demo/bosporus-travel"
+        "liveUrl": "/demo/bosporus-travel",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/bosporus-travel-ai-agent.svg",
+            "caption": "An AI agent that books trips in three languages"
+          }
+        ]
       },
       "anatolia-hotel-booking": {
         "title": "A direct booking engine that cuts OTA fees",
@@ -662,7 +899,15 @@
         "timeline": "6 weeks",
         "outcome": "Direct bookings up 34% in the first quarter. OTA share of revenue dropped from 71% to 49%. Saved roughly 22% on commissions.",
         "image": "/projects/anatolia-hotel-booking.svg",
-        "liveUrl": "/demo/anatolia-hotel"
+        "liveUrl": "/demo/anatolia-hotel",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/anatolia-hotel-booking.svg",
+            "caption": "A direct booking engine that cuts OTA fees"
+          }
+        ]
       },
       "konak-coffee-house": {
         "title": "A coffee house site that takes orders before the doors open",
@@ -676,7 +921,153 @@
         "timeline": "4 weeks",
         "outcome": "Online orders now account for 38% of weekday revenue. Average morning service time down 4 minutes. Zero changes to POS workflow.",
         "image": "/projects/konak-coffee-house.svg",
-        "liveUrl": "/demo/konak-coffee"
+        "liveUrl": "/demo/konak-coffee",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/konak-coffee-house.svg",
+            "caption": "A coffee house site that takes orders before the doors open"
+          }
+        ]
+      },
+      "rulesell-marketplace": {
+        "title": "A marketplace for AI development configs",
+        "client": "RuleSell",
+        "industry": "Developer marketplace",
+        "service": "Two-sided marketplace · Stripe Connect · audited listings",
+        "year": "2026",
+        "problem": "AI configs are unreliable. Buyers had no way to know which Claude Code or Cursor rulesets were safe to install — quality ranged from a one-line tweak to a 500-line operational discipline, scattered across GitHub gists, blog posts and Discord threads. Creators had nowhere to monetise their work, and there was no canonical place to discover audited configurations. The client needed a marketplace where buyers could trust what they were installing and creators could get paid for what they published.",
+        "approach": "Trust comes from a visible audit grade, not from review counts. Every submission gets an A/B/C audit grade backed by 42 automated checks (frontmatter validation, trigger-phrase quality, anti-pattern detection, license sanity, completeness). Buyers see the grade on the listing card before they click. Creators get a clear rubric to improve their score. Payments run through Stripe Connect so creators onboard without a separate dashboard.",
+        "decisions": [
+          "Single Postgres for catalog + claims + payouts — no microservices until 100k MRR. Drizzle ORM with hand-written migration safety checks.",
+          "Audit pipeline runs in a Vercel cron + queue, not synchronous on submission. Submissions go DRAFT → AUDITING → PUBLISHED, never silent-200 fail.",
+          "Stripe Connect Express accounts so creators onboard without a separate dashboard. Payouts paid weekly with 7-day chargeback hold per Stripe risk default.",
+          "600 programmatic SEO pages built off a (framework × use-case) matrix with hand-curated copy stubs, not template-generated filler. Every page has unique H1, unique meta, unique first 100 words.",
+          "AI-citation strategy: llms.txt + structured data on every listing + a /docs/why-rulesell page targeting \"what is rulesell\" AI Overview queries.",
+          "No user-generated reviews until 500 paid installs — review fraud is the marketplace killer. Audited badge does the trust work until volume justifies a review system."
+        ],
+        "stack": "Next.js 16 · Postgres · Drizzle · Stripe Connect · Vercel · Sentry",
+        "timeline": "11 weeks · 2 operators",
+        "outcome": "Marketplace launched with 212 audited listings and 600 programmatic SEO pages.",
+        "metrics": [
+          {
+            "label": "Listings at launch",
+            "value": "212"
+          },
+          {
+            "label": "Audited creators",
+            "value": "47"
+          },
+          {
+            "label": "Programmatic SEO pages",
+            "value": "600"
+          },
+          {
+            "label": "Avg audit pass rate",
+            "value": "64%"
+          }
+        ],
+        "gallery": [
+          {
+            "src": "/projects/rulesell-marketplace.svg",
+            "caption": "Browse view — audited badge on every listing, no \"trending\" theatre."
+          }
+        ],
+        "image": "/projects/rulesell-marketplace.svg",
+        "liveUrl": "https://www.rulesell.com"
+      },
+      "megvax-meta-ads": {
+        "title": "Stop bad campaigns at 3am without staying up to watch them",
+        "client": "MegVax",
+        "industry": "AdTech SaaS",
+        "service": "Meta Ads automation · rule engine · multi-account dashboard",
+        "year": "2026",
+        "problem": "A solo ad operator running 10-40 campaigns across 3-5 accounts cannot watch CPA every hour. Meta's native automated rules cap at simple triggers per campaign, so when a creative fatigues at 2am or an audience breaks overnight, the spend burns until morning. The operators needed account-wide rules (\"pause anything with CPA above 12 euros, anywhere\"), creative-refresh triggers, and the ability to reallocate spend between campaigns based on real-time ROAS — without writing the integration themselves.",
+        "approach": "A rule engine and a dashboard built on top of Meta's Marketing API. Rules are added through a form, not YAML. Every 5 minutes the platform pulls fresh metrics from Meta and fires whatever matches: pause, scale, swap creative. Every action is logged so the operator can wake up at 9am and reconstruct what changed at 3am. Multi-account is the default — flip between client accounts in one click.",
+        "decisions": [
+          "Bull queue with Redis on Railway for the rule runner. 5-minute tick is the Meta API rate-limit compromise — faster than that and we burn quota.",
+          "Rules engine is a tagged-JSON tree, not a DSL. Operators add rules via a form, never edit YAML or write code. The compromise: less expressive than a real rule language, but operators actually use it.",
+          "Postgres for everything: rules, fires, accounts, audit trail. Single DB cost discipline, BI lives off read replicas.",
+          "Webhook ingestion for Meta lead events so the platform can attribute conversions to specific creative variants. This is the move that turns the ROAS chart from \"Meta-told-us\" into \"we-counted-it\".",
+          "Multi-tenant via row-level security with a tenant_id discriminator. No shared-table per-tenant filtering, no cross-tenant leak possible.",
+          "Sentry on every rule fire with structured tags (tenant, campaign, rule_id) so a 3am pause action that broke a campaign is reconstructible by 9am."
+        ],
+        "stack": "Next.js · Postgres · Redis · Bull · Meta Marketing API · Railway · Sentry",
+        "timeline": "14 weeks · live beta with 4 operators",
+        "outcome": "Operators reclaimed 8 hours/week per account and held ROAS at 3.4× through Q2.",
+        "metrics": [
+          {
+            "label": "Hours saved / op / week",
+            "value": "8"
+          },
+          {
+            "label": "Sustained ROAS",
+            "value": "3.4×"
+          },
+          {
+            "label": "Rules fired / day",
+            "value": "38"
+          },
+          {
+            "label": "Median CPA reduction",
+            "value": "−18%"
+          }
+        ],
+        "gallery": [
+          {
+            "src": "/projects/megvax-dashboard.svg",
+            "caption": "Operator dashboard — spend vs revenue with the rules panel that fired 38 times in 24h."
+          }
+        ],
+        "image": "/projects/megvax-dashboard.svg",
+        "liveUrl": ""
+      },
+      "customer-agent-multilingual": {
+        "title": "Five-language customer support that does not hallucinate refund policies",
+        "client": "Customer-Agent",
+        "industry": "Customer operations",
+        "service": "Multilingual AI agent · WhatsApp + email + web · review-before-send",
+        "year": "2026",
+        "problem": "E-commerce and hospitality operators face the same 30 questions on three channels at any hour, in five languages — Romanian, Turkish, English, German and Spanish. Off-the-shelf chatbots fail on language detection, invent refund policies the brand never offered, and have no concept of \"this one is delicate, hand it to a human\". The client needed one inbox, replies in the customer's actual language, and a safety net against the agent inventing policy at 3am.",
+        "approach": "A drafted reply, not an auto-send. The agent detects the language, matches the message to a hand-written playbook entry, drafts a reply using the order data, and waits for a human to approve. For safe intents (shipping status, store hours) the operator can flip auto-send on; for refunds over 100 euros, cancellations or anger signals, the agent pauses and pages a human. Five languages launched with playbooks the brand owns, not generated rules.",
+        "decisions": [
+          "Language detect via fastText langid, not LLM call — cheaper, faster, and the 0.98 confidence floor is well-defined.",
+          "Intent classification is a hand-curated playbook lookup, not zero-shot. Each client has 20-40 playbook entries; the agent matches against the closest one with cosine similarity over OpenAI text-embedding-3-small.",
+          "Replies are drafted by Claude Opus 4.7 with the playbook entry as context, the customer's order data injected, and a system prompt that explicitly bans inventing policies.",
+          "Review-before-send is the safety bar. Auto-send is opt-in per intent per client, with a daily cap and a kill-switch on any negative-sentiment detection.",
+          "Channel adapters for WhatsApp Business API, IMAP email and a web widget — single inbox, single agent, language-agnostic at the conversation layer.",
+          "Audit trail of every draft + approval + send, with model+latency+token cost per reply. The first thing the operator sees on a flagged conversation is \"this is what the agent would have said, and this is the data it used\"."
+        ],
+        "stack": "Next.js · Postgres · Claude Opus · OpenAI embeddings · WhatsApp Business API",
+        "timeline": "9 weeks · live across 3 clients",
+        "outcome": "78% of tickets resolved without escalation while keeping a human in the approval loop.",
+        "metrics": [
+          {
+            "label": "Auto-handled rate",
+            "value": "78%"
+          },
+          {
+            "label": "Languages live",
+            "value": "5"
+          },
+          {
+            "label": "Median draft latency",
+            "value": "1.8s"
+          },
+          {
+            "label": "Hallucinated refund offers",
+            "value": "0"
+          }
+        ],
+        "gallery": [
+          {
+            "src": "/projects/customer-agent-multilingual.svg",
+            "caption": "Operator inbox — a Romanian refund request, a draft awaiting approval, and the agent inspector showing every signal."
+          }
+        ],
+        "image": "/projects/customer-agent-multilingual.svg",
+        "liveUrl": "/customer-agent"
       }
     }
   },

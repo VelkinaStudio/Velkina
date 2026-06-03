@@ -238,6 +238,54 @@
       "contactEmail": "E-posta",
       "contactWhatsapp": "WhatsApp",
       "contactSchedule": "20 dk randevu"
+    },
+    "v8": {
+      "heroEyebrow": "VELKINA",
+      "heroTickerLabel": "GÜNCEL",
+      "heroTickerItems": [
+        "TEMMUZ'DA 1 BOŞ SLOT",
+        "TANIŞMA GÖRÜŞMESİ · 20 DK · CAL.COM/VELKINA",
+        "İSTANBUL + BÜKREŞ · EN/TR/RO"
+      ],
+      "headlineL1": "TESLİM EDİLEN",
+      "headlineL2": "YAZILIM",
+      "headlineL3": "VE MARKA.",
+      "studioEyebrow": "STÜDYO",
+      "studioStatement": "Uluslararası pazara açılan Avrupalı kurucular için yazılım, marka ve reklam altyapısı — mağaza, kampanyalar ve destek ajanı tek bir odadan uçtan uca çıkıyor.",
+      "workEyebrow": "SON İŞLER · 2025—2026",
+      "workHeading": "Son işler.",
+      "workLead": "Canlı ürünler, gerçek müşteriler, üretimden ekran görüntüleri. Müşterinin başlangıçtaki problemini ve diğer uçtan ne çıktığını görmek için bir karta tıkla.",
+      "capabilitiesItems": [
+        "WEB",
+        "SHOPIFY",
+        "AI AJANLAR",
+        "MOBİL",
+        "MARKA",
+        "HAREKET",
+        "BULUT",
+        "SEO",
+        "İÇERİK"
+      ],
+      "capabilitiesStatement": "Mağaza, çok dilli destek ajanı ve Meta Ads hattı tek bir iş kapsamından çıkıyor — bir proje yöneticisinin birbirine dikmek zorunda olduğu üç tedarikçiden değil. Uluslararası pazara açılan kurucuların burada bitmesinin pratik nedeni bu.",
+      "operatorsEyebrow": "EKİP",
+      "operatorsHeading": "Her projede iki operatör.",
+      "nalbaName": "Nalba",
+      "nalbaRole": "Frontend · marka · pazarlama · İstanbul",
+      "nalbaContact": "nalba@velkina.com",
+      "nalbaVoice": "Frontend, marka ve dönüşüm tarafı pazarlama. Son işler: Lavinia Bistro QR menüsü (4 restoran, 4 dil, tek editör), Rain Group Shopify yeniden platformu (sürdürülen 3,4× ROAS) ve Dr Sevim klinik marka yenilemesi.",
+      "bahaName": "Baha",
+      "bahaRole": "Backend · altyapı · operasyon · Bükreş",
+      "bahaContact": "baha@velkina.com",
+      "bahaVoice": "Backend, reklam platformu entegrasyonları ve altyapı. Son işler: MegVax Meta Ads otomasyon motoru (14 kampanyada günde 38 kural tetiklenmesi), Nova Health AWS migrasyonu (%99,97 uptime) ve Stripe Connect üzerinde RuleSell ödeme + denetim hattı.",
+      "contactEyebrow": "İLETİŞİM",
+      "contactHeading": "Bir proje başlat.",
+      "contactHeadingItalic": "",
+      "contactSub": "Yazılı brief için e-posta. Hızlı sorular için WhatsApp. 20 dakikalık tanışma için Calendly.",
+      "contactEmail": "E-POSTA",
+      "contactWhatsapp": "WHATSAPP",
+      "contactSchedule": "20 DK TANIŞMA",
+      "clientsLabel": "TESLİM ETTİĞİMİZ MARKALAR",
+      "seeWorkCta": "TÜM İŞLER →"
     }
   },
   "services": {
@@ -474,6 +522,36 @@
         "outcome": "Online siparişler gelirin %38'i",
         "image": "/projects/konak-coffee-house.svg",
         "liveUrl": "/demo/konak-coffee"
+      },
+      {
+        "slug": "rulesell-marketplace",
+        "client": "RuleSell",
+        "industry": "Geliştirici pazaryeri",
+        "service": "Pazaryeri + Stripe Connect + denetimli listeler",
+        "year": "2026",
+        "outcome": "212 yayında ürün · 600 SEO sayfası",
+        "image": "/projects/rulesell-marketplace.svg",
+        "liveUrl": "https://www.rulesell.com"
+      },
+      {
+        "slug": "megvax-meta-ads",
+        "client": "MegVax",
+        "industry": "Reklam SaaS",
+        "service": "Meta Ads otomasyon platformu",
+        "year": "2026",
+        "outcome": "14 kampanyada 3,4× ROAS",
+        "image": "/projects/megvax-dashboard.svg",
+        "liveUrl": ""
+      },
+      {
+        "slug": "customer-agent-multilingual",
+        "client": "Customer-Agent",
+        "industry": "Müşteri operasyonu · beş dil",
+        "service": "Çok dilli yapay zekâ destek (EN/TR/RO/DE/ES)",
+        "year": "2026",
+        "outcome": "Taleplerin %78'i insan müdahalesi olmadan kapanıyor",
+        "image": "/projects/customer-agent-multilingual.svg",
+        "liveUrl": "/customer-agent"
       }
     ],
     "labels": {
@@ -483,6 +561,77 @@
       "outcome": "Sonuç",
       "viewCase": "Vakaya bak →",
       "viewLive": "Siteyi aç →"
+    },
+    "tagLabels": {
+      "saas": "SAAS",
+      "marketplace": "PAZARYERİ",
+      "aiAgent": "AI AJAN",
+      "ecommerce": "E-TİCARET",
+      "mobile": "MOBİL",
+      "web": "WEB UYGULAMASI",
+      "brand": "MARKA",
+      "platform": "PLATFORM",
+      "caseStudy": "VAKA ANALİZİ",
+      "viewCase": "VAKAYI AÇ →",
+      "deep": "DERİN VAKA ANALİZİ",
+      "workIndexEyebrow": "TÜM İŞLER · 2024—2026",
+      "workIndexHeading": "Tüm işler.",
+      "workIndexLead": "Yayında olan ürünler ve çözdükleri problemler. Giyim, konaklama, AdTech, hukuk, eğitim, sağlık, pazaryeri.",
+      "detailEyebrow": "VAKA ANALİZİ",
+      "detailProblem": "Problem",
+      "detailDecisions": "Nasıl inşa edildi",
+      "detailGallery": "Ürün",
+      "detailOutcome": "Sonuç",
+      "detailMetrics": "Rakamlar",
+      "detailNext": "SONRAKİ PROJE",
+      "detailStack": "YIĞIN",
+      "detailTimeline": "SÜRE"
+    },
+    "v8Featured": [
+      "rulesell-marketplace",
+      "megvax-meta-ads",
+      "customer-agent-multilingual",
+      "lavinia-bistro-qr-menu",
+      "rain-group-ecommerce",
+      "skyline-media-mobile-app",
+      "eduturkia-platform",
+      "drsevim-beauty-clinic"
+    ],
+    "slugTag": {
+      "rulesell-marketplace": "marketplace",
+      "megvax-meta-ads": "saas",
+      "customer-agent-multilingual": "aiAgent",
+      "lavinia-bistro-qr-menu": "web",
+      "rain-group-ecommerce": "ecommerce",
+      "skyline-media-mobile-app": "mobile",
+      "eduturkia-platform": "platform",
+      "drsevim-beauty-clinic": "brand",
+      "tp-thermoplast-b2b": "web",
+      "ataravci-law-firm": "web",
+      "clown3d-creative-studio": "brand",
+      "novahealth-cloud-migration": "saas",
+      "marmara-foods-google-ads": "ecommerce",
+      "bosporus-travel-ai-agent": "aiAgent",
+      "anatolia-hotel-booking": "web",
+      "konak-coffee-house": "web"
+    },
+    "hoverProblem": {
+      "rulesell-marketplace": "Denetimli kalitenin filtre değil ürün olduğu bir pazaryeri nasıl kurulur?",
+      "megvax-meta-ads": "Tek bir reklam operatörüne bir ekibin kaldıracını ekip parası harcamadan nasıl verirsin?",
+      "customer-agent-multilingual": "Gece 3'te iade politikalarını uydurmadan beş dilli destek nasıl teslim edilir?",
+      "lavinia-bistro-qr-menu": "Dört restoran tek menüyü dört dilde IT olmadan nasıl çalıştırır?",
+      "rain-group-ecommerce": "Türk bir outdoor markası katalog sitesinden ROAS-pozitif Shopify'a nasıl geçer?",
+      "skyline-media-mobile-app": "Bir yaratıcı pipeline'ını üç ayda telefon uygulamasına nasıl çevirirsin?",
+      "eduturkia-platform": "Uluslararası öğrenciler 200 Türk üniversitesini tek yerde nasıl karşılaştırır?",
+      "drsevim-beauty-clinic": "İstanbul'lu bir güzellik kliniği uyurken randevu alan bir marka nasıl kurar?",
+      "tp-thermoplast-b2b": "Bir endüstriyel tedarikçi altı pazarda tek bir iki dilli siteyle nasıl satar?",
+      "ataravci-law-firm": "Bir Bükreş hukuk firması yalnızca telefon-temelli alımı web sitesi-liderli hatta nasıl çevirir?",
+      "clown3d-creative-studio": "Bir 3D motion stüdyosu on yıllık işi tek bir embed olmadan nasıl gösterir?",
+      "novahealth-cloud-migration": "Bir klinik on-prem'den nasıl çıkar ve aynı anda denetimi nasıl atlatır?",
+      "marmara-foods-google-ads": "Aile bir gıda markası Google Ads'i iki dilde nasıl çalıştırır?",
+      "bosporus-travel-ai-agent": "Bir seyahat acentesi WhatsApp gelen kutusunu rezervasyon yapan bir AI ajanla nasıl değiştirir?",
+      "anatolia-hotel-booking": "Bir butik otel OTA komisyonunu doğrudan talebi kaybetmeden nasıl azaltır?",
+      "konak-coffee-house": "Bir mahalle kahvecisi bir hafta sonunda gerçek bir web sitesini nasıl teslim eder?"
     }
   },
   "useCase": {
@@ -508,7 +657,15 @@
         "timeline": "5 hafta",
         "outcome": "Baskı maliyeti sıfıra indi. Bahşiş payı %11 arttı. Mahalledeki iki restoran platformu lisanslamak istedi.",
         "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
-        "liveUrl": "/demo/lavinia-bistro"
+        "liveUrl": "/demo/lavinia-bistro",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
+            "caption": "8 haftada kendini ödeyen bir QR menü"
+          }
+        ]
       },
       "rain-group-ecommerce": {
         "title": "Shopify + Meta Ads — bir çeyrek boyunca ROAS 3,4×",
@@ -522,7 +679,15 @@
         "timeline": "6 hafta yapım + sürekli",
         "outcome": "ROAS 1. çeyrek boyunca 3,4× kaldı. Yeni oturumların %28'i e-postaya yakalandı. Ortalama sepet %17 yükseldi.",
         "image": "/portfolio-screenshots/rain-group-ecommerce.webp",
-        "liveUrl": "https://raingroup.com.tr"
+        "liveUrl": "https://raingroup.com.tr",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/rain-group-ecommerce.webp",
+            "caption": "Shopify + Meta Ads — bir çeyrek boyunca ROAS 3,4×"
+          }
+        ]
       },
       "drsevim-beauty-clinic": {
         "title": "Gerçekten randevu alan bir klinik sitesi",
@@ -536,7 +701,15 @@
         "timeline": "4 hafta",
         "outcome": "İlk çeyrekte +%38 randevu. Onay süresi 4 saatten 5 dakikanın altına indi. DM'ler tekrar DM olabildi.",
         "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
-        "liveUrl": "https://drsevim.com"
+        "liveUrl": "https://drsevim.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
+            "caption": "Gerçekten randevu alan bir klinik sitesi"
+          }
+        ]
       },
       "tp-thermoplast-b2b": {
         "title": "Altı pazarın canlı ihracat verisi, tek pano",
@@ -550,7 +723,15 @@
         "timeline": "7 hafta",
         "outcome": "Altı pazar canlı. Karar döngüsü 7 günden ertesi sabaha indi. İlk ayın verisiyle iki ürün yeniden fiyatlandı.",
         "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
-        "liveUrl": "https://tpthermoplast.com"
+        "liveUrl": "https://tpthermoplast.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
+            "caption": "Altı pazarın canlı ihracat verisi, tek pano"
+          }
+        ]
       },
       "eduturkia-platform": {
         "title": "%60 daha fazla aday getiren öğrenci platformu",
@@ -564,7 +745,15 @@
         "timeline": "8 hafta",
         "outcome": "1. çeyrekte +%60 organik trafik. Başvuru tamamlama %24'ten %51'e çıktı. 3 Türk eğitim teknolojisi listesinde yer aldı.",
         "image": "/portfolio-screenshots/eduturkia-platform.webp",
-        "liveUrl": "https://eduturkia.com"
+        "liveUrl": "https://eduturkia.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/eduturkia-platform.webp",
+            "caption": "%60 daha fazla aday getiren öğrenci platformu"
+          }
+        ]
       },
       "clown3d-creative-studio": {
         "title": "Adına yaraşır bir yaratıcı stüdyo portfolyosu",
@@ -578,7 +767,15 @@
         "timeline": "6 hafta",
         "outcome": "Lansmandan iki hafta sonra Awwwards'ta yer aldı. Bir ay içinde iki yeni retainer müşteri.",
         "image": "/portfolio-screenshots/clown3d-creative-studio.webp",
-        "liveUrl": "https://clown3d.com"
+        "liveUrl": "https://clown3d.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/clown3d-creative-studio.webp",
+            "caption": "Adına yaraşır bir yaratıcı stüdyo portfolyosu"
+          }
+        ]
       },
       "ataravci-law-firm": {
         "title": "Bir hukuk bürosu sitesi + sessiz bir cloud geçişi",
@@ -592,7 +789,15 @@
         "timeline": "5 hafta",
         "outcome": "Site bir saniyenin altında açılıyor. Geçiş iki hafta sonunda, kesintisiz bitti. Hosting + ops faturası ayda 3.400 € düştü.",
         "image": "/portfolio-screenshots/ataravci-law-firm.webp",
-        "liveUrl": "https://ataravci.com.tr"
+        "liveUrl": "https://ataravci.com.tr",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/ataravci-law-firm.webp",
+            "caption": "Bir hukuk bürosu sitesi + sessiz bir cloud geçişi"
+          }
+        ]
       },
       "novahealth-cloud-migration": {
         "title": "Bir klinik grubunu tek bir talebi düşürmeden AWS'ye almak",
@@ -606,7 +811,15 @@
         "timeline": "4 hafta",
         "outcome": "1. çeyrekte %99,97 uptime. Geçişte sıfır randevu kaybı. Kurtarma hedefi 'dua et'ten 15 dakikaya indi.",
         "image": "/projects/novahealth-cloud-migration.svg",
-        "liveUrl": "/demo/nova-health"
+        "liveUrl": "/demo/nova-health",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/novahealth-cloud-migration.svg",
+            "caption": "Bir klinik grubunu tek bir talebi düşürmeden AWS'ye almak"
+          }
+        ]
       },
       "marmara-foods-google-ads": {
         "title": "Daha küçük, daha keskin bir hesapla CAC'i %41 düşürmek",
@@ -620,7 +833,15 @@
         "timeline": "3 hafta + sürekli",
         "outcome": "CAC %41 düştü. Harcama %30 azaldı, gelir önce sabit kaldı, ikinci ayda %14 arttı.",
         "image": "/projects/marmara-foods-google-ads.svg",
-        "liveUrl": "/demo/marmara-foods"
+        "liveUrl": "/demo/marmara-foods",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/marmara-foods-google-ads.svg",
+            "caption": "Daha küçük, daha keskin bir hesapla CAC'i %41 düşürmek"
+          }
+        ]
       },
       "skyline-media-mobile-app": {
         "title": "12 haftada teslim edilen iOS + Android medya uygulaması",
@@ -634,7 +855,15 @@
         "timeline": "12 hafta",
         "outcome": "İlk çeyrekte 70k indirme. iOS'ta 4,7★, Android'de 4,6★. Ortalama oturum 14 dakika.",
         "image": "/projects/skyline-media-mobile-app.svg",
-        "liveUrl": "/demo/skyline-media"
+        "liveUrl": "/demo/skyline-media",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/skyline-media-mobile-app.svg",
+            "caption": "12 haftada teslim edilen iOS + Android medya uygulaması"
+          }
+        ]
       },
       "bosporus-travel-ai-agent": {
         "title": "Üç dilde tur satan bir yapay zekâ ajanı",
@@ -648,7 +877,15 @@
         "timeline": "5 hafta",
         "outcome": "Sohbetlerin %63'ü ajan tarafından çözüldü. Yanıt süresi 4 saatten 2 dakikanın altına indi. Ekip artık sadece ilginç soruları yanıtlıyor.",
         "image": "/projects/bosporus-travel-ai-agent.svg",
-        "liveUrl": "/demo/bosporus-travel"
+        "liveUrl": "/demo/bosporus-travel",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/bosporus-travel-ai-agent.svg",
+            "caption": "Üç dilde tur satan bir yapay zekâ ajanı"
+          }
+        ]
       },
       "anatolia-hotel-booking": {
         "title": "OTA komisyonunu kesen bir doğrudan rezervasyon motoru",
@@ -662,7 +899,15 @@
         "timeline": "6 hafta",
         "outcome": "Doğrudan rezervasyonlar 1. çeyrekte %34 arttı. OTA gelir payı %71'den %49'a düştü. Komisyondan kabaca %22 tasarruf.",
         "image": "/projects/anatolia-hotel-booking.svg",
-        "liveUrl": "/demo/anatolia-hotel"
+        "liveUrl": "/demo/anatolia-hotel",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/anatolia-hotel-booking.svg",
+            "caption": "OTA komisyonunu kesen bir doğrudan rezervasyon motoru"
+          }
+        ]
       },
       "konak-coffee-house": {
         "title": "Kapılar açılmadan sipariş alan bir kahvecisitesi",
@@ -676,7 +921,153 @@
         "timeline": "4 hafta",
         "outcome": "Online siparişler hafta içi gelirin %38'i. Sabah servis süresi 4 dakika azaldı. POS akışında sıfır değişiklik.",
         "image": "/projects/konak-coffee-house.svg",
-        "liveUrl": "/demo/konak-coffee"
+        "liveUrl": "/demo/konak-coffee",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/konak-coffee-house.svg",
+            "caption": "Kapılar açılmadan sipariş alan bir kahvecisitesi"
+          }
+        ]
+      },
+      "rulesell-marketplace": {
+        "title": "Yapay zekâ geliştirme yapılandırmaları için pazaryeri",
+        "client": "RuleSell",
+        "industry": "Geliştirici pazaryeri",
+        "service": "İki taraflı pazaryeri · Stripe Connect · denetimli listeler",
+        "year": "2026",
+        "problem": "Yapay zekâ yapılandırmaları güvenilmez. Alıcılar hangi Claude Code veya Cursor kural setinin kurulmaya güvenli olduğunu bilmiyordu — kalite tek satırlık bir ayardan 500 satırlık bir operasyonel disipline kadar uzanıyordu; GitHub gist'lerine, blog yazılarına ve Discord kanallarına dağılmıştı. Yaratıcılar emeğini paraya çeviremiyordu ve denetimli yapılandırmaları bulacak kanonik bir yer yoktu. Müşterinin ihtiyacı: alıcıların ne kurduklarına güvenebileceği ve yaratıcıların yayımladıkları için ödeme alabileceği bir pazaryeri.",
+        "approach": "Güven, görünür bir denetim notundan gelir — yorum sayısından değil. Her gönderim 42 otomatik kontrolden (frontmatter doğrulama, tetik-cümle kalitesi, anti-pattern tespiti, lisans bütünlüğü, eksiksizlik) geçen bir A/B/C denetim notu alır. Alıcılar notu tıklamadan önce liste kartında görüyor. Yaratıcılar puanlarını yükseltmek için net bir rubrik alıyor. Ödemeler Stripe Connect üzerinden işliyor; yaratıcılar ayrı bir panele girmek zorunda kalmıyor.",
+        "decisions": [
+          "Katalog + talep + ödeme için tek Postgres — 100k MRR'a kadar mikroservis yok. Drizzle ORM ile elle yazılmış migrasyon güvenlik kontrolleri.",
+          "Denetim hattı, gönderim anında değil bir Vercel cron + kuyrukta çalışır. Gönderimler DRAFT → AUDITING → PUBLISHED akışını izler, asla sessizce 200 dönmez.",
+          "Stripe Connect Express hesapları yaratıcıların ayrı bir panel olmadan dahil olmasını sağlar. Ödemeler haftalık, Stripe risk varsayımıyla 7 günlük chargeback beklemesiyle yapılır.",
+          "600 programatik SEO sayfası bir (framework × kullanım) matrisi üzerine kurulu, şablon doldurması değil elle yazılmış kopya parçaları ile. Her sayfanın benzersiz H1, meta ve ilk 100 sözcüğü vardır.",
+          "AI-atıf stratejisi: llms.txt + her listede yapılandırılmış veri + \"rulesell nedir\" AI Overview sorgularını hedefleyen bir /docs/why-rulesell sayfası.",
+          "500 ücretli kuruluma kadar kullanıcı yorumu yok — yorum dolandırıcılığı pazaryeri katilidir. Hacim bir yorum sistemini hak edene kadar güveni denetim rozeti taşır."
+        ],
+        "stack": "Next.js 16 · Postgres · Drizzle · Stripe Connect · Vercel · Sentry",
+        "timeline": "11 hafta · 2 operatör",
+        "outcome": "Pazaryeri 212 denetimli liste ve 600 programatik SEO sayfasıyla yayına alındı.",
+        "metrics": [
+          {
+            "label": "Lansmanda liste",
+            "value": "212"
+          },
+          {
+            "label": "Denetimli yaratıcı",
+            "value": "47"
+          },
+          {
+            "label": "Programatik SEO sayfası",
+            "value": "600"
+          },
+          {
+            "label": "Ortalama denetim geçme",
+            "value": "%64"
+          }
+        ],
+        "gallery": [
+          {
+            "src": "/projects/rulesell-marketplace.svg",
+            "caption": "Gözat görünümü — her listenin denetim rozeti, \"trend\" tiyatrosu yok."
+          }
+        ],
+        "image": "/projects/rulesell-marketplace.svg",
+        "liveUrl": "https://www.rulesell.com"
+      },
+      "megvax-meta-ads": {
+        "title": "Sabahın 3'ünde kötü kampanyaları durdur — onları izlemek için uyanık kalmadan",
+        "client": "MegVax",
+        "industry": "Reklam SaaS",
+        "service": "Meta Ads otomasyon · kural motoru · çok hesap paneli",
+        "year": "2026",
+        "problem": "Tek başına çalışan bir reklam operatörü 3-5 hesapta 10-40 kampanyayı her saat CPA için izleyemez. Meta'nın yerleşik otomatik kuralları kampanya başına basit tetiklerle sınırlı; bir kreatif gece 2'de yorulduğunda veya bir kitle gece boyu bozulduğunda harcama sabaha kadar yanıyor. Operatörlerin ihtiyacı: hesap çapında kurallar (\"herhangi bir yerde CPA 12€ üstüyse durdur\"), kreatif yenileme tetikleri ve gerçek zamanlı ROAS'a göre kampanyalar arası bütçe kaydırma — entegrasyonu kendileri yazmadan.",
+        "approach": "Meta Marketing API'sının üzerinde bir kural motoru ve bir panel. Kurallar bir form ile ekleniyor, YAML ile değil. Her 5 dakikada bir platform Meta'dan yeni metrikleri çeker ve eşleşen ne varsa tetikler: durdur, ölçekle, kreatif değiştir. Her eylem kaydedilir; böylece operatör sabah 9'da uyandığında gece 3'te ne değiştiğini yeniden inşa edebilir. Çok hesaplı çalışma varsayılan — müşteri hesapları arasında tek tıkla geçiş.",
+        "decisions": [
+          "Railway üzerinde Redis ile Bull kuyruğu kural koşucusu için. 5 dakikalık tik, Meta API hız limiti uzlaşmasıdır.",
+          "Kural motoru bir etiketli-JSON ağacıdır, DSL değil. Operatörler kural ekler, YAML düzenlemez. Uzlaşma: gerçek bir kural diliyle daha az anlatımlı ama operatörler gerçekten kullanıyor.",
+          "Her şey için Postgres: kurallar, atışlar, hesaplar, denetim izi. Tek-DB maliyet disiplini.",
+          "Meta'dan webhook kayıtları platformun dönüşümleri belirli kreatif varyantlarına atfetmesini sağlar. ROAS grafiğini \"Meta-bize-söyledi\"den \"biz-saydık\"a çeviren hamle bu.",
+          "Tenant_id ayırıcı ile satır seviyesi güvenlikle çok kiracılı. Çapraz-tenant sızıntı mümkün değil.",
+          "Yapılandırılmış etiketlerle her kural atışında Sentry — gece 3'te kampanya bozan bir durdurma eylemi sabah 9'da yeniden inşa edilebilir."
+        ],
+        "stack": "Next.js · Postgres · Redis · Bull · Meta Marketing API · Railway · Sentry",
+        "timeline": "14 hafta · 4 operatörle canlı beta",
+        "outcome": "Operatörler hesap başına haftada 8 saat geri kazandı ve Q2 boyunca ROAS'ı 3,4×'te tuttu.",
+        "metrics": [
+          {
+            "label": "Op başına / hafta tasarruf",
+            "value": "8 saat"
+          },
+          {
+            "label": "Sürdürülen ROAS",
+            "value": "3,4×"
+          },
+          {
+            "label": "Günde tetiklenen kural",
+            "value": "38"
+          },
+          {
+            "label": "Medyan CPA düşüşü",
+            "value": "−%18"
+          }
+        ],
+        "gallery": [
+          {
+            "src": "/projects/megvax-dashboard.svg",
+            "caption": "Operatör paneli — harcama vs gelir ile 24 saatte 38 kez tetiklenen kurallar paneli."
+          }
+        ],
+        "image": "/projects/megvax-dashboard.svg",
+        "liveUrl": ""
+      },
+      "customer-agent-multilingual": {
+        "title": "İade politikası uydurmayan beş dilli müşteri desteği",
+        "client": "Customer-Agent",
+        "industry": "Müşteri operasyonları",
+        "service": "Çok dilli yapay zekâ ajanı · WhatsApp + e-posta + web · gönderim öncesi inceleme",
+        "year": "2026",
+        "problem": "E-ticaret ve konaklama operatörleri aynı 30 soruyla üç kanalda, her saatte, beş dilde karşılaşıyor — Romence, Türkçe, İngilizce, Almanca, İspanyolca. Hazır chatbotlar dil algılamada başarısız oluyor, markanın hiç sunmadığı iade politikalarını uyduruyor ve \"bu hassas, insana ver\" kavramından yoksun. Müşterinin ihtiyacı: tek gelen kutusu, müşterinin gerçek dilinde yanıtlar ve ajanın gece 3'te politika uydurmasına karşı bir güvenlik ağı.",
+        "approach": "Otomatik gönderim değil, taslak yanıt. Ajan dili algılar, mesajı elle yazılmış bir playbook girdisiyle eşler, sipariş verisini kullanarak bir yanıt hazırlar ve bir insanın onaylamasını bekler. Güvenli niyetler (kargo durumu, mağaza saatleri) için operatör otomatik gönderimi açabilir; 100€ üstü iadeler, iptaller veya öfke sinyallerinde ajan durur ve bir insanı çağırır. Beş dil, markanın sahip olduğu playbook'larla yayında — üretilen kurallarla değil.",
+        "decisions": [
+          "Dil algılama için fastText langid — LLM çağrısı değil. Daha ucuz, daha hızlı, 0,98 güven tabanı net tanımlı.",
+          "Niyet sınıflandırma elle hazırlanan playbook araması, sıfır-shot değil. Her müşterinin 20-40 playbook girdisi var.",
+          "Yanıtlar Claude Opus 4.7 tarafından playbook girdisi bağlam olarak, müşteri sipariş verisi enjekte edilerek ve politika uydurmayı açıkça yasaklayan bir sistem promptu ile taslaklanır.",
+          "Gönderim öncesi inceleme güvenlik çubuğu. Otomatik gönderim, niyet × müşteri başına opt-in, günlük üst sınır ile.",
+          "WhatsApp Business API, IMAP e-posta ve bir web widget'ı için kanal adaptörleri — tek gelen kutusu, tek ajan, konuşma katmanında dilden bağımsız.",
+          "Her taslağın + onayın + gönderimin denetim izi, yanıt başına model+gecikme+token maliyeti ile."
+        ],
+        "stack": "Next.js · Postgres · Claude Opus · OpenAI embeddings · WhatsApp Business API",
+        "timeline": "9 hafta · 3 müşteride canlı",
+        "outcome": "Taleplerin %78'i, onay döngüsünde bir insan tutarak yükseltme olmadan kapandı.",
+        "metrics": [
+          {
+            "label": "Otomatik kapanış",
+            "value": "%78"
+          },
+          {
+            "label": "Aktif dil",
+            "value": "5"
+          },
+          {
+            "label": "Medyan taslak gecikmesi",
+            "value": "1,8s"
+          },
+          {
+            "label": "Uydurulan iade teklifi",
+            "value": "0"
+          }
+        ],
+        "gallery": [
+          {
+            "src": "/projects/customer-agent-multilingual.svg",
+            "caption": "Operatör gelen kutusu — Romence bir iade talebi, onay bekleyen bir taslak ve ajan müfettişi."
+          }
+        ],
+        "image": "/projects/customer-agent-multilingual.svg",
+        "liveUrl": "/customer-agent"
       }
     }
   },

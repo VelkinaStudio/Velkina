@@ -1,284 +1,335 @@
 import * as React from 'react';
+import Link from 'next/link';
 import { CONTACT, mailHref, whatsappHref } from '../lib/contact';
 
 /*
- * Velkina v7 landing — VK-numbered horizontal-drag ledger
+ * Velkina v8 — warm graphite atmospheric, scroll-pinned project reveal grid.
  *
  * Reads:
- *   docs/needs/v7-landing.md            (audience + outcome + kill condition)
- *   docs/strategy/founder-loop.md       (Class A competitive set)
- *   docs/design/velkina-v7-direction.md (the build spec)
+ *   docs/audits/2026-05-14-v8/IMPLEMENTATION-LOG.md  (this build)
  *
- * Section rhythm (canvas shifts #0A0A0B → #13131A → #0A0A0B → #13131A → #0A0A0B):
- *   0. Hero               — VK-NN horizontal-drag ledger (signature move)
- *   1. Tagline + operators
- *   2. Services as work-pairs (text-left / proof-right, alternating)
- *   3. Big Number (47 projects since 2018) — Adobe Spectrum design-object style
- *   4. Founder voice (real Nalba + Baha paragraphs, not placeholders)
- *   5. Contact (three links, no form)
+ * Section rhythm (canvas: warm graphite → deep → warm marquee → graphite + paper):
+ *   0. Cinematic hero (100vh, kinetic typography + ticker)
+ *   1. Studio short statement (scenic ring atmosphere)
+ *   2. Featured work grid (THE CENTER — image-dominant, hover-reveal)
+ *   3. Capabilities marquee (40vh, slow horizontal scroll)
+ *   4. Two operators (real voice paragraphs, no placeholders)
+ *   5. Footer-CTA scene (kinetic buttons, client marquee)
  */
 
 type Locale = 'en' | 'tr' | 'ro';
 
-type LedgerItem = {
-  date: string;
-  client: string;
-  kind: string;
-  outcome: string;
-  status: 'active' | 'delivered';
-};
-
-type ServicePair = { service: string; proof: string };
-
-type V7 = {
-  drag: string;
-  recentRibbon: string;
-  descriptions: string[];
-  taglineLead: string;
-  taglineMid: string;
-  taglineEnd: string;
-  operatorIntro: string;
+type V8 = {
+  heroEyebrow: string;
+  heroTickerLabel: string;
+  heroTickerItems: string[];
+  headlineL1: string;
+  headlineL2: string;
+  headlineL3: string;
+  studioEyebrow: string;
+  studioStatement: string;
+  workEyebrow: string;
+  workHeading: string;
+  workLead: string;
+  capabilitiesItems: string[];
+  capabilitiesStatement: string;
+  operatorsEyebrow: string;
+  operatorsHeading: string;
+  nalbaName: string;
   nalbaRole: string;
-  bahaRole: string;
-  servicesEyebrow: string;
-  servicesHeading: string;
-  servicePairs: ServicePair[];
-  bigNumberEyebrow: string;
-  bigNumberValue: string;
-  bigNumberCaption: string;
-  bigNumberFootnote: string;
-  voiceEyebrow: string;
-  voiceHeading: string;
+  nalbaContact: string;
   nalbaVoice: string;
+  bahaName: string;
+  bahaRole: string;
+  bahaContact: string;
   bahaVoice: string;
   contactEyebrow: string;
   contactHeading: string;
+  contactHeadingItalic: string;
   contactSub: string;
   contactEmail: string;
   contactWhatsapp: string;
   contactSchedule: string;
+  clientsLabel: string;
+  seeWorkCta: string;
 };
 
-export default function HomeView({ messages, locale }: { messages: any; locale: Locale }) {
-  const common = messages.common;
-  const ledgerItems = (messages.home.ledger.items as LedgerItem[]) ?? [];
-  const v7 = messages.home.v7 as V7;
+type WorkItem = {
+  slug: string;
+  client: string;
+  industry: string;
+  service: string;
+  year: string;
+  outcome: string;
+  image: string;
+  liveUrl?: string;
+};
 
-  // Build the 6 VK-NN rows by walking the existing ledger.
-  // descriptions[] is parallel-indexed to ledgerItems so client-name
-  // translation drift between locales cannot break the join.
-  const rows = ledgerItems.map((item, idx) => ({
-    code: `VK-${String(idx + 1).padStart(2, '0')}`,
-    ...item,
-    description: v7.descriptions[idx] ?? `${item.kind} — ${item.outcome}.`,
-  }));
+// Asymmetric grid sizing — which tiles span 2 cols on desktop.
+// The 3 deep-case projects + Lavinia are wide-emphasis.
+const WIDE_SLUGS = new Set([
+  'rulesell-marketplace',
+  'lavinia-bistro-qr-menu',
+  'customer-agent-multilingual'
+]);
+
+export default function HomeView({
+  messages,
+  locale
+}: {
+  messages: any;
+  locale: Locale;
+}) {
+  const common = messages.common;
+  const v8 = messages.home.v8 as V8;
+  const work = messages.work;
+  const tagLabels = work.tagLabels as Record<string, string>;
+  const slugTag = work.slugTag as Record<string, string>;
+  const hoverProblem = work.hoverProblem as Record<string, string>;
+  const featuredSlugs: string[] = work.v8Featured;
+  const items: WorkItem[] = work.items;
+  const itemBySlug: Record<string, WorkItem> = Object.fromEntries(items.map(it => [it.slug, it]));
+  const featured: WorkItem[] = featuredSlugs
+    .map(slug => itemBySlug[slug])
+    .filter(Boolean);
+
+  // Client marquee — duplicate the list so the CSS animation loops seamlessly.
+  const clientNames = items.map(it => it.client);
+  const clientTrack = [...clientNames, ...clientNames];
+
+  // Capability marquee — duplicate for seamless loop.
+  const capItems = v8.capabilitiesItems;
+  const capTrack = [...capItems, ...capItems, ...capItems];
 
   return (
-    <div className="v7-page">
-      {/* ═══════════════════════════════════════════════════
-          0. HERO — VK-numbered horizontal-drag ledger
-          ─────────────────────────────────────────────────── */}
-      <section className="v7-hero" aria-label="Recent shipped work ledger">
-        <div className="v7-hero-frame">
-          <div className="v7-hero-top">
-            <span className="v7-mono-eyebrow">{v7.recentRibbon}</span>
-            <span className="v7-mono-eyebrow" aria-hidden="true">
-              {String(rows.length).padStart(2, '0')} / {String(rows.length).padStart(2, '0')}
-            </span>
-          </div>
+    <div className="v8-root">
 
-          <div
-            className="v7-hero-rail"
-            role="region"
-            aria-label="Drag horizontally to see all recent work"
-            tabIndex={0}
-          >
-            {rows.map((row) => (
-              <article key={row.code} className="v7-hero-row">
-                <div className="v7-hero-code">
-                  <span className="v7-mono-eyebrow">{row.code}</span>
-                  <span
-                    className="v7-hero-code-status"
-                    data-status={row.status}
-                  >
-                    {row.status === 'active' ? 'ACTIVE' : 'SHIPPED'}
-                  </span>
-                </div>
-                <h2 className="v7-hero-client">{row.client}</h2>
-                <div className="v7-hero-meta">
-                  <div className="v7-hero-tag">
-                    <span className="v7-hero-tag-kind">{row.kind}</span>
-                    <span className="v7-hero-tag-date">{row.date}</span>
-                  </div>
-                  <p className="v7-hero-desc">{row.description}</p>
-                  <span className="v7-hero-outcome">{row.outcome}</span>
-                </div>
-              </article>
+      {/* ═════════════════════════════════════════════════════
+          SECTION 0 — Cinematic hero
+          ───────────────────────────────────────────────────── */}
+      <section className="v8-hero" aria-label="Velkina studio hero">
+        <div className="v8-hero-top">
+          <span className="v8-mono">{v8.heroEyebrow}</span>
+          <span className="v8-mono">{locale.toUpperCase()} · 26.05.14</span>
+        </div>
+
+        <div className="v8-hero-center">
+          <h1 className="v8-hero-headline">
+            <span>{v8.headlineL1}</span>
+            <span>{v8.headlineL2}</span>
+            <span>{v8.headlineL3}</span>
+          </h1>
+        </div>
+
+        <div className="v8-hero-bottom">
+          <div className="v8-ticker" aria-live="off">
+            <span className="v8-ticker-label">{v8.heroTickerLabel}</span>
+            {v8.heroTickerItems.slice(0, 3).map((item, i) => (
+              <span key={i} className="v8-ticker-item">{item}</span>
             ))}
           </div>
-
-          <div className="v7-hero-bottom">
-            <span className="v7-drag-affordance" aria-hidden="true">
-              {v7.drag}
-            </span>
-            <span className="v7-mono-eyebrow" aria-hidden="true">
-              VELKINA · {locale.toUpperCase()}
-            </span>
-          </div>
+          <a href="#work" className="v8-scroll-hint" aria-label="Scroll to work">
+            <span>SCROLL</span>
+          </a>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════
-          1. TAGLINE + OPERATORS
-          ─────────────────────────────────────────────────── */}
-      <section className="v7-section v7-section-lift">
-        <div className="v7-wrap">
-          <span className="v7-mono-eyebrow">{v7.operatorIntro}</span>
-          <h2 className="v7-tagline" style={{ marginTop: '1.25rem' }}>
-            <span>{v7.taglineLead}</span>{' '}
-            <span>{v7.taglineMid}</span>{' '}
-            <em>{v7.taglineEnd}</em>
-          </h2>
-          <div className="v7-operators">
-            <div className="v7-operator-card">
-              <div className="v7-operator-name">Nalba</div>
-              <div className="v7-operator-role">{v7.nalbaRole}</div>
+      {/* ═════════════════════════════════════════════════════
+          SECTION 1 — Studio short statement (scenic)
+          ───────────────────────────────────────────────────── */}
+      <section className="v8-studio" aria-labelledby="v8-studio-heading">
+        <div className="v8-wrap">
+          <div className="v8-studio-inner">
+            <div>
+              <span className="v8-mono" style={{ display: 'block', marginBottom: '1.5rem' }}>
+                {v8.studioEyebrow}
+              </span>
+              <p id="v8-studio-heading" className="v8-studio-statement">
+                {v8.studioStatement}
+              </p>
             </div>
-            <div className="v7-operator-card">
-              <div className="v7-operator-name">Baha</div>
-              <div className="v7-operator-role">{v7.bahaRole}</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          2. SERVICES AS WORK-PAIRS (alternating text-left/right)
-          ─────────────────────────────────────────────────── */}
-      <section className="v7-section v7-section-base">
-        <div className="v7-wrap">
-          <span className="v7-mono-eyebrow">{v7.servicesEyebrow}</span>
-          <h2
-            className="v7-tagline"
-            style={{ marginTop: '1.25rem', maxWidth: '22ch' }}
-          >
-            {v7.servicesHeading}
-          </h2>
-
-          <div className="v7-pairs">
-            {v7.servicePairs.map((p, i) => (
-              <div key={p.service} className="v7-pair">
-                <div className="v7-pair-service">{p.service}</div>
-                <div className="v7-pair-proof">
-                  <span>PROOF / {String(i + 1).padStart(2, '0')}</span>
-                  {p.proof}
-                </div>
+            <div className="v8-studio-scene" aria-hidden="true">
+              <div className="v8-studio-ring">
+                <div className="v8-studio-ring-mark"></div>
               </div>
-            ))}
+              <div className="v8-studio-ring v8-studio-ring--inner">
+                <div className="v8-studio-ring-mark"></div>
+              </div>
+              <div className="v8-studio-ring v8-studio-ring--core"></div>
+              <div className="v8-studio-ring-label">V</div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════
-          3. THE BIG NUMBER — Adobe Spectrum-style design object
-          ─────────────────────────────────────────────────── */}
-      <section className="v7-section v7-section-lift">
-        <div className="v7-wrap">
-          <div className="v7-bignumber">
-            <span className="v7-bignumber-eyebrow">
-              {v7.bigNumberEyebrow}
-            </span>
-            <span className="v7-bignumber-value" aria-label={v7.bigNumberCaption}>
-              {v7.bigNumberValue}
-            </span>
-            <span className="v7-bignumber-caption">
-              {v7.bigNumberCaption}
-            </span>
-            <p className="v7-bignumber-foot">{v7.bigNumberFootnote}</p>
+      {/* ═════════════════════════════════════════════════════
+          SECTION 2 — Featured work grid (THE CENTER)
+          ───────────────────────────────────────────────────── */}
+      <section id="work" className="v8-work" aria-labelledby="v8-work-heading">
+        <div className="v8-wrap">
+          <div className="v8-work-header">
+            <span className="v8-mono">{v8.workEyebrow}</span>
+            <h2 id="v8-work-heading" className="v8-work-heading">
+              {v8.workHeading}
+            </h2>
+            <p className="v8-work-lead">{v8.workLead}</p>
+          </div>
+
+          <ul className="v8-tile-grid list-none p-0 m-0">
+            {featured.map((it, idx) => {
+              const tagKey = slugTag[it.slug] || 'web';
+              const tag = tagLabels[tagKey] || tagKey.toUpperCase();
+              const problem = hoverProblem[it.slug] || '';
+              const wide = WIDE_SLUGS.has(it.slug);
+              return (
+                <li key={it.slug} className={wide ? 'v8-tile--wide' : ''}>
+                  <Link
+                    href={`/${locale}/work/${it.slug}`}
+                    className="v8-tile"
+                    aria-label={`${it.client} — ${tagLabels.viewCase || 'View case'}`}
+                  >
+                    <div className="v8-tile-image">
+                      <img
+                        src={it.image}
+                        alt={`${it.client} — ${it.service}`}
+                        loading={idx < 4 ? 'eager' : 'lazy'}
+                        decoding="async"
+                      />
+                      <div className="v8-tile-overlay">
+                        {problem && (
+                          <p className="v8-tile-overlay-text">{problem}</p>
+                        )}
+                        <span className="v8-tile-overlay-cta">
+                          {tagLabels.viewCase || 'VIEW CASE STUDY →'}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="v8-tile-meta">
+                      <span className="v8-tile-tag">{tag} · {it.year}</span>
+                      <span className="v8-tile-client">{it.client}</span>
+                      <span className="v8-tile-service">{it.service}</span>
+                      <span className="v8-tile-outcome">{it.outcome}</span>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+
+          <Link href={`/${locale}/work`} className="v8-see-all">
+            {v8.seeWorkCta}
+          </Link>
+        </div>
+      </section>
+
+      {/* ═════════════════════════════════════════════════════
+          SECTION 3 — Capabilities marquee
+          ───────────────────────────────────────────────────── */}
+      <section className="v8-marquee-section" aria-label="What we do">
+        <div className="v8-marquee" aria-hidden="true">
+          {capTrack.map((cap, i) => (
+            <React.Fragment key={`${cap}-${i}`}>
+              <span className="v8-marquee-item">{cap}</span>
+              <span className="v8-marquee-sep">✦</span>
+            </React.Fragment>
+          ))}
+        </div>
+        <div className="v8-wrap">
+          <p className="v8-capabilities-statement">{v8.capabilitiesStatement}</p>
+        </div>
+      </section>
+
+      {/* ═════════════════════════════════════════════════════
+          SECTION 4 — Two operators
+          ───────────────────────────────────────────────────── */}
+      <section className="v8-operators" aria-labelledby="v8-operators-heading">
+        <div className="v8-wrap">
+          <div className="v8-operators-header">
+            <span className="v8-mono">{v8.operatorsEyebrow}</span>
+            <h2 id="v8-operators-heading" className="v8-operators-heading">
+              {v8.operatorsHeading}
+            </h2>
+          </div>
+
+          <div className="v8-operators-grid">
+            <article className="v8-operator">
+              <div className="v8-operator-avatar" aria-hidden="true">
+                <span>N</span>
+              </div>
+              <div className="v8-operator-body">
+                <span className="v8-operator-name">{v8.nalbaName}</span>
+                <span className="v8-operator-role">{v8.nalbaRole}</span>
+                <p className="v8-operator-voice">{v8.nalbaVoice}</p>
+                <span className="v8-operator-contact">{v8.nalbaContact}</span>
+              </div>
+            </article>
+
+            <article className="v8-operator">
+              <div className="v8-operator-avatar" aria-hidden="true">
+                <span>B</span>
+              </div>
+              <div className="v8-operator-body">
+                <span className="v8-operator-name">{v8.bahaName}</span>
+                <span className="v8-operator-role">{v8.bahaRole}</span>
+                <p className="v8-operator-voice">{v8.bahaVoice}</p>
+                <span className="v8-operator-contact">{v8.bahaContact}</span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════
-          4. FOUNDER VOICE — Nalba + Baha real paragraphs
-          (no {{NALBA_VOICE_EN}} placeholders, per v6 HANDOFF gap #75)
-          ─────────────────────────────────────────────────── */}
-      <section className="v7-section v7-section-base">
-        <div className="v7-wrap">
-          <span className="v7-mono-eyebrow">{v7.voiceEyebrow}</span>
-          <h2
-            className="v7-tagline"
-            style={{ marginTop: '1.25rem', maxWidth: '22ch' }}
-          >
-            {v7.voiceHeading}
+      {/* ═════════════════════════════════════════════════════
+          SECTION 5 — Footer CTA scene
+          ───────────────────────────────────────────────────── */}
+      <section className="v8-cta-scene" id="cta" aria-labelledby="v8-cta-heading">
+        <div className="v8-wrap">
+          <span className="v8-mono" style={{ display: 'block', marginBottom: '1.5rem' }}>
+            {v8.contactEyebrow}
+          </span>
+          <h2 id="v8-cta-heading">
+            <span className="v8-cta-heading">{v8.contactHeading}</span>
+            {v8.contactHeadingItalic ? (
+              <>{' '}<span className="v8-cta-heading-italic">{v8.contactHeadingItalic}</span></>
+            ) : null}
           </h2>
+          <p className="v8-cta-sub">{v8.contactSub}</p>
 
-          <div className="v7-voice">
-            <figure style={{ margin: 0 }}>
-              <blockquote className="v7-voice-quote" style={{ margin: 0 }}>
-                {v7.nalbaVoice}
-              </blockquote>
-              <figcaption className="v7-voice-attr">
-                <span className="v7-voice-name">Nalba</span>
-                <span className="v7-voice-role">{v7.nalbaRole}</span>
-              </figcaption>
-            </figure>
-            <figure style={{ margin: 0 }}>
-              <blockquote className="v7-voice-quote" style={{ margin: 0 }}>
-                {v7.bahaVoice}
-              </blockquote>
-              <figcaption className="v7-voice-attr">
-                <span className="v7-voice-name">Baha</span>
-                <span className="v7-voice-role">{v7.bahaRole}</span>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════
-          5. CONTACT — three links, no form
-          ─────────────────────────────────────────────────── */}
-      <section className="v7-section v7-section-base v7-contact" id="cta">
-        <div className="v7-wrap">
-          <span className="v7-mono-eyebrow">{v7.contactEyebrow}</span>
-          <h2 className="v7-contact-heading" style={{ marginTop: '1.25rem' }}>
-            {v7.contactHeading}
-          </h2>
-          <p className="v7-contact-sub">{v7.contactSub}</p>
-
-          <div className="v7-contact-links" role="list">
+          <div className="v8-cta-links">
             <a
-              role="listitem"
-              className="v7-contact-link"
+              className="v8-cta-link"
               href={mailHref(common.emailSubject)}
             >
-              <span className="v7-contact-link-num">01 / EMAIL</span>
-              <span className="v7-contact-link-label">{v7.contactEmail}</span>
-              <span className="v7-contact-link-value">{CONTACT.email}</span>
+              <span className="v8-cta-link-label">{v8.contactEmail}</span>
+              <span className="v8-cta-link-value">{CONTACT.email}</span>
             </a>
             <a
-              role="listitem"
-              className="v7-contact-link"
+              className="v8-cta-link"
               href={whatsappHref(common.whatsappPrefill)}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="v7-contact-link-num">02 / CHAT</span>
-              <span className="v7-contact-link-label">{v7.contactWhatsapp}</span>
-              <span className="v7-contact-link-value">{CONTACT.phoneDisplay}</span>
+              <span className="v8-cta-link-label">{v8.contactWhatsapp}</span>
+              <span className="v8-cta-link-value">{CONTACT.phoneDisplay}</span>
             </a>
             <a
-              role="listitem"
-              className="v7-contact-link"
+              className="v8-cta-link"
               href={CONTACT.scheduleUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="v7-contact-link-num">03 / CAL</span>
-              <span className="v7-contact-link-label">{v7.contactSchedule}</span>
-              <span className="v7-contact-link-value">cal.com/velkina</span>
+              <span className="v8-cta-link-label">{v8.contactSchedule}</span>
+              <span className="v8-cta-link-value">cal.com/velkina</span>
             </a>
+          </div>
+
+          <div className="v8-clients-marquee" aria-label="Past clients">
+            <p className="v8-clients-label">{v8.clientsLabel}</p>
+            <div className="v8-clients-track" aria-hidden="true">
+              {clientTrack.map((name, i) => (
+                <span key={`${name}-${i}`} className="v8-clients-track-item">{name}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>

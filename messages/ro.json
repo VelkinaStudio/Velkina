@@ -238,6 +238,54 @@
       "contactEmail": "Email",
       "contactWhatsapp": "WhatsApp",
       "contactSchedule": "Rezervă 20 min"
+    },
+    "v8": {
+      "heroEyebrow": "VELKINA",
+      "heroTickerLabel": "CURENT",
+      "heroTickerItems": [
+        "UN SLOT DE BUILD LIBER · IULIE",
+        "INTRO CALL · 20 MIN · CAL.COM/VELKINA",
+        "ISTANBUL + BUCUREȘTI · EN/TR/RO"
+      ],
+      "headlineL1": "SOFTWARE",
+      "headlineL2": "ȘI BRAND",
+      "headlineL3": "CARE LIVREAZĂ.",
+      "studioEyebrow": "STUDIO",
+      "studioStatement": "Software, brand și infrastructură de reclame pentru fondatorii europeni care se lansează internațional — magazinul, campaniile și agentul de suport ies dintr-o singură cameră, cap-coadă.",
+      "workEyebrow": "LUCRĂRI RECENTE · 2025—2026",
+      "workHeading": "Lucrări recente.",
+      "workLead": "Produse live, clienți reali, capturi din producție. Apasă orice casetă ca să vezi problema cu care a venit clientul și ce a ieșit la capătul celălalt.",
+      "capabilitiesItems": [
+        "WEB",
+        "SHOPIFY",
+        "AGENȚI AI",
+        "MOBIL",
+        "BRAND",
+        "MOTION",
+        "CLOUD",
+        "SEO",
+        "CONȚINUT"
+      ],
+      "capabilitiesStatement": "Magazinul, agentul de suport multilingv și pipeline-ul Meta Ads ies dintr-o singură comandă — nu trei furnizori cusuți de un project manager. Acesta este motivul practic pentru care fondatorii care se lansează internațional ajung aici.",
+      "operatorsEyebrow": "ECHIPA",
+      "operatorsHeading": "Doi operatori pe fiecare proiect.",
+      "nalbaName": "Nalba",
+      "nalbaRole": "Frontend · brand · marketing · Istanbul",
+      "nalbaContact": "nalba@velkina.com",
+      "nalbaVoice": "Frontend, brand și marketing pe partea de conversie. Lucrări recente: meniul QR al Lavinia Bistro (4 restaurante, 4 limbi, un singur editor), replatformarea Shopify pentru Rain Group (ROAS 3,4× susținut) și refresh-ul de brand al clinicii Dr Sevim.",
+      "bahaName": "Baha",
+      "bahaRole": "Backend · infrastructură · ops · București",
+      "bahaContact": "baha@velkina.com",
+      "bahaVoice": "Backend, integrări cu platforme de reclame și infrastructură. Lucrări recente: motorul de automatizare Meta Ads MegVax (38 de reguli pe zi pe 14 campanii), migrarea AWS pentru Nova Health (uptime 99,97%) și pipeline-ul de payouts + audit RuleSell pe Stripe Connect.",
+      "contactEyebrow": "CONTACT",
+      "contactHeading": "Pornește un proiect.",
+      "contactHeadingItalic": "",
+      "contactSub": "Email pentru brief-uri scrise. WhatsApp pentru întrebări rapide. Calendly pentru un intro call de 20 de minute.",
+      "contactEmail": "EMAIL",
+      "contactWhatsapp": "WHATSAPP",
+      "contactSchedule": "INTRO CALL 20 MIN",
+      "clientsLabel": "LIVRAT PENTRU",
+      "seeWorkCta": "TOATĂ MUNCA →"
     }
   },
   "services": {
@@ -474,6 +522,36 @@
         "outcome": "Comenzile online 38% din venit",
         "image": "/projects/konak-coffee-house.svg",
         "liveUrl": "/demo/konak-coffee"
+      },
+      {
+        "slug": "rulesell-marketplace",
+        "client": "RuleSell",
+        "industry": "Piață pentru dezvoltatori",
+        "service": "Piață + Stripe Connect + listări auditate",
+        "year": "2026",
+        "outcome": "212 listări active · 600 pagini SEO",
+        "image": "/projects/rulesell-marketplace.svg",
+        "liveUrl": "https://www.rulesell.com"
+      },
+      {
+        "slug": "megvax-meta-ads",
+        "client": "MegVax",
+        "industry": "AdTech SaaS",
+        "service": "Platformă de automatizare Meta Ads",
+        "year": "2026",
+        "outcome": "ROAS 3,4× pe 14 campanii",
+        "image": "/projects/megvax-dashboard.svg",
+        "liveUrl": ""
+      },
+      {
+        "slug": "customer-agent-multilingual",
+        "client": "Customer-Agent",
+        "industry": "Operațiuni clienți · cinci limbi",
+        "service": "Suport AI multilingv (EN/TR/RO/DE/ES)",
+        "year": "2026",
+        "outcome": "78% din tichete rezolvate fără intervenție umană",
+        "image": "/projects/customer-agent-multilingual.svg",
+        "liveUrl": "/customer-agent"
       }
     ],
     "labels": {
@@ -483,6 +561,77 @@
       "outcome": "Rezultat",
       "viewCase": "Vezi cazul →",
       "viewLive": "Vezi live →"
+    },
+    "tagLabels": {
+      "saas": "SAAS",
+      "marketplace": "PIAȚĂ",
+      "aiAgent": "AGENT AI",
+      "ecommerce": "E-COMMERCE",
+      "mobile": "MOBIL",
+      "web": "APLICAȚIE WEB",
+      "brand": "BRAND",
+      "platform": "PLATFORMĂ",
+      "caseStudy": "STUDIU DE CAZ",
+      "viewCase": "DESCHIDE CAZUL →",
+      "deep": "STUDIU DE CAZ DETALIAT",
+      "workIndexEyebrow": "TOATĂ MUNCA · 2024—2026",
+      "workIndexHeading": "Toată munca.",
+      "workIndexLead": "Produse live și problemele pe care le-au rezolvat. Modă, hospitality, AdTech, juridic, educație, sănătate, marketplace.",
+      "detailEyebrow": "STUDIU DE CAZ",
+      "detailProblem": "Problema",
+      "detailDecisions": "Cum a fost construit",
+      "detailGallery": "Produsul",
+      "detailOutcome": "Rezultat",
+      "detailMetrics": "Cifre",
+      "detailNext": "URMĂTORUL PROIECT",
+      "detailStack": "STIVĂ",
+      "detailTimeline": "DURATĂ"
+    },
+    "v8Featured": [
+      "rulesell-marketplace",
+      "megvax-meta-ads",
+      "customer-agent-multilingual",
+      "lavinia-bistro-qr-menu",
+      "rain-group-ecommerce",
+      "skyline-media-mobile-app",
+      "eduturkia-platform",
+      "drsevim-beauty-clinic"
+    ],
+    "slugTag": {
+      "rulesell-marketplace": "marketplace",
+      "megvax-meta-ads": "saas",
+      "customer-agent-multilingual": "aiAgent",
+      "lavinia-bistro-qr-menu": "web",
+      "rain-group-ecommerce": "ecommerce",
+      "skyline-media-mobile-app": "mobile",
+      "eduturkia-platform": "platform",
+      "drsevim-beauty-clinic": "brand",
+      "tp-thermoplast-b2b": "web",
+      "ataravci-law-firm": "web",
+      "clown3d-creative-studio": "brand",
+      "novahealth-cloud-migration": "saas",
+      "marmara-foods-google-ads": "ecommerce",
+      "bosporus-travel-ai-agent": "aiAgent",
+      "anatolia-hotel-booking": "web",
+      "konak-coffee-house": "web"
+    },
+    "hoverProblem": {
+      "rulesell-marketplace": "Cum construiești o piață în care calitatea auditată este produsul, nu un filtru?",
+      "megvax-meta-ads": "Cum dai unui singur operator de reclame pârghia unei echipe fără banii unei echipe?",
+      "customer-agent-multilingual": "Cum livrezi suport în cinci limbi fără să halucinezi politici de retur la 3 dimineața?",
+      "lavinia-bistro-qr-menu": "Cum rulează patru restaurante un singur meniu în patru limbi fără IT?",
+      "rain-group-ecommerce": "Cum trece un retailer outdoor turcesc de la site de catalog la Shopify ROAS-pozitiv?",
+      "skyline-media-mobile-app": "Cum transformi un pipeline de creator într-o aplicație de telefon livrată în trei luni?",
+      "eduturkia-platform": "Cum compară studenții internaționali 200 de universități turcești într-un singur loc?",
+      "drsevim-beauty-clinic": "Cum construiește o clinică de beauty din Istanbul un brand care prinde programări în somn?",
+      "tp-thermoplast-b2b": "Cum vinde un furnizor industrial în șase piețe cu un singur site bilingv?",
+      "ataravci-law-firm": "Cum convertește un cabinet de avocatură din București o preluare doar-telefonică într-o pâlnie condusă de site?",
+      "clown3d-creative-studio": "Cum arată un studio 3D zece ani de muncă fără un singur embed?",
+      "novahealth-cloud-migration": "Cum trece o clinică de pe on-prem și supraviețuiește auditului în același timp?",
+      "marmara-foods-google-ads": "Cum face un brand de mâncare de familie Google Ads să funcționeze în două limbi?",
+      "bosporus-travel-ai-agent": "Cum înlocuiește o agenție de turism căsuța WhatsApp cu un agent AI care rezervă?",
+      "anatolia-hotel-booking": "Cum reduce un hotel boutique comisionul OTA fără să piardă cererea directă?",
+      "konak-coffee-house": "Cum livrează o cafenea de cartier un site web real într-un weekend?"
     }
   },
   "useCase": {
@@ -508,7 +657,15 @@
         "timeline": "5 săptămâni",
         "outcome": "Costurile cu print au dispărut. Share-ul de bacșiș a urcat 11%. Două restaurante din zonă au cerut să licențieze platforma.",
         "image": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
-        "liveUrl": "/demo/lavinia-bistro"
+        "liveUrl": "/demo/lavinia-bistro",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
+            "caption": "Un meniu QR care s-a amortizat în 8 săptămâni"
+          }
+        ]
       },
       "rain-group-ecommerce": {
         "title": "Shopify + Meta Ads — ROAS 3,4× pe un trimestru întreg",
@@ -522,7 +679,15 @@
         "timeline": "6 săptămâni + continuu",
         "outcome": "ROAS-ul s-a menținut la 3,4× tot T1. Email-ul a capturat 28% din sesiuni noi. Coșul mediu +17%.",
         "image": "/portfolio-screenshots/rain-group-ecommerce.webp",
-        "liveUrl": "https://raingroup.com.tr"
+        "liveUrl": "https://raingroup.com.tr",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/rain-group-ecommerce.webp",
+            "caption": "Shopify + Meta Ads — ROAS 3,4× pe un trimestru întreg"
+          }
+        ]
       },
       "drsevim-beauty-clinic": {
         "title": "Un site de clinică care chiar programează",
@@ -536,7 +701,15 @@
         "timeline": "4 săptămâni",
         "outcome": "+38% programări în primul trimestru. Timpul până la confirmare: de la 4 ore la sub 5 minute. DM-urile au redevenit DM-uri.",
         "image": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
-        "liveUrl": "https://drsevim.com"
+        "liveUrl": "https://drsevim.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/drsevim-beauty-clinic.webp",
+            "caption": "Un site de clinică care chiar programează"
+          }
+        ]
       },
       "tp-thermoplast-b2b": {
         "title": "Date de export live, șase piețe, un singur dashboard",
@@ -550,7 +723,15 @@
         "timeline": "7 săptămâni",
         "outcome": "Toate cele șase piețe live. Ciclul de decizie de la 7 zile la dimineața următoare. Două produse repreciate pe baza primei luni de date.",
         "image": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
-        "liveUrl": "https://tpthermoplast.com"
+        "liveUrl": "https://tpthermoplast.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/tp-thermoplast-b2b.webp",
+            "caption": "Date de export live, șase piețe, un singur dashboard"
+          }
+        ]
       },
       "eduturkia-platform": {
         "title": "O platformă pentru studenți care a adus 60% mai mulți aplicanți",
@@ -564,7 +745,15 @@
         "timeline": "8 săptămâni",
         "outcome": "+60% trafic organic T1. Rata de completare a aplicării de la 24% la 51%. Apariții în 3 listări ed-tech din Turcia.",
         "image": "/portfolio-screenshots/eduturkia-platform.webp",
-        "liveUrl": "https://eduturkia.com"
+        "liveUrl": "https://eduturkia.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/eduturkia-platform.webp",
+            "caption": "O platformă pentru studenți care a adus 60% mai mulți aplicanți"
+          }
+        ]
       },
       "clown3d-creative-studio": {
         "title": "Un site de portfolio pe măsura unui studio creativ",
@@ -578,7 +767,15 @@
         "timeline": "6 săptămâni",
         "outcome": "Pe Awwwards la două săptămâni de la lansare. Doi clienți noi pe retainer într-o lună.",
         "image": "/portfolio-screenshots/clown3d-creative-studio.webp",
-        "liveUrl": "https://clown3d.com"
+        "liveUrl": "https://clown3d.com",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/clown3d-creative-studio.webp",
+            "caption": "Un site de portfolio pe măsura unui studio creativ"
+          }
+        ]
       },
       "ataravci-law-firm": {
         "title": "Un site de cabinet de avocatură + o migrare cloud făcută în liniște",
@@ -592,7 +789,15 @@
         "timeline": "5 săptămâni",
         "outcome": "Site-ul se încarcă sub o secundă. Migrarea s-a încheiat în două weekend-uri, fără downtime. Factura de hosting + ops: 3.400 € / lună mai puțin.",
         "image": "/portfolio-screenshots/ataravci-law-firm.webp",
-        "liveUrl": "https://ataravci.com.tr"
+        "liveUrl": "https://ataravci.com.tr",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/portfolio-screenshots/ataravci-law-firm.webp",
+            "caption": "Un site de cabinet de avocatură + o migrare cloud făcută în liniște"
+          }
+        ]
       },
       "novahealth-cloud-migration": {
         "title": "O migrare AWS la un grup medical fără să pierdem o cerere",
@@ -606,7 +811,15 @@
         "timeline": "4 săptămâni",
         "outcome": "99,97% uptime T1. Zero programări pierdute la migrare. Timpul de recovery a scăzut de la „rugăciune” la 15 minute.",
         "image": "/projects/novahealth-cloud-migration.svg",
-        "liveUrl": "/demo/nova-health"
+        "liveUrl": "/demo/nova-health",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/novahealth-cloud-migration.svg",
+            "caption": "O migrare AWS la un grup medical fără să pierdem o cerere"
+          }
+        ]
       },
       "marmara-foods-google-ads": {
         "title": "CAC −41% cu un cont de reclame mai mic și mai ascuțit",
@@ -620,7 +833,15 @@
         "timeline": "3 săptămâni + continuu",
         "outcome": "CAC −41%. Cheltuiala −30%, venit plat în prima lună, +14% în luna a doua.",
         "image": "/projects/marmara-foods-google-ads.svg",
-        "liveUrl": "/demo/marmara-foods"
+        "liveUrl": "/demo/marmara-foods",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/marmara-foods-google-ads.svg",
+            "caption": "CAC −41% cu un cont de reclame mai mic și mai ascuțit"
+          }
+        ]
       },
       "skyline-media-mobile-app": {
         "title": "O aplicație iOS + Android de media, livrată în 12 săptămâni",
@@ -634,7 +855,15 @@
         "timeline": "12 săptămâni",
         "outcome": "70k instalări în primul trimestru. 4,7★ pe iOS, 4,6★ pe Android. Sesiune medie 14 minute.",
         "image": "/projects/skyline-media-mobile-app.svg",
-        "liveUrl": "/demo/skyline-media"
+        "liveUrl": "/demo/skyline-media",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/skyline-media-mobile-app.svg",
+            "caption": "O aplicație iOS + Android de media, livrată în 12 săptămâni"
+          }
+        ]
       },
       "bosporus-travel-ai-agent": {
         "title": "Un agent AI care vinde tururi în trei limbi",
@@ -648,7 +877,15 @@
         "timeline": "5 săptămâni",
         "outcome": "63% din chat-uri rezolvate de agent. Timp de răspuns de la 4 ore la sub 2 minute. Echipa se ocupă acum doar de întrebările interesante.",
         "image": "/projects/bosporus-travel-ai-agent.svg",
-        "liveUrl": "/demo/bosporus-travel"
+        "liveUrl": "/demo/bosporus-travel",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/bosporus-travel-ai-agent.svg",
+            "caption": "Un agent AI care vinde tururi în trei limbi"
+          }
+        ]
       },
       "anatolia-hotel-booking": {
         "title": "Un motor de rezervări directe care taie comisioanele OTA",
@@ -662,7 +899,15 @@
         "timeline": "6 săptămâni",
         "outcome": "Rezervările directe +34% în primul trimestru. Ponderea OTA în venit a scăzut de la 71% la 49%. Economisiți aprox. 22% din comisioane.",
         "image": "/projects/anatolia-hotel-booking.svg",
-        "liveUrl": "/demo/anatolia-hotel"
+        "liveUrl": "/demo/anatolia-hotel",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/anatolia-hotel-booking.svg",
+            "caption": "Un motor de rezervări directe care taie comisioanele OTA"
+          }
+        ]
       },
       "konak-coffee-house": {
         "title": "Un site de cafenea care ia comenzi înainte să se deschidă ușa",
@@ -676,7 +921,153 @@
         "timeline": "4 săptămâni",
         "outcome": "Comenzile online reprezintă acum 38% din veniturile zilelor lucrătoare. Timpul mediu de servire dimineața a scăzut cu 4 minute. Zero modificări la fluxul POS.",
         "image": "/projects/konak-coffee-house.svg",
-        "liveUrl": "/demo/konak-coffee"
+        "liveUrl": "/demo/konak-coffee",
+        "decisions": [],
+        "metrics": [],
+        "gallery": [
+          {
+            "src": "/projects/konak-coffee-house.svg",
+            "caption": "Un site de cafenea care ia comenzi înainte să se deschidă ușa"
+          }
+        ]
+      },
+      "rulesell-marketplace": {
+        "title": "O piață pentru configurațiile de dezvoltare AI",
+        "client": "RuleSell",
+        "industry": "Piață pentru dezvoltatori",
+        "service": "Piață bilaterală · Stripe Connect · listări auditate",
+        "year": "2026",
+        "problem": "Configurările AI sunt nesigure. Cumpărătorii nu aveau cum să știe care seturi de reguli Claude Code sau Cursor sunt sigure de instalat — calitatea varia de la o reglare de un rând la o disciplină operațională de 500 de rânduri, împrăștiată prin gist-uri GitHub, articole de blog și canale Discord. Creatorii nu aveau unde să-și monetizeze munca, iar pentru cumpărători nu exista un loc canonic pentru configurări auditate. Clientul avea nevoie de o piață în care cumpărătorii să aibă încredere în ce instalează, iar creatorii să fie plătiți pentru ce publică.",
+        "approach": "Încrederea vine dintr-un grad de audit vizibil, nu din numărul de recenzii. Fiecare trimitere primește un grad de audit A/B/C, susținut de 42 de verificări automate (validare frontmatter, calitatea frazelor declanșatoare, detectarea anti-pattern-urilor, integritatea licenței, completitudine). Cumpărătorii văd gradul pe cardul de listare înainte să apese. Creatorii primesc o rubrică clară pentru a-și îmbunătăți scorul. Plățile rulează prin Stripe Connect; creatorii intră fără un panou separat.",
+        "decisions": [
+          "Un singur Postgres pentru catalog + revendicări + plăți — niciun microserviciu până la 100k MRR. Drizzle ORM cu verificări de siguranță a migrației scrise manual.",
+          "Conducta de audit rulează într-un cron Vercel + coadă, nu sincron la trimitere. Trimiterile urmează DRAFT → AUDITING → PUBLISHED, nu eșuează niciodată cu un 200 tăcut.",
+          "Conturi Stripe Connect Express, astfel încât creatorii intră fără un panou separat. Plățile sunt săptămânale cu un blocaj de chargeback de 7 zile per riscul implicit Stripe.",
+          "600 de pagini SEO programatice construite dintr-o matrice (framework × caz de utilizare) cu fragmente de text scrise manual, nu umplutură generată de șablon. Fiecare pagină are H1 unic, meta unic, primele 100 de cuvinte unice.",
+          "Strategie de citare AI: llms.txt + date structurate pe fiecare listare + o pagină /docs/why-rulesell care țintește interogări AI Overview „ce este rulesell\".",
+          "Fără recenzii generate de utilizatori până la 500 de instalări plătite — frauda de recenzii este ucigașul piețelor. Insigna auditat face munca de încredere până când volumul justifică un sistem de recenzii."
+        ],
+        "stack": "Next.js 16 · Postgres · Drizzle · Stripe Connect · Vercel · Sentry",
+        "timeline": "11 săptămâni · 2 operatori",
+        "outcome": "Piața a fost lansată cu 212 listări auditate și 600 de pagini SEO programatice.",
+        "metrics": [
+          {
+            "label": "Listări la lansare",
+            "value": "212"
+          },
+          {
+            "label": "Creatori auditați",
+            "value": "47"
+          },
+          {
+            "label": "Pagini SEO programatice",
+            "value": "600"
+          },
+          {
+            "label": "Rată medie de audit",
+            "value": "64%"
+          }
+        ],
+        "gallery": [
+          {
+            "src": "/projects/rulesell-marketplace.svg",
+            "caption": "Vizualizare browse — insigna auditat pe fiecare listare, fără teatru de „trending\"."
+          }
+        ],
+        "image": "/projects/rulesell-marketplace.svg",
+        "liveUrl": "https://www.rulesell.com"
+      },
+      "megvax-meta-ads": {
+        "title": "Oprește campaniile proaste la 3 dimineața fără să stai treaz să le supraveghezi",
+        "client": "MegVax",
+        "industry": "AdTech SaaS",
+        "service": "Automatizare Meta Ads · motor de reguli · panou multi-cont",
+        "year": "2026",
+        "problem": "Un operator de reclame solo care rulează 10-40 de campanii pe 3-5 conturi nu poate urmări CPA în fiecare oră. Regulile automate native Meta sunt limitate la declanșatoare simple per campanie, așa că atunci când o creativă obosește la 2 noaptea sau o audiență se strică peste noapte, bugetul arde până dimineața. Operatorii aveau nevoie de reguli la nivel de cont („oprește orice are CPA peste 12 euro, oriunde\"), declanșatoare de reîmprospătare creativă și capacitatea de a realoca bugetul între campanii pe baza ROAS în timp real — fără să scrie ei integrarea.",
+        "approach": "Un motor de reguli și un panou peste API-ul de marketing Meta. Regulile se adaugă printr-un formular, nu prin YAML. La fiecare 5 minute platforma trage metrici noi din Meta și declanșează ce se potrivește: pauză, scalare, schimbare creativă. Fiecare acțiune este logată; operatorul se trezește la 9 dimineața și reconstituie ce s-a schimbat la 3. Multi-cont este implicit — comutare între conturile de client cu un singur clic.",
+        "decisions": [
+          "Coadă Bull cu Redis pe Railway pentru rule runner. Tick-ul de 5 minute este compromisul limitei de rată Meta API.",
+          "Motorul de reguli este un arbore JSON etichetat, nu un DSL. Operatorii adaugă reguli printr-un formular, nu editează YAML.",
+          "Postgres pentru tot: reguli, declanșări, conturi, audit trail. Disciplină de cost cu o singură DB.",
+          "Ingestia webhook pentru evenimentele de lead Meta, astfel încât platforma să poată atribui conversiile unor variante creative specifice.",
+          "Multi-tenant prin securitate la nivel de rând cu un discriminator tenant_id. Fără filtrare per-tenant cu tabel partajat, fără scurgeri inter-tenant posibile.",
+          "Sentry pe fiecare declanșare de regulă cu etichete structurate (tenant, campanie, rule_id) astfel încât o acțiune de pauză la 3am este reconstructibilă până la 9am."
+        ],
+        "stack": "Next.js · Postgres · Redis · Bull · Meta Marketing API · Railway · Sentry",
+        "timeline": "14 săptămâni · beta live cu 4 operatori",
+        "outcome": "Operatorii au recuperat 8 ore/săptămână per cont și au menținut ROAS la 3,4× pe Q2.",
+        "metrics": [
+          {
+            "label": "Ore economisite/op/săpt",
+            "value": "8"
+          },
+          {
+            "label": "ROAS susținut",
+            "value": "3,4×"
+          },
+          {
+            "label": "Reguli declanșate/zi",
+            "value": "38"
+          },
+          {
+            "label": "Reducere CPA medie",
+            "value": "−18%"
+          }
+        ],
+        "gallery": [
+          {
+            "src": "/projects/megvax-dashboard.svg",
+            "caption": "Panoul operatorului — spend vs revenue cu panoul de reguli care s-a declanșat de 38 de ori în 24h."
+          }
+        ],
+        "image": "/projects/megvax-dashboard.svg",
+        "liveUrl": ""
+      },
+      "customer-agent-multilingual": {
+        "title": "Suport în cinci limbi care nu inventează politici de retur",
+        "client": "Customer-Agent",
+        "industry": "Operațiuni clienți",
+        "service": "Agent AI multilingv · WhatsApp + email + web · revizuire înainte de trimitere",
+        "year": "2026",
+        "problem": "Operatorii de e-commerce și hospitality primesc aceleași 30 de întrebări pe trei canale, la orice oră, în cinci limbi — română, turcă, engleză, germană, spaniolă. Chatboturile gata-făcute eșuează la detectarea limbii, inventează politici de retur pe care brandul nu le-a oferit niciodată și nu au conceptul de „acesta e delicat, dă-l unui om\". Clientul avea nevoie de o singură căsuță, răspunsuri în limba reală a clientului și o plasă de siguranță împotriva agentului care inventează politici la 3 dimineața.",
+        "approach": "Un răspuns draft, nu o trimitere automată. Agentul detectează limba, potrivește mesajul cu o intrare playbook scrisă manual, redactează un răspuns folosind datele comenzii și așteaptă ca un om să aprobe. Pentru intenții sigure (status livrare, ore magazin) operatorul poate activa trimiterea automată; pentru retururi peste 100 de euro, anulări sau semnale de furie, agentul oprește și apelează un om. Cinci limbi lansate cu playbook-uri deținute de brand, nu cu reguli generate.",
+        "decisions": [
+          "Detectare limbă prin langid fastText, nu apel LLM — mai ieftin, mai rapid, pragul de încredere 0,98 este bine definit.",
+          "Clasificarea intenției este o căutare playbook curată manual, nu zero-shot. Fiecare client are 20-40 intrări playbook.",
+          "Răspunsurile sunt redactate de Claude Opus 4.7 cu intrarea playbook ca context, datele comenzii clientului injectate, și un system prompt care interzice explicit inventarea politicilor.",
+          "Review-before-send este bara de siguranță. Auto-send este opt-in per intenție per client, cu un plafon zilnic și un kill-switch pe orice detecție de sentiment negativ.",
+          "Adaptoare de canal pentru WhatsApp Business API, IMAP email și un widget web — o singură căsuță, un singur agent, agnostic de limbă la stratul conversației.",
+          "Audit trail al fiecărui draft + aprobare + trimitere, cu cost model+latență+token per răspuns. Primul lucru pe care operatorul îl vede pe o conversație marcată este „asta ar fi spus agentul, și astea sunt datele folosite\"."
+        ],
+        "stack": "Next.js · Postgres · Claude Opus · OpenAI embeddings · WhatsApp Business API",
+        "timeline": "9 săptămâni · live pe 3 clienți",
+        "outcome": "78% din tichete rezolvate fără escaladare, păstrând un om în bucla de aprobare.",
+        "metrics": [
+          {
+            "label": "Rată auto-rezolvare",
+            "value": "78%"
+          },
+          {
+            "label": "Limbi active",
+            "value": "5"
+          },
+          {
+            "label": "Latență draft mediană",
+            "value": "1,8s"
+          },
+          {
+            "label": "Oferte de retur halucinate",
+            "value": "0"
+          }
+        ],
+        "gallery": [
+          {
+            "src": "/projects/customer-agent-multilingual.svg",
+            "caption": "Căsuța operatorului — o cerere de retur în română, un draft care așteaptă aprobare și inspectorul agentului."
+          }
+        ],
+        "image": "/projects/customer-agent-multilingual.svg",
+        "liveUrl": "/customer-agent"
       }
     }
   },
