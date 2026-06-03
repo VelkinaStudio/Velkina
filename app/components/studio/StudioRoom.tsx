@@ -73,7 +73,7 @@ export default function StudioRoom({
     if (root.current) {
       root.current.rotation.y = THREE.MathUtils.lerp(root.current.rotation.y, pointer.x * 0.12, 0.06);
       root.current.rotation.x = THREE.MathUtils.lerp(root.current.rotation.x, -pointer.y * 0.04, 0.06);
-      root.current.position.y = Math.sin(t * 0.6) * 0.03;
+      root.current.position.y = 0.35 + Math.sin(t * 0.6) * 0.03; // base lift + breathing bob
     }
     if (plant1.current) plant1.current.rotation.z = Math.sin(t * 1.1) * 0.06;
     if (plant2.current) plant2.current.rotation.z = Math.cos(t * 0.9) * 0.05;
@@ -82,7 +82,7 @@ export default function StudioRoom({
   });
 
   return (
-    <group ref={root}>
+    <group ref={root} position={[0, 0.35, 0]}>
       {/* ===== shell: floor, two walls, baseboards (enclosure) ===== */}
       <mesh position={[0, -1.5, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[6.4, 6.4]} />

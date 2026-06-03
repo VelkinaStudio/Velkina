@@ -26,8 +26,8 @@ export default function StudioScene({ knobs, onProject }: { knobs: KnobValues; o
     <Canvas
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       dpr={dpr}
-      camera={{ position: [2.8, 2.4, 4.4], fov: 36 }}
-      onCreated={({ camera }) => camera.lookAt(0, -0.5, -1.2)}
+      camera={{ position: [2.5, 1.9, 4.0], fov: 38 }}
+      onCreated={({ camera }) => camera.lookAt(0.1, -0.35, -1.4)}
       style={{ position: "absolute", inset: 0 }}
     >
       <color attach="background" args={["#0b0b0c"]} />
