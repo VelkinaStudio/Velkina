@@ -1,69 +1,63 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { Archivo, JetBrains_Mono, Geist } from "next/font/google";
+import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://velkina.com";
 
-// Display: Archivo Variable — a grotesque with width/weight axes so the
-// proximity-morph (variable-font cursor reaction) signature move works.
-const display = Archivo({
+// Display: Bricolage Grotesque — "dignified but flippant". Variable, OFL.
+const display = Bricolage_Grotesque({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800"],
   variable: "--font-display",
   display: "swap",
 });
-// Body/UI: Geist (Vercel) — clean neo-grotesque, fitting for a dev studio.
-const sans = Geist({
+// Body: Hanken Grotesk — soft humanist screen grotesk, pairs under Bricolage.
+const body = Hanken_Grotesk({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-sans",
-  display: "swap",
-});
-// Mono: part of the brand voice — labels, live data, terminal motif.
-const mono = JetBrains_Mono({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "700"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "Velkina — Software and brand that ships",
+  title: "Velkina — a two-person studio in Istanbul",
   description:
-    "Velkina is a two-operator software, design and AI-automation studio. We design, build and ship websites, e-commerce, mobile apps and AI agents. İstanbul.",
-  manifest: "/site.webmanifest",
+    "We are Velkina. A two-person studio in Istanbul building software, websites, e-commerce, AI, and brand.",
   icons: { icon: "/favicon.svg" },
   openGraph: {
-    title: "Velkina — Software and brand that ships",
+    title: "Velkina — a two-person studio in Istanbul",
     description:
-      "A two-operator software, design and AI-automation studio. Real work, shipped end-to-end. İstanbul.",
+      "We build and ship software, websites, e-commerce, AI, and brand. Two people: Ömer Can Nalbant and Baha Taşkın.",
     url: "/",
     siteName: "Velkina",
     type: "website",
   },
-  twitter: { card: "summary_large_image", title: "Velkina", description: "Software and brand that ships." },
+  twitter: {
+    card: "summary_large_image",
+    title: "Velkina",
+    description: "A two-person studio in Istanbul. Software, websites, e-commerce, AI, brand.",
+  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#0A0B0D",
+  themeColor: "#FAF7F2",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <head>
-        {/* Mark JS-on before first paint so scroll-reveal only hides content
-            when JS can reveal it again. No-JS / pre-hydration => visible. */}
         <script
           dangerouslySetInnerHTML={{
             __html: "document.documentElement.classList.add('js')",
           }}
         />
       </head>
-      <body className="vk-grain">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
