@@ -32,16 +32,9 @@ export default function Hero() {
     <section className="vk-hero vk-hero--comic" aria-label="Velkina">
       {/* Comic panel frame */}
       <div className="vk-hero-panel">
-        {/* WebGL glossy comic wordmark (full GPU only) */}
-        {cap === "full" && (
-          <div className="vk-hero-canvas" aria-hidden="true">
-            <ComicWordmark withPost />
-          </div>
-        )}
-
-        {/* Designed 2D comic title — always rendered as the SEO/a11y layer,
-            and the visible title on lite/static (mobile, low-GPU, reduced-motion). */}
-        <div className={`vk-hero-title ${cap === "full" ? "is-behind" : "is-front"}`}>
+        {/* Designed 2D comic title — ALWAYS the visible base layer (beautiful on
+            its own, never blank). The WebGL wordmark overlays it as enhancement. */}
+        <div className="vk-hero-title is-front">
           <span className="vk-hero-kicker vk-mono">Velkina — a two-person studio</span>
           <h1 className="vk-hero-name" aria-label="Velkina">
             {"VELKINA".split("").map((c, i) => (
@@ -51,6 +44,15 @@ export default function Hero() {
             ))}
           </h1>
         </div>
+
+        {/* WebGL glossy comic wordmark — enhancement layer on capable GPUs.
+            Its canvas is transparent so the 2D title + paper show through if it
+            can't draw. */}
+        {cap === "full" && (
+          <div className="vk-hero-canvas" aria-hidden="true">
+            <ComicWordmark withPost />
+          </div>
+        )}
 
         {/* Hand-lettered caption — the human hook (Austen/Gambino-flavoured wit) */}
         <div className="vk-hero-caption">

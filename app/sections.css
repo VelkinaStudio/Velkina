@@ -41,29 +41,31 @@
   mix-blend-mode: multiply;
 }
 
-/* the comic panel — a bordered frame like a page panel */
+/* the comic panel — a bordered frame like a page panel, on comic paper */
 .vk-hero-panel {
   position: relative; z-index: 1;
   border: 3px solid var(--ink);
   border-radius: 6px;
   box-shadow: 8px 8px 0 var(--ink);
-  background: transparent;
+  background: var(--paper);
   display: grid;
   grid-template-rows: 1fr auto;
   overflow: hidden;
 }
 
-.vk-hero-canvas { position: absolute; inset: 0; z-index: 1; }
+/* WebGL wordmark overlays the 2D title; transparent canvas so paper shows through */
+.vk-hero-canvas {
+  position: absolute; inset: 0; bottom: 5.5rem; z-index: 2; pointer-events: none;
+}
 
-/* 2D comic title (a11y/SEO always; visible on lite/static) */
+/* 2D comic title — the always-visible base layer */
 .vk-hero-title {
-  position: relative; z-index: 2;
+  position: relative; z-index: 1;
   align-self: center; justify-self: center;
   text-align: center;
-  padding: clamp(2rem, 6vw, 4rem) 1rem 0;
+  padding: clamp(2rem, 6vw, 4rem) 1rem;
+  width: 100%;
 }
-.vk-hero-title.is-behind { position: absolute; inset: 0; display: grid; place-content: center;
-  opacity: 0; pointer-events: none; } /* WebGL carries the visual; keep for a11y */
 .vk-hero-kicker {
   display: inline-block; font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
   color: var(--ink); opacity: 0.65; margin-bottom: 0.75rem;

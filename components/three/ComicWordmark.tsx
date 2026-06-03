@@ -79,12 +79,11 @@ function DeferredComic() {
 export default function ComicWordmark({ withPost = true }: { withPost?: boolean }) {
   return (
     <Canvas
-      gl={{ antialias: true, alpha: false, powerPreference: "high-performance" }}
+      gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       dpr={[1, 2]}
       camera={{ position: [0, 0, 6], fov: 42 }}
       style={{ position: "absolute", inset: 0 }}
     >
-      <color attach="background" args={["#f3ecdc"]} />
       <ambientLight intensity={0.9} />
       <directionalLight position={[3, 5, 4]} intensity={1.4} />
       <directionalLight position={[-4, -1, 2]} intensity={0.45} color="#7fb4ff" />
