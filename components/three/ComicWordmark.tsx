@@ -72,7 +72,6 @@ function DeferredComic() {
   return (
     <EffectComposer>
       <Comic levels={5} scale={1.25} mode="cmyk" dotStrength={0.8} />
-      <InkOutline thickness={1.3} threshold={0.1} color="#1a0a06" jitter={0.7} />
     </EffectComposer>
   );
 }
