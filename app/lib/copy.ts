@@ -4,7 +4,7 @@
 export type Lang = "en" | "tr";
 
 const en = {
-    nav: { work: "Work", studio: "Studio", contact: "Contact" },
+    nav: { work: "Work", oss: "Open source", studio: "Studio", contact: "Contact" },
     hero: {
       h1: "We are Velkina.",
       subhead:
@@ -32,6 +32,12 @@ const en = {
       visit: "Visit",
       open: "Open",
       close: "Close",
+    },
+    oss: {
+      label: "Open source",
+      intro: "Tools we built for our own work and put out for anyone. Small, dependency-light, MIT-licensed.",
+      view: "View on GitHub",
+      all: "All repositories",
     },
     team: {
       label: "The two of us",
@@ -70,7 +76,7 @@ const en = {
 export type Copy = typeof en;
 
 const tr: Copy = {
-    nav: { work: "İşler", studio: "Stüdyo", contact: "İletişim" },
+    nav: { work: "İşler", oss: "Açık kaynak", studio: "Stüdyo", contact: "İletişim" },
     hero: {
       h1: "Biz Velkina’yız.",
       subhead:
@@ -98,6 +104,12 @@ const tr: Copy = {
       visit: "Siteye git",
       open: "Aç",
       close: "Kapat",
+    },
+    oss: {
+      label: "Açık kaynak",
+      intro: "Kendi işimiz için yapıp herkese açtığımız araçlar. Küçük, az bağımlılıklı, MIT lisanslı.",
+      view: "GitHub'da gör",
+      all: "Tüm repolar",
     },
     team: {
       label: "Biz iki kişiyiz",

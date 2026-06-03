@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "motion/react";
 import { PROJECTS } from "@/app/lib/data/projects";
+import { REPOS } from "@/app/lib/data/opensource";
 import { useLang } from "@/app/lib/LangProvider";
 import WeaponSelect from "./WeaponSelect";
 import WorkDetail from "./WorkDetail";
@@ -81,6 +82,32 @@ export default function Sections() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* OPEN SOURCE — real public repos, distinct from client work */}
+      <section id="opensource" className="vk-section vk-oss">
+        <span className="vk-label">{t.oss.label}</span>
+        <p className="vk-oss-intro">{t.oss.intro}</p>
+        <ul className="vk-oss-grid">
+          {REPOS.map((r) => (
+            <li key={r.slug}>
+              <a className="vk-oss-card" href={r.url} target="_blank" rel="noopener noreferrer">
+                <span className="vk-oss-top">
+                  <span className="vk-oss-name">{r.name}</span>
+                  <span className="vk-oss-kind">{r.kind[lang]}</span>
+                </span>
+                <span className="vk-oss-blurb">{r.blurb[lang]}</span>
+                <span className="vk-oss-foot">
+                  <span className="vk-oss-lang"><i className="vk-oss-dot" aria-hidden="true" />{r.lang}</span>
+                  <span className="vk-oss-view">{t.oss.view} ↗</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <a className="vk-oss-all" href="https://github.com/VelkinaStudio" target="_blank" rel="noopener noreferrer">
+          {t.oss.all} ↗
+        </a>
       </section>
 
       {/* THE TWO OF US — real names, real roles, no persona, no card chrome */}

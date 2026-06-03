@@ -320,6 +320,50 @@ a:focus-visible, button:focus-visible, [role="button"]:focus-visible, [role="swi
   .vk-work-stack, .vk-work-open { display: none; }
 }
 
+/* ---------- Open source ---------- */
+.vk-oss-intro {
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem); margin: 1rem 0 2.2rem; max-width: 48ch;
+  color: color-mix(in srgb, var(--ink) 82%, transparent);
+}
+.vk-oss-grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px;
+  background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+}
+.vk-oss-card {
+  display: flex; flex-direction: column; gap: 0.55rem; height: 100%;
+  padding: 1.25rem 1.3rem; background: var(--paper); text-decoration: none;
+  transition: background 0.18s var(--ease-hover);
+}
+.vk-oss-top { display: flex; align-items: baseline; justify-content: space-between; gap: 0.6rem; }
+.vk-oss-name {
+  font-family: var(--vk-display); font-weight: 700; font-size: 1.12rem; letter-spacing: -0.02em;
+}
+.vk-oss-kind {
+  font-size: 0.64rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 50%, transparent); white-space: nowrap;
+}
+.vk-oss-blurb {
+  font-size: 0.88rem; line-height: 1.45; flex: 1 1 auto;
+  color: color-mix(in srgb, var(--ink) 74%, transparent);
+}
+.vk-oss-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 0.3rem; }
+.vk-oss-lang {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.74rem; color: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+.vk-oss-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); display: inline-block; }
+.vk-oss-view { font-size: 0.74rem; font-weight: 600; color: var(--accent); opacity: 0; transition: opacity 0.18s; }
+.vk-oss-all {
+  display: inline-block; margin-top: 1.8rem; font-family: var(--vk-display); font-weight: 700;
+  text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 1px;
+}
+@media (hover: hover) {
+  .vk-oss-card:hover { background: var(--accent-tint); }
+  .vk-oss-card:hover .vk-oss-view { opacity: 1; }
+}
+@media (hover: none) { .vk-oss-view { opacity: 1; } }
+
 /* ---------- The two of us ---------- */
 .vk-team-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 5vw, 4rem);

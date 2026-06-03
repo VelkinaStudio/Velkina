@@ -10,6 +10,7 @@ export default function Nav() {
       <a href="#top" className="vk-logo">Velkina</a>
       <div className="vk-nav-right">
         <a href="#work" className="vk-nav-link">{t.nav.work}</a>
+        <a href="#opensource" className="vk-nav-link">{t.nav.oss}</a>
         <a href="#studio" className="vk-nav-link">{t.nav.studio}</a>
         <a href="#contact" className="vk-nav-link">{t.nav.contact}</a>
         <SoundToggle compact />
