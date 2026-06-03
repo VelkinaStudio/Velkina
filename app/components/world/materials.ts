@@ -22,17 +22,19 @@ export const PALETTE = {
   ink: "#2a2230",
 };
 
-// matte clay (play-doh): metalness 0, roughness 0.75, no clearcoat
+import { paintedMaterial } from "./gouache/paintedMaterial";
+
+// GOUACHE painted look for everything (the render library, Phase 1). The old
+// clay/candy now route through paintedMaterial so the whole room reads as a
+// painted illustration, not glossy 3D. `candy` uses fewer bands (crisper).
 export function clay(color: string) {
-  return new THREE.MeshStandardMaterial({ color, roughness: 0.78, metalness: 0 });
+  return paintedMaterial(color, { bands: 3, tone: 80 });
 }
-// waxy clay (hero clay): a hair of clearcoat
 export function waxClay(color: string) {
-  return new THREE.MeshPhysicalMaterial({ color, roughness: 0.7, metalness: 0, clearcoat: 0.3, clearcoatRoughness: 0.6 });
+  return paintedMaterial(color, { bands: 3, tone: 90 });
 }
-// glossy candy (project objects, accents): the clearcoat shell move
 export function candy(color: string) {
-  return new THREE.MeshPhysicalMaterial({ color, roughness: 0.18, metalness: 0, clearcoat: 1.0, clearcoatRoughness: 0.18, ior: 1.4 });
+  return paintedMaterial(color, { bands: 4, tone: 120 });
 }
 // emissive screen
 export function screen(color: string, intensity = 1.6) {
