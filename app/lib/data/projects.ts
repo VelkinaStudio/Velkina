@@ -23,7 +23,12 @@ export interface Project {
   flagship?: boolean;
   /** card accent for the typographic (image-less) cards */
   tone?: "ink" | "accent" | "clay";
+  /** "weapon class" label shown on the select screen */
+  category: { en: string; tr: string };
 }
+
+/** Generated arsenal art lives at /arsenal/<id>.webp (matches each project id). */
+export const artFor = (id: string) => `/arsenal/${id}.webp`;
 
 export const PROJECTS: Project[] = [
   {
@@ -49,6 +54,7 @@ export const PROJECTS: Project[] = [
     mass: 1.0,
     flagship: true,
     tone: "accent",
+    category: { en: "Marketplace", tr: "Pazar yeri" },
   },
   {
     id: "megvax",
@@ -72,6 +78,7 @@ export const PROJECTS: Project[] = [
     stack: ["Next.js", "Meta API", "Automation", "Railway"],
     mass: 0.85,
     tone: "ink",
+    category: { en: "Automation", tr: "Otomasyon" },
   },
   {
     id: "bcb",
@@ -95,6 +102,7 @@ export const PROJECTS: Project[] = [
     stack: ["Shopify", "Liquid", "Automation"],
     mass: 0.8,
     tone: "clay",
+    category: { en: "E-commerce", tr: "E-ticaret" },
   },
   {
     id: "lavinia",
@@ -120,6 +128,7 @@ export const PROJECTS: Project[] = [
     live: "https://velkina.com/demo/lavinia-bistro",
     mass: 0.7,
     tone: "ink",
+    category: { en: "Web app", tr: "Web uygulaması" },
   },
   {
     id: "ataravci",
@@ -145,6 +154,7 @@ export const PROJECTS: Project[] = [
     live: "https://ataravci.com.tr",
     mass: 0.6,
     tone: "clay",
+    category: { en: "Website + Cloud", tr: "Web sitesi + Bulut" },
   },
   {
     id: "tp-thermoplast",
@@ -170,5 +180,6 @@ export const PROJECTS: Project[] = [
     live: "https://tpthermoplast.com",
     mass: 0.6,
     tone: "ink",
+    category: { en: "B2B + Data", tr: "B2B + Veri" },
   },
 ];

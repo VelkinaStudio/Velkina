@@ -11,6 +11,8 @@ const en = {
         "A two-person studio in Istanbul. We build and ship software, websites, e-commerce, AI, and brand.",
       pile: "Grab a card. Throw it.",
       pileHint: "Drag the work around — it has weight.",
+      selectLabel: "The arsenal",
+      selectCta: "Open",
     },
     whatWeDo: {
       label: "What we do",
@@ -77,6 +79,8 @@ const tr: Copy = {
         "İstanbul’da iki kişilik bir stüdyo. Yazılım, web sitesi, e-ticaret, yapay zekâ ve marka işleri yapıp yayına alıyoruz.",
       pile: "Bir kartı tut. Fırlat.",
       pileHint: "İşleri sürükle — ağırlıkları var.",
+      selectLabel: "Cephanelik",
+      selectCta: "Aç",
     },
     whatWeDo: {
       label: "Ne yapıyoruz",

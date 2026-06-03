@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { PROJECTS } from "@/app/lib/data/projects";
 import { useLang } from "@/app/lib/LangProvider";
-import Playground from "./Playground";
+import WeaponSelect from "./WeaponSelect";
 import WorkDetail from "./WorkDetail";
 import MagneticCTA from "./MagneticCTA";
 import SoundToggle from "./SoundToggle";
@@ -36,14 +36,17 @@ export default function Sections() {
     <main id="top" ref={rootRef}>
       {/* HERO — the signature: text paints first, the pile is the toy */}
       <section className="vk-hero">
-        <div className="vk-hero-copy">
+        <div className="vk-hero-head">
           <h1 className="vk-h1">{t.hero.h1}</h1>
           <p className="vk-hero-sub">{t.hero.subhead}</p>
-          <p className="vk-hero-pile">{t.hero.pile}</p>
         </div>
-        <div className="vk-hero-stage">
-          <Playground />
-        </div>
+
+        <span className="vk-arsenal-label">{t.hero.selectLabel}</span>
+        <WeaponSelect />
+
+        <a href="#studio" className="vk-hero-scroll" aria-label="scroll">
+          <span />
+        </a>
       </section>
 
       {/* WHAT WE DO — quiet editorial list, no icon-card grid */}
