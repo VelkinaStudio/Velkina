@@ -15,13 +15,41 @@ uniform float uInkThresh;
 uniform float uChroma;
 uniform float uGrain;
 uniform float uTime;
+uniform float uKuwahara;
+uniform float uKuwaRadius;
 uniform vec3  uPaper;
 
 // hash + value noise for paper grain (anchored to screen, slow drift)
 float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7)))*43758.5453); }
 float vnoise(vec2 p){ vec2 i=floor(p),f=fract(p); float a=hash(i),b=hash(i+vec2(1,0)),c=hash(i+vec2(0,1)),d=hash(i+vec2(1,1)); vec2 u=f*f*(3.0-2.0*f); return mix(mix(a,b,u.x),mix(c,d,u.x),u.y); }
 
-float lin(float z){ return z; } // depth already linearish via readDepth
+// Kuwahara (4-quadrant min-variance) — flattens fills into brushed gouache
+// patches that follow form. radius capped small (perf). The painterly move.
+vec3 kuwahara(vec2 uv, vec2 texel, float radius) {
+  vec3 mean[4]; float var[4];
+  for (int q = 0; q < 4; q++) { mean[q] = vec3(0.0); var[q] = 0.0; }
+  vec3 sum[4]; vec3 sum2[4]; float cnt[4];
+  for (int q = 0; q < 4; q++) { sum[q]=vec3(0.0); sum2[q]=vec3(0.0); cnt[q]=0.0; }
+  int R = int(radius);
+  for (int y = -4; y <= 4; y++) {
+    for (int x = -4; x <= 4; x++) {
+      if (x < -R || x > R || y < -R || y > R) continue;
+      vec3 c = texture2D(inputBuffer, uv + vec2(float(x), float(y)) * texel).rgb;
+      // assign to quadrant(s)
+      int qi = (x <= 0 && y <= 0) ? 0 : (x >= 0 && y <= 0) ? 1 : (x <= 0 && y >= 0) ? 2 : 3;
+      sum[qi] += c; sum2[qi] += c*c; cnt[qi] += 1.0;
+    }
+  }
+  float bestVar = 1e9; vec3 outc = texture2D(inputBuffer, uv).rgb;
+  for (int q = 0; q < 4; q++) {
+    if (cnt[q] < 1.0) continue;
+    vec3 m = sum[q] / cnt[q];
+    vec3 v = sum2[q] / cnt[q] - m*m;
+    float vv = v.r + v.g + v.b;
+    if (vv < bestVar) { bestVar = vv; outc = m; }
+  }
+  return outc;
+}
 
 void mainImage(const in vec4 inputColor, const in vec2 uv, const in float depth, out vec4 outputColor) {
   vec2 texel = 1.0 / resolution.xy;
@@ -43,14 +71,12 @@ void mainImage(const in vec4 inputColor, const in vec2 uv, const in float depth,
   }
   ink *= uInk;
 
-  // ---- base color (a tiny gouache settle, light so screentone survives) ----
+  // ---- gouache brush settle: Kuwahara flattens fills into painted patches ----
   vec3 col = inputColor.rgb;
-  vec3 s1 = texture2D(inputBuffer, uv + texel*vec2(1.0,1.0)).rgb;
-  vec3 s2 = texture2D(inputBuffer, uv + texel*vec2(-1.0,1.0)).rgb;
-  vec3 s3 = texture2D(inputBuffer, uv + texel*vec2(1.0,-1.0)).rgb;
-  vec3 s4 = texture2D(inputBuffer, uv + texel*vec2(-1.0,-1.0)).rgb;
-  vec3 soft = (col*3.0 + s1 + s2 + s3 + s4) / 7.0;
-  col = mix(col, soft, 0.3);
+  if (uKuwahara > 0.5) {
+    vec3 brushed = kuwahara(uv, texel, uKuwaRadius);
+    col = mix(col, brushed, 0.8);
+  }
 
   // ---- 2-plate chromatic misregistration (riso, X only) ----
   if (uChroma > 0.0) {
@@ -80,6 +106,8 @@ class GouacheEffectImpl extends Effect {
       uniforms: new Map<string, THREE.Uniform>([
         ["uInk", new THREE.Uniform(1.0)],
         ["uInkThresh", new THREE.Uniform(0.025)],
+        ["uKuwahara", new THREE.Uniform(1.0)],
+        ["uKuwaRadius", new THREE.Uniform(3.0)],
         ["uChroma", new THREE.Uniform(0.0012)],
         ["uGrain", new THREE.Uniform(0.5)],
         ["uTime", new THREE.Uniform(0)],
