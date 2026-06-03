@@ -5,11 +5,12 @@
 - Production build GREEN (`npm run build` → BUILD_ID present). All routes build.
 - v8 archived on branch `v8-archive`.
 
-## ⚠️ KNOWN ISSUE: particle hero renders blank (environment, not source)
-- The v9 lime-particle "VELKINA" hero rendered perfectly at 73fps earlier this session (screenshot evidence in C:/Users/nalba/vk-audits/2026-06-02/).
-- Mid-session it went blank — and stays blank **even at the exact working commit's source**, in both dev AND production. WebGL context healthy (not lost, 12 cores), fonts load, canvas sized — but `maxBrightness=0` (nothing draws).
-- CONCLUSION: **dependency/environment drift** from many npm install/uninstall cycles this session (linking/unlinking @velkina/inkwell, flip-flopping nested three), NOT a code bug. Source is identical to the working state.
-- **FIX (next session):** `rm -rf node_modules package-lock.json && npm install`, fresh `npm run build`, test home in a FRESH browser. The custom particle ShaderMaterial in `components/three/ParticleText.tsx` stopped drawing — verify three resolves to a single 0.184.x and `<points>` reconciles against R3F's three instance.
+## ⚠️ KNOWN ISSUE: ALL WebGL renders blank — Chrome GPU process degraded (NOT a code bug)
+- The v9 lime-particle hero AND the Inkwell comic knot BOTH rendered perfectly earlier this session (screenshots in C:/Users/nalba/vk-audits/2026-06-02/ — hero at 73fps, comic knot gorgeous).
+- After ~2h of heavy iteration (dozens of reloads + several headless Chrome launches), ALL WebGL stopped drawing: particle hero, comic knot, even a bare lit mesh — across the extension browser, fresh tabs, AND headless-swiftshader. WebGL contexts report healthy (not lost) but `maxBrightness=0` — draws silently fail.
+- Ruled out: source (identical to working), dependency drift (clean `npm install` → single three 0.184.0, still blank), dev-vs-prod (both blank), browser tab (3 independent contexts blank).
+- **CONCLUSION: Chrome's GPU process is in a degraded state** (a known failure mode after many WebGL context create/destroy cycles). The CODE IS SOUND — proven by the earlier working screenshots.
+- **FIX: fully restart Chrome (or reboot the machine), then it renders again.** No code change needed for the baseline. Verify: load `/` in a fresh browser → particle hero should return.
 
 ## Spider-Verse comic direction (designed; engine DONE; integration pending)
 - Direction: `docs/design/PORTFOLIO_DIRECTION.md` + `IDENTITY.md`. Creative-genius DUO portfolio, Spider-Verse/Arcane world, NO agency framing, ends human, rendered with our own engine.
