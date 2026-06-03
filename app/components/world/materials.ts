@@ -22,19 +22,19 @@ export const PALETTE = {
   ink: "#2a2230",
 };
 
-import { paintedMaterial } from "./gouache/paintedMaterial";
+import { celMaterial } from "./gouache/celMaterial";
 
-// GOUACHE painted look for everything (the render library, Phase 1). The old
-// clay/candy now route through paintedMaterial so the whole room reads as a
-// painted illustration, not glossy 3D. `candy` uses fewer bands (crisper).
+// Borderlands/Bendy CEL look for everything (verified in /celtest). Hard flat
+// bands, crisp terminator, ink-tinted shadow, fresnel rim. Outlines are added
+// separately via the inverted-hull <Inked>/<Outline> system.
 export function clay(color: string) {
-  return paintedMaterial(color, { bands: 3, tone: 80 });
+  return celMaterial(color, { bands: 3 });
 }
 export function waxClay(color: string) {
-  return paintedMaterial(color, { bands: 3, tone: 90 });
+  return celMaterial(color, { bands: 3 });
 }
 export function candy(color: string) {
-  return paintedMaterial(color, { bands: 4, tone: 120 });
+  return celMaterial(color, { bands: 3, rimStrength: 0.8 });
 }
 // emissive screen
 export function screen(color: string, intensity = 1.6) {

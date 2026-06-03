@@ -104,12 +104,12 @@ class GouacheEffectImpl extends Effect {
     super("GouacheEffect", frag, {
       attributes: EffectAttribute.DEPTH,
       uniforms: new Map<string, THREE.Uniform>([
-        ["uInk", new THREE.Uniform(1.0)],
+        ["uInk", new THREE.Uniform(0.0)],
         ["uInkThresh", new THREE.Uniform(0.018)],
         ["uKuwahara", new THREE.Uniform(0.0)],
         ["uKuwaRadius", new THREE.Uniform(2.0)],
-        ["uChroma", new THREE.Uniform(0.0008)],
-        ["uGrain", new THREE.Uniform(0.35)],
+        ["uChroma", new THREE.Uniform(0.0006)],
+        ["uGrain", new THREE.Uniform(0.3)],
         ["uTime", new THREE.Uniform(0)],
         ["uPaper", new THREE.Uniform(new THREE.Color("#f6ecdf"))],
       ]),

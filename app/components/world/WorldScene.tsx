@@ -7,6 +7,7 @@ import { EffectComposer } from "@react-three/postprocessing";
 import { GouacheEffect } from "./gouache/GouachePost";
 import SceneLighting from "./SceneLighting";
 import Garden from "./Garden";
+import InkAll from "./gouache/InkAll";
 import GardenCamera from "./GardenCamera";
 import Velkina from "./Velkina";
 import { Pixl, Sifir } from "./Critters";
@@ -54,7 +55,9 @@ export default function WorldScene({
         <GardenCamera reduced={reduced} onArrive={onArrive} />
         <Suspense fallback={null}>
           <SceneLighting />
-          <Garden />
+          <InkAll thickness={3.2}>
+            <Garden />
+          </InkAll>
           <Velkina position={[-6.1, 1.9, 0.5]} />
           <Pixl position={[0.2, 0.5, 0.4]} />
           <Sifir position={[-3.0, 0.5, -0.3]} />
