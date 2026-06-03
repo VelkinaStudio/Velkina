@@ -3,7 +3,7 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { EffectComposer } from "@react-three/postprocessing";
 import { useRef, useState } from "react";
-import { Halftone, Posterize, InkOutline, Misregister } from "@velkina/inkwell/react";
+import { Halftone, Posterize, InkOutline, Misregister, Comic } from "@velkina/inkwell/react";
 import { steppedTime } from "@velkina/inkwell";
 
 function Knot() {
@@ -26,6 +26,27 @@ function Knot() {
 const PASSES = ["none", "posterize", "ink", "halftone", "misregister", "comic"] as const;
 type Pass = (typeof PASSES)[number];
 
+// Return a FLAT array of effect elements (no empty fragments — EffectComposer
+// flattens children and chokes on <></> / nested fragments).
+function buildPasses(pass: Pass) {
+  switch (pass) {
+    case "posterize":
+      return [<Posterize key="p" levels={5} />];
+    case "ink":
+      return [<InkOutline key="i" thickness={1.2} threshold={0.14} />];
+    case "halftone":
+      return [<Halftone key="h" scale={1.4} mode="cmyk" />];
+    case "misregister":
+      return [<Misregister key="m" strength={2.5} />];
+    case "comic":
+      return [<Comic key="c" levels={5} scale={1.4} mode="cmyk" dotStrength={0.9} />];
+    case "none":
+    default:
+      // EffectComposer needs at least one pass; a no-op halftone at 0 blend.
+      return [<Halftone key="noop" scale={1.4} mode="cmyk" blending={0} />];
+  }
+}
+
 export default function InkwellLab() {
   const [pass, setPass] = useState<Pass>("comic");
 
@@ -36,19 +57,8 @@ export default function InkwellLab() {
         <directionalLight position={[3, 5, 2]} intensity={1.3} />
         <color attach="background" args={["#f3efe6"]} />
         <Knot />
-        <EffectComposer>
-          {pass === "posterize" ? <Posterize levels={5} /> : <></>}
-          {pass === "ink" ? <InkOutline thickness={1.2} threshold={0.14} /> : <></>}
-          {pass === "halftone" ? <Halftone scale={1.4} mode="cmyk" /> : <></>}
-          {pass === "misregister" ? <Misregister strength={2.5} /> : <></>}
-          {pass === "comic" ? (
-            <>
-              <Posterize levels={5} />
-              <Halftone scale={1.4} mode="cmyk" blending={0.85} />
-            </>
-          ) : (
-            <></>
-          )}
+        <EffectComposer key={pass}>
+          {buildPasses(pass)}
         </EffectComposer>
       </Canvas>
 
