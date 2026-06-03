@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { AnimatePresence } from "motion/react";
 import { PROJECTS, artFor } from "@/app/lib/data/projects";
 import { useLang } from "@/app/lib/LangProvider";
 import { playTone, isSoundEnabled } from "@/app/lib/sound/collisionAudio";
@@ -76,7 +77,7 @@ export default function WeaponSelect() {
               src={artFor(cur.id)}
               alt={cur.name}
               fill
-              sizes="(max-width: 760px) 80vw, 420px"
+              sizes="(max-width: 760px) 72vw, 360px"
               priority={i === 0}
               style={{ objectFit: "contain" }}
             />
@@ -114,7 +115,9 @@ export default function WeaponSelect() {
         ))}
       </div>
 
-      {open && <WorkDetail project={open} onClose={() => setOpenId(null)} />}
+      <AnimatePresence>
+        {open && <WorkDetail key={open.id} project={open} onClose={() => setOpenId(null)} />}
+      </AnimatePresence>
     </div>
   );
 }

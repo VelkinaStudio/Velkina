@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { AnimatePresence } from "motion/react";
 import { PROJECTS } from "@/app/lib/data/projects";
 import { useLang } from "@/app/lib/LangProvider";
 import WeaponSelect from "./WeaponSelect";
@@ -116,7 +117,9 @@ export default function Sections() {
         <SoundToggle />
       </footer>
 
-      {open && <WorkDetail project={open} onClose={() => setOpenId(null)} />}
+      <AnimatePresence>
+        {open && <WorkDetail key={open.id} project={open} onClose={() => setOpenId(null)} />}
+      </AnimatePresence>
     </main>
   );
 }

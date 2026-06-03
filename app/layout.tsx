@@ -24,7 +24,11 @@ export const metadata: Metadata = {
   title: "Velkina — a two-person studio in Istanbul",
   description:
     "We are Velkina. A two-person studio in Istanbul building software, websites, e-commerce, AI, and brand.",
-  icons: { icon: "/favicon.svg" },
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon-48.png", sizes: "48x48", type: "image/png" }],
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Velkina — a two-person studio in Istanbul",
     description:

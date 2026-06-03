@@ -1,9 +1,9 @@
 // ============================================================================
-// Velkina — real projects (single source of truth).
-// Shared by the server DOM layer (SEO + a11y), the Matter physics bodies, and
-// the SelectedWork panels. Honest: real briefs, real process, real outcomes,
-// NO fabricated metrics. `mass` encodes editorial pride — the flagship is the
-// heaviest card and literally resists the throw.
+// Velkina — projects (single source of truth).
+// Shared by the server DOM layer (SEO + a11y), the weapon-select carousel, and
+// the work detail panel. Honest: real briefs, a named decision per project,
+// real outcomes, NO fabricated metrics. Every `process` names a choice we'd
+// defend or a constraint we worked around — not just a list of what we built.
 // ============================================================================
 
 export interface Project {
@@ -15,13 +15,12 @@ export interface Project {
   process: { en: string; tr: string };
   outcome: { en: string; tr: string };
   stack: string[];
-  /** real screenshot under /public, or undefined → typographic card */
+  /** real screenshot of the shipped UI under /public, or undefined */
   image?: string;
   live?: string;
-  /** physics: higher = heavier to throw. Flagship work earns more mass. */
-  mass: number;
+  /** flagship → shown first, gets the star + accent treatment */
   flagship?: boolean;
-  /** card accent for the typographic (image-less) cards */
+  /** tile accent on the select screen */
   tone?: "ink" | "accent" | "clay";
   /** "weapon class" label shown on the select screen */
   category: { en: string; tr: string };
@@ -43,15 +42,14 @@ export const PROJECTS: Project[] = [
       tr: "Geliştiriciler yapay zekâ kural setlerini dağınık gist ve repolarda paylaşıyordu; ne ödeme alabiliyor ne de kurduklarına güvenebiliyordu.",
     },
     process: {
-      en: "We built the full product: creator and buyer accounts, Stripe Connect payouts, an automated review pipeline that screens every submission, and programmatic pages so the catalog is findable in search.",
-      tr: "Ürünün tamamını kurduk: üretici ve alıcı hesapları, Stripe Connect ödemeleri, her gönderiyi tarayan otomatik inceleme hattı ve katalogun aramada bulunmasını sağlayan programatik sayfalar.",
+      en: "The hard part was trust — buyers won't install a config they can't vet. We chose an automated review gate over manual curation so submissions clear in minutes instead of days, and built payouts on Stripe Connect so creators get paid in their own name, not ours. Accounts, the review pipeline, and programmatic catalog pages for search sit on top of that.",
+      tr: "Zor kısım güvendi — alıcılar inceleyemedikleri bir yapılandırmayı kurmaz. Manuel küratörlük yerine otomatik bir inceleme kapısı seçtik; böylece gönderiler günlerce değil dakikalar içinde geçiyor. Ödemeleri Stripe Connect üzerine kurduk ki üreticiler bizim değil, kendi adlarına ödeme alsın. Hesaplar, inceleme hattı ve arama için programatik katalog sayfaları bunun üstünde duruyor.",
     },
     outcome: {
-      en: "A working marketplace where a creator can publish a ruleset, get reviewed, and receive payouts — end to end, in their own name.",
-      tr: "Bir üreticinin kural seti yayımlayıp incelemeden geçebildiği ve ödeme alabildiği, uçtan uca çalışan bir pazar yeri.",
+      en: "A creator can publish a ruleset, clear review, and receive payouts end to end — without us in the loop on any of it.",
+      tr: "Bir üretici kural setini yayımlayıp incelemeden geçebiliyor ve ödeme alabiliyor — hiçbir adımda biz devrede olmadan.",
     },
     stack: ["Next.js", "Prisma", "Stripe Connect", "Postgres"],
-    mass: 1.0,
     flagship: true,
     tone: "accent",
     category: { en: "Marketplace", tr: "Pazar yeri" },
@@ -64,19 +62,18 @@ export const PROJECTS: Project[] = [
       tr: "Meta reklam kampanyalarını izleyip onlara göre aksiyon alan bir otomasyon motoru.",
     },
     brief: {
-      en: "Running many Meta ad campaigns by hand meant checking dashboards all day and reacting late to what was working or wasting money.",
-      tr: "Çok sayıda Meta kampanyasını elle yönetmek, gün boyu panolara bakmak ve neyin çalışıp neyin para yaktığına geç tepki vermek demekti.",
+      en: "Running many Meta campaigns by hand meant checking dashboards all day and reacting late — after the budget was already spent on a losing ad.",
+      tr: "Çok sayıda Meta kampanyasını elle yönetmek, gün boyu panolara bakmak ve geç tepki vermek demekti — bütçe kötü bir reklama çoktan harcandıktan sonra.",
     },
     process: {
-      en: "We built rules that watch performance and act — pause, scale, or alert — across every campaign, with a live dashboard so the decisions are visible.",
-      tr: "Performansı izleyip her kampanyada aksiyon alan kurallar kurduk — durdur, ölçekle veya uyar — ve kararların görünür olması için canlı bir pano ekledik.",
+      en: "We could have built more reporting; instead we built rules that act. They watch each campaign and pause, scale, or alert on the numbers themselves, with a live dashboard so every automated decision is visible and reversible.",
+      tr: "Daha fazla raporlama kurabilirdik; bunun yerine aksiyon alan kurallar kurduk. Her kampanyayı izleyip sayıların kendisine göre durduruyor, ölçekliyor veya uyarıyorlar; canlı bir panoyla her otomatik karar görünür ve geri alınabilir.",
     },
     outcome: {
-      en: "Campaigns that respond to their own numbers instead of waiting for someone to notice. Less time in dashboards, faster reactions.",
-      tr: "Birinin fark etmesini beklemek yerine kendi sayılarına tepki veren kampanyalar. Panolarda daha az zaman, daha hızlı tepki.",
+      en: "Campaigns now pause a losing ad on their own, usually within the hour instead of the next morning. The operator checks the dashboard to confirm, not to babysit.",
+      tr: "Kampanyalar artık kötü giden reklamı kendileri durduruyor; genelde ertesi sabah değil, bir saat içinde. Operatör panoya başında beklemek için değil, onaylamak için bakıyor.",
     },
     stack: ["Next.js", "Meta API", "Automation", "Railway"],
-    mass: 0.85,
     tone: "ink",
     category: { en: "Automation", tr: "Otomasyon" },
   },
@@ -88,19 +85,18 @@ export const PROJECTS: Project[] = [
       tr: "Bir Shopify mağazası, teması ve onu yürütmenin etrafındaki otomasyon.",
     },
     brief: {
-      en: "An automation-parts business needed a real online store its own team could run, not a template it would outgrow.",
-      tr: "Bir otomasyon-parçaları işletmesi, kısa sürede dar gelecek bir şablon değil, kendi ekibinin yürütebileceği gerçek bir çevrimiçi mağaza istiyordu.",
+      en: "An automation-parts business needed a real online store its own team could run — not a template it would outgrow in a season.",
+      tr: "Bir otomasyon-parçaları işletmesi, bir sezonda dar gelecek bir şablon değil, kendi ekibinin yürütebileceği gerçek bir çevrimiçi mağaza istiyordu.",
     },
     process: {
-      en: "We built a custom Shopify theme in Liquid, set up the catalog and checkout, and wired the operational automation so day-to-day work doesn't depend on us.",
-      tr: "Liquid ile özel bir Shopify teması kurduk, katalog ve ödeme akışını ayarladık ve günlük işin bize bağlı kalmaması için operasyonel otomasyonu bağladık.",
+      en: "We built a custom Shopify theme in Liquid rather than skin a marketplace theme, so the catalog structure matched how they actually sell, and wired the operational automation so day-to-day work doesn't route back through us.",
+      tr: "Hazır bir tema giydirmek yerine Liquid ile özel bir Shopify teması kurduk; böylece katalog yapısı gerçekte nasıl sattıklarıyla örtüştü. Operasyonel otomasyonu da günlük işin tekrar bize dönmeyeceği şekilde bağladık.",
     },
     outcome: {
-      en: "A store the owner edits without touching code, built to convert and to grow with the business.",
-      tr: "Sahibinin koda dokunmadan düzenlediği, dönüşüm için kurulmuş ve işle birlikte büyüyecek bir mağaza.",
+      en: "The owner adds and re-prices products himself now. The repeat operational work that used to land in our inbox runs on its own.",
+      tr: "Sahibi artık ürünleri kendisi ekliyor ve fiyatlandırıyor. Eskiden bizim gelen kutumuza düşen tekrar eden operasyonel iş artık kendi kendine yürüyor.",
     },
     stack: ["Shopify", "Liquid", "Automation"],
-    mass: 0.8,
     tone: "clay",
     category: { en: "E-commerce", tr: "E-ticaret" },
   },
@@ -112,12 +108,12 @@ export const PROJECTS: Project[] = [
       tr: "Dört bistroda çalışan çok dilli bir QR menü.",
     },
     brief: {
-      en: "Each location kept a printed menu updated by hand, in two languages. Every change cost a day and tourists couldn't read it.",
-      tr: "Her şube basılı menüsünü elle ve iki dilde güncelliyordu. Her değişiklik bir gün alıyor, turistler menüyü okuyamıyordu.",
+      en: "Each location updated a printed menu by hand, in two languages. Every change cost a day, and tourists couldn't read it at all.",
+      tr: "Her şube basılı menüsünü elle ve iki dilde güncelliyordu. Her değişiklik bir gün alıyor, turistler menüyü hiç okuyamıyordu.",
     },
     process: {
-      en: "We built one dashboard where a non-technical owner edits photos, allergen and dietary tags, and four languages — with a QR code per table.",
-      tr: "Teknik olmayan bir sahibin fotoğrafları, alerjen ve diyet etiketlerini ve dört dili düzenlediği tek bir pano kurduk — masa başına bir QR kod ile.",
+      en: "We built one dashboard where a non-technical owner edits photos, allergen and dietary tags, and four languages, with a QR code per table. The constraint was the owner: if a change needed us, it would fail the same way the printed menu did.",
+      tr: "Teknik olmayan bir sahibin fotoğrafları, alerjen ve diyet etiketlerini ve dört dili düzenlediği tek bir pano kurduk — masa başına bir QR kod ile. Kısıt sahibin kendisiydi: bir değişiklik bizi gerektirirse, basılı menünün düştüğü hataya düşerdi.",
     },
     outcome: {
       en: "Menu changes that take a minute instead of a day, readable by every guest in their own language.",
@@ -125,8 +121,6 @@ export const PROJECTS: Project[] = [
     },
     stack: ["Next.js", "Postgres", "i18n", "Vercel"],
     image: "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",
-    live: "https://velkina.com/demo/lavinia-bistro",
-    mass: 0.7,
     tone: "ink",
     category: { en: "Web app", tr: "Web uygulaması" },
   },
@@ -138,21 +132,20 @@ export const PROJECTS: Project[] = [
       tr: "Bir Türk hukuk bürosu için web sitesi ve AWS taşıması.",
     },
     brief: {
-      en: "The firm relied on phone-only intake and didn't fully own its hosting or code.",
-      tr: "Büro yalnızca telefonla gelen başvurulara dayanıyordu ve barındırma ile kodun tamamına sahip değildi.",
+      en: "The firm ran on phone-only intake and didn't fully own its hosting or its code — a risk it couldn't see until something broke.",
+      tr: "Büro yalnızca telefonla gelen başvurularla yürüyordu ve barındırma ile koduna tam sahip değildi — bir şey bozulana kadar göremediği bir risk.",
     },
     process: {
-      en: "We built a fast, credible site and moved the infrastructure onto AWS, set up so the firm owns its domain, hosting, and code outright.",
-      tr: "Hızlı ve güven veren bir site kurduk ve altyapıyı AWS'ye taşıdık; büro alan adına, barındırmasına ve koduna tam sahip olacak şekilde ayarladık.",
+      en: "We built a fast, credible site, but the real job was ownership: we moved the infrastructure onto AWS, set up so the firm holds its own domain, hosting, and code outright, with no dependency on us or a previous vendor.",
+      tr: "Hızlı ve güven veren bir site kurduk, ama asıl iş sahiplikti: altyapıyı AWS'ye taşıdık; büro alan adına, barındırmasına ve koduna doğrudan sahip oluyor, bize veya önceki bir tedarikçiye bağımlı kalmıyor.",
     },
     outcome: {
-      en: "A practice that can be found and contacted online, on infrastructure it controls.",
-      tr: "Çevrimiçi bulunup iletişime geçilebilen ve kendi kontrol ettiği altyapıda çalışan bir büro.",
+      en: "A practice that can be found and contacted online, running on infrastructure it controls and can hand to anyone.",
+      tr: "Çevrimiçi bulunup iletişime geçilebilen, kontrol ettiği ve istediğine devredebileceği bir altyapıda çalışan bir büro.",
     },
     stack: ["Next.js", "AWS", "SEO"],
     image: "/portfolio-screenshots/ataravci-law-firm.webp",
     live: "https://ataravci.com.tr",
-    mass: 0.6,
     tone: "clay",
     category: { en: "Website + Cloud", tr: "Web sitesi + Bulut" },
   },
@@ -164,21 +157,20 @@ export const PROJECTS: Project[] = [
       tr: "Yapılandırılmış bir ürün veri hattıyla beslenen B2B ihracat sitesi.",
     },
     brief: {
-      en: "A thermoplastics manufacturer exporting across several markets needed its catalog presentable and consistent in multiple languages.",
-      tr: "Birkaç pazara ihracat yapan bir termoplastik üreticisi, katalogunun birden çok dilde sunulabilir ve tutarlı olmasını istiyordu.",
+      en: "A thermoplastics manufacturer exporting across several markets kept its catalog in spreadsheets, so every language and every market drifted out of sync.",
+      tr: "Birkaç pazara ihracat yapan bir termoplastik üreticisi katalogunu tablolarda tutuyordu; bu yüzden her dil ve her pazar birbirinden kayıyordu.",
     },
     process: {
-      en: "We built a data pipeline that turns the product catalog into structured data, and a multilingual export-facing site that reads from it.",
-      tr: "Ürün katalogunu yapılandırılmış veriye çeviren bir hat ve bundan beslenen çok dilli, ihracata dönük bir site kurduk.",
+      en: "Rather than build pages by hand per market, we built a data pipeline that turns the product catalog into one structured source, and a multilingual export site that reads from it — so a change is made once and shows up everywhere.",
+      tr: "Her pazar için sayfaları elle kurmak yerine, ürün katalogunu tek bir yapılandırılmış kaynağa çeviren bir veri hattı ve bundan beslenen çok dilli bir ihracat sitesi kurduk — böylece bir değişiklik bir kez yapılıyor ve her yerde görünüyor.",
     },
     outcome: {
-      en: "A single catalog source feeding a clean, multilingual site that buyers in different markets can actually use.",
-      tr: "Farklı pazarlardaki alıcıların gerçekten kullanabildiği, temiz ve çok dilli bir siteyi besleyen tek bir katalog kaynağı.",
+      en: "One catalog source feeding a clean, multilingual site that buyers in different markets can actually use, with no per-language re-keying.",
+      tr: "Farklı pazarlardaki alıcıların gerçekten kullanabildiği, dil başına yeniden veri girişi gerektirmeyen, temiz ve çok dilli bir siteyi besleyen tek bir katalog kaynağı.",
     },
     stack: ["Next.js", "Data pipeline", "Multilingual"],
     image: "/portfolio-screenshots/tp-thermoplast-b2b.webp",
     live: "https://tpthermoplast.com",
-    mass: 0.6,
     tone: "ink",
     category: { en: "B2B + Data", tr: "B2B + Veri" },
   },
