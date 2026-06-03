@@ -4,14 +4,17 @@ const path = require('path');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Transpile our local linked render engine (ships JSX + modern syntax).
-  transpilePackages: ['@velkina/inkwell'],
   webpack(config) {
-    // One three.js + postprocessing instance across the app and linked inkwell.
+    // One three.js + postprocessing instance across the app and the vendored
+    // inkwell render engine (lib/inkwell, committed in-repo so Vercel builds
+    // standalone — no file: link needed). Bare @velkina/inkwell specifiers
+    // resolve to the vendored source here and in tsconfig paths.
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       three: path.resolve(__dirname, 'node_modules/three'),
       postprocessing: path.resolve(__dirname, 'node_modules/postprocessing'),
+      '@velkina/inkwell/react': path.resolve(__dirname, 'lib/inkwell/react.jsx'),
+      '@velkina/inkwell': path.resolve(__dirname, 'lib/inkwell/index.js'),
     };
     return config;
   },
