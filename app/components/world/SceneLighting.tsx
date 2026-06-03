@@ -9,9 +9,6 @@ import { Environment, ContactShadows } from "@react-three/drei";
 export default function SceneLighting() {
   return (
     <>
-      <Environment preset="apartment" environmentIntensity={0.55} />
-      <ambientLight intensity={0.28} />
-      <directionalLight color={0xfff0dd} intensity={1.0} position={[3, 5, 4]} />
       <ContactShadows
         position={[0, 0.1, -0.8]}
         opacity={0.42}

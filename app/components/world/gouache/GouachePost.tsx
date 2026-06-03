@@ -54,20 +54,20 @@ vec3 kuwahara(vec2 uv, vec2 texel, float radius) {
 void mainImage(const in vec4 inputColor, const in vec2 uv, const in float depth, out vec4 outputColor) {
   vec2 texel = 1.0 / resolution.xy;
 
-  // ---- ink edges: Sobel on LINEAR view-Z, two radii (thick wobbly contour) ----
+  // ---- BOLD ink contour (Borderlands): Sobel on LINEAR view-Z, 3 widening radii ----
   float ink = 0.0;
   float tt = floor(uTime * 12.0) / 12.0;
-  for (int k = 0; k < 2; k++) {
-    float w = (k == 0) ? 1.0 : 2.4; // inner + outer ring = a thicker, soft line
-    float zc = getViewZ(readDepth(uv));
+  float zc = getViewZ(readDepth(uv));
+  for (int k = 0; k < 3; k++) {
+    float w = 1.0 + float(k) * 1.6; // 1.0, 2.6, 4.2 texels = a thick confident line
     float zl = getViewZ(readDepth(uv + vec2(-texel.x * w, 0.0)));
     float zr = getViewZ(readDepth(uv + vec2( texel.x * w, 0.0)));
     float zt = getViewZ(readDepth(uv + vec2(0.0,  texel.y * w)));
     float zb = getViewZ(readDepth(uv + vec2(0.0, -texel.y * w)));
     float grad = abs(zl - zr) + abs(zt - zb);
     float edge = grad / (abs(zc) * 0.5 + 1.0);
-    float wob = (vnoise(uv * resolution.xy * 0.5 + tt * 9.0 + float(k)) - 0.5) * 0.5;
-    ink = max(ink, smoothstep(uInkThresh * 0.5, uInkThresh * (1.2 + wob), edge));
+    float wob = (vnoise(uv * resolution.xy * 0.5 + tt * 9.0 + float(k)) - 0.5) * 0.4;
+    ink = max(ink, smoothstep(uInkThresh * 0.4, uInkThresh * (1.0 + wob), edge));
   }
   ink *= uInk;
 
@@ -105,11 +105,11 @@ class GouacheEffectImpl extends Effect {
       attributes: EffectAttribute.DEPTH,
       uniforms: new Map<string, THREE.Uniform>([
         ["uInk", new THREE.Uniform(1.0)],
-        ["uInkThresh", new THREE.Uniform(0.025)],
-        ["uKuwahara", new THREE.Uniform(1.0)],
-        ["uKuwaRadius", new THREE.Uniform(3.0)],
-        ["uChroma", new THREE.Uniform(0.0012)],
-        ["uGrain", new THREE.Uniform(0.5)],
+        ["uInkThresh", new THREE.Uniform(0.018)],
+        ["uKuwahara", new THREE.Uniform(0.0)],
+        ["uKuwaRadius", new THREE.Uniform(2.0)],
+        ["uChroma", new THREE.Uniform(0.0008)],
+        ["uGrain", new THREE.Uniform(0.35)],
         ["uTime", new THREE.Uniform(0)],
         ["uPaper", new THREE.Uniform(new THREE.Color("#f6ecdf"))],
       ]),

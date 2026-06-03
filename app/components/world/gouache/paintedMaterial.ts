@@ -89,29 +89,32 @@ export function paintedMaterial(color: string, opts?: { bands?: number; tone?: n
         "#include <dithering_fragment>",
         `#include <dithering_fragment>
         {
+          // BORDERLANDS / BENDY cel look: crisp hard bands, high contrast, bold.
           vec3 base = diffuse;
           vec3 N = normalize(vVkNormalW);
           vec3 V = normalize(cameraPosition - vVkPos);
           float ndl = dot(N, normalize(uPaintLight)) * 0.5 + 0.5; // half-lambert
-          // posterize into hard bands (threshold ink-shadow)
-          float band = floor(ndl * uBands) / max(1.0, uBands - 1.0);
-          band = clamp(band, 0.0, 1.0);
-          // base painted color: darker in shadow bands, toward ink
-          vec3 lit = mix(base * 0.45, base * 1.08, band);
-          // hard fresnel rim — graphic silhouette pop
+
+          // 3 hard cel steps with a crisp terminator (smoothstep edges, not floor)
+          float s1 = smoothstep(0.34, 0.38, ndl);   // shadow -> mid
+          float s2 = smoothstep(0.66, 0.70, ndl);   // mid -> light
+          float tone = 0.55 + s1 * 0.28 + s2 * 0.30; // 0.55 (shadow) .. 1.13 (light)
+          vec3 lit = base * tone;
+          // deepen the core shadow toward the ink color (cartoon contrast)
+          lit = mix(lit, lit * vec3(0.62, 0.58, 0.68), (1.0 - s1) * 0.5);
+
+          // hard fresnel rim light — graphic silhouette pop (key Borderlands cue)
           float rim = pow(1.0 - max(dot(N, V), 0.0), uRimPower);
-          rim = step(0.55, rim) * uRimStrength;
-          lit += rim * vec3(1.0, 0.95, 0.85);
-          // light-responsive screentone: dots in light, hatch in shadow
+          rim = smoothstep(0.5, 0.7, rim) * uRimStrength;
+          lit += rim * vec3(1.0, 0.93, 0.8);
+
+          // faint hand-drawn hatching only in the deepest shadow (texture, subtle)
           vec2 sp = gl_FragCoord.xy / uResolution.yy;
-          float dots = vk_dots(sp, uToneCount, 0.18 + band * 0.18);   // bigger toward light
-          float hatch = vk_hatch(sp, uToneCount * 0.5, 0.78);
-          float toneLight = dots * step(0.55, band);                  // dots only in lit band
-          float toneShadow = hatch * step(band, 0.45);                // hatch only in shadow band
-          lit *= 1.0 - toneShadow * uToneStrength;                    // hatch darkens shadow
-          lit += toneLight * uToneStrength * 0.35 * vec3(1.0,0.96,0.9); // dots lighten light
-          // snap to gouache palette
-          lit = vk_snapPalette(lit);
+          float hatch = vk_hatch(sp, uToneCount * 0.45, 0.7);
+          lit *= 1.0 - hatch * (1.0 - s1) * uToneStrength;
+
+          // snap to the tight palette so colors stay art-directed
+          lit = mix(lit, vk_snapPalette(lit), 0.6);
           gl_FragColor.rgb = lit;
         }`
       );

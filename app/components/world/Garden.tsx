@@ -185,10 +185,9 @@ export default function Garden() {
         <mesh position={[0, 1.4, -1]} material={clay(G.coral)}><torusGeometry args={[0.8, 0.12, 8, 16, Math.PI]} /></mesh>
       </group>
 
-      {/* lighting: golden hour key + warm fill */}
-      <ambientLight intensity={0.45} color="#ffe9c8" />
-      <directionalLight position={[-6, 4, 5]} intensity={1.3} color="#ffd28a" />
-      <hemisphereLight args={["#ffe9c8", "#5a6e45", 0.5]} />
+      {/* cel lighting: a clear key direction so the hard bands read, warm fill */}
+      <ambientLight intensity={0.5} color="#ffe9c8" />
+      <directionalLight position={[-6, 5, 4]} intensity={1.0} color="#ffd28a" />
     </group>
   );
 }
