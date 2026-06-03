@@ -4,16 +4,13 @@ import Image from "next/image";
 import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import { PROJECTS, type Project } from "@/lib/content";
-
-function kindLabel(kind: Project["kind"]) {
-  if (kind === "client") return "Client · Live";
-  if (kind === "product") return "Velkina Product";
-  return "Demo";
-}
+import { useLang } from "@/lib/i18n";
 
 function WorkCard({ p }: { p: Project }) {
+  const { t } = useLang();
   const [imgOk, setImgOk] = useState(true);
   const isLive = p.kind === "client" && !!p.live;
+  const kindLabel = p.kind === "client" ? t.work.client : p.kind === "product" ? t.work.product : "Demo";
   const inner = (
     <>
       <div className="vk-work-card-media">
@@ -34,7 +31,7 @@ function WorkCard({ p }: { p: Project }) {
         <div className="vk-work-card-top">
           <span className="vk-work-card-name">{p.name}</span>
           <span className="vk-chip" data-live={p.kind === "client" ? "true" : undefined}>
-            {kindLabel(p.kind)}
+            {kindLabel}
           </span>
         </div>
         <span className="vk-work-card-tag">{p.tag}</span>
@@ -48,7 +45,7 @@ function WorkCard({ p }: { p: Project }) {
         </div>
         {isLive && (
           <div className="vk-work-card-foot">
-            <span className="vk-work-card-live">Visit live →</span>
+            <span className="vk-work-card-live">{t.work.visit}</span>
           </div>
         )}
       </div>
@@ -66,21 +63,21 @@ function WorkCard({ p }: { p: Project }) {
 }
 
 export default function Work() {
+  const { t } = useLang();
   return (
     <section id="work" className="vk-section vk-container" aria-label="Selected work">
       <div className="vk-work-header">
         <Reveal>
-          <span className="vk-eyebrow">Selected work</span>
+          <span className="vk-eyebrow">{t.work.eyebrow}</span>
           <h2 className="vk-work-title" style={{ marginTop: "1rem" }}>
-            Real clients.
+            {t.work.title1}
             <br />
-            Real products.
+            {t.work.title2}
           </h2>
         </Reveal>
         <Reveal as="p" className="vk-mono vk-dim" delay={100}>
           <span style={{ maxWidth: "32ch", display: "block", fontSize: "0.84rem", lineHeight: 1.6 }}>
-            Three paying clients and three products we built ourselves. The cyan tag
-            means it&apos;s live — go check.
+            {t.work.note}
           </span>
         </Reveal>
       </div>

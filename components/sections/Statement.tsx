@@ -1,13 +1,18 @@
+"use client";
+
 import Reveal from "@/components/Reveal";
-import { STUDIO } from "@/lib/content";
+import { useLang } from "@/lib/i18n";
 
 export default function Statement() {
+  const { t } = useLang();
   return (
-    <section className="vk-statement vk-container" aria-label="What Velkina is">
-      <Reveal as="p" className="vk-statement-text">
-        We design, build and ship <em>real software</em> — websites, e-commerce,
-        mobile apps and AI automation. A small team. <em>No slide decks.</em>
-      </Reveal>
+    <section className="vk-statement vk-statement--comic" aria-label="What Velkina is">
+      <div className="vk-container">
+        <Reveal as="p" className="vk-statement-text">
+          {t.statement.pre} <em>{t.statement.em1}</em>{t.statement.mid}{" "}
+          <em>{t.statement.em2}</em>
+        </Reveal>
+      </div>
     </section>
   );
 }

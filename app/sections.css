@@ -272,3 +272,110 @@
 }
 .vk-lang-toggle:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 #14100c; }
 .vk-lang-toggle:active { transform: translate(1px,1px); box-shadow: 1px 1px 0 #14100c; }
+
+/* ============================================================
+   COMIC WORLD — sitewide (paper canvas, ink, halftone, bold)
+   Carries the hero's Issue-01 aesthetic through every section
+   + mobile-responsive. Overrides the old dark v9 section styles.
+   ============================================================ */
+:root { --paper: #f3ecdc; --paper2: #ece2cc; --ink: #14100c; --hero-red: #ff5436; --hero-blue: #2f6df6; --hero-yellow: #ffce3a; }
+
+/* whole page = comic paper */
+body { background: var(--paper); color: var(--ink); }
+main { background: var(--paper); position: relative; }
+/* faint halftone field across the page */
+main::before {
+  content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: radial-gradient(var(--ink) 1px, transparent 1.4px);
+  background-size: 9px 9px; opacity: 0.05;
+}
+main > * { position: relative; z-index: 1; }
+
+/* section rhythm + eyebrow/title recolor for paper */
+.vk-section { padding-block: clamp(3.5rem, 9vw, 7rem); }
+.vk-eyebrow { color: var(--ink); opacity: 0.6; }
+.vk-eyebrow::before { background: var(--hero-red); box-shadow: none; }
+.vk-work-title, .vk-cap-title, .vk-contact-h {
+  color: var(--ink); font-weight: 900; letter-spacing: -0.03em;
+}
+.vk-muted, .vk-dim { color: rgba(20,16,12,0.62) !important; }
+.vk-lead { color: rgba(20,16,12,0.8); }
+
+/* STATEMENT on paper */
+.vk-statement--comic { background: var(--paper2); border-block: 3px solid var(--ink); }
+.vk-statement-text { color: var(--ink); font-weight: 700; }
+.vk-statement-text em { color: var(--hero-red); font-style: normal; }
+
+/* WORK cards = comic panels (ink border + offset shadow) */
+.vk-work-card {
+  background: #fff; border: 2.5px solid var(--ink); border-radius: 8px;
+  box-shadow: 5px 5px 0 var(--ink); overflow: hidden;
+}
+.vk-work-card:hover { transform: translate(-2px,-2px); box-shadow: 7px 7px 0 var(--ink); border-color: var(--ink); }
+.vk-work-card-media { background: var(--paper2); border-bottom: 2px solid var(--ink); }
+.vk-work-card-media img { filter: saturate(1.05) contrast(1.05); }
+.vk-work-card-media-fallback { color: var(--ink); }
+.vk-work-card-name { color: var(--ink); font-weight: 800; }
+.vk-work-card-tag { color: rgba(20,16,12,0.6); }
+.vk-work-card-blurb { color: rgba(20,16,12,0.8); }
+.vk-work-card-live { color: var(--hero-red); font-weight: 700; }
+.vk-chip { color: var(--ink); border-color: var(--ink); background: var(--paper); }
+.vk-chip[data-live="true"] { color: #fff; background: var(--hero-blue); border-color: var(--ink); }
+.vk-chip[data-live="true"]::before { background: #fff; }
+
+/* AI section: inverted ink panel (the one dark beat — comic "night" page) */
+.vk-ai { background: var(--ink); color: var(--paper); border-block: 3px solid var(--ink); }
+.vk-ai .vk-eyebrow, .vk-ai .vk-work-title { color: var(--paper); }
+.vk-ai .vk-eyebrow { opacity: 0.7; }
+.vk-ai .vk-lead { color: rgba(243,236,220,0.82); }
+.vk-ai .vk-work-title em { color: var(--hero-yellow) !important; }
+.vk-ai-col-label { color: var(--hero-yellow); border-color: rgba(243,236,220,0.2); }
+.vk-ai-col li { color: var(--paper); }
+.vk-ai-col li::before { color: var(--hero-red); }
+
+/* OPERATORS = two character cards */
+.vk-op { border-top: 3px solid var(--ink); }
+.vk-op-name { color: var(--ink); font-weight: 800; }
+.vk-op-handle { color: var(--hero-red); }
+.vk-op-role { color: rgba(20,16,12,0.6); }
+.vk-op-bio { color: rgba(20,16,12,0.82); }
+.vk-op-meta { color: rgba(20,16,12,0.6); }
+.vk-op-meta a:hover { color: var(--hero-red); }
+
+/* CONTACT on paper */
+.vk-contact-h { color: var(--ink); }
+.vk-contact-sub { color: rgba(20,16,12,0.78); }
+.vk-contact-links { border-top: 3px solid var(--ink); }
+.vk-contact-link { border-bottom: 2px solid var(--ink); color: var(--ink); }
+.vk-contact-link:hover { color: var(--hero-red); background: var(--paper2); }
+.vk-contact-link-num { color: rgba(20,16,12,0.5); }
+.vk-contact-link-label { color: inherit; font-weight: 800; }
+.vk-contact-link-val { color: rgba(20,16,12,0.6); }
+
+/* FOOTER on ink */
+.vk-footer { background: var(--ink); color: var(--paper); border-top: 3px solid var(--ink); }
+.vk-footer-row, .vk-footer .vk-dim { color: rgba(243,236,220,0.7) !important; }
+.vk-footer-row a:hover { color: var(--hero-yellow); }
+
+/* NAV recolor for paper (the difference-blend nav from before doesn't fit paper) */
+.vk-nav--comic { mix-blend-mode: normal; }
+.vk-nav--comic .vk-nav-logo { color: var(--ink); }
+.vk-nav--comic .vk-nav-links a { color: var(--ink); opacity: 0.75; }
+.vk-nav--comic .vk-nav-links a:hover { opacity: 1; color: var(--hero-red); }
+.vk-nav { background: rgba(243,236,220,0.82); backdrop-filter: blur(10px) saturate(140%); border: 2px solid var(--ink); border-radius: 999px; box-shadow: 3px 3px 0 var(--ink); }
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .vk-hero { min-height: 100svh; padding: 0.5rem; }
+  .vk-hero-canvas { bottom: 7rem; } /* keep wordmark above the caption bar */
+  .vk-hero-name { font-size: clamp(3rem, 19vw, 6rem); }
+  .vk-hero-caption { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .vk-hero-sub { white-space: normal; }
+  .vk-work-grid { grid-template-columns: 1fr; }
+  .vk-ops { grid-template-columns: 1fr; }
+  .vk-ai-grid { grid-template-columns: 1fr; }
+  .vk-contact-link { grid-template-columns: 28px 1fr; }
+  .vk-contact-link-val { grid-column: 2; font-size: 0.72rem; }
+  .vk-nav { margin: 0.5rem; padding: 0.7rem 1rem; }
+  .vk-statement-text { font-size: clamp(1.5rem, 7vw, 2rem); }
+}

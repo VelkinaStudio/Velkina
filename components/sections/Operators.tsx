@@ -1,15 +1,19 @@
+"use client";
+
 import Reveal from "@/components/Reveal";
 import { OPERATORS } from "@/lib/content";
+import { useLang } from "@/lib/i18n";
 
 export default function Operators() {
+  const { t } = useLang();
   return (
     <section id="team" className="vk-section vk-container" aria-label="The two operators">
       <Reveal>
-        <span className="vk-eyebrow">Two operators, not a department</span>
+        <span className="vk-eyebrow">{t.team.eyebrow}</span>
         <h2 className="vk-work-title" style={{ marginTop: "1rem", marginBottom: "3rem" }}>
-          The whole team
+          {t.team.title1}
           <br />
-          is on your project.
+          {t.team.title2}
         </h2>
       </Reveal>
 

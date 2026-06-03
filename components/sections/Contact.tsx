@@ -1,27 +1,24 @@
+"use client";
+
 import Reveal from "@/components/Reveal";
 import { CONTACT, STUDIO } from "@/lib/content";
+import { useLang } from "@/lib/i18n";
 
-const LINKS = [
-  CONTACT.whatsapp,
-  CONTACT.cal,
-  CONTACT.emailNalba,
-  CONTACT.emailBaha,
-];
+// Human ending — "say hi", not a sales funnel. WhatsApp + email + Cal.
+const LINKS = [CONTACT.whatsapp, CONTACT.emailNalba, CONTACT.emailBaha, CONTACT.cal];
 
 export default function Contact() {
+  const { t } = useLang();
   return (
     <section id="contact" className="vk-section vk-container vk-contact" aria-label="Contact">
       <Reveal>
-        <span className="vk-eyebrow">Let&apos;s talk</span>
+        <span className="vk-eyebrow">{t.contact.eyebrow}</span>
         <h2 className="vk-contact-h" style={{ marginTop: "1rem" }}>
-          Three links.
+          {t.contact.title1}
           <br />
-          No form.
+          {t.contact.title2}
         </h2>
-        <p className="vk-contact-sub">
-          We answer within a business day. Tell us what you&apos;re launching —
-          we&apos;ll tell you honestly if we&apos;re the right two people for it.
-        </p>
+        <p className="vk-contact-sub">{t.contact.sub}</p>
       </Reveal>
 
       <div className="vk-contact-links">

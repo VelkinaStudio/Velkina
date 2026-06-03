@@ -1,21 +1,21 @@
+"use client";
+
 import Reveal from "@/components/Reveal";
 import { AI_STACK } from "@/lib/content";
+import { useLang } from "@/lib/i18n";
 
 export default function AIStack() {
+  const { t } = useLang();
   return (
     <section id="ai" className="vk-ai" aria-label="AI and frontier stack">
       <div className="vk-section vk-container">
         <Reveal>
-          <span className="vk-eyebrow">On the frontier</span>
+          <span className="vk-eyebrow">{t.ai.eyebrow}</span>
           <h2 className="vk-work-title" style={{ marginTop: "1rem" }}>
-            We build with the
-            <br />
-            tools we build <em style={{ color: "var(--vk-volt)", fontStyle: "normal" }}>with</em>.
+            {t.ai.title}
           </h2>
           <p className="vk-lead vk-muted" style={{ marginTop: "1.25rem", maxWidth: "54ch" }}>
-            Agentic coding, automation pipelines and fine-tuned models are how we
-            ship more than a two-person studio should be able to. This very site is
-            hand-built on that same frontier stack.
+            {t.ai.lead}
           </p>
         </Reveal>
 
