@@ -60,7 +60,7 @@ export default function Hero() {
             We make software, brands &amp; the occasional game —
             <em> and the tools we make them with.</em>
           </p>
-          <p className="vk-hero-sub vk-mono">Ömer &amp; Baha · İstanbul ↔ Bucharest</p>
+          <p className="vk-hero-sub vk-mono">Ömer &amp; Baha · İstanbul</p>
         </div>
 
         <div className="vk-hero-corner vk-mono" aria-hidden="true">EST. 2024 · ISSUE 01</div>

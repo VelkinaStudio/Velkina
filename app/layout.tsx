@@ -30,13 +30,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: "Velkina — Software and brand that ships",
   description:
-    "Velkina is a two-operator software, design and AI-automation studio. We design, build and ship websites, e-commerce, mobile apps and AI agents. Istanbul · Bucharest.",
+    "Velkina is a two-operator software, design and AI-automation studio. We design, build and ship websites, e-commerce, mobile apps and AI agents. İstanbul.",
   manifest: "/site.webmanifest",
   icons: { icon: "/favicon.svg" },
   openGraph: {
     title: "Velkina — Software and brand that ships",
     description:
-      "A two-operator software, design and AI-automation studio. Real work, shipped end-to-end. Istanbul · Bucharest.",
+      "A two-operator software, design and AI-automation studio. Real work, shipped end-to-end. İstanbul.",
     url: "/",
     siteName: "Velkina",
     type: "website",

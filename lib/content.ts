@@ -142,7 +142,7 @@ export const OPERATORS: Operator[] = [
     name: "Baha Taşkın",
     handle: "Baha",
     role: "Backend · Infrastructure · Ops",
-    base: "Bucharest",
+    base: "İstanbul",
     email: "baha@velkina.com",
     bio: "Backend, ad-platform integrations and infrastructure — the data pipelines, the cloud migrations, the automation engines and the payout systems. The person who makes sure it runs at 3am and stays the client's.",
   },
@@ -156,7 +156,7 @@ export const STUDIO = {
   oneLiner: "Two operators on every project. Velkina is two people, not a department.",
   longStatement:
     "Software, brand and ad infrastructure for founders launching internationally — built end-to-end so the storefront, the campaigns and the support agent come out of one room, not three vendors stitched together.",
-  bases: ["İstanbul · Üsküdar", "Bucharest · Calea Victoriei"],
+  bases: ["İstanbul · Üsküdar"],
   process: [
     { step: "01", title: "Talk", line: "A real conversation, not a discovery deck. We answer within a business day." },
     { step: "02", title: "Plan", line: "Scope, timeline and a quote — usually inside 48 hours." },
