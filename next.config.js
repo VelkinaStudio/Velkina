@@ -20,13 +20,22 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      // Old route → new route, keep SEO equity from the prior site
-      { source: '/:locale(en|tr|ro)/use-cases', destination: '/:locale/work', permanent: true },
-      { source: '/:locale(en|tr|ro)/use-cases/:slug', destination: '/:locale/work/:slug', permanent: true },
-      { source: '/:locale(en|tr|ro)/blog', destination: '/:locale', permanent: false },
-      { source: '/:locale(en|tr|ro)/blog/:slug', destination: '/:locale', permanent: false },
-      { source: '/:locale(en|tr|ro)/customer-agent', destination: '/:locale/services#automation', permanent: true },
-      { source: '/:locale(en|tr|ro)/demo/qr-menu', destination: '/demo/lavinia-bistro', permanent: false }
+      // The portfolio lives at the root (app/page.tsx, comic world). The old
+      // editorial agency routes (services / work / about / contact / legal +
+      // their locale roots) are retired — they carried the rejected agency
+      // funnel and stale "Istanbul · Bucharest · Berlin" framing. Bounce every
+      // /en /tr /ro editorial path to the homepage. /demo/* stays — those are
+      // the live interactive demos the Work section links to.
+      { source: '/:locale(en|tr|ro)', destination: '/', permanent: false },
+      { source: '/:locale(en|tr|ro)/use-cases/:path*', destination: '/', permanent: false },
+      { source: '/:locale(en|tr|ro)/blog/:path*', destination: '/', permanent: false },
+      { source: '/:locale(en|tr|ro)/work/:path*', destination: '/', permanent: false },
+      { source: '/:locale(en|tr|ro)/services/:path*', destination: '/', permanent: false },
+      { source: '/:locale(en|tr|ro)/about/:path*', destination: '/', permanent: false },
+      { source: '/:locale(en|tr|ro)/contact/:path*', destination: '/', permanent: false },
+      { source: '/:locale(en|tr|ro)/customer-agent/:path*', destination: '/', permanent: false },
+      { source: '/:locale(en|tr|ro)/terms/:path*', destination: '/', permanent: false },
+      { source: '/:locale(en|tr|ro)/privacy/:path*', destination: '/', permanent: false }
     ];
   }
 };

@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
     kind: "client",
     tag: "Multilingual QR Menu Platform",
     blurb:
-      "A QR menu system running across four bistros in Bucharest — photos, allergen and dietary tags, four languages, and per-table QR codes, all editable by one non-technical owner from a single dashboard.",
+      "A QR menu system running across four bistros — photos, allergen and dietary tags, four languages, and per-table QR codes, all editable by one non-technical owner from a single dashboard.",
     stack: ["Next.js", "Postgres", "i18n", "Vercel"],
     live: "https://velkina.com/demo/lavinia-bistro",
     image: "/portfolio-screenshots/lavinia-bistro-qr-menu.webp",

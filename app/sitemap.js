@@ -1,20 +1,22 @@
-import en from '../messages/en.json';
-
 export default function sitemap() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://velkina.com';
   const lastModified = new Date();
-  const locales = ['en', 'tr', 'ro'];
-  const paths = ['', 'work', 'services', 'about', 'contact', 'privacy', 'terms'];
-  const slugs = Object.keys(en.useCase.studies);
-  const entries = [];
-  for (const locale of locales) {
-    for (const p of paths) {
-      const suffix = p ? `/${p}` : '';
-      entries.push({ url: `${baseUrl}/${locale}${suffix}`, lastModified });
-    }
-    for (const slug of slugs) {
-      entries.push({ url: `${baseUrl}/${locale}/work/${slug}`, lastModified });
-    }
-  }
-  return entries;
+
+  // The portfolio is a single page at the root (comic world). The old editorial
+  // /en /tr /ro routes are retired (redirected to /), so they're no longer in
+  // the sitemap. Only the homepage and the live interactive demos are indexed.
+  const demos = [
+    'lavinia-bistro',
+    'anatolia-hotel',
+    'bosporus-travel',
+    'konak-coffee',
+    'marmara-foods',
+    'nova-health',
+    'skyline-media',
+  ];
+
+  return [
+    { url: `${baseUrl}/`, lastModified, priority: 1 },
+    ...demos.map((slug) => ({ url: `${baseUrl}/demo/${slug}`, lastModified, priority: 0.5 })),
+  ];
 }
