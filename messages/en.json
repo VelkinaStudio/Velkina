@@ -1,0 +1,545 @@
+{
+  "site": {
+    "title": "Velkina — AI Agents for Business",
+    "description": "Velkina is a specialized AI agency focused on building intelligent agents for business automation. We design, develop and deploy custom AI agents like our Turkish customer service solution that can handle calls and communications with human-like understanding.",
+    "name": "Velkina"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "useCases": "Use Cases",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "startProject": "Start project",
+    "customerAgent": "Turkish Customer Agent"
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "emailSubject": "Project Inquiry",
+    "whatsappPrefill": "Hi Velkina! I'd like to discuss a project.",
+    "carouselPlay": "Play carousel",
+    "carouselPause": "Pause carousel"
+  },
+  "footer": {
+    "company": "Company",
+    "quickLinks": "Quick Links",
+    "getInTouch": "Get in touch",
+    "rightsReserved": "All rights reserved."
+  },
+  "home": {
+    "heroDesc": "We build intelligent AI agents that transform how businesses operate. Our specialized team creates custom solutions like our Turkish customer service agent that can handle calls and communications with human-like understanding.",
+    "heroSteps": [
+      "Analyze",
+      "Design",
+      "Train",
+      "Deploy",
+      "Optimize"
+    ],
+    "resultsTitle": "Proven results",
+    "resultsSubtitle": "Highlights from recent work",
+    "brandsTitle": "Our Clients",
+    "brandsCarouselLabel": "Trusted brands carousel",
+    "testimonials": {
+      "title": "What clients say",
+      "carouselLabel": "Testimonials carousel",
+      "items": [
+        {"quote":"Velkina shipped our site in weeks with a clean design system.","name":"Aylin K.","role":"CMO, SaaS"},
+        {"quote":"Clear scope, fast iterations and measurable results.","name":"Kerem D.","role":"Founder"},
+        {"quote":"A senior team end‑to‑end—no handovers, just momentum.","name":"Mert S.","role":"Product Lead"},
+        {"quote":"Edge hosting and observability gave us confidence to ship.","name":"Elif A.","role":"Engineering Manager"}
+      ]
+    },
+    "metrics": {
+      "published": {
+        "label": "Deployed AI agents",
+        "sr": "50+ AI agents deployed"
+      },
+      "cwv": {
+        "label": "Conversation accuracy rate",
+        "sr": "95% conversation accuracy rate"
+      },
+      "conversion": {
+        "label": "Customer service cost reduction",
+        "sr": "Average customer service cost reduction of 40%"
+      },
+      "medianTime": {
+        "label": "Median time to deployment",
+        "sr": "Median deployment time: 3 weeks"
+      },
+      "integrations": {
+        "label": "Supported languages",
+        "sr": "8+ languages supported"
+      },
+      "uptime": {
+        "label": "Agent availability",
+        "sr": "Agent availability of 99.9%"
+      }
+    },
+    "metrics2": {
+      "shipped": {
+        "value": 120,
+        "label": "Shipped projects",
+        "sr": "120+ shipped projects"
+      },
+      "leadsIncrease": {
+        "value": 86,
+        "label": "Qualified leads increase",
+        "sr": "Average qualified lead increase"
+      },
+      "supportReduction": {
+        "value": 40,
+        "label": "Support cost reduction",
+        "sr": "Customer service cost reduction"
+      },
+      "csat": {
+        "value": 95,
+        "label": "CSAT",
+        "sr": "Customer satisfaction"
+      },
+      "launchTime": {
+        "value": 5,
+        "label": "Median launch time",
+        "sr": "Median time to launch"
+      },
+      "uptime": {
+        "value": 99.9,
+        "decimals": 1,
+        "label": "Uptime",
+        "sr": "Observed uptime"
+      }
+    },
+    "stackTitle": "Tech Stack",
+    "ctas": {
+      "whatsapp": "Message on WhatsApp",
+      "email": "Send an email",
+      "schedule": "Schedule a call"
+    },
+    "servicesTitle": "What we do",
+    "servicesViewAll": "See all services",
+    "explore": "Explore",
+    "startProjectShort": "Start project — Quick contact"
+  },
+  "services": {
+    "metaTitle": "Velkina — Services",
+    "metaDesc": "Full‑service software agency: websites, applications, AI automation, Meta/Google Ads, SEO, CRM/CMS integrations, analytics & CRO, hosting & DevOps.",
+    "title": "Services",
+    "heroDesc": "From idea to growth—one team across web, apps, AI automation, marketing, SEO and integrations.",
+    "modelsTitle": "Engagement Models",
+    "includedTitle": "Included in every engagement",
+    "models": [
+      "Project: Fixed scope deliverables, clear outcomes, fast delivery.",
+      "Sprint: 1–2 week cycles for iterations and experiments.",
+      "Retainer: Ongoing roadmap, optimization and support."
+    ],
+    "included": [
+      "Clear scope, milestones and weekly sprint reviews",
+      "Design system tokens and documented components",
+      "Performance budget, accessibility and SEO foundations",
+      "Source code in your org; CI/CD with preview environments",
+      "Observability: logs, metrics and uptime dashboards",
+      "Handover docs, training videos and a sensible rollback plan"
+    ],
+    "faqs": [
+      {"q":"How do we start?","a":"We begin with a 30–45 minute call to align on goals and constraints. Then we proceed with scope, timeline and success metrics."},
+      {"q":"How do we communicate and deliver?","a":"Weekly sprint reviews with demos, async updates and a transparent project board. Every change has a preview link."},
+      {"q":"Who owns the IP?","a":"You do. Source code lives in your organization; we use open licenses for third‑party components where applicable."},
+      {"q":"Is there post‑launch support?","a":"Yes — retainers for roadmap, optimization and maintenance. No long contracts; scale up or down as needed."},
+      {"q":"Typical timelines?","a":"A thin slice in 1–2 weeks. Marketing site or feature sets in 4–6 weeks. Larger integrations evolve over rolling sprints."},
+      {"q":"Hosting and platforms?","a":"We recommend Vercel/Cloudflare for web and your preferred cloud for data/services. Platform costs are separate and transparent."}
+    ],
+    "deliverables": "Deliverables",
+    "outcomes": "Outcomes",
+    "examples": "Examples",
+    "faq": "FAQ",
+    "quickContact": "Quick Contact",
+    "quickContactDesc": "We reply within one business day. No pressure; just clarity.",
+    "start": "Start",
+    "items": [
+      {"id":"websites","title":"Websites","tag":"Design • Frontend • Backend","intro":"Fast, reliable and clear websites. End‑to‑end from design to production."},
+      {"id":"applications","title":"Applications","tag":"Web App • Mobile • Admin","intro":"Custom admin panels and user applications for your workflows."},
+      {"id":"ai-automation","title":"AI Automation","tag":"Workflows • Agents","intro":"Automate repetitive tasks with AI agents and workflow tooling."},
+      {"id":"ads","title":"Meta & Google Ads","tag":"Acquisition • Retargeting","intro":"Performance campaigns with trustworthy measurement."},
+      {"id":"seo","title":"SEO Services","tag":"Technical • Content • On‑page","intro":"Technical foundations and quality content for search visibility."},
+      {"id":"middleware","title":"CRM/CMS Integrations","tag":"HubSpot • Salesforce • Sanity","intro":"Robust data flows and middleware between systems."},
+      {"id":"analytics-cro","title":"Analytics & CRO","tag":"Measurement • Experiments","intro":"Conversion optimization with accurate measurement and A/B testing."},
+      {"id":"hosting-devops","title":"Hosting & DevOps","tag":"Vercel • Cloudflare • AWS","intro":"Fast, reliable and reversible deployments."}
+    ]
+  },
+  "blog": {
+    "metaTitle": "Velkina — Blog",
+    "metaDesc": "Insights, practical guides and engineering notes from Velkina.",
+    "title": "Insights & Signals",
+    "subtitle": "Notes from Velkina on engineering, growth and digital systems.",
+    "searchPlaceholder": "Search articles…",
+    "statusShown": "{n} articles shown",
+    "filters": {
+      "all": "All",
+      "engineering": "Engineering",
+      "marketing": "Marketing",
+      "product": "Product",
+      "data": "Data"
+    },
+    "quickContact": "Quick Contact",
+    "quickContactDesc": "We reply within one business day. No pressure; just clarity.",
+    "samplePosts": [
+      {"cat":"Engineering","title":"Building unified middleware APIs","desc":"Patterns for API hubs that scale, observe, and endure.","read":"6 min"},
+      {"cat":"Marketing","title":"Attribution that actually guides spend","desc":"A pragmatic approach to channel ROI and budget shifts.","read":"5 min"},
+      {"cat":"Product","title":"From landing to activation in days","desc":"Shipping thin slices with high‑leverage motion.","read":"7 min"},
+      {"cat":"Data","title":"Ops dashboards that truly work","desc":"Leading and lagging indicators for action‑oriented teams.","read":"4 min"},
+      {"cat":"Engineering","title":"Typed data pipelines between services","desc":"Safer changes with contracts and codegen.","read":"6 min"},
+      {"cat":"Product","title":"Self‑marketing content systems","desc":"Design and structure that compound with every publish.","read":"5 min"},
+      {"cat":"Engineering","title":"Next.js 14 patterns at the edge","desc":"SSR/ISR/static; cache, revalidation and DX.","read":"6 min"},
+      {"cat":"Engineering","title":"Design tokens in production","desc":"A single source of truth across web, docs and marketing.","read":"5 min"},
+      {"cat":"Marketing","title":"Creative testing with motion","desc":"Micro‑interactions that lift CVR without adding weight.","read":"5 min"},
+      {"cat":"Marketing","title":"Pricing pages that convert","desc":"Clarity, friction control and calculators that reduce regret.","read":"6 min"},
+      {"cat":"Data","title":"Trustworthy server‑side tracking","desc":"A sensible setup for consent, attribution and event routing.","read":"5 min"},
+      {"cat":"Product","title":"Docs that onboard fast","desc":"Structure, examples and clear copy for fewer tickets.","read":"6 min"}
+    ]
+  },
+  "useCases": {
+    "metaTitle": "Velkina — Use Cases",
+    "metaDesc": "Scenarios shipped fast: sites, systems, automations and measurable growth—designed to increase conversion, clarity and confidence.",
+    "title": "Use Cases",
+    "subtitle": "A selection of systems we deliver quickly, observably and at scale—designed to increase conversion, clarity and confidence.",
+    "filters": {
+      "all": "All",
+      "web": "Web",
+      "ai": "AI",
+      "data": "Data",
+      "growth": "Growth",
+      "integrations": "Integrations"
+    },
+    "quickContact": "Quick Contact",
+    "quickContactDesc": "We reply within one business day. No pressure; just clarity.",
+    "virtualTour": "Virtual Tour",
+    "categories": {
+      "Web": "Web",
+      "AI": "AI",
+      "Data": "Data",
+      "Growth": "Growth",
+      "Integrations": "Integrations"
+    },
+    "projects": {
+      "title": "Projects & Case Studies",
+      "items": [
+        {
+          "cat": "Web | Beauty | Growth",
+          "title": "Dr. Sevim Aydın Beauty",
+          "url": "https://www.drsevimaydinbeauty.com",
+          "tourSrc": "https://www.google.com/maps/embed?pb=!4v1756115600484!6m8!1m7!1sCAoSHENJQUJJaEF1UWV0M0NyelNKNW9wNmF6UXFYSUc.!2m2!1d41.09449186254232!2d28.98261306933077!3f240!4f0!5f0.7820865974627469",
+          "desc": "We designed a modern, aesthetic and trustworthy website for a beauty and care clinic—presenting services online with clarity and appeal.",
+          "highlights": [
+            "User‑friendly interface with integrated online appointment system",
+            "SEO‑optimized content → +40% organic visibility",
+            "Increased brand trust and patient engagement",
+            "Responsive design → mobile sessions rose to 70%"
+          ]
+        },
+        {
+          "cat": "Web | Manufacturing | B2B",
+          "title": "TP Thermoplast",
+          "url": "https://tpthermoplast.com",
+          "desc": "B2B‑focused corporate website for a plastics manufacturer to establish a reliable touchpoint with international buyers.",
+          "highlights": [
+            "Multi‑language structure → speaks to export‑oriented audience",
+            "Product catalog + inquiry forms for lead capture",
+            "Performance optimization → page load time cut by 50%",
+            "Reported increase in global business connections"
+          ]
+        },
+        {
+          "cat": "Web | Home Décor | Growth",
+          "title": "Rain Group",
+          "url": "https://www.raingroupas.com",
+          "desc": "Corporate identity and e‑commerce foundation for a home textiles and décor brand, yielding a modern, trustworthy and international image.",
+          "highlights": [
+            "Minimal, trustworthy UI/UX",
+            "Brand identity and tone of voice established",
+            "SEO & social integrations → traffic grew 60%",
+            "E‑commerce foundation prepared (future phase integration)"
+          ]
+        },
+        {
+          "cat": "Web | Education | CRM",
+          "title": "EduTurkia",
+          "url": "https://www.eduturkia.com/",
+          "desc": "Education consultancy platform for international students in Turkey. Comprehensive system with application management, CRM integration and university catalog.",
+          "highlights": [
+            "Admin‑managed university/student records",
+            "CRM integration → student tracking 100% digital",
+            "Multi‑language (TR/EN) → expanded reach",
+            "SEO & ads integrations → significant increase in applications"
+          ]
+        },
+        {
+          "cat": "Web | Art | Portfolio",
+          "title": "Ali Cengiz İşcanlı",
+          "url": "https://www.alicengiziscanli.com",
+          "desc": "Online portfolio that highlights the artist’s work with a clean, gallery‑like presentation for a global audience.",
+          "highlights": [
+            "Minimal gallery design → art‑first presentation",
+            "Multi‑language content → global reach",
+            "Optimized, fast‑loading images",
+            "Distinct online brand identity for the artist"
+          ]
+        },
+        {
+          "cat": "Web | 3D | Creative",
+          "title": "Clown3D",
+          "url": "https://www.clown3d.com",
+          "desc": "Playful, modern website for a 3D design and visualization studio to showcase creative projects and inspire prospects.",
+          "highlights": [
+            "Dynamic animations and 3D visuals",
+            "Creative UI → strong first impression",
+            "SEO integration → improved organic visibility",
+            "Portfolio structure to organize and present work"
+          ]
+        },
+        {
+          "cat": "Web | Personal | Portfolio",
+          "title": "Atar Avcı Hukuk Bürosu",
+          "url": "https://www.ataravci.com.tr",
+          "tourSrc": "https://www.google.com/maps/embed?pb=!4v1756115654370!6m8!1m7!1sCAoSHENJQUJJaERtNlJVa0NCdm5aWEYxaWhkelZkcGo.!2m2!1d41.06985723145268!2d28.9891160676344!3f320!4f20!5f0.7820865974627469",
+          "desc": "Professional portfolio site for a law practice to present services and build a modern online presence.",
+          "highlights": [
+            "Minimal design → personal brand‑centric look",
+            "Responsive across devices",
+            "SEO optimization improved visibility",
+            "Contact forms → higher inquiry conversion"
+          ]
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "About Velkina",
+    "desc": "We are a senior digital agency in Istanbul. We design, ship and scale high‑performance websites, apps and systems with modern tooling, edge hosting and measurable growth.",
+    "principlesTitle": "Principles",
+    "principles": [
+      "Ship weekly with previews, rollbacks and clear demos.",
+      "Design system first: tokens, components and motion for consistency.",
+      "Measurable growth: server‑side analytics, experiments and CRO."
+    ],
+    "quickFactsTitle": "Quick facts",
+    "facts": [
+      "Senior‑only team",
+      "Next.js 14, React, Edge",
+      "Design × Engineering",
+      "Focus: conversion, clarity, speed"
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We reply within one business day. No pressure; just clarity.",
+    "email": "Email",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "whatsappDesc": "Message us to start quickly",
+    "schedule": "Schedule a call",
+    "scheduleDesc": "Pick a time that works for you"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "desc": "We keep it simple. We do not sell personal data. We collect minimal analytics to improve our website and services.",
+    "lastUpdated": "2025-08-25",
+    "sections": [
+      {
+        "title": "Controller & Contact",
+        "body": [
+          "Velkina Yazılım ve Tasarım (\"Velkina\", \"we\", \"us\") acts as the data controller for personal data processed through our website and client engagements.",
+          "Contact: info@velkina.com"
+        ]
+      },
+      {
+        "title": "Scope",
+        "body": [
+          "This policy covers data collected via our website, forms, emails, messaging apps and during service delivery to clients. It does not cover third‑party websites linked from our site."
+        ]
+      },
+      {
+        "title": "Data We Collect",
+        "body": [
+          "Contact data (name, email, phone, company)",
+          "Project and commercial information (requirements, scope, budget, timeline)",
+          "Technical data (IP, device, browser); privacy‑safe analytics and server‑side events",
+          "Support records and communications",
+          "Recruitment data for candidates (CV, portfolio)"
+        ]
+      },
+      {
+        "title": "Purposes & Legal Bases",
+        "body": [
+          "Provide and improve services; perform a contract or take steps prior to entering one",
+          "Respond to inquiries and schedule meetings; legitimate interests",
+          "Security, fraud prevention and abuse detection; legitimate interests",
+          "Compliance with legal obligations (tax, accounting)",
+          "Marketing with consent where required; you may opt out at any time"
+        ]
+      },
+      {
+        "title": "Retention",
+        "body": [
+          "We keep personal data only as long as necessary for the purposes described or as required by law. Project records are typically retained for up to 6 years for legal/accounting reasons."
+        ]
+      },
+      {
+        "title": "Sharing & Recipients",
+        "body": [
+          "Service providers under contract (hosting, communications, analytics, payments)",
+          "Professional advisors (accountants, lawyers) bound by confidentiality",
+          "Authorities where required by law",
+          "We do not sell personal data."
+        ]
+      },
+      {
+        "title": "International Transfers",
+        "body": [
+          "Where data is transferred outside your jurisdiction, we use appropriate safeguards (e.g., SCCs/adequacy decisions)."
+        ]
+      },
+      {
+        "title": "Security",
+        "body": [
+          "We implement technical and organizational measures including access controls, encryption in transit, least‑privilege credentials and audit logging. No method of transmission or storage is 100% secure."
+        ]
+      },
+      {
+        "title": "Your Rights",
+        "body": [
+          "Subject to law, you may request access, rectification, deletion, restriction, portability or objection to processing. You may withdraw consent at any time without affecting prior processing.",
+          "Contact: info@velkina.com. You may also lodge a complaint with your data protection authority."
+        ]
+      },
+      {
+        "title": "Cookies & Tracking",
+        "body": [
+          "We prefer privacy‑safe analytics. Some features require cookies or similar technologies. You can control cookies in your browser."
+        ]
+      },
+      {
+        "title": "Children",
+        "body": [
+          "Our services are not directed to children under the age of 13/16 as applicable by law."
+        ]
+      },
+      {
+        "title": "Changes",
+        "body": [
+          "We may update this policy from time to time. Material changes will be indicated by updating the \"Last updated\" date."
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "desc": "By using our website and services, you agree to these terms. Project‑specific terms are defined in our MSA/SOW.",
+    "lastUpdated": "2025-08-25",
+    "sections": [
+      {
+        "title": "Definitions",
+        "body": [
+          "\"Velkina\" means Velkina Yazılım ve Tasarım. \"Client\" means the person or entity receiving services. \"Services\" means the work described in an Order, SOW or proposal."
+        ]
+      },
+      {
+        "title": "Scope & Orders",
+        "body": [
+          "We will provide the Services described in a mutually agreed Order/Proposal/SOW (the \"Order\"). Changes to scope require written agreement and may affect fees and timelines."
+        ]
+      },
+      {
+        "title": "Client Responsibilities",
+        "body": [
+          "Provide timely access to information, systems and decision‑makers. Review and approve deliverables without undue delay. Ensure all provided materials do not infringe third‑party rights."
+        ]
+      },
+      {
+        "title": "Fees & Payment",
+        "body": [
+          "Fees are as stated in the Order. Unless otherwise agreed, invoices are due within 14 days. Late payments may incur interest at the maximum rate permitted by law. All fees are exclusive of taxes."
+        ]
+      },
+      {
+        "title": "Intellectual Property",
+        "body": [
+          "Upon full payment, Client owns the bespoke deliverables created specifically for the Client, excluding Velkina background IP, open‑source components and third‑party materials. Velkina grants a non‑exclusive, non‑transferable license to background IP solely as embedded in the deliverables."
+        ]
+      },
+      {
+        "title": "Confidentiality",
+        "body": [
+          "Each party shall keep confidential information received from the other confidential and use it only to perform the Agreement, subject to customary exceptions (public domain, independently developed, legally required disclosure)."
+        ]
+      },
+      {
+        "title": "Data Protection",
+        "body": [
+          "Where personal data is processed, the parties will comply with applicable data protection laws. A separate DPA may apply where Velkina acts as processor."
+        ]
+      },
+      {
+        "title": "Warranties",
+        "body": [
+          "We warrant that we will perform Services in a professional and workmanlike manner. Except as expressly stated, Services are provided \"as is\" without other warranties."
+        ]
+      },
+      {
+        "title": "Limitation of Liability",
+        "body": [
+          "To the maximum extent permitted by law, neither party is liable for indirect, incidental or consequential damages. Velkina’s total liability arising out of the Agreement shall not exceed the fees paid by Client for the Services giving rise to the claim in the 12 months preceding the event."
+        ]
+      },
+      {
+        "title": "Indemnity",
+        "body": [
+          "Each party will indemnify the other against third‑party claims arising from breach of the Agreement, gross negligence or willful misconduct."
+        ]
+      },
+      {
+        "title": "Term & Termination",
+        "body": [
+          "The Agreement begins on the effective date of the Order and continues until completion unless terminated earlier for material breach (after notice and cure period) or for convenience as specified in the Order. Upon termination, accrued fees become due and surviving provisions remain in effect."
+        ]
+      },
+      {
+        "title": "Subcontracting",
+        "body": [
+          "We may use vetted subcontractors and specialists. We remain responsible for the Services."
+        ]
+      },
+      {
+        "title": "Publicity",
+        "body": [
+          "With Client consent, we may list Client name and non‑confidential outcomes for portfolio/marketing."
+        ]
+      },
+      {
+        "title": "Governing Law & Disputes",
+        "body": [
+          "This Agreement is governed by the laws of Turkey. Disputes shall be subject to the exclusive jurisdiction of the Istanbul courts, without prejudice to mandatory consumer or data protection rules."
+        ]
+      },
+      {
+        "title": "Force Majeure",
+        "body": [
+          "Neither party is liable for failure or delay due to events beyond reasonable control."
+        ]
+      },
+      {
+        "title": "Entire Agreement; Changes",
+        "body": [
+          "The Order together with these Terms constitutes the entire agreement and supersedes prior understandings. Changes must be in writing. If any provision is invalid, the remainder remains in effect."
+        ]
+      },
+      {
+        "title": "Notices",
+        "body": [
+          "Notices may be given by email to the addresses specified in the Order and are deemed received upon confirmation or the next business day."
+        ]
+      }
+    ]
+  }
+}

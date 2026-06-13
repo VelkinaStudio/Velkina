@@ -1,20 +1,14 @@
 export default function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://velkina.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   const lastModified = new Date();
-
-  // Single-page portfolio + the live interactive demos.
-  const demos = [
-    'lavinia-bistro',
-    'anatolia-hotel',
-    'bosporus-travel',
-    'konak-coffee',
-    'marmara-foods',
-    'nova-health',
-    'skyline-media',
-  ];
-
-  return [
-    { url: `${baseUrl}/`, lastModified, priority: 1 },
-    ...demos.map((slug) => ({ url: `${baseUrl}/demo/${slug}`, lastModified, priority: 0.5 })),
-  ];
+  const locales = ['tr', 'en'];
+  const paths = ['', 'services', 'use-cases', 'blog'];
+  const entries = [];
+  for (const locale of locales) {
+    for (const p of paths) {
+      const suffix = p ? `/${p}` : '';
+      entries.push({ url: `${baseUrl}/${locale}${suffix}`, lastModified });
+    }
+  }
+  return entries;
 }

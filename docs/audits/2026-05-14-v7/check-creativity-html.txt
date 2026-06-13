@@ -1,7 +1,0 @@
-
-design-creativity-engine — check-creativity report
-Target: C:/Users/nalba/AppData/Local/Temp/velkina-en.html
-P0: 0  P1: 0  P2: 0
-
-No findings — page passes the engine's programmatic checks.
-Reminder: the engine's four mandatory outputs (canvas, type, signature, anti-patterns) and the swap test are NOT automated. Verify those manually.

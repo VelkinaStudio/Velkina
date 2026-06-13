@@ -1,8 +1,7 @@
 module.exports = {
-  // Supported locales: English, Turkish, Romanian
-  locales: ['en', 'tr', 'ro'],
-  // Use English for all non-Turkish, non-Romanian visitors
+  locales: ['tr', 'en'],
+  // Use English for all non‑Turkish visitors (Turkish browsers will be detected via middleware)
   defaultLocale: 'en',
-  // Ensures locale is always prefixed in URLs like /en/..., /tr/..., /ro/...
+  // Ensures locale is always prefixed in URLs like /tr/... and /en/...
   localePrefix: 'always'
 };

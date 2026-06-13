@@ -33,7 +33,3 @@ tsconfig.tsbuildinfo
 
 # AI session state (remember skill)
 .remember/
-
-# Claude Code session state (visual-debt tracking, etc.)
-.claude/
-.vercel

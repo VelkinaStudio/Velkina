@@ -13,11 +13,7 @@
     "jsx": "preserve",
     "strict": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["./*"],
-      "@velkina/inkwell": ["./lib/inkwell/index.d.ts"],
-      "@velkina/inkwell/react": ["./lib/inkwell/react.d.ts"]
-    },
+    "paths": {},
     "types": [
       "node",
       "react",

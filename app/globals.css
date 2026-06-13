@@ -2,10 +2,155 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Minimal global base. The homepage styles itself entirely in site.css; the
-   /demo/* routes carry their own scoped styles. Nothing here imposes a theme. */
-* { box-sizing: border-box; }
-html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
-body { margin: 0; }
-img { max-width: 100%; height: auto; display: block; }
-a { color: inherit; }
+:root {
+  --vk-bg: #0D0D0D;
+  --vk-cyan: #00FFFF;
+  --vk-pink: #FF00CC;
+  --vk-mint: #99FFCC;
+  --vk-text: #F1F1F1;
+  --vk-purple: #A259FF;
+  --vk-violet: #7C3AED; /* extra accent to vary UI */
+
+  --vk-radius-xs: 8px;
+  --vk-radius-sm: 14px;
+  --vk-radius-md: 20px;
+  --vk-radius-lg: 28px;
+  --vk-radius-xl: 40px;
+
+  --vk-shadow-soft: 0 10px 30px rgba(162,89,255,0.15);
+  --vk-shadow-strong: 0 20px 60px rgba(0,255,255,0.25);
+  --vk-shadow-inset: inset 0 1px 0 rgba(255,255,255,0.06);
+
+  --vk-glow-cyan: drop-shadow(0 0 12px rgba(0,255,255,0.6));
+  --vk-glow-pink: drop-shadow(0 0 12px rgba(255,0,204,0.6));
+  --vk-glass: rgba(255,255,255,0.06);
+
+  --vk-grad-neon: radial-gradient(1200px 600px at 80% -10%, rgba(162,89,255,0.25), transparent 60%),
+                  radial-gradient(1000px 500px at 10% 120%, rgba(0,255,255,0.18), transparent 60%);
+}
+html { background: var(--vk-bg); color: var(--vk-text); scroll-behavior: smooth; }
+/* Turkish-friendly font stacks */
+.font-heading { font-family: var(--font-sora), "Sora", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif; letter-spacing:.02em; }
+.font-body { font-family: var(--font-inter), "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif; }
+.font-mono { font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; letter-spacing:.02em; }
+.vk-glass { background: var(--vk-glass); backdrop-filter: blur(10px); }
+.vk-outline { border-color: var(--vk-cyan) !important; background: rgba(255,255,255,.12); box-shadow: 0 0 0 1px rgba(0,255,255,.35) inset, 0 0 20px rgba(0,255,255,.25); }
+
+/* Navbar solid state */
+[data-nav].is-solid { background: color-mix(in oklab, var(--vk-bg) 70%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,.08); box-shadow: var(--vk-shadow-soft); }
+[data-nav] a.active { color: var(--vk-cyan); text-shadow: 0 0 12px rgba(0,255,255,.45); }
+
+/* Cards + Chips */
+.vk-card { position: relative; transform-style: preserve-3d; will-change: transform; }
+.vk-card::after { content:""; position:absolute; inset:0; pointer-events:none; box-shadow: var(--vk-shadow-inset); border-radius: inherit; }
+.vk-card { --mx: 50%; --my: 50%; }
+/* Sheen overlay that follows cursor (parallax-like without heavy transforms) */
+.vk-card::before { content:""; position:absolute; inset:0; pointer-events:none; border-radius:inherit; mix-blend-mode: screen; opacity:.6;
+  background: radial-gradient(240px 140px at var(--mx) var(--my), rgba(255,255,255,.08), transparent 60%);
+  transition: opacity .2s ease, background-position .15s ease-out;
+}
+.vk-card:hover::before { opacity:.85; }
+.vk-chip { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:9999px; background: color-mix(in oklab, var(--vk-glass) 92%, transparent); border:1px solid rgba(255,255,255,.12); backdrop-filter: blur(8px); box-shadow: 0 8px 20px rgba(0,0,0,.25); transform: translateZ(16px); }
+.vk-chip svg { width:20px; height:20px; }
+.vk-chip--cyan { color: var(--vk-cyan); filter: var(--vk-glow-cyan); }
+.vk-chip--pink { color: var(--vk-pink); filter: var(--vk-glow-pink); }
+.vk-chip--purple { color: var(--vk-purple); filter: drop-shadow(0 0 12px rgba(162,89,255,.5)); }
+
+/* Carousel */
+.ticker { display:flex; gap:48px; will-change: transform; }
+.ticker--auto { animation: vk-ticker 48s linear infinite; }
+.brand { height: 28px; width: auto; opacity: .9; transition: opacity .2s ease, filter .25s ease, transform .25s ease; filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)); transform: scale(var(--bscale, 1)); --glow-brand: rgba(0,255,255,.25); }
+.brand { max-width: 160px; }
+.brand:hover { opacity: 1; filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)) drop-shadow(0 0 10px var(--glow-brand)) drop-shadow(0 0 18px rgba(162,89,255,.2)); }
+.brand[data-brand="aws"], .brand[data-brand="kubernetes"], .brand[data-brand="grafana"] { --bscale: .92; }
+.brand[data-brand="github"], .brand[data-brand="nextjs"], .brand[data-brand="webflow"], .brand[data-brand="wix"], .brand[data-brand="postgresql"], .brand[data-brand="mongodb"] { --bscale: .95; }
+.brand[data-brand="express"] { --bscale: 1.08; }
+.brand[data-brand="tailwindcss"], .brand[data-brand="stripe"], .brand[data-brand="supabase"] { --bscale: 1.03; }
+.brand[data-brand="react"] { --glow-brand: rgba(97,218,251,.35); }
+.brand[data-brand="tailwindcss"] { --glow-brand: rgba(56,189,248,.35); }
+.brand[data-brand="postgresql"] { --glow-brand: rgba(65,105,225,.35); }
+.brand[data-brand="mongodb"] { --glow-brand: rgba(71,162,72,.35); }
+.brand[data-brand="redis"] { --glow-brand: rgba(220,56,45,.35); }
+.brand[data-brand="stripe"] { --glow-brand: rgba(99,91,255,.35); }
+.brand[data-brand="docker"] { --glow-brand: rgba(36,150,237,.35); }
+.brand[data-brand="kubernetes"] { --glow-brand: rgba(50,108,229,.35); }
+.brand[data-brand="netlify"] { --glow-brand: rgba(0,199,183,.35); }
+.brand[data-brand="cloudflare"] { --glow-brand: rgba(243,128,32,.35); }
+.brand[data-brand="aws"] { --glow-brand: rgba(255,153,0,.35); }
+.brand[data-brand="azure"] { --glow-brand: rgba(0,120,212,.35); }
+.brand[data-brand="gitlab"] { --glow-brand: rgba(252,109,38,.35); }
+.brand[data-brand="google"] { --glow-brand: rgba(66,133,244,.35); }
+.brand[data-brand="meta"] { --glow-brand: rgba(4,103,223,.35); }
+.brand[data-brand="webflow"] { --glow-brand: rgba(67,83,255,.35); }
+.brand[data-brand="python"] { --glow-brand: rgba(55,118,171,.35); }
+.brand[data-brand="grafana"] { --glow-brand: rgba(244,104,0,.35); }
+.brand[data-brand="figma"] { --glow-brand: rgba(242,78,30,.35); }
+.brand[data-brand="supabase"] { --glow-brand: rgba(63,207,142,.35); }
+.brand[data-brand="nextjs"], .brand[data-brand="express"], .brand[data-brand="vercel"], .brand[data-brand="github"], .brand[data-brand="openai"], .brand[data-brand="sentry"], .brand[data-brand="wix"], .brand[data-brand="apachekafka"], .brand[data-brand="threejs"] { --glow-brand: rgba(255,255,255,.28); }
+
+/* Black & white variant for brand logos */
+.brand--bw { filter: grayscale(1) brightness(1.05) drop-shadow(0 2px 8px rgba(0,0,0,.35)); --glow-brand: rgba(255,255,255,.24); }
+.brand--bw:hover { filter: grayscale(1) brightness(1.15) drop-shadow(0 2px 8px rgba(0,0,0,.35)) drop-shadow(0 0 10px rgba(255,255,255,.18)); }
+
+/* Marquee animation for ticker: animate the whole track for seamless loop */
+[data-ticker] { animation: vk-ticker 48s linear infinite; }
+/* Pause helpers: on explicit paused state, hover, or focus */
+[data-ticker][data-paused="true"] { animation-play-state: paused; }
+[data-ticker]:hover,
+[data-ticker]:focus-visible,
+[data-ticker]:focus-within { animation-play-state: paused; }
+@keyframes vk-ticker {
+  0% { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-50%,0,0); }
+}
+
+[data-ticker]:focus-visible { outline: 2px solid rgba(0,255,255,.5); outline-offset: 6px; border-radius: 8px; }
+a[data-cta]:focus-visible { outline: 2px solid rgba(0,255,255,.6); outline-offset: 3px; border-radius: 12px; }
+[data-ticker-toggle]:focus-visible { outline: 2px solid rgba(255,255,255,.7); outline-offset: 3px; border-radius: 9999px; }
+
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,1,1);white-space:nowrap;border:0}
+
+/* Desktop helpers */
+.hide-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+.reveal-on-scroll { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
+.reveal-on-scroll.is-in { opacity: 1; transform: translateY(0); }
+
+/* Hero headline highlight */
+.vk-highlight {
+  background: linear-gradient(180deg, rgba(255,255,255,0) 62%, rgba(0,255,255,0.18) 62%, rgba(162,89,255,0.22) 100%);
+  border-radius: 6px;
+  padding: 0 .06em;
+}
+
+/* CTA micro‑motion */
+.vk-cta { transition: transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease; will-change: transform; }
+.vk-cta:hover, .vk-cta:focus-visible { transform: translateY(-1px) scale(1.02); box-shadow: var(--vk-shadow-strong); }
+
+/* Rail arrow buttons */
+.vk-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 40px; height: 40px; border-radius: 9999px; border: 1px solid rgba(255,255,255,.15); background: rgba(255,255,255,.06); backdrop-filter: blur(8px); display: inline-flex; align-items: center; justify-content: center; color: var(--vk-text); transition: transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease; z-index: 10; pointer-events: auto; }
+.vk-arrow:hover, .vk-arrow:focus-visible { border-color: color-mix(in oklab, var(--vk-violet) 60%, white 10%); box-shadow: 0 8px 20px rgba(124,58,237,.3); transform: translateY(-50%) scale(1.05); outline: none; }
+.vk-arrow:active { transform: translateY(-50%) scale(0.98); }
+.vk-arrow svg { width: 18px; height: 18px; }
+.vk-arrow[disabled] { opacity:.45; cursor: not-allowed; box-shadow: none; }
+
+/* Section backdrops for variety */
+.vk-section--values { position: relative; }
+.vk-section--values::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .25; background:
+  radial-gradient(600px 300px at 15% 10%, rgba(0,255,255,.15), transparent 60%),
+  radial-gradient(700px 320px at 85% 90%, rgba(255,0,204,.12), transparent 60%);
+}
+
+.vk-section--services { position: relative; }
+.vk-section--services::before { content:""; position:absolute; inset:0; pointer-events:none; background:
+  linear-gradient(120deg, rgba(255,255,255,.04), transparent 35%),
+  linear-gradient(300deg, rgba(0,255,255,.05), transparent 45%);
+  mask: linear-gradient(0deg, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll { opacity: 1 !important; transform: none !important; transition: none !important; }
+  /* Disable ticker animation under reduced motion */
+  [data-ticker] { animation: none !important; }
+}
